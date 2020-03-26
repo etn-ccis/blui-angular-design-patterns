@@ -1,3 +1,11 @@
-<div>
-  <button mat-button color="primary">Hello!</button>
+<div fxLayout="row">
+  <app-drawer></app-drawer>
+
+  <div fxFlex style="height: 100vh; overflow-y: scroll;">
+    <router-outlet></router-outlet>
+  </div>
+
+  <div class="right-panel">
+    {{ designPatternDetails }}
+  </div>
 </div>

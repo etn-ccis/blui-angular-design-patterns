@@ -1,0 +1,101 @@
+<mat-toolbar color="primary">
+    <div>Form Validation</div>
+</mat-toolbar>
+<section class="mat-typography">
+    <h2>Basic Form Fields</h2>
+    <p> The following examples show how to perform validation on various input types. The error icon on invalid inputs
+        is
+        optional, but adds redundancy for color blind users. </p>
+    <mat-card>
+        <form [formGroup]='userForm'>
+            <mat-form-field>
+                <mat-label>Input</mat-label>
+                <input matInput placeholder="Input" formControlName="inputFC" required type="telphone">
+                <mat-icon *ngIf="userForm?.controls?.inputFC.touched" matSuffix
+                    [ngClass]="userForm?.controls?.inputFC.errors ? 'failure' : 'success'">{{userForm?.controls?.inputFC.errors
+            ? 'clear' : 'done' }}</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Enter your email</mat-label>
+                <input matInput placeholder="Enter your email" formControlName="email" required>
+                <mat-icon *ngIf="userForm?.controls?.email.touched" matSuffix
+                    [ngClass]="userForm?.controls?.email.errors ? 'failure' : 'success'">{{userForm?.controls?.email.errors
+            ? 'clear' : 'done' }}</mat-icon>
+                <mat-error *ngIf="userForm.get('email').hasError('pattern')">Invalid email address</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Phone number</mat-label>
+                <input matInput placeholder="Phone Number" formControlName="phoneNumber" (keypress)="numberOnly($event)"
+                    required maxlength="22">
+                <mat-icon *ngIf="userForm?.controls?.phoneNumber.touched" matSuffix
+                    [ngClass]="userForm?.controls?.phoneNumber.errors ? 'failure' : 'success'">{{userForm?.controls?.phoneNumber.errors
+            ? 'clear' : 'done' }}</mat-icon>
+                <mat-error *ngIf="userForm.get('phoneNumber').hasError('pattern')">invalid phone number</mat-error>
+            </mat-form-field>
+        </form>
+    </mat-card>
+
+    <h2>Character Limits</h2>
+    <p> The following example shows how to restrict the length of an input field. In these cases, you should provide the
+        user an indication of how many characters are available.</p>
+    <mat-card>
+        <mat-form-field hintLabel="Max 30 characters">
+            <input matInput #input maxlength="30" placeholder="Enter some text">
+            <mat-hint align="end">{{input.value?.length || 0}}/30</mat-hint>
+        </mat-form-field>
+    </mat-card>
+
+    <h2>Password Validation</h2>
+    <p>The following example shows how to enforce password strength restrictions and confirmation field matching. The
+        password strength requirements for your application may differ from this example. </p>
+    <mat-card>
+        <form [formGroup]='userPassword'>
+            <mat-form-field>
+                <input matInput placeholder="Old Password" required formControlName="oldPassword" type="password">
+            </mat-form-field>
+            <div [formGroup]="passwordFormGroup">
+                <mat-form-field>
+                    <input matInput placeholder="New Password" required formControlName='newPassword' type="password"
+                        (keyup)="checkPasswordStrength($event.target.value)">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Confirm Password" required formControlName='confirmPassword'
+                        type="password" [errorStateMatcher]="errorMatcher">
+                    <mat-error *ngIf="passwordFormGroup.hasError('passwordsDoNotMatch')">Passwords do not match
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </form>
+
+        <p>A Password must contain the following:</p>
+        <mat-list>
+            <mat-list-item>
+                <mat-icon [ngClass]="passLength ? 'success' : 'failure'">{{passLength ? 'done' : 'clear' }}</mat-icon>
+                At least
+                8 characters in length
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon [ngClass]="numberFlag ? 'success' : 'failure'">{{numberFlag ? 'done' : 'clear' }}</mat-icon>At
+                least
+                1 digit
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon [ngClass]="upperFlag ? 'success' : 'failure'">{{upperFlag ? 'done' : 'clear' }}</mat-icon> At
+                least 1
+                uppercase letter
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon [ngClass]="lowerFlag ? 'success' : 'failure'">{{lowerFlag ? 'done' : 'clear' }}</mat-icon> At
+                least 1
+                lowercase letter
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon [ngClass]="specialFlag ? 'success' : 'failure'">{{specialFlag ? 'done' : 'clear' }}</mat-icon>
+                At
+                least 1 special character (Valid: ! @ # $ ^ &)
+            </mat-list-item>
+        </mat-list>
+    </mat-card>
+</section>

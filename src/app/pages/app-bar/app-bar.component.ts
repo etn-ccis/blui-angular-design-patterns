@@ -36,7 +36,6 @@ export class AppBarComponent implements OnInit {
   }
 
   getScrollPosition(event) {
-    console.log('scrolling...', event);
     if (event) {
       return event.getElementRef().nativeElement.scrollTop;
     } else {

@@ -24,6 +24,7 @@ import { DataListComponent } from './pages/data-list/data-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormValidationComponent } from './pages/form-validation/form-validation.component';
 import { ActionListComponent } from './pages/action-list/action-list.component';
+import { AppBarComponent } from './pages/app-bar/app-bar.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { ActionListComponent } from './pages/action-list/action-list.component';
     ObjectToList,
     DataListComponent,
     FormValidationComponent,
-    ActionListComponent
+    ActionListComponent,
+    AppBarComponent
   ],
   imports: [
     BrowserAnimationsModule,

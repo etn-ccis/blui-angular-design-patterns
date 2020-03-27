@@ -13,6 +13,10 @@
 				<section>
 					<h3 matSubheader style="margin-top: 0">Design Patterns</h3>
 					<mat-divider></mat-divider>
+					<a mat-list-item [routerLinkActive]="['primaryLink']" routerLink="/app-bar">
+						<mat-icon matListIcon class="nav-icon">move_to_inbox</mat-icon>
+						App Bar
+					</a>
 					<a mat-list-item [routerLinkActive]="['primaryLink']" routerLink="/data-list">
 						<mat-icon matListIcon class="nav-icon">move_to_inbox</mat-icon>
 						Data List

@@ -1,0 +1,30 @@
+<!-- <mat-grid-list #grid [cols]="cols" rowHeight="160px" gutterSize="10px">
+    <mat-grid-tile *ngFor="let device of devices" style="overflow: visible">
+        <mat-card class="card" fxLayout="column">
+            <h3 class="title" [style.background]="device.performance ? Colors.blue[500] : Colors.orange[500]">Device
+                {{device.id}}</h3>
+            <mat-card-content fxFlex="1 1 0px" style="margin: 0">
+                <mat-list *ngIf="device.performance" style="padding: 0">
+                    <mat-list-item class="list-row">
+                        <h4 class="list-text">Performance:</h4>
+                        <h4 class="list-text">{{device.performance}}</h4>
+                    </mat-list-item>
+                    <mat-list-item class="list-row">
+                        <h4 class="list-text">Battery Life:</h4>
+                        <h4 class="list-text">{{device.battery}}</h4>
+                    </mat-list-item>
+                </mat-list>
+                <pxb-empty-state *ngIf="!device.performance" title="No Data">
+                    <mat-icon empty-icon style="font-size: 30px">devices</mat-icon>
+                </pxb-empty-state>
+            </mat-card-content>
+
+            <mat-card-actions *ngIf="device.performance" fxFlex="0 0 auto" style="margin: 0; text-align: right">
+                <button mat-button color="primary">REPORT</button>
+                <button mat-button color="primary" style="margin-right: 0">LEARN MORE</button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list> -->
+
+<p>sub-content works!</p>

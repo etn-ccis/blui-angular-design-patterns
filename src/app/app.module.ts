@@ -17,6 +17,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTabsModule } from '@angular/material/tabs';
 import { UnCamelCasePipe } from './shared/un-camel-case.pipe';
 import { GroupByPipe } from './shared/groupby.pipe';
 import { ObjectToList } from './shared/key-value.pipe';
@@ -25,7 +26,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormValidationComponent } from './pages/form-validation/form-validation.component';
 import { ActionListComponent } from './pages/action-list/action-list.component';
 import { AppBarComponent } from './pages/app-bar/app-bar.component';
-
+import { EmptyStatesComponent } from './pages/empty-states/empty-states.component';
+import { ActionComponent } from './pages/empty-states/action/action.component';
+import { TextOnlyComponent } from './pages/empty-states/text-only/text-only.component';
+import { PlaceholderComponent } from './pages/empty-states/placeholder/placeholder.component';
+import { SubContentComponent } from './pages/empty-states/sub-content/sub-content.component';
+// import { EmptyStateModule } from '@pxblue/angular-components';
 
 @NgModule({
   declarations: [
@@ -37,7 +43,12 @@ import { AppBarComponent } from './pages/app-bar/app-bar.component';
     DataListComponent,
     FormValidationComponent,
     ActionListComponent,
-    AppBarComponent
+    AppBarComponent,
+    EmptyStatesComponent,
+    ActionComponent,
+    TextOnlyComponent,
+    PlaceholderComponent,
+    SubContentComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -55,7 +66,9 @@ import { AppBarComponent } from './pages/app-bar/app-bar.component';
     FormsModule,
     ReactiveFormsModule,
     MatInputModule, 
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatTabsModule,
+    // EmptyStateModule
   ],
   providers: [NavigationService],
   bootstrap: [AppComponent]

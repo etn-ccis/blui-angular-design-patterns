@@ -28,6 +28,16 @@ export class AppComponent {
     let message;
 
     switch (url) {
+      case '/app-bar':
+        message = '...some info about the app bar'
+        break;
+      case '/empty-states':
+      case '/empty-states/action':
+      case '/empty-states/text-only':
+      case '/empty-states/placeholder':
+      case '/empty-states/sub-content':
+        message = '...some info about empty states'
+        break;
       case '/data-list':
         message = '...some info about the data list'
         break;

@@ -1,5 +1,5 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { NavigationService } from 'src/app/services/navigation.service';
+import { Component, ChangeDetectorRef } from '@angular/core';
+import { NavigationService } from '../../../app/services/navigation.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

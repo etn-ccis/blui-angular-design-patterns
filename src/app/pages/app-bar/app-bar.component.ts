@@ -1,5 +1,5 @@
 import { Component, OnInit, NgZone, ViewChild, ElementRef } from '@angular/core';
-import { presidents } from 'src/app/data/presidents';
+import { presidents } from '../../../app/data/presidents';
 import { map } from 'rxjs/operators';
 import { ScrollDispatcher, CdkScrollable } from '@angular/cdk/scrolling';
 

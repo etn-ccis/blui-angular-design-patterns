@@ -1,40 +1,39 @@
 <div class="drawer">
-	<mat-sidenav #snav mode="over" class="sidenav" [opened]="open">
-		<mat-nav-list fxFlexFill style="padding-top:0; overflow-x:hidden" data-cy="nav-header">
-		
-			<mat-toolbar color="primary">
-				<mat-toolbar-row >
-					PX Blue Design Patterns
-				</mat-toolbar-row>
-			</mat-toolbar>
+    <mat-sidenav #snav mode="over" class="sidenav" [opened]="open">
+        <mat-nav-list fxFlexFill style="padding-top: 0; overflow-x: hidden;" data-cy="nav-header">
+            <mat-toolbar color="primary">
+                <mat-toolbar-row>
+                    PX Blue Design Patterns
+                </mat-toolbar-row>
+            </mat-toolbar>
 
-			<mat-divider></mat-divider>
-			<div class="navWrapper">
-				<section>
-					<h3 matSubheader style="margin-top: 0">Design Patterns</h3>
-					<mat-divider></mat-divider>
-					<a mat-list-item [routerLinkActive]="['primaryLink']" routerLink="/app-bar">
-						<mat-icon matListIcon class="nav-icon">move_to_inbox</mat-icon>
-						App Bar
-					</a>
-					<a mat-list-item [routerLinkActive]="['primaryLink']" routerLink="/empty-states">
-						<mat-icon matListIcon class="nav-icon">move_to_inbox</mat-icon>
-						Empty States
-					</a>
-					<a mat-list-item [routerLinkActive]="['primaryLink']" routerLink="/data-list">
-						<mat-icon matListIcon class="nav-icon">move_to_inbox</mat-icon>
-						Data List
-					</a>
-					<a mat-list-item [routerLinkActive]="['primaryLink']" routerLink="/action-list">
-						<mat-icon matListIcon class="nav-icon">move_to_inbox</mat-icon>
-						Action List
-					</a>
-					<a mat-list-item [routerLinkActive]="['primaryLink']" routerLink="/form-validation">
-						<mat-icon matListIcon class="nav-icon">move_to_inbox</mat-icon>
-						Form Validation
-					</a>
-				</section>
-			</div>
-		</mat-nav-list>
-	</mat-sidenav>
+            <mat-divider></mat-divider>
+            <div class="navWrapper">
+                <section>
+                    <h3 matSubheader style="margin-top: 0;">Design Patterns</h3>
+                    <mat-divider></mat-divider>
+                    <a mat-list-item [routerLinkActive]="['primaryLink']" routerLink="/app-bar">
+                        <mat-icon matListIcon class="nav-icon">move_to_inbox</mat-icon>
+                        App Bar
+                    </a>
+                    <a mat-list-item [routerLinkActive]="['primaryLink']" routerLink="/empty-states">
+                        <mat-icon matListIcon class="nav-icon">move_to_inbox</mat-icon>
+                        Empty States
+                    </a>
+                    <a mat-list-item [routerLinkActive]="['primaryLink']" routerLink="/data-list">
+                        <mat-icon matListIcon class="nav-icon">move_to_inbox</mat-icon>
+                        Data List
+                    </a>
+                    <a mat-list-item [routerLinkActive]="['primaryLink']" routerLink="/action-list">
+                        <mat-icon matListIcon class="nav-icon">move_to_inbox</mat-icon>
+                        Action List
+                    </a>
+                    <a mat-list-item [routerLinkActive]="['primaryLink']" routerLink="/form-validation">
+                        <mat-icon matListIcon class="nav-icon">move_to_inbox</mat-icon>
+                        Form Validation
+                    </a>
+                </section>
+            </div>
+        </mat-nav-list>
+    </mat-sidenav>
 </div>

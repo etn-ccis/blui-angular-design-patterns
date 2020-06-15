@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-placeholder',
-  templateUrl: './placeholder.component.html',
-  styleUrls: ['./placeholder.component.scss']
+    selector: 'app-placeholder',
+    templateUrl: './placeholder.component.html',
+    styleUrls: ['./placeholder.component.scss'],
 })
 export class PlaceholderComponent implements OnInit {
-  title = '';
-  
-  constructor() { }
+    title = '';
 
-  ngOnInit(): void {
-  }
+    constructor() {}
 
+    ngOnInit(): void {}
 }

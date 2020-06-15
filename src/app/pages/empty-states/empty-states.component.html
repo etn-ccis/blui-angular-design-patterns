@@ -4,13 +4,19 @@
 
 <div class="page-body" fxFlex="1 1 0px" fxLayout="column">
     <nav mat-tab-nav-bar backgroundColor="primary">
-        <a mat-tab-link *ngFor="let tab of tabs" [routerLink]="[tab.path]" routerLinkActive #rla="routerLinkActive"
-            [routerLinkActiveOptions]="{exact: true}" [active]="rla.isActive">
+        <a
+            mat-tab-link
+            *ngFor="let tab of tabs"
+            [routerLink]="[tab.path]"
+            routerLinkActive
+            #rla="routerLinkActive"
+            [routerLinkActiveOptions]="{ exact: true }"
+            [active]="rla.isActive"
+        >
             {{ tab.label }}
         </a>
     </nav>
-    <div fxFlex="1 1 0px" style="padding: 20px; overflow-y: auto">
+    <div fxFlex="1 1 0px" style="padding: 20px; overflow-y: auto;">
         <router-outlet></router-outlet>
     </div>
-
 </div>

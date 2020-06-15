@@ -1,50 +1,48 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-action-list',
-  templateUrl: './action-list.component.html',
-  styleUrls: ['./action-list.component.scss']
+    selector: 'app-action-list',
+    templateUrl: './action-list.component.html',
+    styleUrls: ['./action-list.component.scss'],
 })
 export class ActionListComponent implements OnInit {
+    data: any[] = [];
+    item: any = '';
 
-  data: any[] = [];
-  item: any = "";
-
-  createItem(index: number) {
-    return { id: index, name: `Item ${index}`, details: `item ${index} details` };
-  }
-
-  createRandomItem() {
-    const int: number = parseInt((Math.random() * 100) + '', 10);
-    return this.createItem(int);
-  }
-
-  ngOnInit(): void {
-    for (let i = 1; i <= 10; i++) {
-      this.data.push(this.createRandomItem());
+    createItem(index: number) {
+        return { id: index, name: `Item ${index}`, details: `item ${index} details` };
     }
-  }
 
-  onOpenMenu(menu: any): void { }
+    createRandomItem() {
+        const int: number = parseInt(`${Math.random() * 100}`, 10);
+        return this.createItem(int);
+    }
 
-  onSelected(item: any) {
-    this.item = item;
-  }
+    ngOnInit(): void {
+        for (let i = 1; i <= 10; i++) {
+            this.data.push(this.createRandomItem());
+        }
+    }
 
-  isSelected(item: any) {
-    return this.item === item;
-  }
+    onOpenMenu(menu: any): void {}
 
-  onAddItem() {
-    this.data.push(this.createRandomItem());
-  }
+    onSelected(item: any) {
+        this.item = item;
+    }
 
-  onRemoveItem(item: any) {
-    this.data.splice(this.data.indexOf(item), 1);
-  }
+    isSelected(item: any) {
+        return this.item === item;
+    }
 
-  onRemoveAll() {
-    this.data = [];
-  }
+    onAddItem() {
+        this.data.push(this.createRandomItem());
+    }
 
+    onRemoveItem(item: any) {
+        this.data.splice(this.data.indexOf(item), 1);
+    }
+
+    onRemoveAll() {
+        this.data = [];
+    }
 }

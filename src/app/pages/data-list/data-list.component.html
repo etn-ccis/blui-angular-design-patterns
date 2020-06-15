@@ -1,10 +1,10 @@
 <mat-toolbar color="primary">
     <div>Key Value List</div>
-    <div fxFlex style="margin:auto;"></div>
+    <div fxFlex style="margin: auto;"></div>
 </mat-toolbar>
 <mat-list>
-    <mat-list-item *ngFor="let item of list | keyValue;">
-        <div fxLayout="row" style="width:100%">
+    <mat-list-item *ngFor="let item of list | keyValue">
+        <div fxLayout="row" style="width: 100%;">
             <span>{{ item.key | unCamelCase }}</span>
             <span fxFlex></span>
             <span>{{ item.value }}</span>

@@ -1,14 +1,10 @@
 import { Component } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import { Router } from '@angular/router';
 import { StateService } from './services/state.service';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
-import { ViewportService } from './services/viewport.service';
 import * as PXBColors from '@pxblue/colors';
 import { DrawerLayoutVariantType } from '@pxblue/angular-components';
-import { DrawerItem, ROUTEES } from './app-routing.module';
-const iconSet = require('@pxblue/icons-svg/icons.svg');
+import { DrawerItem, ROUTES } from './app-routing.module';
+import {ViewportService} from "./services/viewport.service";
 
 @Component({
     selector: 'app-root',
@@ -16,29 +12,16 @@ const iconSet = require('@pxblue/icons-svg/icons.svg');
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-    title = 'angular-design-patterns';
-    designPatternDetails: string;
-    colors: Record<string, any>;
-    variant: DrawerLayoutVariantType = 'persistent';
-    routes = ROUTEES;
+    colors: Record<string, any> = PXBColors;
+    routes = ROUTES;
     selected: string;
 
-    constructor(
-        private router: Router,
-        public readonly stateService: StateService,
-        private readonly matIconRegistry: MatIconRegistry,
-        private readonly domSanitizer: DomSanitizer,
-        private readonly viewportService: ViewportService
-    ) {
-        this.colors = PXBColors;
-        this.matIconRegistry.addSvgIconSetInNamespace(
-            'px-icons',
-            this.domSanitizer.bypassSecurityTrustResourceUrl(iconSet)
-        );
-    }
+    constructor(private router: Router, public readonly stateService: StateService, public viewportService: ViewportService) {}
 
-    select(route: DrawerItem): void {
-        this.router.navigate([route.path]);
-        this.selected = route.title;
+    select(route: DrawerItem, parentRoute: string = '/'): void {
+        if (!route.children) {
+            this.router.navigate([parentRoute + route.path]);
+            this.selected = route.title;
+        }
     }
 }

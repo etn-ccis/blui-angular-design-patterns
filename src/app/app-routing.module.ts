@@ -1,10 +1,10 @@
-import { Component, NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { DataListComponent } from './pages/data-list/data-list.component';
-import { FormValidationComponent } from './pages/form-validation/form-validation.component';
-import { ActionListComponent } from './pages/action-list/action-list.component';
-import { PlaceholderComponent } from './pages/placeholder/placeholder.component';
-import { ComponentFixture } from '@angular/core/testing';
+import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
+import {DataListComponent} from './pages/data-list/data-list.component';
+import {FormValidationComponent} from './pages/form-validation/form-validation.component';
+import {ActionListComponent} from './pages/action-list/action-list.component';
+import {PlaceholderComponent} from './pages/placeholder/placeholder.component';
+import {AppBarComponent} from './pages/app-bar/app-bar.component';
 
 export type DrawerItem = {
     title: string;
@@ -14,7 +14,7 @@ export type DrawerItem = {
     redirectTo?: string;
 };
 
-export const ROUTEES: DrawerItem[] = [
+export const ROUTES: DrawerItem[] = [
     {
         title: 'App Bar',
         path: 'app-bar',
@@ -22,7 +22,7 @@ export const ROUTEES: DrawerItem[] = [
             {
                 title: 'Collapsible',
                 path: 'collapsible',
-                component: PlaceholderComponent,
+                component: AppBarComponent,
             },
             {
                 title: 'Search',
@@ -45,7 +45,7 @@ export const ROUTEES: DrawerItem[] = [
     {
         title: 'Form Validation',
         path: 'form-validation',
-        component: PlaceholderComponent,
+        component: FormValidationComponent,
     },
     {
         title: 'Internationalization',
@@ -59,12 +59,12 @@ export const ROUTEES: DrawerItem[] = [
             {
                 title: 'Action List',
                 path: 'action-list',
-                component: PlaceholderComponent,
+                component: ActionListComponent,
             },
             {
                 title: 'Data List',
                 path: 'data-list',
-                component: PlaceholderComponent,
+                component: DataListComponent,
             },
             {
                 title: 'Multiselect List',
@@ -118,7 +118,7 @@ export const ROUTEES: DrawerItem[] = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(ROUTEES)],
+    imports: [RouterModule.forRoot(ROUTES)],
     exports: [RouterModule],
 })
 export class AppRoutingModule {}

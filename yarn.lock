@@ -1071,20 +1071,13 @@
   dependencies:
     tslib "^1.9.0"
 
-"@pxblue/angular-themes@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@pxblue/angular-themes/-/angular-themes-4.0.0.tgz#8959f160520b347453953b6c306cdffa5ac72306"
-  integrity sha512-LwfxTVvHo+m2hOJTRJ+2HgV8F9fTWTdtLDaNF0MV8hBik1157kdPbvSBcIQ3je2RNj3VFb4l4RGILMgN6MaV4A==
+"@pxblue/angular-themes@^5.0.0-beta.8":
+  version "5.0.0-beta.8"
+  resolved "https://registry.yarnpkg.com/@pxblue/angular-themes/-/angular-themes-5.0.0-beta.8.tgz#73325b1b8282977fa37fd39117f5f29ae565f387"
+  integrity sha512-u8GYKcKyrZbfV/LKzoT54wqKziu0aTfnF8wcFAOBESdbb5mNewWo2QTxB25cDehVdjU93CU3Kar+IWdizgLdCg==
   dependencies:
-    "@pxblue/colors" "^2.0.0"
+    "@pxblue/colors" "^3.0.0"
     typeface-open-sans "^0.0.75"
-
-"@pxblue/colors@^2.0.0":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@pxblue/colors/-/colors-2.0.1.tgz#d24dae5bc6c3b9755b52a22738aa567bfeea3b8c"
-  integrity sha512-Uceh+1Bd0acoC+KulmhxrUOkWMlOgnqXFLS02l5SHYRL3ggyjSgHBVMRp2DLt24e/OJn5tAOoNJTC9q77U297w==
-  dependencies:
-    "@pxblue/types" "^1.0.0"
 
 "@pxblue/colors@^3.0.0":
   version "3.0.0"
@@ -1117,11 +1110,6 @@
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@pxblue/prettier-config/-/prettier-config-1.0.2.tgz#fb00503df6557b66c3d91d43c9101e614c35d2ec"
   integrity sha512-/3cLBoTjZs3kV1ATPA/Sp0tsL7XmlV/b8HW/qt0jqR/uP5+cdXL2YIhMXQngLRa7PhpSkEiRIYK5sl0rKsXTUg==
-
-"@pxblue/types@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@pxblue/types/-/types-1.0.0.tgz#befa98a12ae95a407c252399c69677aa7427d97e"
-  integrity sha512-K0liTITRTZfv7n/2UmbP0g/nTelr3aaDlA5XleGqC+1hLRab20MpVaOSgLRiU8+4f0vayGtbBm63HyHgoXMROw==
 
 "@pxblue/types@^2.0.0":
   version "2.0.0"

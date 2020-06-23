@@ -1,4 +1,8 @@
-<pxb-drawer-layout [width]="270" [variant]="viewportService.isSmall() ? 'temporary' : 'permanent' " (backdropClick)="stateService.setDrawerOpen(false)">
+<pxb-drawer-layout
+    [width]="270"
+    [variant]="viewportService.isSmall() ? 'temporary' : 'permanent'"
+    (backdropClick)="stateService.setDrawerOpen(false)"
+>
     <pxb-drawer pxb-drawer [open]="stateService.getDrawerOpen()">
         <pxb-drawer-header title="PX Blue" subtitle="Angular Design Patterns"></pxb-drawer-header>
         <pxb-drawer-body>

@@ -1,6 +1,6 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {DataListComponent} from './data-list.component';
-import {DataListModule} from "./data-list.module";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { DataListComponent } from './data-list.component';
+import { DataListModule } from './data-list.module';
 
 describe('DataListComponent', () => {
     let component: DataListComponent;
@@ -8,7 +8,7 @@ describe('DataListComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-          imports: [DataListModule]
+            imports: [DataListModule],
         }).compileComponents();
     }));
 

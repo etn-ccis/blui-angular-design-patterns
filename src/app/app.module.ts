@@ -1,10 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
@@ -19,15 +17,12 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DrawerLayoutModule, DrawerModule, EmptyStateModule } from '@pxblue/angular-components';
 import { PlaceholderComponent } from './pages/placeholder/placeholder.component';
-import {DataListModule} from "./pages/list/data-list/data-list.module";
+import { DataListModule } from './pages/list/data-list/data-list.module';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        PlaceholderComponent,
-    ],
+    declarations: [AppComponent, PlaceholderComponent],
     imports: [
-      DataListModule,
+        DataListModule,
         DrawerLayoutModule,
         DrawerModule,
         BrowserAnimationsModule,

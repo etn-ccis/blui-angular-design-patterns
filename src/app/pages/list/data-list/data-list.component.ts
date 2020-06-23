@@ -1,4 +1,4 @@
-import {Component, Pipe, PipeTransform} from '@angular/core';
+import { Component, Pipe, PipeTransform } from '@angular/core';
 
 @Component({
     selector: 'app-data-list',
@@ -18,29 +18,28 @@ export class DataListComponent {
 }
 
 @Pipe({
-  name: 'keyValue'
+    name: 'keyValue',
 })
 export class ObjectToList implements PipeTransform {
-  transform(obj, args?: string[]): any {
-    let list = [];
-    for (let key in obj) {
-      list.push({ key: key, value: obj[key]});
+    transform(obj, args?: string[]): any {
+        let list = [];
+        for (let key in obj) {
+            list.push({ key: key, value: obj[key] });
+        }
+        return list;
     }
-    return list;
-  }
 }
 
-
 @Pipe({
-  name: 'unCamelCase'
+    name: 'unCamelCase',
 })
 export class UnCamelCasePipe implements PipeTransform {
-
-  transform(value: any, args?: any): any {
-    return 	value
-      .replace(/([a-z])([A-Z])/g, '$1 $2')
-      .replace(/\b([A-Z]+)([A-Z])([a-z])/, '$1 $2$3')
-      .replace(/^./, function(str){ return str.toUpperCase(); })
-  }
-
+    transform(value: any, args?: any): any {
+        return value
+            .replace(/([a-z])([A-Z])/g, '$1 $2')
+            .replace(/\b([A-Z]+)([A-Z])([a-z])/, '$1 $2$3')
+            .replace(/^./, function (str) {
+                return str.toUpperCase();
+            });
+    }
 }

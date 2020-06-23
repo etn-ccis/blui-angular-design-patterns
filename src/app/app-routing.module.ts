@@ -1,7 +1,7 @@
-import {NgModule} from '@angular/core';
-import {RouterModule} from '@angular/router';
-import {DataListComponent} from './pages/list/data-list/data-list.component';
-import {PlaceholderComponent} from './pages/placeholder/placeholder.component';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { DataListComponent } from './pages/list/data-list/data-list.component';
+import { PlaceholderComponent } from './pages/placeholder/placeholder.component';
 
 export type DrawerItem = {
     title: string;

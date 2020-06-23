@@ -1064,10 +1064,10 @@
   dependencies:
     mkdirp "^1.0.4"
 
-"@pxblue/angular-components@2.0.0-beta.8":
-  version "2.0.0-beta.8"
-  resolved "https://registry.yarnpkg.com/@pxblue/angular-components/-/angular-components-2.0.0-beta.8.tgz#f0537dbd795006d354c2ec1c7b03ea365f92de7c"
-  integrity sha512-x7wABbfH/cxh7zg2VSaoMSgahBiakwfTuT1ylbJFRCzDbNe1iD0iQYQZ44az5O2hPQQIJ+8wKUV3J/9C5LHDbQ==
+"@pxblue/angular-components@2.0.0-beta.9":
+  version "2.0.0-beta.9"
+  resolved "https://registry.yarnpkg.com/@pxblue/angular-components/-/angular-components-2.0.0-beta.9.tgz#e702f5e10fc32c181e46c48c8d65441d25624545"
+  integrity sha512-oHxL3Of5J/KePbrjUHksmyfIW6UXs1rA3Fxj7t8SSOSk+2N37MFy1Vb9nK6qE4W1pyLrDulN6QBCQXjVf0r4Kg==
   dependencies:
     tslib "^1.9.0"
 

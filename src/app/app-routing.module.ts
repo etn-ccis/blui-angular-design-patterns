@@ -1,10 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
-import {DataListComponent} from './pages/data-list/data-list.component';
-import {FormValidationComponent} from './pages/form-validation/form-validation.component';
-import {ActionListComponent} from './pages/action-list/action-list.component';
+import {DataListComponent} from './pages/list/data-list/data-list.component';
 import {PlaceholderComponent} from './pages/placeholder/placeholder.component';
-import {AppBarComponent} from './pages/app-bar/app-bar.component';
 
 export type DrawerItem = {
     title: string;
@@ -22,7 +19,7 @@ export const ROUTES: DrawerItem[] = [
             {
                 title: 'Collapsible',
                 path: 'collapsible',
-                component: AppBarComponent,
+                component: PlaceholderComponent,
             },
             {
                 title: 'Search',
@@ -45,7 +42,7 @@ export const ROUTES: DrawerItem[] = [
     {
         title: 'Form Validation',
         path: 'form-validation',
-        component: FormValidationComponent,
+        component: PlaceholderComponent,
     },
     {
         title: 'Internationalization',
@@ -59,7 +56,7 @@ export const ROUTES: DrawerItem[] = [
             {
                 title: 'Action List',
                 path: 'action-list',
-                component: ActionListComponent,
+                component: PlaceholderComponent,
             },
             {
                 title: 'Data List',

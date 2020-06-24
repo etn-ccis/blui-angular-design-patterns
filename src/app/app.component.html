@@ -1,11 +1,31 @@
-<div fxLayout="row">
-  <app-drawer></app-drawer>
-
-  <div fxFlex style="height: 100vh; overflow-y: scroll;">
-    <router-outlet></router-outlet>
-  </div>
-
-  <div class="right-panel">
-    {{ designPatternDetails }}
-  </div>
-</div>
+<pxb-drawer-layout
+    [width]="270"
+    [variant]="viewportService.isSmall() ? 'temporary' : 'permanent'"
+    (backdropClick)="stateService.setDrawerOpen(false)"
+>
+    <pxb-drawer pxb-drawer [open]="stateService.getDrawerOpen()">
+        <pxb-drawer-header title="PX Blue" subtitle="Angular Design Patterns"></pxb-drawer-header>
+        <pxb-drawer-body>
+            <pxb-drawer-nav-group>
+                <pxb-drawer-nav-item
+                    *ngFor="let navItem of routes"
+                    [title]="navItem.title"
+                    [selected]="selected === navItem.title"
+                    (select)="select(navItem)"
+                >
+                    <pxb-drawer-nav-item
+                        *ngFor="let nestedItem of navItem.children"
+                        [hidePadding]="true"
+                        [title]="nestedItem.title"
+                        [selected]="selected === nestedItem.title"
+                        (select)="select(nestedItem, navItem.path + '/')"
+                    >
+                    </pxb-drawer-nav-item>
+                </pxb-drawer-nav-item>
+            </pxb-drawer-nav-group>
+        </pxb-drawer-body>
+    </pxb-drawer>
+    <div pxb-content>
+        <router-outlet></router-outlet>
+    </div>
+</pxb-drawer-layout>

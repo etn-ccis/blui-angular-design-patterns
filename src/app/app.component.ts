@@ -1,57 +1,31 @@
 import { Component } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { StateService } from './services/state.service';
+import * as PXBColors from '@pxblue/colors';
+import { DrawerLayoutVariantType } from '@pxblue/angular-components';
+import { DrawerItem, ROUTES } from './app-routing.module';
+import { ViewportService } from './services/viewport.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'angular-design-patterns';
-  designPatternDetails: string;
+    colors: Record<string, any> = PXBColors;
+    routes = ROUTES;
+    selected: string;
 
-  constructor(public router: Router) {
+    constructor(
+        private router: Router,
+        public readonly stateService: StateService,
+        public viewportService: ViewportService
+    ) {}
 
-  }
-
-  ngOnInit() {
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)).subscribe((event) => {
-        if (event) {
-          this.designPatternDetails = this.getDesignPatternDetails(this.router.url);
+    select(route: DrawerItem, parentRoute: string = '/'): void {
+        if (!route.children) {
+            this.router.navigate([parentRoute + route.path]);
+            this.selected = route.title;
         }
-      });
-  }
-
-  getDesignPatternDetails(url: string) {
-    let message;
-
-    switch (url) {
-      case '/app-bar':
-        message = '...some info about the app bar'
-        break;
-      case '/empty-states':
-      case '/empty-states/action':
-      case '/empty-states/text-only':
-      case '/empty-states/placeholder':
-      case '/empty-states/sub-content':
-        message = '...some info about empty states'
-        break;
-      case '/data-list':
-        message = '...some info about the data list'
-        break;
-      case '/action-list':
-        message = '...some info about the action list'
-        break;
-      case '/form-validation':
-        message = '...some info about form-validation'
-        break;
-      default:
-        ''
     }
-
-    return message;
-  }
-
 }

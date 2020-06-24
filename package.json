@@ -10,6 +10,7 @@
         "e2e": "ng e2e",
         "lint:fix": "eslint \"src/**/**.ts\" --fix",
         "prettier": "prettier \"src/**/**.{ts,js,json,css,scss,html}\" --write"
+        "prettier:check": "prettier \"src/**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --check"
     },
     "private": true,
     "dependencies": {

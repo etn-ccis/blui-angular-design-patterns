@@ -15,8 +15,8 @@ import { InfoListItemModule, EmptyStateModule } from '@pxblue/angular-components
         MatIconModule,
         MatMenuModule,
         InfoListItemModule,
-        EmptyStateModule
+        EmptyStateModule,
     ],
     declarations: [ActionListComponent],
 })
-export class ActionListModule { }
+export class ActionListModule {}

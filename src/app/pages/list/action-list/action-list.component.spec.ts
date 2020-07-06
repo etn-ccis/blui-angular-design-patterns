@@ -54,7 +54,10 @@ describe('ActionListComponent', () => {
         component.data = [{ id: 1, name: 'Item 1', details: 'item 1 details' }];
         component.onAddItem();
         void expect(component.createRandomItem).toHaveBeenCalled();
-        void expect(component.data).toEqual([{ id: 1, name: 'Item 1', details: 'item 1 details' }, { id: 2, name: 'Item 2', details: 'item 2 details' }]);
+        void expect(component.data).toEqual([
+            { id: 1, name: 'Item 1', details: 'item 1 details' },
+            { id: 2, name: 'Item 2', details: 'item 2 details' },
+        ]);
     }));
 
     it('onRemoveItem', async(() => {

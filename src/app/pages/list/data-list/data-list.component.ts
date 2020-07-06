@@ -1,4 +1,4 @@
-import { Component, Pipe, PipeTransform } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-data-list',
@@ -6,40 +6,28 @@ import { Component, Pipe, PipeTransform } from '@angular/core';
     styleUrls: ['./data-list.component.scss'],
 })
 export class DataListComponent {
-    list = {
-        georgeWashington: 1789,
-        johnAdams: 1796,
-        thomasJefferson: 1800,
-        jamesMadison: 1808,
-        jamesMonroe: 1812,
-    };
+    list = [
+        {
+            name: 'George Washington',
+            year: 1789,
+        },
+        {
+            name: 'John Adams',
+            year: 1796,
+        },
+        {
+            name: 'Thomas Jefferson',
+            year: 1800,
+        },
+        {
+            name: 'James Madison',
+            year: 1808,
+        },
+        {
+            name: 'James Monroe',
+            year: 1812,
+        },
+    ];
 
     constructor() {}
-}
-
-@Pipe({
-    name: 'keyValue',
-})
-export class ObjectToList implements PipeTransform {
-    transform(obj, args?: string[]): any {
-        let list = [];
-        for (let key in obj) {
-            list.push({ key: key, value: obj[key] });
-        }
-        return list;
-    }
-}
-
-@Pipe({
-    name: 'unCamelCase',
-})
-export class UnCamelCasePipe implements PipeTransform {
-    transform(value: any, args?: any): any {
-        return value
-            .replace(/([a-z])([A-Z])/g, '$1 $2')
-            .replace(/\b([A-Z]+)([A-Z])([a-z])/, '$1 $2$3')
-            .replace(/^./, function (str) {
-                return str.toUpperCase();
-            });
-    }
 }

@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { StateService } from './services/state.service';
 import * as PXBColors from '@pxblue/colors';
-import { DrawerLayoutVariantType } from '@pxblue/angular-components';
 import { DrawerItem, ROUTES } from './app-routing.module';
 import { ViewportService } from './services/viewport.service';
 
@@ -17,14 +16,15 @@ export class AppComponent {
     selected: string;
 
     constructor(
-        private router: Router,
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        private readonly router: Router,
         public readonly stateService: StateService,
         public viewportService: ViewportService
     ) {}
 
-    select(route: DrawerItem, parentRoute: string = '/'): void {
+    select(route: DrawerItem, parentRoute = '/'): void {
         if (!route.children) {
-            this.router.navigate([parentRoute + route.path]);
+            void this.router.navigate([parentRoute + route.path]);
             this.selected = route.title;
         }
     }

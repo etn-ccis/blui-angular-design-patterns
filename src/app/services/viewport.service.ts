@@ -9,6 +9,7 @@ export class ViewportService {
     breakpointSubscription: any;
     mobileViewport: boolean;
 
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     constructor(private readonly breakpointObserver: BreakpointObserver) {
         this.breakpointSubscription = this.breakpointObserver.observe(['(max-width: 720px)']).subscribe((result) => {
             const small = Object.keys(result.breakpoints)[0];

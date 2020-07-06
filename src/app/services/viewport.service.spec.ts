@@ -7,6 +7,6 @@ describe('ViewportService', () => {
 
     it('should be created', () => {
         const service: ViewportService = TestBed.get(ViewportService);
-        expect(service).toBeTruthy();
+        void expect(service).toBeTruthy();
     });
 });

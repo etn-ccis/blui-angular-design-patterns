@@ -18,7 +18,7 @@ describe('DataListComponent', () => {
         fixture.detectChanges();
     });
 
-    it('should credate', () => {
+    it('should create', () => {
         void expect(component).toBeTruthy();
     });
 });

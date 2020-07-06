@@ -1,0 +1,11 @@
+pxb-info-list-item {
+  cursor: pointer;
+
+  ::ng-deep &.selected mat-list-item {
+    background-color: #cccccc !important;
+  }
+}
+
+mat-nav-list {
+  padding-top: 0px;
+}

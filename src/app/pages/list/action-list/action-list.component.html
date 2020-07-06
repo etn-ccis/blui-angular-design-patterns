@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+    <div>Action List</div>
+    <div fxFlex style="margin: auto;"></div>
+    <button mat-icon-button (click)="onAddItem()"><mat-icon>add</mat-icon></button>
+</mat-toolbar>
+<mat-nav-list *ngIf="data.length > 0">
+    <pxb-info-list-item [hidePadding]=true *ngFor="let i of data" [class.selected]="isSelected(i)" (click)="onSelected(i)">
+        <span pxb-title>{{ i.name }}</span>
+        <span pxb-subtitle>{{ i.details }}</span>
+        <span pxb-right-content>
+            <button data-cy="action-menu" mat-icon-button #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="menu" (click)="menuTrigger.openMenu()">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button data-cy="remove" mat-menu-item (click)="onRemoveItem(i)">Remove</button>
+                <button data-cy="details" mat-menu-item>View Details</button>
+            </mat-menu>
+        </span>
+    </pxb-info-list-item>
+</mat-nav-list>
+<pxb-empty-state *ngIf="data.length === 0" title="No Items Found" style="margin: 16px;">
+    <button pxb-actions mat-raised-button color="primary" (click)="onAddItem()">
+        <mat-icon>add_circle</mat-icon>
+        Add An Item
+    </button>
+</pxb-empty-state>

@@ -1,8 +1,10 @@
+@import '~@pxblue/colors/palette.scss';
+
 pxb-info-list-item {
   cursor: pointer;
 
   ::ng-deep &.selected mat-list-item {
-    background-color: #cccccc !important;
+    background-color: map-get($pxb-gray, 100) !important;
   }
 }
 

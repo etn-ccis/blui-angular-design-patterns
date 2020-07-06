@@ -7,7 +7,7 @@ describe('DataListComponent', () => {
     let fixture: ComponentFixture<DataListComponent>;
 
     beforeEach(async(() => {
-        TestBed.configureTestingModule({
+        void TestBed.configureTestingModule({
             imports: [DataListModule],
         }).compileComponents();
     }));
@@ -19,6 +19,6 @@ describe('DataListComponent', () => {
     });
 
     it('should credate', () => {
-        expect(component).toBeTruthy();
+        void expect(component).toBeTruthy();
     });
 });

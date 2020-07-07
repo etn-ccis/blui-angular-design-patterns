@@ -1,5 +1,9 @@
 @import '~@pxblue/colors/palette.scss';
 
+::ng-deep .pxb-blue .mat-drawer-container {
+    background-color: map-get($pxb-white, 50) !important;
+}
+
 .right-panel {
     height: 100vh;
     border-left: 1px solid map-get($pxb-black, 50);

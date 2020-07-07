@@ -16,15 +16,14 @@ export class AppComponent {
     selected: string;
 
     constructor(
-        // eslint-disable-next-line @typescript-eslint/naming-convention
-        private readonly router: Router,
+        private readonly _router: Router,
         public readonly stateService: StateService,
         public viewportService: ViewportService
     ) {}
 
     select(route: DrawerItem, parentRoute = '/'): void {
         if (!route.children) {
-            void this.router.navigate([parentRoute + route.path]);
+            void this._router.navigate([parentRoute + route.path]);
             this.selected = route.title;
         }
     }

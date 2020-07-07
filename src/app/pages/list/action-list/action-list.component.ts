@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { StateService } from 'src/app/services/state.service';
+import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 
 export type ListItem = {
     id: number;
@@ -14,13 +16,27 @@ export type ListItem = {
 export class ActionListComponent implements OnInit {
     data: ListItem[] = [];
     item: ListItem;
+    isSmall: boolean;
 
-    constructor() {}
+    constructor(
+        private readonly _drawerService: StateService,
+        private readonly _breakpointObserver: BreakpointObserver
+    ) {}
 
     ngOnInit(): void {
         for (let i = 1; i <= 10; i++) {
             this.data.push(this.createRandomItem());
         }
+
+        this._breakpointObserver
+            .observe([Breakpoints.Small, Breakpoints.Handset])
+            .subscribe((state: BreakpointState) => {
+                if (state.matches) {
+                    this.isSmall = true;
+                } else {
+                    this.isSmall = false;
+                }
+            });
     }
 
     createItem(index: number): ListItem {
@@ -30,14 +46,6 @@ export class ActionListComponent implements OnInit {
     createRandomItem(): ListItem {
         const int: number = parseInt(`${Math.random() * 100}`, 10);
         return this.createItem(int);
-    }
-
-    onSelected(item: ListItem): void {
-        this.item = item;
-    }
-
-    isSelected(item: ListItem): boolean {
-        return this.item === item;
     }
 
     onAddItem(): void {
@@ -50,5 +58,10 @@ export class ActionListComponent implements OnInit {
 
     onRemoveAll(): void {
         this.data = [];
+    }
+
+    toggleMenu(): void {
+        const drawerOpen = this._drawerService.getDrawerOpen();
+        this._drawerService.setDrawerOpen(!drawerOpen);
     }
 }

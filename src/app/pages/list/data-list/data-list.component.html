@@ -1,6 +1,7 @@
 <mat-toolbar color="primary">
+    <button *ngIf="isSmall" mat-icon-button (click)="toggleMenu()"><mat-icon>menu</mat-icon></button>
     <div>Data List</div>
-    <div fxFlex style="margin: auto;"></div>
+    <pxb-spacer></pxb-spacer>
 </mat-toolbar>
 <mat-list>
     <pxb-info-list-item *ngFor="let item of list" [hidePadding]="true">

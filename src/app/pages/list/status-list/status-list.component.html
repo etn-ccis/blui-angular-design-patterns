@@ -5,7 +5,7 @@
     <div class="mat-title">Status List</div>
     <pxb-spacer></pxb-spacer>
 </mat-toolbar>
-<mat-nav-list class="alert" *ngIf="data.length > 0">
+<mat-list class="alert" *ngIf="data.length > 0">
     <pxb-info-list-item
         *ngFor="let item of data; let index = index"
         [statusColor]="setAlarm(item.status) ? colors.red[500] : ''"
@@ -19,4 +19,4 @@
             <pxb-list-item-tag [backgroundColor]="colors.red[500]" label="new"></pxb-list-item-tag>
         </span>
     </pxb-info-list-item>
-</mat-nav-list>
+</mat-list>

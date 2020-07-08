@@ -8,7 +8,7 @@
         {{ draggable ? 'Save' : 'Edit' }}
     </button>
 </mat-toolbar>
-<mat-nav-list *ngIf="data.length > 0" [disableRipple]="draggable">
+<mat-list *ngIf="data.length > 0" [disableRipple]="draggable">
     <section *ngIf="!draggable">
         <pxb-info-list-item *ngFor="let i of data" [hidePadding]="true">
             <span pxb-title>
@@ -30,4 +30,4 @@
             </span>
         </pxb-info-list-item>
     </div>
-</mat-nav-list>
+</mat-list>

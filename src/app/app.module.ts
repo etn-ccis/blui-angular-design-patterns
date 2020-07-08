@@ -19,12 +19,18 @@ import { DrawerLayoutModule, DrawerModule, EmptyStateModule } from '@pxblue/angu
 import { PlaceholderComponent } from './pages/placeholder/placeholder.component';
 import { DataListModule } from './pages/list/data-list/data-list.module';
 import { ActionListModule } from './pages/list/action-list/action-list.module';
+import { StatusListModule } from './pages/list/status-list/status-list.module';
+import { MultiselectListModule } from './pages/list/multiselect-list/multiselect-list.module';
+import { SortableListModule } from './pages/list/sortable-list/sortable-list.module';
 
 @NgModule({
     declarations: [AppComponent, PlaceholderComponent],
     imports: [
         ActionListModule,
         DataListModule,
+        StatusListModule,
+        MultiselectListModule,
+        SortableListModule,
         DrawerLayoutModule,
         DrawerModule,
         BrowserAnimationsModule,

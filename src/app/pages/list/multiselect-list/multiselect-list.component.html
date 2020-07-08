@@ -1,0 +1,40 @@
+<mat-toolbar color="primary">
+    <button *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="mat-title">Multiselect List</div>
+    <pxb-spacer></pxb-spacer>
+    <button mat-icon-button (click)="onAddItem()"><mat-icon>add</mat-icon></button>
+</mat-toolbar>
+<mat-nav-list>
+    <pxb-info-list-item *ngFor="let item of data">
+        <mat-checkbox mat-list-icon pxb-icon [checked]="isSelected(item)" (change)="onSelected(item)"></mat-checkbox>
+        <span pxb-title>
+            {{ item.name }}
+        </span>
+        <span pxb-subtitle>
+            {{ item.details }}
+        </span>
+        <mat-icon pxb-right-content>navigate_next</mat-icon>
+    </pxb-info-list-item>
+</mat-nav-list>
+<div *ngIf="data.length === 0" style="height: calc(100vh - 64px);">
+    <pxb-empty-state title="No Items Found" style="margin: 16px;">
+        <mat-icon pxb-empty-icon>error</mat-icon>
+        <button pxb-actions mat-raised-button color="primary" (click)="onAddItem()">
+            <mat-icon>add</mat-icon>
+            Add An Item
+        </button>
+    </pxb-empty-state>
+</div>
+<footer [class.active]="selectedItems.length > 0" class="mat-simple-snackbar" data-cy="snackbar" fxLayout="row">
+    <p style="margin-bottom: 0;">{{ selectedItems.length }} selected items</p>
+    <div>
+        <button mat-icon-button data-cy="snackbar-delete" (click)="deleteItems()">
+            <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-icon-button data-cy="snackbar-cancel" (click)="cancelItems()">
+            <mat-icon>cancel</mat-icon>
+        </button>
+    </div>
+</footer>

@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+    <button *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="mat-title">Status List</div>
+    <pxb-spacer></pxb-spacer>
+</mat-toolbar>
+<mat-nav-list class="alert" *ngIf="data.length > 0">
+    <pxb-info-list-item
+        *ngFor="let item of data; let index = index"
+        [statusColor]="setAlarm(item.status) ? colors.red[500] : ''"
+    >
+        <span pxb-icon><mat-icon>home</mat-icon></span>
+        <span pxb-title>{{ item.name }}</span>
+        <span pxb-subtitle>{{ item.details }}</span>
+    </pxb-info-list-item>
+</mat-nav-list>

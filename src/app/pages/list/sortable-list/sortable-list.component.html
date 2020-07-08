@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+    <button *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="mat-title">Sortable List</div>
+    <pxb-spacer></pxb-spacer>
+    <button mat-icon-button (click)="edit()">
+        <mat-icon>{{ draggable ? 'check' : 'edit' }}</mat-icon>
+    </button>
+</mat-toolbar>
+<mat-nav-list *ngIf="data.length > 0" [disableRipple]="draggable">
+    <section *ngIf="!draggable">
+        <pxb-info-list-item *ngFor="let i of data" [hidePadding]="true">
+            <span pxb-title>
+                {{ i.name }}
+            </span>
+            <span pxb-subtitle>
+                {{ i.details }}
+            </span>
+        </pxb-info-list-item>
+    </section>
+    <div cdkDropList (cdkDropListDropped)="onDrop($event)" *ngIf="draggable">
+        <pxb-info-list-item *ngFor="let i of data" cdkDrag>
+            <mat-icon pxb-icon cdkDragHandle class="handler">drag_indicator</mat-icon>
+            <span pxb-title>
+                {{ i.name }}
+            </span>
+            <span pxb-subtitle>
+                {{ i.details }}
+            </span>
+        </pxb-info-list-item>
+    </div>
+</mat-nav-list>

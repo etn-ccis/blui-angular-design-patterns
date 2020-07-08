@@ -1,10 +1,13 @@
 <mat-toolbar color="primary">
-    <div>Key Value List</div>
-    <div fxFlex style="margin: auto;"></div>
+    <button *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
+        <mat-icon class="mat-title">menu</mat-icon>
+    </button>
+    <div>Data List</div>
+    <pxb-spacer></pxb-spacer>
 </mat-toolbar>
 <mat-list>
-    <pxb-info-list-item *ngFor="let item of list | keyValue" [hidePadding]="true">
-        <span pxb-title>{{ item.key | unCamelCase }}</span>
-        <span pxb-right-content>{{ item.value }}</span>
+    <pxb-info-list-item *ngFor="let item of list" [hidePadding]="true">
+        <span pxb-title>{{ item.name }}</span>
+        <span pxb-right-content>{{ item.year }}</span>
     </pxb-info-list-item>
 </mat-list>

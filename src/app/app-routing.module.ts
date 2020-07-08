@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { DataListComponent } from './pages/list/data-list/data-list.component';
 import { PlaceholderComponent } from './pages/placeholder/placeholder.component';
+import { ActionListComponent } from './pages/list/action-list/action-list.component';
 
 export type DrawerItem = {
     title: string;
@@ -56,7 +57,7 @@ export const ROUTES: DrawerItem[] = [
             {
                 title: 'Action List',
                 path: 'action-list',
-                component: PlaceholderComponent,
+                component: ActionListComponent,
             },
             {
                 title: 'Data List',

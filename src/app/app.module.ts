@@ -18,10 +18,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DrawerLayoutModule, DrawerModule, EmptyStateModule } from '@pxblue/angular-components';
 import { PlaceholderComponent } from './pages/placeholder/placeholder.component';
 import { DataListModule } from './pages/list/data-list/data-list.module';
+import { ActionListModule } from './pages/list/action-list/action-list.module';
 
 @NgModule({
     declarations: [AppComponent, PlaceholderComponent],
     imports: [
+        ActionListModule,
         DataListModule,
         DrawerLayoutModule,
         DrawerModule,

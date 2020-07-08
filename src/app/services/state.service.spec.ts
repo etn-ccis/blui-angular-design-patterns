@@ -7,6 +7,6 @@ describe('StateService', () => {
 
     it('should be created', () => {
         const service: StateService = TestBed.get(StateService);
-        expect(service).toBeTruthy();
+        void expect(service).toBeTruthy();
     });
 });

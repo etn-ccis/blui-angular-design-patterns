@@ -1064,17 +1064,17 @@
   dependencies:
     mkdirp "^1.0.4"
 
-"@pxblue/angular-components@2.0.0-beta.9":
-  version "2.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/@pxblue/angular-components/-/angular-components-2.0.0-beta.9.tgz#e702f5e10fc32c181e46c48c8d65441d25624545"
-  integrity sha512-oHxL3Of5J/KePbrjUHksmyfIW6UXs1rA3Fxj7t8SSOSk+2N37MFy1Vb9nK6qE4W1pyLrDulN6QBCQXjVf0r4Kg==
+"@pxblue/angular-components@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@pxblue/angular-components/-/angular-components-2.0.0.tgz#28c9bfa10ee435845eed4a031f0864fe9bbce8da"
+  integrity sha512-B1XZP0mmAzLn3pkTvao2Wt6rHgsL/kjMo9qZs9R1GYGzGYW+Y4pnl19A8lj3RPyc3qgFtgyKry9GmUOZTLrq7A==
   dependencies:
     tslib "^1.9.0"
 
-"@pxblue/angular-themes@^5.0.0-beta.8":
-  version "5.0.0-beta.8"
-  resolved "https://registry.yarnpkg.com/@pxblue/angular-themes/-/angular-themes-5.0.0-beta.8.tgz#73325b1b8282977fa37fd39117f5f29ae565f387"
-  integrity sha512-u8GYKcKyrZbfV/LKzoT54wqKziu0aTfnF8wcFAOBESdbb5mNewWo2QTxB25cDehVdjU93CU3Kar+IWdizgLdCg==
+"@pxblue/angular-themes@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@pxblue/angular-themes/-/angular-themes-5.0.0.tgz#172df4d4319cff82bf4cee55c77dfaca7caf291c"
+  integrity sha512-WiBXZTQC/wJtVxJbykUCK6N01O1bBiXdBJFryzb1EzYAfUL7kAjnLqtX/owKGHo2wT8NdkgIc62WcH+fIdDXrg==
   dependencies:
     "@pxblue/colors" "^3.0.0"
     typeface-open-sans "^0.0.75"

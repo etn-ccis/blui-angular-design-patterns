@@ -10,8 +10,13 @@
         *ngFor="let item of data; let index = index"
         [statusColor]="setAlarm(item.status) ? colors.red[500] : ''"
     >
-        <span pxb-icon><mat-icon>home</mat-icon></span>
+        <span pxb-icon
+            ><mat-icon>{{ item.icon }}</mat-icon></span
+        >
         <span pxb-title>{{ item.name }}</span>
         <span pxb-subtitle>{{ item.details }}</span>
+        <span pxb-right-content *ngIf="setAlarm(item.status)">
+            <pxb-list-item-tag [backgroundColor]="colors.red[500]" label="new"></pxb-list-item-tag>
+        </span>
     </pxb-info-list-item>
 </mat-nav-list>

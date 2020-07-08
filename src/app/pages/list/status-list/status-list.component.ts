@@ -8,6 +8,8 @@ export type ListItem = {
     name: string;
     details: string;
     status: string;
+    icon: string;
+    isNew: boolean;
 };
 
 @Component({
@@ -41,13 +43,23 @@ export class StatusListComponent {
             });
     }
 
-    createItem(index: number, randomStatus: string): ListItem {
-        return { id: index, name: `Item ${index}`, details: `Status: ${randomStatus}`, status: randomStatus };
+    createItem(index: number, randomStatus: string, randomIcon: string, isNew: boolean): ListItem {
+        return {
+            id: index,
+            name: `Item ${index}`,
+            details: `Status: ${randomStatus}`,
+            status: randomStatus,
+            icon: randomIcon,
+            isNew: isNew,
+        };
     }
     createRandomItem(): ListItem {
         const int = parseInt(`${Math.random() * 100}`, 10);
-        const randomStatus = Math.random() >= 0.3 ? 'normal' : 'alarm';
-        return this.createItem(int, randomStatus);
+        const randomNumber = Math.random();
+        const randomStatus = randomNumber <= 0.3 ? 'normal' : randomNumber <= 0.8 ? 'warning' : 'alarm';
+        const randomIcon = randomNumber <= 0.3 ? 'home' : randomNumber <= 0.8 ? 'warning' : 'notifications';
+        const isNew = randomNumber <= 0.1;
+        return this.createItem(int, randomStatus, randomIcon, isNew);
     }
 
     setAlarm(status: string): boolean {

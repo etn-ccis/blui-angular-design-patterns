@@ -22,7 +22,7 @@ import { SpacerModule, InfoListItemModule, EmptyStateModule } from '@pxblue/angu
         MatSnackBarModule,
         SpacerModule,
         InfoListItemModule,
-        EmptyStateModule
+        EmptyStateModule,
     ],
     declarations: [MultiselectListComponent],
 })

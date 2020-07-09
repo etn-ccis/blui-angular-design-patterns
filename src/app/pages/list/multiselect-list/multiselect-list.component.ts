@@ -25,8 +25,8 @@ export class MultiselectListComponent implements OnInit {
     constructor(
         private readonly _drawerService: StateService,
         private readonly _breakpointObserver: BreakpointObserver,
-        private readonly _bottomSheet: MatBottomSheet,
-    ) { }
+        private readonly _bottomSheet: MatBottomSheet
+    ) {}
 
     ngOnInit(): void {
         for (let i = 1; i <= 10; i++) {
@@ -92,9 +92,12 @@ export class MultiselectListComponent implements OnInit {
     }
 
     openBottomSheet(): void {
-        const bottomSheetRef = this._bottomSheet.open(BottomSheetComponent, { data: { selectedItems: this.selectedItems }, disableClose: true, hasBackdrop: false });
-    
-        
+        const bottomSheetRef = this._bottomSheet.open(BottomSheetComponent, {
+            data: { selectedItems: this.selectedItems },
+            disableClose: true,
+            hasBackdrop: false,
+        });
+
         bottomSheetRef.afterDismissed().subscribe((data) => {
             if (data === 'deleteItems') {
                 this.deleteItems();
@@ -102,6 +105,6 @@ export class MultiselectListComponent implements OnInit {
             if (data === 'cancelItems') {
                 this.cancelItems();
             }
-        })
+        });
     }
 }

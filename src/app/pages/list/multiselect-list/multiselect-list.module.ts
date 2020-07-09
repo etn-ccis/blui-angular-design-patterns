@@ -27,7 +27,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         InfoListItemModule,
         EmptyStateModule,
         MatBottomSheetModule,
-        FlexLayoutModule
+        FlexLayoutModule,
     ],
     declarations: [MultiselectListComponent, BottomSheetComponent],
 })

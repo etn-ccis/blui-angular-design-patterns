@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { StateService } from 'src/app/services/state.service';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { BottomSheetComponent } from './bottom-sheet.component';
 
 export type ListItem = {
     id: number;
@@ -22,8 +24,9 @@ export class MultiselectListComponent implements OnInit {
 
     constructor(
         private readonly _drawerService: StateService,
-        private readonly _breakpointObserver: BreakpointObserver
-    ) {}
+        private readonly _breakpointObserver: BreakpointObserver,
+        private readonly _bottomSheet: MatBottomSheet,
+    ) { }
 
     ngOnInit(): void {
         for (let i = 1; i <= 10; i++) {
@@ -61,6 +64,10 @@ export class MultiselectListComponent implements OnInit {
         } else {
             this.selectedItems.splice(this.selectedItems.indexOf(item), 1);
         }
+
+        if (this.selectedItems.length) {
+            this.openBottomSheet();
+        }
     }
 
     isSelected(item: ListItem): boolean {
@@ -82,5 +89,19 @@ export class MultiselectListComponent implements OnInit {
     toggleMenu(): void {
         const drawerOpen = this._drawerService.getDrawerOpen();
         this._drawerService.setDrawerOpen(!drawerOpen);
+    }
+
+    openBottomSheet(): void {
+        const bottomSheetRef = this._bottomSheet.open(BottomSheetComponent, { data: { selectedItems: this.selectedItems }, disableClose: true, hasBackdrop: false });
+    
+        
+        bottomSheetRef.afterDismissed().subscribe((data) => {
+            if (data === 'deleteItems') {
+                this.deleteItems();
+            }
+            if (data === 'cancelItems') {
+                this.cancelItems();
+            }
+        })
     }
 }

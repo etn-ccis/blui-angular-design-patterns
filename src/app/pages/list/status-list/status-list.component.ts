@@ -66,6 +66,19 @@ export class StatusListComponent {
         return status === 'alarm' ? true : false;
     }
 
+    getIconColor(status: string): any {
+        switch (status) {
+            case 'normal':
+                return this.colors.black[500];
+            case 'warning':
+                return this.colors.orange[500];
+            case 'alarm':
+                return this.colors.red[500];
+            default:
+                return this.colors.black[500];
+        }
+    }
+
     toggleMenu(): void {
         const drawerOpen = this._drawerService.getDrawerOpen();
         this._drawerService.setDrawerOpen(!drawerOpen);

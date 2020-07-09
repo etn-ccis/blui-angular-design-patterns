@@ -11,7 +11,7 @@
         [statusColor]="setAlarm(item.status) ? colors.red[500] : ''"
     >
         <span pxb-icon
-            ><mat-icon>{{ item.icon }}</mat-icon></span
+            ><mat-icon [style.color]="getIconColor(item.status)">{{ item.icon }}</mat-icon></span
         >
         <span pxb-title>{{ item.name }}</span>
         <span pxb-subtitle>{{ item.details }}</span>

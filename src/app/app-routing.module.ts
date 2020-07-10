@@ -5,7 +5,6 @@ import { PlaceholderComponent } from './pages/placeholder/placeholder.component'
 import { ActionListComponent } from './pages/list/action-list/action-list.component';
 import { StatusListComponent } from './pages/list/status-list/status-list.component';
 import { MultiselectListComponent } from './pages/list/multiselect-list/multiselect-list.component';
-import { SortableListComponent } from './pages/list/sortable-list/sortable-list.component';
 
 export type DrawerItem = {
     title: string;
@@ -75,7 +74,7 @@ export const ROUTES: DrawerItem[] = [
             {
                 title: 'Sortable List',
                 path: 'sortable-list',
-                component: SortableListComponent,
+                component: PlaceholderComponent,
             },
             {
                 title: 'Status List',

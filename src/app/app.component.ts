@@ -9,7 +9,7 @@ import { ViewportService } from './services/viewport.service';
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
     colors: Record<string, any> = PXBColors;

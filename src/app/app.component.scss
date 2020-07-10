@@ -1,9 +1,10 @@
 @import '~@pxblue/colors/palette.scss';
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
-.pxb-drawer-layout-nav-content { 
+.pxb-drawer-layout-nav-content {
     background-color: map-get($pxb-white, 50) !important;
 }

@@ -1,19 +1,9 @@
 @import '~@pxblue/colors/palette.scss';
 
-::ng-deep .pxb-blue .mat-drawer-container {
+html, body {
+    height: 100%;
+}
+
+.pxb-drawer-layout-nav-content { 
     background-color: map-get($pxb-white, 50) !important;
-    min-height: 100vh !important;
-}
-
-.right-panel {
-    height: 100vh;
-    border-left: 1px solid map-get($pxb-black, 50);
-    padding: 1rem;
-    width: 270px;
-}
-
-@media screen and (max-width: 960px) {
-    .right-panel {
-        display: none;
-    }
 }

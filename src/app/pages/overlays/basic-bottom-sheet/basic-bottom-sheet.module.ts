@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { InfoListItemModule, SpacerModule } from '@pxblue/angular-components';
+import { InfoListItemModule } from '@pxblue/angular-components';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
@@ -14,7 +14,6 @@ import { DataService } from './data.service';
         CommonModule,
         InfoListItemModule,
         MatToolbarModule,
-        SpacerModule,
         MatIconModule,
         MatButtonModule,
         MatBottomSheetModule,

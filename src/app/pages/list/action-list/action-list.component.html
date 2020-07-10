@@ -7,7 +7,7 @@
     <button mat-icon-button (click)="onRemoveAll()"><mat-icon>delete</mat-icon></button>
     <button mat-icon-button (click)="onAddItem()"><mat-icon>add</mat-icon></button>
 </mat-toolbar>
-<mat-nav-list *ngIf="data.length > 0">
+<mat-list *ngIf="data.length > 0">
     <pxb-info-list-item [hidePadding]="true" *ngFor="let i of data">
         <span pxb-title>{{ i.name }}</span>
         <span pxb-subtitle>{{ i.details }}</span>
@@ -27,7 +27,7 @@
             </mat-menu>
         </span>
     </pxb-info-list-item>
-</mat-nav-list>
+</mat-list>
 <div *ngIf="data.length === 0" style="height: calc(100vh - 64px);">
     <pxb-empty-state title="No Items Found" style="margin: 16px;">
         <mat-icon pxb-empty-icon>error</mat-icon>

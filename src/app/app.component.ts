@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { StateService } from './services/state.service';
 import * as PXBColors from '@pxblue/colors';
@@ -9,6 +9,7 @@ import { ViewportService } from './services/viewport.service';
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
+    encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
     colors: Record<string, any> = PXBColors;

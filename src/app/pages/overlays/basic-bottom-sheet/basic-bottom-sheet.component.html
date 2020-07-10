@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+    <button *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div>Basic Bottom Sheet</div>
+    <pxb-spacer></pxb-spacer>
+</mat-toolbar>
+<mat-nav-list *ngIf="data.length > 0">
+    <pxb-info-list-item
+        *ngFor="let i of data; let index = index"
+        [class.active]="i.active"
+        (click)="showBottomSheet()"
+        [statusColor]="i.active ? Colors.red[500] : ''"
+    >
+        <mat-icon pxb-icon class="padded" *ngIf="!i.active">notifications</mat-icon>
+        <mat-icon pxb-icon class="padded" *ngIf="i.active" [style.color]="Colors.red[500]"
+            >notifications_active</mat-icon
+        >
+        <span pxb-title [style.color]="i.active ? Colors.red[500] : Colors.black[500]"
+            ><ng-container *ngIf="i.active">ACTIVE: </ng-container> {{ i.details }}</span
+        >
+        <span pxb-subtitle>
+            {{ i.date | date: 'MM/dd/yyyy' }}
+        </span>
+    </pxb-info-list-item>
+</mat-nav-list>

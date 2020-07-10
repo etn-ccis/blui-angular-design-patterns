@@ -73,7 +73,7 @@ export class StatusListComponent {
             case 'warning':
                 return this.colors.orange[500];
             case 'alarm':
-                return this.colors.red[500];
+                return this.colors.white[50];
             default:
                 return this.colors.black[500];
         }

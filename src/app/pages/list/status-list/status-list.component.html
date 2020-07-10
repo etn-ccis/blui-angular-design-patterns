@@ -9,9 +9,14 @@
     <pxb-info-list-item
         *ngFor="let item of data; let index = index"
         [statusColor]="setAlarm(item.status) ? colors.red[500] : ''"
+        [avatar]="true"
     >
-        <span pxb-icon
-            ><mat-icon [style.color]="getIconColor(item.status)">{{ item.icon }}</mat-icon></span
+        <mat-icon
+            pxb-icon
+            [style.color]="getIconColor(item.status)"
+            [style.backgroundColor]="item.status === 'alarm' ? colors.red[500] : ''"
+            style="box-sizing: content-box;"
+            >{{ item.icon }}</mat-icon
         >
         <span pxb-title>{{ item.name }}</span>
         <span pxb-subtitle>{{ item.details }}</span>

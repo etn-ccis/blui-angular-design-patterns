@@ -2,29 +2,36 @@
     <button *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
-    <div class="mat-title">Basic Bottom Sheet</div>
+    <div>Complex Bottom Sheet</div>
     <pxb-spacer></pxb-spacer>
     <button mat-icon-button (click)="showBottomSheet()">
         <mat-icon>more_vert</mat-icon>
     </button>
 </mat-toolbar>
-<mat-list *ngIf="data.length > 0">
+<mat-list *ngIf="data && data.length > 0">
     <pxb-info-list-item
         *ngFor="let i of data; let index = index"
+        [class.active]="i.active"
         [avatar]="true"
         [statusColor]="i.active ? Colors.red[500] : ''"
     >
-        <mat-icon pxb-icon class="padded" *ngIf="!i.active">notifications</mat-icon>
+        <mat-icon pxb-icon style="padding: 8px;" *ngIf="i.type == 'alarms' && !i.active">notifications</mat-icon>
         <mat-icon
             pxb-icon
-            class="padded"
-            *ngIf="i.active"
-            [style.color]="Colors.white[50]"
+            style="padding: 8px;"
+            *ngIf="i.type == 'alarms' && i.active"
             [style.backgroundColor]="Colors.red[500]"
+            [style.color]="Colors.white[50]"
             style="box-sizing: content-box;"
-            >notifications_active
-        </mat-icon>
-        <span pxb-title [style.color]="i.active ? Colors.red[500] : Colors.black[500]">
+            >notifications_active</mat-icon
+        >
+        <mat-icon pxb-icon style="padding: 8px;" *ngIf="i.type == 'session'">update</mat-icon>
+        <mat-icon pxb-icon style="padding: 8px;" *ngIf="i.type == 'settings'">settings</mat-icon>
+        <span
+            pxb-title
+            style="font-weight: 600; margin-bottom: 5px;"
+            [style.color]="i.active ? Colors.red[500] : 'inherit'"
+        >
             <ng-container *ngIf="i.active">ACTIVE: </ng-container> {{ i.details }}
         </span>
         <span pxb-subtitle>

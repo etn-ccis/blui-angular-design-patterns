@@ -1,0 +1,35 @@
+.bottomPanel {
+    min-width: 600px;
+    width: 100%;
+    max-width: 600px;
+    padding: 0;
+    .mat-nav-list {
+        padding: 0;
+    }
+    a {
+        padding: 10px;
+        cursor: pointer;
+        text-align: center;
+        &.active {
+            color: #007bc1;
+        }
+    }
+    .footer-list {
+        padding: 15px;
+        border-bottom: 1px solid #ccc;
+    }
+    h3 {
+        margin: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .bottomPanel {
+        min-width: 100vw;
+
+        .mat-nav-list mat-list-item .mat-line {
+            text-overflow: inherit;
+            white-space: normal;
+        }
+    }
+}

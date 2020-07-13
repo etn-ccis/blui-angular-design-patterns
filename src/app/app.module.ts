@@ -53,7 +53,7 @@ import { SortableListModule } from './pages/list/sortable-list/sortable-list.mod
         MatFormFieldModule,
         MatTabsModule,
         EmptyStateModule,
-        SortableListModule
+        SortableListModule,
     ],
     bootstrap: [AppComponent],
 })

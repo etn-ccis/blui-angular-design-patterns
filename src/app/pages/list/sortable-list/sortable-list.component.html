@@ -8,26 +8,24 @@
         {{ draggable ? 'Save' : 'Edit' }}
     </button>
 </mat-toolbar>
-<mat-list *ngIf="data.length > 0" [disableRipple]="draggable">
-    <section *ngIf="!draggable">
+<mat-list *ngIf="data.length > 0" [disableRipple]="draggable" cdkDropList (cdkDropListDropped)="onDrop($event)">
+    <ng-container *ngIf="!draggable">
         <pxb-info-list-item *ngFor="let i of data" [hidePadding]="true">
-            <span pxb-title>
-                {{ i.name }}
-            </span>
+            <span pxb-title> {{ i.name }}</span>
             <span pxb-right-content>
                 <pxb-channel-value [value]="i.details"></pxb-channel-value>
             </span>
         </pxb-info-list-item>
-    </section>
-    <div cdkDropList (cdkDropListDropped)="onDrop($event)" *ngIf="draggable">
-        <pxb-info-list-item *ngFor="let i of data" cdkDrag>
-            <mat-icon pxb-icon cdkDragHandle class="handler">drag_handle</mat-icon>
-            <span pxb-title>
-                {{ i.name }}
-            </span>
-            <span pxb-right-content>
-                <pxb-channel-value [value]="i.details"></pxb-channel-value>
-            </span>
-        </pxb-info-list-item>
-    </div>
+    </ng-container>
+    <ng-container *ngIf="draggable">
+        <div *ngFor="let i of data" cdkDrag>
+            <pxb-info-list-item>
+                <mat-icon pxb-icon cdkDragHandle class="handler">drag_handle</mat-icon>
+                <span pxb-title> {{ i.name }}</span>
+                <span pxb-right-content>
+                    <pxb-channel-value [value]="i.details"></pxb-channel-value>
+                </span>
+            </pxb-info-list-item>
+        </div>
+    </ng-container>
 </mat-list>

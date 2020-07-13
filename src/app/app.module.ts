@@ -23,7 +23,6 @@ import { StatusListModule } from './pages/list/status-list/status-list.module';
 import { MultiselectListModule } from './pages/list/multiselect-list/multiselect-list.module';
 import { BasicBottomSheetModule } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.module';
 import { CollapsibleAppBarModule } from './pages/app-bar/collapsible-app-bar/collapsible-app-bar.module';
-import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
     declarations: [AppComponent, PlaceholderComponent],
@@ -53,7 +52,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         MatFormFieldModule,
         MatTabsModule,
         EmptyStateModule,
-        FlexLayoutModule
     ],
     bootstrap: [AppComponent],
 })

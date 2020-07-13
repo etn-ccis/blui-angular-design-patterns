@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { CollapsibleAppBarComponent } from './collapsible-app-bar.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
     imports: [
@@ -13,7 +14,8 @@ import { CollapsibleAppBarComponent } from './collapsible-app-bar.component';
         MatToolbarModule,
         SpacerModule,
         MatIconModule,
-        MatButtonModule
+        MatButtonModule,
+        FlexLayoutModule,
     ],
     declarations: [CollapsibleAppBarComponent],
 })

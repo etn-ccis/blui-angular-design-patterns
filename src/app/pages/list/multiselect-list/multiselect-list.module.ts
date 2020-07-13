@@ -7,9 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { SpacerModule, InfoListItemModule, EmptyStateModule } from '@pxblue/angular-components';
-import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
@@ -21,11 +19,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         MatIconModule,
         MatListModule,
         MatSelectModule,
-        MatSnackBarModule,
         SpacerModule,
         InfoListItemModule,
         EmptyStateModule,
-        MatBottomSheetModule,
         FlexLayoutModule,
     ],
     declarations: [MultiselectListComponent],

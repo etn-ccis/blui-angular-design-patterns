@@ -22,6 +22,8 @@ import { ActionListModule } from './pages/list/action-list/action-list.module';
 import { StatusListModule } from './pages/list/status-list/status-list.module';
 import { MultiselectListModule } from './pages/list/multiselect-list/multiselect-list.module';
 import { BasicBottomSheetModule } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.module';
+import { CollapsibleAppBarModule } from './pages/app-bar/collapsible-app-bar/collapsible-app-bar.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
     declarations: [AppComponent, PlaceholderComponent],
@@ -30,6 +32,7 @@ import { BasicBottomSheetModule } from './pages/overlays/basic-bottom-sheet/basi
         DataListModule,
         StatusListModule,
         MultiselectListModule,
+        CollapsibleAppBarModule,
         BasicBottomSheetModule,
         DrawerLayoutModule,
         DrawerModule,
@@ -50,6 +53,7 @@ import { BasicBottomSheetModule } from './pages/overlays/basic-bottom-sheet/basi
         MatFormFieldModule,
         MatTabsModule,
         EmptyStateModule,
+        FlexLayoutModule
     ],
     bootstrap: [AppComponent],
 })

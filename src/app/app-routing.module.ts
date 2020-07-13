@@ -6,6 +6,7 @@ import { ActionListComponent } from './pages/list/action-list/action-list.compon
 import { StatusListComponent } from './pages/list/status-list/status-list.component';
 import { MultiselectListComponent } from './pages/list/multiselect-list/multiselect-list.component';
 import { BasicBottomSheetComponent } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.component';
+import { CollapsibleAppBarComponent } from './pages/app-bar/collapsible-app-bar/collapsible-app-bar.component';
 
 export type DrawerItem = {
     title: string;
@@ -23,7 +24,7 @@ export const ROUTES: DrawerItem[] = [
             {
                 title: 'Collapsible',
                 path: 'collapsible',
-                component: PlaceholderComponent,
+                component: CollapsibleAppBarComponent,
             },
             {
                 title: 'Search',

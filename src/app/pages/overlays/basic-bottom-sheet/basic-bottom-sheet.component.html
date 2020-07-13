@@ -3,23 +3,32 @@
         <mat-icon>menu</mat-icon>
     </button>
     <div>Basic Bottom Sheet</div>
+    <pxb-spacer></pxb-spacer>
+    <button mat-icon-button (click)="showBottomSheet()">
+        <mat-icon>more_vert</mat-icon>
+    </button>
 </mat-toolbar>
-<mat-nav-list *ngIf="data.length > 0">
+<mat-list *ngIf="data.length > 0">
     <pxb-info-list-item
         *ngFor="let i of data; let index = index"
-        [class.active]="i.active"
-        (click)="showBottomSheet()"
+        [avatar]="true"
         [statusColor]="i.active ? Colors.red[500] : ''"
     >
         <mat-icon pxb-icon class="padded" *ngIf="!i.active">notifications</mat-icon>
-        <mat-icon pxb-icon class="padded" *ngIf="i.active" [style.color]="Colors.red[500]"
-            >notifications_active</mat-icon
-        >
-        <span pxb-title [style.color]="i.active ? Colors.red[500] : Colors.black[500]"
-            ><ng-container *ngIf="i.active">ACTIVE: </ng-container> {{ i.details }}</span
-        >
+        <mat-icon
+            pxb-icon
+            class="padded"
+            *ngIf="i.active"
+            [style.color]="Colors.white[50]"
+            [style.backgroundColor]="Colors.red[500]"
+            style="box-sizing: content-box;"
+            >notifications_active
+        </mat-icon>
+        <span pxb-title [style.color]="i.active ? Colors.red[500] : Colors.black[500]">
+            <ng-container *ngIf="i.active">ACTIVE: </ng-container> {{ i.details }}
+        </span>
         <span pxb-subtitle>
             {{ i.date | date: 'MM/dd/yyyy' }}
         </span>
     </pxb-info-list-item>
-</mat-nav-list>
+</mat-list>

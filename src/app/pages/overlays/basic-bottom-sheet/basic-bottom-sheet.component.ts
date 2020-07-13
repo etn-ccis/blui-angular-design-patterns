@@ -43,6 +43,6 @@ export class BasicBottomSheetComponent implements OnInit {
     }
 
     showBottomSheet(): void {
-        this._bottomSheet.open(BottomSheet, { restoreFocus: false, panelClass: 'bottomPanel' });
+        this._bottomSheet.open(BottomSheet, { restoreFocus: false });
     }
 }

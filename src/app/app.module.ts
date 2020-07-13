@@ -21,6 +21,7 @@ import { DataListModule } from './pages/list/data-list/data-list.module';
 import { ActionListModule } from './pages/list/action-list/action-list.module';
 import { StatusListModule } from './pages/list/status-list/status-list.module';
 import { MultiselectListModule } from './pages/list/multiselect-list/multiselect-list.module';
+import { BasicBottomSheetModule } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.module';
 
 @NgModule({
     declarations: [AppComponent, PlaceholderComponent],
@@ -29,6 +30,7 @@ import { MultiselectListModule } from './pages/list/multiselect-list/multiselect
         DataListModule,
         StatusListModule,
         MultiselectListModule,
+        BasicBottomSheetModule,
         DrawerLayoutModule,
         DrawerModule,
         BrowserAnimationsModule,

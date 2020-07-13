@@ -5,6 +5,7 @@ import { PlaceholderComponent } from './pages/placeholder/placeholder.component'
 import { ActionListComponent } from './pages/list/action-list/action-list.component';
 import { StatusListComponent } from './pages/list/status-list/status-list.component';
 import { MultiselectListComponent } from './pages/list/multiselect-list/multiselect-list.component';
+import { BasicBottomSheetComponent } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.component';
 
 export type DrawerItem = {
     title: string;
@@ -95,7 +96,7 @@ export const ROUTES: DrawerItem[] = [
             {
                 title: 'Basic Bottom Sheet',
                 path: 'basic-bottom-sheet',
-                component: PlaceholderComponent,
+                component: BasicBottomSheetComponent,
             },
             {
                 title: 'Complex Bottom Sheet',

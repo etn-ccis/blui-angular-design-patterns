@@ -23,6 +23,7 @@ import { StatusListModule } from './pages/list/status-list/status-list.module';
 import { MultiselectListModule } from './pages/list/multiselect-list/multiselect-list.module';
 import { BasicBottomSheetModule } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.module';
 import { CollapsibleAppBarModule } from './pages/app-bar/collapsible-app-bar/collapsible-app-bar.module';
+import { SortableListModule } from './pages/list/sortable-list/sortable-list.module';
 
 @NgModule({
     declarations: [AppComponent, PlaceholderComponent],
@@ -52,6 +53,7 @@ import { CollapsibleAppBarModule } from './pages/app-bar/collapsible-app-bar/col
         MatFormFieldModule,
         MatTabsModule,
         EmptyStateModule,
+        SortableListModule
     ],
     bootstrap: [AppComponent],
 })

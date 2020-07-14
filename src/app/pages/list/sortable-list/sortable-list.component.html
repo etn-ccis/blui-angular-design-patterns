@@ -19,7 +19,7 @@
     </ng-container>
     <ng-container *ngIf="draggable">
         <pxb-info-list-item *ngFor="let i of data" cdkDrag class="sortable-list-item">
-            <mat-icon pxb-icon cdkDragHandle class="handler">drag_handle</mat-icon>
+            <mat-icon pxb-icon cdkDragHandle class="handler" style="cursor: pointer;">drag_handle</mat-icon>
             <span pxb-title> {{ i.name }}</span>
             <span pxb-right-content>
                 <pxb-channel-value [value]="i.details"></pxb-channel-value>

@@ -1,0 +1,68 @@
+<mat-nav-list>
+    <div class="footer-list" data-cy="btm-sheet-sort">
+        <h3>Sort by</h3>
+        <div fxLayout="row wrap" fxLayoutAlign="center center">
+            <a [class.active]="activeSort == filterTypes.TIME" (click)="sortData(filterTypes?.TIME)">
+                <button mat-icon-button>
+                    <mat-icon mat-list-icon>access_time</mat-icon>
+                </button>
+                <span mat-line style="display: block;">Time</span>
+            </a>
+            <a [class.active]="activeSort == filterTypes.EVENT_TYPE" (click)="sortData(filterTypes.EVENT_TYPE)">
+                <button mat-icon-button>
+                    <mat-icon data-cy="btm-sheet-type-btn" mat-list-icon>info</mat-icon>
+                </button>
+                <span mat-line style="display: block;"> Type</span>
+            </a>
+        </div>
+    </div>
+    <div class="footer-list" data-cy="btm-sheet-show">
+        <h3>Show:</h3>
+        <div fxLayout="row wrap" fxLayoutAlign="center center">
+            <a
+                data-cy="active-alarms"
+                [class.active]="checkActive(filterTypes.ACTIVE_ALARMS)"
+                (click)="filterData(filterTypes.ACTIVE_ALARMS)"
+            >
+                <button mat-icon-button>
+                    <mat-icon mat-list-icon>notifications_active</mat-icon>
+                </button>
+                <span mat-line style="display: block;">Active Alarms</span>
+            </a>
+            <a
+                [class.active]="checkActive(filterTypes.ALARMS)"
+                (click)="filterData(filterTypes.ALARMS)"
+                data-cy="alarms"
+            >
+                <button mat-icon-button>
+                    <mat-icon mat-list-icon>notifications</mat-icon>
+                </button>
+                <span mat-line style="display: block;">Alarms</span>
+            </a>
+            <a [class.active]="checkActive(filterTypes.SETTINGS)" (click)="filterData(filterTypes.SETTINGS)">
+                <button mat-icon-button>
+                    <mat-icon data-cy="settings" mat-list-icon>settings</mat-icon>
+                </button>
+                <span mat-line style="display: block;">Settings </span>
+            </a>
+
+            <a
+                [class.active]="checkActive(filterTypes.SESSION)"
+                (click)="filterData(filterTypes.SESSION)"
+                data-cy="sessions"
+            >
+                <button mat-icon-button>
+                    <mat-icon mat-list-icon>update</mat-icon>
+                </button>
+                <span mat-line style="display: block;"> Sessions</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer-close" data-cy="btm-sheet-close">
+        <a mat-list-item (click)="openLink()" style="text-align: left;">
+            <mat-icon data-cy="btm-sheet-close-btn" mat-list-icon>close</mat-icon>
+            <span mat-line>Close</span>
+        </a>
+    </div>
+</mat-nav-list>

@@ -23,6 +23,7 @@ import { StatusListModule } from './pages/list/status-list/status-list.module';
 import { MultiselectListModule } from './pages/list/multiselect-list/multiselect-list.module';
 import { BasicBottomSheetModule } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.module';
 import { CollapsibleAppBarModule } from './pages/app-bar/collapsible-app-bar/collapsible-app-bar.module';
+import { ComplexBottomSheetModule } from './pages/overlays/complex-bottom-sheet/complex-bottom-sheet.module';
 import { SortableListModule } from './pages/list/sortable-list/sortable-list.module';
 
 @NgModule({
@@ -53,6 +54,7 @@ import { SortableListModule } from './pages/list/sortable-list/sortable-list.mod
         MatFormFieldModule,
         MatTabsModule,
         EmptyStateModule,
+        ComplexBottomSheetModule,
         SortableListModule,
     ],
     bootstrap: [AppComponent],

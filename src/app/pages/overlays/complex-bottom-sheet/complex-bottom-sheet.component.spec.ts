@@ -12,7 +12,7 @@ describe('ComplexBottomSheetComponent', () => {
     beforeEach(async(() => {
         void TestBed.configureTestingModule({
             imports: [ComplexBottomSheetModule],
-            providers: [DataService]
+            providers: [DataService],
         }).compileComponents();
     }));
 
@@ -46,40 +46,42 @@ describe('ComplexBottomSheetComponent', () => {
         void expect(service.activeFilters).toEqual([FiltersList.ACTIVE_ALARMS, FiltersList.ALARMS]);
         service.updateFilters([]);
         void expect(service.activeFilters).toEqual([]);
-      });
-    
-      it('sort works', () => {
+    });
+
+    it('sort works', () => {
         const sampleData = [
-          {date: 1, type: 'C'},
-          {date: 3, type: 'B'},
-          {date: 2, type: 'A'}
+            { date: 1, type: 'C' },
+            { date: 3, type: 'B' },
+            { date: 2, type: 'A' },
         ];
         const sampleDataByTime = [
-          {date: 3, type: 'B'},
-          {date: 2, type: 'A'},
-          {date: 1, type: 'C'}
+            { date: 3, type: 'B' },
+            { date: 2, type: 'A' },
+            { date: 1, type: 'C' },
         ];
         const sampleDataByType = [
-          {date: 2, type: 'A'},
-          {date: 3, type: 'B'},
-          {date: 1, type: 'C'}
+            { date: 2, type: 'A' },
+            { date: 3, type: 'B' },
+            { date: 1, type: 'C' },
         ];
         service.updateSort(FiltersList.TIME);
         void expect(service.sortAlarms(sampleData)).toEqual(sampleDataByTime);
         service.updateSort(FiltersList.EVENT_TYPE);
         void expect(service.sortAlarms(sampleData)).toEqual(sampleDataByType);
-      })
-    
-      it('filter works', () => {
+    });
+
+    it('filter works', () => {
         const sampleData = [
-          {date: 1, type: 'C'},
-          {date: 3, type: 'B'},
-          {date: 2, type: 'A'}
+            { date: 1, type: 'C' },
+            { date: 3, type: 'B' },
+            { date: 2, type: 'A' },
         ];
         service.updateFilters('A');
-        void expect(service.filterAlarms(sampleData)).toEqual([{date: 2, type: 'A'}]);
-        service.updateFilters(['B','C']);
-        void expect(service.filterAlarms(sampleData)).toEqual([{date: 1, type: 'C'},
-        {date: 3, type: 'B'}]);
-      })
+        void expect(service.filterAlarms(sampleData)).toEqual([{ date: 2, type: 'A' }]);
+        service.updateFilters(['B', 'C']);
+        void expect(service.filterAlarms(sampleData)).toEqual([
+            { date: 1, type: 'C' },
+            { date: 3, type: 'B' },
+        ]);
+    });
 });

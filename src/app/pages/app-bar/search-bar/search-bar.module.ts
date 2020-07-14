@@ -11,7 +11,17 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-    imports: [CommonModule, InfoListItemModule, MatToolbarModule, SpacerModule, MatIconModule, MatButtonModule, MatInputModule, MatFormFieldModule, FormsModule],
+    imports: [
+        CommonModule,
+        InfoListItemModule,
+        MatToolbarModule,
+        SpacerModule,
+        MatIconModule,
+        MatButtonModule,
+        MatInputModule,
+        MatFormFieldModule,
+        FormsModule,
+    ],
     declarations: [SearchBarComponent, FilterPipe],
 })
 export class SearchBarModule {}

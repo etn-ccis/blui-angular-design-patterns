@@ -58,7 +58,7 @@ import { ResponsiveTableModule } from './pages/list/responsive-table/responsive-
         EmptyStateModule,
         ComplexBottomSheetModule,
         SortableListModule,
-        SearchBarModule
+        SearchBarModule,
         ResponsiveTableModule,
     ],
     bootstrap: [AppComponent],

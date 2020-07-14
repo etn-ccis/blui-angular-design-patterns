@@ -1,33 +1,32 @@
-header{
+header {
     position: fixed;
     top: 0;
-     z-index: 11;
+    z-index: 11;
     transition: all 250ms ease-in-out;
-  }
-  .main-header{
+}
+.main-header {
     @extend header;
-    &.hidden{
-      opacity: 0;
+    &.hidden {
+        opacity: 0;
     }
-  }
-  .search-block{
+}
+.search-block {
     width: 0%;
     right: 0;
     @extend header;
     background: #fff;
-    &.active{
-      width: 100%;
+    &.active {
+        width: 100%;
     }
-    .search-control{
-      flex: 1;
-      font-size: 1rem;
-      border: 0;
-      outline: none;
-      padding-left: 10px;
-      &::-ms-clear {
-        height: 0;
-        width: 0;
-      }
+    .search-control {
+        flex: 1;
+        font-size: 1rem;
+        border: 0;
+        outline: none;
+        padding-left: 10px;
+        &::-ms-clear {
+            height: 0;
+            width: 0;
+        }
     }
-  }
-  
+}

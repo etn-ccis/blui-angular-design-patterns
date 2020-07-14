@@ -20,7 +20,7 @@ export class SearchBarComponent implements OnInit {
     constructor(
         private readonly _drawerService: StateService,
         private readonly _breakpointObserver: BreakpointObserver
-    ) { }
+    ) {}
 
     ngOnInit(): void {
         this._breakpointObserver

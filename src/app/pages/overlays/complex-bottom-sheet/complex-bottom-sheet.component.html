@@ -12,10 +12,10 @@
     <pxb-info-list-item
         *ngFor="let i of data; let index = index"
         [class.active]="i.active"
-        [avatar]="true"
+        [avatar]="i.active ? true : false"
         [statusColor]="i.active ? Colors.red[500] : ''"
     >
-        <mat-icon pxb-icon style="padding: 8px;" *ngIf="i.type == 'alarms' && !i.active">notifications</mat-icon>
+        <mat-icon pxb-icon *ngIf="i.type == 'alarms' && !i.active">notifications</mat-icon>
         <mat-icon
             pxb-icon
             style="padding: 8px;"
@@ -25,8 +25,8 @@
             style="box-sizing: content-box;"
             >notifications_active</mat-icon
         >
-        <mat-icon pxb-icon style="padding: 8px;" *ngIf="i.type == 'session'">update</mat-icon>
-        <mat-icon pxb-icon style="padding: 8px;" *ngIf="i.type == 'settings'">settings</mat-icon>
+        <mat-icon pxb-icon *ngIf="i.type == 'session'">update</mat-icon>
+        <mat-icon pxb-icon *ngIf="i.type == 'settings'">settings</mat-icon>
         <span
             pxb-title
             style="font-weight: 600; margin-bottom: 5px;"

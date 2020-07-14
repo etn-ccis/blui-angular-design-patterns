@@ -34,12 +34,12 @@ describe('ComplexBottomSheetComponent', () => {
         void expect(service).toBeTruthy();
     }));
 
-    it('updateSort works', () => {
+    it('should update sort', () => {
         service.updateSort(FiltersList.EVENT_TYPE);
         void expect(service.activeSort).toBe(FiltersList.EVENT_TYPE);
     });
 
-    it('updateFilters works', () => {
+    it('should update filters', () => {
         service.updateFilters([FiltersList.ACTIVE_ALARMS]);
         void expect(service.activeFilters).toEqual([FiltersList.ACTIVE_ALARMS]);
         service.updateFilters([FiltersList.ACTIVE_ALARMS, FiltersList.ALARMS]);
@@ -48,7 +48,7 @@ describe('ComplexBottomSheetComponent', () => {
         void expect(service.activeFilters).toEqual([]);
     });
 
-    it('sort works', () => {
+    it('should sort properly', () => {
         const sampleData = [
             { date: 1, type: 'C' },
             { date: 3, type: 'B' },
@@ -70,7 +70,7 @@ describe('ComplexBottomSheetComponent', () => {
         void expect(service.sortAlarms(sampleData)).toEqual(sampleDataByType);
     });
 
-    it('filter works', () => {
+    it('should filter properly', () => {
         const sampleData = [
             { date: 1, type: 'C' },
             { date: 3, type: 'B' },

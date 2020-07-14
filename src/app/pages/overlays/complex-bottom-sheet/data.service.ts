@@ -1,4 +1,3 @@
-/* eslint-disable default-case */
 import { Injectable } from '@angular/core';
 import { FiltersList } from './filter';
 import { BehaviorSubject } from 'rxjs';
@@ -79,8 +78,6 @@ export class DataService {
     }
 
     updateSort(sortType: string): void {
-        // eslint-disable-next-line no-console
-        console.log('data: ', sortType);
         this.activeSort = sortType;
         this.passData();
     }
@@ -120,6 +117,7 @@ export class DataService {
                 );
             case FiltersList.TIME:
                 return data.sort((a: { date: number }, b: { date: number }) => b.date - a.date);
+            default: return data;
         }
     }
 

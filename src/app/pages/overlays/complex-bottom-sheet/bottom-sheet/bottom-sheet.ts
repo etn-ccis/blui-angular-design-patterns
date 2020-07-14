@@ -60,4 +60,4 @@ export class BottomSheet implements OnInit {
     declarations: [BottomSheet],
     providers: [],
 })
-export class ComplexBottomSheetModule {}
+export class BottomSheetModule {}

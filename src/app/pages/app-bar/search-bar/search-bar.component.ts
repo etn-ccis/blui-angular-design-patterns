@@ -42,8 +42,6 @@ export class SearchBarComponent implements OnInit {
     searchClose(): void {
         this.searchText = '';
         this.toggleSearch = false;
-        // eslint-disable-next-line no-console
-        console.log('ahhh');
     }
 
     toggleMenu(): void {

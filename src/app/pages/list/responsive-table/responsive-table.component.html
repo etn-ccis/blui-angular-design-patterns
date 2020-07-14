@@ -1,0 +1,31 @@
+<mat-toolbar color="primary" class="app-bar">
+    <button *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="mat-title">Responsive Table</div>
+    <pxb-spacer></pxb-spacer>
+</mat-toolbar>
+<h3 style="text-align: center; padding: 1.5rem 0 0.5rem;">Resize your browser to view responsiveness</h3>
+<mat-list *ngIf="data.length > 0" fxShow.lt-md fxHide>
+    <pxb-info-list-item *ngFor="let i of data" [hidePadding]="true" style="display: block;">
+        <span pxb-title>
+            {{ i.name }}
+        </span>
+        <span pxb-subtitle>
+            {{ i.details }}
+        </span>
+    </pxb-info-list-item>
+</mat-list>
+<table mat-table fxShow fxHide.lt-md [dataSource]="data" class="mat-elevation-z8">
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let item">{{ item.name }}</td>
+    </ng-container>
+    <ng-container matColumnDef="details">
+        <th mat-header-cell *matHeaderCellDef style="text-align: right;">Details</th>
+        <td mat-cell *matCellDef="let item" style="text-align: right;">{{ item.details }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns; let i"></tr>
+</table>

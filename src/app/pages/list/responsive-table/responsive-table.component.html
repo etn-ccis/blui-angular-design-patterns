@@ -5,13 +5,9 @@
     <div class="mat-title">Responsive Table</div>
     <pxb-spacer></pxb-spacer>
 </mat-toolbar>
-<h3 style="text-align: center; padding: 1.5rem 0 .5rem;">Resize your browser to view responsiveness</h3>
+<h3 style="text-align: center; padding: 1.5rem 0 0.5rem;">Resize your browser to view responsiveness</h3>
 <mat-list *ngIf="data.length > 0" fxShow.lt-md fxHide>
-    <pxb-info-list-item
-        *ngFor="let i of data"
-        [hidePadding]="true"
-        style="display: block;"
-    >
+    <pxb-info-list-item *ngFor="let i of data" [hidePadding]="true" style="display: block;">
         <span pxb-title>
             {{ i.name }}
         </span>
@@ -34,8 +30,5 @@
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr
-        mat-row
-        *matRowDef="let row; columns: displayedColumns; let i"
-    ></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns; let i"></tr>
 </table>

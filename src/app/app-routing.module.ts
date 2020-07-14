@@ -10,6 +10,7 @@ import { CollapsibleAppBarComponent } from './pages/app-bar/collapsible-app-bar/
 import { ComplexBottomSheetComponent } from './pages/overlays/complex-bottom-sheet/complex-bottom-sheet.component';
 import { SortableListComponent } from './pages/list/sortable-list/sortable-list.component';
 import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.component';
+import { ResponsiveTableComponent } from './pages/list/responsive-table/responsive-table.component';
 
 export type DrawerItem = {
     title: string;
@@ -89,7 +90,7 @@ export const ROUTES: DrawerItem[] = [
             {
                 title: 'Responsive Table',
                 path: 'responsive-table',
-                component: PlaceholderComponent,
+                component: ResponsiveTableComponent,
             },
         ],
     },

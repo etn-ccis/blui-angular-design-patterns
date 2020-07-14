@@ -26,6 +26,7 @@ import { CollapsibleAppBarModule } from './pages/app-bar/collapsible-app-bar/col
 import { ComplexBottomSheetModule } from './pages/overlays/complex-bottom-sheet/complex-bottom-sheet.module';
 import { SortableListModule } from './pages/list/sortable-list/sortable-list.module';
 import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
+import { ResponsiveTableModule } from './pages/list/responsive-table/responsive-table.module';
 
 @NgModule({
     declarations: [AppComponent, PlaceholderComponent],
@@ -58,6 +59,7 @@ import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
         ComplexBottomSheetModule,
         SortableListModule,
         SearchBarModule
+        ResponsiveTableModule,
     ],
     bootstrap: [AppComponent],
 })

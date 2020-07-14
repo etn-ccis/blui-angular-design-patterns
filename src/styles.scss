@@ -15,3 +15,9 @@ body {
 .pxb-drawer-layout-nav-content {
     background-color: map-get($pxb-white, 50);
 }
+
+.app-bar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}

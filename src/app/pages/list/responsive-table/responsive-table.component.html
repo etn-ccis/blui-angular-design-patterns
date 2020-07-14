@@ -17,13 +17,10 @@
     </pxb-info-list-item>
 </mat-list>
 <table mat-table fxShow fxHide.lt-md [dataSource]="data" class="mat-elevation-z8">
-    <!-- Weight Column -->
     <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef>Name</th>
         <td mat-cell *matCellDef="let item">{{ item.name }}</td>
     </ng-container>
-
-    <!-- Symbol Column -->
     <ng-container matColumnDef="details">
         <th mat-header-cell *matHeaderCellDef style="text-align: right;">Details</th>
         <td mat-cell *matCellDef="let item" style="text-align: right;">{{ item.details }}</td>

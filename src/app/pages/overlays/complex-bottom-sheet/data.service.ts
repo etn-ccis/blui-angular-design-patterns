@@ -117,7 +117,8 @@ export class DataService {
                 );
             case FiltersList.TIME:
                 return data.sort((a: { date: number }, b: { date: number }) => b.date - a.date);
-            default: return data;
+            default:
+                return data;
         }
     }
 

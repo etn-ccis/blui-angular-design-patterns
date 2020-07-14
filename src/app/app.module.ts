@@ -24,6 +24,7 @@ import { MultiselectListModule } from './pages/list/multiselect-list/multiselect
 import { BasicBottomSheetModule } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.module';
 import { CollapsibleAppBarModule } from './pages/app-bar/collapsible-app-bar/collapsible-app-bar.module';
 import { ComplexBottomSheetModule } from './pages/overlays/complex-bottom-sheet/complex-bottom-sheet.module';
+import { SortableListModule } from './pages/list/sortable-list/sortable-list.module';
 
 @NgModule({
     declarations: [AppComponent, PlaceholderComponent],
@@ -54,6 +55,7 @@ import { ComplexBottomSheetModule } from './pages/overlays/complex-bottom-sheet/
         MatTabsModule,
         EmptyStateModule,
         ComplexBottomSheetModule,
+        SortableListModule,
     ],
     bootstrap: [AppComponent],
 })

@@ -8,6 +8,7 @@ import { MultiselectListComponent } from './pages/list/multiselect-list/multisel
 import { BasicBottomSheetComponent } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.component';
 import { CollapsibleAppBarComponent } from './pages/app-bar/collapsible-app-bar/collapsible-app-bar.component';
 import { ComplexBottomSheetComponent } from './pages/overlays/complex-bottom-sheet/complex-bottom-sheet.component';
+import { SortableListComponent } from './pages/list/sortable-list/sortable-list.component';
 
 export type DrawerItem = {
     title: string;
@@ -77,7 +78,7 @@ export const ROUTES: DrawerItem[] = [
             {
                 title: 'Sortable List',
                 path: 'sortable-list',
-                component: PlaceholderComponent,
+                component: SortableListComponent,
             },
             {
                 title: 'Status List',

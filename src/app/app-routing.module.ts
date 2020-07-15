@@ -11,6 +11,7 @@ import { ComplexBottomSheetComponent } from './pages/overlays/complex-bottom-she
 import { SortableListComponent } from './pages/list/sortable-list/sortable-list.component';
 import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.component';
 import { ResponsiveTableComponent } from './pages/list/responsive-table/responsive-table.component';
+import { DynamicStepperComponent } from './pages/dynamic-stepper/dynamic-stepper.component';
 
 export type DrawerItem = {
     title: string;
@@ -117,7 +118,7 @@ export const ROUTES: DrawerItem[] = [
             {
                 title: 'Dynamic Stepper',
                 path: 'dynamic-stepper',
-                component: PlaceholderComponent,
+                component: DynamicStepperComponent,
             },
         ],
     },

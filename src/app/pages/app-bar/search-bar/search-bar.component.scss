@@ -1,12 +1,9 @@
 .toolbar-container {
     position: sticky;
     z-index: 1000;
+    top: 0;
 }
 .main-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     transition: opacity 250ms ease-in-out;
 
     &.hidden {

@@ -36,7 +36,8 @@ export class SearchBarComponent implements OnInit {
 
     openSearch(): void {
         this.toggleSearch = true;
-        this.searchBar.nativeElement.focus();
+        // focus the input after the animation completes to avoid a jerky transition
+        setTimeout(() => this.searchBar.nativeElement.focus(), 250);
     }
 
     searchClose(): void {

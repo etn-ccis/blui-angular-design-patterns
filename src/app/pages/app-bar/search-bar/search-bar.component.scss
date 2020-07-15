@@ -1,27 +1,26 @@
-header {
-    position: fixed;
-    top: 0;
-    z-index: 11;
-    transition: all 250ms ease-in-out;
-}
-
-.main-header {
-    @extend header;
+.toolbar-container {
     position: sticky;
-    top: 0;
     z-index: 1000;
+}
+.main-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: opacity 250ms ease-in-out;
 
     &.hidden {
         opacity: 0;
     }
 }
 
-.search-block {
-    width: 0%;
+.search-header {
+    position: absolute;
+    top: 0;
     right: 0;
-    z-index: 1000;
-    @extend header;
+    width: 0%;
     background: #fff;
+    transition: width 250ms ease-in-out;
 
     &.active {
         width: 100%;

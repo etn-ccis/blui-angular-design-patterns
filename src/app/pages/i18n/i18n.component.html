@@ -1,5 +1,5 @@
-<mat-sidenav-container class="app-container" (backdropClick)="open = false">
-  <mat-sidenav mode="over" class="sidenav" [opened]="open">
+<mat-sidenav-container class="i18n-container" (backdropClick)="open = false">
+  <mat-sidenav mode="over" class="sidenav" [opened]="open" position="end">
     <mat-nav-list fxLayout="column" fxFlexFill class="sidenav-content">
       <mat-toolbar class="toolbar-header">
         <mat-toolbar-row class="logo-row">
@@ -37,22 +37,26 @@
       </div>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content class="nav-content">
+  <mat-sidenav-content class="nav-content" [style.backgroundColor]="colors.white[50]">
     <mat-toolbar color="primary">
+      <button *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div>{{ 'I18N' | translate }}</div>
+      <pxb-spacer></pxb-spacer>
       <button
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button
-        (click)="toggleMenu()"
+        (click)="openI18nMenu()"
         style="margin-left: -4px; margin-right: 12px;"
       >
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        <mat-icon aria-label="Side nav toggle icon">menu_open</mat-icon>
       </button>
-      <div>{{ 'I18N' | translate }}</div>
     </mat-toolbar>
 
-    <mat-toolbar class="select-language">
-      <mat-form-field>
+    <mat-toolbar class="select-language" [style.backgroundColor]="colors.white[50]">
+      <mat-form-field [style.color]="colors.black[500]">
         <mat-select
           #langeSelect
           (ngModelChange)="translate.use(langeSelect.value)"
@@ -77,7 +81,7 @@
     </mat-nav-list>
 
     <footer [class.active]="selectedFruits.size > 0" class="mat-simple-snackbar" fxLayout="row">
-      <p style="">{{ selectedFruits.size }} {{ 'ITEMS' | translate }}</p>
+      <p style="margin: 0">{{ selectedFruits.size }} {{ 'ITEMS' | translate }}</p>
       <div class="icon">
         <button mat-icon-button (click)="cancelItems()">
           <mat-icon>cancel</mat-icon>

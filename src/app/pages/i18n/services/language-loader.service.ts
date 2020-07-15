@@ -1,13 +1,13 @@
 import { TranslateLoader } from '@ngx-translate/core';
 import { Observable, of } from 'rxjs';
-import { SampleTranslation } from '../i18n/sample-translation';
-import { english } from '../i18n/english';
-import { spanish } from '../i18n/spanish';
-import { german } from '../i18n/german';
-import { portuguese } from '../i18n/portuguese';
-import { chinese } from '../i18n/chinese';
-import { arabic } from '../i18n/arabic';
-import { french } from '../i18n/french';
+import { SampleTranslation } from '../translations/sample-translation';
+import { english } from '../translations/english';
+import { spanish } from '../translations/spanish';
+import { german } from '../translations/german';
+import { portuguese } from '../translations/portuguese';
+import { chinese } from '../translations/chinese';
+import { arabic } from '../translations/arabic';
+import { french } from '../translations/french';
 import { Injectable } from '@angular/core';
 
 @Injectable({

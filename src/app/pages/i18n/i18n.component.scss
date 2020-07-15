@@ -1,6 +1,6 @@
 @import '~@pxblue/colors/palette';
-.app-container {
-  height: 100%;
+.i18n-container {
+  height: 100vh;
   width: 100%;
 }
 .sidenav {
@@ -59,7 +59,6 @@ mat-nav-list {
 
 .select-language {
   font-size: 1rem;
-  background-color: #fafafa;
 }
 
 footer {

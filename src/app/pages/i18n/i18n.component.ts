@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { TranslateService, TranslationChangeEvent } from '@ngx-translate/core';
-import { SampleTranslation } from './i18n/sample-translation';
-import { english } from './i18n/english';
+import { SampleTranslation } from './translations/sample-translation';
+import { english } from './translations/english';
 import { BidirectionalService } from './services/bidirectional.service';
 import * as Colors from '@pxblue/colors';
+import {StateService} from "../../services/state.service";
+import {BreakpointObserver, Breakpoints, BreakpointState} from "@angular/cdk/layout";
 
 @Component({
   selector: 'app-i18n',
@@ -17,15 +19,37 @@ export class I18nComponent {
   selectedLanguage: string;
   selectedFruits = new Set<string>();
   fruits = Object.keys(english.FRUITS);
+  isSmall: boolean;
 
-  constructor(public translate: TranslateService, private readonly bidirectionalService: BidirectionalService) {
-    translate.addLangs(this.enabledLocales);
-    translate.setDefaultLang('EN');
-    this.selectedLanguage = this.enabledLocales[0];
-    this.listenForLanguageChanges();
+  constructor(
+    private readonly _drawerService: StateService,
+    private readonly _breakpointObserver: BreakpointObserver,
+    private readonly bidirectionalService: BidirectionalService,
+    public translate: TranslateService) {
+      translate.addLangs(this.enabledLocales);
+      translate.setDefaultLang('EN');
+      this.selectedLanguage = this.enabledLocales[0];
+      this.listenForLanguageChanges();
+  }
+
+  ngOnInit(): void {
+    this._breakpointObserver
+      .observe([Breakpoints.Small, Breakpoints.Handset])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+          this.isSmall = true;
+        } else {
+          this.isSmall = false;
+        }
+      });
   }
 
   toggleMenu(): void {
+    const drawerOpen = this._drawerService.getDrawerOpen();
+    this._drawerService.setDrawerOpen(!drawerOpen);
+  }
+
+  openI18nMenu(): void {
     this.open = !this.open;
   }
 

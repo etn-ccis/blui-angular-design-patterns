@@ -1024,6 +1024,13 @@
     merge-source-map "^1.1.0"
     schema-utils "^2.6.4"
 
+"@netbasal/ngx-content-loader@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@netbasal/ngx-content-loader/-/ngx-content-loader-3.0.0.tgz#398b72388fb8e9861bf6e36ec1f8f6330d209d8f"
+  integrity sha512-NOVmB6vmWzdpaHFBHw8DLEsDarr/CiEhPdo5Vjl9KffPFOphM+9ZNYKJ3y8uonJw64WAjkL2WR06ToKDrA2Dug==
+  dependencies:
+    tslib "^1.9.0"
+
 "@ngtools/webpack@9.1.9":
   version "9.1.9"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-9.1.9.tgz#2098afd6f1f028238468262df2ad10afa81b82a5"
@@ -1103,6 +1110,13 @@
   version "1.0.25"
   resolved "https://registry.yarnpkg.com/@pxblue/icons/-/icons-1.0.25.tgz#52d22a987f168840ae7bdafb065f52c3ad5396da"
   integrity sha512-Q1+wgCjRpX5TeOY8JPpea1yF4uZOCsISQuguRcRIgqthAWH//Jcq4zCKMeOYLHjmXUU7RbWKv4PaA91//xPekQ==
+
+"@pxblue/ng-progress-icons@^1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@pxblue/ng-progress-icons/-/ng-progress-icons-1.1.4.tgz#02e3051d8d0d7be33deedccd603c033f17e1dd8c"
+  integrity sha512-s3O4DINjeCUAXRWPMTqsbK9cTUEockb0/+MG7rsXoVur+ef9FDu1QQHVRC8jG6/+cB6LGt96Di8yFgCixQEQ4A==
+  dependencies:
+    tslib "^1.9.0"
 
 "@pxblue/prettier-config@^1.0.2":
   version "1.0.2"
@@ -6616,6 +6630,11 @@ pkg-up@^2.0.0:
   integrity sha1-yBmscoBZpGHKscOImivjxJoATX8=
   dependencies:
     find-up "^2.1.0"
+
+placeholder-loading@^0.2.2:
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/placeholder-loading/-/placeholder-loading-0.2.6.tgz#6c34c12397785b74c7f8473c9d6d788cc4a97612"
+  integrity sha512-5h/8xiTzhVBwtj9aZWN3SMK+bjjXT+UvV5q8FZQ5Gn5VFBrEefBzSc+s/SuepToSpbMQf2SeiOrMhKYGhZaGAA==
 
 portfinder@^1.0.26:
   version "1.0.26"

@@ -11,6 +11,7 @@ import { ComplexBottomSheetComponent } from './pages/overlays/complex-bottom-she
 import { SortableListComponent } from './pages/list/sortable-list/sortable-list.component';
 import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.component';
 import { ResponsiveTableComponent } from './pages/list/responsive-table/responsive-table.component';
+import {LoadingStatesComponent} from "./pages/loading-states/loading-states.component";
 
 export type DrawerItem = {
     title: string;
@@ -44,7 +45,7 @@ export const ROUTES: DrawerItem[] = [
             {
                 title: 'Loading',
                 path: 'loading',
-                component: PlaceholderComponent,
+                component: LoadingStatesComponent,
             },
         ],
     },

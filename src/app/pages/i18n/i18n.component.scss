@@ -1,0 +1,105 @@
+@import '~@pxblue/colors/palette';
+.app-container {
+  height: 100%;
+  width: 100%;
+}
+.sidenav {
+  max-width: 90%;
+  transition: width 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 350px;
+  .sidenav-content {
+    padding-top: 0;
+    overflow-x: hidden;
+  }
+  .toolbar-header {
+    background-color: map-get($pxb-blue, 500);
+    color: white;
+    min-height: 150px;
+  }
+  .logo-row {
+    height: 72px;
+    margin-left: 10px;
+    margin-bottom: 42px;
+    margin-right: 10px;
+    .logo {
+      font-size: 64px;
+      transform: rotate(42deg);
+    }
+  }
+  .nav-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    span {
+      margin: 0 16px;
+    }
+  }
+}
+
+.icon,
+.nav-wrapper mat-icon {
+  color: map-get($pxb-gray, 700);
+}
+.list {
+  color: map-get($pxb-gray, 500);
+}
+
+[matSubheader] {
+  white-space: nowrap;
+}
+
+mat-nav-list {
+  padding-top: 0px;
+  mat-checkbox {
+    display: inline-flex;
+  }
+}
+
+.select-language {
+  font-size: 1rem;
+  background-color: #fafafa;
+}
+
+footer {
+  max-width: 500px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  background: white;
+  transform: translate(-50%, 100%);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  padding: 4px 32px 4px 32px;
+  visibility: hidden;
+  box-shadow: 0px -8px 28px rgba(0, 0, 0, 0.25), 0px 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+footer.active {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  visibility: visible;
+}
+
+.mat-simple-snackbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 36px;
+  opacity: 1;
+}
+
+.mat-simple-snackbar-action {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: space-around;
+  margin: 16px;
+  button {
+    flex: 1;
+    max-height: 36px;
+    min-width: 0;
+  }
+}

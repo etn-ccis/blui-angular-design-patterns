@@ -1,95 +1,100 @@
 <mat-sidenav-container class="i18n-container" (backdropClick)="open = false">
-  <mat-sidenav mode="over" class="sidenav" [opened]="open" position="end">
-    <mat-nav-list fxLayout="column" fxFlexFill class="sidenav-content">
-      <mat-toolbar class="toolbar-header">
-        <mat-toolbar-row class="logo-row">
-          <mat-icon class="logo">offline_bolt</mat-icon>
-        </mat-toolbar-row>
-        <mat-toolbar-row style="height: 4px;">
-          <small>PX {{ 'BLUE' | translate }}</small>
-        </mat-toolbar-row>
-        <mat-toolbar-row>
-          <small style="margin-top: -24px;" id="i18n">{{ 'I18N' | translate }}</small>
-        </mat-toolbar-row>
-      </mat-toolbar>
-      <mat-divider></mat-divider>
-      <div class="nav-wrapper">
-        <a mat-list-item (click)="toggleMenu()">
-          <mat-icon matListIcon>home</mat-icon>
-          <span>{{ 'MENU_ITEMS.HOME' | translate }}</span>
-        </a>
-        <a mat-list-item (click)="toggleMenu()">
-          <mat-icon matListIcon>folder</mat-icon>
-          <span>{{ 'MENU_ITEMS.PROJECTS' | translate }}</span>
-        </a>
-        <a mat-list-item (click)="toggleMenu()">
-          <mat-icon matListIcon>report</mat-icon>
-          <span>{{ 'MENU_ITEMS.WARNINGS' | translate }}</span>
-        </a>
-        <a mat-list-item (click)="toggleMenu()">
-          <mat-icon matListIcon>settings</mat-icon>
-          <span>{{ 'MENU_ITEMS.SETTINGS' | translate }}</span>
-        </a>
-        <a mat-list-item (click)="toggleMenu()">
-          <mat-icon matListIcon>help</mat-icon>
-          <span>{{ 'MENU_ITEMS.HELP' | translate }}</span>
-        </a>
-      </div>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content class="nav-content" [style.backgroundColor]="colors.white[50]">
-    <mat-toolbar color="primary">
-      <button *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <div>{{ 'I18N' | translate }}</div>
-      <pxb-spacer></pxb-spacer>
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="openI18nMenu()"
-        style="margin-left: -4px; margin-right: 12px;"
-      >
-        <mat-icon aria-label="Side nav toggle icon">menu_open</mat-icon>
-      </button>
-    </mat-toolbar>
+    <mat-sidenav mode="over" class="sidenav" [opened]="open" position="end">
+        <mat-nav-list fxLayout="column" fxFlexFill class="sidenav-content">
+            <mat-toolbar class="toolbar-header">
+                <mat-toolbar-row class="logo-row">
+                    <mat-icon class="logo">offline_bolt</mat-icon>
+                </mat-toolbar-row>
+                <mat-toolbar-row style="height: 4px;">
+                    <small>PX {{ 'BLUE' | translate }}</small>
+                </mat-toolbar-row>
+                <mat-toolbar-row>
+                    <small style="margin-top: -24px;" id="i18n">{{ 'I18N' | translate }}</small>
+                </mat-toolbar-row>
+            </mat-toolbar>
+            <mat-divider></mat-divider>
+            <div class="nav-wrapper">
+                <a mat-list-item (click)="toggleMenu()">
+                    <mat-icon matListIcon>home</mat-icon>
+                    <span>{{ 'MENU_ITEMS.HOME' | translate }}</span>
+                </a>
+                <a mat-list-item (click)="toggleMenu()">
+                    <mat-icon matListIcon>folder</mat-icon>
+                    <span>{{ 'MENU_ITEMS.PROJECTS' | translate }}</span>
+                </a>
+                <a mat-list-item (click)="toggleMenu()">
+                    <mat-icon matListIcon>report</mat-icon>
+                    <span>{{ 'MENU_ITEMS.WARNINGS' | translate }}</span>
+                </a>
+                <a mat-list-item (click)="toggleMenu()">
+                    <mat-icon matListIcon>settings</mat-icon>
+                    <span>{{ 'MENU_ITEMS.SETTINGS' | translate }}</span>
+                </a>
+                <a mat-list-item (click)="toggleMenu()">
+                    <mat-icon matListIcon>help</mat-icon>
+                    <span>{{ 'MENU_ITEMS.HELP' | translate }}</span>
+                </a>
+            </div>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="nav-content" [style.backgroundColor]="colors.white[50]">
+        <mat-toolbar color="primary">
+            <button *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <div>{{ 'I18N' | translate }}</div>
+            <pxb-spacer></pxb-spacer>
+            <button
+                type="button"
+                aria-label="Toggle sidenav"
+                mat-icon-button
+                (click)="openI18nMenu()"
+                style="margin-left: -4px; margin-right: 12px;"
+            >
+                <mat-icon aria-label="Side nav toggle icon">menu_open</mat-icon>
+            </button>
+        </mat-toolbar>
 
-    <mat-toolbar class="select-language" [style.backgroundColor]="colors.white[50]">
-      <mat-form-field [style.color]="colors.black[500]">
-        <mat-select
-          #langeSelect
-          (ngModelChange)="translate.use(langeSelect.value)"
-          [(ngModel)]="selectedLanguage"
-        >
-          <mat-option *ngFor="let lang of enabledLocales; let i = index" [value]="enabledLocales[i]">
-            {{ 'LANGUAGES.' + lang | translate }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <button mat-raised-button color="primary" style="margin: 20px;">
-        <mat-icon>shopping_cart</mat-icon> {{ 'ADD_TO_CART' | translate }}
-      </button>
-    </mat-toolbar>
+        <mat-toolbar class="select-language" [style.backgroundColor]="colors.white[50]">
+            <mat-form-field [style.color]="colors.black[500]">
+                <mat-select
+                    #langeSelect
+                    (ngModelChange)="translate.use(langeSelect.value)"
+                    [(ngModel)]="selectedLanguage"
+                >
+                    <mat-option *ngFor="let lang of enabledLocales; let i = index" [value]="enabledLocales[i]">
+                        {{ 'LANGUAGES.' + lang | translate }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-raised-button color="primary" style="margin: 20px;">
+                <mat-icon>shopping_cart</mat-icon> {{ 'ADD_TO_CART' | translate }}
+            </button>
+        </mat-toolbar>
 
-    <mat-nav-list>
-      <pxb-info-list-item *ngFor="let fruit of fruits" (click)="toggleFruit(fruit)" [chevron]="true" [hidePadding]="true">
-        <mat-checkbox pxb-left-content [checked]="selectedFruits.has(fruit)" color="primary"></mat-checkbox>
-        <div pxb-title>{{ 'FRUITS.' + fruit | translate }}</div>
-        <div pxb-subtitle class="list">{{ 'MORE_INFO' | translate }}</div>
-      </pxb-info-list-item>
-    </mat-nav-list>
+        <mat-nav-list>
+            <pxb-info-list-item
+                *ngFor="let fruit of fruits"
+                (click)="toggleFruit(fruit)"
+                [chevron]="true"
+                [hidePadding]="true"
+            >
+                <mat-checkbox pxb-left-content [checked]="selectedFruits.has(fruit)" color="primary"></mat-checkbox>
+                <div pxb-title>{{ 'FRUITS.' + fruit | translate }}</div>
+                <div pxb-subtitle class="list">{{ 'MORE_INFO' | translate }}</div>
+            </pxb-info-list-item>
+        </mat-nav-list>
 
-    <footer [class.active]="selectedFruits.size > 0" class="mat-simple-snackbar" fxLayout="row">
-      <p style="margin: 0">{{ selectedFruits.size }} {{ 'ITEMS' | translate }}</p>
-      <div class="icon">
-        <button mat-icon-button (click)="cancelItems()">
-          <mat-icon>cancel</mat-icon>
-        </button>
-        <button mat-icon-button>
-          <mat-icon>more_vert</mat-icon>
-        </button>
-      </div>
-    </footer>
-  </mat-sidenav-content>
+        <footer [class.active]="selectedFruits.size > 0" class="mat-simple-snackbar" fxLayout="row">
+            <p style="margin: 0;">{{ selectedFruits.size }} {{ 'ITEMS' | translate }}</p>
+            <div class="icon">
+                <button mat-icon-button (click)="cancelItems()">
+                    <mat-icon>cancel</mat-icon>
+                </button>
+                <button mat-icon-button>
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+            </div>
+        </footer>
+    </mat-sidenav-content>
 </mat-sidenav-container>

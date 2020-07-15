@@ -11,7 +11,7 @@ import { ComplexBottomSheetComponent } from './pages/overlays/complex-bottom-she
 import { SortableListComponent } from './pages/list/sortable-list/sortable-list.component';
 import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.component';
 import { ResponsiveTableComponent } from './pages/list/responsive-table/responsive-table.component';
-import {I18nComponent} from "./pages/i18n/i18n.component";
+import { I18nComponent } from './pages/i18n/i18n.component';
 
 export type DrawerItem = {
     title: string;

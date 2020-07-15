@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { TranslateService, TranslationChangeEvent } from '@ngx-translate/core';
 import { SampleTranslation } from './translations/sample-translation';
 import { english } from './translations/english';
 import { BidirectionalService } from './services/bidirectional.service';
-import * as Colors from '@pxblue/colors';
 import { StateService } from '../../services/state.service';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 
@@ -12,9 +11,8 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
     templateUrl: './i18n.component.html',
     styleUrls: ['./i18n.component.scss'],
 })
-export class I18nComponent {
+export class I18nComponent implements OnInit {
     open = false;
-    colors = Colors;
     enabledLocales: Array<keyof SampleTranslation['LANGUAGES']> = ['EN', 'ES', 'FR', 'DE', 'PT', 'ZH', 'AR'];
     selectedLanguage: string;
     selectedFruits = new Set<string>();

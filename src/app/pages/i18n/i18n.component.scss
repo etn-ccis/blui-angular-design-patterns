@@ -38,6 +38,10 @@
     }
 }
 
+.content {
+  background-color: map-get($pxb-white, 50);
+}
+
 .icon,
 .nav-wrapper mat-icon {
     color: map-get($pxb-gray, 700);
@@ -59,6 +63,10 @@ mat-nav-list {
 
 .select-language {
     font-size: 1rem;
+    background-color: map-get($pxb-white, 50);
+    mat-form-field {
+      color: map-get($pxb-black, 500);
+    }
 }
 
 footer {

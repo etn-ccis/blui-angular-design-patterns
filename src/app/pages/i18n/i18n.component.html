@@ -37,7 +37,7 @@
             </div>
         </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content class="nav-content" [style.backgroundColor]="colors.white[50]">
+    <mat-sidenav-content class="content">
         <mat-toolbar color="primary">
             <button *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
                 <mat-icon>menu</mat-icon>
@@ -55,8 +55,8 @@
             </button>
         </mat-toolbar>
 
-        <mat-toolbar class="select-language" [style.backgroundColor]="colors.white[50]">
-            <mat-form-field [style.color]="colors.black[500]">
+        <mat-toolbar class="select-language">
+            <mat-form-field>
                 <mat-select
                     #langeSelect
                     (ngModelChange)="translate.use(langeSelect.value)"

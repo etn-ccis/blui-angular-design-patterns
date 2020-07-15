@@ -9,6 +9,7 @@ import { BasicBottomSheetComponent } from './pages/overlays/basic-bottom-sheet/b
 import { CollapsibleAppBarComponent } from './pages/app-bar/collapsible-app-bar/collapsible-app-bar.component';
 import { ComplexBottomSheetComponent } from './pages/overlays/complex-bottom-sheet/complex-bottom-sheet.component';
 import { SortableListComponent } from './pages/list/sortable-list/sortable-list.component';
+import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.component';
 import { ResponsiveTableComponent } from './pages/list/responsive-table/responsive-table.component';
 
 export type DrawerItem = {
@@ -32,7 +33,7 @@ export const ROUTES: DrawerItem[] = [
             {
                 title: 'Search',
                 path: 'search',
-                component: PlaceholderComponent,
+                component: SearchBarComponent,
             },
         ],
     },

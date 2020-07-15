@@ -1,0 +1,38 @@
+<div class="mat-elevation-z4 toolbar-container" [style.backgroundColor]="Colors.white[50]">
+    <mat-toolbar color="primary" class="main-header" [class.hidden]="toggleSearch">
+        <mat-toolbar-row>
+            <button mat-icon-button *ngIf="isSmall" (click)="toggleMenu()" style="margin-left: -8px;">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <div class="mat-title">Search Bar</div>
+            <pxb-spacer></pxb-spacer>
+            <button mat-icon-button (click)="openSearch()">
+                <mat-icon>search</mat-icon>
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-toolbar class="search-header" [class.active]="toggleSearch">
+        <mat-toolbar-row style="padding: 0 5px;">
+            <button class="search-icon" mat-icon-button disabled>
+                <mat-icon>search</mat-icon>
+            </button>
+            <input class="search-control" type="text" placeholder="Search" [(ngModel)]="searchText" #searchBar />
+            <button mat-icon-button (click)="searchClose()" style="margin-right: 8px;">
+                <mat-icon [style.color]="Colors.black[500]">close</mat-icon>
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</div>
+<mat-list>
+    <pxb-info-list-item *ngFor="let item of list | filter: searchText">
+        <mat-icon pxb-icon>person</mat-icon>
+        <span pxb-title>{{ item.president }}</span>
+        <span pxb-subtitle>{{ item.party }}</span>
+        <span pxb-info>{{ item.tookOffice }}</span>
+    </pxb-info-list-item>
+    <pxb-info-list-item *ngIf="(list | filter: searchText).length === 0">
+        <mat-icon pxb-icon>error</mat-icon>
+        <span pxb-title>0 results</span>
+        <span pxb-subtitle>No matching presidents</span>
+    </pxb-info-list-item>
+</mat-list>

@@ -1,6 +1,6 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {I18nComponent} from "./i18n.component";
-import {I18nModule} from "./i18n.module";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { I18nComponent } from './i18n.component';
+import { I18nModule } from './i18n.module';
 
 describe('I18nComponent', () => {
     let fixture: ComponentFixture<I18nComponent>;
@@ -8,7 +8,7 @@ describe('I18nComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            imports: [I18nModule]
+            imports: [I18nModule],
         }).compileComponents();
 
         fixture = TestBed.createComponent(I18nComponent);

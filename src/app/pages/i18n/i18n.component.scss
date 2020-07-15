@@ -39,7 +39,7 @@
 }
 
 .content {
-  background-color: map-get($pxb-white, 50);
+    background-color: map-get($pxb-white, 50);
 }
 
 .icon,
@@ -65,7 +65,7 @@ mat-nav-list {
     font-size: 1rem;
     background-color: map-get($pxb-white, 50);
     mat-form-field {
-      color: map-get($pxb-black, 500);
+        color: map-get($pxb-black, 500);
     }
 }
 

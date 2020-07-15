@@ -26,4 +26,4 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ],
     declarations: [DynamicStepperComponent],
 })
-export class DynamicStepperModule { }
+export class DynamicStepperModule {}

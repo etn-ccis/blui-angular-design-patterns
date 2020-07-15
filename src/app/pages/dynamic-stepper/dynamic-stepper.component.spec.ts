@@ -9,9 +9,7 @@ describe('DynamicStepperComponent', () => {
 
     beforeEach(async(() => {
         void TestBed.configureTestingModule({
-            imports: [
-                DynamicStepperModule,
-            ],
+            imports: [DynamicStepperModule],
             schemas: [CUSTOM_ELEMENTS_SCHEMA],
         }).compileComponents();
     }));

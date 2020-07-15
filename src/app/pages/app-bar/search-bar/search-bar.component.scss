@@ -1,3 +1,5 @@
+@import '~@pxblue/colors/palette.scss';
+
 .toolbar-container {
     position: sticky;
     z-index: 1000;
@@ -16,7 +18,7 @@
     top: 0;
     right: 0;
     width: 0%;
-    background: #fff;
+    background: map-get($pxb-white, 50);
     transition: width 250ms ease-in-out;
 
     &.active {

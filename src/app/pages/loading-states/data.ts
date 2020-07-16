@@ -1,4 +1,21 @@
-export const dataList = [
+export type LoadingData = {
+  name: string;
+  data?: {
+    heroValue: number,
+    loadValue: number;
+    battery: number;
+    channels:
+      {
+        icon: string;
+        label: string;
+        value: number;
+        unit: string;
+      }[];
+
+  }
+}
+
+export const dataList: LoadingData[]= [
     {
         name: 'placeholder1',
         data: {
@@ -110,4 +127,22 @@ export const dataList = [
             ]
         },
     }
+];
+
+export const placeholderList: LoadingData[] = [
+  {
+    name: 'placeholder1',
+    data: undefined
+  },
+  {
+    name: 'placeholder2',
+    data: undefined
+  },
+  {
+    name: 'placeholder3',
+    data: undefined
+  }, {
+    name: 'placeholder4',
+    data: undefined
+  }
 ];

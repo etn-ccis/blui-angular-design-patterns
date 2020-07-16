@@ -8,18 +8,21 @@ mat-list {
   height: 48px;
   border-top: 1px solid rgba(0,0,0,0.12);
 }
-.list-label{
+
+.list-label  {
   margin: 0;
   margin-left: 15px;
 }
+
 .list-value {
   flex: 1 1 0px;
   text-align: right;
 }
+
 .mat-card {
     width: 100%;
     overflow: hidden;
-    height: 100%,
+    height: 100%;
 }
 
 .padding0{

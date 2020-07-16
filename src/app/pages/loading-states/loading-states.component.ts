@@ -1,10 +1,8 @@
-import {Component, NgZone, OnInit} from '@angular/core';
-import {BreakpointObserver, Breakpoints, BreakpointState} from '@angular/cdk/layout';
-import {DomSanitizer} from '@angular/platform-browser';
-import {dataList} from './data';
+import {Component, OnInit} from '@angular/core';
+import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
+import {dataList, placeholderList} from './data';
 import {InterpreterService} from './services/interpreter.service';
 import {StateService} from "../../services/state.service";
-import {ScrollDispatcher} from "@angular/cdk/scrolling";
 
 @Component({
     selector: 'app-loading-states',
@@ -13,62 +11,29 @@ import {ScrollDispatcher} from "@angular/cdk/scrolling";
 })
 export class LoadingStatesComponent implements OnInit {
 
-    cols = 4;
+    cols: number;
     isSmall: boolean;
-    deviceList = [
-        {
-            name: 'placeholder1',
-            data: {}
-        },
-        {
-            name: 'placeholder2',
-            data: {}
-        },
-        {
-            name: 'placeholder3',
-            data: {}
-        }, {
-            name: 'placeholder4',
-            data: {}
-        }
-    ];
+    deviceList = placeholderList;
 
   constructor(
     private readonly _drawerService: StateService,
     private readonly _breakpointObserver: BreakpointObserver,
-    private readonly _scrollDispatcher: ScrollDispatcher,
-    private readonly _interpreter: InterpreterService,
-    private readonly _ngZone: NgZone
+    public interpreter: InterpreterService
   ) {
-
-        this._breakpointObserver
-          .observe([Breakpoints.Small, Breakpoints.Medium])
-          .subscribe((state: BreakpointState) => {
-
-            const small = Object.keys(state.breakpoints)[0];
-            const medium = Object.keys(state.breakpoints)[1];
-
-            console.log(state);
-
-            if (state.matches) {
-              this.isSmall = true;
-            } else {
-              this.isSmall = false;
-            }
-          });
-
-
-        /*    if (state.breakpoints[small]) {
-              this.cols = 1;
-              this.isSmall = true;
-            } else if (state.breakpoints[medium]) {
-              this.cols = 2;
-              this.isSmall = false;
-            } else {
-              this.cols = 4;
-              this.isSmall = false;
-            }
-          }); */
+    this._breakpointObserver.observe([Breakpoints.Handset, Breakpoints.Small, Breakpoints.Medium])
+      .subscribe(result => {
+        const small = Object.keys(result.breakpoints)[0];
+        const smMed = Object.keys(result.breakpoints)[2];
+        const medium = Object.keys(result.breakpoints)[3];
+        this.isSmall = result.breakpoints[small] || result.breakpoints[smMed];
+        if (result.breakpoints[small]) {
+          this.cols = 1;
+        } else if (result.breakpoints[smMed] || result.breakpoints[medium]) {
+          this.cols = 2;
+        } else {
+          this.cols = 4;
+        }
+      });
     }
 
     ngOnInit() {
@@ -76,25 +41,14 @@ export class LoadingStatesComponent implements OnInit {
     }
 
     refreshData() {
-        this.deviceList = [
-              {
-                name: 'placeholder1',
-                data: undefined
-              }
-            , {
-                name: 'placeholder2',
-                data: undefined
-            }, {
-                name: 'placeholder3',
-                data: undefined
-            }, {
-                name: 'placeholder4',
-                data: undefined
-            }
-        ];
-
+        this.deviceList = placeholderList;
         setTimeout(() => {
             this.deviceList = dataList;
         }, 3000);
     }
+
+  toggleMenu(): void {
+    const drawerOpen = this._drawerService.getDrawerOpen();
+    this._drawerService.setDrawerOpen(!drawerOpen);
+  }
 }

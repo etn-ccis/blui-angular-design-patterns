@@ -1,5 +1,5 @@
 <mat-toolbar color="primary" flexLayout="row">
-  <button *ngIf="isSmall" mat-icon-button (click)="toggleMenu()" style="margin-left: -4px;">
+  <button *ngIf="isSmall" mat-icon-button (click)="toggleMenu()" style="margin-left: -8px;">
     <mat-icon>menu</mat-icon>
   </button>
   <h6>Loading Example</h6>
@@ -10,27 +10,27 @@
 </mat-toolbar>
 
 <div style="padding:20px">
-  <mat-grid-list #grid [cols]="cols" gutterSize="12px" rowHeight="270px">
+  <mat-grid-list [cols]="cols" gutterSize="12px" rowHeight="270px">
     <mat-grid-tile *ngFor="let device of deviceList">
       <mat-card class="padding0">
 
-        <app-placeholder-card *ngIf="!device.data" class="nopadding"></app-placeholder-card>
+        <app-placeholder-card *ngIf="!device.data"></app-placeholder-card>
 
         <mat-list class="padding0" *ngIf="device.data">
           <pxb-hero-banner [divider]="true">
             <pxb-hero label="Grade" value="{{device.data.heroValue}}" units="/100" size="36">
-              <span [style.color]="_interpreter.interpretGrade(device.data.heroValue)" pxb-primary>
-                  {{_interpreter.interpretIcon(device.data.heroValue)}}
+              <span [style.color]="interpreter.interpretGrade(device.data.heroValue)" pxb-primary>
+                  {{interpreter.interpretIcon(device.data.heroValue)}}
               </span>
             </pxb-hero>
             <pxb-hero label="Load">
-              <pie-progress [style.color]="_interpreter.interpretColor(100 - device.data.loadValue)"
+              <pie-progress [style.color]="interpreter.interpretColor(100 - device.data.loadValue)"
                             percent="{{device.data.loadValue}}" size="36" pxb-primary></pie-progress>
               <pxb-channel-value value="{{device.data.loadValue}}" units="%">
               </pxb-channel-value>
             </pxb-hero>
             <pxb-hero label="Battery" value="{{device.data.battery}}" units="%">
-              <battery-progress [style.color]="_interpreter.interpretColor(device.data.battery)"
+              <battery-progress [style.color]="interpreter.interpretColor(device.data.battery)"
                                 percent="{{device.data.battery}}" size="36" pxb-primary></battery-progress>
             </pxb-hero>
           </pxb-hero-banner>

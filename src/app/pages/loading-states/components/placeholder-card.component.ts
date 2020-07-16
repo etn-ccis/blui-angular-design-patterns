@@ -23,7 +23,8 @@ import { Component } from '@angular/core';
       padding: 10px 0;
       margin: 0;
       justify-content: space-around;
-      height:260px
+      height: 260px;
+      border: none;
     }
   `]
 })

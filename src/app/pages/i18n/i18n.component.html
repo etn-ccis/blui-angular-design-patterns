@@ -58,7 +58,7 @@
         <mat-toolbar class="select-language">
             <mat-form-field>
                 <mat-select
-                    #langeSelect
+                  #langeSelect
                     (ngModelChange)="translate.use(langeSelect.value)"
                     [(ngModel)]="selectedLanguage"
                 >
@@ -85,16 +85,5 @@
             </pxb-info-list-item>
         </mat-nav-list>
 
-        <footer [class.active]="selectedFruits.size > 0" class="mat-simple-snackbar" fxLayout="row">
-            <p style="margin: 0;">{{ selectedFruits.size }} {{ 'ITEMS' | translate }}</p>
-            <div class="icon">
-                <button mat-icon-button (click)="cancelItems()">
-                    <mat-icon>cancel</mat-icon>
-                </button>
-                <button mat-icon-button>
-                    <mat-icon>more_vert</mat-icon>
-                </button>
-            </div>
-        </footer>
     </mat-sidenav-content>
 </mat-sidenav-container>

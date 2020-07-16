@@ -3,6 +3,7 @@
 mat-list {
     color: map-get($pxb-gray, 800);
 }
+
 .mat-list-base .mat-list-item {
     color: inherit;
     height: 48px;
@@ -33,6 +34,6 @@ mat-grid-tile {
     overflow: visible;
 }
 
-pxb-hero-banner .pxb-hero-banner {
+::ng-deep .pxb-hero-banner {
     justify-content: space-around;
 }

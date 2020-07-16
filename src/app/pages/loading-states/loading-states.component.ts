@@ -8,7 +8,6 @@ import { StateService } from '../../services/state.service';
     selector: 'app-loading-states',
     templateUrl: './loading-states.component.html',
     styleUrls: ['./loading-states.component.scss'],
-    encapsulation: ViewEncapsulation.None,
 })
 export class LoadingStatesComponent implements OnInit {
     cols: number;

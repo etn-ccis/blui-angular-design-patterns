@@ -32,6 +32,6 @@ export class SnackBarComponent {
     }
 
     clearSelection(): void {
-      this._fruitService.cancelItems();
+        this._fruitService.cancelItems();
     }
 }

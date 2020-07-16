@@ -61,6 +61,10 @@ mat-nav-list {
     }
 }
 
+.rtl {
+    transform: scaleX(-1);
+}
+
 .select-language {
     font-size: 1rem;
     background-color: map-get($pxb-white, 50);

@@ -54,7 +54,7 @@
                 (click)="toggleI18nMenu()"
                 style="margin-left: -4px; margin-right: 12px;"
             >
-                <mat-icon aria-label="Side nav toggle icon">menu_open</mat-icon>
+                <mat-icon [class.rtl]="rtl" aria-label="Side nav toggle icon">menu_open</mat-icon>
             </button>
         </mat-toolbar>
 
@@ -71,7 +71,7 @@
                 </mat-select>
             </mat-form-field>
             <button mat-raised-button color="primary" style="margin: 20px;">
-                <mat-icon>shopping_cart</mat-icon> {{ 'ADD_TO_CART' | translate }}
+                <mat-icon [class.rtl]="rtl">shopping_cart</mat-icon> {{ 'ADD_TO_CART' | translate }}
             </button>
         </mat-toolbar>
 

@@ -1,12 +1,12 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {TranslateService, TranslationChangeEvent} from '@ngx-translate/core';
-import {SampleTranslation} from './translations/sample-translation';
-import {BidirectionalService} from './services/bidirectional.service';
-import {StateService} from '../../services/state.service';
-import {BreakpointObserver, Breakpoints, BreakpointState} from '@angular/cdk/layout';
-import {MatSnackBar} from '@angular/material/snack-bar';
-import {SnackBarComponent} from './snack-bar.component';
-import {FruitService} from './services/fruit.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { TranslateService, TranslationChangeEvent } from '@ngx-translate/core';
+import { SampleTranslation } from './translations/sample-translation';
+import { BidirectionalService } from './services/bidirectional.service';
+import { StateService } from '../../services/state.service';
+import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { SnackBarComponent } from './snack-bar.component';
+import { FruitService } from './services/fruit.service';
 
 @Component({
     selector: 'app-i18n',
@@ -21,6 +21,7 @@ export class I18nComponent implements OnInit, OnDestroy {
     fruits: string[];
     isSmall: boolean;
     snackbarOpen = false;
+    rtl: boolean = false;
 
     constructor(
         private readonly _drawerService: StateService,
@@ -82,6 +83,7 @@ export class I18nComponent implements OnInit, OnDestroy {
     listenForLanguageChanges(): void {
         this.translate.onLangChange.subscribe((event: TranslationChangeEvent) => {
             this._bidirectionalService.changeDirectionality(event.lang);
+            this.rtl = this._bidirectionalService.isRTL(this._bidirectionalService.getCurrentLanguage());
         });
     }
 

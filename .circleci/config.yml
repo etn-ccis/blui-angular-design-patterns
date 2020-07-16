@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/angular-design-patterns
     docker:
-      - image: circleci/node:12.6
+      - image: circleci/node:12.9.1-browsers
     steps:
       - checkout
       - restore_cache:
@@ -22,11 +22,11 @@ jobs:
           name: Prettier Check
           command: |
             yarn prettier:check
-      # - run:
-      #       name: Lint
-      #       command: |
-      #           yarn lint
+      - run:
+          name: Lint
+          command: |
+            yarn lint
       - run:
           name: Unit Tests
           command: |
-            yarn test
+            yarn test:ci

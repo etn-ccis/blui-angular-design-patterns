@@ -54,15 +54,14 @@ export class I18nComponent implements OnInit, OnDestroy {
     }
 
     toggleMenu(): void {
-        const drawerOpen = this._drawerService.getDrawerOpen();
-        this._drawerService.setDrawerOpen(!drawerOpen);
+        this._drawerService.setDrawerOpen(!this._drawerService.getDrawerOpen());
     }
 
-    openI18nMenu(): void {
+    toggleI18nMenu(): void {
         this.open = !this.open;
     }
 
-    // Return false to stop propogation
+    // Return false to stop propagation
     toggleFruit(fruit: string): boolean {
         this._fruitService.toggleFruit(fruit);
         return false;

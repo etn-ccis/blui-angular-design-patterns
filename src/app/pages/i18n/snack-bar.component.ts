@@ -25,13 +25,13 @@ export class SnackBarComponent {
         this._bidirectionService.changeDirectionality(this._bidirectionService.getCurrentLanguage());
     }
 
-    clearSelection(): void {
-        this._fruitService.cancelItems();
-    }
-
     listenForFruitSelectionChanges(): void {
         this._fruitService.fruitSelectionObs.subscribe((selected: number) => {
             this.selected = selected;
         });
+    }
+
+    clearSelection(): void {
+      this._fruitService.cancelItems();
     }
 }

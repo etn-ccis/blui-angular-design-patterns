@@ -12,6 +12,7 @@ import { SortableListComponent } from './pages/list/sortable-list/sortable-list.
 import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.component';
 import { ResponsiveTableComponent } from './pages/list/responsive-table/responsive-table.component';
 import { DynamicStepperComponent } from './pages/dynamic-stepper/dynamic-stepper.component';
+import { FormValidationComponent } from './pages/form-validation/form-validation.component';
 
 export type DrawerItem = {
     title: string;
@@ -52,7 +53,7 @@ export const ROUTES: DrawerItem[] = [
     {
         title: 'Form Validation',
         path: 'form-validation',
-        component: PlaceholderComponent,
+        component: FormValidationComponent,
     },
     {
         title: 'Internationalization',

@@ -28,6 +28,7 @@ import { SortableListModule } from './pages/list/sortable-list/sortable-list.mod
 import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
 import { ResponsiveTableModule } from './pages/list/responsive-table/responsive-table.module';
 import { DynamicStepperModule } from './pages/dynamic-stepper/dynamic-stepper.module';
+import { FormValidationModule } from './pages/form-validation/form-validation.module';
 
 @NgModule({
     declarations: [AppComponent, PlaceholderComponent],
@@ -62,6 +63,7 @@ import { DynamicStepperModule } from './pages/dynamic-stepper/dynamic-stepper.mo
         SearchBarModule,
         ResponsiveTableModule,
         DynamicStepperModule,
+        FormValidationModule,
     ],
     bootstrap: [AppComponent],
 })

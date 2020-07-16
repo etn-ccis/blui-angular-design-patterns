@@ -31,3 +31,9 @@ body {
     width: 100%;
     z-index: 1000;
 }
+
+@media only screen and (min-width: 960px) {
+    .mat-snack-bar-container {
+        margin-left: 270px !important;
+    }
+}

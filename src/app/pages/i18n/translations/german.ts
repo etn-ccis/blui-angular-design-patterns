@@ -25,6 +25,7 @@ export const german: SampleTranslation = {
     MORE_INFO: 'Mehr Informationen',
     ITEMS: 'Artikel',
     I18N: 'Internationalisierung',
+    I18N_MENU_TOOLTIP: 'Seitennavigation anzeigen',
     BLUE: 'Blau',
     MENU_ITEMS: {
         HOME: 'Startseite',

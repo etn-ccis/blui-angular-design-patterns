@@ -19,6 +19,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SnackBarComponent } from './snack-bar.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { OVERLAY_PROVIDERS, OverlayModule } from '@angular/cdk/overlay';
 
 @NgModule({
     declarations: [I18nComponent, SnackBarComponent],
@@ -39,6 +41,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
         MatSelectModule,
         MatSidenavModule,
         MatToolbarModule,
+        MatTooltipModule,
         TranslateModule.forRoot({
             loader: { provide: TranslateLoader, useClass: LanguageLoaderService },
             defaultLanguage: 'EN',

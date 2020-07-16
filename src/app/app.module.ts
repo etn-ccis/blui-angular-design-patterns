@@ -28,12 +28,12 @@ import { SortableListModule } from './pages/list/sortable-list/sortable-list.mod
 import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
 import { ResponsiveTableModule } from './pages/list/responsive-table/responsive-table.module';
 import { I18nModule } from './pages/i18n/i18n.module';
-import { OverlayContainer } from '@angular/cdk/overlay';
-import { AppOverlayContainer } from './app-overlay-container';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 @NgModule({
     declarations: [AppComponent, PlaceholderComponent],
     imports: [
+        OverlayModule,
         ActionListModule,
         DataListModule,
         StatusListModule,
@@ -64,12 +64,6 @@ import { AppOverlayContainer } from './app-overlay-container';
         SortableListModule,
         SearchBarModule,
         ResponsiveTableModule,
-    ],
-    providers: [
-        {
-            provide: OverlayContainer,
-            useFactory: (): AppOverlayContainer => new AppOverlayContainer(),
-        },
     ],
     bootstrap: [AppComponent],
 })

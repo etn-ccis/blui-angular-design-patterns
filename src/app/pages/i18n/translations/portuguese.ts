@@ -25,6 +25,7 @@ export const portuguese: SampleTranslation = {
     MORE_INFO: 'Mais Informações',
     ITEMS: 'Itens',
     I18N: 'Internacionalização',
+    I18N_MENU_TOOLTIP: 'Visualizar Navegação Lateral',
     BLUE: 'Azul',
     MENU_ITEMS: {
         HOME: 'Casa',

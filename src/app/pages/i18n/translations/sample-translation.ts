@@ -30,5 +30,6 @@ export type SampleTranslation = {
     MORE_INFO: string;
     ITEMS: string;
     I18N: string;
+    I18N_MENU_TOOLTIP: string;
     BLUE: string;
 };

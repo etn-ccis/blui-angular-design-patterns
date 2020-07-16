@@ -25,6 +25,7 @@ export const chinese: SampleTranslation = {
     MORE_INFO: '更多信息',
     ITEMS: '件物品',
     I18N: '国际化',
+    I18N_MENU_TOOLTIP: '查看I18N侧面导航',
     BLUE: 'Blue',
     MENU_ITEMS: {
         HOME: '主页',

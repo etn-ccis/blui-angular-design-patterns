@@ -25,6 +25,7 @@ export const english: SampleTranslation = {
     MORE_INFO: 'More information',
     ITEMS: 'Items',
     I18N: 'Internationalization',
+    I18N_MENU_TOOLTIP: 'View I18N Side Nav',
     BLUE: 'Blue',
     MENU_ITEMS: {
         HOME: 'Home',

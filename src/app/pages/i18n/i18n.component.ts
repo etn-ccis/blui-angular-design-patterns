@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TranslateService, TranslationChangeEvent } from '@ngx-translate/core';
 import { SampleTranslation } from './translations/sample-translation';
 import { english } from './translations/english';
@@ -15,7 +15,7 @@ import { Subscription } from 'rxjs';
     templateUrl: './i18n.component.html',
     styleUrls: ['./i18n.component.scss'],
 })
-export class I18nComponent implements OnInit {
+export class I18nComponent implements OnInit, OnDestroy {
     open = false;
     enabledLocales: Array<keyof SampleTranslation['LANGUAGES']> = ['EN', 'ES', 'FR', 'DE', 'PT', 'ZH', 'AR'];
     selectedLanguage: string;
@@ -32,8 +32,10 @@ export class I18nComponent implements OnInit {
         private readonly _snackBar: MatSnackBar,
         public translate: TranslateService
     ) {
+        const defaultLanguage = 'EN';
         translate.addLangs(this.enabledLocales);
-        translate.setDefaultLang('EN');
+        translate.setDefaultLang(defaultLanguage);
+        this.bidirectionalService.setCurrentLanguage(defaultLanguage);
         this.selectedLanguage = this.enabledLocales[0];
         this.listenForLanguageChanges();
         this.listenForFruitSelectionChanges();
@@ -66,8 +68,10 @@ export class I18nComponent implements OnInit {
         this.open = !this.open;
     }
 
-    toggleFruit(fruit: string): void {
+    // Return false to stop propogation
+    toggleFruit(fruit: string): boolean {
         this._fruitService.toggleFruit(fruit);
+        return false;
     }
 
     showSnackBar(): void {

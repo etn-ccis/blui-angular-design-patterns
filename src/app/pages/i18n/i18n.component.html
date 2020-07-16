@@ -45,6 +45,9 @@
             <div>{{ 'I18N' | translate }}</div>
             <pxb-spacer></pxb-spacer>
             <button
+                [matTooltip]="'I18N_MENU_TOOLTIP' | translate"
+                matTooltipPosition="below"
+                matTooltipHideDelay="200"
                 type="button"
                 aria-label="Toggle sidenav"
                 mat-icon-button

@@ -25,6 +25,7 @@ export const french: SampleTranslation = {
     MORE_INFO: "Plus d'information",
     ITEMS: 'Articles',
     I18N: 'Internationalisation',
+    I18N_MENU_TOOLTIP: 'Afficher la navigation latérale',
     BLUE: 'Bleue',
     MENU_ITEMS: {
         HOME: "Page d'accueil",

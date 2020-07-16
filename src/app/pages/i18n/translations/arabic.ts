@@ -25,6 +25,7 @@ export const arabic: SampleTranslation = {
     MORE_INFO: 'مزيد من المعلومات',
     ITEMS: 'عناصر',
     I18N: 'تدويل',
+    I18N_MENU_TOOLTIP: 'عرض التنقل الجانب',
     BLUE: 'أزرق',
     MENU_ITEMS: {
         HOME: 'الرئيسية',

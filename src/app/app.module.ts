@@ -27,6 +27,7 @@ import { ComplexBottomSheetModule } from './pages/overlays/complex-bottom-sheet/
 import { SortableListModule } from './pages/list/sortable-list/sortable-list.module';
 import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
 import { ResponsiveTableModule } from './pages/list/responsive-table/responsive-table.module';
+import { DynamicStepperModule } from './pages/dynamic-stepper/dynamic-stepper.module';
 import { I18nModule } from './pages/i18n/i18n.module';
 
 @NgModule({
@@ -62,6 +63,7 @@ import { I18nModule } from './pages/i18n/i18n.module';
         SortableListModule,
         SearchBarModule,
         ResponsiveTableModule,
+        DynamicStepperModule,
     ],
     bootstrap: [AppComponent],
 })

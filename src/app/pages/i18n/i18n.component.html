@@ -39,7 +39,10 @@
     </mat-sidenav>
     <mat-sidenav-content class="content">
         <mat-toolbar color="primary">
-            <button *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
+            <button *ngIf="isSmall"
+                    [style.marginLeft.px]="rtl ? 0 : -8"
+                    [style.marginRight.px]="rtl ? -8 : 0"
+                    mat-icon-button (click)="toggleMenu()">
                 <mat-icon [class.rtl]="rtl">menu</mat-icon>
             </button>
             <div>{{ 'I18N' | translate }}</div>
@@ -52,7 +55,6 @@
                 aria-label="Toggle sidenav"
                 mat-icon-button
                 (click)="toggleI18nMenu()"
-                style="margin-left: -4px; margin-right: 12px;"
             >
                 <mat-icon [class.rtl]="rtl" aria-label="Side nav toggle icon">menu_open</mat-icon>
             </button>
@@ -79,7 +81,6 @@
             <pxb-info-list-item
                 *ngFor="let fruit of fruits"
                 (click)="toggleFruit(fruit)"
-                [chevron]="true"
                 [hidePadding]="true"
             >
                 <mat-checkbox pxb-left-content [checked]="selectedFruits.has(fruit)" color="primary"></mat-checkbox>

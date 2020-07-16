@@ -1,14 +1,12 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { TranslateService, TranslationChangeEvent } from '@ngx-translate/core';
-import { SampleTranslation } from './translations/sample-translation';
-import { english } from './translations/english';
-import { BidirectionalService } from './services/bidirectional.service';
-import { StateService } from '../../services/state.service';
-import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { SnackBarComponent } from './snack-bar.component';
-import { FruitService } from './services/fruit.service';
-import { Subscription } from 'rxjs';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {TranslateService, TranslationChangeEvent} from '@ngx-translate/core';
+import {SampleTranslation} from './translations/sample-translation';
+import {BidirectionalService} from './services/bidirectional.service';
+import {StateService} from '../../services/state.service';
+import {BreakpointObserver, Breakpoints, BreakpointState} from '@angular/cdk/layout';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {SnackBarComponent} from './snack-bar.component';
+import {FruitService} from './services/fruit.service';
 
 @Component({
     selector: 'app-i18n',
@@ -27,7 +25,7 @@ export class I18nComponent implements OnInit, OnDestroy {
     constructor(
         private readonly _drawerService: StateService,
         private readonly _breakpointObserver: BreakpointObserver,
-        private readonly bidirectionalService: BidirectionalService,
+        private readonly _bidirectionalService: BidirectionalService,
         private readonly _fruitService: FruitService,
         private readonly _snackBar: MatSnackBar,
         public translate: TranslateService
@@ -35,7 +33,7 @@ export class I18nComponent implements OnInit, OnDestroy {
         const defaultLanguage = 'EN';
         translate.addLangs(this.enabledLocales);
         translate.setDefaultLang(defaultLanguage);
-        this.bidirectionalService.setCurrentLanguage(defaultLanguage);
+        this._bidirectionalService.setCurrentLanguage(defaultLanguage);
         this.selectedLanguage = this.enabledLocales[0];
         this.listenForLanguageChanges();
         this.listenForFruitSelectionChanges();
@@ -47,11 +45,7 @@ export class I18nComponent implements OnInit, OnDestroy {
         this._breakpointObserver
             .observe([Breakpoints.Small, Breakpoints.Handset])
             .subscribe((state: BreakpointState) => {
-                if (state.matches) {
-                    this.isSmall = true;
-                } else {
-                    this.isSmall = false;
-                }
+                this.isSmall = state.matches;
             });
     }
 
@@ -88,7 +82,7 @@ export class I18nComponent implements OnInit, OnDestroy {
 
     listenForLanguageChanges(): void {
         this.translate.onLangChange.subscribe((event: TranslationChangeEvent) => {
-            this.bidirectionalService.changeDirectionality(event.lang);
+            this._bidirectionalService.changeDirectionality(event.lang);
         });
     }
 

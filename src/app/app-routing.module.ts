@@ -112,15 +112,9 @@ export const ROUTES: DrawerItem[] = [
         ],
     },
     {
-        title: 'Steppers',
-        path: 'steppers',
-        children: [
-            {
-                title: 'Dynamic Stepper',
-                path: 'dynamic-stepper',
-                component: DynamicStepperComponent,
-            },
-        ],
+        title: 'Dynamic Stepper',
+        path: 'dynamic-stepper',
+        component: DynamicStepperComponent,
     },
 ];
 

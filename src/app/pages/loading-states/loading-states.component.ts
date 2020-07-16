@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { dataList, placeholderList } from './data';
-import { InterpreterService } from './services/interpreter.service';
-import { StateService } from '../../services/state.service';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
+import {dataList, placeholderList} from './data';
+import {InterpreterService} from './services/interpreter.service';
+import {StateService} from '../../services/state.service';
 
 @Component({
     selector: 'app-loading-states',
     templateUrl: './loading-states.component.html',
     styleUrls: ['./loading-states.component.scss'],
+    encapsulation: ViewEncapsulation.None,
 })
 export class LoadingStatesComponent implements OnInit {
     cols: number;

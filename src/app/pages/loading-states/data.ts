@@ -1,21 +1,19 @@
 export type LoadingData = {
-  name: string;
-  data?: {
-    heroValue: number,
-    loadValue: number;
-    battery: number;
-    channels:
-      {
-        icon: string;
-        label: string;
-        value: number;
-        unit: string;
-      }[];
+    name: string;
+    data?: {
+        heroValue: number;
+        loadValue: number;
+        battery: number;
+        channels: Array<{
+            icon: string;
+            label: string;
+            value: number;
+            unit: string;
+        }>;
+    };
+};
 
-  }
-}
-
-export const dataList: LoadingData[]= [
+export const dataList: LoadingData[] = [
     {
         name: 'placeholder1',
         data: {
@@ -27,22 +25,22 @@ export const dataList: LoadingData[]= [
                     icon: 'wb_sunny',
                     label: 'Temperature',
                     value: 68,
-                    unit: '°F'
+                    unit: '°F',
                 },
                 {
                     icon: 'brightness_high',
                     label: 'Output Voltage',
                     value: 480,
-                    unit: 'V'
+                    unit: 'V',
                 },
                 {
                     icon: 'wb_incandescent',
                     label: 'Output Current',
                     value: 15,
-                    unit: 'A'
-                }
-            ]
-        }
+                    unit: 'A',
+                },
+            ],
+        },
     },
     {
         name: 'placeholder2',
@@ -55,22 +53,22 @@ export const dataList: LoadingData[]= [
                     icon: 'wb_sunny',
                     label: 'Temperature',
                     value: 68,
-                    unit: '°F'
+                    unit: '°F',
                 },
                 {
                     icon: 'brightness_high',
                     label: 'Output Voltage',
                     value: 480,
-                    unit: 'V'
+                    unit: 'V',
                 },
                 {
                     icon: 'wb_incandescent',
                     label: 'Output Current',
                     value: 15,
-                    unit: 'A'
-                }
-            ]
-        }
+                    unit: 'A',
+                },
+            ],
+        },
     },
     {
         name: 'placeholder3',
@@ -83,23 +81,24 @@ export const dataList: LoadingData[]= [
                     icon: 'wb_sunny',
                     label: 'Temperature',
                     value: 50,
-                    unit: '°F'
+                    unit: '°F',
                 },
                 {
                     icon: 'brightness_high',
                     label: 'Output Voltage',
                     value: 680,
-                    unit: 'V'
+                    unit: 'V',
                 },
                 {
                     icon: 'wb_incandescent',
                     label: 'Output Current',
                     value: 13,
-                    unit: 'A'
-                }
-            ]
+                    unit: 'A',
+                },
+            ],
         },
-    }, {
+    },
+    {
         name: 'placeholder4',
         data: {
             heroValue: 54,
@@ -110,39 +109,40 @@ export const dataList: LoadingData[]= [
                     icon: 'wb_sunny',
                     label: 'Temperature',
                     value: 78,
-                    unit: '°F'
+                    unit: '°F',
                 },
                 {
                     icon: 'brightness_high',
                     label: 'Output Voltage',
                     value: 250,
-                    unit: 'V'
+                    unit: 'V',
                 },
                 {
                     icon: 'wb_incandescent',
                     label: 'Output Current',
                     value: 20,
-                    unit: 'A'
-                }
-            ]
+                    unit: 'A',
+                },
+            ],
         },
-    }
+    },
 ];
 
 export const placeholderList: LoadingData[] = [
-  {
-    name: 'placeholder1',
-    data: undefined
-  },
-  {
-    name: 'placeholder2',
-    data: undefined
-  },
-  {
-    name: 'placeholder3',
-    data: undefined
-  }, {
-    name: 'placeholder4',
-    data: undefined
-  }
+    {
+        name: 'placeholder1',
+        data: undefined,
+    },
+    {
+        name: 'placeholder2',
+        data: undefined,
+    },
+    {
+        name: 'placeholder3',
+        data: undefined,
+    },
+    {
+        name: 'placeholder4',
+        data: undefined,
+    },
 ];

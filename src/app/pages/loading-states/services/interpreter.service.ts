@@ -1,12 +1,11 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import * as PXBColors from '@pxblue/colors';
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: 'root',
 })
 export class InterpreterService {
-
-    interpretIcon(value: number) {
+    interpretIcon(value: number): string {
         if (value < 80) {
             return 'A';
         }
@@ -16,7 +15,7 @@ export class InterpreterService {
         return 'C';
     }
 
-    interpretColor(value: number) {
+    interpretColor(value: number): string {
         if (value < 25) {
             return PXBColors.red[500];
         }
@@ -26,7 +25,7 @@ export class InterpreterService {
         return PXBColors.green[500];
     }
 
-    interpretGrade(value: number) {
+    interpretGrade(value: number): string {
         if (value < 80) {
             return PXBColors.red[500];
         }

@@ -13,6 +13,7 @@ import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.compon
 import { ResponsiveTableComponent } from './pages/list/responsive-table/responsive-table.component';
 import { DynamicStepperComponent } from './pages/dynamic-stepper/dynamic-stepper.component';
 import { FormValidationComponent } from './pages/form-validation/form-validation.component';
+import { I18nComponent } from './pages/i18n/i18n.component';
 
 export type DrawerItem = {
     title: string;
@@ -58,7 +59,7 @@ export const ROUTES: DrawerItem[] = [
     {
         title: 'Internationalization',
         path: 'internationalization',
-        component: PlaceholderComponent,
+        component: I18nComponent,
     },
     {
         title: 'Lists',

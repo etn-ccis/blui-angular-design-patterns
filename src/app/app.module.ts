@@ -29,6 +29,7 @@ import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
 import { ResponsiveTableModule } from './pages/list/responsive-table/responsive-table.module';
 import { DynamicStepperModule } from './pages/dynamic-stepper/dynamic-stepper.module';
 import { FormValidationModule } from './pages/form-validation/form-validation.module';
+import { I18nModule } from './pages/i18n/i18n.module';
 
 @NgModule({
     declarations: [AppComponent, PlaceholderComponent],
@@ -39,6 +40,7 @@ import { FormValidationModule } from './pages/form-validation/form-validation.mo
         MultiselectListModule,
         CollapsibleAppBarModule,
         BasicBottomSheetModule,
+        I18nModule,
         DrawerLayoutModule,
         DrawerModule,
         BrowserAnimationsModule,

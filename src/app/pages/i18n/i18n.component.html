@@ -1,0 +1,91 @@
+<mat-sidenav-container class="i18n-container" (backdropClick)="open = false">
+    <mat-sidenav mode="over" class="sidenav" [opened]="open" position="end">
+        <mat-nav-list fxLayout="column" fxFlexFill class="sidenav-content">
+            <mat-toolbar class="toolbar-header">
+                <mat-toolbar-row class="logo-row">
+                    <mat-icon class="logo" [class.rtl]="rtl">offline_bolt</mat-icon>
+                </mat-toolbar-row>
+                <mat-toolbar-row style="height: 4px;">
+                    <small>PX {{ 'BLUE' | translate }}</small>
+                </mat-toolbar-row>
+                <mat-toolbar-row>
+                    <small style="margin-top: -24px;" id="i18n">{{ 'I18N' | translate }}</small>
+                </mat-toolbar-row>
+            </mat-toolbar>
+            <mat-divider></mat-divider>
+            <div class="nav-wrapper">
+                <a mat-list-item (click)="toggleI18nMenu()">
+                    <mat-icon matListIcon [class.rtl]="rtl">home</mat-icon>
+                    <span>{{ 'MENU_ITEMS.HOME' | translate }}</span>
+                </a>
+                <a mat-list-item (click)="toggleI18nMenu()">
+                    <mat-icon matListIcon [class.rtl]="rtl">folder</mat-icon>
+                    <span>{{ 'MENU_ITEMS.PROJECTS' | translate }}</span>
+                </a>
+                <a mat-list-item (click)="toggleI18nMenu()">
+                    <mat-icon matListIcon [class.rtl]="rtl">report</mat-icon>
+                    <span>{{ 'MENU_ITEMS.WARNINGS' | translate }}</span>
+                </a>
+                <a mat-list-item (click)="toggleI18nMenu()">
+                    <mat-icon matListIcon [class.rtl]="rtl">settings</mat-icon>
+                    <span>{{ 'MENU_ITEMS.SETTINGS' | translate }}</span>
+                </a>
+                <a mat-list-item (click)="toggleI18nMenu()">
+                    <mat-icon matListIcon [class.rtl]="rtl">help</mat-icon>
+                    <span>{{ 'MENU_ITEMS.HELP' | translate }}</span>
+                </a>
+            </div>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+        <mat-toolbar color="primary">
+            <button
+                *ngIf="isSmall"
+                [style.marginLeft.px]="rtl ? 0 : -8"
+                [style.marginRight.px]="rtl ? -8 : 0"
+                mat-icon-button
+                (click)="toggleMenu()"
+            >
+                <mat-icon [class.rtl]="rtl">menu</mat-icon>
+            </button>
+            <div>{{ 'I18N' | translate }}</div>
+            <pxb-spacer></pxb-spacer>
+            <button
+                [matTooltip]="'I18N_MENU_TOOLTIP' | translate"
+                matTooltipPosition="below"
+                matTooltipHideDelay="200"
+                type="button"
+                aria-label="Toggle sidenav"
+                mat-icon-button
+                (click)="toggleI18nMenu()"
+            >
+                <mat-icon [class.rtl]="rtl" aria-label="Side nav toggle icon">menu_open</mat-icon>
+            </button>
+        </mat-toolbar>
+
+        <mat-toolbar class="select-language">
+            <mat-form-field>
+                <mat-select
+                    #langeSelect
+                    (ngModelChange)="translate.use(langeSelect.value)"
+                    [(ngModel)]="selectedLanguage"
+                >
+                    <mat-option *ngFor="let lang of enabledLocales; let i = index" [value]="enabledLocales[i]">
+                        {{ 'LANGUAGES.' + lang | translate }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-raised-button color="primary" style="margin: 20px;">
+                <mat-icon [class.rtl]="rtl">shopping_cart</mat-icon> {{ 'ADD_TO_CART' | translate }}
+            </button>
+        </mat-toolbar>
+
+        <mat-nav-list>
+            <pxb-info-list-item *ngFor="let fruit of fruits" (click)="toggleFruit(fruit)" [hidePadding]="true">
+                <mat-checkbox pxb-left-content [checked]="selectedFruits.has(fruit)" color="primary"></mat-checkbox>
+                <div pxb-title>{{ 'FRUITS.' + fruit | translate }}</div>
+                <div pxb-subtitle class="list">{{ 'MORE_INFO' | translate }}</div>
+            </pxb-info-list-item>
+        </mat-nav-list>
+    </mat-sidenav-content>
+</mat-sidenav-container>

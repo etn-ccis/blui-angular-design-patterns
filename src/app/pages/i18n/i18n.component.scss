@@ -1,0 +1,74 @@
+@import '~@pxblue/colors/palette';
+.i18n-container {
+    height: 100vh;
+    width: 100%;
+}
+.sidenav {
+    max-width: 90%;
+    transition: width 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    width: 350px;
+    .sidenav-content {
+        padding-top: 0;
+        overflow-x: hidden;
+    }
+    .toolbar-header {
+        background-color: map-get($pxb-blue, 500);
+        color: white;
+        min-height: 150px;
+    }
+    .logo-row {
+        height: 72px;
+        margin-left: 8px;
+        margin-bottom: 42px;
+        margin-right: 8px;
+        .logo {
+            font-size: 64px;
+            transform: rotate(42deg);
+        }
+    }
+    .nav-wrapper {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 0px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        span {
+            margin: 0 16px;
+        }
+    }
+}
+
+.content {
+    background-color: map-get($pxb-white, 50);
+}
+
+.icon,
+.nav-wrapper mat-icon {
+    color: map-get($pxb-gray, 700);
+}
+.list {
+    color: map-get($pxb-gray, 500);
+}
+
+[matSubheader] {
+    white-space: nowrap;
+}
+
+mat-nav-list {
+    padding-top: 0px;
+    mat-checkbox {
+        display: inline-flex;
+    }
+}
+
+.rtl {
+    transform: scaleX(-1);
+}
+
+.select-language {
+    font-size: 1rem;
+    background-color: map-get($pxb-white, 50);
+    mat-form-field {
+        color: map-get($pxb-black, 500);
+    }
+}

@@ -21,7 +21,7 @@
                 <ng-template matStepLabel
                     >{{ step.title || 'Choose an action' }}
                     <mat-icon
-                        class="delete_icon"
+                        class="delete-icon"
                         *ngIf="stepper.selectedIndex === i"
                         data-cy="delete-step"
                         (click)="removeStep(i)"
@@ -31,7 +31,7 @@
                     >
                 </ng-template>
                 <mat-radio-group class="radio-group" (change)="changeStepSelection($event, i)" data-cy="radiogroup">
-                    <mat-radio-button style="margin: 10px 0;" *ngFor="let option of stepOptions" [value]="option.value">
+                    <mat-radio-button style="margin: 16px 0;" *ngFor="let option of stepOptions" [value]="option.value">
                         {{ option.label }}
                     </mat-radio-button>
                 </mat-radio-group>
@@ -44,7 +44,7 @@
                     [disabled]="!allCompleted"
                     data-cy="add-step"
                     (click)="addItem()"
-                    class="add_button"
+                    class="add-button"
                     [disableRipple]="!allCompleted"
                 >
                     Add a Step
@@ -61,15 +61,17 @@
             <mat-icon>add</mat-icon>
         </ng-template>
     </mat-vertical-stepper>
-    <div style="padding-left: 20px;">
+    <div style="padding-left: 24px;">
         <button mat-raised-button color="primary" data-cy="done" (click)="handleDone()">
             DONE
         </button>
     </div>
 </div>
-<div *ngIf="procedureFinished" style="padding: 20px 30px;" data-cy="reset-page">
-    <p>Procedure created successfully.</p>
-    <button mat-raised-button color="primary" (click)="handleReset()" data-cy="reset">
-        RESET
-    </button>
+<div *ngIf="procedureFinished" data-cy="reset-page" style="height: calc(100vh - 64px);">
+    <pxb-empty-state title="Procedure created successfully" style="margin: 16px;">
+        <mat-icon pxb-empty-icon>check_circle</mat-icon>
+        <button pxb-actions mat-raised-button color="primary" (click)="handleReset()">
+            RESET
+        </button>
+    </pxb-empty-state>
 </div>

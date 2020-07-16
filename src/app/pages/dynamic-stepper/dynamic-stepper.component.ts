@@ -1,9 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { StateService } from 'src/app/services/state.service';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
-import { FormGroup, FormArray, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, FormArray } from '@angular/forms';
 import { MatRadioChange } from '@angular/material/radio';
+import { MatStepper } from '@angular/material/stepper';
 
 @Component({
     selector: 'app-dynamic-stepper',
@@ -22,7 +23,7 @@ export class DynamicStepperComponent implements OnInit {
     formGroup: FormGroup;
     form: FormArray;
     RandomFormGroup: FormGroup;
-    @ViewChild('stepper', {}) stepper;
+    @ViewChild('stepper', {}) stepper: MatStepper;
     stepOptions = [
         { label: 'Buy Groceries', value: '1' },
         { label: 'Cook Dinner', value: '2' },
@@ -37,14 +38,10 @@ export class DynamicStepperComponent implements OnInit {
     constructor(
         private readonly _drawerService: StateService,
         private readonly _breakpointObserver: BreakpointObserver,
-        private readonly _formBuilder: FormBuilder
+        private readonly _changeDetector: ChangeDetectorRef
     ) {}
 
     ngOnInit(): void {
-        this.RandomFormGroup = this._formBuilder.group({
-            Ctrl: ['', Validators.required],
-        });
-
         this._breakpointObserver
             .observe([Breakpoints.Small, Breakpoints.Handset])
             .subscribe((state: BreakpointState) => {
@@ -60,6 +57,7 @@ export class DynamicStepperComponent implements OnInit {
         this.steps.push({ title: null, value: null, completed: false });
         this.stepper.selectedIndex = this.steps.length - 1;
         this.allCompleted = false;
+        this._changeDetector.detectChanges();
     }
 
     changeStepSelection(event: MatRadioChange, index: number): void {

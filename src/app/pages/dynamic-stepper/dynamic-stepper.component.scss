@@ -5,14 +5,14 @@
     flex-direction: column;
 }
 
-.delete_icon {
+.delete-icon {
     vertical-align: middle;
     color: map-get($pxb-black, 500);
     font-size: 18px;
     line-height: 24px;
 }
 
-.add_button {
+.add-button {
     width: 100%;
     height: 100%;
     padding: 16px 64px;
@@ -22,6 +22,12 @@
     &[disabled] {
         background: transparent;
     }
+}
+
+::ng-deep .mat-step-label,
+.add-button {
+    font-weight: 400;
+    font-size: 1rem;
 }
 
 ::ng-deep .mat-step:last-child .mat-step-label {

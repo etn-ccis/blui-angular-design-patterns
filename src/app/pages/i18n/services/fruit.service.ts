@@ -1,30 +1,28 @@
-import {Injectable} from '@angular/core';
-import {Subject} from "rxjs";
-import {english} from "../translations/english";
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
+import { english } from '../translations/english';
 
 @Injectable({
     providedIn: 'root',
 })
-export class FruitService  {
+export class FruitService {
+    selectedFruits = new Set<string>();
+    fruits = Object.keys(english.FRUITS);
+    fruitSelectionObs = new Subject<number>();
 
-  selectedFruits = new Set<string>();
-  fruits = Object.keys(english.FRUITS);
-  fruitSelectionObs = new Subject<number>();
+    // Return false to stop event propagation
+    toggleFruit(fruit: string): boolean {
+        this.selectedFruits.has(fruit) ? this.selectedFruits.delete(fruit) : this.selectedFruits.add(fruit);
+        this.emitChange();
+        return false;
+    }
 
-  // Return false to stop event propagation
-  toggleFruit(fruit: string): boolean {
-    this.selectedFruits.has(fruit) ? this.selectedFruits.delete(fruit) : this.selectedFruits.add(fruit);
-    this.emitChange();
-    return false;
-  }
+    cancelItems(): void {
+        this.selectedFruits.clear();
+        this.emitChange();
+    }
 
-  cancelItems(): void {
-    this.selectedFruits.clear();
-    this.emitChange();
-  }
-
-  emitChange(): void {
-    this.fruitSelectionObs.next(this.selectedFruits.size);
-  }
+    emitChange(): void {
+        this.fruitSelectionObs.next(this.selectedFruits.size);
+    }
 }
-

@@ -5,10 +5,10 @@ import { english } from './translations/english';
 import { BidirectionalService } from './services/bidirectional.service';
 import { StateService } from '../../services/state.service';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import {MatSnackBar} from "@angular/material/snack-bar";
-import {SnackBarComponent} from "./snack-bar.component";
-import {FruitService} from "./services/fruit.service";
-import {Subscription} from "rxjs";
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { SnackBarComponent } from './snack-bar.component';
+import { FruitService } from './services/fruit.service';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-i18n',
@@ -39,7 +39,6 @@ export class I18nComponent implements OnInit {
         this.listenForFruitSelectionChanges();
     }
 
-
     ngOnInit(): void {
         this.fruits = this._fruitService.fruits;
         this.selectedFruits = this._fruitService.selectedFruits;
@@ -55,7 +54,7 @@ export class I18nComponent implements OnInit {
     }
 
     ngOnDestroy(): void {
-      this.hideSnackBar();
+        this.hideSnackBar();
     }
 
     toggleMenu(): void {
@@ -72,15 +71,15 @@ export class I18nComponent implements OnInit {
     }
 
     showSnackBar(): void {
-      if (!this.snackbarOpen) {
-        this.snackbarOpen = true;
-        this._snackBar.openFromComponent(SnackBarComponent);
-      }
+        if (!this.snackbarOpen) {
+            this.snackbarOpen = true;
+            this._snackBar.openFromComponent(SnackBarComponent);
+        }
     }
 
     hideSnackBar(): void {
-      this.snackbarOpen = false;
-      this._snackBar.dismiss();
+        this.snackbarOpen = false;
+        this._snackBar.dismiss();
     }
 
     listenForLanguageChanges(): void {
@@ -90,8 +89,8 @@ export class I18nComponent implements OnInit {
     }
 
     listenForFruitSelectionChanges(): void {
-      this._fruitService.fruitSelectionObs.subscribe((selected: number) => {
-        selected === 0 ? this.hideSnackBar() : this.showSnackBar();
-      });
+        this._fruitService.fruitSelectionObs.subscribe((selected: number) => {
+            selected === 0 ? this.hideSnackBar() : this.showSnackBar();
+        });
     }
 }

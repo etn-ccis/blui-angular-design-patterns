@@ -58,7 +58,7 @@
         <mat-toolbar class="select-language">
             <mat-form-field>
                 <mat-select
-                  #langeSelect
+                    #langeSelect
                     (ngModelChange)="translate.use(langeSelect.value)"
                     [(ngModel)]="selectedLanguage"
                 >
@@ -84,6 +84,5 @@
                 <div pxb-subtitle class="list">{{ 'MORE_INFO' | translate }}</div>
             </pxb-info-list-item>
         </mat-nav-list>
-
     </mat-sidenav-content>
 </mat-sidenav-container>

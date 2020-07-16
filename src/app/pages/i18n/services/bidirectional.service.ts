@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class BidirectionalService {
     changeDirectionality(lang: string): void {
-        const body = document.querySelector('.app-content');
-        body.setAttribute('dir', this.isRTL(lang) ? 'rtl' : 'ltr');
+        const container = document.querySelector('.app-content');
+        container.setAttribute('dir', this.isRTL(lang) ? 'rtl' : 'ltr');
     }
 
     isRTL(lang: string): boolean {

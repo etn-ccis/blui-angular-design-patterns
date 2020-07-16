@@ -41,9 +41,9 @@ export const ROUTES: DrawerItem[] = [
         ],
     },
     {
-      title: 'Loading States',
-      path: 'loading',
-      component: LoadingStatesComponent,
+        title: 'Loading States',
+        path: 'loading',
+        component: LoadingStatesComponent,
     },
     {
         title: 'Form Validation',

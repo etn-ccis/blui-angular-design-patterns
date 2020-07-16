@@ -40,7 +40,7 @@
         "@angular-devkit/build-angular": "~0.901.9",
         "@angular/cli": "~9.1.9",
         "@angular/compiler-cli": "~9.1.11",
-        "@pxblue/eslint-config": "^2.0.0",
+        "@pxblue/eslint-config": "^2.0.1",
         "@pxblue/prettier-config": "^1.0.2",
         "@types/jasmine": "~3.5.0",
         "@types/jasminewd2": "~2.0.3",

@@ -15,7 +15,7 @@ import { BidirectionalService } from './services/bidirectional.service';
     </div>`,
 })
 export class SnackBarComponent {
-    selected: number = 1;
+    selected = 1;
 
     constructor(
         private readonly _fruitService: FruitService,

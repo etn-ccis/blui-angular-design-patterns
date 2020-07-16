@@ -6,16 +6,16 @@ describe('BidirectionService', () => {
     let service: BidirectionalService;
 
     beforeEach(() => {
-        TestBed.configureTestingModule({});
+        void TestBed.configureTestingModule({});
         service = TestBed.inject(BidirectionalService);
     });
 
     it('should be created', () => {
-        expect(service).toBeTruthy();
+        void expect(service).toBeTruthy();
     });
 
     it('should return true if the language is Arabic', () => {
-        expect(service.isRTL('ar')).toBe(true);
-        expect(service.isRTL('en')).toBe(false);
+        void expect(service.isRTL('ar')).toBe(true);
+        void expect(service.isRTL('en')).toBe(false);
     });
 });

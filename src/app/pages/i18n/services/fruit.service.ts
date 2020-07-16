@@ -12,7 +12,11 @@ export class FruitService {
 
     // Return false to stop event propagation
     toggleFruit(fruit: string): boolean {
-        this.selectedFruits.has(fruit) ? this.selectedFruits.delete(fruit) : this.selectedFruits.add(fruit);
+        if (this.selectedFruits.has(fruit)) {
+            this.selectedFruits.delete(fruit);
+        } else {
+            this.selectedFruits.add(fruit);
+        }
         this.emitChange();
         return false;
     }

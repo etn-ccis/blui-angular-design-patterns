@@ -21,7 +21,7 @@ export class I18nComponent implements OnInit, OnDestroy {
     fruits: string[];
     isSmall: boolean;
     snackbarOpen = false;
-    rtl: boolean = false;
+    rtl = false;
 
     constructor(
         private readonly _drawerService: StateService,
@@ -89,7 +89,11 @@ export class I18nComponent implements OnInit, OnDestroy {
 
     listenForFruitSelectionChanges(): void {
         this._fruitService.fruitSelectionObs.subscribe((selected: number) => {
-            selected === 0 ? this.hideSnackBar() : this.showSnackBar();
+            if (selected === 0) {
+                this.hideSnackBar();
+            } else {
+                this.showSnackBar();
+            }
         });
     }
 }

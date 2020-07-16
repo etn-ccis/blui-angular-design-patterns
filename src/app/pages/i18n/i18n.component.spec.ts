@@ -7,7 +7,7 @@ describe('I18nComponent', () => {
     let component: I18nComponent;
 
     beforeEach(async(() => {
-        TestBed.configureTestingModule({
+        void TestBed.configureTestingModule({
             imports: [I18nModule],
         }).compileComponents();
 
@@ -17,14 +17,14 @@ describe('I18nComponent', () => {
 
     it('should create the app', () => {
         fixture.detectChanges();
-        expect(component).toBeTruthy();
+        void expect(component).toBeTruthy();
     });
 
     it(`should load english by default`, () => {
         fixture.detectChanges();
         const i18n = fixture.nativeElement.querySelector('#i18n').innerHTML;
         component.translate.use('SE');
-        expect(i18n).toEqual('Internationalization');
+        void expect(i18n).toEqual('Internationalization');
     });
 
     it(`should load spanish on language change`, () => {
@@ -32,6 +32,6 @@ describe('I18nComponent', () => {
         component.translate.use('ES');
         fixture.detectChanges();
         const i18n = fixture.nativeElement.querySelector('#i18n').innerHTML;
-        expect(i18n).toEqual('Internacionalización');
+        void expect(i18n).toEqual('Internacionalización');
     });
 });

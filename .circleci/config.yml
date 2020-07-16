@@ -26,7 +26,7 @@ jobs:
       #       name: Lint
       #       command: |
       #           yarn lint
-      # - run:
-      #       name: Unit Tests
-      #       command: |
-      #           yarn test
+      - run:
+          name: Unit Tests
+          command: |
+            yarn test

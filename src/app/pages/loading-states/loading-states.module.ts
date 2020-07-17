@@ -35,8 +35,5 @@ import { MatIconModule } from '@angular/material/icon';
         ChannelValueModule,
     ],
     declarations: [LoadingStatesComponent, PlaceholderCardComponent],
-    bootstrap: [LoadingStatesComponent],
-    providers: [],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class LoadingStatesModule {}

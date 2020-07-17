@@ -4,6 +4,11 @@ mat-list {
     color: map-get($pxb-gray, 800);
 }
 
+.loading-states-container {
+  background-color: map-get($pxb-gray, 50);
+  height: 100%;
+}
+
 .mat-list-base .mat-list-item {
     color: inherit;
     height: 48px;

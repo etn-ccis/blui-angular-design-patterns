@@ -15,7 +15,7 @@ export class LoadingStatesComponent implements OnInit {
 
     constructor(
         private readonly _drawerService: StateService,
-        private readonly _breakpointObserver: BreakpointObserver,
+        private readonly _breakpointObserver: BreakpointObserver
     ) {
         this._breakpointObserver
             .observe([Breakpoints.Handset, Breakpoints.Small, Breakpoints.Medium])

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { dataList, placeholderList } from './data';
-import { InterpreterService } from './services/interpreter.service';
 import { StateService } from '../../services/state.service';
 
 @Component({
@@ -17,7 +16,6 @@ export class LoadingStatesComponent implements OnInit {
     constructor(
         private readonly _drawerService: StateService,
         private readonly _breakpointObserver: BreakpointObserver,
-        public interpreter: InterpreterService
     ) {
         this._breakpointObserver
             .observe([Breakpoints.Handset, Breakpoints.Small, Breakpoints.Medium])

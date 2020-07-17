@@ -18,13 +18,13 @@
                 <mat-list class="padding0" *ngIf="device.data" id="data-list">
                     <pxb-hero-banner [divider]="true">
                         <pxb-hero label="Grade" value="{{ device.data.scoreValue }}" units="/100" size="36">
-                            <span [style.color]="interpreter.interpretGrade(device.data.scoreValue)" pxb-primary>
-                                {{ interpreter.interpretIcon(device.data.scoreValue) }}
+                            <span [style.color]="device.data.scoreValue | grade" pxb-primary>
+                                {{ device.data.scoreValue | icon }}
                             </span>
                         </pxb-hero>
                         <pxb-hero label="Load">
                             <pie-progress
-                                [style.color]="interpreter.interpretColor(100 - device.data.loadValue)"
+                                [style.color]="100 - device.data.loadValue | color"
                                 percent="{{ device.data.loadValue }}"
                                 size="36"
                                 pxb-primary
@@ -33,7 +33,7 @@
                         </pxb-hero>
                         <pxb-hero label="Battery" value="{{ device.data.battery }}" units="%">
                             <battery-progress
-                                [style.color]="interpreter.interpretColor(device.data.battery)"
+                                [style.color]="device.data.battery | color"
                                 percent="{{ device.data.battery }}"
                                 size="36"
                                 pxb-primary

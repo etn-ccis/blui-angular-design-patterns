@@ -15,6 +15,9 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
+import { IconPipe } from './pipes/icon.pipe';
+import { GradePipe } from './pipes/grade.pipe';
+import { ColorPipe } from './pipes/color.pipe';
 
 @NgModule({
     imports: [
@@ -35,6 +38,6 @@ import { MatIconModule } from '@angular/material/icon';
         ChannelValueModule,
         InfoListItemModule,
     ],
-    declarations: [LoadingStatesComponent, PlaceholderCardComponent],
+    declarations: [IconPipe, GradePipe, ColorPipe, LoadingStatesComponent, PlaceholderCardComponent],
 })
 export class LoadingStatesModule {}

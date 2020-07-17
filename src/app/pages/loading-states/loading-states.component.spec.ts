@@ -1,7 +1,7 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { LoadingStatesComponent } from './loading-states.component';
 import { dataList } from './data';
+import { LoadingStatesModule } from './loading-states.module';
 
 describe('AppComponent', () => {
     let app: LoadingStatesComponent;
@@ -9,8 +9,7 @@ describe('AppComponent', () => {
 
     beforeEach(async(() => {
         void TestBed.configureTestingModule({
-            declarations: [LoadingStatesComponent],
-            schemas: [CUSTOM_ELEMENTS_SCHEMA],
+            imports: [LoadingStatesModule],
         })
             .compileComponents()
             .then(() => {

@@ -4,13 +4,13 @@
     </button>
     <h6>Loading States</h6>
     <div fxFlex></div>
-    <button mat-button color="white" (click)="refreshData()">
+    <button mat-icon-button color="white" (click)="refreshData()">
         <mat-icon>autorenew</mat-icon>
     </button>
 </mat-toolbar>
 
-<div style="padding: 20px;" class="loading-states-container">
-    <mat-grid-list [cols]="cols" gutterSize="12px" rowHeight="276px">
+<div style="padding: 24px;" class="loading-states-container">
+    <mat-grid-list [cols]="cols" gutterSize="16px" rowHeight="276px">
         <mat-grid-tile *ngFor="let device of deviceList">
             <mat-card class="padding0">
                 <app-placeholder-card *ngIf="!device.data" id="placeholder"></app-placeholder-card>
@@ -26,7 +26,6 @@
                             <pie-progress
                                 [style.color]="100 - device.data.loadValue | color"
                                 percent="{{ device.data.loadValue }}"
-                                size="36"
                                 pxb-primary
                             ></pie-progress>
                             <pxb-channel-value value="{{ device.data.loadValue }}" units="%"> </pxb-channel-value>
@@ -35,7 +34,6 @@
                             <battery-progress
                                 [style.color]="device.data.battery | color"
                                 percent="{{ device.data.battery }}"
-                                size="36"
                                 pxb-primary
                             ></battery-progress>
                         </pxb-hero>

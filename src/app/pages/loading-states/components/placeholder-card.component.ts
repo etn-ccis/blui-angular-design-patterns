@@ -20,7 +20,7 @@ import { Component } from '@angular/core';
     styles: [
         `
             .ph-item {
-                padding: 10px 0;
+                padding: 16px 0;
                 margin: 0;
                 justify-content: space-around;
                 height: 260px;

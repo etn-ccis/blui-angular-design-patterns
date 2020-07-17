@@ -10,7 +10,7 @@
 </mat-toolbar>
 
 <div style="padding: 20px;">
-    <mat-grid-list [cols]="cols" gutterSize="12px" rowHeight="270px">
+    <mat-grid-list [cols]="cols" gutterSize="12px" rowHeight="276px">
         <mat-grid-tile *ngFor="let device of deviceList">
             <mat-card class="padding0">
                 <app-placeholder-card *ngIf="!device.data" id="placeholder"></app-placeholder-card>
@@ -40,13 +40,13 @@
                             ></battery-progress>
                         </pxb-hero>
                     </pxb-hero-banner>
-                    <mat-list-item *ngFor="let list of device.data.channels">
-                        <mat-icon>{{ list.icon }}</mat-icon>
-                        <h3 class="list-label">{{ list.label }}</h3>
-                        <div class="list-value">
+                    <pxb-info-list-item *ngFor="let list of device.data.channels" dense="true" divider="true">
+                        <mat-icon pxb-icon>{{ list.icon }}</mat-icon>
+                        <div pxb-title>{{ list.label }}</div>
+                        <div pxb-right-content>
                             <pxb-channel-value value="{{ list.value }}" units="{{ list.unit }}"></pxb-channel-value>
                         </div>
-                    </mat-list-item>
+                    </pxb-info-list-item>
                 </mat-list>
             </mat-card>
         </mat-grid-tile>

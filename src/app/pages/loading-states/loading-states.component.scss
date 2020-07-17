@@ -10,20 +10,10 @@ mat-list {
     border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-mat-list-item .list-label {
-    margin: 0;
-    margin-left: 15px;
-}
-
-.list-value {
-    flex: 1 1 0px;
-    text-align: right;
-}
-
 .mat-card {
     width: 100%;
-    overflow: hidden;
     height: 100%;
+  overflow: hidden;
 }
 
 .padding0 {
@@ -34,6 +24,6 @@ mat-grid-tile {
     overflow: visible;
 }
 
-::ng-deep .pxb-hero-banner {
-    justify-content: space-around !important;
+::ng-deep pxb-hero-banner .pxb-hero-banner {
+    justify-content: space-around;
 }

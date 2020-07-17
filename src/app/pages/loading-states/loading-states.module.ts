@@ -1,11 +1,11 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgProgressIconsModule } from '@pxblue/ng-progress-icons';
-import {HeroModule, ChannelValueModule, InfoListItemModule} from '@pxblue/angular-components';
+import { HeroModule, ChannelValueModule, InfoListItemModule } from '@pxblue/angular-components';
 import { ContentLoaderModule } from '@netbasal/ngx-content-loader';
 import { LoadingStatesComponent } from './loading-states.component';
 import { PlaceholderCardComponent } from './components/placeholder-card.component';
@@ -17,24 +17,24 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    FlexLayoutModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatListModule,
-    ContentLoaderModule,
-    MatCardModule,
-    MatGridListModule,
-    HeroModule,
-    MatIconModule,
-    HttpClientModule,
-    NgProgressIconsModule,
-    ChannelValueModule,
-    InfoListItemModule,
-  ],
+    imports: [
+        BrowserModule,
+        FlexLayoutModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatListModule,
+        ContentLoaderModule,
+        MatCardModule,
+        MatGridListModule,
+        HeroModule,
+        MatIconModule,
+        HttpClientModule,
+        NgProgressIconsModule,
+        ChannelValueModule,
+        InfoListItemModule,
+    ],
     declarations: [LoadingStatesComponent, PlaceholderCardComponent],
 })
 export class LoadingStatesModule {}

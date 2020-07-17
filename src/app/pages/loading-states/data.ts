@@ -1,7 +1,7 @@
 export type LoadingData = {
     name: string;
     data?: {
-        heroValue: number;
+        scoreValue: number;
         loadValue: number;
         battery: number;
         channels: Array<{
@@ -17,7 +17,7 @@ export const dataList: LoadingData[] = [
     {
         name: 'placeholder1',
         data: {
-            heroValue: 0,
+            scoreValue: 0,
             loadValue: 20,
             battery: 12,
             channels: [
@@ -45,7 +45,7 @@ export const dataList: LoadingData[] = [
     {
         name: 'placeholder2',
         data: {
-            heroValue: 100,
+            scoreValue: 100,
             loadValue: 33,
             battery: 52,
             channels: [
@@ -73,7 +73,7 @@ export const dataList: LoadingData[] = [
     {
         name: 'placeholder3',
         data: {
-            heroValue: 72,
+            scoreValue: 72,
             loadValue: 98,
             battery: 98,
             channels: [
@@ -101,7 +101,7 @@ export const dataList: LoadingData[] = [
     {
         name: 'placeholder4',
         data: {
-            heroValue: 54,
+            scoreValue: 54,
             loadValue: 73,
             battery: 22,
             channels: [

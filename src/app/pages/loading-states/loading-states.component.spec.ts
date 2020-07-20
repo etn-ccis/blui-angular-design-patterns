@@ -2,6 +2,7 @@ import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { LoadingStatesComponent } from './loading-states.component';
 import { dataList } from './data';
 import { LoadingStatesModule } from './loading-states.module';
+import { MatIconTestingModule } from '@angular/material/icon/testing';
 
 describe('AppComponent', () => {
     let app: LoadingStatesComponent;
@@ -9,7 +10,7 @@ describe('AppComponent', () => {
 
     beforeEach(async(() => {
         void TestBed.configureTestingModule({
-            imports: [LoadingStatesModule],
+            imports: [LoadingStatesModule, MatIconTestingModule],
         })
             .compileComponents()
             .then(() => {

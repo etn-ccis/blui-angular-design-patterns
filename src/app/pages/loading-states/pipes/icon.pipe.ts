@@ -4,11 +4,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class IconPipe implements PipeTransform {
     transform(value: number): string {
         if (value < 80) {
-            return 'A';
+            return 'px-icons:grade_a';
         }
         if (value < 90) {
-            return 'B';
+            return 'px-icons:grade_b';
         }
-        return 'C';
+        return 'px-icons:grade_c';
     }
 }

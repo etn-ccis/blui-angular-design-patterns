@@ -23,7 +23,15 @@
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.app.json",
                         "aot": true,
-                        "assets": ["src/favicon.ico", "src/assets"],
+                        "assets": [
+                          "src/favicon.ico",
+                          "src/assets",
+                          {
+                            "glob": "**/*",
+                            "input": "./node_modules/@pxblue/icons-svg",
+                            "output": "./assets/@pxblue/icons-svg"
+                          }
+                        ],
                         "styles": [
                             "src/styles.scss",
                             "./node_modules/@pxblue/angular-themes/theme.scss",

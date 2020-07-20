@@ -18,9 +18,11 @@
                 <mat-list class="padding0" *ngIf="device.data" id="data-list">
                     <pxb-hero-banner [divider]="true">
                         <pxb-hero label="Grade" value="{{ device.data.scoreValue }}" units="/100" size="36">
-                            <span [style.color]="device.data.scoreValue | grade" pxb-primary>
-                                {{ device.data.scoreValue | icon }}
-                            </span>
+                            <mat-icon
+                                pxb-primary
+                                [svgIcon]="device.data.scoreValue | icon"
+                                [style.color]="device.data.scoreValue | grade"
+                            ></mat-icon>
                         </pxb-hero>
                         <pxb-hero label="Load">
                             <pie-progress

@@ -1,9 +1,9 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { StateService } from 'src/app/services/state.service';
 import { CdkScrollable, ScrollDispatcher } from '@angular/cdk/scrolling';
 import { map } from 'rxjs/operators';
 import { presidents } from './data';
+import {StateService} from "../../../services/state.service";
 
 @Component({
     selector: 'app-collapsible-app-bar',

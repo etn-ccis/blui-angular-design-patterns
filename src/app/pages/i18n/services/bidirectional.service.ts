@@ -9,7 +9,10 @@ export class BidirectionalService {
     changeDirectionality(lang: string): void {
         this.setCurrentLanguage(lang);
         const container = document.querySelector('.app-content');
-        container.setAttribute('dir', this.isRTL(lang) ? 'rtl' : 'ltr');
+        // App Container
+        if (container) {
+            container.setAttribute('dir', this.isRTL(lang) ? 'rtl' : 'ltr');
+        }
 
         // Snackbar
         const overlay = document.querySelector('.cdk-global-overlay-wrapper');

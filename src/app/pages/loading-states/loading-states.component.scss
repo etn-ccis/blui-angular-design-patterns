@@ -1,9 +1,5 @@
 @import '~@pxblue/colors/palette.scss';
 
-mat-list {
-    color: map-get($pxb-gray, 800);
-}
-
 .loading-states-container {
     background-color: map-get($pxb-gray, 50);
     min-height: calc(100vh - 64px);

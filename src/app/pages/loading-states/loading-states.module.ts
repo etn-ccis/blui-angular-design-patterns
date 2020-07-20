@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgProgressIconsModule } from '@pxblue/ng-progress-icons';
 import { HeroModule, ChannelValueModule, InfoListItemModule } from '@pxblue/angular-components';
@@ -32,6 +33,7 @@ import { ColorPipe } from './pipes/color.pipe';
         MatGridListModule,
         HeroModule,
         MatIconModule,
+        HttpClientModule,
         NgProgressIconsModule,
         ChannelValueModule,
         InfoListItemModule,

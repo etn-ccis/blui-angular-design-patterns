@@ -4,9 +4,6 @@ import { StateService } from './services/state.service';
 import * as PXBColors from '@pxblue/colors';
 import { DrawerItem, ROUTES } from './app-routing.module';
 import { ViewportService } from './services/viewport.service';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
-const iconSet = '../assets/@pxblue/icons-svg/icons.svg';
 
 @Component({
     selector: 'app-root',
@@ -19,17 +16,10 @@ export class AppComponent {
     selected: string;
 
     constructor(
-        private readonly _matIconRegistry: MatIconRegistry,
-        private readonly _domSanitizer: DomSanitizer,
         private readonly _router: Router,
         public readonly stateService: StateService,
         public viewportService: ViewportService
-    ) {
-        this._matIconRegistry.addSvgIconSetInNamespace(
-            'px-icons',
-            this._domSanitizer.bypassSecurityTrustResourceUrl(iconSet)
-        );
-    }
+    ) {}
 
     select(route: DrawerItem, parentRoute = '/'): void {
         if (!route.children) {

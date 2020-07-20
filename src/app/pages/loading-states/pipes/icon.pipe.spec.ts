@@ -13,8 +13,8 @@ describe('IconPipe', () => {
         void expect(pipe).toBeTruthy();
     });
 
-    it("should return 'px-icons:grade_a' if the value is less than 80", () => {
-        void expect(pipe.transform(79)).toBe('px-icons:grade_a');
-        void expect(pipe.transform(80)).not.toBe('px-icons:grade_a');
+    it("should return 'A' if the value is less than 80", () => {
+        void expect(pipe.transform(79)).toBe('A');
+        void expect(pipe.transform(80)).not.toBe('A');
     });
 });

@@ -3,7 +3,7 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 import { CdkScrollable, ScrollDispatcher } from '@angular/cdk/scrolling';
 import { map } from 'rxjs/operators';
 import { presidents } from './data';
-import {StateService} from "../../../services/state.service";
+import { StateService } from '../../../services/state.service';
 
 @Component({
     selector: 'app-collapsible-app-bar',

@@ -9,7 +9,6 @@ import 'core-js/es/reflect';
 import 'core-js/stable/reflect';
 import 'core-js/features/reflect';
 
-
 if (environment.production) {
     enableProdMode();
 }

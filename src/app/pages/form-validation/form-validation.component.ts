@@ -26,6 +26,9 @@ export class FormValidationComponent implements OnInit {
     numberFlag = false;
     upperFlag = false;
     lowerFlag = false;
+    oldPasswordVisible = false;
+    newPasswordVisible = false;
+    confirmPasswordVisible = false;
 
     //this accepts only number in phone number input field
     numberOnly(event: KeyboardEvent): boolean {
@@ -102,6 +105,18 @@ export class FormValidationComponent implements OnInit {
         this.numberFlag = /[0-9]/.test(password);
         this.upperFlag = /[A-Z]/.test(password);
         this.lowerFlag = /[a-z]/.test(password);
+    }
+
+    toggleOldPasswordVisibility(): void {
+        this.oldPasswordVisible = !this.oldPasswordVisible;
+    }
+    
+    toggleNewPasswordVisibility(): void {
+        this.newPasswordVisible = !this.newPasswordVisible;
+    }
+    
+    toggleConfirmPasswordVisibility(): void {
+        this.confirmPasswordVisible = !this.confirmPasswordVisible;
     }
 
     toggleMenu(): void {

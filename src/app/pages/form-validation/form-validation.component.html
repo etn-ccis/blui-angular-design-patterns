@@ -12,30 +12,34 @@
     </p>
     <mat-card>
         <form [formGroup]="userForm">
-            <mat-form-field>
+            <mat-form-field appearance="fill">
                 <mat-label>Input</mat-label>
-                <input matInput placeholder="Input" formControlName="inputFC" required type="telephone" />
+                <input matInput placeholder="Input" formControlName="inputFC" required type="text" />
                 <mat-icon
-                    *ngIf="userForm?.controls?.inputFC.touched"
-                    matSuffix
-                    [ngClass]="userForm?.controls?.inputFC.errors ? 'failure' : 'success'"
-                    >{{ userForm?.controls?.inputFC.errors ? 'clear' : 'done' }}</mat-icon
-                >
+                *ngIf="userForm?.controls?.inputFC.touched"
+                matSuffix
+                [ngClass]="userForm?.controls?.inputFC.errors ? 'failure-red' : 'success'"
+                >{{ userForm?.controls?.inputFC.errors ? 'clear' : 'done' }}</mat-icon
+            >
+                <mat-error *ngIf="userForm.get('inputFC').hasError('required')">required</mat-error>
+                <mat-hint>This is a regular input field.</mat-hint>
             </mat-form-field>
 
-            <mat-form-field>
+            <mat-form-field appearance="fill">
                 <mat-label>Enter your email</mat-label>
                 <input matInput placeholder="Enter your email" formControlName="email" required />
                 <mat-icon
                     *ngIf="userForm?.controls?.email.touched"
                     matSuffix
-                    [ngClass]="userForm?.controls?.email.errors ? 'failure' : 'success'"
+                    [ngClass]="userForm?.controls?.email.errors ? 'failure-red' : 'success'"
                     >{{ userForm?.controls?.email.errors ? 'clear' : 'done' }}</mat-icon
                 >
                 <mat-error *ngIf="userForm.get('email').hasError('pattern')">Invalid email address</mat-error>
+                <mat-error *ngIf="userForm.get('email').hasError('required')">required</mat-error>
+                <mat-hint>This field throws an error if the email format is incorrect.</mat-hint>
             </mat-form-field>
 
-            <mat-form-field>
+            <mat-form-field appearance="fill">
                 <mat-label>Phone number</mat-label>
                 <input
                     matInput
@@ -48,10 +52,12 @@
                 <mat-icon
                     *ngIf="userForm?.controls?.phoneNumber.touched"
                     matSuffix
-                    [ngClass]="userForm?.controls?.phoneNumber.errors ? 'failure' : 'success'"
+                    [ngClass]="userForm?.controls?.phoneNumber.errors ? 'failure-red' : 'success'"
                     >{{ userForm?.controls?.phoneNumber.errors ? 'clear' : 'done' }}</mat-icon
                 >
                 <mat-error *ngIf="userForm.get('phoneNumber').hasError('pattern')">invalid phone number</mat-error>
+                <mat-error *ngIf="userForm.get('phoneNumber').hasError('required')">required</mat-error>
+                <mat-hint>This field throws an error if the phone number format is incorrect. (Needs to be a valid U.S. number)</mat-hint>
             </mat-form-field>
         </form>
     </mat-card>
@@ -62,7 +68,8 @@
         user an indication of how many characters are available.
     </p>
     <mat-card>
-        <mat-form-field hintLabel="Max 30 characters">
+        <mat-form-field hintLabel="Max 30 characters" appearance="fill">
+            <mat-label>Enter Some Text</mat-label>
             <input matInput #input maxlength="30" placeholder="Enter some text" />
             <mat-hint align="end">{{ input.value?.length || 0 }}/30</mat-hint>
         </mat-form-field>
@@ -75,11 +82,16 @@
     </p>
     <mat-card>
         <form [formGroup]="userPassword">
-            <mat-form-field>
-                <input matInput placeholder="Old Password" required formControlName="oldPassword" type="password" />
+            <mat-form-field appearance="fill">
+                <mat-label>Old Password</mat-label>
+                <input matInput placeholder="Old Password" required formControlName="oldPassword" [type]="oldPasswordVisible ? 'text' : 'password'" />
+                <button mat-icon-button matSuffix (click)="toggleOldPasswordVisibility()">
+                    <mat-icon>{{oldPasswordVisible ? 'visibility' : 'visibility_off'}}</mat-icon>
+                </button>
             </mat-form-field>
             <div [formGroup]="passwordFormGroup">
-                <mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>New Password</mat-label>
                     <input
                         matInput
                         placeholder="New Password"
@@ -88,8 +100,35 @@
                         type="password"
                         (keyup)="checkPasswordStrength($event.target.value)"
                     />
+                    <button mat-icon-button matSuffix (click)="toggleNewPasswordVisibility()">
+                        <mat-icon>{{newPasswordVisible ? 'visibility' : 'visibility_off'}}</mat-icon>
+                    </button>
                 </mat-form-field>
-                <mat-form-field>
+                <mat-list style="margin: -40px 0 16px">
+                    <mat-list-item>
+                        <mat-icon [ngClass]="passLength ? 'success' : 'failure'">done</mat-icon>
+                        <span class="validation-message">At least 8 characters in length</span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <mat-icon [ngClass]="numberFlag ? 'success' : 'failure'">done</mat-icon
+                        >
+                        <span class="validation-message">At least 1 digit</span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <mat-icon [ngClass]="upperFlag ? 'success' : 'failure'">done</mat-icon>
+                        <span class="validation-message">At least 1 uppercase letter</span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <mat-icon [ngClass]="lowerFlag ? 'success' : 'failure'">done</mat-icon>
+                        <span class="validation-message">At least 1 lowercase letter</span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <mat-icon [ngClass]="specialFlag ? 'success' : 'failure'">done</mat-icon>
+                        <span class="validation-message">At least 1 special character (Valid: ! @ # $ ^ &)</span>
+                    </mat-list-item>
+                </mat-list>
+                <mat-form-field appearance="fill">
+                    <mat-label>Confirm Password</mat-label>
                     <input
                         matInput
                         placeholder="Confirm Password"
@@ -98,37 +137,14 @@
                         type="password"
                         [errorStateMatcher]="errorMatcher"
                     />
+                    <button mat-icon-button matSuffix (click)="toggleConfirmPasswordVisibility()">
+                        <mat-icon>{{confirmPasswordVisible ? 'visibility' : 'visibility_off'}}</mat-icon>
+                    </button>
                     <mat-error *ngIf="passwordFormGroup.hasError('passwordsDoNotMatch')"
                         >Passwords do not match
                     </mat-error>
                 </mat-form-field>
             </div>
         </form>
-
-        <p>A Password must contain the following:</p>
-        <mat-list>
-            <mat-list-item>
-                <mat-icon [ngClass]="passLength ? 'success' : 'failure'">{{ passLength ? 'done' : 'clear' }}</mat-icon>
-                At least 8 characters in length
-            </mat-list-item>
-            <mat-list-item>
-                <mat-icon [ngClass]="numberFlag ? 'success' : 'failure'">{{ numberFlag ? 'done' : 'clear' }}</mat-icon
-                >At least 1 digit
-            </mat-list-item>
-            <mat-list-item>
-                <mat-icon [ngClass]="upperFlag ? 'success' : 'failure'">{{ upperFlag ? 'done' : 'clear' }}</mat-icon> At
-                least 1 uppercase letter
-            </mat-list-item>
-            <mat-list-item>
-                <mat-icon [ngClass]="lowerFlag ? 'success' : 'failure'">{{ lowerFlag ? 'done' : 'clear' }}</mat-icon> At
-                least 1 lowercase letter
-            </mat-list-item>
-            <mat-list-item>
-                <mat-icon [ngClass]="specialFlag ? 'success' : 'failure'">{{
-                    specialFlag ? 'done' : 'clear'
-                }}</mat-icon>
-                At least 1 special character (Valid: ! @ # $ ^ &)
-            </mat-list-item>
-        </mat-list>
     </mat-card>
 </section>

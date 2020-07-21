@@ -1,23 +1,31 @@
 @import '~@pxblue/colors/palette.scss';
 
 section {
-    margin: 20px;
+    margin: 16px;
 }
 
 mat-card {
-    padding: 20px;
+    padding: 16px;
     margin-bottom: 50px;
 }
 
 mat-form-field {
     width: 100%;
-    margin-bottom: 35px;
+    margin-bottom: 32px;
+}
+
+.validation-message {
+    padding-left: 8px;
 }
 
 .success {
-    color: map-get($pxb-green, 500);
+    color: map-get($pxb-blue, 500);
 }
 
 .failure {
+    color: map-get($pxb-gray, 100);
+}
+
+.failure-red {
     color: map-get($pxb-red, 500);
 }

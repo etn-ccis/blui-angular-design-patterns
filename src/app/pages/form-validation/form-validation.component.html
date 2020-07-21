@@ -116,21 +116,21 @@
                     </button>
                 </mat-form-field>
                 <mat-list style="margin: -40px 0 16px;" class="validation-list">
-                    <app-validation-list-item
+                    <app-password-strength-check
                         [success]="passLength"
                         validationMessage="At least 8 characters in length"
-                    ></app-validation-list-item>
-                    <app-validation-list-item [success]="numberFlag" validationMessage="At least 1 digit">
-                    </app-validation-list-item>
-                    <app-validation-list-item [success]="upperFlag" validationMessage="At least 1 uppercase letter">
-                    </app-validation-list-item>
-                    <app-validation-list-item [success]="lowerFlag" validationMessage="At least 1 lowercase letter">
-                    </app-validation-list-item>
-                    <app-validation-list-item
+                    ></app-password-strength-check>
+                    <app-password-strength-check [success]="numberFlag" validationMessage="At least 1 digit">
+                    </app-password-strength-check>
+                    <app-password-strength-check [success]="upperFlag" validationMessage="At least 1 uppercase letter">
+                    </app-password-strength-check>
+                    <app-password-strength-check [success]="lowerFlag" validationMessage="At least 1 lowercase letter">
+                    </app-password-strength-check>
+                    <app-password-strength-check
                         [success]="specialFlag"
                         validationMessage="At least 1 special character (Valid: ! @ # $ ^ &)"
                     >
-                    </app-validation-list-item>
+                    </app-password-strength-check>
                 </mat-list>
                 <mat-form-field appearance="fill">
                     <mat-label>Confirm Password</mat-label>

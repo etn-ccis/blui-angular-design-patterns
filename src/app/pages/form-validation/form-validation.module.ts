@@ -10,7 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ValidationListItemComponent } from './validation-list-item.component';
+import { PasswordStrengthCheckComponent } from './password-strength-check.component';
 
 @NgModule({
     imports: [
@@ -26,6 +26,6 @@ import { ValidationListItemComponent } from './validation-list-item.component';
         MatInputModule,
         MatFormFieldModule
     ],
-    declarations: [FormValidationComponent, ValidationListItemComponent],
+    declarations: [FormValidationComponent, PasswordStrengthCheckComponent],
 })
 export class FormValidationModule {}

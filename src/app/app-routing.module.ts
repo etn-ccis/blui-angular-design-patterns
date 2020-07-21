@@ -14,6 +14,7 @@ import { DynamicStepperComponent } from './pages/dynamic-stepper/dynamic-stepper
 import { FormValidationComponent } from './pages/form-validation/form-validation.component';
 import { I18nComponent } from './pages/i18n/i18n.component';
 import { LoadingStatesComponent } from './pages/loading-states/loading-states.component';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 
 export type DrawerItem = {
     title: string;
@@ -115,7 +116,15 @@ export const ROUTES: DrawerItem[] = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(ROUTES)],
+    imports: [
+        RouterModule.forRoot([
+            ...ROUTES,
+            {
+                path: '',
+                component: LandingPageComponent,
+            },
+        ]),
+    ],
     exports: [RouterModule],
 })
 export class AppRoutingModule {}

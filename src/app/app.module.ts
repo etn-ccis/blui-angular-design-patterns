@@ -29,6 +29,7 @@ import { ResponsiveTableModule } from './pages/list/responsive-table/responsive-
 import { DynamicStepperModule } from './pages/dynamic-stepper/dynamic-stepper.module';
 import { FormValidationModule } from './pages/form-validation/form-validation.module';
 import { I18nModule } from './pages/i18n/i18n.module';
+import { LandingPageModule } from './pages/landing-page/landing-page.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -65,6 +66,7 @@ import { I18nModule } from './pages/i18n/i18n.module';
         ResponsiveTableModule,
         DynamicStepperModule,
         FormValidationModule,
+        LandingPageModule,
     ],
     bootstrap: [AppComponent],
 })

@@ -27,4 +27,8 @@ export class AppComponent {
             this.selected = route.title;
         }
     }
+
+    navigateHome(): void {
+        void this._router.navigate(['/']);
+    }
 }

@@ -106,14 +106,14 @@
                         placeholder="New Password"
                         required
                         formControlName="newPassword"
-                        type="password"
+                        [type]="newPasswordVisible ? 'text' : 'password'"
                         (keyup)="checkPasswordStrength($event.target.value)"
                     />
                     <button mat-icon-button matSuffix (click)="toggleNewPasswordVisibility()">
                         <mat-icon>{{ newPasswordVisible ? 'visibility' : 'visibility_off' }}</mat-icon>
                     </button>
                 </mat-form-field>
-                <mat-list style="margin: -40px 0 16px;">
+                <mat-list style="margin: -40px 0 16px;" class="validation-list">
                     <mat-list-item>
                         <mat-icon [ngClass]="passLength ? 'success' : 'failure'">done</mat-icon>
                         <span class="validation-message">At least 8 characters in length</span>
@@ -142,7 +142,7 @@
                         placeholder="Confirm Password"
                         required
                         formControlName="confirmPassword"
-                        type="password"
+                        [type]="confirmPasswordVisible ? 'text' : 'password'"
                         [errorStateMatcher]="errorMatcher"
                     />
                     <button mat-icon-button matSuffix (click)="toggleConfirmPasswordVisibility()">

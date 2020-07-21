@@ -19,7 +19,8 @@
                     *ngIf="userForm?.controls?.inputFC.touched"
                     matSuffix
                     [ngClass]="userForm?.controls?.inputFC.errors ? 'failure-red' : 'success'"
-                    >{{ userForm?.controls?.inputFC.errors ? 'clear' : 'done' }}</mat-icon
+                >
+                    {{ userForm?.controls?.inputFC.errors ? 'clear' : 'done' }}</mat-icon
                 >
                 <mat-error *ngIf="userForm.get('inputFC').hasError('required')">required</mat-error>
                 <mat-hint>This is a regular input field.</mat-hint>
@@ -32,7 +33,8 @@
                     *ngIf="userForm?.controls?.email.touched"
                     matSuffix
                     [ngClass]="userForm?.controls?.email.errors ? 'failure-red' : 'success'"
-                    >{{ userForm?.controls?.email.errors ? 'clear' : 'done' }}</mat-icon
+                >
+                    {{ userForm?.controls?.email.errors ? 'clear' : 'done' }}</mat-icon
                 >
                 <mat-error *ngIf="userForm.get('email').hasError('pattern')">Invalid email address</mat-error>
                 <mat-error *ngIf="userForm.get('email').hasError('required')">required</mat-error>
@@ -53,7 +55,8 @@
                     *ngIf="userForm?.controls?.phoneNumber.touched"
                     matSuffix
                     [ngClass]="userForm?.controls?.phoneNumber.errors ? 'failure-red' : 'success'"
-                    >{{ userForm?.controls?.phoneNumber.errors ? 'clear' : 'done' }}</mat-icon
+                >
+                    {{ userForm?.controls?.phoneNumber.errors ? 'clear' : 'done' }}</mat-icon
                 >
                 <mat-error *ngIf="userForm.get('phoneNumber').hasError('pattern')">invalid phone number</mat-error>
                 <mat-error *ngIf="userForm.get('phoneNumber').hasError('required')">required</mat-error>
@@ -114,26 +117,21 @@
                     </button>
                 </mat-form-field>
                 <mat-list style="margin: -40px 0 16px;" class="validation-list">
-                    <mat-list-item>
-                        <mat-icon [ngClass]="passLength ? 'success' : 'failure'">done</mat-icon>
-                        <span class="validation-message">At least 8 characters in length</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <mat-icon [ngClass]="numberFlag ? 'success' : 'failure'">done</mat-icon>
-                        <span class="validation-message">At least 1 digit</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <mat-icon [ngClass]="upperFlag ? 'success' : 'failure'">done</mat-icon>
-                        <span class="validation-message">At least 1 uppercase letter</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <mat-icon [ngClass]="lowerFlag ? 'success' : 'failure'">done</mat-icon>
-                        <span class="validation-message">At least 1 lowercase letter</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <mat-icon [ngClass]="specialFlag ? 'success' : 'failure'">done</mat-icon>
-                        <span class="validation-message">At least 1 special character (Valid: ! @ # $ ^ &)</span>
-                    </mat-list-item>
+                    <app-validation-list-item
+                        [success]="passLength"
+                        validationMessage="At least 8 characters in length"
+                    ></app-validation-list-item>
+                    <app-validation-list-item [success]="numberFlag" validationMessage="At least 1 digit">
+                    </app-validation-list-item>
+                    <app-validation-list-item [success]="upperFlag" validationMessage="At least 1 uppercase letter">
+                    </app-validation-list-item>
+                    <app-validation-list-item [success]="lowerFlag" validationMessage="At least 1 lowercase letter">
+                    </app-validation-list-item>
+                    <app-validation-list-item
+                        [success]="specialFlag"
+                        validationMessage="At least 1 special character (Valid: ! @ # $ ^ &)"
+                    >
+                    </app-validation-list-item>
                 </mat-list>
                 <mat-form-field appearance="fill">
                     <mat-label>Confirm Password</mat-label>

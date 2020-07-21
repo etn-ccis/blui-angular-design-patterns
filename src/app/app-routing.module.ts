@@ -14,6 +14,7 @@ import { ResponsiveTableComponent } from './pages/list/responsive-table/responsi
 import { DynamicStepperComponent } from './pages/dynamic-stepper/dynamic-stepper.component';
 import { FormValidationComponent } from './pages/form-validation/form-validation.component';
 import { I18nComponent } from './pages/i18n/i18n.component';
+import { LoadingStatesComponent } from './pages/loading-states/loading-states.component';
 
 export type DrawerItem = {
     title: string;
@@ -41,15 +42,9 @@ export const ROUTES: DrawerItem[] = [
         ],
     },
     {
-        title: 'Empty States',
-        path: 'empty-states',
-        children: [
-            {
-                title: 'Loading',
-                path: 'loading',
-                component: PlaceholderComponent,
-            },
-        ],
+        title: 'Loading States',
+        path: 'loading',
+        component: LoadingStatesComponent,
     },
     {
         title: 'Form Validation',

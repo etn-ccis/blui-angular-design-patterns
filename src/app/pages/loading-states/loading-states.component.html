@@ -1,0 +1,52 @@
+<mat-toolbar color="primary" flexLayout="row">
+    <button *ngIf="isSmall" mat-icon-button (click)="toggleMenu()" style="margin-left: -8px;">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <h6>Loading States</h6>
+    <div fxFlex></div>
+    <button mat-icon-button color="white" (click)="refreshData()">
+        <mat-icon>autorenew</mat-icon>
+    </button>
+</mat-toolbar>
+
+<div style="padding: 24px;" class="loading-states-container">
+    <mat-grid-list [cols]="cols" gutterSize="16px" rowHeight="276px">
+        <mat-grid-tile *ngFor="let device of deviceList">
+            <mat-card class="padding0">
+                <app-placeholder-card *ngIf="!device.data" id="placeholder"></app-placeholder-card>
+
+                <mat-list class="padding0" *ngIf="device.data" id="data-list">
+                    <pxb-hero-banner [divider]="true">
+                        <pxb-hero label="Grade" value="{{ device.data.scoreValue }}" units="/100" size="36">
+                            <span [style.color]="device.data.scoreValue | grade" pxb-primary>
+                                {{ device.data.scoreValue | icon }}
+                            </span>
+                        </pxb-hero>
+                        <pxb-hero label="Load">
+                            <pie-progress
+                                [style.color]="100 - device.data.loadValue | color"
+                                percent="{{ device.data.loadValue }}"
+                                pxb-primary
+                            ></pie-progress>
+                            <pxb-channel-value value="{{ device.data.loadValue }}" units="%"> </pxb-channel-value>
+                        </pxb-hero>
+                        <pxb-hero label="Battery" value="{{ device.data.battery }}" units="%">
+                            <battery-progress
+                                [style.color]="device.data.battery | color"
+                                percent="{{ device.data.battery }}"
+                                pxb-primary
+                            ></battery-progress>
+                        </pxb-hero>
+                    </pxb-hero-banner>
+                    <pxb-info-list-item *ngFor="let list of device.data.channels" dense="true" divider="true">
+                        <mat-icon pxb-icon>{{ list.icon }}</mat-icon>
+                        <div pxb-title>{{ list.label }}</div>
+                        <div pxb-right-content>
+                            <pxb-channel-value value="{{ list.value }}" units="{{ list.unit }}"></pxb-channel-value>
+                        </div>
+                    </pxb-info-list-item>
+                </mat-list>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

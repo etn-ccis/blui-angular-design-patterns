@@ -30,6 +30,8 @@ import { DynamicStepperModule } from './pages/dynamic-stepper/dynamic-stepper.mo
 import { FormValidationModule } from './pages/form-validation/form-validation.module';
 import { I18nModule } from './pages/i18n/i18n.module';
 import { LandingPageModule } from './pages/landing-page/landing-page.module';
+import { HttpClientModule } from '@angular/common/http';
+import { LoadingStatesModule } from './pages/loading-states/loading-states.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -60,9 +62,11 @@ import { LandingPageModule } from './pages/landing-page/landing-page.module';
         MatFormFieldModule,
         MatTabsModule,
         EmptyStateModule,
+        HttpClientModule,
         ComplexBottomSheetModule,
         SortableListModule,
         SearchBarModule,
+        LoadingStatesModule,
         ResponsiveTableModule,
         DynamicStepperModule,
         FormValidationModule,

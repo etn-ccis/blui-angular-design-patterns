@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { StateService } from 'src/app/services/state.service';
+import { StateService } from '../../../services/state.service';
 import { listData } from './shared/list';
 import * as Colors from '@pxblue/colors';
 

@@ -110,11 +110,11 @@ export class FormValidationComponent implements OnInit {
     toggleOldPasswordVisibility(): void {
         this.oldPasswordVisible = !this.oldPasswordVisible;
     }
-    
+
     toggleNewPasswordVisibility(): void {
         this.newPasswordVisible = !this.newPasswordVisible;
     }
-    
+
     toggleConfirmPasswordVisibility(): void {
         this.confirmPasswordVisible = !this.confirmPasswordVisible;
     }

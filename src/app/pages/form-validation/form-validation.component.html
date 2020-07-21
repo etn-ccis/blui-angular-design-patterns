@@ -16,11 +16,11 @@
                 <mat-label>Input</mat-label>
                 <input matInput placeholder="Input" formControlName="inputFC" required type="text" />
                 <mat-icon
-                *ngIf="userForm?.controls?.inputFC.touched"
-                matSuffix
-                [ngClass]="userForm?.controls?.inputFC.errors ? 'failure-red' : 'success'"
-                >{{ userForm?.controls?.inputFC.errors ? 'clear' : 'done' }}</mat-icon
-            >
+                    *ngIf="userForm?.controls?.inputFC.touched"
+                    matSuffix
+                    [ngClass]="userForm?.controls?.inputFC.errors ? 'failure-red' : 'success'"
+                    >{{ userForm?.controls?.inputFC.errors ? 'clear' : 'done' }}</mat-icon
+                >
                 <mat-error *ngIf="userForm.get('inputFC').hasError('required')">required</mat-error>
                 <mat-hint>This is a regular input field.</mat-hint>
             </mat-form-field>
@@ -57,7 +57,10 @@
                 >
                 <mat-error *ngIf="userForm.get('phoneNumber').hasError('pattern')">invalid phone number</mat-error>
                 <mat-error *ngIf="userForm.get('phoneNumber').hasError('required')">required</mat-error>
-                <mat-hint>This field throws an error if the phone number format is incorrect. (Needs to be a valid U.S. number)</mat-hint>
+                <mat-hint
+                    >This field throws an error if the phone number format is incorrect. (Needs to be a valid U.S.
+                    number)</mat-hint
+                >
             </mat-form-field>
         </form>
     </mat-card>
@@ -84,9 +87,15 @@
         <form [formGroup]="userPassword">
             <mat-form-field appearance="fill">
                 <mat-label>Old Password</mat-label>
-                <input matInput placeholder="Old Password" required formControlName="oldPassword" [type]="oldPasswordVisible ? 'text' : 'password'" />
+                <input
+                    matInput
+                    placeholder="Old Password"
+                    required
+                    formControlName="oldPassword"
+                    [type]="oldPasswordVisible ? 'text' : 'password'"
+                />
                 <button mat-icon-button matSuffix (click)="toggleOldPasswordVisibility()">
-                    <mat-icon>{{oldPasswordVisible ? 'visibility' : 'visibility_off'}}</mat-icon>
+                    <mat-icon>{{ oldPasswordVisible ? 'visibility' : 'visibility_off' }}</mat-icon>
                 </button>
             </mat-form-field>
             <div [formGroup]="passwordFormGroup">
@@ -101,17 +110,16 @@
                         (keyup)="checkPasswordStrength($event.target.value)"
                     />
                     <button mat-icon-button matSuffix (click)="toggleNewPasswordVisibility()">
-                        <mat-icon>{{newPasswordVisible ? 'visibility' : 'visibility_off'}}</mat-icon>
+                        <mat-icon>{{ newPasswordVisible ? 'visibility' : 'visibility_off' }}</mat-icon>
                     </button>
                 </mat-form-field>
-                <mat-list style="margin: -40px 0 16px">
+                <mat-list style="margin: -40px 0 16px;">
                     <mat-list-item>
                         <mat-icon [ngClass]="passLength ? 'success' : 'failure'">done</mat-icon>
                         <span class="validation-message">At least 8 characters in length</span>
                     </mat-list-item>
                     <mat-list-item>
-                        <mat-icon [ngClass]="numberFlag ? 'success' : 'failure'">done</mat-icon
-                        >
+                        <mat-icon [ngClass]="numberFlag ? 'success' : 'failure'">done</mat-icon>
                         <span class="validation-message">At least 1 digit</span>
                     </mat-list-item>
                     <mat-list-item>
@@ -138,7 +146,7 @@
                         [errorStateMatcher]="errorMatcher"
                     />
                     <button mat-icon-button matSuffix (click)="toggleConfirmPasswordVisibility()">
-                        <mat-icon>{{confirmPasswordVisible ? 'visibility' : 'visibility_off'}}</mat-icon>
+                        <mat-icon>{{ confirmPasswordVisible ? 'visibility' : 'visibility_off' }}</mat-icon>
                     </button>
                     <mat-error *ngIf="passwordFormGroup.hasError('passwordsDoNotMatch')"
                         >Passwords do not match

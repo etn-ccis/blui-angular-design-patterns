@@ -24,7 +24,7 @@ import { PasswordStrengthCheckComponent } from './password-strength-check.compon
         MatIconModule,
         MatButtonModule,
         MatInputModule,
-        MatFormFieldModule
+        MatFormFieldModule,
     ],
     declarations: [FormValidationComponent, PasswordStrengthCheckComponent],
 })

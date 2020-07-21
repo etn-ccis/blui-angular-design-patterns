@@ -29,6 +29,8 @@ import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
 import { ResponsiveTableModule } from './pages/list/responsive-table/responsive-table.module';
 import { DynamicStepperModule } from './pages/dynamic-stepper/dynamic-stepper.module';
 import { I18nModule } from './pages/i18n/i18n.module';
+import { HttpClientModule } from '@angular/common/http';
+import { LoadingStatesModule } from './pages/loading-states/loading-states.module';
 
 @NgModule({
     declarations: [AppComponent, PlaceholderComponent],
@@ -59,9 +61,11 @@ import { I18nModule } from './pages/i18n/i18n.module';
         MatFormFieldModule,
         MatTabsModule,
         EmptyStateModule,
+        HttpClientModule,
         ComplexBottomSheetModule,
         SortableListModule,
         SearchBarModule,
+        LoadingStatesModule,
         ResponsiveTableModule,
         DynamicStepperModule,
     ],

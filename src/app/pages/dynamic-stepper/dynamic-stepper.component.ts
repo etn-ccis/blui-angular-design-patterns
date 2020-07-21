@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { StateService } from 'src/app/services/state.service';
+import { StateService } from '../../services/state.service';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { FormGroup, FormArray } from '@angular/forms';
 import { MatRadioChange } from '@angular/material/radio';

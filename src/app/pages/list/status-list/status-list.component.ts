@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import * as Colors from '@pxblue/colors';
-import { StateService } from 'src/app/services/state.service';
+import { StateService } from '../../../services/state.service';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 
 export type ListItem = {

@@ -30,4 +30,8 @@ jobs:
           name: Unit Tests
           command: |
             yarn test:ci
+      - run:
+          name: Build
+          command: |
+            yarn build
 

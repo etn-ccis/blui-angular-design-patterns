@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { DataListComponent } from './pages/list/data-list/data-list.component';
-import { PlaceholderComponent } from './pages/placeholder/placeholder.component';
 import { ActionListComponent } from './pages/list/action-list/action-list.component';
 import { StatusListComponent } from './pages/list/status-list/status-list.component';
 import { MultiselectListComponent } from './pages/list/multiselect-list/multiselect-list.component';
@@ -12,6 +11,7 @@ import { SortableListComponent } from './pages/list/sortable-list/sortable-list.
 import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.component';
 import { ResponsiveTableComponent } from './pages/list/responsive-table/responsive-table.component';
 import { DynamicStepperComponent } from './pages/dynamic-stepper/dynamic-stepper.component';
+import { FormValidationComponent } from './pages/form-validation/form-validation.component';
 import { I18nComponent } from './pages/i18n/i18n.component';
 import { LoadingStatesComponent } from './pages/loading-states/loading-states.component';
 
@@ -48,7 +48,7 @@ export const ROUTES: DrawerItem[] = [
     {
         title: 'Form Validation',
         path: 'form-validation',
-        component: PlaceholderComponent,
+        component: FormValidationComponent,
     },
     {
         title: 'Internationalization',

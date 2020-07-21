@@ -16,7 +16,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTabsModule } from '@angular/material/tabs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DrawerLayoutModule, DrawerModule, EmptyStateModule } from '@pxblue/angular-components';
-import { PlaceholderComponent } from './pages/placeholder/placeholder.component';
 import { DataListModule } from './pages/list/data-list/data-list.module';
 import { ActionListModule } from './pages/list/action-list/action-list.module';
 import { StatusListModule } from './pages/list/status-list/status-list.module';
@@ -28,12 +27,13 @@ import { SortableListModule } from './pages/list/sortable-list/sortable-list.mod
 import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
 import { ResponsiveTableModule } from './pages/list/responsive-table/responsive-table.module';
 import { DynamicStepperModule } from './pages/dynamic-stepper/dynamic-stepper.module';
+import { FormValidationModule } from './pages/form-validation/form-validation.module';
 import { I18nModule } from './pages/i18n/i18n.module';
 import { HttpClientModule } from '@angular/common/http';
 import { LoadingStatesModule } from './pages/loading-states/loading-states.module';
 
 @NgModule({
-    declarations: [AppComponent, PlaceholderComponent],
+    declarations: [AppComponent],
     imports: [
         ActionListModule,
         DataListModule,
@@ -68,6 +68,7 @@ import { LoadingStatesModule } from './pages/loading-states/loading-states.modul
         LoadingStatesModule,
         ResponsiveTableModule,
         DynamicStepperModule,
+        FormValidationModule,
     ],
     bootstrap: [AppComponent],
 })

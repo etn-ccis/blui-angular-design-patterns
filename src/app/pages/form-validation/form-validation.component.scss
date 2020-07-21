@@ -1,0 +1,36 @@
+@import '~@pxblue/colors/palette.scss';
+
+section {
+    padding: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.example-container {
+    margin-bottom: 56px;
+}
+
+mat-form-field {
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.validation-list mat-list-item {
+    height: auto;
+}
+
+.validation-message {
+    padding-left: 8px;
+}
+
+.success {
+    color: map-get($pxb-blue, 500);
+}
+
+.failure {
+    color: map-get($pxb-gray, 100);
+}
+
+.failure-red {
+    color: map-get($pxb-red, 500);
+}

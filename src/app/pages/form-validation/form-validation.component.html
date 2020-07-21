@@ -1,0 +1,155 @@
+<mat-toolbar color="primary" class="app-bar">
+    <button *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="mat-title">Form Validation</div>
+</mat-toolbar>
+<section class="mat-typography">
+    <div class="example-container">
+        <h2>Basic Form Fields</h2>
+        <p>
+            The following examples show how to perform validation on various input types. The error icon on invalid
+            inputs is optional, but adds redundancy for color blind users.
+        </p>
+        <form [formGroup]="userForm">
+            <mat-form-field appearance="fill">
+                <mat-label>Input</mat-label>
+                <input matInput placeholder="Input" formControlName="inputFC" required type="text" />
+                <mat-icon
+                    *ngIf="userForm?.controls?.inputFC.touched"
+                    matSuffix
+                    [ngClass]="userForm?.controls?.inputFC.errors ? 'failure-red' : 'success'"
+                >
+                    {{ userForm?.controls?.inputFC.errors ? 'clear' : 'done' }}</mat-icon
+                >
+                <mat-error *ngIf="userForm.get('inputFC').hasError('required')">required</mat-error>
+                <mat-hint>This is a regular input field.</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Enter your email</mat-label>
+                <input matInput placeholder="Enter your email" formControlName="email" required />
+                <mat-icon
+                    *ngIf="userForm?.controls?.email.touched"
+                    matSuffix
+                    [ngClass]="userForm?.controls?.email.errors ? 'failure-red' : 'success'"
+                >
+                    {{ userForm?.controls?.email.errors ? 'clear' : 'done' }}</mat-icon
+                >
+                <mat-error *ngIf="userForm.get('email').hasError('pattern')">Invalid email address</mat-error>
+                <mat-error *ngIf="userForm.get('email').hasError('required')">required</mat-error>
+                <mat-hint>This field throws an error if the email format is incorrect.</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Phone number</mat-label>
+                <input
+                    matInput
+                    placeholder="Phone Number"
+                    formControlName="phoneNumber"
+                    (keypress)="numberOnly($event)"
+                    required
+                    maxlength="22"
+                />
+                <mat-icon
+                    *ngIf="userForm?.controls?.phoneNumber.touched"
+                    matSuffix
+                    [ngClass]="userForm?.controls?.phoneNumber.errors ? 'failure-red' : 'success'"
+                >
+                    {{ userForm?.controls?.phoneNumber.errors ? 'clear' : 'done' }}</mat-icon
+                >
+                <mat-error *ngIf="userForm.get('phoneNumber').hasError('pattern')">invalid phone number</mat-error>
+                <mat-error *ngIf="userForm.get('phoneNumber').hasError('required')">required</mat-error>
+                <mat-hint
+                    >This field throws an error if the phone number format is incorrect. (Needs to be a valid U.S.
+                    number)</mat-hint
+                >
+            </mat-form-field>
+        </form>
+    </div>
+
+    <div class="example-container">
+        <h2>Character Limits</h2>
+        <p>
+            The following example shows how to restrict the length of an input field. In these cases, you should provide
+            the user an indication of how many characters are available.
+        </p>
+        <mat-form-field hintLabel="Max 30 characters" appearance="fill">
+            <mat-label>Enter Some Text</mat-label>
+            <input matInput #input maxlength="30" placeholder="Enter some text" />
+            <mat-hint align="end">{{ input.value?.length || 0 }}/30</mat-hint>
+        </mat-form-field>
+    </div>
+    <div class="example-container">
+        <h2>Password Validation</h2>
+        <p>
+            The following example shows how to enforce password strength restrictions and confirmation field matching.
+            The password strength requirements for your application may differ from this example.
+        </p>
+        <form [formGroup]="userPassword">
+            <mat-form-field appearance="fill">
+                <mat-label>Old Password</mat-label>
+                <input
+                    matInput
+                    placeholder="Old Password"
+                    required
+                    formControlName="oldPassword"
+                    [type]="oldPasswordVisible ? 'text' : 'password'"
+                />
+                <button mat-icon-button matSuffix (click)="toggleOldPasswordVisibility()">
+                    <mat-icon>{{ oldPasswordVisible ? 'visibility' : 'visibility_off' }}</mat-icon>
+                </button>
+            </mat-form-field>
+            <div [formGroup]="passwordFormGroup">
+                <mat-form-field appearance="fill">
+                    <mat-label>New Password</mat-label>
+                    <input
+                        matInput
+                        placeholder="New Password"
+                        required
+                        formControlName="newPassword"
+                        [type]="newPasswordVisible ? 'text' : 'password'"
+                        (keyup)="checkPasswordStrength($event.target.value)"
+                    />
+                    <button mat-icon-button matSuffix (click)="toggleNewPasswordVisibility()">
+                        <mat-icon>{{ newPasswordVisible ? 'visibility' : 'visibility_off' }}</mat-icon>
+                    </button>
+                </mat-form-field>
+                <mat-list style="margin: -40px 0 16px;" class="validation-list">
+                    <app-password-strength-check
+                        [success]="passLength"
+                        validationMessage="At least 8 characters in length"
+                    ></app-password-strength-check>
+                    <app-password-strength-check [success]="numberFlag" validationMessage="At least 1 digit">
+                    </app-password-strength-check>
+                    <app-password-strength-check [success]="upperFlag" validationMessage="At least 1 uppercase letter">
+                    </app-password-strength-check>
+                    <app-password-strength-check [success]="lowerFlag" validationMessage="At least 1 lowercase letter">
+                    </app-password-strength-check>
+                    <app-password-strength-check
+                        [success]="specialFlag"
+                        validationMessage="At least 1 special character (Valid: ! @ # $ ^ &)"
+                    >
+                    </app-password-strength-check>
+                </mat-list>
+                <mat-form-field appearance="fill">
+                    <mat-label>Confirm Password</mat-label>
+                    <input
+                        matInput
+                        placeholder="Confirm Password"
+                        required
+                        formControlName="confirmPassword"
+                        [type]="confirmPasswordVisible ? 'text' : 'password'"
+                        [errorStateMatcher]="errorMatcher"
+                    />
+                    <button mat-icon-button matSuffix (click)="toggleConfirmPasswordVisibility()">
+                        <mat-icon>{{ confirmPasswordVisible ? 'visibility' : 'visibility_off' }}</mat-icon>
+                    </button>
+                    <mat-error *ngIf="passwordFormGroup.hasError('passwordsDoNotMatch')"
+                        >Passwords do not match
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </form>
+    </div>
+</section>

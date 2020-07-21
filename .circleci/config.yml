@@ -1,37 +1,76 @@
 version: 2
 jobs:
-  build:
-    working_directory: ~/angular-design-patterns
-    docker:
-      - image: circleci/node:12.9.1-browsers
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - v2-dependencies-{{ checksum "yarn.lock" }}
-      - run:
-          name: Install Dependencies
-          command: |
-            yarn install --frozen-lockfile
-      - save_cache:
-          name: Save Cache
-          paths:
-            - node_modules
-          key: v2-dependencies-{{ checksum "yarn.lock" }}
-      - run:
-          name: Prettier Check
-          command: |
-            yarn prettier:check
-      - run:
-          name: Lint
-          command: |
-            yarn lint
-      - run:
-          name: Unit Tests
-          command: |
-            yarn test:ci
-      - run:
-          name: Build
-          command: |
-            yarn build
+    build_project:
+        working_directory: ~/angular-design-patterns
+        docker:
+            - image: circleci/node:12.6-browsers
+        steps:
+            - checkout
+            - restore_cache:
+                keys:
+                    - v2-dependencies-{{ checksum "yarn.lock" }}
+            - run:
+                name: Install Dependencies
+                command: |
+                    yarn install --frozen-lockfile
+            - save_cache:
+                name: Save Cache
+                paths:
+                    - ~/.cache
+                    - node_modules
+                key: v2-dependencies-{{ checksum "yarn.lock" }}
+            - run:
+                name: Prettier Check
+                command: |
+                    yarn prettier:check
+            - run:
+                name: Lint
+                command: |
+                    yarn lint
+            - run:
+                name: Unit Tests
+                command: |
+                    yarn test:ci
+            - run:
+                name: Build Project
+                command: |
+                    yarn build
+    cypress_tests:
+        working_directory: ~/angular-design-patterns
+        docker:
+            - image: circleci/node:12.6-browsers
+        steps:
+            - checkout
+            - restore_cache:
+                keys:
+                    - v2-dependencies-{{ checksum "yarn.lock" }}
+            - run:
+                name: Install Dependencies
+                command: |
+                    yarn install --frozen-lockfile
+            - save_cache:
+                name: Save Cache
+                paths:
+                    - ~/.cache
+                    - node_modules
+                key: v2-dependencies-{{ checksum "yarn.lock" }}
+            - run:
+                name: Cypress E2E Tests
+                command: |
+                    yarn cytest
+            - store_artifacts:
+                path: cypress/screenshots
 
+workflows:
+    version: 2
+    angular_design_patterns:
+        jobs:
+            - build_project
+            - cypress_tests:
+                    requires:
+                        - build_project
+                    filters:
+                        branches:
+                            only:
+                                - master
+                                - dev

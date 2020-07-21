@@ -1,12 +1,13 @@
 @import '~@pxblue/colors/palette.scss';
 
 section {
-    margin: 16px;
+    padding: 16px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-mat-card {
-    padding: 16px;
-    margin-bottom: 50px;
+.example-container {
+    margin-bottom: 56px;
 }
 
 mat-form-field {

@@ -5,12 +5,12 @@
     <div class="mat-title">Form Validation</div>
 </mat-toolbar>
 <section class="mat-typography">
-    <h2>Basic Form Fields</h2>
-    <p>
-        The following examples show how to perform validation on various input types. The error icon on invalid inputs
-        is optional, but adds redundancy for color blind users.
-    </p>
-    <mat-card>
+    <div class="example-container">
+        <h2>Basic Form Fields</h2>
+        <p>
+            The following examples show how to perform validation on various input types. The error icon on invalid
+            inputs is optional, but adds redundancy for color blind users.
+        </p>
         <form [formGroup]="userForm">
             <mat-form-field appearance="fill">
                 <mat-label>Input</mat-label>
@@ -66,27 +66,26 @@
                 >
             </mat-form-field>
         </form>
-    </mat-card>
+    </div>
 
-    <h2>Character Limits</h2>
-    <p>
-        The following example shows how to restrict the length of an input field. In these cases, you should provide the
-        user an indication of how many characters are available.
-    </p>
-    <mat-card>
+    <div class="example-container">
+        <h2>Character Limits</h2>
+        <p>
+            The following example shows how to restrict the length of an input field. In these cases, you should provide
+            the user an indication of how many characters are available.
+        </p>
         <mat-form-field hintLabel="Max 30 characters" appearance="fill">
             <mat-label>Enter Some Text</mat-label>
             <input matInput #input maxlength="30" placeholder="Enter some text" />
             <mat-hint align="end">{{ input.value?.length || 0 }}/30</mat-hint>
         </mat-form-field>
-    </mat-card>
-
-    <h2>Password Validation</h2>
-    <p>
-        The following example shows how to enforce password strength restrictions and confirmation field matching. The
-        password strength requirements for your application may differ from this example.
-    </p>
-    <mat-card>
+    </div>
+    <div class="example-container">
+        <h2>Password Validation</h2>
+        <p>
+            The following example shows how to enforce password strength restrictions and confirmation field matching.
+            The password strength requirements for your application may differ from this example.
+        </p>
         <form [formGroup]="userPassword">
             <mat-form-field appearance="fill">
                 <mat-label>Old Password</mat-label>
@@ -152,5 +151,5 @@
                 </mat-form-field>
             </div>
         </form>
-    </mat-card>
+    </div>
 </section>

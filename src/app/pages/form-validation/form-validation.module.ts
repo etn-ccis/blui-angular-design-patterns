@@ -10,7 +10,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCardModule } from '@angular/material/card';
 import { ValidationListItemComponent } from './validation-list-item.component';
 
 @NgModule({
@@ -25,8 +24,7 @@ import { ValidationListItemComponent } from './validation-list-item.component';
         MatIconModule,
         MatButtonModule,
         MatInputModule,
-        MatFormFieldModule,
-        MatCardModule,
+        MatFormFieldModule
     ],
     declarations: [FormValidationComponent, ValidationListItemComponent],
 })

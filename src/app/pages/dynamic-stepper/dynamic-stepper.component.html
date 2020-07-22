@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" class="app-bar">
+<mat-toolbar color="primary" class="app-bar" data-cy="pxb-toolbar">
     <button *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
@@ -70,7 +70,7 @@
 <div *ngIf="procedureFinished" data-cy="reset-page" style="height: calc(100vh - 64px);">
     <pxb-empty-state title="Procedure created successfully" style="margin: 16px;">
         <mat-icon pxb-empty-icon>check_circle</mat-icon>
-        <button pxb-actions mat-raised-button color="primary" (click)="handleReset()">
+        <button pxb-actions mat-raised-button color="primary" (click)="handleReset()" data-cy="reset">
             RESET
         </button>
     </pxb-empty-state>

@@ -1,29 +1,32 @@
-<mat-toolbar color="primary" class="app-bar">
-    <button *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
+<mat-toolbar *ngIf="isSmall" color="primary" class="app-bar">
+    <button style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
     <div class="mat-title">PX Blue Design Patterns</div>
 </mat-toolbar>
-<div class="mat-typography" style="padding: 10vh 24px 40px; max-width: 600px; margin: 0 auto;">
-    <h2 class="mat-display-3" style="margin-bottom: 24px;">
+<div style="padding: 10vh 24px 40px; max-width: 600px; margin: 0 auto;">
+    <h2 class="mat-display-3" style="margin-bottom: 24px;" [@headerFadeInAnimation]>
         The <span [style.color]="Colors.blue[500]">Patterns</span>.
     </h2>
-    <p>
-        A <strong>design pattern</strong> is a common interaction or behavior that should be consistent across
-        applications. In general, we follow most of the design patterns and behavior from the Material Design system. PX
-        Blue design patterns are patterns that extend/modify those from Material or are specific to PX Blue
-        applications.
-    </p>
-    <p>
-        While everyone is encouraged to interact with the design pattern demos to become familiar with the interactions
-        and behaviors, this application is primarily intended for <strong>Angular developers</strong> to provide
-        examples of how to implement these patterns in their own applications.
-    </p>
-    <button *ngIf="isSmall" mat-stroked-button color="primary" style="margin-top: 24px;" (click)="toggleMenu()">
-        Explore PX Blue Design Patterns
-    </button>
-    <hr style="margin: 24px 0;" />
-    <div fxLayout="column" fxLayoutGap="8px" fxLayout.gt-sm="row">
+    <div [@bodyFadeInAnimation]>
+        <p>
+            A <strong>design pattern</strong> is a common interaction or behavior that should be consistent across
+            applications. In general, we follow most of the design patterns and behavior from the Material Design
+            system. PX Blue design patterns are patterns that extend/modify those from Material or are specific to PX
+            Blue applications.
+        </p>
+        <p>
+            While everyone is encouraged to interact with the design pattern demos to become familiar with the
+            interactions and behaviors, this application is primarily intended for
+            <strong>Angular developers</strong> to provide examples of how to implement these patterns in their own
+            applications.
+        </p>
+        <button *ngIf="isSmall" mat-stroked-button color="primary" style="margin-top: 24px;" (click)="toggleMenu()">
+            Explore PX Blue Design Patterns
+        </button>
+    </div>
+    <hr style="margin: 24px 0;" [@linksFadeInAnimation] />
+    <div fxLayout="column" fxLayoutGap="8px" fxLayout.gt-sm="row" [@linksFadeInAnimation]>
         <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="8px" style="justify-content: space-between;">
             <a
                 mat-button

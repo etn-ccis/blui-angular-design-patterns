@@ -11,7 +11,10 @@
         "e2e": "ng e2e",
         "lint:fix": "eslint \"src/**/**.ts\" --fix",
         "prettier": "prettier \"src/**/**.{ts,js,json,css,scss,html}\" --write",
-        "prettier:check": "prettier \"src/**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --check"
+        "prettier:check": "prettier \"src/**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --check",
+        "cy:run": "cypress run",
+        "cypress:open": "cypress open",
+        "cytest": "start-server-and-test start http://localhost:4200 cy:run"
     },
     "private": true,
     "dependencies": {
@@ -53,6 +56,7 @@
         "@typescript-eslint/eslint-plugin": "^3.3.0",
         "@typescript-eslint/parser": "^3.3.0",
         "codelyzer": "^5.1.2",
+        "cypress": "^4.11.0",
         "eslint": "^7.3.0",
         "eslint-config-prettier": "^6.11.0",
         "jasmine-core": "~3.5.0",
@@ -64,9 +68,11 @@
         "karma-jasmine-html-reporter": "^1.4.2",
         "prettier": "^2.0.5",
         "protractor": "~7.0.0",
+        "start-server-and-test": "^1.11.2",
         "ts-node": "~8.3.0",
         "tslint": "~6.1.0",
-        "typescript": "~3.8.3"
+        "typescript": "~3.8.3",
+        "wait-on": "^5.1.0"
     },
     "prettier": "@pxblue/prettier-config"
 }

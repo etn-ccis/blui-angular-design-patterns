@@ -1,5 +1,5 @@
 <mat-toolbar data-cy="pxb-toolbar" color="primary" flexLayout="row">
-    <button *ngIf="isSmall" mat-icon-button (click)="toggleMenu()" style="margin-left: -8px;">
+    <button data-cy="toolbar-menu" *ngIf="isSmall" mat-icon-button (click)="toggleMenu()" style="margin-left: -8px;">
         <mat-icon>menu</mat-icon>
     </button>
     <h6>Loading States</h6>

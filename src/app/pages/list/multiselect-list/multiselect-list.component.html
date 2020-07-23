@@ -1,5 +1,5 @@
 <mat-toolbar data-cy="pxb-toolbar" color="primary" class="app-bar">
-    <button *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
+    <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
     <div class="mat-title">Multiselect List</div>

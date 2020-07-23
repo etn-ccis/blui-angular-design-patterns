@@ -17,7 +17,13 @@
     </mat-toolbar>
     <mat-toolbar color="primary" class="abe">
         <mat-toolbar-row style="justify-content: space-between;">
-            <button *ngIf="isSmall" mat-icon-button (click)="toggleMenu()" style="margin-left: -4px;">
+            <button
+                data-cy="toolbar-menu"
+                *ngIf="isSmall"
+                mat-icon-button
+                (click)="toggleMenu()"
+                style="margin-left: -4px;"
+            >
                 <mat-icon>menu</mat-icon>
             </button>
         </mat-toolbar-row>

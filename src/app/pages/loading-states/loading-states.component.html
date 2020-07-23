@@ -1,10 +1,10 @@
-<mat-toolbar color="primary" flexLayout="row">
+<mat-toolbar data-cy="pxb-toolbar" color="primary" flexLayout="row">
     <button *ngIf="isSmall" mat-icon-button (click)="toggleMenu()" style="margin-left: -8px;">
         <mat-icon>menu</mat-icon>
     </button>
     <h6>Loading States</h6>
     <div fxFlex></div>
-    <button mat-icon-button color="white" (click)="refreshData()">
+    <button data-cy="toolbar-refresh" mat-icon-button color="white" (click)="refreshData()">
         <mat-icon>autorenew</mat-icon>
     </button>
 </mat-toolbar>
@@ -13,7 +13,11 @@
     <mat-grid-list [cols]="cols" gutterSize="16px" rowHeight="276px">
         <mat-grid-tile *ngFor="let device of deviceList">
             <mat-card class="padding0">
-                <app-placeholder-card *ngIf="!device.data" id="placeholder"></app-placeholder-card>
+                <app-placeholder-card
+                    *ngIf="!device.data"
+                    data-cy="place-holder"
+                    id="placeholder"
+                ></app-placeholder-card>
 
                 <mat-list class="padding0" *ngIf="device.data" id="data-list">
                     <pxb-hero-banner [divider]="true">

@@ -4,7 +4,12 @@
     (backdropClick)="stateService.setDrawerOpen(false)"
 >
     <pxb-drawer pxb-drawer [open]="stateService.getDrawerOpen()">
-        <pxb-drawer-header title="PX Blue" subtitle="Angular Design Patterns"></pxb-drawer-header>
+        <pxb-drawer-header
+            title="PX Blue"
+            subtitle="Angular Design Patterns"
+            (click)="navigateHome()"
+            style="cursor: pointer;"
+        ></pxb-drawer-header>
         <pxb-drawer-body>
             <pxb-drawer-nav-group>
                 <pxb-drawer-nav-item

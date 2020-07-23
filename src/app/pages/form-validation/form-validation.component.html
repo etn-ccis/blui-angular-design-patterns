@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" class="app-bar">
+<mat-toolbar color="primary" class="app-bar" data-cy="pxb-toolbar">
     <button *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
@@ -14,7 +14,14 @@
         <form [formGroup]="userForm">
             <mat-form-field appearance="fill">
                 <mat-label>Input</mat-label>
-                <input matInput placeholder="Input" formControlName="inputFC" required type="text" />
+                <input
+                    matInput
+                    placeholder="Input"
+                    formControlName="inputFC"
+                    required
+                    type="text"
+                    data-cy="basic-input"
+                />
                 <mat-icon
                     *ngIf="userForm?.controls?.inputFC.touched"
                     matSuffix
@@ -22,13 +29,15 @@
                 >
                     {{ userForm?.controls?.inputFC.errors ? 'clear' : 'done' }}</mat-icon
                 >
-                <mat-error *ngIf="userForm.get('inputFC').hasError('required')">required</mat-error>
+                <mat-error data-cy="input-error-text" *ngIf="userForm.get('inputFC').hasError('required')"
+                    >required</mat-error
+                >
                 <mat-hint>This is a regular input field.</mat-hint>
             </mat-form-field>
 
             <mat-form-field appearance="fill">
                 <mat-label>Enter your email</mat-label>
-                <input matInput placeholder="Enter your email" formControlName="email" required />
+                <input matInput placeholder="Enter your email" formControlName="email" required data-cy="basic-email" />
                 <mat-icon
                     *ngIf="userForm?.controls?.email.touched"
                     matSuffix
@@ -37,7 +46,9 @@
                     {{ userForm?.controls?.email.errors ? 'clear' : 'done' }}</mat-icon
                 >
                 <mat-error *ngIf="userForm.get('email').hasError('pattern')">Invalid email address</mat-error>
-                <mat-error *ngIf="userForm.get('email').hasError('required')">required</mat-error>
+                <mat-error data-cy="email-error-text" *ngIf="userForm.get('email').hasError('required')"
+                    >required</mat-error
+                >
                 <mat-hint>This field throws an error if the email format is incorrect.</mat-hint>
             </mat-form-field>
 
@@ -50,6 +61,7 @@
                     (keypress)="numberOnly($event)"
                     required
                     maxlength="22"
+                    data-cy="basic-phone"
                 />
                 <mat-icon
                     *ngIf="userForm?.controls?.phoneNumber.touched"
@@ -58,8 +70,10 @@
                 >
                     {{ userForm?.controls?.phoneNumber.errors ? 'clear' : 'done' }}</mat-icon
                 >
-                <mat-error *ngIf="userForm.get('phoneNumber').hasError('pattern')">invalid phone number</mat-error>
-                <mat-error *ngIf="userForm.get('phoneNumber').hasError('required')">required</mat-error>
+                <mat-error *ngIf="userForm.get('phoneNumber').hasError('pattern')">Invalid phone number</mat-error>
+                <mat-error data-cy="phone-number-error-text" *ngIf="userForm.get('phoneNumber').hasError('required')"
+                    >required</mat-error
+                >
                 <mat-hint
                     >This field throws an error if the phone number format is incorrect. (Needs to be a valid U.S.
                     number)</mat-hint
@@ -76,8 +90,8 @@
         </p>
         <mat-form-field hintLabel="Max 30 characters" appearance="fill">
             <mat-label>Enter Some Text</mat-label>
-            <input matInput #input maxlength="30" placeholder="Enter some text" />
-            <mat-hint align="end">{{ input.value?.length || 0 }}/30</mat-hint>
+            <input matInput #input maxlength="30" placeholder="Enter some text" data-cy="char-input" />
+            <mat-hint align="end" data-cy="char-count">{{ input.value?.length || 0 }}/30</mat-hint>
         </mat-form-field>
     </div>
     <div class="example-container">
@@ -95,6 +109,7 @@
                     required
                     formControlName="oldPassword"
                     [type]="oldPasswordVisible ? 'text' : 'password'"
+                    data-cy="old-password"
                 />
                 <button mat-icon-button matSuffix (click)="toggleOldPasswordVisibility()">
                     <mat-icon>{{ oldPasswordVisible ? 'visibility' : 'visibility_off' }}</mat-icon>
@@ -110,6 +125,7 @@
                         formControlName="newPassword"
                         [type]="newPasswordVisible ? 'text' : 'password'"
                         (keyup)="checkPasswordStrength($event.target.value)"
+                        data-cy="new-password"
                     />
                     <button mat-icon-button matSuffix (click)="toggleNewPasswordVisibility()">
                         <mat-icon>{{ newPasswordVisible ? 'visibility' : 'visibility_off' }}</mat-icon>
@@ -141,6 +157,7 @@
                         formControlName="confirmPassword"
                         [type]="confirmPasswordVisible ? 'text' : 'password'"
                         [errorStateMatcher]="errorMatcher"
+                        data-cy="confirm-password"
                     />
                     <button mat-icon-button matSuffix (click)="toggleConfirmPasswordVisibility()">
                         <mat-icon>{{ confirmPasswordVisible ? 'visibility' : 'visibility_off' }}</mat-icon>

@@ -4,6 +4,7 @@
         [ngClass]="{ 'mat-elevation-z2': scrollTop > 200 }"
         style="position: fixed; top: 0; z-index: 10;"
         *ngIf="shrinkToolbar"
+        data-cy="app-bar"
     >
         <mat-toolbar-row>
             <button *ngIf="isSmall" mat-icon-button (click)="toggleMenu()" style="margin-left: -4px;">
@@ -28,6 +29,7 @@
             </button>
         </mat-toolbar-row>
         <mat-toolbar-row
+            data-cy="banner"
             fxLayout="column"
             fxLayoutAlign="start"
             style="height: auto; margin-left: 56px;"

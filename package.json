@@ -4,7 +4,7 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve --configuration es5",
-        "build": "ng build --aot=false",
+        "build": "ng build",
         "test": "ng test",
         "test:ci": "ng test --watch false",
         "lint": "eslint \"src/**/**.ts\"",

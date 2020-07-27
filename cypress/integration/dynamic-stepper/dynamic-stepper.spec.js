@@ -10,7 +10,7 @@ describe('Dynamic stepper', () => {
         cy.get('[data-cy=pxb-toolbar]').should('contain', 'Dynamic Stepper');
     });
 
-    it('should add steps to stepper when add is cllicked', () => {
+    it('should add steps to stepper when add is clicked', () => {
         cy.contains('Cook Dinner').click()
         cy.get('[data-cy=add-step]').click()
         cy.contains('Go To Work').click({ force: true })

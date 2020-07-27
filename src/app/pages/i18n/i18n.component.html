@@ -45,7 +45,6 @@
                 [style.marginRight.px]="rtl ? -8 : 0"
                 mat-icon-button
                 (click)="toggleMenu()"
-                data-cy="toolbar-menu"
             >
                 <mat-icon [class.rtl]="rtl">menu</mat-icon>
             </button>
@@ -81,7 +80,7 @@
             </button>
         </mat-toolbar>
 
-        <mat-nav-list>
+        <mat-nav-list data-cy="list-items">
             <pxb-info-list-item *ngFor="let fruit of fruits" (click)="toggleFruit(fruit)" [hidePadding]="true">
                 <mat-checkbox pxb-left-content [checked]="selectedFruits.has(fruit)" color="primary"></mat-checkbox>
                 <div pxb-title>{{ 'FRUITS.' + fruit | translate }}</div>

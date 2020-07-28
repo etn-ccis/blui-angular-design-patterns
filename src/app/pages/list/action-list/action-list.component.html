@@ -1,14 +1,14 @@
-<mat-toolbar color="primary" class="app-bar">
-    <button *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
+<mat-toolbar data-cy="pxb-toolbar" color="primary" class="app-bar">
+    <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
     <div class="mat-title">Action List</div>
     <pxb-spacer></pxb-spacer>
-    <button mat-icon-button (click)="onRemoveAll()"><mat-icon>delete</mat-icon></button>
-    <button mat-icon-button (click)="onAddItem()"><mat-icon>add</mat-icon></button>
+    <button data-cy="toolbar-delete" mat-icon-button (click)="onRemoveAll()"><mat-icon>delete</mat-icon></button>
+    <button data-cy="toolbar-add" mat-icon-button (click)="onAddItem()"><mat-icon>add</mat-icon></button>
 </mat-toolbar>
 <mat-list *ngIf="data.length > 0">
-    <pxb-info-list-item [hidePadding]="true" *ngFor="let i of data">
+    <pxb-info-list-item [hidePadding]="true" *ngFor="let i of data" data-cy="list-content">
         <span pxb-title>{{ i.name }}</span>
         <span pxb-subtitle>{{ i.details }}</span>
         <span pxb-right-content>
@@ -31,7 +31,7 @@
 <div *ngIf="data.length === 0" style="height: calc(100vh - 64px);">
     <pxb-empty-state title="No Items Found" style="margin: 16px;">
         <mat-icon pxb-empty-icon>error</mat-icon>
-        <button pxb-actions mat-raised-button color="primary" (click)="onAddItem()">
+        <button data-cy="pxb-empty-state-add" pxb-actions mat-raised-button color="primary" (click)="onAddItem()">
             <mat-icon>add</mat-icon>
             Add An Item
         </button>

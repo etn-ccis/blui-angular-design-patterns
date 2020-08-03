@@ -6,7 +6,7 @@ import { StateService } from '../../services/state.service';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SnackBarComponent } from './snack-bar.component';
-import { FruitService } from './services/fruit.service';
+import { FruitService, Fruit } from './services/fruit.service';
 
 @Component({
     selector: 'app-i18n',
@@ -18,7 +18,7 @@ export class I18nComponent implements OnInit, OnDestroy {
     enabledLocales: Array<keyof SampleTranslation['LANGUAGES']> = ['EN', 'ES', 'FR', 'DE', 'PT', 'ZH', 'AR'];
     selectedLanguage: string;
     selectedFruits: Set<string>;
-    fruits: string[];
+    fruits: Fruit[];
     isSmall: boolean;
     snackbarOpen = false;
     rtl = false;

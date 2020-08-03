@@ -1,6 +1,8 @@
 import { SampleTranslation } from './sample-translation';
 
 export const french: SampleTranslation = {
+    CURRENCY_CODE: 'EUR',
+
     FRUITS: {
         APPLE: 'Pomme',
         BANANA: 'Banane',

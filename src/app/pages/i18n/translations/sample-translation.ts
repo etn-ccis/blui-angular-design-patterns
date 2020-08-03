@@ -1,4 +1,5 @@
 export type SampleTranslation = {
+    CURRENCY_CODE: string;
     FRUITS: {
         APPLE: string;
         BANANA: string;

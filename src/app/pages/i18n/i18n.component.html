@@ -82,10 +82,14 @@
         </mat-toolbar>
 
         <mat-nav-list data-cy="list-items">
-            <pxb-info-list-item *ngFor="let fruit of fruits" (click)="toggleFruit(fruit)" [hidePadding]="true">
-                <mat-checkbox pxb-left-content [checked]="selectedFruits.has(fruit)" color="primary"></mat-checkbox>
-                <div pxb-title>{{ 'FRUITS.' + fruit | translate }}</div>
-                <div pxb-subtitle class="list">{{ 'MORE_INFO' | translate }}</div>
+            <pxb-info-list-item *ngFor="let fruit of fruits" (click)="toggleFruit(fruit.name)" [hidePadding]="true">
+                <mat-checkbox
+                    pxb-left-content
+                    [checked]="selectedFruits.has(fruit.name)"
+                    color="primary"
+                ></mat-checkbox>
+                <div pxb-title>{{ 'FRUITS.' + fruit.name | translate }}</div>
+                <div pxb-subtitle class="list">{{ fruit.price | currency: ('CURRENCY_CODE' | translate) }}</div>
             </pxb-info-list-item>
         </mat-nav-list>
     </mat-sidenav-content>

@@ -2,13 +2,28 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { english } from '../translations/english';
 
+export type Fruit = {
+    name: string;
+    price: number;
+};
+
 @Injectable({
     providedIn: 'root',
 })
 export class FruitService {
     selectedFruits = new Set<string>();
-    fruits = Object.keys(english.FRUITS);
     fruitSelectionObs = new Subject<number>();
+    fruits: Fruit[] = [];
+
+    constructor() {
+        this._randomlyPriceItems();
+    }
+
+    private _randomlyPriceItems(): void {
+        for (const fruit of Object.keys(english.FRUITS)) {
+            this.fruits.push({ name: fruit, price: Math.round((Math.random() + Number.EPSILON) * 1000) / 100 });
+        }
+    }
 
     // Return false to stop event propagation
     toggleFruit(fruit: string): boolean {

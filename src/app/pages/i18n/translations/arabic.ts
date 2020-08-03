@@ -1,6 +1,7 @@
 import { SampleTranslation } from './sample-translation';
 
 export const arabic: SampleTranslation = {
+    CURRENCY_CODE: 'EGP',
     FRUITS: {
         APPLE: 'تفاحة',
         BANANA: 'موز',

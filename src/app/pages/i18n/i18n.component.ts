@@ -22,6 +22,7 @@ export class I18nComponent implements OnInit, OnDestroy {
     isSmall: boolean;
     snackbarOpen = false;
     rtl = false;
+    todayDate : Date = new Date();
 
     constructor(
         private readonly _drawerService: StateService,
@@ -82,6 +83,7 @@ export class I18nComponent implements OnInit, OnDestroy {
 
     listenForLanguageChanges(): void {
         this.translate.onLangChange.subscribe((event: TranslationChangeEvent) => {
+            console.log(event);
             this._bidirectionalService.changeDirectionality(event.lang);
             this.rtl = this._bidirectionalService.isRTL(this._bidirectionalService.getCurrentLanguage());
         });

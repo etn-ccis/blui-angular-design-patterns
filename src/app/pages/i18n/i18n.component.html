@@ -12,7 +12,7 @@
                     <small style="margin-top: -24px;" id="i18n">{{ 'I18N' | translate }}</small>
                 </mat-toolbar-row>
                 <mat-toolbar-row>
-                  <small>{{todayDate | date:'longDate':'+0200':selectedLanguage}}</small>
+                    <small>{{ todayDate | date: 'longDate':'+0200':selectedLanguage }}</small>
                 </mat-toolbar-row>
             </mat-toolbar>
             <mat-divider></mat-divider>
@@ -92,7 +92,9 @@
                     color="primary"
                 ></mat-checkbox>
                 <div pxb-title>{{ 'FRUITS.' + fruit.name | translate }}</div>
-                <div pxb-subtitle class="list">{{ fruit.price | currency: ('CURRENCY_CODE' | translate) }}</div>
+                <div pxb-subtitle class="list">
+                    {{ fruit.price | currency: ('CURRENCY_CODE' | translate):'symbol':undefined:selectedLanguage }}
+                </div>
             </pxb-info-list-item>
         </mat-nav-list>
     </mat-sidenav-content>

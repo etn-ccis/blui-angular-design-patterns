@@ -1,6 +1,7 @@
 import { SampleTranslation } from './sample-translation';
 
 export const german: SampleTranslation = {
+    CURRENCY_CODE: 'EUR',
     FRUITS: {
         APPLE: 'Apfel',
         BANANA: 'Banane',

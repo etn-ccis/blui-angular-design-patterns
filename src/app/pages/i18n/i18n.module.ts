@@ -20,6 +20,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SnackBarComponent } from './snack-bar.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+import localeDe from '@angular/common/locales/de';
+import localeEs from '@angular/common/locales/es';
+import localePt from '@angular/common/locales/pt';
+import localeZh from '@angular/common/locales/zh';
+import localeAr from '@angular/common/locales/ar';
+registerLocaleData(localeFr);
+registerLocaleData(localeDe);
+registerLocaleData(localeEs);
+registerLocaleData(localePt);
+registerLocaleData(localeZh);
+registerLocaleData(localeAr);
 
 @NgModule({
     declarations: [I18nComponent, SnackBarComponent],

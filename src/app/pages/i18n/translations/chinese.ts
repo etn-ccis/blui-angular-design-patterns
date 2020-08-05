@@ -1,6 +1,7 @@
 import { SampleTranslation } from './sample-translation';
 
 export const chinese: SampleTranslation = {
+    CURRENCY_CODE: 'CNY',
     FRUITS: {
         APPLE: '苹果',
         BANANA: '香蕉',

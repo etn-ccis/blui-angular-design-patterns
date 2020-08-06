@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DynamicStepperComponent } from './dynamic-stepper.component';
 import { DynamicStepperModule } from './dynamic-stepper.module';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { By } from '@angular/platform-browser';
 
 describe('DynamicStepperComponent', () => {
     let component: DynamicStepperComponent;
@@ -53,5 +54,22 @@ describe('DynamicStepperComponent', () => {
         void expect(component.procedureFinished).toBeFalsy();
         void expect(component.allCompleted).toBeFalsy();
         void expect(component.steps.length).toEqual(1);
+    }));
+
+    it('should handle delete all', async(() => {
+        fixture.detectChanges();
+        const deleteAllButton = fixture.debugElement.query(By.css('[data-cy="delete-all"]'));
+        const removeAllSpy = spyOn(component, 'onRemoveAll').and.stub();
+        deleteAllButton.triggerEventHandler('click', undefined);
+        fixture.detectChanges();
+        void expect(removeAllSpy).toHaveBeenCalledTimes(1);
+    }));
+
+    it('should handle delete step', async(() => {
+        fixture.detectChanges();
+        void expect(component.steps.length).toEqual(1);
+        const deleteStepButton = fixture.debugElement.query(By.css('[data-cy="delete-step"]'));
+        deleteStepButton.triggerEventHandler('click', undefined);
+        void expect(component.steps.length).toEqual(0);
     }));
 });

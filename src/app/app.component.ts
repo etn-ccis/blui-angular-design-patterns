@@ -1,9 +1,10 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectorRef, Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { StateService } from './services/state.service';
 import * as PXBColors from '@pxblue/colors';
 import { DrawerItem, ROUTES } from './app-routing.module';
 import { ViewportService } from './services/viewport.service';
+import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 
 @Component({
     selector: 'app-root',
@@ -18,12 +19,29 @@ export class AppComponent {
     constructor(
         private readonly _router: Router,
         public readonly stateService: StateService,
-        public viewportService: ViewportService
+        public viewportService: ViewportService,
+        private readonly _ref: ChangeDetectorRef,
+        private readonly _breakpointObserver: BreakpointObserver
     ) {}
+
+    ngOnInit(): void {
+        this._breakpointObserver
+            .observe([Breakpoints.Small, Breakpoints.Handset])
+            .subscribe((state: BreakpointState) => {
+                if (state.matches) {
+                    this.stateService.setDrawerOpen(false);
+                    this._ref.detectChanges();
+                } else {
+                    this.stateService.setDrawerOpen(true);
+                    this._ref.detectChanges();
+                }
+            });
+    }
 
     select(route: DrawerItem, parentRoute = '/'): void {
         if (!route.children) {
             void this._router.navigate([parentRoute + route.path]);
+            this.stateService.setDrawerOpen(false);
             this.selected = route.title;
         }
     }

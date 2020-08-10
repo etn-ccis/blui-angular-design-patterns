@@ -82,6 +82,7 @@ export class DynamicStepperComponent implements OnInit {
         this.steps.splice(i, 1);
         this.stepper.selectedIndex = this.steps.length;
         this.checkCompleted();
+        this._changeDetector.detectChanges();
     }
 
     checkCompleted(): void {

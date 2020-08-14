@@ -21,7 +21,7 @@ import { BottomSheet } from '../basic-bottom-sheet/bottom-sheet/bottom-sheet';
         MatListModule,
         SpacerModule,
     ],
-    declarations: [ComplexBottomSheetComponent],
+    declarations: [ComplexBottomSheetComponent, BottomSheet],
     providers: [DataService],
     entryComponents: [BottomSheet]
 })

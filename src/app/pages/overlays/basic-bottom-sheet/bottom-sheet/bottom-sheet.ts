@@ -25,5 +25,6 @@ export class BottomSheet {
     imports: [CommonModule, MatIconModule, MatListModule, InfoListItemModule],
     declarations: [BottomSheet],
     providers: [],
+    entryComponents: [BottomSheet]
 })
 export class BasicBottomSheetModule {}

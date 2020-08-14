@@ -59,5 +59,6 @@ export class BottomSheet implements OnInit {
     imports: [CommonModule, MatIconModule, MatListModule, InfoListItemModule, MatButtonModule, FlexLayoutModule],
     declarations: [BottomSheet],
     providers: [],
+    entryComponents: [BottomSheet]
 })
 export class BottomSheetModule {}

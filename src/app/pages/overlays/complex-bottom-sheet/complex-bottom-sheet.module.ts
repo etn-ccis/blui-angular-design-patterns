@@ -8,7 +8,6 @@ import { ComplexBottomSheetComponent } from './complex-bottom-sheet.component';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatListModule } from '@angular/material/list';
 import { DataService } from './data.service';
-import { BottomSheet } from './bottom-sheet/bottom-sheet';
 
 
 @NgModule({
@@ -20,10 +19,9 @@ import { BottomSheet } from './bottom-sheet/bottom-sheet';
         MatButtonModule,
         MatBottomSheetModule,
         MatListModule,
-        SpacerModule,
+        SpacerModule
     ],
     declarations: [ComplexBottomSheetComponent],
-    providers: [DataService],
-    entryComponents: [BottomSheet]
+    providers: [DataService]
 })
 export class ComplexBottomSheetModule {}

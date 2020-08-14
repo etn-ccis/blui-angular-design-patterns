@@ -8,6 +8,7 @@ import { ComplexBottomSheetComponent } from './complex-bottom-sheet.component';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatListModule } from '@angular/material/list';
 import { DataService } from './data.service';
+import { BottomSheet } from '../basic-bottom-sheet/bottom-sheet/bottom-sheet';
 
 @NgModule({
     imports: [
@@ -22,5 +23,6 @@ import { DataService } from './data.service';
     ],
     declarations: [ComplexBottomSheetComponent],
     providers: [DataService],
+    entryComponents: [BottomSheet]
 })
 export class ComplexBottomSheetModule {}

@@ -23,7 +23,7 @@ export class BottomSheet {
 
 @NgModule({
     imports: [CommonModule, MatIconModule, MatListModule, InfoListItemModule],
-    declarations: [BottomSheet],
+    declarations: [],
     providers: [],
 })
 export class BasicBottomSheetModule {}

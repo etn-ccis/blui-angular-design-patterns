@@ -58,6 +58,6 @@ export class BottomSheet implements OnInit {
 @NgModule({
     imports: [CommonModule, MatIconModule, MatListModule, InfoListItemModule, MatButtonModule, FlexLayoutModule],
     declarations: [],
-    providers: []
+    providers: [],
 })
 export class BottomSheetModule {}

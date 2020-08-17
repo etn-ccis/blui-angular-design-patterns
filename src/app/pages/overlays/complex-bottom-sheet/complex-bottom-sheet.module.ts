@@ -11,7 +11,6 @@ import { DataService } from './data.service';
 import { BottomSheet } from './bottom-sheet/bottom-sheet';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-
 @NgModule({
     imports: [
         CommonModule,
@@ -22,10 +21,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         MatBottomSheetModule,
         MatListModule,
         SpacerModule,
-        FlexLayoutModule
+        FlexLayoutModule,
     ],
     declarations: [ComplexBottomSheetComponent, BottomSheet],
     providers: [DataService],
-    entryComponents: [BottomSheet]
+    entryComponents: [BottomSheet],
 })
 export class ComplexBottomSheetModule {}

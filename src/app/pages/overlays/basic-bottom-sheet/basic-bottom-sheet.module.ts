@@ -19,10 +19,10 @@ import { BottomSheet } from './bottom-sheet/bottom-sheet';
         MatButtonModule,
         MatBottomSheetModule,
         MatListModule,
-        SpacerModule
+        SpacerModule,
     ],
     declarations: [BasicBottomSheetComponent, BottomSheet],
     providers: [DataService],
-    entryComponents: [BottomSheet]
+    entryComponents: [BottomSheet],
 })
 export class BasicBottomSheetModule {}

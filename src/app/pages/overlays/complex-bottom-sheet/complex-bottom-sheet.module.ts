@@ -9,6 +9,7 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatListModule } from '@angular/material/list';
 import { DataService } from './data.service';
 import { BottomSheet } from './bottom-sheet/bottom-sheet';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { BottomSheet } from './bottom-sheet/bottom-sheet';
         MatButtonModule,
         MatBottomSheetModule,
         MatListModule,
-        SpacerModule
+        SpacerModule,
+        FlexLayoutModule
     ],
     declarations: [ComplexBottomSheetComponent, BottomSheet],
     providers: [DataService],

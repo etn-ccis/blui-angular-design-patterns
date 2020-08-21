@@ -12,26 +12,21 @@
     <pxb-info-list-item
         *ngFor="let i of data; let index = index"
         [class.active]="i.active"
-        [avatar]="i.active ? true : false"
+        [avatar]="i.active"
         [statusColor]="i.active ? Colors.red[500] : ''"
+        [iconAlign]="'center'"
     >
         <mat-icon pxb-icon *ngIf="i.type == 'alarms' && !i.active">notifications</mat-icon>
         <mat-icon
             pxb-icon
-            style="padding: 8px;"
             *ngIf="i.type == 'alarms' && i.active"
             [style.backgroundColor]="Colors.red[500]"
             [style.color]="Colors.white[50]"
-            style="box-sizing: content-box;"
             >notifications_active</mat-icon
         >
         <mat-icon pxb-icon *ngIf="i.type == 'session'">update</mat-icon>
         <mat-icon pxb-icon *ngIf="i.type == 'settings'">settings</mat-icon>
-        <span
-            pxb-title
-            style="font-weight: 600; margin-bottom: 5px;"
-            [style.color]="i.active ? Colors.red[500] : 'inherit'"
-        >
+        <span pxb-title [style.color]="i.active ? Colors.red[500] : 'inherit'">
             <ng-container *ngIf="i.active">ACTIVE: </ng-container> {{ i.details }}
         </span>
         <span pxb-subtitle>

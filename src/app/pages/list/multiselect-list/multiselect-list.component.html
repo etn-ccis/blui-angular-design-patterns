@@ -7,8 +7,8 @@
     <button data-cy="toolbar-add" mat-icon-button (click)="onAddItem()"><mat-icon>add</mat-icon></button>
 </mat-toolbar>
 <mat-list>
-    <pxb-info-list-item data-cy="list-content" *ngFor="let item of data">
-        <mat-checkbox mat-list-icon pxb-icon [checked]="isSelected(item)" (change)="onSelected(item)"></mat-checkbox>
+    <pxb-info-list-item data-cy="list-content" *ngFor="let item of data" [iconAlign]="'center'">
+        <mat-checkbox pxb-icon [checked]="isSelected(item)" (change)="onSelected(item)"></mat-checkbox>
         <span pxb-title>
             {{ item.name }}
         </span>

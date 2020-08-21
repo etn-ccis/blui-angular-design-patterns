@@ -59,5 +59,6 @@ registerLocaleData(localeAr);
             defaultLanguage: 'EN',
         }),
     ],
+    entryComponents: [SnackBarComponent],
 })
 export class I18nModule {}

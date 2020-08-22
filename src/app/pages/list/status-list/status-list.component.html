@@ -15,7 +15,6 @@
             pxb-icon
             [style.color]="getIconColor(item.status)"
             [style.backgroundColor]="item.status === 'alarm' ? colors.red[500] : ''"
-            style="box-sizing: content-box;"
             >{{ item.icon }}</mat-icon
         >
         <span pxb-title>{{ item.name }}</span>

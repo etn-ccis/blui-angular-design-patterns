@@ -13,15 +13,10 @@
         *ngFor="let i of data; let index = index"
         [avatar]="true"
         [statusColor]="i.active ? Colors.red[500] : ''"
+        [iconAlign]="'center'"
     >
-        <mat-icon pxb-icon class="padded" *ngIf="!i.active">notifications</mat-icon>
-        <mat-icon
-            pxb-icon
-            class="padded"
-            *ngIf="i.active"
-            [style.color]="Colors.white[50]"
-            [style.backgroundColor]="Colors.red[500]"
-            style="box-sizing: content-box;"
+        <mat-icon pxb-icon *ngIf="!i.active">notifications</mat-icon>
+        <mat-icon pxb-icon *ngIf="i.active" [style.color]="Colors.white[50]" [style.backgroundColor]="Colors.red[500]"
             >notifications_active
         </mat-icon>
         <span pxb-title [style.color]="i.active ? Colors.red[500] : Colors.black[500]">

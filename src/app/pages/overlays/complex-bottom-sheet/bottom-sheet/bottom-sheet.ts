@@ -57,7 +57,15 @@ export class BottomSheet implements OnInit {
 }
 
 @NgModule({
-    imports: [CommonModule, MatIconModule, MatListModule, InfoListItemModule, MatButtonModule, FlexLayoutModule],
+    imports: [
+        CommonModule,
+        MatIconModule,
+        MatListModule,
+        InfoListItemModule,
+        MatButtonModule,
+        FlexLayoutModule,
+        MatDividerModule,
+    ],
     declarations: [],
     providers: [],
 })

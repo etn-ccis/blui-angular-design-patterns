@@ -8,7 +8,7 @@
         padding: 0;
     }
     a {
-        padding: 10px;
+        padding: 8px;
         cursor: pointer;
         text-align: center;
         &.active {
@@ -16,10 +16,15 @@
         }
     }
     .footer-list {
-        padding: 15px;
+        padding: 16px;
     }
     h3 {
         margin: 0;
+        text-transform: uppercase;
+        color: #424e54;
+        font-size: 12px;
+        letter-spacing: 2px;
+        font-weight: 600;
     }
     .footer-close {
         position: sticky;
@@ -36,5 +41,14 @@
             text-overflow: inherit;
             white-space: normal;
         }
+    }
+    .on-wide-screen {
+        display: none;
+    }
+}
+
+@media (min-width: 601px) {
+    .footer-close.mat-elevation-z8 {
+        box-shadow: unset;
     }
 }

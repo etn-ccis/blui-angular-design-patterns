@@ -3,6 +3,7 @@
     width: 100%;
     max-width: 600px;
     padding: 0;
+    max-height: unset;
     .mat-nav-list {
         padding: 0;
     }
@@ -16,10 +17,14 @@
     }
     .footer-list {
         padding: 15px;
-        border-bottom: 1px solid #ccc;
     }
     h3 {
         margin: 0;
+    }
+    .footer-close {
+        position: sticky;
+        bottom: 0;
+        background-color: white;
     }
 }
 

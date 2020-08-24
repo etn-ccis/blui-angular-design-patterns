@@ -3,11 +3,12 @@
     width: 100%;
     max-width: 600px;
     padding: 0;
+    max-height: unset;
     .mat-nav-list {
         padding: 0;
     }
     a {
-        padding: 10px;
+        padding: 8px;
         cursor: pointer;
         text-align: center;
         &.active {
@@ -15,11 +16,12 @@
         }
     }
     .footer-list {
-        padding: 15px;
-        border-bottom: 1px solid #ccc;
+        padding: 16px;
     }
-    h3 {
-        margin: 0;
+    .footer-close {
+        position: sticky;
+        bottom: 0;
+        background-color: white;
     }
 }
 
@@ -31,5 +33,14 @@
             text-overflow: inherit;
             white-space: normal;
         }
+    }
+    .on-wide-screen {
+        display: none;
+    }
+}
+
+@media (min-width: 601px) {
+    .footer-close.mat-elevation-z8 {
+        box-shadow: unset;
     }
 }

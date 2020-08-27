@@ -18,7 +18,12 @@
         </pxb-info-list-item>
     </ng-container>
     <ng-container *ngIf="draggable">
-        <pxb-info-list-item *ngFor="let item of data; let i = index" cdkDrag class="sortable-list-item" [attr.data-cy]="'sortable-row-'+i">
+        <pxb-info-list-item
+            *ngFor="let item of data; let i = index"
+            cdkDrag
+            class="sortable-list-item"
+            [attr.data-cy]="'sortable-row-' + i"
+        >
             <mat-icon pxb-icon cdkDragHandle class="handler" style="cursor: pointer;">drag_handle</mat-icon>
             <span pxb-title> {{ item.name }}</span>
             <span pxb-right-content>

@@ -9,7 +9,19 @@ describe('Sortable list', () => {
     it('should display page title', () => {
         cy.get('[data-cy=pxb-toolbar]').should('contain', 'Sortable List');
     });
+    it('should enable sortable list items on edit', () => {
+        cy.get('[data-cy=edit-save]').click()
+        cy.get('[data-cy=sortable-row-0] > .mat-list-item > .mat-list-item-content > .mat-list-icon').should('be.visible')
+  
+      });
+    it('should drag item in list to location', () => {
+        cy.get('[data-cy=edit-save]').click()
+        cy.get('[data-cy=sortable-row-0] > .mat-list-item > .mat-list-item-content > .mat-list-icon')
+        .trigger('mousedown', { button: 0 }, { force:true })
+        .trigger('mousemove', { force: true, x: 100, y: 100 })
+        cy.get('[data-cy=sortable-row-1] > .mat-list-item > .mat-list-item-content').click()
+        cy.get('[data-cy=sortable-row-1]').should('contain', '1789')
+        cy.get('[data-cy=edit-save]').click()        
 
- //   it('TODO: edit list', () => {
- //       cy.get('[data-cy=edit-save]').click()
+    });
 });

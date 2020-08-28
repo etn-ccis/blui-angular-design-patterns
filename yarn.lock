@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@4tw/cypress-drag-drop@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@4tw/cypress-drag-drop/-/cypress-drag-drop-1.4.0.tgz#8e824212c4e450c54c467b041019f98c0b31469e"
+  integrity sha512-iBYQC29qe8TwRwhgEmdY39HuKznhy7oCWCnheF//DdOSbpl6kuWyA6YuC9Ay2H5k9TJF1Bc0pGThN8xW8OUnng==
+
 "@angular-devkit/architect@0.901.9":
   version "0.901.9"
   resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.901.9.tgz#5d849a120449b2f91ec6eef44ddad74ffb7ad810"

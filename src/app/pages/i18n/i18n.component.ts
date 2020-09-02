@@ -15,7 +15,7 @@ import { FruitService, Fruit } from './services/fruit.service';
 })
 export class I18nComponent implements OnInit, OnDestroy {
     open = false;
-    enabledLocales: Array<keyof SampleTranslation['LANGUAGES']> = ['EN', 'ES', 'FR', 'DE', 'PT', 'ZH', 'AR'];
+    enabledLocales: Array<keyof SampleTranslation['LANGUAGES']> = ['EN', 'AR', 'ZH', 'DE', 'FR', 'PT', 'ES'];
     selectedLanguage: string;
     selectedFruits: Set<string>;
     fruits: Fruit[];

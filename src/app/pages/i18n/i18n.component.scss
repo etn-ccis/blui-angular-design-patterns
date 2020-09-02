@@ -72,3 +72,11 @@ mat-nav-list {
         color: map-get($pxb-black, 500);
     }
 }
+
+.mat-select {
+    line-height: 1rem;
+}
+
+::ng-deep .mat-select-panel {
+    max-height: none !important;
+}

@@ -7,7 +7,9 @@
     <button data-cy="toolbar-delete" mat-icon-button (click)="onRemoveAll()" style="margin-right: 8px;">
         <mat-icon>delete</mat-icon>
     </button>
-    <button data-cy="toolbar-add" mat-icon-button (click)="onAddItem()"><mat-icon>add</mat-icon></button>
+    <button data-cy="toolbar-add" mat-icon-button (click)="onAddItem()" style="margin-right: -8px;">
+        <mat-icon>add</mat-icon>
+    </button>
 </mat-toolbar>
 <mat-list *ngIf="data.length > 0">
     <pxb-info-list-item [hidePadding]="true" *ngFor="let i of data" data-cy="list-content">

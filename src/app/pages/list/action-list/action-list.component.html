@@ -4,7 +4,7 @@
     </button>
     <div class="mat-title">Action List</div>
     <pxb-spacer></pxb-spacer>
-    <button data-cy="toolbar-delete" mat-icon-button (click)="onRemoveAll()"><mat-icon>delete</mat-icon></button>
+    <button data-cy="toolbar-delete" mat-icon-button (click)="onRemoveAll()"  style="margin-right: 8px"><mat-icon>delete</mat-icon></button>
     <button data-cy="toolbar-add" mat-icon-button (click)="onAddItem()"><mat-icon>add</mat-icon></button>
 </mat-toolbar>
 <mat-list *ngIf="data.length > 0">

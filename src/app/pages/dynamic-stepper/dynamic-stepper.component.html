@@ -2,7 +2,7 @@
     <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
-    <div class="mat-title">Dynamic Stepper</div>
+    <div class="mat-title" [class.paddedTitle]="isSmall">Dynamic Stepper</div>
     <pxb-spacer></pxb-spacer>
     <button
         *ngIf="!procedureFinished"

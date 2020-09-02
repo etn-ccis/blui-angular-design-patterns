@@ -2,7 +2,7 @@
     <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
-    <div class="mat-title">Form Validation</div>
+    <div class="mat-title" [class.paddedTitle]="isSmall">Form Validation</div>
 </mat-toolbar>
 <section class="mat-typography">
     <div class="example-container">

@@ -10,7 +10,7 @@
             >
                 <mat-icon>menu</mat-icon>
             </button>
-            <div class="mat-title">Search Bar</div>
+            <div class="mat-title" [class.paddedTitle]="isSmall">Search Bar</div>
             <pxb-spacer></pxb-spacer>
             <button data-cy="search-btn" mat-icon-button (click)="openSearch()">
                 <mat-icon>search</mat-icon>

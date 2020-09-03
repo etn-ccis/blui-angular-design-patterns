@@ -2,23 +2,16 @@
     margin-bottom: 0;
 }
 
+.active * {
+    color: #007bc1;
+}
+
 .bottomPanel {
     min-width: 600px;
     width: 100%;
     max-width: 600px;
     padding: 0;
     max-height: unset;
-    .mat-nav-list {
-        padding: 0;
-    }
-    a {
-        padding: 8px;
-        cursor: pointer;
-        text-align: center;
-        &.active {
-            color: #007bc1;
-        }
-    }
     .footer-list {
         padding: 8px 16px;
     }
@@ -32,7 +25,6 @@
 @media (max-width: 600px) {
     .bottomPanel {
         min-width: 100vw;
-
         .mat-nav-list mat-list-item .mat-line {
             text-overflow: inherit;
             white-space: normal;
@@ -44,7 +36,7 @@
 }
 
 @media (min-width: 601px) {
-    .footer-close.mat-elevation-z8 {
+    .footer-close.mat-elevation-z2 {
         box-shadow: unset;
     }
 }

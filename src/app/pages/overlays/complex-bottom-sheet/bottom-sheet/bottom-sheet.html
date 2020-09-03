@@ -1,72 +1,60 @@
 <mat-nav-list>
     <div class="footer-list" data-cy="btm-sheet-sort">
         <div class="mat-h3">Sort By:</div>
-        <div fxLayout="row wrap" fxLayoutAlign="center center">
-            <pxb-hero label="Time" [iconSize]="36" [class.active]="activeSort == filterTypes.TIME" (click)="sortData(filterTypes?.TIME)">
-              <button pxb-primary mat-icon-button>
-                <mat-icon mat-list-icon>access_time</mat-icon>
-              </button>
+        <pxb-hero-banner>
+            <pxb-hero label="Time" [iconSize]="36" [class.active]="activeSort == filterTypes.TIME">
+                <button pxb-primary mat-icon-button (click)="sortData(filterTypes?.TIME)">
+                    <mat-icon mat-list-icon [style.fontSize.px]="24">access_time</mat-icon>
+                </button>
             </pxb-hero>
-
-
-            <a [class.active]="activeSort == filterTypes.TIME" (click)="sortData(filterTypes?.TIME)">
-                <button mat-icon-button>
-                    <mat-icon mat-list-icon>access_time</mat-icon>
+            <pxb-hero label="Type" [iconSize]="36" [class.active]="activeSort == filterTypes.EVENT_TYPE">
+                <button pxb-primary mat-icon-button (click)="sortData(filterTypes?.EVENT_TYPE)">
+                    <mat-icon mat-list-icon [style.fontSize.px]="24">info</mat-icon>
                 </button>
-                <span mat-line style="display: block;">Time</span>
-            </a>
-            <a [class.active]="activeSort == filterTypes.EVENT_TYPE" (click)="sortData(filterTypes.EVENT_TYPE)">
-                <button mat-icon-button>
-                    <mat-icon data-cy="btm-sheet-type-btn" mat-list-icon>info</mat-icon>
-                </button>
-                <span mat-line style="display: block;"> Type</span>
-            </a>
-        </div>
+            </pxb-hero>
+        </pxb-hero-banner>
     </div>
     <mat-divider></mat-divider>
     <div class="footer-list" data-cy="btm-sheet-show">
         <div class="mat-h3">Show:</div>
-        <div fxLayout="row wrap" fxLayoutAlign="center center">
-            <a
-                data-cy="active-alarms"
-                [class.active]="checkActive(filterTypes.ACTIVE_ALARMS)"
-                (click)="filterData(filterTypes.ACTIVE_ALARMS)"
-            >
-                <button mat-icon-button>
-                    <mat-icon mat-list-icon>notifications_active</mat-icon>
-                </button>
-                <span mat-line style="display: block;">Active Alarms</span>
-            </a>
-            <a
-                [class.active]="checkActive(filterTypes.ALARMS)"
-                (click)="filterData(filterTypes.ALARMS)"
-                data-cy="alarms"
-            >
-                <button mat-icon-button>
-                    <mat-icon mat-list-icon>notifications</mat-icon>
-                </button>
-                <span mat-line style="display: block;">Alarms</span>
-            </a>
-            <a [class.active]="checkActive(filterTypes.SETTINGS)" (click)="filterData(filterTypes.SETTINGS)">
-                <button mat-icon-button>
-                    <mat-icon data-cy="settings" mat-list-icon>settings</mat-icon>
-                </button>
-                <span mat-line style="display: block;">Settings </span>
-            </a>
 
-            <a
-                [class.active]="checkActive(filterTypes.SESSION)"
-                (click)="filterData(filterTypes.SESSION)"
-                data-cy="sessions"
+        <pxb-hero-banner>
+            <pxb-hero
+                data-cy="active-alarms"
+                label="Active Alarms"
+                [iconSize]="36"
+                [class.active]="checkActive(filterTypes.ACTIVE_ALARMS)"
             >
-                <button mat-icon-button>
-                    <mat-icon mat-list-icon>update</mat-icon>
+                <button pxb-primary mat-icon-button (click)="filterData(filterTypes.ACTIVE_ALARMS)">
+                    <mat-icon mat-list-icon [style.fontSize.px]="24">notifications_active</mat-icon>
                 </button>
-                <span mat-line style="display: block;"> Sessions</span>
-            </a>
-        </div>
+            </pxb-hero>
+
+            <pxb-hero data-cy="alarms" label="Alarms" [iconSize]="36" [class.active]="checkActive(filterTypes.ALARMS)">
+                <button pxb-primary mat-icon-button (click)="filterData(filterTypes.ALARMS)">
+                    <mat-icon mat-list-icon [style.fontSize.px]="24">notifications</mat-icon>
+                </button>
+            </pxb-hero>
+
+            <pxb-hero label="Settings" [iconSize]="36" [class.active]="checkActive(filterTypes.SETTINGS)">
+                <button pxb-primary mat-icon-button (click)="filterData(filterTypes.SETTINGS)">
+                    <mat-icon mat-list-icon data-cy="settings" [style.fontSize.px]="24">settings</mat-icon>
+                </button>
+            </pxb-hero>
+
+            <pxb-hero
+                data-cy="sessions"
+                label="Sessions"
+                [iconSize]="36"
+                [class.active]="checkActive(filterTypes.SESSION)"
+            >
+                <button pxb-primary mat-icon-button (click)="filterData(filterTypes.SESSION)">
+                    <mat-icon mat-list-icon [style.fontSize.px]="24">update</mat-icon>
+                </button>
+            </pxb-hero>
+        </pxb-hero-banner>
     </div>
-    <div class="footer-close mat-elevation-z8" data-cy="btm-sheet-close">
+    <div class="footer-close mat-elevation-z2" data-cy="btm-sheet-close">
         <mat-divider class="on-wide-screen"></mat-divider>
         <pxb-info-list-item [dense]="true" (click)="openLink()">
             <mat-icon pxb-icon data-cy="btm-sheet-close-btn" mat-list-icon>close</mat-icon>

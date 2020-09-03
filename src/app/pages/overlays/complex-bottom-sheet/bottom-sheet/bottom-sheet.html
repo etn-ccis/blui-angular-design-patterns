@@ -2,6 +2,13 @@
     <div class="footer-list" data-cy="btm-sheet-sort">
         <div class="mat-h3">Sort By:</div>
         <div fxLayout="row wrap" fxLayoutAlign="center center">
+            <pxb-hero label="Time" [iconSize]="36" [class.active]="activeSort == filterTypes.TIME" (click)="sortData(filterTypes?.TIME)">
+              <button pxb-primary mat-icon-button>
+                <mat-icon mat-list-icon>access_time</mat-icon>
+              </button>
+            </pxb-hero>
+
+
             <a [class.active]="activeSort == filterTypes.TIME" (click)="sortData(filterTypes?.TIME)">
                 <button mat-icon-button>
                     <mat-icon mat-list-icon>access_time</mat-icon>

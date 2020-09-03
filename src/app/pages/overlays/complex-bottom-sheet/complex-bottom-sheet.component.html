@@ -8,8 +8,12 @@
         <mat-icon>more_vert</mat-icon>
     </button>
 </mat-toolbar>
-<pxb-empty-state *ngIf="data?.length === 0" title="No Events Available" style="height: calc(100vh - 64px); display: flex">
-  <mat-icon pxb-empty-icon>error</mat-icon>
+<pxb-empty-state
+    *ngIf="data?.length === 0"
+    title="No Events Available"
+    style="height: calc(100vh - 64px); display: flex;"
+>
+    <mat-icon pxb-empty-icon>error</mat-icon>
 </pxb-empty-state>
 <mat-list *ngIf="data?.length > 0">
     <pxb-info-list-item

@@ -52,9 +52,9 @@
             >
                 <mat-icon [class.rtl]="rtl">menu</mat-icon>
             </button>
-            <div
-              [style.marginLeft.px]="isSmall && !rtl ? 24 : 0"
-              [style.marginRight.px]="isSmall && rtl ? 24 : 0">{{ 'I18N' | translate }}</div>
+            <div [style.marginLeft.px]="isSmall && !rtl ? 24 : 0" [style.marginRight.px]="isSmall && rtl ? 24 : 0">
+                {{ 'I18N' | translate }}
+            </div>
             <pxb-spacer></pxb-spacer>
             <button
                 [matTooltip]="'I18N_MENU_TOOLTIP' | translate"

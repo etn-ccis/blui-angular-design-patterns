@@ -10,7 +10,13 @@
             <button *ngIf="isSmall" mat-icon-button (click)="toggleMenu()" style="margin-left: -8px;">
                 <mat-icon>menu</mat-icon>
             </button>
-            <div fxFlex="1 1 0px" fxLayout="column" fxLayoutAlign="start" style="margin-top: -8px;" [style.marginLeft.px]="isSmall ? 24 : 0">
+            <div
+                fxFlex="1 1 0px"
+                fxLayout="column"
+                fxLayoutAlign="start"
+                style="margin-top: -8px;"
+                [style.marginLeft.px]="isSmall ? 24 : 0"
+            >
                 <div class="mat-title" style="margin-bottom: 2px;">President</div>
                 <div class="mat-subheading-2" style="line-height: 0.6rem;">Leader of the Free World</div>
             </div>

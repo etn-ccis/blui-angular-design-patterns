@@ -1,3 +1,7 @@
 mat-list {
     padding-top: 0px;
 }
+
+::ng-deep .pxb-empty-state {
+  width: 100%;
+}

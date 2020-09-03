@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { InfoListItemModule, SpacerModule } from '@pxblue/angular-components';
+import {EmptyStateModule, InfoListItemModule, SpacerModule} from '@pxblue/angular-components';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
@@ -22,6 +22,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         MatListModule,
         SpacerModule,
         FlexLayoutModule,
+        EmptyStateModule
     ],
     declarations: [ComplexBottomSheetComponent, BottomSheet],
     providers: [DataService],

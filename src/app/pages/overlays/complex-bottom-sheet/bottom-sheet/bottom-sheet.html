@@ -1,6 +1,6 @@
 <mat-nav-list>
     <div class="footer-list" data-cy="btm-sheet-sort">
-        <h3 class="mat-overline">Sort by</h3>
+        <div class="mat-h3">Sort By:</div>
         <div fxLayout="row wrap" fxLayoutAlign="center center">
             <a [class.active]="activeSort == filterTypes.TIME" (click)="sortData(filterTypes?.TIME)">
                 <button mat-icon-button>
@@ -18,7 +18,7 @@
     </div>
     <mat-divider></mat-divider>
     <div class="footer-list" data-cy="btm-sheet-show">
-        <h3 class="mat-overline">Show</h3>
+        <div class="mat-h3">Show:</div>
         <div fxLayout="row wrap" fxLayoutAlign="center center">
             <a
                 data-cy="active-alarms"

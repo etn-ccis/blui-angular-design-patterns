@@ -2,7 +2,7 @@
     <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
-    <div class="mat-title" [class.paddedTitle]="isSmall">Action List</div>
+    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Action List</div>
     <pxb-spacer></pxb-spacer>
     <button data-cy="toolbar-delete" mat-icon-button (click)="onRemoveAll()" style="margin-right: 8px;">
         <mat-icon>delete</mat-icon>

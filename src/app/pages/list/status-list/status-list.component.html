@@ -2,7 +2,7 @@
     <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
-    <div class="mat-title" [class.paddedTitle]="isSmall">Status List</div>
+    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Status List</div>
     <pxb-spacer></pxb-spacer>
 </mat-toolbar>
 <mat-list class="alert" *ngIf="data.length > 0">

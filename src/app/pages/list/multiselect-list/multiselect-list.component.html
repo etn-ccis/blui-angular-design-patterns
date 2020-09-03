@@ -2,7 +2,7 @@
     <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
-    <div class="mat-title" [class.paddedTitle]="isSmall">Multiselect List</div>
+    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Multiselect List</div>
     <pxb-spacer></pxb-spacer>
     <button data-cy="toolbar-add" mat-icon-button (click)="onAddItem()" style="margin-right: -8px;">
         <mat-icon>add</mat-icon>

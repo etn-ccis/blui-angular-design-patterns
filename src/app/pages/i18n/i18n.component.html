@@ -52,7 +52,9 @@
             >
                 <mat-icon [class.rtl]="rtl">menu</mat-icon>
             </button>
-            <div [class.paddedTitle]="isSmall">{{ 'I18N' | translate }}</div>
+            <div
+              [style.marginLeft.px]="isSmall && !rtl ? 24 : 0"
+              [style.marginRight.px]="isSmall && rtl ? 24 : 0">{{ 'I18N' | translate }}</div>
             <pxb-spacer></pxb-spacer>
             <button
                 [matTooltip]="'I18N_MENU_TOOLTIP' | translate"
@@ -61,7 +63,8 @@
                 type="button"
                 aria-label="Toggle sidenav"
                 mat-icon-button
-                style="margin-right: -8px;"
+                [style.marginLeft.px]="rtl ? -8 : 0"
+                [style.marginRight.px]="rtl ? 0 : -8"
                 (click)="toggleI18nMenu()"
             >
                 <mat-icon [class.rtl]="rtl" aria-label="Side nav toggle icon">menu_open</mat-icon>

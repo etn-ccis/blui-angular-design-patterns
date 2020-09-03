@@ -2,7 +2,7 @@
     <button data-cy="toolbar-menu" *ngIf="isSmall" mat-icon-button (click)="toggleMenu()" style="margin-left: -8px;">
         <mat-icon>menu</mat-icon>
     </button>
-    <div class="mat-title" [class.paddedTitle]="isSmall">Loading States</div>
+    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Loading States</div>
     <pxb-spacer></pxb-spacer>
     <button data-cy="toolbar-refresh" mat-icon-button color="white" (click)="refreshData()" style="margin-right: -8px;">
         <mat-icon>autorenew</mat-icon>

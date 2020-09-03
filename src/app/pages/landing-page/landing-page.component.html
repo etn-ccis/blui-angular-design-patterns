@@ -2,7 +2,7 @@
     <button style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
-    <div class="mat-title" [class.paddedTitle]="isSmall">PX Blue Design Patterns</div>
+    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">PX Blue Design Patterns</div>
 </mat-toolbar>
 <div style="padding: 10vh 24px 40px; max-width: 600px; margin: 0 auto;">
     <h2 class="mat-display-3" style="margin-bottom: 24px;" [@headerFadeInAnimation]>

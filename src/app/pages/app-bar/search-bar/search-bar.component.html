@@ -1,5 +1,10 @@
 <div class="mat-elevation-z4 toolbar-container" [style.backgroundColor]="Colors.white[50]">
-    <mat-toolbar data-cy="pxb-toolbar" color="primary" class="main-header" [class.hidden]="toggleSearch">
+    <mat-toolbar
+        data-cy="pxb-toolbar"
+        color="primary"
+        class="main-header mat-elevation-z2"
+        [class.hidden]="toggleSearch"
+    >
         <mat-toolbar-row>
             <button
                 data-cy="toolbar-menu"
@@ -10,9 +15,9 @@
             >
                 <mat-icon>menu</mat-icon>
             </button>
-            <div class="mat-title">Search Bar</div>
+            <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Search Bar</div>
             <pxb-spacer></pxb-spacer>
-            <button data-cy="search-btn" mat-icon-button (click)="openSearch()">
+            <button data-cy="search-btn" mat-icon-button (click)="openSearch()" style="margin-right: -8px;">
                 <mat-icon>search</mat-icon>
             </button>
         </mat-toolbar-row>

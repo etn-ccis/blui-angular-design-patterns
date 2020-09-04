@@ -1,8 +1,8 @@
-<mat-toolbar data-cy="pxb-toolbar" color="primary" class="app-bar">
+<mat-toolbar data-cy="pxb-toolbar" color="primary" class="app-bar mat-elevation-z2">
     <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
-    <div class="mat-title">Sortable List</div>
+    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Sortable List</div>
     <pxb-spacer></pxb-spacer>
     <button mat-stroked-button (click)="edit()" data-cy="edit-save">
         {{ draggable ? 'Save' : 'Edit' }}

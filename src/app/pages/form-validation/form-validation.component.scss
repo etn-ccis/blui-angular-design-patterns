@@ -1,7 +1,7 @@
 @import '~@pxblue/colors/palette.scss';
 
 section {
-    padding: 16px;
+    padding: 16px 24px;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -33,4 +33,8 @@ mat-form-field {
 
 .failure-red {
     color: map-get($pxb-red, 500);
+}
+
+.form-description {
+  margin-bottom: 16px;
 }

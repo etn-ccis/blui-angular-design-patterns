@@ -5,8 +5,8 @@ import * as Colors from '@pxblue/colors';
     selector: 'app-password-strength-check',
     template: `
         <mat-list-item style="height: auto;">
-            <mat-icon [style.color]="success ? Colors.blue[500] : Colors.gray[100]">{{ icon }}</mat-icon>
-            <span style="padding-left: 8px;">{{ validationMessage }}</span>
+            <mat-icon [style.color]="success ? Colors.blue[500] : Colors.gray[300]">{{ icon }}</mat-icon>
+            <span [style.color]="success ? Colors.gray[100] : Colors.gray[300]" style="padding-left: 8px;">{{ validationMessage }}</span>
         </mat-list-item>
     `,
 })

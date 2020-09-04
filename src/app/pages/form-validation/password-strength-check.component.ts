@@ -9,6 +9,14 @@ import * as Colors from '@pxblue/colors';
             <span [style.color]="success ? Colors.gray[100] : Colors.gray[300]" style="padding-left: 8px;">{{ validationMessage }}</span>
         </mat-list-item>
     `,
+    styles: [
+      `
+        ::ng-deep .mat-list-base .mat-list-item .mat-list-item-content {
+          padding: 0;
+        }
+      `
+    ]
+
 })
 export class PasswordStrengthCheckComponent {
     @Input() icon = 'done';

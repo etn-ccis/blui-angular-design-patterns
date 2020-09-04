@@ -6,7 +6,7 @@ import * as Colors from '@pxblue/colors';
     template: `
         <mat-list-item style="height: auto;">
             <mat-icon [style.color]="success ? Colors.blue[500] : Colors.gray[300]">{{ icon }}</mat-icon>
-            <span [style.color]="success ? Colors.gray[100] : Colors.gray[300]" style="padding-left: 8px;">{{
+            <span [style.color]="success ? Colors.gray[300] : Colors.black[500]" style="padding-left: 8px;">{{
                 validationMessage
             }}</span>
         </mat-list-item>

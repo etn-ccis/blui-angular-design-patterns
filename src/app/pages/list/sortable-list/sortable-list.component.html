@@ -24,7 +24,9 @@
             class="sortable-list-item"
             [attr.data-cy]="'sortable-row-' + i"
         >
-            <mat-icon pxb-icon cdkDragHandle class="handler" style="cursor: pointer;">drag_handle</mat-icon>
+            <button mat-icon-button pxb-icon disableRipple>
+                <mat-icon cdkDragHandle class="handler" style="cursor: pointer;">drag_handle</mat-icon>
+            </button>
             <span pxb-title> {{ item.name }}</span>
             <span pxb-right-content>
                 <pxb-channel-value [value]="item.details"></pxb-channel-value>

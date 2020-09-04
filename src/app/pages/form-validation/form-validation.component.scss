@@ -14,9 +14,19 @@ mat-form-field {
     width: 100%;
     margin-bottom: 32px;
 }
+.small mat-form-field {
+    margin-bottom: 24px;
+}
 
 .validation-list mat-list-item {
     height: auto;
+}
+
+.validation-list {
+    margin: -48px 0 32px;
+}
+.small .validation-list {
+    margin: -48px 0 24px;
 }
 
 .validation-message {

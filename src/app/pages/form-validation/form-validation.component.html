@@ -4,7 +4,7 @@
     </button>
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Form Validation</div>
 </mat-toolbar>
-<section class="mat-typography">
+<section class="mat-typography" [class.small]="isSmall">
     <div class="example-container">
         <h2>Basic Form Fields</h2>
         <p class="form-description">
@@ -131,7 +131,7 @@
                         <mat-icon>{{ newPasswordVisible ? 'visibility' : 'visibility_off' }}</mat-icon>
                     </button>
                 </mat-form-field>
-                <mat-list style="margin: -48px 0 32px;" class="validation-list">
+                <mat-list class="validation-list">
                     <app-password-strength-check
                         [success]="passLength"
                         validationMessage="At least 8 characters in length"

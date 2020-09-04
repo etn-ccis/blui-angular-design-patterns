@@ -101,7 +101,7 @@
             The password strength requirements for your application may differ from this example.
         </p>
         <form [formGroup]="userPassword">
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" style="margin-bottom: 16px">
                 <mat-label>Old Password</mat-label>
                 <input
                     matInput
@@ -131,7 +131,7 @@
                         <mat-icon>{{ newPasswordVisible ? 'visibility' : 'visibility_off' }}</mat-icon>
                     </button>
                 </mat-form-field>
-                <mat-list style="margin: -40px 0 16px;" class="validation-list">
+                <mat-list style="margin: -48px 0 32px;" class="validation-list">
                     <app-password-strength-check
                         [success]="passLength"
                         validationMessage="At least 8 characters in length"

@@ -6,7 +6,7 @@
     <pxb-spacer></pxb-spacer>
     <button data-cy="toolbar-add" mat-icon-button (click)="onAddItem()"><mat-icon>add</mat-icon></button>
 </mat-toolbar>
-<mat-list>
+<mat-list class="multi-select-list">
     <pxb-info-list-item data-cy="list-content" *ngFor="let item of data" [iconAlign]="'center'">
         <mat-checkbox pxb-icon [checked]="isSelected(item)" (change)="onSelected(item)"></mat-checkbox>
         <span pxb-title>

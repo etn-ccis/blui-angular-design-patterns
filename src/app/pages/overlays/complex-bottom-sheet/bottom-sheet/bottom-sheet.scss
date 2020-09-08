@@ -5,46 +5,47 @@
 }
 
 .active {
-  .pxb-hero-label,  .pxb-hero .pxb-hero-primary-wrapper {
-    color: map-get($pxb-blue, 500);
-  }
+    .pxb-hero-label,
+    .pxb-hero .pxb-hero-primary-wrapper {
+        color: map-get($pxb-blue, 500);
+    }
 }
 
-  .bottomPanel {
+.bottomPanel {
     min-width: 600px;
     width: 100%;
     max-width: 600px;
     padding: 0;
     max-height: unset;
     .footer-list {
-      padding: 8px 16px;
+        padding: 8px 16px;
     }
     .footer-close {
-      position: sticky;
-      bottom: 0;
-      background-color: white;
+        position: sticky;
+        bottom: 0;
+        background-color: white;
     }
-  }
+}
 
-  @media (max-width: 600px) {
+@media (max-width: 600px) {
     .bottomPanel {
-      min-width: 100vw;
-      .mat-nav-list mat-list-item .mat-line {
-        text-overflow: inherit;
-        white-space: normal;
-      }
+        min-width: 100vw;
+        .mat-nav-list mat-list-item .mat-line {
+            text-overflow: inherit;
+            white-space: normal;
+        }
     }
     .on-wide-screen {
-      display: none;
+        display: none;
     }
-  }
+}
 
-  @media (min-width: 601px) {
+@media (min-width: 601px) {
     .footer-close.mat-elevation-z2 {
-      box-shadow: unset;
+        box-shadow: unset;
     }
-  }
+}
 
 pxb-hero {
-  flex: 0!important;
+    flex: 0 !important;
 }

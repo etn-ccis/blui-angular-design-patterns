@@ -101,7 +101,7 @@
             The password strength requirements for your application may differ from this example.
         </p>
         <form [formGroup]="userPassword">
-            <mat-form-field appearance="fill" style="margin-bottom: 16px;">
+            <mat-form-field appearance="fill">
                 <mat-label>Old Password</mat-label>
                 <input
                     matInput
@@ -116,7 +116,7 @@
                 </button>
             </mat-form-field>
             <div [formGroup]="passwordFormGroup">
-                <mat-form-field appearance="fill">
+                <mat-form-field appearance="fill" style="margin-bottom: 24px">
                     <mat-label>New Password</mat-label>
                     <input
                         matInput

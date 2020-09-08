@@ -48,7 +48,7 @@ footer.active {
     }
 }
 
-::ng-deep .mat-checkbox-inner-container {
-    width: 18px !important;
-    height: 18px !important;
+::ng-deep .multi-select-list .mat-checkbox-inner-container {
+    width: 18px;
+    height: 18px;
 }

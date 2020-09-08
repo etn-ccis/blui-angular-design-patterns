@@ -16,6 +16,9 @@
     max-height: unset;
     .footer-list {
         padding: 8px 16px;
+      .mat-overline {
+        text-transform: none;
+      }
     }
     .footer-close {
         position: sticky;

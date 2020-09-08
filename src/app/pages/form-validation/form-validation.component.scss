@@ -1,7 +1,7 @@
 @import '~@pxblue/colors/palette.scss';
 
 section {
-    padding: 16px;
+    padding: 16px 24px;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -14,9 +14,19 @@ mat-form-field {
     width: 100%;
     margin-bottom: 32px;
 }
+.small mat-form-field {
+    margin-bottom: 24px;
+}
 
 .validation-list mat-list-item {
     height: auto;
+}
+
+.validation-list {
+    margin: -48px 0 32px;
+}
+.small .validation-list {
+    margin: -48px 0 24px;
 }
 
 .validation-message {
@@ -33,4 +43,8 @@ mat-form-field {
 
 .failure-red {
     color: map-get($pxb-red, 500);
+}
+
+.form-description {
+    margin-bottom: 16px;
 }

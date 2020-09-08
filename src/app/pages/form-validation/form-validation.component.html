@@ -4,10 +4,10 @@
     </button>
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Form Validation</div>
 </mat-toolbar>
-<section class="mat-typography">
+<section class="mat-typography" [class.small]="isSmall">
     <div class="example-container">
         <h2>Basic Form Fields</h2>
-        <p>
+        <p class="form-description">
             The following examples show how to perform validation on various input types. The error icon on invalid
             inputs is optional, but adds redundancy for color blind users.
         </p>
@@ -84,7 +84,7 @@
 
     <div class="example-container">
         <h2>Character Limits</h2>
-        <p>
+        <p class="form-description">
             The following example shows how to restrict the length of an input field. In these cases, you should provide
             the user an indication of how many characters are available.
         </p>
@@ -96,7 +96,7 @@
     </div>
     <div class="example-container">
         <h2>Password Validation</h2>
-        <p>
+        <p class="form-description">
             The following example shows how to enforce password strength restrictions and confirmation field matching.
             The password strength requirements for your application may differ from this example.
         </p>
@@ -116,7 +116,7 @@
                 </button>
             </mat-form-field>
             <div [formGroup]="passwordFormGroup">
-                <mat-form-field appearance="fill">
+                <mat-form-field appearance="fill" style="margin-bottom: 24px;">
                     <mat-label>New Password</mat-label>
                     <input
                         matInput
@@ -131,7 +131,7 @@
                         <mat-icon>{{ newPasswordVisible ? 'visibility' : 'visibility_off' }}</mat-icon>
                     </button>
                 </mat-form-field>
-                <mat-list style="margin: -40px 0 16px;" class="validation-list">
+                <mat-list class="validation-list">
                     <app-password-strength-check
                         [success]="passLength"
                         validationMessage="At least 8 characters in length"

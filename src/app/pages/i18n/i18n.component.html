@@ -18,11 +18,11 @@
             <mat-divider></mat-divider>
             <div class="nav-wrapper">
                 <a mat-list-item (click)="toggleI18nMenu()">
-                    <mat-icon matListIcon [class.rtl]="rtl">home</mat-icon>
+                    <mat-icon matListIcon>home</mat-icon>
                     <span>{{ 'MENU_ITEMS.HOME' | translate }}</span>
                 </a>
                 <a mat-list-item (click)="toggleI18nMenu()">
-                    <mat-icon matListIcon [class.rtl]="rtl">folder</mat-icon>
+                    <mat-icon matListIcon>folder</mat-icon>
                     <span>{{ 'MENU_ITEMS.PROJECTS' | translate }}</span>
                 </a>
                 <a mat-list-item (click)="toggleI18nMenu()">
@@ -30,7 +30,7 @@
                     <span>{{ 'MENU_ITEMS.WARNINGS' | translate }}</span>
                 </a>
                 <a mat-list-item (click)="toggleI18nMenu()">
-                    <mat-icon matListIcon [class.rtl]="rtl">settings</mat-icon>
+                    <mat-icon matListIcon>settings</mat-icon>
                     <span>{{ 'MENU_ITEMS.SETTINGS' | translate }}</span>
                 </a>
                 <a mat-list-item (click)="toggleI18nMenu()">
@@ -41,7 +41,7 @@
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content class="content">
-        <mat-toolbar color="primary">
+        <mat-toolbar color="primary" class="app-bar mat-elevation-z2">
             <button
                 *ngIf="isSmall"
                 [style.marginLeft.px]="rtl ? 0 : -8"
@@ -52,7 +52,9 @@
             >
                 <mat-icon [class.rtl]="rtl">menu</mat-icon>
             </button>
-            <div>{{ 'I18N' | translate }}</div>
+            <div [style.marginLeft.px]="isSmall && !rtl ? 24 : 0" [style.marginRight.px]="isSmall && rtl ? 24 : 0">
+                {{ 'I18N' | translate }}
+            </div>
             <pxb-spacer></pxb-spacer>
             <button
                 [matTooltip]="'I18N_MENU_TOOLTIP' | translate"
@@ -61,6 +63,8 @@
                 type="button"
                 aria-label="Toggle sidenav"
                 mat-icon-button
+                [style.marginLeft.px]="rtl ? -8 : 0"
+                [style.marginRight.px]="rtl ? 0 : -8"
                 (click)="toggleI18nMenu()"
             >
                 <mat-icon [class.rtl]="rtl" aria-label="Side nav toggle icon">menu_open</mat-icon>

@@ -47,3 +47,8 @@ footer.active {
         min-width: 0;
     }
 }
+
+::ng-deep .multi-select-list .mat-checkbox-inner-container {
+    width: 18px;
+    height: 18px;
+}

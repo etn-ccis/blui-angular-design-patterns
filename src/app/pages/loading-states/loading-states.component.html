@@ -1,10 +1,10 @@
-<mat-toolbar data-cy="pxb-toolbar" color="primary" flexLayout="row">
+<mat-toolbar data-cy="pxb-toolbar" color="primary" flexLayout="row" class="app-bar mat-elevation-z2">
     <button data-cy="toolbar-menu" *ngIf="isSmall" mat-icon-button (click)="toggleMenu()" style="margin-left: -8px;">
         <mat-icon>menu</mat-icon>
     </button>
-    <h6>Loading States</h6>
-    <div fxFlex></div>
-    <button data-cy="toolbar-refresh" mat-icon-button color="white" (click)="refreshData()">
+    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Loading States</div>
+    <pxb-spacer></pxb-spacer>
+    <button data-cy="toolbar-refresh" mat-icon-button color="white" (click)="refreshData()" style="margin-right: -8px;">
         <mat-icon>autorenew</mat-icon>
     </button>
 </mat-toolbar>

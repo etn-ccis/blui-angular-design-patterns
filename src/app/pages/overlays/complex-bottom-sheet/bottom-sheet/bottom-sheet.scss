@@ -46,6 +46,10 @@
     }
 }
 
-pxb-hero {
-    flex: 0 !important;
+.bottomPanel {
+  pxb-hero {
+    flex: unset!important;
+    cursor: pointer;
+    min-width: 100px;
+  }
 }

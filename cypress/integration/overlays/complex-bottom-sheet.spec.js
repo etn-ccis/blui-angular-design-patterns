@@ -12,7 +12,7 @@ describe('Complex bottom sheet', () => {
 
     it('should open and action items display', () => {
         cy.get('[data-cy=action-menu]').click()
-        cy.get('[data-cy=btm-sheet-sort]').should('contain', 'Sort by')
+        cy.get('[data-cy=btm-sheet-sort]').should('contain', 'Sort By')
         .and('contain', 'Time')
         .and('contain', 'Type')
         cy.get('[data-cy=btm-sheet-show]').should('contain', 'Show')

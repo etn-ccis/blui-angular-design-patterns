@@ -5,13 +5,6 @@
     flex-direction: column;
 }
 
-.stepper-container {
-  ::ng-deep .mat-step-header:hover,
-  ::ng-deep .mat-focus-indicator.add-button.mat-flat-button.mat-button-base.ng-star-inserted {
-    background-color: unset;
-  }
-}
-
 .delete-icon {
   vertical-align: middle;
   color: map-get($pxb-black, 500);
@@ -43,9 +36,5 @@
   top: 0;
   bottom: 0;
   right: 0;
-}
-
-::ng-deep .mat-step-header .mat-step-icon-state-done {
-  background: rgba(0, 0, 0, 0.54);
 }
 

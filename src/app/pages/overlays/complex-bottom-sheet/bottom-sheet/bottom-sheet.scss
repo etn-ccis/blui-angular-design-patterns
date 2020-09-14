@@ -6,7 +6,7 @@
 
 .active {
     .pxb-hero-label,
-    .pxb-hero .pxb-hero-primary-wrapper {
+    &.pxb-hero .pxb-hero-primary-wrapper {
         color: map-get($pxb-blue, 500);
     }
 }
@@ -51,5 +51,8 @@
         flex: unset !important;
         cursor: pointer;
         min-width: 100px;
+    }
+    pxb-hero-banner {
+        height: 100px;
     }
 }

@@ -5,11 +5,11 @@
                 <mat-toolbar-row class="logo-row">
                     <mat-icon class="logo" [class.rtl]="rtl">offline_bolt</mat-icon>
                 </mat-toolbar-row>
-                <mat-toolbar-row style="height: 4px;">
+                <mat-toolbar-row style="height: 4px">
                     <small>PX {{ 'BLUE' | translate }}</small>
                 </mat-toolbar-row>
                 <mat-toolbar-row>
-                    <small style="margin-top: -24px;" id="i18n">{{ 'I18N' | translate }}</small>
+                    <small style="margin-top: -24px" id="i18n">{{ 'I18N' | translate }}</small>
                 </mat-toolbar-row>
                 <mat-toolbar-row>
                     <small>{{ todayDate | date: 'longDate':'+0200':selectedLanguage }}</small>
@@ -83,7 +83,7 @@
                     </mat-option>
                 </mat-select>
             </mat-form-field>
-            <button mat-raised-button color="primary" style="margin: 20px;">
+            <button mat-raised-button color="primary" style="margin: 20px">
                 <mat-icon [class.rtl]="rtl">add_shopping_cart</mat-icon> {{ 'ADD_TO_CART' | translate }}
             </button>
         </mat-toolbar>

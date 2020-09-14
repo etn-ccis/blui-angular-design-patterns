@@ -4,6 +4,7 @@
     position: sticky;
     z-index: 1000;
     top: 0;
+    overflow-x: hidden;
 }
 .main-header {
     transition: opacity 250ms ease-in-out;

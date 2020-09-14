@@ -8,7 +8,7 @@
 .delete-icon {
     vertical-align: middle;
     color: map-get($pxb-black, 500);
-    font-size: 18px;
+    font-size: 24px;
     line-height: 24px;
 }
 
@@ -36,8 +36,4 @@
     top: 0;
     bottom: 0;
     right: 0;
-}
-
-::ng-deep .mat-step-header .mat-step-icon-state-done {
-    background: rgba(0, 0, 0, 0.54);
 }

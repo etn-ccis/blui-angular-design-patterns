@@ -15,7 +15,7 @@
         <mat-icon>delete</mat-icon>
     </button>
 </mat-toolbar>
-<div *ngIf="!procedureFinished" class="stepper-container">
+<div *ngIf="!procedureFinished">
     <mat-vertical-stepper [linear]="true" #stepper>
         <mat-step *ngFor="let step of steps; let i = index" [completed]="step.completed">
             <form>

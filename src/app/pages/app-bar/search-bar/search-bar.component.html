@@ -11,20 +11,20 @@
                 mat-icon-button
                 *ngIf="isSmall"
                 (click)="toggleMenu()"
-                style="margin-left: -8px;"
+                style="margin-left: -8px"
             >
                 <mat-icon>menu</mat-icon>
             </button>
             <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Search Bar</div>
             <pxb-spacer></pxb-spacer>
-            <button data-cy="search-btn" mat-icon-button (click)="openSearch()" style="margin-right: -8px;">
+            <button data-cy="search-btn" mat-icon-button (click)="openSearch()" style="margin-right: -8px">
                 <mat-icon>search</mat-icon>
             </button>
         </mat-toolbar-row>
     </mat-toolbar>
     <mat-toolbar class="search-header" [class.active]="toggleSearch">
-        <mat-toolbar-row style="padding: 0 16px;">
-            <button class="search-icon" mat-icon-button disabled style="margin-left: -8px;">
+        <mat-toolbar-row style="padding: 0 16px">
+            <button class="search-icon" mat-icon-button disabled style="margin-left: -8px">
                 <mat-icon>search</mat-icon>
             </button>
             <input
@@ -35,7 +35,7 @@
                 #searchBar
                 data-cy="searchfield"
             />
-            <button mat-icon-button (click)="searchClose()" data-cy="search-close-btn" style="margin-right: -8px;">
+            <button mat-icon-button (click)="searchClose()" data-cy="search-close-btn" style="margin-right: -8px">
                 <mat-icon [style.color]="Colors.black[500]">close</mat-icon>
             </button>
         </mat-toolbar-row>

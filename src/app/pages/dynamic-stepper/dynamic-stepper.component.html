@@ -1,5 +1,5 @@
 <mat-toolbar color="primary" class="app-bar mat-elevation-z2" data-cy="pxb-toolbar">
-    <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
+    <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Dynamic Stepper</div>
@@ -10,7 +10,7 @@
         matTooltip="Clear all steps"
         (click)="onRemoveAll()"
         data-cy="delete-all"
-        style="margin-right: -8px;"
+        style="margin-right: -8px"
     >
         <mat-icon>delete</mat-icon>
     </button>
@@ -32,7 +32,7 @@
                     >
                 </ng-template>
                 <mat-radio-group class="radio-group" (change)="changeStepSelection($event, i)" data-cy="radiogroup">
-                    <mat-radio-button style="margin: 16px 0;" *ngFor="let option of stepOptions" [value]="option.value">
+                    <mat-radio-button style="margin: 16px 0" *ngFor="let option of stepOptions" [value]="option.value">
                         {{ option.label }}
                     </mat-radio-button>
                 </mat-radio-group>
@@ -62,17 +62,13 @@
             <mat-icon>add</mat-icon>
         </ng-template>
     </mat-vertical-stepper>
-    <div style="padding-left: 24px; margin-top: 2rem;">
-        <button mat-raised-button color="primary" data-cy="done" (click)="handleDone()">
-            DONE
-        </button>
+    <div style="padding-left: 24px; margin-top: 2rem">
+        <button mat-raised-button color="primary" data-cy="done" (click)="handleDone()">DONE</button>
     </div>
 </div>
-<div *ngIf="procedureFinished" data-cy="reset-page" style="height: calc(100vh - 64px);">
-    <pxb-empty-state title="Procedure created successfully" style="margin: 16px;">
+<div *ngIf="procedureFinished" data-cy="reset-page" style="height: calc(100vh - 64px)">
+    <pxb-empty-state title="Procedure created successfully" style="margin: 16px">
         <mat-icon pxb-empty-icon>check_circle</mat-icon>
-        <button pxb-actions mat-raised-button color="primary" (click)="handleReset()" data-cy="reset">
-            RESET
-        </button>
+        <button pxb-actions mat-raised-button color="primary" (click)="handleReset()" data-cy="reset">RESET</button>
     </pxb-empty-state>
 </div>

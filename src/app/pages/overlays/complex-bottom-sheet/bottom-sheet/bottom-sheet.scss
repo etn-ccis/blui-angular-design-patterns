@@ -6,7 +6,7 @@
 
 .active {
     .pxb-hero-label,
-    .pxb-hero .pxb-hero-primary-wrapper {
+    &.pxb-hero .pxb-hero-primary-wrapper {
         color: map-get($pxb-blue, 500);
     }
 }

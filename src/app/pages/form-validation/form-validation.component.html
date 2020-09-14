@@ -1,5 +1,5 @@
 <mat-toolbar color="primary" class="app-bar mat-elevation-z2" data-cy="pxb-toolbar">
-    <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
+    <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Form Validation</div>
@@ -116,7 +116,7 @@
                 </button>
             </mat-form-field>
             <div [formGroup]="passwordFormGroup">
-                <mat-form-field appearance="fill" style="margin-bottom: 24px;">
+                <mat-form-field appearance="fill" style="margin-bottom: 24px">
                     <mat-label>New Password</mat-label>
                     <input
                         matInput

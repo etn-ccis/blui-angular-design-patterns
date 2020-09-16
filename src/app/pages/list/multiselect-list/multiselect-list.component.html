@@ -38,10 +38,22 @@
 <footer [class.active]="selectedItems.length > 0" class="mat-simple-snackbar" data-cy="snackbar" fxLayout="row">
     <p class="mat-body" style="margin-bottom: 0">{{ selectedItems.length }} selected items</p>
     <div>
-        <button data-cy="snackbar-delete" mat-icon-button data-cy="snackbar-delete" (click)="deleteItems()">
+        <button
+            data-cy="snackbar-delete"
+            matTooltip="Delete selected"
+            mat-icon-button
+            data-cy="snackbar-delete"
+            (click)="deleteItems()"
+        >
             <mat-icon>delete</mat-icon>
         </button>
-        <button data-cy="snackbar-cancel" mat-icon-button data-cy="snackbar-cancel" (click)="cancelItems()">
+        <button
+            data-cy="snackbar-cancel"
+            matTooltip="Cancel"
+            mat-icon-button
+            data-cy="snackbar-cancel"
+            (click)="cancelItems()"
+        >
             <mat-icon>cancel</mat-icon>
         </button>
     </div>

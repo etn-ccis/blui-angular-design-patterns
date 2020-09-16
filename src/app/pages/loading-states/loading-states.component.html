@@ -4,7 +4,14 @@
     </button>
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Loading States</div>
     <pxb-spacer></pxb-spacer>
-    <button data-cy="toolbar-refresh" mat-icon-button color="white" (click)="refreshData()" style="margin-right: -8px">
+    <button
+        data-cy="toolbar-refresh"
+        matTooltip="Refresh this page"
+        mat-icon-button
+        color="white"
+        (click)="refreshData()"
+        style="margin-right: -8px"
+    >
         <mat-icon>autorenew</mat-icon>
     </button>
 </mat-toolbar>

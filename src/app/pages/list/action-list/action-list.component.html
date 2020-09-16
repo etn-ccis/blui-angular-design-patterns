@@ -4,10 +4,22 @@
     </button>
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Action List</div>
     <pxb-spacer></pxb-spacer>
-    <button data-cy="toolbar-delete" mat-icon-button (click)="onRemoveAll()" style="margin-right: 8px">
+    <button
+        data-cy="toolbar-delete"
+        matTooltip="Remove all items"
+        mat-icon-button
+        (click)="onRemoveAll()"
+        style="margin-right: 8px"
+    >
         <mat-icon>delete</mat-icon>
     </button>
-    <button data-cy="toolbar-add" mat-icon-button (click)="onAddItem()" style="margin-right: -8px">
+    <button
+        data-cy="toolbar-add"
+        matTooltip="Add a new item"
+        mat-icon-button
+        (click)="onAddItem()"
+        style="margin-right: -8px"
+    >
         <mat-icon>add</mat-icon>
     </button>
 </mat-toolbar>

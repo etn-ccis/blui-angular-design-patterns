@@ -8,6 +8,7 @@ import { DynamicStepperComponent } from './dynamic-stepper.component';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatRadioModule } from '@angular/material/radio';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
     imports: [
@@ -21,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         MatRadioModule,
         BrowserAnimationsModule,
         EmptyStateModule,
+        MatTooltipModule,
     ],
     declarations: [DynamicStepperComponent],
 })

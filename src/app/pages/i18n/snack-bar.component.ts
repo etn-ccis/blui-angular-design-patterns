@@ -8,7 +8,7 @@ import { BidirectionalService } from './services/bidirectional.service';
         <p style="margin: 0; line-height: 40px">{{ selected }} {{ 'ITEMS' | translate }}</p>
         <pxb-spacer></pxb-spacer>
         <div class="icon">
-            <button mat-icon-button (click)="clearSelection()">
+            <button mat-icon-button matTooltip="Deselect all" (click)="clearSelection()">
                 <mat-icon>cancel</mat-icon>
             </button>
         </div>

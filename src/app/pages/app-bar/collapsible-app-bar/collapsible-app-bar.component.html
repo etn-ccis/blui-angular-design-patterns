@@ -1,35 +1,35 @@
-<div class="eaton mat-typography" style="overflow-x: hidden" fxFlexFill cdkScrollable>
+<div class="eaton mat-typography" style="overflow-x: hidden;" fxFlexFill cdkScrollable>
     <mat-toolbar
         color="primary"
         [ngClass]="{ 'mat-elevation-z2': scrollTop > 200 }"
-        style="position: fixed; top: 0; z-index: 10"
+        style="position: fixed; top: 0; z-index: 10;"
         *ngIf="shrinkToolbar"
         data-cy="app-bar"
     >
         <mat-toolbar-row>
-            <button *ngIf="isSmall" mat-icon-button (click)="toggleMenu()" style="margin-left: -8px">
+            <button *ngIf="isSmall" mat-icon-button (click)="toggleMenu()" style="margin-left: -8px;">
                 <mat-icon>menu</mat-icon>
             </button>
             <div
                 fxFlex="1 1 0px"
                 fxLayout="column"
                 fxLayoutAlign="start"
-                style="margin-top: -8px"
+                style="margin-top: -8px;"
                 [style.marginLeft.px]="isSmall ? 24 : 0"
             >
-                <div class="mat-title" style="margin-bottom: 2px">President</div>
-                <div class="mat-subheading-2" style="line-height: 0.6rem">Leader of the Free World</div>
+                <div class="mat-title" style="margin-bottom: 2px;">President</div>
+                <div class="mat-subheading-2" style="line-height: 0.6rem;">Leader of the Free World</div>
             </div>
         </mat-toolbar-row>
     </mat-toolbar>
     <mat-toolbar color="primary" class="abe">
-        <mat-toolbar-row style="justify-content: space-between">
+        <mat-toolbar-row style="justify-content: space-between;">
             <button
                 data-cy="toolbar-menu"
                 *ngIf="isSmall"
                 mat-icon-button
                 (click)="toggleMenu()"
-                style="margin-left: -8px"
+                style="margin-left: -8px;"
             >
                 <mat-icon>menu</mat-icon>
             </button>
@@ -38,7 +38,7 @@
             data-cy="banner"
             fxLayout="column"
             fxLayoutAlign="start"
-            style="height: auto; margin-left: 56px"
+            style="height: auto; margin-left: 56px;"
             [ngStyle]="{ opacity: 1 - scrollTop / 200 }"
         >
             <div class="mat-display-1">President</div>

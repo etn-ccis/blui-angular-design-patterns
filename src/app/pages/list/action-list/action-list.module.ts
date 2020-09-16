@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { InfoListItemModule, EmptyStateModule, SpacerModule } from '@pxblue/angular-components';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
     imports: [
@@ -17,6 +18,7 @@ import { InfoListItemModule, EmptyStateModule, SpacerModule } from '@pxblue/angu
         InfoListItemModule,
         EmptyStateModule,
         SpacerModule,
+        MatTooltipModule,
     ],
     declarations: [ActionListComponent],
 })

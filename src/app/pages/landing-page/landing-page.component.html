@@ -1,11 +1,11 @@
 <mat-toolbar *ngIf="isSmall" color="primary" class="app-bar mat-elevation-z2">
-    <button style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
+    <button style="margin-left: -8px;" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">PX Blue Design Patterns</div>
 </mat-toolbar>
-<div style="padding: 10vh 24px 40px; max-width: 600px; margin: 0 auto">
-    <h2 class="mat-display-3" style="margin-bottom: 24px" [@headerFadeInAnimation]>
+<div style="padding: 10vh 24px 40px; max-width: 600px; margin: 0 auto;">
+    <h2 class="mat-display-3" style="margin-bottom: 24px;" [@headerFadeInAnimation]>
         The <span [style.color]="Colors.blue[500]">Patterns</span>.
     </h2>
     <div [@bodyFadeInAnimation]>
@@ -21,13 +21,13 @@
             <strong>Angular developers</strong> to provide examples of how to implement these patterns in their own
             applications.
         </p>
-        <button *ngIf="isSmall" mat-stroked-button color="primary" style="margin-top: 24px" (click)="toggleMenu()">
+        <button *ngIf="isSmall" mat-stroked-button color="primary" style="margin-top: 24px;" (click)="toggleMenu()">
             Explore PX Blue Design Patterns
         </button>
     </div>
-    <hr style="margin: 24px 0" [@linksFadeInAnimation] />
+    <hr style="margin: 24px 0;" [@linksFadeInAnimation] />
     <div fxLayout="column" fxLayoutGap="8px" fxLayout.gt-sm="row" [@linksFadeInAnimation]>
-        <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="8px" style="justify-content: space-between">
+        <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="8px" style="justify-content: space-between;">
             <a
                 mat-button
                 target="_blank"
@@ -46,7 +46,7 @@
                 Visit Us On Github
             </a>
         </div>
-        <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="8px" style="justify-content: space-between">
+        <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="8px" style="justify-content: space-between;">
             <a
                 mat-button
                 target="_blank"

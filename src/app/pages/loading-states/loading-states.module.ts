@@ -18,6 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { IconPipe } from './pipes/icon.pipe';
 import { GradePipe } from './pipes/grade.pipe';
 import { ColorPipe } from './pipes/color.pipe';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
     imports: [
@@ -37,6 +38,7 @@ import { ColorPipe } from './pipes/color.pipe';
         NgProgressIconsModule,
         ChannelValueModule,
         InfoListItemModule,
+        MatTooltipModule,
     ],
     declarations: [IconPipe, GradePipe, ColorPipe, LoadingStatesComponent, PlaceholderCardComponent],
 })

@@ -31,7 +31,7 @@
         "@angular/router": "~9.1.11",
         "@netbasal/ngx-content-loader": "3.0.0",
         "@ngx-translate/core": "^12.1.2",
-        "@pxblue/angular-components": "^3.0.0-beta.0",
+        "@pxblue/angular-components": "3.0.0-beta.1",
         "@pxblue/angular-themes": "^5.1.2-beta.0",
         "@pxblue/colors": "^3.0.0",
         "@pxblue/icons": "^1.0.25",

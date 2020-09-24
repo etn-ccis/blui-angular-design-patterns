@@ -42,11 +42,6 @@ export const ROUTES: DrawerItem[] = [
         ],
     },
     {
-        title: 'Loading States',
-        path: 'loading',
-        component: LoadingStatesComponent,
-    },
-    {
         title: 'Form Validation',
         path: 'form-validation',
         component: FormValidationComponent,
@@ -91,6 +86,11 @@ export const ROUTES: DrawerItem[] = [
                 component: ResponsiveTableComponent,
             },
         ],
+    },
+    {
+        title: 'Loading States',
+        path: 'loading',
+        component: LoadingStatesComponent,
     },
     {
         title: 'Overlays',

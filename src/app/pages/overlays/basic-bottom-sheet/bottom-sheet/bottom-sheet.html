@@ -1,0 +1,16 @@
+<mat-nav-list>
+    <pxb-info-list-item (click)="openLink($event)" [dense]="true">
+        <mat-icon pxb-icon>done</mat-icon>
+        <span data-cy="ack" pxb-title class="mat-body-1">Acknowledge All</span>
+    </pxb-info-list-item>
+
+    <pxb-info-list-item (click)="openLink($event)" [dense]="true">
+        <mat-icon pxb-icon>get_app</mat-icon>
+        <span data-cy="export" pxb-title class="mat-body-1">Export</span>
+    </pxb-info-list-item>
+
+    <pxb-info-list-item (click)="openLink($event)" [dense]="true">
+        <mat-icon pxb-icon>clear</mat-icon>
+        <span data-cy="cancel" pxb-title class="mat-body-1">Cancel</span>
+    </pxb-info-list-item>
+</mat-nav-list>

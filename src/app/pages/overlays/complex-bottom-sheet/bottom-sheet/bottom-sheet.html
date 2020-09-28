@@ -1,0 +1,74 @@
+<mat-nav-list>
+    <div class="footer-list" data-cy="btm-sheet-sort">
+        <div class="mat-overline">Sort By:</div>
+        <pxb-hero-banner>
+            <pxb-hero
+                label="Time"
+                [iconSize]="36"
+                [class.active]="activeSort == filterTypes.TIME"
+                (click)="sortData(filterTypes?.TIME)"
+            >
+                <mat-icon pxb-primary mat-list-icon [style.fontSize.px]="24">access_time</mat-icon>
+            </pxb-hero>
+            <pxb-hero
+                label="Type"
+                [iconSize]="36"
+                [class.active]="activeSort == filterTypes.EVENT_TYPE"
+                (click)="sortData(filterTypes?.EVENT_TYPE)"
+            >
+                <mat-icon pxb-primary mat-list-icon [style.fontSize.px]="24">info</mat-icon>
+            </pxb-hero>
+        </pxb-hero-banner>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="footer-list" data-cy="btm-sheet-show">
+        <div class="mat-overline">Show:</div>
+        <pxb-hero-banner>
+            <pxb-hero
+                data-cy="active-alarms"
+                label="Active Alarms"
+                [iconSize]="36"
+                [class.active]="checkActive(filterTypes.ACTIVE_ALARMS)"
+                (click)="filterData(filterTypes.ACTIVE_ALARMS)"
+            >
+                <mat-icon pxb-primary mat-list-icon [style.fontSize.px]="24">notifications_active</mat-icon>
+            </pxb-hero>
+
+            <pxb-hero
+                data-cy="alarms"
+                label="Alarms"
+                [iconSize]="36"
+                [class.active]="checkActive(filterTypes.ALARMS)"
+                (click)="filterData(filterTypes.ALARMS)"
+            >
+                <mat-icon pxb-primary mat-list-icon [style.fontSize.px]="24">notifications</mat-icon>
+            </pxb-hero>
+
+            <pxb-hero
+                label="Settings"
+                [iconSize]="36"
+                [class.active]="checkActive(filterTypes.SETTINGS)"
+                (click)="filterData(filterTypes.SETTINGS)"
+            >
+                <mat-icon pxb-primary mat-list-icon data-cy="settings" [style.fontSize.px]="24">settings</mat-icon>
+            </pxb-hero>
+
+            <pxb-hero
+                data-cy="sessions"
+                label="Sessions"
+                [iconSize]="36"
+                [class.active]="checkActive(filterTypes.SESSION)"
+                (click)="filterData(filterTypes.SESSION)"
+            >
+                <mat-icon pxb-primary mat-list-icon [style.fontSize.px]="24">update</mat-icon>
+            </pxb-hero>
+        </pxb-hero-banner>
+    </div>
+    <div class="footer-close mat-elevation-z2" data-cy="btm-sheet-close">
+        <mat-divider class="on-wide-screen"></mat-divider>
+        <pxb-info-list-item [dense]="true" (click)="openLink()">
+            <mat-icon pxb-icon data-cy="btm-sheet-close-btn" mat-list-icon>close</mat-icon>
+            <div pxb-title>Close</div>
+        </pxb-info-list-item>
+    </div>
+</mat-nav-list>

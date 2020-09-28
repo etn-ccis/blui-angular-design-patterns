@@ -1,0 +1,74 @@
+<mat-toolbar color="primary" class="app-bar mat-elevation-z2" data-cy="pxb-toolbar">
+    <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Dynamic Stepper</div>
+    <pxb-spacer></pxb-spacer>
+    <button
+        *ngIf="!procedureFinished"
+        mat-icon-button
+        matTooltip="Remove all steps"
+        (click)="onRemoveAll()"
+        data-cy="delete-all"
+        style="margin-right: -8px"
+    >
+        <mat-icon>delete</mat-icon>
+    </button>
+</mat-toolbar>
+<div *ngIf="!procedureFinished">
+    <mat-vertical-stepper [linear]="true" #stepper>
+        <mat-step *ngFor="let step of steps; let i = index" [completed]="step.completed">
+            <form>
+                <ng-template matStepLabel
+                    >{{ step.title || 'Choose an action' }}
+                    <mat-icon
+                        class="delete-icon"
+                        *ngIf="stepper.selectedIndex === i"
+                        data-cy="delete-step"
+                        (click)="removeStep(i)"
+                        matTooltip="Remove step"
+                        matTooltipPosition="right"
+                        >delete</mat-icon
+                    >
+                </ng-template>
+                <mat-radio-group class="radio-group" (change)="changeStepSelection($event, i)" data-cy="radiogroup">
+                    <mat-radio-button style="margin: 16px 0" *ngFor="let option of stepOptions" [value]="option.value">
+                        {{ option.label }}
+                    </mat-radio-button>
+                </mat-radio-group>
+            </form>
+        </mat-step>
+        <mat-step state="add" [completed]="false" [editable]="false">
+            <ng-template matStepLabel>
+                <button
+                    mat-flat-button
+                    [disabled]="!allCompleted"
+                    data-cy="add-step"
+                    (click)="addItem()"
+                    class="add-button"
+                    [disableRipple]="!allCompleted"
+                >
+                    Add a Step
+                </button>
+            </ng-template>
+        </mat-step>
+        <ng-template matStepperIcon="edit" let-index="index">
+            {{ index + 1 }}
+        </ng-template>
+        <ng-template matStepperIcon="done" let-index="index">
+            {{ index + 1 }}
+        </ng-template>
+        <ng-template matStepperIcon="add">
+            <mat-icon>add</mat-icon>
+        </ng-template>
+    </mat-vertical-stepper>
+    <div style="padding-left: 24px; margin-top: 2rem">
+        <button mat-raised-button color="primary" data-cy="done" (click)="handleDone()">DONE</button>
+    </div>
+</div>
+<div *ngIf="procedureFinished" data-cy="reset-page" style="height: calc(100vh - 64px)">
+    <pxb-empty-state title="Procedure created successfully" style="margin: 16px">
+        <mat-icon pxb-empty-icon>check_circle</mat-icon>
+        <button pxb-actions mat-raised-button color="primary" (click)="handleReset()" data-cy="reset">RESET</button>
+    </pxb-empty-state>
+</div>

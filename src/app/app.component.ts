@@ -1,15 +1,15 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { StateService } from './services/state.service';
 import * as PXBColors from '@pxblue/colors';
-import { DrawerLayoutVariantType } from '@pxblue/angular-components';
 import { DrawerItem, ROUTES } from './app-routing.module';
 import { ViewportService } from './services/viewport.service';
+import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss'],
+    encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
     colors: Record<string, any> = PXBColors;
@@ -17,15 +17,36 @@ export class AppComponent {
     selected: string;
 
     constructor(
-        private router: Router,
+        private readonly _router: Router,
         public readonly stateService: StateService,
-        public viewportService: ViewportService
+        public viewportService: ViewportService,
+        private readonly _ref: ChangeDetectorRef,
+        private readonly _breakpointObserver: BreakpointObserver
     ) {}
 
-    select(route: DrawerItem, parentRoute: string = '/'): void {
+    ngOnInit(): void {
+        this._breakpointObserver
+            .observe([Breakpoints.Small, Breakpoints.Handset])
+            .subscribe((state: BreakpointState) => {
+                if (state.matches) {
+                    this.stateService.setDrawerOpen(false);
+                    this._ref.detectChanges();
+                } else {
+                    this.stateService.setDrawerOpen(true);
+                    this._ref.detectChanges();
+                }
+            });
+    }
+
+    select(route: DrawerItem, parentRoute = '/'): void {
         if (!route.children) {
-            this.router.navigate([parentRoute + route.path]);
+            void this._router.navigate([parentRoute + route.path]);
+            this.stateService.setDrawerOpen(false);
             this.selected = route.title;
         }
+    }
+
+    navigateHome(): void {
+        void this._router.navigate(['/']);
     }
 }

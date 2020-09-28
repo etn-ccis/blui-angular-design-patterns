@@ -1,0 +1,41 @@
+@import '~@pxblue/colors/palette.scss';
+
+.toolbar-container {
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    overflow-x: hidden;
+}
+.main-header {
+    transition: opacity 250ms ease-in-out;
+
+    &.hidden {
+        opacity: 0;
+    }
+}
+
+.search-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0%;
+    background: map-get($pxb-white, 50);
+    transition: width 250ms ease-in-out;
+
+    &.active {
+        width: 100%;
+    }
+
+    .search-control {
+        flex: 1;
+        font-size: 1rem;
+        border: 0;
+        outline: none;
+        padding-left: 10px;
+
+        &::-ms-clear {
+            height: 0;
+            width: 0;
+        }
+    }
+}

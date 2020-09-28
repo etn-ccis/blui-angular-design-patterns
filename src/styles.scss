@@ -1,8 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@pxblue/angular-themes/theme.scss';
+@import '~@pxblue/colors/palette.scss';
+@import '~placeholder-loading/src/scss/placeholder-loading';
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.pxb-drawer-layout-nav-content {
+    background-color: map-get($pxb-white, 50);
+}
+
+.app-bar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.app-overlay-container {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+}
+
+@media only screen and (min-width: 960px) {
+    .mat-snack-bar-container {
+        margin-left: 270px !important;
+    }
 }

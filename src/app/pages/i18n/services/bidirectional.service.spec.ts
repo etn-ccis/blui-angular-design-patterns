@@ -15,7 +15,7 @@ describe('BidirectionService', () => {
     });
 
     it('should return true if the language is Arabic', () => {
-        void expect(service.isRTL('ar')).toBe(true);
-        void expect(service.isRTL('en')).toBe(false);
+        void expect(service.isRTL('AR')).toBe(true);
+        void expect(service.isRTL('EN')).toBe(false);
     });
 });

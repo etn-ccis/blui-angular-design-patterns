@@ -35,6 +35,9 @@
             "scripts": []
           },
           "configurations": {
+            "es5": {
+              "tsConfig": "./tsconfig.es5.json"
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -73,6 +76,9 @@
           "configurations": {
             "production": {
               "browserTarget": "angular-design-patterns:build:production"
+            },
+            "es5": {
+              "browserTarget": "angular-design-patterns:build:es5"
             }
           }
         },

@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TranslateService, TranslationChangeEvent } from '@ngx-translate/core';
 import { SampleTranslation } from './translations/sample-translation';
-import { BidirectionalService } from './services/bidirectional.service';
+import {BidirectionalService, LANGUAGE_CODE} from './services/bidirectional.service';
 import { StateService } from '../../services/state.service';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -15,7 +15,7 @@ import { FruitService, Fruit } from './services/fruit.service';
 })
 export class I18nComponent implements OnInit, OnDestroy {
     open = false;
-    enabledLocales: Array<keyof SampleTranslation['LANGUAGES']> = ['EN', 'AR', 'ZH', 'DE', 'FR', 'PT', 'ES'];
+    enabledLocales: LANGUAGE_CODE[] = ['EN', 'AR', 'ZH', 'DE', 'FR', 'PT', 'ES'];
     selectedLanguage: string;
     selectedFruits: Set<string>;
     fruits: Fruit[];
@@ -37,6 +37,7 @@ export class I18nComponent implements OnInit, OnDestroy {
         translate.setDefaultLang(defaultLanguage);
         this._bidirectionalService.setCurrentLanguage(defaultLanguage);
         this.selectedLanguage = this.enabledLocales[0];
+        this.translate.use('EN');
         this.listenForLanguageChanges();
         this.listenForFruitSelectionChanges();
     }
@@ -83,7 +84,7 @@ export class I18nComponent implements OnInit, OnDestroy {
 
     listenForLanguageChanges(): void {
         this.translate.onLangChange.subscribe((event: TranslationChangeEvent) => {
-            this._bidirectionalService.changeDirectionality(event.lang);
+            this._bidirectionalService.changeDirectionality(event.lang as LANGUAGE_CODE);
             this.rtl = this._bidirectionalService.isRTL(this._bidirectionalService.getCurrentLanguage());
         });
     }

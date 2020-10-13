@@ -17,6 +17,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "color",
+              "@pxblue/colors"
+            ],
             "outputPath": "dist/angular-design-patterns",
             "index": "src/index.html",
             "main": "src/main.ts",

@@ -34,7 +34,8 @@
             "styles": [
               "src/styles.scss",
               "./node_modules/typeface-open-sans",
-              "./node_modules/@pxblue/angular-themes/theme.scss"
+              "./node_modules/@pxblue/angular-themes/theme.scss",
+              "./node_modules/placeholder-loading/src/scss/placeholder-loading.scss"
             ],
             "scripts": []
           },

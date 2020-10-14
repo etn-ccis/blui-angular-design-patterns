@@ -1,10 +1,11 @@
 import { ChangeDetectorRef, Component, ViewEncapsulation } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { StateService } from './services/state.service';
 import * as PXBColors from '@pxblue/colors';
 import { DrawerItem, ROUTES } from './app-routing.module';
 import { ViewportService } from './services/viewport.service';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
+import { BidirectionalService } from './pages/i18n/services/bidirectional.service';
 
 @Component({
     selector: 'app-root',
@@ -21,8 +22,15 @@ export class AppComponent {
         public readonly stateService: StateService,
         public viewportService: ViewportService,
         private readonly _ref: ChangeDetectorRef,
+        private readonly _bidiService: BidirectionalService,
         private readonly _breakpointObserver: BreakpointObserver
-    ) {}
+    ) {
+        this._router.events.subscribe((event) => {
+            if (event instanceof NavigationEnd) {
+                this._bidiService.changeDirectionality('EN');
+            }
+        });
+    }
 
     ngOnInit(): void {
         this._breakpointObserver

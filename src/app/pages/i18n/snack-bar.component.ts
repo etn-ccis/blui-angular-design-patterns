@@ -4,15 +4,17 @@ import { BidirectionalService } from './services/bidirectional.service';
 
 @Component({
     selector: 'app-i18n-snack-bar',
-    template: ` <div fxLayout="row">
-        <p style="margin: 0; line-height: 40px">{{ selected }} {{ 'ITEMS' | translate }}</p>
-        <pxb-spacer></pxb-spacer>
-        <div class="icon">
-            <button mat-icon-button matTooltip="Deselect all" (click)="clearSelection()">
-                <mat-icon>cancel</mat-icon>
-            </button>
+    template: `
+        <div fxLayout="row">
+            <p style="margin: 0; line-height: 40px">{{ selected }} {{ 'ITEMS' | translate }}</p>
+            <pxb-spacer></pxb-spacer>
+            <div class="icon">
+                <button mat-icon-button matTooltip="Deselect all" (click)="clearSelection()">
+                    <mat-icon>cancel</mat-icon>
+                </button>
+            </div>
         </div>
-    </div>`,
+    `,
 })
 export class SnackBarComponent {
     selected = 1;

@@ -21,19 +21,4 @@ describe('MultiselectListComponent', () => {
     it('should create', () => {
         void expect(component).toBeTruthy();
     });
-
-    it('deselect all the selected items', async(() => {
-        component.cancelItems();
-        void expect(component.selectedItems).toEqual([]);
-        void expect(component.enableFooter).toBeFalsy();
-    }));
-
-    it('remove all the selected items', async(() => {
-        for (let i = 0; i < component.data.length; i++) {
-            component.onSelected(component.data[i]);
-        }
-        component.deleteItems();
-        void expect(component.data).toEqual([]);
-        void expect(component.enableFooter).toBeFalsy();
-    }));
 });

@@ -10,6 +10,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { SpacerModule, InfoListItemModule, EmptyStateModule } from '@pxblue/angular-components';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MultiselectSnackbarComponent } from './multiselect-snackbar.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
     imports: [
@@ -25,7 +27,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
         EmptyStateModule,
         FlexLayoutModule,
         MatTooltipModule,
+        MatSnackBarModule,
     ],
-    declarations: [MultiselectListComponent],
+    declarations: [MultiselectListComponent, MultiselectSnackbarComponent],
 })
 export class MultiselectListModule {}

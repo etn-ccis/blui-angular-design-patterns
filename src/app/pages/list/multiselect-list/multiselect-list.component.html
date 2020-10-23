@@ -8,15 +8,15 @@
         data-cy="toolbar-add"
         matTooltip="Add an item"
         mat-icon-button
-        (click)="onAddItem()"
+        (click)="selectionService.addNewItem()"
         style="margin-right: -8px"
     >
         <mat-icon>add</mat-icon>
     </button>
 </mat-toolbar>
 <mat-list class="multi-select-list">
-    <pxb-info-list-item data-cy="list-content" *ngFor="let item of data" [iconAlign]="'center'">
-        <mat-checkbox pxb-icon [checked]="isSelected(item)" (change)="onSelected(item)"></mat-checkbox>
+    <pxb-info-list-item data-cy="list-content" *ngFor="let item of selectionService.getItems()" [iconAlign]="'center'">
+        <mat-checkbox pxb-icon [checked]="selectionService.isSelected(item)" (change)="selectItem(item)"></mat-checkbox>
         <span pxb-title>
             {{ item.name }}
         </span>
@@ -26,35 +26,18 @@
         <mat-icon pxb-right-content>navigate_next</mat-icon>
     </pxb-info-list-item>
 </mat-list>
-<div *ngIf="data.length === 0" style="height: calc(100vh - 64px)">
+<div *ngIf="selectionService.getItems().length === 0" style="height: calc(100vh - 64px)">
     <pxb-empty-state title="No Items Found" style="margin: 16px">
         <mat-icon pxb-empty-icon>error</mat-icon>
-        <button data-cy="pxb-empty-state-add" pxb-actions mat-raised-button color="primary" (click)="onAddItem()">
+        <button
+            data-cy="pxb-empty-state-add"
+            pxb-actions
+            mat-raised-button
+            color="primary"
+            (click)="selectionService.addNewItem()"
+        >
             <mat-icon>add</mat-icon>
             Add An Item
         </button>
     </pxb-empty-state>
 </div>
-<footer [class.active]="selectedItems.length > 0" class="mat-simple-snackbar" data-cy="snackbar" fxLayout="row">
-    <p class="mat-body" style="margin-bottom: 0">{{ selectedItems.length }} selected items</p>
-    <div>
-        <button
-            data-cy="snackbar-delete"
-            matTooltip="Delete selected"
-            mat-icon-button
-            data-cy="snackbar-delete"
-            (click)="deleteItems()"
-        >
-            <mat-icon>delete</mat-icon>
-        </button>
-        <button
-            data-cy="snackbar-cancel"
-            matTooltip="Cancel"
-            mat-icon-button
-            data-cy="snackbar-cancel"
-            (click)="cancelItems()"
-        >
-            <mat-icon>cancel</mat-icon>
-        </button>
-    </div>
-</footer>

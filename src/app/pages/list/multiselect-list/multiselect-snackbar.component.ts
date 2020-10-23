@@ -36,6 +36,6 @@ export class MultiselectSnackbarComponent {
     ) {}
 
     getMessage(): string {
-        return `${this.selectService.getSelectedItems().length} items selected`;
+        return `${this.selectService.getSelectedItems().length} selected items`;
     }
 }

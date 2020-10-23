@@ -19,7 +19,7 @@ describe('Multi-select list', () => {
     it('should remove list items when delete is clicked', () => {
         cy.get('[data-cy=list-content]').children().should('have.length', '10')
         cy.get('[type="checkbox"]').first().check({ force: true })
-        cy.get('[data-cy=snackbar]').should('contain', '1 selected items')
+        cy.get('[data-cy=snackbar]').should('contain', '1 items selected')
         cy.get('[data-cy=snackbar-delete]').click()
         cy.get('[data-cy=list-content]').children().should('have.length', '9')        
 
@@ -28,7 +28,7 @@ describe('Multi-select list', () => {
     it('should cancel selected list items', () => {
         cy.get('[data-cy=list-content]').children().should('have.length', '10')
         cy.get('[type="checkbox"]').first().check({ force: true })
-        cy.get('[data-cy=snackbar]').should('contain', '1 selected items')
+        cy.get('[data-cy=snackbar]').should('contain', '1 items selected')
         cy.get('[data-cy=snackbar-cancel]').click()
         cy.get('[data-cy=list-content]').children().should('have.length', '10')        
 
@@ -37,7 +37,7 @@ describe('Multi-select list', () => {
     it('should select all and remove list items & empty state displays', () => {
         cy.get('[data-cy=list-content]').children().should('have.length', '10')
         cy.get('[type="checkbox"]').check({ force: true })
-        cy.get('[data-cy=snackbar]').should('contain', '10 selected items')
+        cy.get('[data-cy=snackbar]').should('contain', '10 items selected')
         cy.get('[data-cy=snackbar-delete]').click()
         cy.get('.pxb-empty-state').should('contain', 'No Items Found')
         cy.get('[data-cy=pxb-empty-state-add]').click()

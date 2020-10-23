@@ -66,4 +66,11 @@ workflows:
     angular_design_patterns:
         jobs:
             - build_project
-            - cypress_tests
+            - cypress_tests:
+                    requires:
+                        - build_project
+                    filters:
+                        branches:
+                            only:
+                                - master
+                                - dev

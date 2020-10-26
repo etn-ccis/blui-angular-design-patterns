@@ -5,7 +5,7 @@ import { MultiselectListService } from './multiselect-list.service';
 @Component({
     selector: 'app-multi-select-snackbar',
     template: `
-        <div style="display: flex; line-height: 40px">
+        <div style="display: flex; line-height: 40px" data-cy="snackbar">
             {{ getMessage() }}
             <pxb-spacer></pxb-spacer>
             <button
@@ -36,6 +36,6 @@ export class MultiselectSnackbarComponent {
     ) {}
 
     getMessage(): string {
-        return `${this.selectService.getSelectedItems().length} items selected`;
+        return `${this.selectService.getSelectedItems().length} selected items`;
     }
 }

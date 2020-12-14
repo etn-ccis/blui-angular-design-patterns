@@ -48,9 +48,9 @@
         <span pxb-subtitle>{{ item.party }}</span>
         <span pxb-info>{{ item.tookOffice }}</span>
     </pxb-info-list-item>
-    <pxb-info-list-item *ngIf="(list | filter: searchText).length === 0" data-cy="list-view-no-results">
-        <mat-icon pxb-icon>error</mat-icon>
-        <span pxb-title>0 results</span>
-        <span pxb-subtitle>No matching presidents</span>
-    </pxb-info-list-item>
 </mat-list>
+<div *ngIf="(list | filter: searchText).length === 0" style="height: calc(100vh - 64px)">
+    <pxb-empty-state title="0 Results" description="No matching presidents" style="margin: 16px">
+        <mat-icon pxb-empty-icon>error</mat-icon>
+    </pxb-empty-state>
+</div>

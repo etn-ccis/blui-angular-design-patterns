@@ -82,8 +82,8 @@ mat-nav-list {
 }
 
 ::ng-deep .mat-checkbox-inner-container {
-    width: 18px;
-    height: 18px;
+    width: 18px !important;
+    height: 18px !important;
 }
 
 ::ng-deep .pxb-info-list-item-icon-wrapper {

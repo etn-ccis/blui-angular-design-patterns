@@ -52,3 +52,7 @@ footer.active {
     width: 18px;
     height: 18px;
 }
+
+::ng-deep .pxb-info-list-item-icon-wrapper {
+    margin-left: -8px !important;
+}

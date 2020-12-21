@@ -80,3 +80,12 @@ mat-nav-list {
 ::ng-deep .mat-select-panel {
     max-height: none !important;
 }
+
+::ng-deep .mat-checkbox-inner-container {
+    width: 18px;
+    height: 18px;
+}
+
+::ng-deep .pxb-info-list-item-icon-wrapper {
+    margin-left: -8px !important;
+}

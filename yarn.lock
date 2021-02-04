@@ -1192,6 +1192,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/open-sans@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/open-sans/-/open-sans-4.1.0.tgz#d44b4495bd23d78018675e4e79973894e393c0ed"
+  integrity sha512-sWDAAr6ESHJdBKXse6njvZem4sTZLILkugaEfAvpdFiaKBh2RnXTa4DJllDh5LzP0MLMUrfj/JAjMbKxWFo6pQ==
+
 "@hapi/address@^4.1.0":
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/@hapi/address/-/address-4.1.0.tgz#d60c5c0d930e77456fdcde2598e77302e2955e1d"
@@ -1293,13 +1298,13 @@
   dependencies:
     tslib "^2.0.0"
 
-"@pxblue/angular-themes@^5.2.0":
-  version "5.2.0"
-  resolved "https://registry.npmjs.org/@pxblue/angular-themes/-/angular-themes-5.2.0.tgz#1146a925dea96d11a6abea900be3acb55f56b383"
-  integrity sha512-lwMPdBLop2Tu9UdWIWqEC6VZishe87jmFtTUtO5gVGwqiclPdWyKcgGu5PU0/W7k/qNDYVswFmo54nOdU5QncQ==
+"@pxblue/angular-themes@^6.0.0-beta.0":
+  version "6.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/@pxblue/angular-themes/-/angular-themes-6.0.0-beta.0.tgz#1d91d3474a9cf1836656ab924445f4fd72531b1b"
+  integrity sha512-TvystZrlSh/owoyegIV020ausl8578uHpetxB185dFGcYHjBajIO/3lu2AallJXdJI6thfKKoJzZPfHymxoDGg==
   dependencies:
+    "@fontsource/open-sans" "^4.1.0"
     "@pxblue/colors" "^3.0.0"
-    typeface-open-sans "^0.0.75"
 
 "@pxblue/colors@^3.0.0":
   version "3.0.0"
@@ -10186,16 +10191,6 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
-
-typeface-open-sans@^0.0.54:
-  version "0.0.54"
-  resolved "https://registry.yarnpkg.com/typeface-open-sans/-/typeface-open-sans-0.0.54.tgz#20f5b5ea5c7f95d89dc1f8b2d2b1457680129cee"
-  integrity sha512-w6wOd6EicZdZKf0jSU/K3EzEi3zFgvWQSN7NOpRIQI5KeMWmC5Pg/lqtBVJHB0pRChYRmLdhf4h8ROur0A3JZQ==
-
-typeface-open-sans@^0.0.75:
-  version "0.0.75"
-  resolved "https://registry.yarnpkg.com/typeface-open-sans/-/typeface-open-sans-0.0.75.tgz#20d0c330f14c0c40463c334adbedd6005389abe4"
-  integrity sha512-0lLmB7pfj113OP4T78SbpSmC4OCdFQ0vUxdSXQccsSb6qF76F92iEuC/DghFgmPswTyidk8+Hwf+PS/htiJoRQ==
 
 typescript@4.0.2:
   version "4.0.2"

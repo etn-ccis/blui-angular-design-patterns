@@ -98,7 +98,7 @@
             >
                 <mat-checkbox pxb-icon [checked]="selectedFruits.has(fruit.name)" color="primary"></mat-checkbox>
                 <div pxb-title>{{ 'FRUITS.' + fruit.name | translate }}</div>
-                <div pxb-subtitle class="list subheading-1">
+                <div pxb-subtitle class="fruit-subtitle subheading-1">
                     {{ fruit.price | currency: ('CURRENCY_CODE' | translate):'symbol':undefined:selectedLanguage }}
                 </div>
             </pxb-info-list-item>

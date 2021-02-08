@@ -1,11 +1,11 @@
 .multi-select-list {
-  padding-top: 0;
-  ::ng-deep .multi-select-list .mat-checkbox-inner-container {
-    width: 18px;
-    height: 18px;
-  }
+    padding-top: 0;
+    ::ng-deep .multi-select-list .mat-checkbox-inner-container {
+        width: 18px;
+        height: 18px;
+    }
 
-  ::ng-deep .pxb-info-list-item-icon-wrapper {
-    margin-left: -8px !important;
-  }
+    ::ng-deep .pxb-info-list-item-icon-wrapper {
+        margin-left: -8px !important;
+    }
 }

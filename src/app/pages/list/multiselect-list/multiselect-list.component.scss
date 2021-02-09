@@ -1,58 +1,11 @@
-mat-list {
-    padding-top: 0px;
-}
-
-footer {
-    max-width: 500px;
-    width: 100%;
-    position: fixed;
-    margin: auto;
-    bottom: 0;
-    left: 50%;
-    text-align: center;
-    background: #fff;
-    transform: translateX(-50%, 100%);
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 0;
-    padding: 4px;
-    padding-left: 32px;
-    visibility: hidden;
-    box-shadow: 0px -8px 28px rgba(0, 0, 0, 0.25), 0px 10px 10px rgba(0, 0, 0, 0.22);
-}
-
-footer.active {
-    opacity: 1;
-    transform: translate(-50%, 0);
-    visibility: visible;
-}
-
-.mat-simple-snackbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    line-height: 36px;
-    opacity: 1;
-}
-
-.mat-simple-snackbar-action {
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    justify-content: space-around;
-    margin: 16px;
-
-    button {
-        flex: 1;
-        max-height: 36px;
-        min-width: 0;
+.multi-select-list {
+    padding-top: 0;
+    ::ng-deep .multi-select-list .mat-checkbox-inner-container {
+        width: 18px;
+        height: 18px;
     }
-}
 
-::ng-deep .multi-select-list .mat-checkbox-inner-container {
-    width: 18px;
-    height: 18px;
-}
-
-::ng-deep .pxb-info-list-item-icon-wrapper {
-    margin-left: -8px !important;
+    ::ng-deep .pxb-info-list-item-icon-wrapper {
+        margin-left: -8px !important;
+    }
 }

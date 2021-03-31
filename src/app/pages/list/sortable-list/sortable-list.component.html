@@ -4,7 +4,7 @@
     </button>
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Sortable List</div>
     <pxb-spacer></pxb-spacer>
-    <button mat-stroked-button (click)="edit()" data-cy="edit-save">
+    <button mat-stroked-button (click)="edit()" data-cy="edit-save" style="color: white; border-color: white">
         {{ draggable ? 'Save' : 'Edit' }}
     </button>
 </mat-toolbar>

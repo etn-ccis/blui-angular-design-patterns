@@ -1,20 +1,34 @@
 import { Component } from '@angular/core';
 import { FruitService } from './services/fruit.service';
 import { BidirectionalService } from './services/bidirectional.service';
-
+import * as Colors from '@pxblue/colors';
 @Component({
     selector: 'app-i18n-snack-bar',
-    template: ` <div fxLayout="row">
-        <p style="margin: 0; line-height: 40px">{{ selected }} {{ 'ITEMS' | translate }}</p>
-        <pxb-spacer></pxb-spacer>
-        <div class="icon">
-            <button mat-icon-button matTooltip="Deselect all" (click)="clearSelection()">
-                <mat-icon>cancel</mat-icon>
-            </button>
+    template: `
+        <div fxLayout="row" [style.color]="colors.white[50]" class="snackbar-content">
+            <p style="margin: 0; line-height: 40px">{{ selected }} {{ 'ITEMS' | translate }}</p>
+            <pxb-spacer></pxb-spacer>
+            <div class="icon">
+                <button mat-icon-button matTooltip="Deselect all" (click)="clearSelection()">
+                    <mat-icon>cancel</mat-icon>
+                </button>
+            </div>
         </div>
-    </div>`,
+    `,
+    styles: [
+        `
+            ::ng-deep .mat-snack-bar-container {
+                padding: 10px 16px;
+            }
+
+            .snackbar-content {
+                font-size: 0.875rem;
+            }
+        `,
+    ],
 })
 export class SnackBarComponent {
+    colors = Colors;
     selected = 1;
 
     constructor(

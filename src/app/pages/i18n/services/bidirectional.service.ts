@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
+import { SampleTranslation } from '../translations/sample-translation';
+
+export type LanguageCode = keyof SampleTranslation['LANGUAGES'];
 
 @Injectable({
     providedIn: 'root',
 })
 export class BidirectionalService {
-    private currentLanguage: string;
+    private currentLanguage: LanguageCode;
 
-    changeDirectionality(lang: string): void {
+    changeDirectionality(lang: LanguageCode): void {
         this.setCurrentLanguage(lang);
         const container = document.querySelector('.app-content');
         // App Container
@@ -21,15 +24,15 @@ export class BidirectionalService {
         }
     }
 
-    isRTL(lang: string): boolean {
-        return lang.toUpperCase() === 'AR';
+    isRTL(lang: LanguageCode): boolean {
+        return String(lang).toUpperCase() === 'AR';
     }
 
-    getCurrentLanguage(): string {
+    getCurrentLanguage(): LanguageCode {
         return this.currentLanguage;
     }
 
-    setCurrentLanguage(lang: string): void {
+    setCurrentLanguage(lang: LanguageCode): void {
         this.currentLanguage = lang;
     }
 }

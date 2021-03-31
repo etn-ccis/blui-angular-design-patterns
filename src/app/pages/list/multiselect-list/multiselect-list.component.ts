@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { StateService } from '../../../services/state.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MultiselectSnackbarComponent } from './multiselect-snackbar.component';
+import { MultiselectListService } from './multiselect-list.service';
 
 export type ListItem = {
     id: number;
@@ -15,21 +18,16 @@ export type ListItem = {
     styleUrls: ['./multiselect-list.component.scss'],
 })
 export class MultiselectListComponent implements OnInit {
-    data: ListItem[] = [];
-    enableFooter = false;
-    selectedItems = [];
     isSmall: boolean;
 
     constructor(
+        private readonly _snackBar: MatSnackBar,
         private readonly _drawerService: StateService,
+        public readonly selectionService: MultiselectListService,
         private readonly _breakpointObserver: BreakpointObserver
     ) {}
 
     ngOnInit(): void {
-        for (let i = 1; i <= 10; i++) {
-            this.data.push(this.createRandomItem());
-        }
-
         this._breakpointObserver
             .observe([Breakpoints.Small, Breakpoints.Handset])
             .subscribe((state: BreakpointState) => {
@@ -41,42 +39,12 @@ export class MultiselectListComponent implements OnInit {
             });
     }
 
-    createItem(index: number, randomStatus: string): ListItem {
-        return { id: index, name: `Item ${index}`, details: `Status: ${randomStatus}`, status: randomStatus };
-    }
-
-    createRandomItem(): ListItem {
-        const int = parseInt(`${Math.random() * 100}`, 10);
-        const randomStatus = Math.random() >= 0.3 ? 'normal' : 'alarm';
-        return this.createItem(int, randomStatus);
-    }
-
-    onAddItem(): void {
-        this.data.push(this.createRandomItem());
-    }
-
-    onSelected(item: ListItem): void {
-        if (this.selectedItems.indexOf(item) === -1) {
-            this.selectedItems.push(item);
-        } else {
-            this.selectedItems.splice(this.selectedItems.indexOf(item), 1);
+    selectItem(item: ListItem): void {
+        const isSnackbarAVisible = this.selectionService.getSelectedItems().length > 0;
+        this.selectionService.selectItem(item);
+        if (!isSnackbarAVisible) {
+            this._snackBar.openFromComponent(MultiselectSnackbarComponent);
         }
-    }
-
-    isSelected(item: ListItem): boolean {
-        return this.selectedItems.indexOf(item) !== -1;
-    }
-
-    deleteItems(): void {
-        this.selectedItems.forEach((item) => {
-            const index = this.data.indexOf(item);
-            this.data.splice(index, 1);
-        });
-        this.selectedItems = [];
-    }
-
-    cancelItems(): void {
-        this.selectedItems = [];
     }
 
     toggleMenu(): void {

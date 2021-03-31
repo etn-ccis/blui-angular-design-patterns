@@ -9,12 +9,13 @@ import { chinese } from '../translations/chinese';
 import { arabic } from '../translations/arabic';
 import { french } from '../translations/french';
 import { Injectable } from '@angular/core';
+import { LanguageCode } from './bidirectional.service';
 
 @Injectable({
     providedIn: 'root',
 })
 export class LanguageLoaderService implements TranslateLoader {
-    getTranslation(lang: keyof SampleTranslation['LANGUAGES']): Observable<SampleTranslation> {
+    getTranslation(lang: LanguageCode): Observable<SampleTranslation> {
         switch (lang) {
             case 'EN': {
                 return of(english);

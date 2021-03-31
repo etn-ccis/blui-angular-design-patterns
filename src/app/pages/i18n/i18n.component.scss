@@ -1,8 +1,23 @@
 @import '~@pxblue/colors/palette';
+
+[dir='rtl'] {
+    .fruit-list {
+        ::ng-deep .pxb-info-list-item-icon-wrapper {
+            margin-right: -8px;
+            margin-left: 16px;
+        }
+    }
+    .select-language mat-form-field {
+        margin-left: 0;
+        margin-right: 4px;
+    }
+}
+
 .i18n-container {
     height: 100vh;
     width: 100%;
 }
+
 .sidenav {
     max-width: 90%;
     transition: width 200ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -38,6 +53,19 @@
     }
 }
 
+.add-to-cart-button {
+    margin: 16px;
+    margin-top: 8px;
+    padding: 2px 16px;
+
+    ::ng-deep .mat-button-wrapper {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5em;
+        vertical-align: middle;
+    }
+}
+
 .content {
     background-color: map-get($pxb-white, 50);
 }
@@ -46,18 +74,29 @@
 .nav-wrapper mat-icon {
     color: map-get($pxb-gray, 700);
 }
-.list {
-    color: map-get($pxb-gray, 500);
-}
 
 [matSubheader] {
     white-space: nowrap;
 }
 
-mat-nav-list {
-    padding-top: 0px;
-    mat-checkbox {
-        display: inline-flex;
+.fruit-list {
+    margin-top: 16px;
+    ::ng-deep .pxb-info-list-item-icon-wrapper {
+        margin-left: -8px;
+    }
+    ::ng-deep .mat-checkbox-inner-container {
+        width: 18px !important;
+        height: 18px !important;
+    }
+    .fruit-subtitle {
+        line-height: 1.3;
+        font-weight: 400;
+    }
+
+    mat-nav-list {
+        mat-checkbox {
+            display: inline-flex;
+        }
     }
 }
 
@@ -69,12 +108,16 @@ mat-nav-list {
     font-size: 1rem;
     background-color: map-get($pxb-white, 50);
     mat-form-field {
+        margin-left: 4px;
         color: map-get($pxb-black, 500);
     }
+    padding-top: 32px;
 }
 
 .mat-select {
     line-height: 1rem;
+    padding-bottom: 6px;
+    padding-left: 4px;
 }
 
 ::ng-deep .mat-select-panel {

@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable */
 export enum FiltersList {
     ACTIVE_ALARMS = 'activeAlarms',
     ALARMS = 'alarms',

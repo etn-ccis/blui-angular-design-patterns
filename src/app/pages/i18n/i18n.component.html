@@ -83,12 +83,13 @@
                     </mat-option>
                 </mat-select>
             </mat-form-field>
-            <button mat-raised-button color="primary" style="margin: 20px">
-                <mat-icon [class.rtl]="rtl">add_shopping_cart</mat-icon> {{ 'ADD_TO_CART' | translate }}
+            <button mat-raised-button class="add-to-cart-button mat-body" color="primary">
+                <mat-icon [class.rtl]="rtl" style="margin-right: 8px; font-size: 20px">add_shopping_cart</mat-icon>
+                {{ 'ADD_TO_CART' | translate }}
             </button>
         </mat-toolbar>
 
-        <mat-nav-list data-cy="list-items">
+        <mat-nav-list data-cy="list-items" class="fruit-list">
             <pxb-info-list-item
                 *ngFor="let fruit of fruits"
                 (click)="toggleFruit(fruit.name)"
@@ -97,7 +98,7 @@
             >
                 <mat-checkbox pxb-icon [checked]="selectedFruits.has(fruit.name)" color="primary"></mat-checkbox>
                 <div pxb-title>{{ 'FRUITS.' + fruit.name | translate }}</div>
-                <div pxb-subtitle class="list">
+                <div pxb-subtitle class="fruit-subtitle subheading-1">
                     {{ fruit.price | currency: ('CURRENCY_CODE' | translate):'symbol':undefined:selectedLanguage }}
                 </div>
             </pxb-info-list-item>

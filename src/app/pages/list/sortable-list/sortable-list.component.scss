@@ -4,6 +4,10 @@ mat-list {
 
 .sortable-list-item {
     display: block;
+
+    .mat-list-icon {
+        margin-left: -8px;
+    }
 }
 
 // the floating component when dragging

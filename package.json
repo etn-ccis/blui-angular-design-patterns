@@ -46,7 +46,7 @@
     },
     "devDependencies": {
         "@4tw/cypress-drag-drop": "^1.4.0",
-        "@angular-devkit/build-angular": "~0.1001.2",
+        "@angular-devkit/build-angular": "0.1102.13",
         "@angular/cli": "~11",
         "@angular/compiler-cli": "~11",
         "@angular/language-service": "~8.2.14",

@@ -84,7 +84,7 @@ workflows:
             - build_project
             - coverage_report:
                 requires:
-                    - build_demo
+                    - build_project
                 # filters:
                 #     branches:
                 #         only:

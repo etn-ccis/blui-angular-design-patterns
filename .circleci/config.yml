@@ -87,10 +87,10 @@ workflows:
             - coverage_report:
                 requires:
                     - build_project
-                # filters:
-                #     branches:
-                #         only:
-                #             - master
+                filters:
+                    branches:
+                        only:
+                            - master
             - cypress_tests:
                     requires:
                         - build_project

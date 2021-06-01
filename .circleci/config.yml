@@ -36,10 +36,10 @@ jobs:
                 command: |
                     yarn build
             # Save the coverage folder for codecov report upload.
-      - persist_to_workspace:
-            root: .
-            paths:
-                - coverage
+            - persist_to_workspace:
+                root: .
+                paths:
+                    - coverage
   coverage_report:
         working_directory: ~/angular-design-patterns
         docker:

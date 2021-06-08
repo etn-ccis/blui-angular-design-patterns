@@ -32,7 +32,7 @@ module.exports = function (config) {
           { type: 'lcovonly' }
         ]
       },
-      reporters: ['coverage'],
+      reporters: ['progress', 'kjhtml', 'coverage'],
       port: 9876,
       colors: true,
       logLevel: config.LOG_INFO,

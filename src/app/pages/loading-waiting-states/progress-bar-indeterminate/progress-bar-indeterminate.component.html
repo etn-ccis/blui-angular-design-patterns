@@ -1,0 +1,17 @@
+<mat-toolbar data-cy="pxb-toolbar" flexLayout="row" class="app-bar mat-elevation-z2" [color]="checked ? 'primary' : ''">
+    <button data-cy="toolbar-menu" *ngIf="isSmall" mat-icon-button (click)="toggleMenu()" style="margin-left: -8px">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Progress Bars (Indeterminate)</div>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    <pxb-spacer></pxb-spacer>
+    <mat-slide-toggle labelPosition="before" [checked]="checked" (change)="onToggle($event)">Use Dark Theme</mat-slide-toggle>
+</mat-toolbar>
+<section class="mat-typography" [class.small]="isSmall">
+    <div class="searching-device-container">
+        <div class="bluetooth-icon-container">
+            <mat-icon class="bluetooth-searching-icon">bluetooth_searching</mat-icon>
+            <h2>Searching for Devices</h2>
+        </div>
+    </div>
+</section>

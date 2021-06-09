@@ -32,6 +32,7 @@ import { I18nModule } from './pages/i18n/i18n.module';
 import { LandingPageModule } from './pages/landing-page/landing-page.module';
 import { HttpClientModule } from '@angular/common/http';
 import { LoadingStatesModule } from './pages/loading-states/loading-states.module';
+import { ProgressBarIndeterminateModule } from './pages/loading-waiting-states/progress-bar-indeterminate/progress-bar-indeterminate.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -71,6 +72,7 @@ import { LoadingStatesModule } from './pages/loading-states/loading-states.modul
         DynamicStepperModule,
         FormValidationModule,
         LandingPageModule,
+        ProgressBarIndeterminateModule,
     ],
     bootstrap: [AppComponent],
 })

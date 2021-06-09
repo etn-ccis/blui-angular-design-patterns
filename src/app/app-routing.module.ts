@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { DataListComponent } from './pages/list/data-list/data-list.component';
 import { ActionListComponent } from './pages/list/action-list/action-list.component';
+import { ProgressBarIndeterminateComponent } from './pages/loading-waiting-states/progress-bar-indeterminate/progress-bar-indeterminate.component';
 import { StatusListComponent } from './pages/list/status-list/status-list.component';
 import { MultiselectListComponent } from './pages/list/multiselect-list/multiselect-list.component';
 import { BasicBottomSheetComponent } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.component';
@@ -91,6 +92,17 @@ export const ROUTES: DrawerItem[] = [
         title: 'Loading States',
         path: 'loading',
         component: LoadingStatesComponent,
+    },
+    {
+        title: 'Loading & Waiting',
+        path: 'loading-states',
+        children: [
+            {
+                title: 'Progress Bars (Indet.)',
+                path: 'progress-bar-indeterminate',
+                component: ProgressBarIndeterminateComponent,
+            }
+        ],
     },
     {
         title: 'Overlays',

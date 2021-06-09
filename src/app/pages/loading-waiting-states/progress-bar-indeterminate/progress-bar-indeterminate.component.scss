@@ -1,0 +1,22 @@
+@import '~@pxblue/colors/palette.scss';
+
+.mat-toolbar .mat-progress-bar {
+    position: absolute;
+    margin: 0 -16px;
+    bottom: 0;
+}
+section.mat-typography {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 80vh;
+    .bluetooth-icon-container {
+        text-align: center;
+        .bluetooth-searching-icon {
+            width: 100%;
+            height: 100%;
+            font-size: 75px;
+            color: map-get($pxb-gray, 500);
+        }
+    }
+}

@@ -8,10 +8,7 @@
     <mat-slide-toggle labelPosition="before" [checked]="checked" (change)="onToggle($event)">Use Dark Theme</mat-slide-toggle>
 </mat-toolbar>
 <section class="mat-typography" [class.small]="isSmall">
-    <div class="searching-device-container">
-        <div class="bluetooth-icon-container">
-            <mat-icon class="bluetooth-searching-icon">bluetooth_searching</mat-icon>
-            <h2>Searching for Devices</h2>
-        </div>
-    </div>
+    <pxb-empty-state title="Searching for Devices" description="Put your indeterminate progress bar in the app bar">
+        <mat-icon pxb-empty-icon>bluetooth_searching</mat-icon>
+    </pxb-empty-state>
 </section>

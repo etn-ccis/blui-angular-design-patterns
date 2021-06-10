@@ -6,17 +6,8 @@
     bottom: 0;
 }
 section.mat-typography {
+    height: calc(100vh - 64px);;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    height: 80vh;
-    .bluetooth-icon-container {
-        text-align: center;
-        .bluetooth-searching-icon {
-            width: 100%;
-            height: 100%;
-            font-size: 75px;
-            color: map-get($pxb-gray, 500);
-        }
-    }
+    justify-content: center;
 }

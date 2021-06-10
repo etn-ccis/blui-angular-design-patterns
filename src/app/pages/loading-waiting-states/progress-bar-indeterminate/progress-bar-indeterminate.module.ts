@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { SpacerModule } from '@pxblue/angular-components';
+import { EmptyStateModule } from '@pxblue/angular-components';
 
 @NgModule({
   declarations: [ProgressBarIndeterminateComponent],
@@ -18,6 +19,7 @@ import { SpacerModule } from '@pxblue/angular-components';
     MatProgressBarModule,
     SpacerModule,
     MatSlideToggleModule,
+    EmptyStateModule,
   ]
 })
 export class ProgressBarIndeterminateModule { }

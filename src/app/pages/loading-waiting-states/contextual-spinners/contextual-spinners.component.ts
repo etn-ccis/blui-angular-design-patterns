@@ -2,18 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { StateService } from '../../../services/state.service';
-import { eulaDetails } from './eula-details';
 
 @Component({
-    selector: 'app-spinner-overlays',
-    templateUrl: './spinner-overlays.component.html',
-    styleUrls: ['./spinner-overlays.component.scss'],
+    selector: 'app-contextual-spinners',
+    templateUrl: './contextual-spinners.component.html',
+    styleUrls: ['./contextual-spinners.component.scss'],
 })
-export class SpinnerOverlaysComponent implements OnInit {
+export class ContextualSpinnersComponent implements OnInit {
     isSmall: boolean;
     checked = false;
-    eulaDetails = eulaDetails;
-    isEulaLoaded = false;
+    buttonClicked = false;
+    flatbuttonClicked = false;
 
     constructor(
         private readonly _drawerService: StateService,
@@ -30,8 +29,6 @@ export class SpinnerOverlaysComponent implements OnInit {
                     this.isSmall = false;
                 }
             });
-
-        this.loadEula();
     }
 
     toggleMenu(): void {
@@ -43,14 +40,17 @@ export class SpinnerOverlaysComponent implements OnInit {
         this.checked = event.checked;
     }
 
-    loadEula(): void {
+    loadSpinner(): void {
+        this.buttonClicked = true;
         setTimeout(() => {
-            this.isEulaLoaded = true;
+            this.buttonClicked = false;
         }, 3000);
     }
 
-    reloadEula(): void {
-        this.isEulaLoaded = false;
-        this.loadEula();
+    loadSpinner1(): void {
+        this.flatbuttonClicked = true;
+        setTimeout(() => {
+            this.flatbuttonClicked = false;
+        }, 3000);
     }
 }

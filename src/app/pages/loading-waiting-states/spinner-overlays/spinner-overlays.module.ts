@@ -12,18 +12,18 @@ import { MatDividerModule } from '@angular/material/divider';
 import { SpacerModule } from '@pxblue/angular-components';
 
 @NgModule({
-  declarations: [SpinnerOverlaysComponent],
-  imports: [
-    CommonModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatProgressSpinnerModule,
-    MatSlideToggleModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatDividerModule,
-    SpacerModule,
-  ]
+    declarations: [SpinnerOverlaysComponent],
+    imports: [
+        CommonModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        MatProgressSpinnerModule,
+        MatSlideToggleModule,
+        MatCardModule,
+        MatCheckboxModule,
+        MatDividerModule,
+        SpacerModule,
+    ],
 })
-export class SpinnerOverlaysModule { }
+export class SpinnerOverlaysModule {}

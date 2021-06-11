@@ -24,7 +24,7 @@ section.mat-typography {
                 transform: translate(-50%, -50%);
             }
         }
-        
+
         .eula-content {
             overflow: auto;
             display: flex;
@@ -36,6 +36,11 @@ section.mat-typography {
             margin-top: 12px;
         }
     }
+
+    .eula-divider.mat-divider-horizontal {
+        position: relative;
+        margin: 15px 0 8px;
+    }
 }
 
 ::ng-deep .eula-checkbox .mat-checkbox-layout {
@@ -46,14 +51,3 @@ section.mat-typography {
     width: 18px;
     height: 18px;
 }
-
-
-// .parent-element-class {
-//     ::ng-deep 
-//     .mat-progress-spinner,
-//     .mat-spinner {
-//         circle {
-//             stroke: white;
-//         }
-//     }
-// }

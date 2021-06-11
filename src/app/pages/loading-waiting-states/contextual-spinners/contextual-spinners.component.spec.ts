@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SpinnerOverlaysComponent } from './spinner-overlays.component';
+import { ContextualSpinnersComponent } from './contextual-spinners.component';
 
-describe('SpinnerOverlaysComponent', () => {
-    let component: SpinnerOverlaysComponent;
-    let fixture: ComponentFixture<SpinnerOverlaysComponent>;
+describe('ContextualSpinnersComponent', () => {
+    let component: ContextualSpinnersComponent;
+    let fixture: ComponentFixture<ContextualSpinnersComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [SpinnerOverlaysComponent],
+            declarations: [ContextualSpinnersComponent],
         }).compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(SpinnerOverlaysComponent);
+        fixture = TestBed.createComponent(ContextualSpinnersComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

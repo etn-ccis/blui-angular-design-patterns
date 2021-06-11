@@ -17,6 +17,7 @@ import { I18nComponent } from './pages/i18n/i18n.component';
 import { LoadingStatesComponent } from './pages/loading-states/loading-states.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { SpinnerOverlaysComponent } from './pages/loading-waiting-states/spinner-overlays/spinner-overlays.component';
+import { ContextualSpinnersComponent } from './pages/loading-waiting-states/contextual-spinners/contextual-spinners.component';
 
 export type DrawerItem = {
     title: string;
@@ -102,6 +103,11 @@ export const ROUTES: DrawerItem[] = [
                 title: 'Spinner Overlays',
                 path: 'spinner-overlays',
                 component: SpinnerOverlaysComponent,
+            },
+            {
+                title: 'Contextual Spinners',
+                path: 'contextual-spinners',
+                component: ContextualSpinnersComponent,
             },
             {
                 title: 'Progress Bars (Indet.)',

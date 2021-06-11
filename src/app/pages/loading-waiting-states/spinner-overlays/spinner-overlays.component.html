@@ -3,42 +3,41 @@
         <mat-icon>menu</mat-icon>
     </button>
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Spinner Overlays</div>
+    <pxb-spacer></pxb-spacer>
     <div class="toggle-theme-container" *ngIf="!isSmall">
         <span class="mat-subheading-2" style="margin-right: 8px; font-size: 14px;">Use Dark Theme</span>
-        <mat-slide-toggle  [checked]="checked" (change)="onToggle($event)"></mat-slide-toggle>
+        <mat-slide-toggle [checked]="checked" (change)="onToggle($event)"></mat-slide-toggle>
     </div>
 </mat-toolbar>
-
-<!-- <button mat-flat-button color="primary" (click)="loadSpinner()" *ngIf="!buttonClicked">
-    <mat-icon>play_arrow</mat-icon>
-    Start Routine
-</button>
-<button *ngIf="buttonClicked" class="parent-element-class" mat-fab color="primary" aria-label="Example icon button with a delete icon">
-    <mat-spinner class="primary-spineer" diameter="20"></mat-spinner>
-  </button> -->
 
 <section class="mat-typography" [class.small]="isSmall">
     <mat-card class="eula-container">
         <div class="eula-details">
             <div class="eula-heading">
-                <div class="mat-title">{{eulaDetails.title}}</div>
+                <div class="mat-title">{{ eulaDetails.title }}</div>
             </div>
             <div class="loading-container" *ngIf="!isEulaLoaded; else eulaLoaded">
-                <h3>{{eulaDetails.loadingMessage}}</h3>
+                <h3>{{ eulaDetails.loadingMessage }}</h3>
                 <div class="loading-overlay">
                     <mat-spinner color="primary" diameter="96"></mat-spinner>
                 </div>
             </div>
             <ng-template #eulaLoaded>
                 <div class="eula-content">
-                    {{eulaDetails.eulaContent}}
+                    {{ eulaDetails.eulaContent }}
                 </div>
             </ng-template>
             <mat-checkbox class="pxb-eula-checkbox eula-checkbox" [disabled]="!isEulaLoaded">
                 {{ eulaDetails.eulaConfirmation }}
             </mat-checkbox>
-            <mat-divider class="pxb-auth-divider pxb-auth-action-button-divider"></mat-divider>
-            <button mat-flat-button color="primary" style="width: 100%; margin-top: 8px" [disabled]="!isEulaLoaded">
+            <mat-divider class="eula-divider"></mat-divider>
+            <button
+                mat-flat-button
+                color="primary"
+                style="width: 100%; margin-top: 8px"
+                [disabled]="!isEulaLoaded"
+                (click)="reloadEula()"
+            >
                 Reload
             </button>
         </div>

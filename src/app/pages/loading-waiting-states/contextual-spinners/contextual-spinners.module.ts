@@ -1,25 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProgressBarIndeterminateComponent } from './progress-bar-indeterminate.component';
+import { ContextualSpinnersComponent } from './contextual-spinners.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SpacerModule } from '@pxblue/angular-components';
-import { EmptyStateModule } from '@pxblue/angular-components';
 
 @NgModule({
-    declarations: [ProgressBarIndeterminateComponent],
+    declarations: [ContextualSpinnersComponent],
     imports: [
         CommonModule,
         MatToolbarModule,
         MatButtonModule,
         MatIconModule,
-        MatProgressBarModule,
-        SpacerModule,
         MatSlideToggleModule,
-        EmptyStateModule,
+        MatProgressSpinnerModule,
+        SpacerModule,
     ],
 })
-export class ProgressBarIndeterminateModule {}
+export class ContextualSpinnersModule {}

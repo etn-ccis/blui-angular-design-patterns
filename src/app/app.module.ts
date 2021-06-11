@@ -34,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoadingStatesModule } from './pages/loading-states/loading-states.module';
 import { ProgressBarIndeterminateModule } from './pages/loading-waiting-states/progress-bar-indeterminate/progress-bar-indeterminate.module';
 import { SpinnerOverlaysModule } from './pages/loading-waiting-states/spinner-overlays/spinner-overlays.module';
+import { ContextualSpinnersModule } from './pages/loading-waiting-states/contextual-spinners/contextual-spinners.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -75,6 +76,7 @@ import { SpinnerOverlaysModule } from './pages/loading-waiting-states/spinner-ov
         LandingPageModule,
         ProgressBarIndeterminateModule,
         SpinnerOverlaysModule,
+        ContextualSpinnersModule,
     ],
     bootstrap: [AppComponent],
 })

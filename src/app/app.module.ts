@@ -33,6 +33,7 @@ import { LandingPageModule } from './pages/landing-page/landing-page.module';
 import { HttpClientModule } from '@angular/common/http';
 import { LoadingStatesModule } from './pages/loading-states/loading-states.module';
 import { ProgressBarIndeterminateModule } from './pages/loading-waiting-states/progress-bar-indeterminate/progress-bar-indeterminate.module';
+import { SpinnerOverlaysModule } from './pages/loading-waiting-states/spinner-overlays/spinner-overlays.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -73,6 +74,7 @@ import { ProgressBarIndeterminateModule } from './pages/loading-waiting-states/p
         FormValidationModule,
         LandingPageModule,
         ProgressBarIndeterminateModule,
+        SpinnerOverlaysModule,
     ],
     bootstrap: [AppComponent],
 })

@@ -16,6 +16,7 @@ import { FormValidationComponent } from './pages/form-validation/form-validation
 import { I18nComponent } from './pages/i18n/i18n.component';
 import { LoadingStatesComponent } from './pages/loading-states/loading-states.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { SpinnerOverlaysComponent } from './pages/loading-waiting-states/spinner-overlays/spinner-overlays.component';
 
 export type DrawerItem = {
     title: string;
@@ -98,10 +99,15 @@ export const ROUTES: DrawerItem[] = [
         path: 'loading-states',
         children: [
             {
+                title: 'Spinner Overlays',
+                path: 'spinner-overlays',
+                component: SpinnerOverlaysComponent,
+            },
+            {
                 title: 'Progress Bars (Indet.)',
                 path: 'progress-bar-indeterminate',
                 component: ProgressBarIndeterminateComponent,
-            }
+            },
         ],
     },
     {

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { DataListComponent } from './pages/list/data-list/data-list.component';
 import { ActionListComponent } from './pages/list/action-list/action-list.component';
-import { ProgressBarIndeterminateComponent } from './pages/loading-waiting-states/progress-bar-indeterminate/progress-bar-indeterminate.component';
 import { StatusListComponent } from './pages/list/status-list/status-list.component';
 import { MultiselectListComponent } from './pages/list/multiselect-list/multiselect-list.component';
 import { BasicBottomSheetComponent } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.component';
@@ -16,6 +15,8 @@ import { FormValidationComponent } from './pages/form-validation/form-validation
 import { I18nComponent } from './pages/i18n/i18n.component';
 import { LoadingStatesComponent } from './pages/loading-states/loading-states.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { ProgressBarIndeterminateComponent } from './pages/loading-waiting-states/progress-bar-indeterminate/progress-bar-indeterminate.component';
+import { ProgressBarsComponent } from './pages/loading-waiting-states/progress-bars/progress-bars.component';
 import { SpinnerOverlaysComponent } from './pages/loading-waiting-states/spinner-overlays/spinner-overlays.component';
 import { ContextualSpinnersComponent } from './pages/loading-waiting-states/contextual-spinners/contextual-spinners.component';
 
@@ -108,6 +109,11 @@ export const ROUTES: DrawerItem[] = [
                 title: 'Contextual Spinners',
                 path: 'contextual-spinners',
                 component: ContextualSpinnersComponent,
+            },
+            {
+                title: 'Progress Bars',
+                path: 'progress-bars',
+                component: ProgressBarsComponent,
             },
             {
                 title: 'Progress Bars (Indet.)',

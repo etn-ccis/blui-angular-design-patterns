@@ -1,0 +1,42 @@
+<mat-toolbar data-cy="pxb-toolbar" flexLayout="row" class="app-bar mat-elevation-z4" [color]="checked ? 'primary' : ''">
+    <button data-cy="toolbar-menu" *ngIf="isSmall" mat-icon-button (click)="toggleMenu()" style="margin-left: -8px">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Progress Bars</div>
+    <pxb-spacer></pxb-spacer>
+    <div class="toggle-theme-container" *ngIf="!isSmall">
+        <span class="mat-subheading-2" style="margin-right: 8px; font-size: 14px;">Use Dark Theme</span>
+        <mat-slide-toggle [checked]="checked" (change)="onToggle($event)"></mat-slide-toggle>
+    </div>
+</mat-toolbar>
+<section class="mat-typography" [class.small]="isSmall">
+    <div class="upload-button-container">
+        <button mat-raised-button color="primary" (click)="uploadFile()">
+            <mat-icon>vertical_align_top</mat-icon>
+            upload new file
+        </button>
+    </div>
+    <mat-card class="folder-lists-container">
+        <mat-radio-group class="radio-group" data-cy="radiogroup">
+            <mat-radio-button style="margin: 16px 0" *ngFor="let option of foldersList" [value]="option.value">
+                <div class="folder-name mat-subtitle-1">
+                    <mat-icon>folder</mat-icon>
+                    {{ option.label }}
+                </div>
+            </mat-radio-button>
+        </mat-radio-group>
+    </mat-card>
+</section>
+<mat-list class="upload-status-list">
+    <pxb-info-list-item iconAlign="left">
+        <span pxb-title>PX Blue is Awesome.pdf</span>
+        <span pxb-subtitle>Uploading ({{progress}}%)</span>
+        <mat-icon pxb-icon>find_in_page</mat-icon>
+        <div class="progress-bar-container" pxb-info>
+            <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
+        </div>
+        <span pxb-right-content style="margin-right: -8px">
+            <button mat-stroked-button>Cancel</button>
+        </span>
+    </pxb-info-list-item>
+</mat-list>

@@ -1,0 +1,42 @@
+section.mat-typography {
+    padding: 16px 24px;
+    max-width: 600px;
+    margin: 0 auto;
+
+    .upload-button-container {
+        text-align: right;
+        padding-bottom: 16px;
+    }
+
+    .radio-group {
+        display: flex;
+        flex-direction: column;
+        margin: 15px 0;
+    }
+
+    .folder-name {
+        display: flex;
+        align-items: center;
+
+        .mat-icon {
+            margin-right: 8px;
+        }
+    }
+}
+.mat-list.upload-status-list {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+}
+.pxb-info-list-item	 {
+    background-color: black;
+    color: #2d3838;
+
+    .progress-bar-container {
+        mat-progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+}

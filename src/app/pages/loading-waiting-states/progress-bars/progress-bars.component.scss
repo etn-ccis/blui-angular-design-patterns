@@ -7,7 +7,9 @@ section.mat-typography {
         text-align: right;
         padding-bottom: 16px;
     }
-
+    .folder-lists-container {
+        padding: 0;
+    }
     .radio-group {
         display: flex;
         flex-direction: column;
@@ -31,6 +33,9 @@ section.mat-typography {
 .pxb-info-list-item	 {
     background-color: black;
     color: #2d3838;
+    &:not(:last-child) {
+        margin-bottom: 16px;
+    }
 
     .progress-bar-container {
         mat-progress-bar {
@@ -38,5 +43,19 @@ section.mat-typography {
             bottom: 0;
             left: 0;
         }
+    }
+}
+
+.folder-radio-button {
+    border-bottom: 1px solid #efe9e9;
+    padding: 16px;
+}
+
+@media (min-width: 601px) {
+    .mat-list.upload-status-list {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
     }
 }

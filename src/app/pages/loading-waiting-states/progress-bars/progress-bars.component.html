@@ -11,14 +11,14 @@
 </mat-toolbar>
 <section class="mat-typography" [class.small]="isSmall">
     <div class="upload-button-container">
-        <button mat-raised-button color="primary" (click)="uploadFile()">
+        <button mat-raised-button class="upload-file-button mat-body" color="primary" (click)="uploadFile()">
             <mat-icon>vertical_align_top</mat-icon>
-            upload new file
+            UPLOAD NEW FILE
         </button>
     </div>
     <mat-card class="folder-lists-container">
         <mat-radio-group class="radio-group" data-cy="radiogroup">
-            <mat-radio-button style="margin: 16px 0" *ngFor="let option of foldersList" [value]="option.value">
+            <mat-radio-button class="folder-radio-button" *ngFor="let option of foldersList" [value]="option.value">
                 <div class="folder-name mat-subtitle-1">
                     <mat-icon>folder</mat-icon>
                     {{ option.label }}
@@ -28,12 +28,12 @@
     </mat-card>
 </section>
 <mat-list class="upload-status-list">
-    <pxb-info-list-item iconAlign="left">
-        <span pxb-title>PX Blue is Awesome.pdf</span>
-        <span pxb-subtitle>Uploading ({{progress}}%)</span>
+    <pxb-info-list-item iconAlign="left" *ngFor="let file of uploadFileList">
+        <span pxb-title>{{ file.fileName }}</span>
+        <span pxb-subtitle>{{file.status}}</span>
         <mat-icon pxb-icon>find_in_page</mat-icon>
         <div class="progress-bar-container" pxb-info>
-            <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
+            <mat-progress-bar mode="determinate" [value]="file.progress"></mat-progress-bar>
         </div>
         <span pxb-right-content style="margin-right: -8px">
             <button mat-stroked-button>Cancel</button>

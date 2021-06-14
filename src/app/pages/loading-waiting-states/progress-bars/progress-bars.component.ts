@@ -18,9 +18,9 @@ export class ProgressBarsComponent implements OnInit {
     { label: 'The Best Management Team', value: '4' },
     { label: 'The Best Facility Team', value: '5' },
     { label: 'The Most Narcissist Team', value: '6' },
-];
-progress = 0;
-interval;
+  ];
+  uploadFileList = [];
+  interval;
 
   constructor(
     private readonly _drawerService: StateService,
@@ -49,12 +49,19 @@ interval;
   }
 
   uploadFile() {
-    this.interval = setInterval(() => {
-      if (this.progress < 100) this.progress += 1;
-      else {
-        clearInterval(this.interval);
-      }
-    }, 100)
+    this.uploadFileList.push({ fileName: 'PX Blue is Awesome.pdf', progress: 0 })
+    for (let i = 0; i <= this.uploadFileList.length; i++) {
+      this.interval = setInterval(() => {
+        if (this.uploadFileList[i].progress < 100) {
+          this.uploadFileList[i].progress += 1;
+          this.uploadFileList[i].status = `Uploading (${this.uploadFileList[i].progress}%)`;
+        }
+        else {
+          this.uploadFileList[i].status = 'Complete'
+          clearInterval(this.interval);
+        }
+      }, 100)
+    }
   }
 
 }

@@ -1,0 +1,18 @@
+@import '~@pxblue/colors/palette.scss';
+
+.mat-typography {
+    padding: 24px 16px;
+}
+
+.ph-item {
+    padding: 16px 0;
+    margin: 0;
+    justify-content: space-around;
+    border: none;
+}
+
+
+.example-title {
+    color: map-get($pxb-blue, 500);
+    margin-bottom: 24px;
+}

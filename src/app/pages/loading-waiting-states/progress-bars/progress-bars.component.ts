@@ -48,7 +48,7 @@ export class ProgressBarsComponent implements OnInit {
     this.checked = event.checked;
   }
 
-  uploadFile() {
+  uploadFile(): void {
     this.uploadFileList.push({ fileName: 'PX Blue is Awesome.pdf', progress: 0 })
     for (let i = 0; i <= this.uploadFileList.length; i++) {
       this.interval = setInterval(() => {

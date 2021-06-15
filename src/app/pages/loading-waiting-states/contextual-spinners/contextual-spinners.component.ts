@@ -12,7 +12,7 @@ export class ContextualSpinnersComponent implements OnInit {
     isSmall: boolean;
     checked = false;
     buttonClicked = false;
-    flatbuttonClicked = false;
+    flatButtonClicked = false;
 
     constructor(
         private readonly _drawerService: StateService,
@@ -48,9 +48,9 @@ export class ContextualSpinnersComponent implements OnInit {
     }
 
     loadSpinner1(): void {
-        this.flatbuttonClicked = true;
+        this.flatButtonClicked = true;
         setTimeout(() => {
-            this.flatbuttonClicked = false;
+            this.flatButtonClicked = false;
         }, 3000);
     }
 }

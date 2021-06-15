@@ -23,14 +23,14 @@
             </button>
         </div>
         <div class="example-section flat-button-example">
-            <button mat-raised-button color="primary" (click)="loadSpinner1()" *ngIf="!flatbuttonClicked">
+            <button mat-raised-button color="primary" (click)="loadSpinner1()" *ngIf="!flatButtonClicked">
                 Log In
             </button>
             <button
                 mat-raised-button
                 class="button-container raised-button-example"
                 color="primary"
-                *ngIf="flatbuttonClicked"
+                *ngIf="flatButtonClicked"
             >
                 <mat-spinner class="primary-spinner" diameter="20"></mat-spinner>
             </button>

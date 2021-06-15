@@ -1,0 +1,38 @@
+<mat-toolbar data-cy="pxb-toolbar" flexLayout="row" class="app-bar mat-elevation-z4" [color]="checked ? 'primary' : ''">
+    <button data-cy="toolbar-menu" *ngIf="isSmall" mat-icon-button (click)="toggleMenu()" style="margin-left: -8px">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Progress Bars</div>
+    <pxb-spacer></pxb-spacer>
+    <div class="toggle-theme-container" *ngIf="!isSmall">
+        <span class="mat-subheading-2" style="margin-right: 8px; font-size: 14px;">Use Dark Theme</span>
+        <mat-slide-toggle [checked]="checked" (change)="onToggle($event)"></mat-slide-toggle>
+    </div>
+</mat-toolbar>
+<section class="mat-typography" [class.small]="isSmall">
+    <p class="animation-option-container">
+        <label style="margin-right: 15px;">Animation Style</label>
+        <mat-button-toggle-group name="animationStyle" aria-label="Animation Style">
+            <mat-button-toggle value="pulsate">Pulsate</mat-button-toggle>
+            <mat-button-toggle value="wavy">Wavy</mat-button-toggle>
+        </mat-button-toggle-group>
+    </p>
+    <div class="hero-banner-section example-section">
+        <h2 class="example-title">Hero Banner</h2>
+        <mat-card style="width: 350px;height: 140px;">
+            <div class="ph-item">
+                <div class="ph-col-4" *ngFor="let hero of [0, 1, 2]" style="justify-content: center; max-width: 100px">
+                    <div class="ph-avatar" style="min-width: 0;height: 36px;width: 36px;margin: 0 auto 8px;"></div>
+                    <div class="ph-row" style="margin-bottom: 0;">
+                        <div class="ph-col-2 empty"></div>
+                        <div class="ph-col-8" style="border-radius: 2px;"></div>
+                        <div class="ph-col-2 empty"></div>
+                    </div>
+                    <div class="ph-row">
+                        <div class="ph-col-12" style="border-radius: 2px;"></div>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</section>

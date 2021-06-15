@@ -36,6 +36,7 @@ import { ProgressBarIndeterminateModule } from './pages/loading-waiting-states/p
 import { SpinnerOverlaysModule } from './pages/loading-waiting-states/spinner-overlays/spinner-overlays.module';
 import { ContextualSpinnersModule } from './pages/loading-waiting-states/contextual-spinners/contextual-spinners.module';
 import { ProgressBarsModule } from './pages/loading-waiting-states/progress-bars/progress-bars.module';
+import { SkeletonLoaderModule } from './pages/loading-waiting-states/skeleton-loader/skeleton-loader.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -79,6 +80,7 @@ import { ProgressBarsModule } from './pages/loading-waiting-states/progress-bars
         SpinnerOverlaysModule,
         ContextualSpinnersModule,
         ProgressBarsModule,
+        SkeletonLoaderModule,
     ],
     bootstrap: [AppComponent],
 })

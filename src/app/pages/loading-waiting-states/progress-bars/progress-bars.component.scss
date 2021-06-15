@@ -1,3 +1,4 @@
+@import '~@pxblue/colors/palette.scss';
 section.mat-typography {
     padding: 16px 24px;
     max-width: 600px;
@@ -31,12 +32,24 @@ section.mat-typography {
     right: 24px;
 }
 .pxb-info-list-item	 {
-    background-color: black;
+    background-color: map-get($pxb-black, 900);;
     color: #2d3838;
     &:not(:last-child) {
         margin-bottom: 16px;
     }
-
+    .mat-icon.file-icon {
+        color: map-get($pxb-black, 200);
+    }
+    .file-title{
+        color: map-get($pxb-black, 50);
+    }
+    .file-upload-status {
+        color: map-get($pxb-black, 200);
+    }
+    .cancel-button {
+        color: map-get($pxb-black, 50);
+        border-color: map-get($pxb-black, 50);
+    }
     .progress-bar-container {
         mat-progress-bar {
             position: absolute;
@@ -51,7 +64,7 @@ section.mat-typography {
     padding: 16px;
 }
 
-@media (min-width: 601px) {
+@media (max-width: 600px) {
     .mat-list.upload-status-list {
         position: absolute;
         bottom: 0;

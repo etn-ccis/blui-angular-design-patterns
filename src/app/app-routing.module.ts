@@ -19,6 +19,7 @@ import { ProgressBarIndeterminateComponent } from './pages/loading-waiting-state
 import { ProgressBarsComponent } from './pages/loading-waiting-states/progress-bars/progress-bars.component';
 import { SpinnerOverlaysComponent } from './pages/loading-waiting-states/spinner-overlays/spinner-overlays.component';
 import { ContextualSpinnersComponent } from './pages/loading-waiting-states/contextual-spinners/contextual-spinners.component';
+import { SkeletonLoaderComponent } from './pages/loading-waiting-states/skeleton-loader/skeleton-loader.component';
 
 export type DrawerItem = {
     title: string;
@@ -109,6 +110,11 @@ export const ROUTES: DrawerItem[] = [
                 title: 'Contextual Spinners',
                 path: 'contextual-spinners',
                 component: ContextualSpinnersComponent,
+            },
+            {
+                title: 'Skeletons',
+                path: 'skeletons-loader',
+                component: SkeletonLoaderComponent,
             },
             {
                 title: 'Progress Bars',

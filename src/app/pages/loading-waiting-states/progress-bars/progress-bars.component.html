@@ -29,14 +29,14 @@
 </section>
 <mat-list class="upload-status-list">
     <pxb-info-list-item iconAlign="left" *ngFor="let file of uploadFileList">
-        <span pxb-title>{{ file.fileName }}</span>
-        <span pxb-subtitle>{{file.status}}</span>
-        <mat-icon pxb-icon>find_in_page</mat-icon>
+        <span class="file-title" pxb-title>{{ file.fileName }}</span>
+        <span class="file-upload-status" pxb-subtitle>{{file.status}}</span>
+        <mat-icon class="file-icon" pxb-icon>find_in_page</mat-icon>
         <div class="progress-bar-container" pxb-info>
             <mat-progress-bar mode="determinate" [value]="file.progress"></mat-progress-bar>
         </div>
         <span pxb-right-content style="margin-right: -8px">
-            <button mat-stroked-button>Cancel</button>
+            <button class="cancel-button" mat-stroked-button>Cancel</button>
         </span>
     </pxb-info-list-item>
 </mat-list>

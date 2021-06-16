@@ -12,25 +12,25 @@
 
 <section class="mat-typography" [class.small]="isSmall">
     <mat-card class="eula-container">
-        <!-- <div class="loading-overlay-container" *ngIf="!isEulaLoaded; else eulaLoaded">
+        <div class="loading-overlay-container" *ngIf="!isEulaLoaded">
             <mat-spinner color="primary" diameter="96"></mat-spinner>
-        </div> -->
+        </div>
         <div class="eula-details" [ngClass]="{ 'overlay-container': !isEulaLoaded }">
             <div class="eula-detail-section">
                 <div class="eula-heading">
                     <div class="mat-title">{{ eulaDetails.title }}</div>
                 </div>
-                <div class="loading-container" *ngIf="!isEulaLoaded; else eulaLoaded">
+                <div class="loading-container" *ngIf="!isEulaLoaded">
                     <h3>{{ eulaDetails.loadingMessage }}</h3>
                     <div class="loading-overlay">
                         <mat-spinner color="primary" diameter="96"></mat-spinner>
                     </div>
                 </div>
-                <ng-template #eulaLoaded>
+                <ng-container *ngIf="isEulaLoaded">
                     <div class="eula-content">
                         {{ eulaDetails.eulaContent }}
                     </div>
-                </ng-template>
+                </ng-container>
             </div>
             <div class="eula-confirmation-check">
                 <mat-checkbox class="pxb-eula-checkbox eula-checkbox">

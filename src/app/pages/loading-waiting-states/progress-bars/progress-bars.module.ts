@@ -12,19 +12,19 @@ import { MatDividerModule } from '@angular/material/divider';
 import { SpacerModule, InfoListItemModule } from '@pxblue/angular-components';
 
 @NgModule({
-  declarations: [ProgressBarsComponent],
-  imports: [
-    CommonModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatProgressBarModule,
-    SpacerModule,
-    MatSlideToggleModule,
-    MatCardModule,
-    MatRadioModule,
-    MatDividerModule,
-    InfoListItemModule,
-  ]
+    declarations: [ProgressBarsComponent],
+    imports: [
+        CommonModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatIconModule,
+        MatProgressBarModule,
+        SpacerModule,
+        MatSlideToggleModule,
+        MatCardModule,
+        MatRadioModule,
+        MatDividerModule,
+        InfoListItemModule,
+    ],
 })
-export class ProgressBarsModule { }
+export class ProgressBarsModule {}

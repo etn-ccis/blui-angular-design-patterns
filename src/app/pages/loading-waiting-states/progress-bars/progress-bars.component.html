@@ -30,8 +30,8 @@
 <mat-list class="upload-status-list">
     <pxb-info-list-item iconAlign="left" *ngFor="let file of uploadFileList">
         <span class="file-title" pxb-title>{{ file.fileName }}</span>
-        <span class="file-upload-status" pxb-subtitle>{{file.status}}</span>
-        <mat-icon class="file-icon" pxb-icon>find_in_page</mat-icon>
+        <span class="file-upload-status" pxb-subtitle>{{ file.status }}</span>
+        <mat-icon class="file-icon" pxb-icon>text_snippet</mat-icon>
         <div class="progress-bar-container" pxb-info>
             <mat-progress-bar mode="determinate" [value]="file.progress"></mat-progress-bar>
         </div>

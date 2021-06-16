@@ -1,3 +1,5 @@
+@import '~@pxblue/colors/palette.scss';
+
 section.mat-typography {
     padding: 16px 24px;
     max-width: 600px;
@@ -7,7 +9,29 @@ section.mat-typography {
     .eula-container {
         height: calc(100vh - 100px);
         position: relative;
-
+        padding: 0;
+        .loading-overlay-container {
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 4;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .overlay-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: map-get($pxb-white, 200);
+            z-index: 3;
+            opacity: 0.2;
+        }
         .eula-details {
             flex: 1 1 0;
             display: flex;
@@ -25,13 +49,23 @@ section.mat-typography {
             }
         }
 
-        .eula-content {
+        .eula-detail-section {
             overflow: auto;
             display: flex;
             flex-direction: column;
             flex: 1 1 0;
         }
 
+        .eula-detail-section {
+            padding: 24px;
+        }
+
+        .eula-confirmation-check {
+            padding: 0 24px;
+        }
+        .eula-reload-btn {
+            padding: 8px 24px 24px;
+        }
         .mat-checkbox.eula-checkbox {
             margin-top: 12px;
         }

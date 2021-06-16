@@ -11,17 +11,17 @@ import { MatCardModule } from '@angular/material/card';
 import { ContentLoaderModule } from '@netbasal/ngx-content-loader';
 
 @NgModule({
-  declarations: [SkeletonLoaderComponent],
-  imports: [
-    CommonModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    SpacerModule,
-    MatSlideToggleModule,
-    MatButtonToggleModule,
-    ContentLoaderModule,
-    MatCardModule,
-  ]
+    declarations: [SkeletonLoaderComponent],
+    imports: [
+        CommonModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatIconModule,
+        SpacerModule,
+        MatSlideToggleModule,
+        MatButtonToggleModule,
+        ContentLoaderModule,
+        MatCardModule,
+    ],
 })
-export class SkeletonLoaderModule { }
+export class SkeletonLoaderModule {}

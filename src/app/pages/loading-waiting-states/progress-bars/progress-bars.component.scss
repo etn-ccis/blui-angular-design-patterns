@@ -22,7 +22,10 @@ section.mat-typography {
         align-items: center;
 
         .mat-icon {
-            margin-right: 8px;
+            margin: 0 16px 6px 4px;
+            height: 18px;
+            width: 18px;
+            color: map-get($pxb-gray, 500);
         }
     }
 }
@@ -31,8 +34,8 @@ section.mat-typography {
     bottom: 24px;
     right: 24px;
 }
-.pxb-info-list-item	 {
-    background-color: map-get($pxb-black, 900);;
+.pxb-info-list-item {
+    background-color: map-get($pxb-black, 900);
     color: #2d3838;
     &:not(:last-child) {
         margin-bottom: 16px;
@@ -40,7 +43,7 @@ section.mat-typography {
     .mat-icon.file-icon {
         color: map-get($pxb-black, 200);
     }
-    .file-title{
+    .file-title {
         color: map-get($pxb-black, 50);
     }
     .file-upload-status {

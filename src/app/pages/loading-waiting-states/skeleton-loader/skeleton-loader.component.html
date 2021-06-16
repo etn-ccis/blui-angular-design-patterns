@@ -22,14 +22,17 @@
         <mat-card style="width: 350px;height: 140px;">
             <div class="ph-item">
                 <div class="ph-col-4" *ngFor="let hero of [0, 1, 2]" style="justify-content: center; max-width: 100px">
-                    <div class="ph-avatar" style="min-width: 0;height: 36px;width: 36px;margin: 0 auto 8px;"></div>
+                    <div
+                        class="ph-avatar wave-animation"
+                        style="min-width: 0;height: 36px;width: 36px;margin: 0 auto 8px;"
+                    ></div>
                     <div class="ph-row" style="margin-bottom: 0;">
                         <div class="ph-col-2 empty"></div>
-                        <div class="ph-col-8" style="border-radius: 2px;"></div>
+                        <div class="ph-col-8 wave-animation" style="border-radius: 2px;"></div>
                         <div class="ph-col-2 empty"></div>
                     </div>
                     <div class="ph-row">
-                        <div class="ph-col-12" style="border-radius: 2px;"></div>
+                        <div class="ph-col-12 wave-animation" style="border-radius: 2px;"></div>
                     </div>
                 </div>
             </div>

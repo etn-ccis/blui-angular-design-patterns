@@ -68,7 +68,7 @@ export class ProgressBarsComponent implements OnInit {
         }
     }
 
-    cancelUploading(item): void {
+    cancelUploading(item: any): void {
         this.uploadFileList.splice(item, 1);
     }
 }

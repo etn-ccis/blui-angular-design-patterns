@@ -41,6 +41,7 @@ section.mat-typography {
 
         .loading-container {
             height: 100%;
+            padding-top: 8px;
             .loading-overlay {
                 position: absolute;
                 top: 50%;
@@ -69,6 +70,10 @@ section.mat-typography {
         .mat-checkbox.eula-checkbox {
             margin-top: 12px;
         }
+    }
+
+    .eula-content {
+        padding-top: 8px;
     }
 
     .eula-divider.mat-divider-horizontal {

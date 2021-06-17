@@ -52,14 +52,23 @@ export class ProgressBarsComponent implements OnInit {
         this.uploadFileList.push({ fileName: 'PX Blue is Awesome.pdf', progress: 0 });
         for (let i = 0; i <= this.uploadFileList.length; i++) {
             this.interval = setInterval(() => {
-                if (this.uploadFileList[i].progress < 100) {
-                    this.uploadFileList[i].progress += 1;
-                    this.uploadFileList[i].status = `Uploading (${this.uploadFileList[i].progress}%)`;
-                } else {
-                    this.uploadFileList[i].status = 'Complete';
-                    clearInterval(this.interval);
+                if (this.uploadFileList[i]) {
+                    if (this.uploadFileList[i].progress < 100) {
+                        this.uploadFileList[i].progress += 1;
+                        this.uploadFileList[i].status = `Uploading (${this.uploadFileList[i].progress}%)`;
+                    } else {
+                        this.uploadFileList[i].status = 'Complete';
+                        clearInterval(this.interval);
+                    }
                 }
             }, 100);
+            setTimeout(() => {
+                this.uploadFileList.splice(i, 1);
+            }, 10000);
         }
+    }
+
+    cancelUploading(item): void {
+        this.uploadFileList.splice(item, 1);
     }
 }

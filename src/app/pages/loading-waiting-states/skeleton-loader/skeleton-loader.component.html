@@ -2,7 +2,7 @@
     <button data-cy="toolbar-menu" *ngIf="isSmall" mat-icon-button (click)="toggleMenu()" style="margin-left: -8px">
         <mat-icon>menu</mat-icon>
     </button>
-    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Progress Bars</div>
+    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Skeletons</div>
     <pxb-spacer></pxb-spacer>
     <div class="toggle-theme-container" *ngIf="!isSmall">
         <span class="mat-subheading-2" style="margin-right: 8px; font-size: 14px;">Use Dark Theme</span>
@@ -10,29 +10,134 @@
     </div>
 </mat-toolbar>
 <section class="mat-typography" [class.small]="isSmall">
-    <p class="animation-option-container">
-        <label style="margin-right: 15px;">Animation Style</label>
-        <mat-button-toggle-group name="animationStyle" aria-label="Animation Style">
-            <mat-button-toggle value="pulsate">Pulsate</mat-button-toggle>
-            <mat-button-toggle value="wavy">Wavy</mat-button-toggle>
-        </mat-button-toggle-group>
-    </p>
-    <div class="hero-banner-section example-section">
-        <h2 class="example-title">Hero Banner</h2>
-        <mat-card style="width: 350px;height: 140px;">
+    <div class="score-card-section example-section">
+        <h2 class="example-title">Scorecard</h2>
+        <mat-card>
             <div class="ph-item">
-                <div class="ph-col-4" *ngFor="let hero of [0, 1, 2]" style="justify-content: center; max-width: 100px">
-                    <div
-                        class="ph-avatar wave-animation"
-                        style="min-width: 0;height: 36px;width: 36px;margin: 0 auto 8px;"
-                    ></div>
-                    <div class="ph-row" style="margin-bottom: 0;">
+                <div class="ph-col-12 card-header">
+                    <div class="ph-row card-title">
+                        <div class="ph-col-6"></div>
+                        <div class="ph-col-6 empty"></div>
+                    </div>
+                    <div class="ph-row">
+                        <div class="ph-col-4"></div>
+                        <div class="ph-col-8 empty"></div>
+                    </div>
+                    <div class="ph-row">
+                        <div class="ph-col-2"></div>
+                        <div class="ph-col-10 empty"></div>
+                    </div>
+                </div>
+
+                <div class="ph-col-2 icon-section">
+                    <div class="ph-avatar" *ngFor="let avatar of [0, 1, 2]"></div>
+                </div>
+
+                <div>
+                    <div class="ph-row notification-section">
+                        <div class="ph-col-12"></div>
+                        <div class="ph-col-12"></div>
+                        <div class="ph-col-12"></div>
+                    </div>
+                </div>
+                <div class="ph-col-4 hero-section" *ngFor="let hero of [0, 1]">
+                    <div class="ph-avatar"></div>
+                    <div class="ph-row">
                         <div class="ph-col-2 empty"></div>
-                        <div class="ph-col-8 wave-animation" style="border-radius: 2px;"></div>
+                        <div class="ph-col-8"></div>
                         <div class="ph-col-2 empty"></div>
                     </div>
                     <div class="ph-row">
-                        <div class="ph-col-12 wave-animation" style="border-radius: 2px;"></div>
+                        <div class="ph-col-12"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer-container">
+                <mat-divider></mat-divider>
+                <div class="footer-content">
+                    <div class="footer-text">View Location</div>
+                    <pxb-spacer></pxb-spacer>
+                    <mat-icon>chevron_right</mat-icon>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+
+    <div class="list-items-section section-one example-section">
+        <h2 class="example-title">List Items</h2>
+        <mat-card>
+            <div class="ph-item">
+                    <ng-container *ngFor="let listItems of [0, 1, 2]">
+                    <div class="ph-col-2 list-icon-section">
+                        <div class="ph-avatar"></div>
+                    </div>
+                    <div class="list-item-text">
+                        <div class="ph-row">
+                            <div class="ph-col-2 big"></div>
+                            <div class="ph-col-10 big empty"></div>
+                            <div class="ph-col-6"></div>
+                            <div class="ph-col-6 empty"></div>
+                            <div class="ph-col-4"></div>
+                            <div class="ph-col-8 empty"></div>
+                        </div>
+                    </div>
+                    <div class="icon-section">
+                        <mat-icon>chevron_right</mat-icon>
+                    </div>
+                    <mat-divider></mat-divider>
+                </ng-container>
+            </div>
+        </mat-card>
+    </div>
+
+    <div class="list-items-section section-two example-section">
+        <h2 class="example-title"></h2>
+        <mat-card>
+            <div class="ph-item">
+                    <ng-container *ngFor="let listItems of [0, 1, 2]">
+                    <div class="ph-col-2 list-icon-section">
+                        <div class="ph-avatar" style="height: 24px;
+                        width: 24px;
+                        margin: 0 auto;"></div>
+                    </div>
+                    <div class="list-item-text" style="max-width: 80px;">
+                        <div class="ph-row">
+                            <div class="ph-col-8 big"></div>
+                            <div class="ph-col-4 big empty"></div>
+                            <div class="ph-col-6"></div>
+                            <div class="ph-col-6 empty"></div>
+                        </div>
+                    </div>
+                    <div class="list-item-text">
+                        <div class="ph-row">
+                            <div class="ph-col-2 big"></div>
+                            <div class="ph-col-10 big empty"></div>
+                            <div class="ph-col-4"></div>
+                            <div class="ph-col-8 empty"></div>
+                        </div>
+                    </div>
+                    <div class="icon-section">
+                        <mat-icon>chevron_right</mat-icon>
+                    </div>
+                    <mat-divider></mat-divider>
+                </ng-container>
+            </div>
+        </mat-card>
+    </div>
+
+    <div class="hero-banner-section example-section">
+        <h2 class="example-title">Hero Banner</h2>
+        <mat-card>
+            <div class="ph-item">
+                <div class="ph-col-4" *ngFor="let hero of [0, 1, 2]">
+                    <div class="ph-avatar"></div>
+                    <div class="ph-row">
+                        <div class="ph-col-2 big empty"></div>
+                        <div class="ph-col-8 big"></div>
+                        <div class="ph-col-2 big empty"></div>
+                    </div>
+                    <div class="ph-row">
+                        <div class="ph-col-12"></div>
                     </div>
                 </div>
             </div>

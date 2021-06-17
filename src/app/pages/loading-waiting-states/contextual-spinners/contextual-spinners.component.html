@@ -14,12 +14,22 @@
     <div class="button-examples-container">
         <h5>Click on the buttons below to see the spinners.</h5>
         <div class="example-section extended-fab-button-example">
-            <button class="extended-fab-button" mat-fab color="primary" (click)="loadSpinner()" *ngIf="!buttonClicked">
+            <button
+                class="extended-fab-button"
+                mat-fab
+                color="primary"
+                (click)="loadSpinner()"
+                [ngClass]="{ 'show-spinner': buttonClicked }"
+            >
                 <mat-icon>play_arrow</mat-icon>
+                <div *ngIf="buttonClicked" class="button-container">
+                    <mat-spinner
+                        style="margin-left: -8px;margin-top:2px;"
+                        class="primary-spinner"
+                        diameter="20"
+                    ></mat-spinner>
+                </div>
                 <span class="extended-fab-button__text">Start Routine</span>
-            </button>
-            <button *ngIf="buttonClicked" class="button-container" mat-fab color="primary">
-                <mat-spinner class="primary-spineer" diameter="20"></mat-spinner>
             </button>
         </div>
         <div class="example-section flat-button-example">

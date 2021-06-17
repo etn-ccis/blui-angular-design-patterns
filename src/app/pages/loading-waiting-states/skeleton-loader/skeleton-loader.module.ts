@@ -6,10 +6,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { SpacerModule } from '@pxblue/angular-components';
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { ContentLoaderModule } from '@netbasal/ngx-content-loader';
-
+import { MatDividerModule } from '@angular/material/divider';
 @NgModule({
     declarations: [SkeletonLoaderComponent],
     imports: [
@@ -19,9 +18,9 @@ import { ContentLoaderModule } from '@netbasal/ngx-content-loader';
         MatIconModule,
         SpacerModule,
         MatSlideToggleModule,
-        MatButtonToggleModule,
         ContentLoaderModule,
         MatCardModule,
+        MatDividerModule,
     ],
 })
 export class SkeletonLoaderModule {}

@@ -28,7 +28,7 @@
     </mat-card>
 </section>
 <mat-list class="upload-status-list">
-    <pxb-info-list-item iconAlign="left" *ngFor="let file of uploadFileList">
+    <pxb-info-list-item iconAlign="left" *ngFor="let file of uploadFileList; let index = index">
         <span class="file-title" pxb-title>{{ file.fileName }}</span>
         <span class="file-upload-status" pxb-subtitle>{{ file.status }}</span>
         <mat-icon class="file-icon" pxb-icon>text_snippet</mat-icon>
@@ -36,7 +36,7 @@
             <mat-progress-bar mode="determinate" [value]="file.progress"></mat-progress-bar>
         </div>
         <span pxb-right-content style="margin-right: -8px">
-            <button class="cancel-button" mat-stroked-button>Cancel</button>
+            <button class="cancel-button" mat-stroked-button (click)="cancelUploading(index)">Cancel</button>
         </span>
     </pxb-info-list-item>
 </mat-list>

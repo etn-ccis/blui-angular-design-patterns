@@ -11,7 +11,186 @@
     border: none;
 }
 
+.ph-row div:not(.empty),
+.ph-avatar {
+    background-color: map-get($pxb-black, 50);
+}
 .example-title {
     color: map-get($pxb-blue, 500);
-    margin-bottom: 24px;
+    margin: 40px 0 24px;
+}
+
+.score-card-section {
+    .mat-card {
+        width: 400px;
+        padding: 0;
+        .ph-item {
+            padding: 0;
+        }
+
+        .card-header {
+            padding: 16px;
+            background-color: map-get($pxb-black, 100);
+            .ph-row {
+                margin-bottom: 0;
+                [class^='ph-col-'],
+                [class*=' ph-col-'] {
+                    border-radius: 2px;
+                }
+                &:last-child [class^='ph-col-'] {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .card-title {
+            .ph-col-6 {
+                height: 20px;
+            }
+            .ph-col-4,
+            .ph-col-2 {
+                height: 16px;
+            }
+        }
+        .icon-section,
+        .notification-section {
+            padding-top: 16px;
+        }
+
+        .icon-section {
+            .ph-avatar {
+                min-width: 0;
+                height: 24px;
+                width: 24px;
+                margin-bottom: 8px;
+            }
+        }
+
+        .notification-section {
+            .ph-col-12 {
+                height: 14px;
+                margin: 5px 0px;
+                border-radius: 2px;
+            }
+        }
+        .hero-section {
+            justify-content: center;
+            max-width: 100px;
+            .ph-avatar {
+                min-width: 0;
+                height: 36px;
+                width: 36px;
+                margin: 0 auto 8px;
+            }
+            .ph-row {
+                margin-bottom: 0;
+                [class^='ph-col-'],
+                [class*=' ph-col-'] {
+                    border-radius: 2px;
+                }
+                .ph-col-8 {
+                    height: 16px;
+                }
+                .ph-col-12 {
+                    height: 12px;
+                }
+            }
+        }
+        .footer-content {
+            display: flex;
+            padding: 16px;
+        }
+    }
+}
+
+.list-items-section {
+    .mat-card {
+        padding: 0;
+        .ph-item {
+            padding-bottom: 12px;
+            .list-icon-section {
+                max-width: 72px;
+                justify-content: center;
+                .ph-avatar {
+                    min-width: 0;
+                    height: 40px;
+                    width: 40px;
+                    margin-bottom: 8px;
+                    padding-right: 0;
+                }
+            }
+            .list-item-text {
+                padding: 0;
+                .ph-row {
+                    margin-bottom: 0;
+                    [class^='ph-col-'],
+                    [class*=' ph-col-'] {
+                        border-radius: 2px;
+                        margin-bottom: 4px;
+                    }
+                }
+            }
+            .icon-section {
+                max-width: 50px;
+                justify-content: center;
+            }
+            .mat-divider {
+                position: relative;
+                left: 72px;
+                margin: 4px 0 16px;
+                &:last-child{
+                    display: none;
+                }
+            }
+        }
+    }  
+}
+
+.hero-banner-section {
+    .mat-card {
+        width: 350px;
+        height: 140px;
+        .ph-item {
+            padding-bottom: 0;
+            .ph-col-4 {
+                justify-content: center;
+                max-width: 100px;
+                .ph-avatar {
+                    min-width: 0;
+                    height: 36px;
+                    width: 36px;
+                    margin: 0 auto 8px;
+                }
+                .ph-row {
+                    &:first-child {
+                        margin-bottom: 0;
+                    }
+                    
+                        [class^='ph-col-'],
+                        [class*=' ph-col-'] {
+                            border-radius: 2px;
+                            margin-bottom: 0;
+                        }
+                        
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 520px) {
+    .score-card-section {
+        .mat-card {
+            width: 100%;
+            .ph-item {
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    .hero-banner-section {
+        .mat-card {
+            width: 100%;
+        }
+    }
 }

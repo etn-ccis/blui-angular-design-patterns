@@ -5,12 +5,22 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { SpacerModule } from '@pxblue/angular-components';
+import { SpacerModule, HeroModule } from '@pxblue/angular-components';
 import { MatCardModule } from '@angular/material/card';
 import { ContentLoaderModule } from '@netbasal/ngx-content-loader';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
+import { ScoreCardModule, InfoListItemModule, ListItemTagModule, ChannelValueModule } from '@pxblue/angular-components';
+import { PlaceholderHeroComponent } from './components/placeholder-hero/placeholder-hero.component';
+import { PlaceholderScoreCardComponent } from './components/placeholder-score-card/placeholder-score-card.component';
+import { PlaceholderListComponent } from './components/placeholder-list/placeholder-list.component';
 @NgModule({
-    declarations: [SkeletonLoaderComponent],
+    declarations: [
+        SkeletonLoaderComponent,
+        PlaceholderHeroComponent,
+        PlaceholderScoreCardComponent,
+        PlaceholderListComponent,
+    ],
     imports: [
         CommonModule,
         MatToolbarModule,
@@ -21,6 +31,12 @@ import { MatDividerModule } from '@angular/material/divider';
         ContentLoaderModule,
         MatCardModule,
         MatDividerModule,
+        MatListModule,
+        ScoreCardModule,
+        HeroModule,
+        InfoListItemModule,
+        ListItemTagModule,
+        ChannelValueModule,
     ],
 })
 export class SkeletonLoaderModule {}

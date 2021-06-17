@@ -1,0 +1,11 @@
+.ph-item {
+    padding: 16px 0;
+    margin: 0;
+    justify-content: space-around;
+    border: none;
+}
+
+.ph-row div:not(.empty),
+.ph-avatar {
+    background-color: map-get($pxb-black, 50);
+}

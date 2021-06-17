@@ -10,137 +10,163 @@
     </div>
 </mat-toolbar>
 <section class="mat-typography" [class.small]="isSmall">
-    <div class="score-card-section example-section">
+    <div class="score-card-example-section">
         <h2 class="example-title">Scorecard</h2>
-        <mat-card>
-            <div class="ph-item">
-                <div class="ph-col-12 card-header">
-                    <div class="ph-row card-title">
-                        <div class="ph-col-6"></div>
-                        <div class="ph-col-6 empty"></div>
-                    </div>
-                    <div class="ph-row">
-                        <div class="ph-col-4"></div>
-                        <div class="ph-col-8 empty"></div>
-                    </div>
-                    <div class="ph-row">
-                        <div class="ph-col-2"></div>
-                        <div class="ph-col-10 empty"></div>
-                    </div>
-                </div>
-
-                <div class="ph-col-2 icon-section">
-                    <div class="ph-avatar" *ngFor="let avatar of [0, 1, 2]"></div>
-                </div>
-
-                <div>
-                    <div class="ph-row notification-section">
-                        <div class="ph-col-12"></div>
-                        <div class="ph-col-12"></div>
-                        <div class="ph-col-12"></div>
-                    </div>
-                </div>
-                <div class="ph-col-4 hero-section" *ngFor="let hero of [0, 1]">
-                    <div class="ph-avatar"></div>
-                    <div class="ph-row">
-                        <div class="ph-col-2 empty"></div>
-                        <div class="ph-col-8"></div>
-                        <div class="ph-col-2 empty"></div>
-                    </div>
-                    <div class="ph-row">
-                        <div class="ph-col-12"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-footer-container">
-                <mat-divider></mat-divider>
-                <div class="footer-content">
-                    <div class="footer-text">View Location</div>
-                    <pxb-spacer></pxb-spacer>
-                    <mat-icon>chevron_right</mat-icon>
-                </div>
-            </div>
-        </mat-card>
+        <div class="placeholder-section" *ngIf="showPlaceHolder">
+            <app-placeholder-score-card></app-placeholder-score-card>
+        </div>
+        <div class="loaded-section" *ngIf="!showPlaceHolder">
+            <mat-card>
+                <pxb-score-card
+                    [headerTitle]="'Substation 3'"
+                    [headerSubtitle]="'High Humidity Alarm'"
+                    [headerInfo]="'4 Devices'"
+                    [badgeOffset]="'-74'"
+                >
+                    <ng-container pxb-action-items>
+                        <ng-container *ngFor="let action of ['search', 'mail', 'notifications']; index as i">
+                            <mat-icon *ngIf="i < actionLimit">
+                                {{ action }}
+                            </mat-icon>
+                        </ng-container>
+                    </ng-container>
+                    <mat-list pxb-body class="sb-score-card-content">
+                        <mat-list-item>
+                            <p mat-line style="font-weight: 400">0 Alarms</p>
+                            <mat-icon mat-list-icon>notifications</mat-icon>
+                        </mat-list-item>
+                        <mat-list-item [style.color]="colors.blue[500]">
+                            <p mat-line style="font-weight: 600">1 Event</p>
+                            <mat-icon mat-list-icon>list_alt</mat-icon>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <p mat-line style="font-weight: 400">Online</p>
+                            <mat-icon mat-list-icon>cloud</mat-icon>
+                        </mat-list-item>
+                    </mat-list>
+                    <pxb-hero-banner pxb-badge>
+                        <pxb-hero
+                            *ngIf="heroLimit > 0"
+                            [label]="'Temperature'"
+                            [value]="'98'"
+                            [units]="'°F'"
+                            [iconSize]="72"
+                        >
+                            <i pxb-primary class="pxb-temp"></i>
+                        </pxb-hero>
+                        <pxb-hero
+                            *ngIf="heroLimit > 1"
+                            [label]="'Humidity'"
+                            [value]="'54'"
+                            [units]="'%'"
+                            [iconSize]="72"
+                        >
+                            <i pxb-primary [style.color]="colors.blue[300]" class="pxb-moisture"></i>
+                        </pxb-hero>
+                    </pxb-hero-banner>
+                    <pxb-info-list-item pxb-action-row chevron="true" hidePadding="true" dense="true">
+                        <div pxb-title>View Location</div>
+                    </pxb-info-list-item>
+                </pxb-score-card>
+            </mat-card>
+        </div>
     </div>
 
-    <div class="list-items-section section-one example-section">
+    <div class="list-items-example-section">
         <h2 class="example-title">List Items</h2>
-        <mat-card>
-            <div class="ph-item">
-                    <ng-container *ngFor="let listItems of [0, 1, 2]">
-                    <div class="ph-col-2 list-icon-section">
-                        <div class="ph-avatar"></div>
-                    </div>
-                    <div class="list-item-text">
-                        <div class="ph-row">
-                            <div class="ph-col-2 big"></div>
-                            <div class="ph-col-10 big empty"></div>
-                            <div class="ph-col-6"></div>
-                            <div class="ph-col-6 empty"></div>
-                            <div class="ph-col-4"></div>
-                            <div class="ph-col-8 empty"></div>
-                        </div>
-                    </div>
-                    <div class="icon-section">
-                        <mat-icon>chevron_right</mat-icon>
-                    </div>
-                    <mat-divider></mat-divider>
-                </ng-container>
-            </div>
-        </mat-card>
+        <div class="placeholder-section" *ngIf="showPlaceHolder">
+            <app-placeholder-list></app-placeholder-list>
+        </div>
+        <div class="loaded-section" *ngIf="!showPlaceHolder">
+            <mat-card>
+                <mat-nav-list [style.paddingTop.px]="0">
+                    <pxb-info-list-item
+                        dense="true"
+                        [statusColor]="colors.green[700]"
+                        [divider]="'full'"
+                        class="test"
+                        [iconAlign]="'center'"
+                    >
+                        <div pxb-title>Status</div>
+                        <i pxb-icon class="pxb-device_activating" [style.color]="colors.green[500]"></i>
+                        <pxb-channel-value pxb-right-content value="Online, ESS+"></pxb-channel-value>
+                    </pxb-info-list-item>
+
+                    <pxb-info-list-item [divider]="'full'" [avatar]="true">
+                        <div pxb-title>Input Voltage</div>
+                        <div pxb-subtitle>Phase A · Phase B · Phase C</div>
+                        <mat-icon pxb-icon [style.backgroundColor]="colors.blue[500]" style="color: white;"
+                            >check_circle
+                        </mat-icon>
+                        <span pxb-right-content>
+                            <pxb-channel-value value="478" units="V"></pxb-channel-value>,&nbsp;
+                            <pxb-channel-value value="479" units="V"></pxb-channel-value>,&nbsp;
+                            <pxb-channel-value value="473" units="V"></pxb-channel-value>
+                        </span>
+                    </pxb-info-list-item>
+
+                    <pxb-info-list-item
+                        [style.color]="colors.red[500]"
+                        [statusColor]="colors.red[500]"
+                        [divider]="'full'"
+                        [avatar]="true"
+                    >
+                        <div pxb-title>Output Voltage</div>
+                        <div pxb-subtitle>Phase A · Phase B · Phase C</div>
+                        <mat-icon pxb-icon [style.backgroundColor]="colors.red[500]" style="color: white"
+                            >check_circle
+                        </mat-icon>
+                        <span pxb-right-content>
+                            <pxb-channel-value value="478" units="V"></pxb-channel-value>,&nbsp;
+                            <pxb-channel-value value="479" units="V"></pxb-channel-value>,&nbsp;
+                            <pxb-channel-value value="473" units="V"></pxb-channel-value>
+                        </span>
+                    </pxb-info-list-item>
+
+                    <pxb-info-list-item dense="true" [divider]="'full'" [iconAlign]="'center'" [disabled]="false">
+                        <div pxb-title>Output Current</div>
+                        <mat-icon pxb-icon>battery_charging_full</mat-icon>
+                        <span pxb-right-content>
+                            <pxb-channel-value value="15" units="A"></pxb-channel-value>,&nbsp;
+                            <pxb-channel-value value="14.9" units="A"></pxb-channel-value>,&nbsp;
+                            <pxb-channel-value value="15" units="A"></pxb-channel-value>
+                        </span>
+                    </pxb-info-list-item>
+
+                    <pxb-info-list-item dense="true" [divider]="'full'" [iconAlign]="'center'">
+                        <div pxb-title>Temperature</div>
+                        <i pxb-icon class="pxb-temp"></i>
+                        <span pxb-right-content style="display: flex; align-items: center">
+                            <pxb-channel-value value="68" units="°F"></pxb-channel-value>
+                        </span>
+                    </pxb-info-list-item>
+                </mat-nav-list>
+            </mat-card>
+        </div>
     </div>
 
-    <div class="list-items-section section-two example-section">
-        <h2 class="example-title"></h2>
-        <mat-card>
-            <div class="ph-item">
-                    <ng-container *ngFor="let listItems of [0, 1, 2]">
-                    <div class="ph-col-2 list-icon-section">
-                        <div class="ph-avatar" style="height: 24px;
-                        width: 24px;
-                        margin: 0 auto;"></div>
-                    </div>
-                    <div class="list-item-text" style="max-width: 80px;">
-                        <div class="ph-row">
-                            <div class="ph-col-8 big"></div>
-                            <div class="ph-col-4 big empty"></div>
-                            <div class="ph-col-6"></div>
-                            <div class="ph-col-6 empty"></div>
-                        </div>
-                    </div>
-                    <div class="list-item-text">
-                        <div class="ph-row">
-                            <div class="ph-col-2 big"></div>
-                            <div class="ph-col-10 big empty"></div>
-                            <div class="ph-col-4"></div>
-                            <div class="ph-col-8 empty"></div>
-                        </div>
-                    </div>
-                    <div class="icon-section">
-                        <mat-icon>chevron_right</mat-icon>
-                    </div>
-                    <mat-divider></mat-divider>
-                </ng-container>
-            </div>
-        </mat-card>
-    </div>
-
-    <div class="hero-banner-section example-section">
+    <div class="hero-banner-example-section">
         <h2 class="example-title">Hero Banner</h2>
-        <mat-card>
-            <div class="ph-item">
-                <div class="ph-col-4" *ngFor="let hero of [0, 1, 2]">
-                    <div class="ph-avatar"></div>
-                    <div class="ph-row">
-                        <div class="ph-col-2 big empty"></div>
-                        <div class="ph-col-8 big"></div>
-                        <div class="ph-col-2 big empty"></div>
-                    </div>
-                    <div class="ph-row">
-                        <div class="ph-col-12"></div>
-                    </div>
-                </div>
-            </div>
-        </mat-card>
+        <div class="placeholder-section" *ngIf="showPlaceHolder">
+            <app-placeholder-hero></app-placeholder-hero>
+        </div>
+        <div class="loaded-section" *ngIf="!showPlaceHolder">
+            <mat-card>
+                <pxb-hero-banner [style.borderColor]="colors.gray[200]" [style.width.px]="bannerWidth">
+                    <pxb-hero *ngIf="count > 0" [label]="'Health'" [value]="96" [units]="'/100'">
+                        <i pxb-primary [style.color]="colors.green[500]" class="pxb-grade_a"></i>
+                    </pxb-hero>
+                    <pxb-hero *ngIf="count > 1" [label]="'Load'" [value]="90" [units]="'%'">
+                        <i pxb-primary [style.color]="colors.yellow[500]" class="pxb-current_circled"></i>
+                    </pxb-hero>
+                    <pxb-hero *ngIf="count > 2" [label]="'Temp'" [value]="96" [units]="'C'">
+                        <i pxb-primary [style.color]="colors.green[500]" class="pxb-temp"></i>
+                    </pxb-hero>
+                    <pxb-hero *ngIf="count > 3" [label]="'Battery'" [value]="96" [units]="'/100'">
+                        <i pxb-primary [style.color]="colors.green[500]" class="pxb-battery"></i>
+                    </pxb-hero>
+                </pxb-hero-banner>
+            </mat-card>
+        </div>
     </div>
 </section>

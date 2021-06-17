@@ -18,42 +18,31 @@
         <div class="loaded-section" *ngIf="!showPlaceHolder">
             <mat-card>
                 <pxb-score-card
-                    [headerTitle]="'Substation 3'"
-                    [headerSubtitle]="'High Humidity Alarm'"
-                    [headerInfo]="'4 Devices'"
-                    [badgeOffset]="'-74'"
+                    [headerTitle]="'Substation 42'"
+                    [headerSubtitle]="'Normal'"
+                    [headerInfo]="'42 Devices'"
+                    [badgeOffset]="'0'"
                 >
-                    <ng-container pxb-action-items>
-                        <ng-container *ngFor="let action of ['search', 'mail', 'notifications']; index as i">
-                            <mat-icon *ngIf="i < actionLimit">
-                                {{ action }}
-                            </mat-icon>
-                        </ng-container>
-                    </ng-container>
+                    <div pxb-action-items>
+                        <mat-icon>
+                            favorite
+                        </mat-icon>
+                    </div>
                     <mat-list pxb-body class="sb-score-card-content">
                         <mat-list-item>
-                            <p mat-line style="font-weight: 400">0 Alarms</p>
-                            <mat-icon mat-list-icon>notifications</mat-icon>
+                            <p mat-line style="font-weight: 400">1 Alarm</p>
+                            <mat-icon [style.color]="colors.red[500]" mat-list-icon>notifications</mat-icon>
                         </mat-list-item>
                         <mat-list-item [style.color]="colors.blue[500]">
-                            <p mat-line style="font-weight: 600">1 Event</p>
-                            <mat-icon mat-list-icon>list_alt</mat-icon>
+                            <p mat-line style="font-weight: 600">0 Event</p>
+                            <mat-icon mat-list-icon>error_outline</mat-icon>
                         </mat-list-item>
                         <mat-list-item>
                             <p mat-line style="font-weight: 400">Online</p>
-                            <mat-icon mat-list-icon>cloud</mat-icon>
+                            <mat-icon mat-list-icon>cloud_done</mat-icon>
                         </mat-list-item>
                     </mat-list>
                     <pxb-hero-banner pxb-badge>
-                        <pxb-hero
-                            *ngIf="heroLimit > 0"
-                            [label]="'Temperature'"
-                            [value]="'98'"
-                            [units]="'°F'"
-                            [iconSize]="72"
-                        >
-                            <i pxb-primary class="pxb-temp"></i>
-                        </pxb-hero>
                         <pxb-hero
                             *ngIf="heroLimit > 1"
                             [label]="'Humidity'"
@@ -61,7 +50,20 @@
                             [units]="'%'"
                             [iconSize]="72"
                         >
-                            <i pxb-primary [style.color]="colors.blue[300]" class="pxb-moisture"></i>
+                            <mat-icon pxb-primary [style.color]="colors.blue[300]" svgIcon="px-icons:moisture">
+                            </mat-icon>
+                            <mat-icon pxb-secondary [style.color]="colors.red[500]">
+                                trending_up
+                            </mat-icon>
+                        </pxb-hero>
+                        <pxb-hero
+                            *ngIf="heroLimit > 0"
+                            [label]="'Temperature'"
+                            [value]="'98'"
+                            [units]="'°F'"
+                            [iconSize]="72"
+                        >
+                            <mat-icon pxb-primary svgIcon="px-icons:temp" [style.color]="colors.red[500]"></mat-icon>
                         </pxb-hero>
                     </pxb-hero-banner>
                     <pxb-info-list-item pxb-action-row chevron="true" hidePadding="true" dense="true">
@@ -78,67 +80,112 @@
             <app-placeholder-list></app-placeholder-list>
         </div>
         <div class="loaded-section" *ngIf="!showPlaceHolder">
-            <mat-card>
+            <mat-card class="list-item-example-one">
+                <mat-nav-list [style.paddingTop.px]="0">
+                    <pxb-info-list-item divider="full" chevron="true" iconAlign="center">
+                        <mat-icon pxb-icon class="invert-rtl">feedback</mat-icon>
+                        <div pxb-title>Basement Sensor</div>
+                        <div pxb-subtitle>Dwyer RJ382</div>
+                    </pxb-info-list-item>
+                    <pxb-info-list-item
+                        divider="full"
+                        chevron="true"
+                        [statusColor]="colors.red[500]"
+                        avatar="true"
+                        iconAlign="center"
+                    >
+                        <mat-icon pxb-icon [style.color]="colors.white[50]" [style.backgroundColor]="colors.red[500]">
+                            alarms</mat-icon
+                        >
+                        <div pxb-title>Cabinet 5 Wire</div>
+                        <div pxb-subtitle>Exampo Device Model</div>
+                    </pxb-info-list-item>
+                    <pxb-info-list-item divider="full" chevron="true" iconAlign="center">
+                        <mat-icon pxb-icon>battery_full</mat-icon>
+                        <div pxb-title>Battery</div>
+                        <div pxb-subtitle>Battery Charger</div>
+                    </pxb-info-list-item>
+                    <pxb-info-list-item chevron="true" iconAlign="center">
+                        <mat-icon pxb-icon>wifi</mat-icon>
+                        <div pxb-title>WIRC Gateway</div>
+                        <div pxb-subtitle>WIRC Gateway</div>
+                    </pxb-info-list-item>
+                </mat-nav-list>
+            </mat-card>
+            <h2 class="example-title"></h2>
+            <mat-card class="list-item-example-two">
                 <mat-nav-list [style.paddingTop.px]="0">
                     <pxb-info-list-item
-                        dense="true"
-                        [statusColor]="colors.green[700]"
-                        [divider]="'full'"
-                        class="test"
-                        [iconAlign]="'center'"
-                    >
-                        <div pxb-title>Status</div>
-                        <i pxb-icon class="pxb-device_activating" [style.color]="colors.green[500]"></i>
-                        <pxb-channel-value pxb-right-content value="Online, ESS+"></pxb-channel-value>
-                    </pxb-info-list-item>
-
-                    <pxb-info-list-item [divider]="'full'" [avatar]="true">
-                        <div pxb-title>Input Voltage</div>
-                        <div pxb-subtitle>Phase A · Phase B · Phase C</div>
-                        <mat-icon pxb-icon [style.backgroundColor]="colors.blue[500]" style="color: white;"
-                            >check_circle
-                        </mat-icon>
-                        <span pxb-right-content>
-                            <pxb-channel-value value="478" units="V"></pxb-channel-value>,&nbsp;
-                            <pxb-channel-value value="479" units="V"></pxb-channel-value>,&nbsp;
-                            <pxb-channel-value value="473" units="V"></pxb-channel-value>
-                        </span>
-                    </pxb-info-list-item>
-
-                    <pxb-info-list-item
-                        [style.color]="colors.red[500]"
+                        divider="full"
                         [statusColor]="colors.red[500]"
-                        [divider]="'full'"
+                        chevron="true"
                         [avatar]="true"
+                        iconAlign="center"
                     >
-                        <div pxb-title>Output Voltage</div>
-                        <div pxb-subtitle>Phase A · Phase B · Phase C</div>
                         <mat-icon pxb-icon [style.backgroundColor]="colors.red[500]" style="color: white"
                             >check_circle
                         </mat-icon>
+                        <div class="time-section" pxb-left-content>
+                            <div>8:05 <span class="ampm">AM</span></div>
+                            <div>09/23/19</div>
+                        </div>
+                        <div class="title-section" pxb-title>
+                            <div>
+                                <span class="title-label">High Humidity:</span
+                                ><span class="title-desc">PX2341 sensor level 9</span>
+                            </div>
+                        </div>
+                        <div class="title-section" pxb-subtitle>
+                            <div class="subtitle">Cherrington Station < Moon Township</div>
+                        </div>
                         <span pxb-right-content>
-                            <pxb-channel-value value="478" units="V"></pxb-channel-value>,&nbsp;
-                            <pxb-channel-value value="479" units="V"></pxb-channel-value>,&nbsp;
-                            <pxb-channel-value value="473" units="V"></pxb-channel-value>
+                            <pxb-list-item-tag
+                                [backgroundColor]="colors.blue[500]"
+                                label="Assigned"
+                                style="margin-right: 4px;"
+                            ></pxb-list-item-tag>
+                            <pxb-list-item-tag [backgroundColor]="colors.red[500]" label="Active"></pxb-list-item-tag>
                         </span>
                     </pxb-info-list-item>
 
-                    <pxb-info-list-item dense="true" [divider]="'full'" [iconAlign]="'center'" [disabled]="false">
-                        <div pxb-title>Output Current</div>
-                        <mat-icon pxb-icon>battery_charging_full</mat-icon>
-                        <span pxb-right-content>
-                            <pxb-channel-value value="15" units="A"></pxb-channel-value>,&nbsp;
-                            <pxb-channel-value value="14.9" units="A"></pxb-channel-value>,&nbsp;
-                            <pxb-channel-value value="15" units="A"></pxb-channel-value>
-                        </span>
+                    <pxb-info-list-item divider="full" chevron="true" iconAlign="center">
+                        <mat-icon pxb-icon svgIcon="px-icons:maintenance"></mat-icon>
+                        <div class="time-section" pxb-left-content>
+                            <div>6:30 <span class="ampm">AM</span></div>
+                            <div>11/23/22</div>
+                        </div>
+                        <div class="title-section" pxb-title>
+                            <div>
+                                <span class="title-label">Battery Service: </span
+                                ><span class="title-desc">EATON GH142</span>
+                            </div>
+                        </div>
+                        <div class="title-section" pxb-subtitle>
+                            <div class="subtitle">Cherrington Station < Moon Township</div>
+                        </div>
                     </pxb-info-list-item>
 
-                    <pxb-info-list-item dense="true" [divider]="'full'" [iconAlign]="'center'">
-                        <div pxb-title>Temperature</div>
-                        <i pxb-icon class="pxb-temp"></i>
-                        <span pxb-right-content style="display: flex; align-items: center">
-                            <pxb-channel-value value="68" units="°F"></pxb-channel-value>
-                        </span>
+                    <pxb-info-list-item
+                        divider="full"
+                        [statusColor]="colors.red[500]"
+                        chevron="true"
+                        [avatar]="true"
+                        iconAlign="center"
+                    >
+                        <mat-icon pxb-icon>notifications</mat-icon>
+                        <div class="time-section" pxb-left-content>
+                            <div>2:41 <span class="ampm">AM</span></div>
+                            <div>11/23/22</div>
+                        </div>
+                        <div class="title-section" pxb-title>
+                            <div>
+                                <span class="title-label">Bypass Over Frequency:</span
+                                ><span class="title-desc">A2 Max Reval</span>
+                            </div>
+                        </div>
+                        <div class="title-section" pxb-subtitle>
+                            <div class="subtitle">Cherrington Station < Moon Township</div>
+                        </div>
                     </pxb-info-list-item>
                 </mat-nav-list>
             </mat-card>
@@ -152,18 +199,19 @@
         </div>
         <div class="loaded-section" *ngIf="!showPlaceHolder">
             <mat-card>
-                <pxb-hero-banner [style.borderColor]="colors.gray[200]" [style.width.px]="bannerWidth">
+                <pxb-hero-banner [style.borderColor]="colors.gray[200]" [style.width.px]="350">
                     <pxb-hero *ngIf="count > 0" [label]="'Health'" [value]="96" [units]="'/100'">
-                        <i pxb-primary [style.color]="colors.green[500]" class="pxb-grade_a"></i>
+                        <mat-icon pxb-primary [style.color]="colors.green[500]" svgIcon="px-icons:grade_a"></mat-icon>
                     </pxb-hero>
                     <pxb-hero *ngIf="count > 1" [label]="'Load'" [value]="90" [units]="'%'">
-                        <i pxb-primary [style.color]="colors.yellow[500]" class="pxb-current_circled"></i>
+                        <mat-icon pxb-primary [style.color]="colors.yellow[500]" svgIcon="px-icons:current_circled">
+                        </mat-icon>
                     </pxb-hero>
                     <pxb-hero *ngIf="count > 2" [label]="'Temp'" [value]="96" [units]="'C'">
-                        <i pxb-primary [style.color]="colors.green[500]" class="pxb-temp"></i>
+                        <mat-icon pxb-primary [style.color]="colors.red[500]" svgIcon="px-icons:temp"></mat-icon>
                     </pxb-hero>
                     <pxb-hero *ngIf="count > 3" [label]="'Battery'" [value]="96" [units]="'/100'">
-                        <i pxb-primary [style.color]="colors.green[500]" class="pxb-battery"></i>
+                        <mat-icon pxb-primary [style.color]="colors.yellow[500]" svgIcon="px-icons:battery"></mat-icon>
                     </pxb-hero>
                 </pxb-hero-banner>
             </mat-card>

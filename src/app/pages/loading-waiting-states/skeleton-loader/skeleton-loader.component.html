@@ -4,10 +4,10 @@
     </button>
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Skeletons</div>
     <pxb-spacer></pxb-spacer>
-    <div class="toggle-theme-container" *ngIf="!isSmall">
+    <!-- <div class="toggle-theme-container" *ngIf="!isSmall">
         <span class="mat-subheading-2" style="margin-right: 8px; font-size: 14px;">Use Dark Theme</span>
         <mat-slide-toggle [checked]="checked"></mat-slide-toggle>
-    </div>
+    </div> -->
 </mat-toolbar>
 <section class="mat-typography" [class.small]="isSmall">
     <div class="score-card-example-section">
@@ -43,14 +43,14 @@
                         </mat-list-item>
                     </mat-list>
                     <pxb-hero-banner pxb-badge>
-                        <pxb-hero [label]="'Humidity'" [value]="'54'" [units]="'%'" [iconSize]="72">
+                        <pxb-hero [label]="'Humidity'" [value]="'54'" [units]="'%'" [iconSize]="36">
                             <mat-icon pxb-primary [style.color]="colors.blue[300]" svgIcon="px-icons:moisture">
                             </mat-icon>
                             <mat-icon pxb-secondary [style.color]="colors.red[500]">
                                 trending_up
                             </mat-icon>
                         </pxb-hero>
-                        <pxb-hero [label]="'Temperature'" [value]="'98'" [units]="'°F'" [iconSize]="72">
+                        <pxb-hero [label]="'Temperature'" [value]="'98'" [units]="'°F'" [iconSize]="36">
                             <mat-icon pxb-primary svgIcon="px-icons:temp" [style.color]="colors.red[500]"></mat-icon>
                         </pxb-hero>
                     </pxb-hero-banner>

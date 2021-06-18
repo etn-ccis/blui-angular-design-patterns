@@ -16,7 +16,7 @@ export class ProgressBarsComponent implements OnInit {
         { label: 'The Best UX Team', value: '3' },
         { label: 'The Best Management Team', value: '4' },
         { label: 'The Best Facility Team', value: '5' },
-        { label: 'The Most Narcissist Team', value: '6' },
+        { label: 'The The Proudest Team', value: '6' },
     ];
     uploadFileList = [];
     interval;

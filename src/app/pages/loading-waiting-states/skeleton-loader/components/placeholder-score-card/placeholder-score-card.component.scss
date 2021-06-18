@@ -50,7 +50,7 @@
         .notification-section {
             .ph-col-12 {
                 height: 14px;
-                margin: 5px 0px;
+                margin: 4px 0px;
                 border-radius: 2px;
             }
         }
@@ -80,6 +80,7 @@
         .footer-content {
             display: flex;
             padding: 16px;
+            color: map-get($pxb-gray, 500);
         }
     }
 }

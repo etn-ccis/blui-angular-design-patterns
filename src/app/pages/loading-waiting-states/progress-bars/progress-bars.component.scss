@@ -14,7 +14,7 @@ section.mat-typography {
     .radio-group {
         display: flex;
         flex-direction: column;
-        margin: 15px 0;
+        margin: 16px 0;
     }
 
     .folder-name {
@@ -22,7 +22,7 @@ section.mat-typography {
         align-items: center;
 
         .mat-icon {
-            margin: 0 16px 6px 4px;
+            margin: 0 16px 8px 4px;
             height: 18px;
             width: 18px;
             color: map-get($pxb-gray, 500);

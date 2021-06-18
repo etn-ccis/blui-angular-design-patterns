@@ -31,6 +31,7 @@
             .icon-section {
                 max-width: 50px;
                 justify-content: center;
+                color: map-get($pxb-gray, 500);
             }
             .mat-divider {
                 position: relative;

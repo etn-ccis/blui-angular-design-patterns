@@ -41,14 +41,18 @@ export class SkeletonLoaderComponent implements OnInit, OnDestroy {
                     this.isSmall = false;
                 }
             });
-
-        this.interval = setInterval(() => {
-            this.showPlaceHolder = !this.showPlaceHolder;
-        }, 5000);
+        
+        this.loadData();
     }
 
     ngOnDestroy(): void {
         clearInterval(this.interval);
+    }
+
+    loadData(): void {
+        this.interval = setInterval(() => {
+            this.showPlaceHolder = !this.showPlaceHolder;
+        }, 5000);
     }
 
     toggleMenu(): void {

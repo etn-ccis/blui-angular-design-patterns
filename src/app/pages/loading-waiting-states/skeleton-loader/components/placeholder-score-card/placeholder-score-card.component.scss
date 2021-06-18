@@ -1,0 +1,97 @@
+@import '~@pxblue/colors/palette.scss';
+@import '../common-style.scss';
+
+.score-card-section {
+    .mat-card {
+        width: 400px;
+        padding: 0;
+        .ph-item {
+            padding: 0;
+        }
+
+        .card-header {
+            padding: 16px;
+            background-color: map-get($pxb-black, 100);
+            .ph-row {
+                margin-bottom: 0;
+                [class^='ph-col-'],
+                [class*=' ph-col-'] {
+                    border-radius: 2px;
+                }
+                &:last-child [class^='ph-col-'] {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .card-title {
+            .ph-col-6 {
+                height: 20px;
+            }
+            .ph-col-4,
+            .ph-col-2 {
+                height: 16px;
+            }
+        }
+        .icon-section,
+        .notification-section {
+            padding-top: 16px;
+        }
+
+        .icon-section {
+            .ph-avatar {
+                min-width: 0;
+                height: 24px;
+                width: 24px;
+                margin-bottom: 8px;
+            }
+        }
+
+        .notification-section {
+            .ph-col-12 {
+                height: 14px;
+                margin: 4px 0px;
+                border-radius: 2px;
+            }
+        }
+        .hero-section {
+            justify-content: center;
+            max-width: 100px;
+            .ph-avatar {
+                min-width: 0;
+                height: 36px;
+                width: 36px;
+                margin: 0 auto 8px;
+            }
+            .ph-row {
+                margin-bottom: 0;
+                [class^='ph-col-'],
+                [class*=' ph-col-'] {
+                    border-radius: 2px;
+                }
+                .ph-col-8 {
+                    height: 16px;
+                }
+                .ph-col-12 {
+                    height: 12px;
+                }
+            }
+        }
+        .footer-content {
+            display: flex;
+            padding: 16px;
+            color: map-get($pxb-gray, 500);
+        }
+    }
+}
+
+@media (max-width: 520px) {
+    .score-card-section {
+        .mat-card {
+            width: 100%;
+            .ph-item {
+                padding-bottom: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+<mat-toolbar data-cy="pxb-toolbar" flexLayout="row" class="app-bar mat-elevation-z4" [color]="checked ? 'primary' : ''">
+    <button data-cy="toolbar-menu" *ngIf="isSmall" mat-icon-button (click)="toggleMenu()" style="margin-left: -8px">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Contextual Spinner</div>
+    <pxb-spacer></pxb-spacer>
+    <!-- <div class="toggle-theme-container" *ngIf="!isSmall">
+        <span class="mat-subheading-2" style="margin-right: 8px; font-size: 14px;">Use Dark Theme</span>
+        <mat-slide-toggle [checked]="checked"></mat-slide-toggle>
+    </div> -->
+</mat-toolbar>
+
+<section class="mat-typography" [class.small]="isSmall">
+    <div class="button-examples-container">
+        <h5>Click on the buttons below to see the spinners.</h5>
+        <div class="example-section extended-fab-button-example">
+            <button
+                class="extended-fab-button"
+                mat-fab
+                color="primary"
+                (click)="loadSpinner()"
+                [ngClass]="{ 'show-spinner': buttonClicked }"
+            >
+                <mat-icon>play_arrow</mat-icon>
+                <div *ngIf="buttonClicked" class="button-container">
+                    <mat-spinner
+                        style="margin-left: -8px;margin-top:2px;"
+                        class="primary-spinner"
+                        diameter="20"
+                    ></mat-spinner>
+                </div>
+                <span class="extended-fab-button__text">Start Routine</span>
+            </button>
+        </div>
+        <div class="example-section flat-button-example">
+            <button
+                mat-raised-button
+                color="primary"
+                style="width: 80px;"
+                (click)="loadSpinner1()"
+                *ngIf="!flatButtonClicked"
+            >
+                Log In
+            </button>
+            <button
+                mat-raised-button
+                class="button-container raised-button-example"
+                color="primary"
+                *ngIf="flatButtonClicked"
+                style="width: 80px;"
+            >
+                <mat-spinner class="primary-spinner" diameter="20"></mat-spinner>
+            </button>
+        </div>
+    </div>
+</section>

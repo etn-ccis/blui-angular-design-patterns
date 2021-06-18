@@ -41,7 +41,7 @@ export class SkeletonLoaderComponent implements OnInit, OnDestroy {
                     this.isSmall = false;
                 }
             });
-        
+
         this.loadData();
     }
 

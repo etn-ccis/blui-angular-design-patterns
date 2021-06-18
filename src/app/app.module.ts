@@ -31,7 +31,6 @@ import { FormValidationModule } from './pages/form-validation/form-validation.mo
 import { I18nModule } from './pages/i18n/i18n.module';
 import { LandingPageModule } from './pages/landing-page/landing-page.module';
 import { HttpClientModule } from '@angular/common/http';
-import { LoadingStatesModule } from './pages/loading-states/loading-states.module';
 import { ProgressBarIndeterminateModule } from './pages/loading-waiting-states/progress-bar-indeterminate/progress-bar-indeterminate.module';
 import { SpinnerOverlaysModule } from './pages/loading-waiting-states/spinner-overlays/spinner-overlays.module';
 import { ContextualSpinnersModule } from './pages/loading-waiting-states/contextual-spinners/contextual-spinners.module';
@@ -71,7 +70,6 @@ import { SkeletonLoaderModule } from './pages/loading-waiting-states/skeleton-lo
         ComplexBottomSheetModule,
         SortableListModule,
         SearchBarModule,
-        LoadingStatesModule,
         ResponsiveTableModule,
         DynamicStepperModule,
         FormValidationModule,

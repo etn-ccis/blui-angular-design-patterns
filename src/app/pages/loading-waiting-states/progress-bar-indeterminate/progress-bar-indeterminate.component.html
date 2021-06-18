@@ -7,7 +7,7 @@
     <pxb-spacer></pxb-spacer>
     <div class="toggle-theme-container" *ngIf="!isSmall">
         <span class="mat-subheading-2" style="margin-right: 8px; font-size: 14px;">Use Dark Theme</span>
-        <mat-slide-toggle [checked]="checked" (change)="onToggle($event)"></mat-slide-toggle>
+        <mat-slide-toggle [checked]="checked"></mat-slide-toggle>
     </div>
 </mat-toolbar>
 <section class="mat-typography" [class.small]="isSmall">

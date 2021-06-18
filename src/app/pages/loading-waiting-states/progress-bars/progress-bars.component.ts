@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { StateService } from '../../../services/state.service';
 
 @Component({
@@ -42,10 +41,6 @@ export class ProgressBarsComponent implements OnInit {
     toggleMenu(): void {
         const drawerOpen = this._drawerService.getDrawerOpen();
         this._drawerService.setDrawerOpen(!drawerOpen);
-    }
-
-    onToggle(event: MatSlideToggleChange): void {
-        this.checked = event.checked;
     }
 
     uploadFile(): void {

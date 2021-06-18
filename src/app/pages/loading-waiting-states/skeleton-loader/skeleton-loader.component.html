@@ -6,7 +6,7 @@
     <pxb-spacer></pxb-spacer>
     <div class="toggle-theme-container" *ngIf="!isSmall">
         <span class="mat-subheading-2" style="margin-right: 8px; font-size: 14px;">Use Dark Theme</span>
-        <mat-slide-toggle [checked]="checked" (change)="onToggle($event)"></mat-slide-toggle>
+        <mat-slide-toggle [checked]="checked"></mat-slide-toggle>
     </div>
 </mat-toolbar>
 <section class="mat-typography" [class.small]="isSmall">
@@ -44,7 +44,6 @@
                     </mat-list>
                     <pxb-hero-banner pxb-badge>
                         <pxb-hero
-                            *ngIf="heroLimit > 1"
                             [label]="'Humidity'"
                             [value]="'54'"
                             [units]="'%'"
@@ -57,7 +56,6 @@
                             </mat-icon>
                         </pxb-hero>
                         <pxb-hero
-                            *ngIf="heroLimit > 0"
                             [label]="'Temperature'"
                             [value]="'98'"
                             [units]="'°F'"
@@ -200,17 +198,17 @@
         <div class="loaded-section" *ngIf="!showPlaceHolder">
             <mat-card>
                 <pxb-hero-banner [style.borderColor]="colors.gray[200]" [style.width.px]="350">
-                    <pxb-hero *ngIf="count > 0" [label]="'Health'" [value]="96" [units]="'/100'">
+                    <pxb-hero [label]="'Health'" [value]="96" [units]="'/100'">
                         <mat-icon pxb-primary [style.color]="colors.green[500]" svgIcon="px-icons:grade_a"></mat-icon>
                     </pxb-hero>
-                    <pxb-hero *ngIf="count > 1" [label]="'Load'" [value]="90" [units]="'%'">
+                    <pxb-hero [label]="'Load'" [value]="90" [units]="'%'">
                         <mat-icon pxb-primary [style.color]="colors.yellow[500]" svgIcon="px-icons:current_circled">
                         </mat-icon>
                     </pxb-hero>
-                    <pxb-hero *ngIf="count > 2" [label]="'Temp'" [value]="96" [units]="'C'">
+                    <pxb-hero [label]="'Temp'" [value]="96" [units]="'C'">
                         <mat-icon pxb-primary [style.color]="colors.red[500]" svgIcon="px-icons:temp"></mat-icon>
                     </pxb-hero>
-                    <pxb-hero *ngIf="count > 3" [label]="'Battery'" [value]="96" [units]="'/100'">
+                    <pxb-hero [label]="'Battery'" [value]="96" [units]="'/100'">
                         <mat-icon pxb-primary [style.color]="colors.yellow[500]" svgIcon="px-icons:battery"></mat-icon>
                     </pxb-hero>
                 </pxb-hero-banner>

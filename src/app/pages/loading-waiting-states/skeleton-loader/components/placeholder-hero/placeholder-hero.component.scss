@@ -4,7 +4,8 @@
 .hero-banner-section {
     .mat-card {
         width: 350px;
-        height: 140px;
+        height: 120px;
+        padding: 0;
         .ph-item {
             padding-bottom: 0;
             .ph-col-4 {
@@ -12,8 +13,8 @@
                 max-width: 100px;
                 .ph-avatar {
                     min-width: 0;
-                    height: 40px;
-                    width: 40px;
+                    height: 36px;
+                    width: 36px;
                     margin: 0 auto 8px;
                 }
                 .ph-row {

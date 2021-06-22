@@ -12,10 +12,10 @@
 <section class="mat-typography" [class.small]="isSmall">
     <div class="score-card-example-section">
         <h2 class="example-title">Scorecard</h2>
-        <div class="placeholder-section" *ngIf="showPlaceHolder">
+        <div class="placeholder-section" [hidden]="!showPlaceHolder">
             <app-placeholder-score-card></app-placeholder-score-card>
         </div>
-        <div class="loaded-section" *ngIf="!showPlaceHolder">
+        <div class="loaded-section" [hidden]="showPlaceHolder">
             <mat-card>
                 <pxb-score-card
                     [headerTitle]="'Substation 42'"
@@ -182,10 +182,10 @@
 
     <div class="hero-banner-example-section">
         <h2 class="example-title">Hero Banner</h2>
-        <div class="placeholder-section" *ngIf="showPlaceHolder">
+        <div class="placeholder-section" [hidden]="!showPlaceHolder">
             <app-placeholder-hero></app-placeholder-hero>
         </div>
-        <div class="loaded-section" *ngIf="!showPlaceHolder">
+        <div class="loaded-section" [hidden]="showPlaceHolder">
             <mat-card>
                 <pxb-hero-banner [style.borderColor]="colors.gray[200]" [style.width.px]="350">
                     <pxb-hero [label]="'Health'" [value]="96" [units]="'/100'">
@@ -197,9 +197,6 @@
                     </pxb-hero>
                     <pxb-hero [label]="'Temp'" [value]="96" [units]="'C'">
                         <mat-icon pxb-primary [style.color]="colors.red[500]" svgIcon="px-icons:temp"></mat-icon>
-                    </pxb-hero>
-                    <pxb-hero [label]="'Battery'" [value]="96" [units]="'/100'">
-                        <mat-icon pxb-primary [style.color]="colors.yellow[500]" svgIcon="px-icons:battery"></mat-icon>
                     </pxb-hero>
                 </pxb-hero-banner>
             </mat-card>

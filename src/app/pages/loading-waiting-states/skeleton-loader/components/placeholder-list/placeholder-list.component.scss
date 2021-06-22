@@ -5,7 +5,7 @@
     .mat-card {
         padding: 0;
         .ph-item {
-            padding-bottom: 12px;
+            padding-bottom: 4px;
             .list-icon-section {
                 max-width: 72px;
                 justify-content: center;
@@ -31,7 +31,7 @@
             .icon-section {
                 max-width: 50px;
                 justify-content: center;
-                color: map-get($pxb-gray, 500);
+                color: map-get($pxb-gray, 200);
             }
             .mat-divider {
                 position: relative;
@@ -44,6 +44,7 @@
         }
     }
     &.section-two {
+        padding-top: 24px;
         .ph-item {
             .ph-avatar {
                 height: 24px;

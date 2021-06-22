@@ -1,4 +1,4 @@
-<mat-toolbar data-cy="pxb-toolbar" flexLayout="row" class="app-bar mat-elevation-z4" [color]="checked ? 'primary' : ''">
+<mat-toolbar data-cy="pxb-toolbar" flexLayout="row" class="app-bar mat-elevation-z4" color="primary">
     <button data-cy="toolbar-menu" *ngIf="isSmall" mat-icon-button (click)="toggleMenu()" style="margin-left: -8px">
         <mat-icon>menu</mat-icon>
     </button>
@@ -64,10 +64,10 @@
 
     <div class="list-items-example-section">
         <h2 class="example-title">List Items</h2>
-        <div class="placeholder-section" *ngIf="showPlaceHolder">
+        <div class="placeholder-section" [hidden]="!showPlaceHolder">
             <app-placeholder-list></app-placeholder-list>
         </div>
-        <div class="loaded-section" *ngIf="!showPlaceHolder">
+        <div class="loaded-section" [hidden]="showPlaceHolder">
             <mat-card class="list-item-example-one">
                 <mat-nav-list [style.paddingTop.px]="0">
                     <pxb-info-list-item divider="full" chevron="true" iconAlign="center">

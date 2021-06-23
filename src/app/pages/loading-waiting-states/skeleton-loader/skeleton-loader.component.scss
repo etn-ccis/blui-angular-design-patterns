@@ -12,8 +12,16 @@
         padding: 0;
     }
 }
+
+.list-items-example-section {
+    .loaded-section {
+        .list-item-example-two {
+            margin-top: 24px;
+        }
+    }
+}
 .score-card-example-section {
-    .loaded-section .mat-card {
+    .loaded-section {
         width: 400px;
         padding: 0;
         .sb-score-card-content mat-list-item {
@@ -52,7 +60,7 @@
 
 @media (max-width: 520px) {
     .score-card-example-section {
-        .loaded-section .mat-card {
+        .loaded-section {
             width: 100%;
         }
     }

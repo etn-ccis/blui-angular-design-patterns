@@ -11,6 +11,7 @@
 
         .card-header {
             padding: 16px;
+            margin-bottom: 16px;
             background-color: map-get($pxb-black, 100);
             .ph-row {
                 margin-bottom: 0;
@@ -22,6 +23,7 @@
         }
 
         .card-title {
+            margin-bottom: 2px;
             .ph-col-6 {
                 height: 20px;
             }
@@ -32,34 +34,44 @@
         }
 
         .icon-section {
+            max-width: 56px;
             .ph-avatar {
-                min-width: 0;
                 height: 24px;
                 width: 24px;
+                min-width: 0;
                 margin-bottom: 8px;
             }
         }
 
         .notification-section {
-            margin-left: -16px;
-            margin-bottom: 4px;
+            max-width: 64px;
             .ph-col-12 {
                 height: 14px;
-                margin: 4px 0px;
                 border-radius: 2px;
+                margin-top: 18px;
+                margin-bottom: 0;
+
+                &:first-child {
+                    margin-top: 4px;
+                }
             }
         }
         .hero-section {
             justify-content: center;
             max-width: 100px;
+            // margin-left: -24px;
+            // &:first-child {
+            //     margin-left: 40px;
+
+            // }
             .ph-avatar {
                 min-width: 0;
                 height: 36px;
                 width: 36px;
-                margin: 0 auto 8px;
+                margin: 0 auto 16px;
             }
             .ph-row {
-                margin-bottom: 0;
+                margin-bottom: 8px;
                 [class^='ph-col-'],
                 [class*=' ph-col-'] {
                     border-radius: 2px;
@@ -76,6 +88,7 @@
             display: flex;
             padding: 16px;
             color: map-get($pxb-gray, 200);
+            height: 3.25rem;
         }
     }
 }

@@ -101,7 +101,7 @@
                 </mat-nav-list>
             </mat-card>
             <h2 class="example-title"></h2>
-            <mat-card class="list-item-example-two">
+            <mat-card class="list-item-example-two" [hidden]="!showPlaceHolder">
                 <mat-nav-list [style.paddingTop.px]="0">
                     <pxb-info-list-item
                         divider="full"

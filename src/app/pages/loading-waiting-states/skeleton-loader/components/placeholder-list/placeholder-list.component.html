@@ -6,11 +6,17 @@
                     <div class="ph-avatar"></div>
                 </div>
                 <div class="list-item-text">
-                    <div class="ph-row">
+                    <div class="ph-row" *ngIf="!isSmall">
                         <div class="ph-col-2 big"></div>
                         <div class="ph-col-10 big empty"></div>
                         <div class="ph-col-6"></div>
                         <div class="ph-col-6 empty"></div>
+                    </div>
+                    <div class="ph-row" *ngIf="isSmall">
+                        <div class="ph-col-4 big"></div>
+                        <div class="ph-col-8 big empty"></div>
+                        <div class="ph-col-8"></div>
+                        <div class="ph-col-4 empty"></div>
                     </div>
                 </div>
                 <div class="icon-section">
@@ -39,11 +45,17 @@
                     </div>
                 </div>
                 <div class="list-item-text second-list-section">
-                    <div class="ph-row">
+                    <div class="ph-row" *ngIf="!isSmall">
                         <div class="ph-col-2 big"></div>
                         <div class="ph-col-10 big empty"></div>
                         <div class="ph-col-4"></div>
                         <div class="ph-col-8 empty"></div>
+                    </div>
+                    <div class="ph-row" *ngIf="isSmall">
+                        <div class="ph-col-4 big"></div>
+                        <div class="ph-col-8 big empty"></div>
+                        <div class="ph-col-8"></div>
+                        <div class="ph-col-4 empty"></div>
                     </div>
                 </div>
                 <div class="icon-section">

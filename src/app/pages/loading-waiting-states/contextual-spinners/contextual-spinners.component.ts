@@ -39,7 +39,7 @@ export class ContextualSpinnersComponent implements OnInit {
         this.buttonClicked = true;
         setTimeout(() => {
             this.buttonClicked = false;
-        }, 10000);
+        }, 3000);
     }
 
     loadSpinner1(): void {

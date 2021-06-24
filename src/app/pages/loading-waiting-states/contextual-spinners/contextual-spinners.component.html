@@ -36,15 +36,12 @@
                 color="primary"
                 (click)="loadSpinner()"
                 [ngClass]="buttonClicked ? 'button-container fab-button-example' : 'show-icon'"
-                >
+            >
                 <span class="icon-container">
                     <mat-icon>play_arrow</mat-icon>
                 </span>
                 <div class="spinner-container">
-                    <mat-spinner
-                        class="primary-spinner"
-                        diameter="20"
-                    ></mat-spinner>
+                    <mat-spinner class="primary-spinner" diameter="20"></mat-spinner>
                 </div>
                 <span class="extended-fab-button__text">Start Routine</span>
             </button>

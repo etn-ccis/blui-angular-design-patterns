@@ -22,7 +22,7 @@ section.mat-typography {
             margin-left: 10px;
         }
     }
-    
+
     .raised-button-example {
         height: 36px;
         .text-container {
@@ -48,8 +48,7 @@ section.mat-typography {
         height: 56px;
         border-radius: 29px;
     }
-    
-    
+
     .show-icon {
         .icon-container {
             margin-right: 16px;
@@ -66,7 +65,7 @@ section.mat-typography {
             transition: opacity 0.2s, visibility 0.2s;
         }
     }
-    
+
     .fab-button-example {
         width: 56px;
         height: 56px;
@@ -78,15 +77,15 @@ section.mat-typography {
             -webkit-transition: opacity 0.5s, visibility 0.5s;
             transition: opacity 0.5s, visibility 0.5s;
         }
-    
+
         .spinner-container {
-                opacity: 1;
-                visibility: visible;
-                -webkit-transition: opacity 0.2s, visibility 0.2s;
-                transition: opacity 0.2s, visibility 0.2s;
-                margin: 2px;
+            opacity: 1;
+            visibility: visible;
+            -webkit-transition: opacity 0.2s, visibility 0.2s;
+            transition: opacity 0.2s, visibility 0.2s;
+            margin: 2px;
         }
-    
+
         .extended-fab-button__text {
             display: none;
         }

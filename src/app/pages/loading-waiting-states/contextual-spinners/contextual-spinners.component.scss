@@ -9,15 +9,15 @@ section.mat-typography {
         .text-container {
             opacity: 1;
             visibility: visible;
-            -webkit-transition: opacity 1s, visibility 1s;
-            transition: opacity 1s, visibility 1s;
+            -webkit-transition: opacity 200ms, visibility 200ms;
+            transition: opacity 200ms, visibility 200ms;
         }
         .spinner-container {
             position: absolute;
             opacity: 0;
             visibility: hidden;
-            -webkit-transition: opacity 1s, visibility 1s;
-            transition: opacity 1s, visibility 1s;
+            -webkit-transition: opacity 200ms, visibility 200ms;
+            transition: opacity 200ms, visibility 200ms;
             margin-top: -28px;
             margin-left: 10px;
         }
@@ -29,16 +29,16 @@ section.mat-typography {
             position: absolute;
             opacity: 0;
             visibility: hidden;
-            -webkit-transition: opacity 1s, visibility 1s;
-            transition: opacity 1s, visibility 1s;
+            -webkit-transition: opacity 200ms, visibility 200ms;
+            transition: opacity 200ms, visibility 200ms;
             margin-top: -8px;
             margin-left: 4px;
         }
         .spinner-container {
             opacity: 1;
             visibility: visible;
-            -webkit-transition: opacity 1s, visibility 1s;
-            transition: opacity 1s, visibility 1s;
+            -webkit-transition: opacity 200ms, visibility 200ms;
+            transition: opacity 200ms, visibility 200ms;
             margin: 0 12px;
         }
     }
@@ -47,6 +47,7 @@ section.mat-typography {
         width: 180px;
         height: 56px;
         border-radius: 29px;
+        transition: width 300ms
     }
 
     .show-icon {
@@ -64,12 +65,18 @@ section.mat-typography {
             -webkit-transition: opacity 0.2s, visibility 0.2s;
             transition: opacity 0.2s, visibility 0.2s;
         }
+
+        .extended-fab-button__text {
+            opacity: 1;
+            visibility: visible;
+            -webkit-transition: opacity 0.5s, visibility 0.5s;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
     }
 
     .fab-button-example {
         width: 56px;
         height: 56px;
-        margin: 2px;
         .icon-container {
             position: absolute;
             opacity: 0;

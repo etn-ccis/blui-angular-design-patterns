@@ -5,20 +5,21 @@
     .mat-card {
         padding: 0;
         .ph-item {
-            padding-bottom: 4px;
+            padding: 0;
             .list-icon-section {
                 max-width: 72px;
                 justify-content: center;
+                padding: 16px;
                 .ph-avatar {
                     min-width: 0;
                     height: 40px;
                     width: 40px;
-                    margin-bottom: 8px;
+                    margin-bottom: 0;
                     padding-right: 0;
                 }
             }
             .list-item-text {
-                padding: 0;
+                padding: 16px 0px;
                 .ph-row {
                     margin-bottom: 0;
                     [class^='ph-col-'],
@@ -32,11 +33,10 @@
                 max-width: 50px;
                 justify-content: center;
                 color: map-get($pxb-gray, 200);
-                margin-top: -8px;
             }
             .mat-divider {
                 position: relative;
-                margin: 4px 0 16px;
+                margin-top: -1px;
                 &:last-child {
                     display: none;
                 }

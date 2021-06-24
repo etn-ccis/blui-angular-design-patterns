@@ -24,6 +24,9 @@
     .loaded-section {
         width: 400px;
         padding: 0;
+        .mat-list-base {
+            padding: 8px 0px !important;
+        }
         .sb-score-card-content mat-list-item {
             height: 2.25rem !important;
         }

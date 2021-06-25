@@ -1,5 +1,6 @@
 @import '~@pxblue/colors/palette.scss';
-
+$duration: 200ms;
+$animationTimingFunction: ease-out;
 section.mat-typography {
     padding: 16px 24px;
     .example-section {
@@ -7,70 +8,59 @@ section.mat-typography {
     }
     .show-text {
         .text-container {
-            opacity: 1;
-            visibility: visible;
-            -webkit-transition: opacity 200ms, visibility 200ms;
-            transition: opacity 200ms, visibility 200ms;
+            display: block;
+            -webkit-animation: fadeInAnimation $duration ease-out;
+            -moz-animation: fadeInAnimation $duration ease-out;
+            -o-animation: fadeInAnimation $duration ease-out;
+            animation: fadeInAnimation $duration ease-out;
         }
         .spinner-container {
-            position: absolute;
-            opacity: 0;
-            visibility: hidden;
-            -webkit-transition: opacity 200ms, visibility 200ms;
-            transition: opacity 200ms, visibility 200ms;
-            margin-top: -28px;
-            margin-left: 10px;
+            display: none;
         }
     }
 
     .raised-button-example {
         height: 36px;
         .text-container {
-            position: absolute;
-            opacity: 0;
-            visibility: hidden;
-            -webkit-transition: opacity 200ms, visibility 200ms;
-            transition: opacity 200ms, visibility 200ms;
-            margin-top: -8px;
-            margin-left: 4px;
+            display: none;
         }
         .spinner-container {
-            opacity: 1;
-            visibility: visible;
-            -webkit-transition: opacity 200ms, visibility 200ms;
-            transition: opacity 200ms, visibility 200ms;
-            margin: 0 12px;
+            display: block;
+            margin: 0 auto;
+            -webkit-animation: fadeInAnimation $duration ease-out;
+            -moz-animation: fadeInAnimation $duration ease-out;
+            -o-animation: fadeInAnimation $duration ease-out;
+            animation: fadeInAnimation $duration ease-out;
         }
     }
 
     .extended-fab-button {
-        width: 180px;
+        width: 179px;
         height: 56px;
         border-radius: 29px;
         transition: width 300ms;
+        overflow: hidden;
     }
 
     .show-icon {
         .icon-container {
-            margin-right: 16px;
-            opacity: 1;
-            visibility: visible;
-            -webkit-transition: opacity 0.5s, visibility 0.5s;
-            transition: opacity 0.5s, visibility 0.5s;
+            margin-right: 12px;
+            display: block;
+            -webkit-animation: fadeInAnimation $duration ease-out;
+            -moz-animation: fadeInAnimation $duration ease-out;
+            -o-animation: fadeInAnimation $duration ease-out;
+            animation: fadeInAnimation $duration ease-out;
         }
         .spinner-container {
-            position: absolute;
-            opacity: 0;
-            visibility: hidden;
-            -webkit-transition: opacity 0.2s, visibility 0.2s;
-            transition: opacity 0.2s, visibility 0.2s;
+            display: none;
         }
 
         .extended-fab-button__text {
-            opacity: 1;
-            visibility: visible;
-            -webkit-transition: opacity 0.5s, visibility 0.5s;
-            transition: opacity 0.5s, visibility 0.5s;
+            display: block;
+            -webkit-animation: fadeInAnimation $duration ease-out;
+            -moz-animation: fadeInAnimation $duration ease-out;
+            -o-animation: fadeInAnimation $duration ease-out;
+            animation: fadeInAnimation $duration ease-out;
         }
     }
 
@@ -78,19 +68,15 @@ section.mat-typography {
         width: 56px;
         height: 56px;
         .icon-container {
-            position: absolute;
-            opacity: 0;
-            visibility: hidden;
-            -webkit-transition: opacity 0.5s, visibility 0.5s;
-            transition: opacity 0.5s, visibility 0.5s;
+            display: none;
         }
 
         .spinner-container {
-            opacity: 1;
-            visibility: visible;
-            -webkit-transition: opacity 0.2s, visibility 0.2s;
-            transition: opacity 0.2s, visibility 0.2s;
-            margin: 2px;
+            display: block;
+            -webkit-animation: fadeInAnimation $duration ease-out;
+            -moz-animation: fadeInAnimation $duration ease-out;
+            -o-animation: fadeInAnimation $duration ease-out;
+            animation: fadeInAnimation $duration ease-out;
         }
 
         .extended-fab-button__text {
@@ -106,9 +92,98 @@ section.mat-typography {
             stroke: map-get($pxb-white, 50);
         }
     }
+
+    &.fab-button-example {
+        ::ng-deep .mat-progress-spinner,
+        .mat-spinner {
+            margin: 2px;
+        }
+    }
+
+    &.raised-button-example {
+        ::ng-deep .mat-progress-spinner,
+        .mat-spinner {
+            margin: 0 auto;
+        }
+    }
 }
 
 ::ng-deep .mat-fab .mat-button-wrapper {
     display: flex !important;
     padding: 16px !important;
+}
+@-webkit-keyframes fadeInAnimation {
+    0%,
+    20% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.3;
+    }
+    60% {
+        opacity: 0.5;
+    }
+    80% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeInAnimation {
+    0%,
+    20% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.3;
+    }
+    60% {
+        opacity: 0.5;
+    }
+    80% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeInAnimation {
+    0%,
+    20% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.3;
+    }
+    60% {
+        opacity: 0.5;
+    }
+    80% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInAnimation {
+    0%,
+    20% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.3;
+    }
+    60% {
+        opacity: 0.5;
+    }
+    80% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 1;
+    }
 }

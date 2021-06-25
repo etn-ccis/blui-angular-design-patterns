@@ -9,10 +9,7 @@ section.mat-typography {
     .show-text {
         .text-container {
             display: block;
-            -webkit-animation: fadeInAnimation $duration ease-out;
-            -moz-animation: fadeInAnimation $duration ease-out;
-            -o-animation: fadeInAnimation $duration ease-out;
-            animation: fadeInAnimation $duration ease-out;
+            animation: fadeInAnimation $duration $animationTimingFunction;
         }
         .spinner-container {
             display: none;
@@ -27,10 +24,7 @@ section.mat-typography {
         .spinner-container {
             display: block;
             margin: 0 auto;
-            -webkit-animation: fadeInAnimation $duration ease-out;
-            -moz-animation: fadeInAnimation $duration ease-out;
-            -o-animation: fadeInAnimation $duration ease-out;
-            animation: fadeInAnimation $duration ease-out;
+            animation: fadeInAnimation $duration $animationTimingFunction;
         }
     }
 
@@ -46,10 +40,7 @@ section.mat-typography {
         .icon-container {
             margin-right: 12px;
             display: block;
-            -webkit-animation: fadeInAnimation $duration ease-out;
-            -moz-animation: fadeInAnimation $duration ease-out;
-            -o-animation: fadeInAnimation $duration ease-out;
-            animation: fadeInAnimation $duration ease-out;
+            animation: fadeInAnimation $duration $animationTimingFunction;
         }
         .spinner-container {
             display: none;
@@ -57,10 +48,7 @@ section.mat-typography {
 
         .extended-fab-button__text {
             display: block;
-            -webkit-animation: fadeInAnimation $duration ease-out;
-            -moz-animation: fadeInAnimation $duration ease-out;
-            -o-animation: fadeInAnimation $duration ease-out;
-            animation: fadeInAnimation $duration ease-out;
+            animation: fadeInAnimation $duration $animationTimingFunction;
         }
     }
 
@@ -73,10 +61,7 @@ section.mat-typography {
 
         .spinner-container {
             display: block;
-            -webkit-animation: fadeInAnimation $duration ease-out;
-            -moz-animation: fadeInAnimation $duration ease-out;
-            -o-animation: fadeInAnimation $duration ease-out;
-            animation: fadeInAnimation $duration ease-out;
+            animation: fadeInAnimation $duration $animationTimingFunction;
         }
 
         .extended-fab-button__text {
@@ -111,62 +96,6 @@ section.mat-typography {
 ::ng-deep .mat-fab .mat-button-wrapper {
     display: flex !important;
     padding: 16px !important;
-}
-@-webkit-keyframes fadeInAnimation {
-    0%,
-    20% {
-        opacity: 0;
-    }
-    40% {
-        opacity: 0.3;
-    }
-    60% {
-        opacity: 0.5;
-    }
-    80% {
-        opacity: 0.9;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@-moz-keyframes fadeInAnimation {
-    0%,
-    20% {
-        opacity: 0;
-    }
-    40% {
-        opacity: 0.3;
-    }
-    60% {
-        opacity: 0.5;
-    }
-    80% {
-        opacity: 0.9;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@-o-keyframes fadeInAnimation {
-    0%,
-    20% {
-        opacity: 0;
-    }
-    40% {
-        opacity: 0.3;
-    }
-    60% {
-        opacity: 0.5;
-    }
-    80% {
-        opacity: 0.9;
-    }
-    100% {
-        opacity: 1;
-    }
 }
 
 @keyframes fadeInAnimation {

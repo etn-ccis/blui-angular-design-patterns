@@ -17,17 +17,30 @@
             </div>
 
             <div class="ph-col-2 icon-section">
-                <div class="ph-avatar" *ngFor="let avatar of [0, 1, 2]"></div>
+                <div class="ph-avatar"></div>
+                <div class="ph-avatar"></div>
+                <div class="ph-avatar"></div>
             </div>
 
-            <div>
+            <div style="max-width: 64px; padding: 0;">
                 <div class="ph-row notification-section">
                     <div class="ph-col-12"></div>
                     <div class="ph-col-12"></div>
                     <div class="ph-col-12"></div>
                 </div>
             </div>
-            <div class="ph-col-4 hero-section" *ngFor="let hero of [0, 1]">
+            <div class="ph-col-4 hero-section" style="margin-left: 40px;">
+                <div class="ph-avatar"></div>
+                <div class="ph-row">
+                    <div class="ph-col-2 empty"></div>
+                    <div class="ph-col-8"></div>
+                    <div class="ph-col-2 empty"></div>
+                </div>
+                <div class="ph-row">
+                    <div class="ph-col-12"></div>
+                </div>
+            </div>
+            <div class="ph-col-4 hero-section">
                 <div class="ph-avatar"></div>
                 <div class="ph-row">
                     <div class="ph-col-2 empty"></div>
@@ -41,11 +54,9 @@
         </div>
         <div class="card-footer-container">
             <mat-divider></mat-divider>
-            <div class="footer-content">
-                <div>Location</div>
-                <pxb-spacer></pxb-spacer>
-                <mat-icon>chevron_right</mat-icon>
-            </div>
+            <pxb-info-list-item chevron="true" disabled="true" hidePadding="true" dense="true">
+                <div pxb-title>View Location</div>
+            </pxb-info-list-item>
         </div>
     </mat-card>
 </div>

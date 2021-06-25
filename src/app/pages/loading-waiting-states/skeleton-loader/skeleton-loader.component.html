@@ -29,15 +29,15 @@
                 </div>
                 <mat-list pxb-body class="sb-score-card-content">
                     <mat-list-item>
-                        <p mat-line style="font-weight: 400">1 Alarm</p>
+                        <p mat-line [style.color]="colors.red[500]" style="font-weight: 600">1 Alarm</p>
                         <mat-icon [style.color]="colors.red[500]" mat-list-icon>notifications</mat-icon>
                     </mat-list-item>
-                    <mat-list-item [style.color]="colors.blue[500]">
-                        <p mat-line style="font-weight: 600">0 Event</p>
+                    <mat-list-item [style.color]="colors.black[500]">
+                        <p mat-line style="font-weight: 400">0 Event</p>
                         <mat-icon mat-list-icon>error_outline</mat-icon>
                     </mat-list-item>
                     <mat-list-item>
-                        <p mat-line style="font-weight: 400">Online</p>
+                        <p mat-line style="font-weight: 600">Online</p>
                         <mat-icon mat-list-icon>cloud_done</mat-icon>
                     </mat-list-item>
                 </mat-list>
@@ -129,7 +129,11 @@
                                 label="Assigned"
                                 style="margin-right: 16px;"
                             ></pxb-list-item-tag>
-                            <pxb-list-item-tag [backgroundColor]="colors.red[500]" label="Active"> </pxb-list-item-tag>
+                            <pxb-list-item-tag
+                                style="margin-right: 8px;"
+                                [backgroundColor]="colors.red[500]"
+                                label="Active"
+                            ></pxb-list-item-tag>
                         </span>
                     </pxb-info-list-item>
 

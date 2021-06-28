@@ -10,7 +10,7 @@
     </div> -->
 </mat-toolbar>
 <section class="mat-typography" [class.small]="isSmall">
-    <div class="upload-button-container">
+    <div data-cy="upload-btn" class="upload-button-container">
         <button mat-raised-button class="upload-file-button mat-body" color="primary" (click)="uploadFile()">
             <mat-icon>vertical_align_top</mat-icon>
             UPLOAD NEW FILE
@@ -27,7 +27,7 @@
         </mat-radio-group>
     </mat-card>
 </section>
-<mat-list class="upload-status-list">
+<mat-list data-cy="upload-status" class="upload-status-list">
     <pxb-info-list-item iconAlign="left" *ngFor="let file of uploadFileList; let index = index">
         <span class="file-title" pxb-title>{{ file.fileName }}</span>
         <span class="file-upload-status" pxb-subtitle>{{ file.status }}</span>

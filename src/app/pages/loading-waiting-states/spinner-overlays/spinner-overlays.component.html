@@ -12,7 +12,7 @@
 
 <section class="mat-typography" [class.small]="isSmall">
     <mat-card class="eula-container">
-        <div class="loading-overlay-container" *ngIf="!isEulaLoaded">
+        <div data-cy="loading-overlay-spinner" class="loading-overlay-container" *ngIf="!isEulaLoaded">
             <mat-spinner color="primary" diameter="96"></mat-spinner>
         </div>
         <div class="eula-details" [ngClass]="{ 'overlay-container': !isEulaLoaded }">
@@ -39,7 +39,13 @@
             </div>
             <mat-divider class="eula-divider"></mat-divider>
             <div class="eula-reload-btn">
-                <button mat-flat-button color="primary" style="width: 100%; margin-top: 8px" (click)="reloadEula()">
+                <button
+                    data-cy="reload"
+                    mat-flat-button
+                    color="primary"
+                    style="width: 100%; margin-top: 8px"
+                    (click)="reloadEula()"
+                >
                     Reload
                 </button>
             </div>

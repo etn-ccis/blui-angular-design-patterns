@@ -42,17 +42,7 @@ jobs:
                 root: .
                 paths:
                     - coverage
-    coverage_report:
-        working_directory: ~/angular-design-patterns
-        docker:
-            - image: circleci/node:12.9.1-browsers
-        steps:
-            - checkout
-            - attach_workspace:
-                at: .
-            - codecov/upload:
-                file: './coverage/lcov.info'
-                token: 4cb4f10a-b3f7-4e5e-b4ba-6e5d5d272eb7
+
     cypress_tests:
         working_directory: ~/angular-design-patterns
         docker:
@@ -78,24 +68,44 @@ jobs:
                     yarn cytest
             - store_artifacts:
                 path: cypress/screenshots
+            - persist_to_workspace:
+                root: .
+                paths:
+                    - cypress-coverage
+
+    coverage_reports:
+        working_directory: ~/angular-design-patterns
+        docker:
+            - image: circleci/node:12.9.1-browsers
+        steps:
+            - checkout
+            - attach_workspace:
+                at: .
+            - codecov/upload:
+                file: './coverage/lcov.info'
+                token: 4cb4f10a-b3f7-4e5e-b4ba-6e5d5d272eb7
+            - codecov/upload:
+                file: './cypress-coverage/lcov.info'
+                token: 4cb4f10a-b3f7-4e5e-b4ba-6e5d5d272eb7
 
 workflows:
     version: 2
     angular_design_patterns:
         jobs:
             - build_project
-            - coverage_report:
-                requires:
-                    - build_project
-                filters:
-                    branches:
-                        only:
-                            - master
             - cypress_tests:
                     requires:
                         - build_project
-                    filters:
-                        branches:
-                            only:
-                                - master
-                                - dev
+                    # filters:
+                    #     branches:
+                    #         only:
+                    #             - master
+                    #             - dev
+            - coverage_reports:
+                requires:
+                    - build_project
+                    - cypress_tests
+                # filters:
+                #     branches:
+                #         only:
+                #             - master

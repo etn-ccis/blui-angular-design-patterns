@@ -14,7 +14,7 @@ jobs:
             - run:
                 name: Install Dependencies
                 command: |
-                    yarn install --frozen-lockfile
+                    yarn install
             - save_cache:
                 name: Save Cache
                 paths:
@@ -55,7 +55,7 @@ jobs:
             - run:
                 name: Install Dependencies
                 command: |
-                    yarn install --frozen-lockfile
+                    yarn install
             - save_cache:
                 name: Save Cache
                 paths:

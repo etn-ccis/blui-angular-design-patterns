@@ -14,7 +14,7 @@ jobs:
             - run:
                 name: Install Dependencies
                 command: |
-                    yarn install
+                    yarn install --frozen-lockfile
             - save_cache:
                 name: Save Cache
                 paths:
@@ -55,7 +55,7 @@ jobs:
             - run:
                 name: Install Dependencies
                 command: |
-                    yarn install
+                    yarn install --frozen-lockfile
             - save_cache:
                 name: Save Cache
                 paths:
@@ -96,16 +96,16 @@ workflows:
             - cypress_tests:
                     requires:
                         - build_project
-                    # filters:
-                    #     branches:
-                    #         only:
-                    #             - master
-                    #             - dev
+                    filters:
+                        branches:
+                            only:
+                                - master
+                                - dev
             - coverage_reports:
                 requires:
                     - build_project
                     - cypress_tests
-                # filters:
-                #     branches:
-                #         only:
-                #             - master
+                filters:
+                    branches:
+                        only:
+                            - master

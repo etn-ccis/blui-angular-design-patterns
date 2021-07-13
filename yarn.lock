@@ -7917,7 +7917,7 @@ neo-async@^2.5.0, neo-async@^2.6.1, neo-async@^2.6.2:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
-ngx-build-plus@11.0.0:
+ngx-build-plus@~11.0.0:
   version "11.0.0"
   resolved "https://registry.yarnpkg.com/ngx-build-plus/-/ngx-build-plus-11.0.0.tgz#07b860a57f61a5c423249438f1ea9b2cdc32062b"
   integrity sha512-2rUJ2FKrP4K6syVn+ixiX2s9dGph2FJxjrdVxemKTSIQEj7aQWF7JgpaaA20ZbUZt7UcIbSSoAWRsVJZIhpaPw==

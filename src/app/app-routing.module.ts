@@ -19,6 +19,7 @@ import { ProgressBarsComponent } from './pages/loading-waiting-states/progress-b
 import { SpinnerOverlaysComponent } from './pages/loading-waiting-states/spinner-overlays/spinner-overlays.component';
 import { ContextualSpinnersComponent } from './pages/loading-waiting-states/contextual-spinners/contextual-spinners.component';
 import { SkeletonLoaderComponent } from './pages/loading-waiting-states/skeleton-loader/skeleton-loader.component';
+import { PasswordComponent } from './pages/forms-and-validation/password/password.component';
 
 export type DrawerItem = {
     title: string;
@@ -49,6 +50,11 @@ export const ROUTES: DrawerItem[] = [
         title: 'Form Validation',
         path: 'form-validation',
         component: FormValidationComponent,
+    },
+    {
+        title: 'Forms and Validation',
+        path: 'forms-and-validation',
+        component: PasswordComponent,
     },
     {
         title: 'Internationalization',

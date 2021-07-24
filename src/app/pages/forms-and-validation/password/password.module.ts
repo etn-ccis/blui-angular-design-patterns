@@ -10,12 +10,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PasswordStrengthCheckComponent } from './password-strength-check.component';
 
 import { MatCardModule } from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 
 import { PasswordComponent } from './password.component';
+import { PasswordStrengthCheckComponent } from './password-strength-check.component';
 
 @NgModule({
   declarations: [PasswordComponent, PasswordStrengthCheckComponent],

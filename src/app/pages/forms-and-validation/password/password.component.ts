@@ -20,7 +20,6 @@ export class PasswordComponent implements OnInit {
   isSmall: boolean;
     userPassword: FormGroup;
     passwordFormGroup: FormGroup;
-    // userForm: FormGroup;
     errorMatcher = new CrossFieldErrorMatcher();
     passLength = false;
     specialFlag = false;
@@ -64,25 +63,6 @@ export class PasswordComponent implements OnInit {
                 validator: this.checkPasswords,
             }
         );
-        // this.userForm = this._formBuilder.group({
-        //     // inputFC: ['', Validators.required],
-        //     // email: [
-        //     //     '',
-        //     //     Validators.compose([
-        //     //         Validators.required,
-        //     //         Validators.email,
-        //     //         Validators.pattern(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i),
-        //     //     ]),
-        //     // ],
-        //     // phoneNumber: [
-        //     //     '',
-        //     //     Validators.compose([
-        //     //         Validators.required,
-        //     //         Validators.minLength(10),
-        //     //         Validators.pattern(/((\(\d{3}\)?)|(\d{3}))([\s-./]?)(\d{3})([\s-./]?)(\d{4})/),
-        //     //     ]),
-        //     // ],
-        // });
     }
 
     checkPasswords(group: FormGroup): any {
@@ -98,9 +78,16 @@ export class PasswordComponent implements OnInit {
         this.upperFlag = /[A-Z]/.test(password);
         this.lowerFlag = /[a-z]/.test(password);
     }
-    // hasValidPasswords(): boolean {
-    //     return this.checkPasswords && this.checkPasswordStrength;
-    // }
+
+    hasValidPasswords(): boolean {
+        return this.userPassword.valid && this.passwordFormGroup.valid;
+    }
+
+    clearFields() : void {
+        this.userPassword.reset();
+        this.passwordFormGroup.reset();
+
+    }
     toggleOldPasswordVisibility(): void {
         this.oldPasswordVisible = !this.oldPasswordVisible;
     }

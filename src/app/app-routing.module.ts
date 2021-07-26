@@ -54,7 +54,13 @@ export const ROUTES: DrawerItem[] = [
     {
         title: 'Forms and Validation',
         path: 'forms-and-validation',
-        component: PasswordComponent,
+        children: [
+            {
+                title: 'Password',
+                path: 'password',
+                component: PasswordComponent,
+            },
+        ],
     },
     {
         title: 'Internationalization',

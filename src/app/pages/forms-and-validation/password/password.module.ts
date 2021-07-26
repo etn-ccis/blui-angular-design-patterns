@@ -12,15 +12,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatCardModule } from '@angular/material/card';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { PasswordComponent } from './password.component';
 import { PasswordStrengthCheckComponent } from './password-strength-check.component';
 
 @NgModule({
-  declarations: [PasswordComponent, PasswordStrengthCheckComponent],
-  imports: [
-    BrowserModule,
+    declarations: [PasswordComponent, PasswordStrengthCheckComponent],
+    imports: [
+        BrowserModule,
         FormsModule,
         ReactiveFormsModule,
         BrowserAnimationsModule,
@@ -33,6 +33,6 @@ import { PasswordStrengthCheckComponent } from './password-strength-check.compon
         MatFormFieldModule,
         MatCardModule,
         MatDividerModule,
-  ]
+    ],
 })
-export class PasswordModule { }
+export class PasswordModule {}

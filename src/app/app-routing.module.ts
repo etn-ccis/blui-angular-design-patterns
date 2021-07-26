@@ -20,6 +20,7 @@ import { SpinnerOverlaysComponent } from './pages/loading-waiting-states/spinner
 import { ContextualSpinnersComponent } from './pages/loading-waiting-states/contextual-spinners/contextual-spinners.component';
 import { SkeletonLoaderComponent } from './pages/loading-waiting-states/skeleton-loader/skeleton-loader.component';
 import { PasswordComponent } from './pages/forms-and-validation/password/password.component';
+import { FixLengthPasscodeComponent } from './pages/forms-and-validation/fix-length-passcode/fix-length-passcode.component';
 
 export type DrawerItem = {
     title: string;
@@ -54,7 +55,18 @@ export const ROUTES: DrawerItem[] = [
     {
         title: 'Forms and Validation',
         path: 'forms-and-validation',
-        component: PasswordComponent,
+        children: [
+            {
+                title: 'Password',
+                path: 'password',
+                component: PasswordComponent,
+            },
+            {
+                title: 'Fixed Length Passcode',
+                path: 'fixed-length-passcode',
+                component: FixLengthPasscodeComponent,
+            },
+        ],
     },
     {
         title: 'Internationalization',

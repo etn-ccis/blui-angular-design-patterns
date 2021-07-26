@@ -5,19 +5,18 @@ import { FormControl, FormGroupDirective, NgForm, FormGroup, FormBuilder, Valida
 import { StateService } from '../../../services/state.service';
 
 class CrossFieldErrorMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-      return control.dirty && form.invalid;
-  }
+    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+        return control.dirty && form.invalid;
+    }
 }
 
 @Component({
-  selector: 'app-password',
-  templateUrl: './password.component.html',
-  styleUrls: ['./password.component.scss']
+    selector: 'app-password',
+    templateUrl: './password.component.html',
+    styleUrls: ['./password.component.scss'],
 })
 export class PasswordComponent implements OnInit {
-
-  isSmall: boolean;
+    isSmall: boolean;
     userPassword: FormGroup;
     passwordFormGroup: FormGroup;
     errorMatcher = new CrossFieldErrorMatcher();
@@ -83,10 +82,9 @@ export class PasswordComponent implements OnInit {
         return this.userPassword.valid && this.passwordFormGroup.valid;
     }
 
-    clearFields() : void {
+    clearFields(): void {
         this.userPassword.reset();
         this.passwordFormGroup.reset();
-
     }
     toggleOldPasswordVisibility(): void {
         this.oldPasswordVisible = !this.oldPasswordVisible;
@@ -104,5 +102,4 @@ export class PasswordComponent implements OnInit {
         const drawerOpen = this._drawerService.getDrawerOpen();
         this._drawerService.setDrawerOpen(!drawerOpen);
     }
-
 }

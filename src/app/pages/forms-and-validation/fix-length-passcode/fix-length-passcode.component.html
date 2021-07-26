@@ -1,0 +1,51 @@
+<mat-toolbar color="primary" class="app-bar mat-elevation-z2" data-cy="pxb-toolbar">
+    <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Fixed Length Passcode</div>
+</mat-toolbar>
+<section class="mat-typography" [class.small]="isSmall">
+    <div class="mat-body-1 passcode-form-message">
+        <p>
+            Please enter the <strong>six-digit passcode</strong> we just send to you. The passcode is valid for 15
+            minutes.
+        </p>
+        <p>
+            For the purpose of this demonstration, the passcode has a 20% chance to fail.
+        </p>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <form [formGroup]="passcodeForm" class="passcode-form">
+        <mat-form-field appearance="fill">
+            <mat-label>Passcode</mat-label>
+            <input
+                matInput
+                placeholder="Passcode"
+                required
+                formControlName="passcode"
+                (keypress)="matcher($event)"
+                type="text"
+                data-cy="passcode"
+                #passcodeInput
+            />
+            <!-- <mat-error *ngIf="passwordFormGroup.hasError('passwordsDoNotMatch')">Passwords do not match
+            </mat-error> -->
+            <!-- <mat-error
+                *ngIf="
+                    isEmailFormDirty() &&
+                    emailFormControl.hasError('email') &&
+                    !emailFormControl.hasError('required') &&
+                    !emailFormControl.hasError(customErrorName)
+                "
+                [innerHTML]="translate().GENERAL.EMAIL_INVALID_ERROR"
+            > -->
+            <!-- </mat-error> -->
+        </mat-form-field>
+        <button mat-stroked-button class="reset-form mat-body" color="primary">
+            <mat-icon style="margin-left: -4px; font-size: 20px">refresh</mat-icon>
+            Reset form
+        </button>
+    </form>
+</section>

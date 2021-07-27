@@ -12,9 +12,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FixLengthPasscodeComponent } from './fix-length-passcode.component';
-import { AutoFocus } from './directives/auto-focus.directive';
 @NgModule({
-    declarations: [FixLengthPasscodeComponent, AutoFocus],
+    declarations: [FixLengthPasscodeComponent],
     imports: [
         BrowserModule,
         FormsModule,

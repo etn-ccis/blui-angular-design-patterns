@@ -6,7 +6,7 @@ import * as Colors from '@pxblue/colors';
     template: `
         <mat-list-item style="height: auto;" class="app-password-strength-check">
             <mat-icon [style.color]="success ? Colors.blue[500] : Colors.gray[300]">{{ icon }}</mat-icon>
-            <span [style.color]="success ? Colors.gray[300] : Colors.black[500]" style="padding-left: 8px;">{{
+            <span [style.color]="success ? Colors.gray[300] : Colors.black[500]" class="password-criteria">{{
                 validationMessage
             }}</span>
         </mat-list-item>
@@ -15,6 +15,10 @@ import * as Colors from '@pxblue/colors';
         `
             ::ng-deep .mat-list-base .app-password-strength-check.mat-list-item .mat-list-item-content {
                 padding: 0;
+            }
+            .password-criteria {
+                padding-left: 8px;
+                font-size: 12px;
             }
         `,
     ],

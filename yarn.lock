@@ -1645,7 +1645,7 @@
   dependencies:
     tslib "^2.0.0"
 
-"@pxblue/angular-themes@^6.0.3":
+"@pxblue/angular-themes@^6.1.1":
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/@pxblue/angular-themes/-/angular-themes-6.1.1.tgz#ac2f8afc6d0bd07f57dc1c4d9da0b8db19f21cbe"
   integrity sha512-B17/R69of4VNpPBcziDTJOCrYHdaH7TEfgBgLjZWuG0deoEUL26/CZ+dPqyVqjZgCtxG940OCmtCP9P3lYKdKQ==

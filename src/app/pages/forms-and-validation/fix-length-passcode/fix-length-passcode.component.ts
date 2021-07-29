@@ -1,4 +1,12 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/core';
+import {
+    Component,
+    OnInit,
+    AfterViewInit,
+    ViewChild,
+    ElementRef,
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+} from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { FormControl, FormGroupDirective, NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -16,7 +24,7 @@ class CrossFieldErrorMatcher implements ErrorStateMatcher {
     selector: 'app-fix-length-passcode',
     templateUrl: './fix-length-passcode.component.html',
     styleUrls: ['./fix-length-passcode.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
     isSmall: boolean;
@@ -32,8 +40,8 @@ export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
         private readonly _drawerService: StateService,
         private readonly _breakpointObserver: BreakpointObserver,
         private readonly _formBuilder: FormBuilder,
-        private _changeDetectorRef: ChangeDetectorRef,
-        private customValidator: CustomvalidationService,
+        private readonly _changeDetectorRef: ChangeDetectorRef,
+        private readonly _customValidator: CustomvalidationService
     ) {
         this.initForm();
     }
@@ -51,23 +59,33 @@ export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-            this.passcodeInput.nativeElement.focus();
-            this._changeDetectorRef.detectChanges();
+        this.passcodeInput.nativeElement.focus();
+        this._changeDetectorRef.detectChanges();
     }
 
     initForm(): void {
-        this.passcodeForm = this._formBuilder.group({
-            passcode: [{ value: '', disabled: false }, [Validators.required], this.customValidator.passcodeValidator.bind(this.customValidator)],
-        },{ updateOn: 'blur'});
+        this.passcodeForm = this._formBuilder.group(
+            {
+                passcode: [
+                    { value: '', disabled: false },
+                    [Validators.required],
+                    this._customValidator.passcodeValidator.bind(this._customValidator),
+                ],
+            },
+            { updateOn: 'blur' }
+        );
     }
 
-    checkPasscode(value: string) {
-        if(value.length === 6) {
+    checkPasscode(value: string): void {
+        if (value.length === 6) {
             this.passcodeForm.controls.passcode.disable();
             this.showLoading = true;
-            this.passcodeForm.controls["passcode"].clearValidators();
-            this.passcodeForm.controls["passcode"].setValidators([Validators.required,this.customValidator.validatePasscode.bind(this.customValidator)]);
-            this.passcodeForm.controls["passcode"].updateValueAndValidity();
+            this.passcodeForm.controls['passcode'].clearValidators();
+            this.passcodeForm.controls['passcode'].setValidators([
+                Validators.required,
+                this._customValidator.validatePasscode.bind(this._customValidator),
+            ]);
+            this.passcodeForm.controls['passcode'].updateValueAndValidity();
             setTimeout(() => {
                 this.showLoading = false;
                 this.showDoneIcon = true;
@@ -76,8 +94,8 @@ export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
         }
     }
 
-    get passcodeFormControl() {  
-        return this.passcodeForm.controls;  
+    get passcodeFormControl(): any {
+        return this.passcodeForm.controls;
     }
 
     toggleMenu(): void {
@@ -85,14 +103,14 @@ export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
         this._drawerService.setDrawerOpen(!drawerOpen);
     }
 
-    matcher(event) {
+    matcher(event: KeyboardEvent): void {
         const allowedRegex = /[0-9]/g;
         if (!event.key.match(allowedRegex)) {
             event.preventDefault();
         }
     }
 
-    resetForm() {
+    resetForm(): void {
         this.passcodeForm.controls.passcode.enable();
         this.passcodeForm.reset();
         this.initForm();

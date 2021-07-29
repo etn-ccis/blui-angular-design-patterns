@@ -16,7 +16,7 @@
     </div>
 
     <mat-divider></mat-divider>
-      
+
     <form [formGroup]="passcodeForm" class="passcode-form">
         <mat-form-field appearance="fill">
             <mat-label>Passcode</mat-label>
@@ -42,13 +42,19 @@
                 Please enter a six-digit passcode.
             </mat-error>
             <mat-error *ngIf="passcodeFormControl.passcode.errors?.required">
-               required
+                required
             </mat-error>
             <mat-error *ngIf="passcodeFormControl.passcode.errors?.invalidPasscode">
                 Incorrect Passcode.
             </mat-error>
         </mat-form-field>
-        <button mat-stroked-button class="reset-form mat-body" color="primary" (click)="resetForm()" [disabled]="showLoading">
+        <button
+            mat-stroked-button
+            class="reset-form mat-body"
+            color="primary"
+            (click)="resetForm()"
+            [disabled]="showLoading"
+        >
             <mat-icon style="margin-left: -4px; font-size: 20px">refresh</mat-icon>
             Reset form
         </button>

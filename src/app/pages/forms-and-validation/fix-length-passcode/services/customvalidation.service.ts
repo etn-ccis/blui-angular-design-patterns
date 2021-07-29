@@ -6,52 +6,27 @@ import { FormGroup } from '@angular/forms';
   providedIn: 'root'  
 })  
 export class CustomvalidationService {  
-  
-  patternValidator(): ValidatorFn {  
-    return (control: AbstractControl): { [key: string]: any } => {  
-      if (!control.value) {  
-        return null;  
-      }  
-      const regex = new RegExp('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$');  
-      const valid = regex.test(control.value);  
-      return valid ? null : { invalidPassword: true };  
-    };  
-  }  
-  
-  MatchPassword(password: string, confirmPassword: string) {  
-    return (formGroup: FormGroup) => {  
-      const passwordControl = formGroup.controls[password];  
-      const confirmPasswordControl = formGroup.controls[confirmPassword];  
-  
-      if (!passwordControl || !confirmPasswordControl) {  
-        return null;  
-      }  
-  
-      if (confirmPasswordControl.errors && !confirmPasswordControl.errors.passwordMismatch) {  
-        return null;  
-      }  
-  
-      if (passwordControl.value !== confirmPasswordControl.value) {  
-        confirmPasswordControl.setErrors({ passwordMismatch: true });  
-      } else {  
-        confirmPasswordControl.setErrors(null);  
-      }  
-    }  
-  }  
-  
   passcodeValidator(passcodeControl: AbstractControl) {  
-    return new Promise(resolve => {  
-      // setTimeout(() => {  
+    return new Promise(resolve => { 
         if (this.validatePasscodeLength(passcodeControl.value)) {  
           resolve({ passcodeLengthNotMatch: true });  
         } else {  
           resolve(null);  
-        }  
-      // }, 1000);  
+        } 
+    });  
+  } 
+  validatePasscode(passcodeControl: AbstractControl) {  
+    return new Promise(resolve => { 
+        if (passcodeControl.value?.length === 6) {  
+          resolve({ invalidPasscode: true });  
+        } else {  
+          resolve(null);  
+        }
+        console.log(passcodeControl); 
     });  
   }  
   
-  validatePasscodeLength(userName: string) {  
-    return userName.length !== 6;
+  validatePasscodeLength(passcode: string) {  
+    return passcode.length !== 6;
   }  
 }  

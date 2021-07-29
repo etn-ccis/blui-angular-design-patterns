@@ -25,18 +25,30 @@
                 placeholder="Passcode"
                 required
                 formControlName="passcode"
+                [errorStateMatcher]="errorMatcher"
                 (keypress)="matcher($event)"
-                (keyup)="checkPasscode($event.target.value)"
-                (focus)="passcodeFormControl.passcode.markAsUntouched()"
                 type="text"
                 data-cy="passcode"
+                (keyup)="checkPasscode($event.target.value)"
                 #passcodeInput
             />
-            <mat-error *ngIf="passcodeFormControl.passcode.errors?.required || passcodeFormControl.passcode.errors?.passcodeLengthNotMatch">
+            <button mat-icon-button matSuffix>
+                <mat-icon *ngIf="showLoading">
+                    <mat-spinner class="primary-spinner" diameter="20"></mat-spinner>
+                </mat-icon>
+                <mat-icon *ngIf="showDoneIcon" [style.color]="successColor">done</mat-icon>
+            </button>
+            <mat-error *ngIf="passcodeFormControl.passcode.errors?.passcodeLengthNotMatch">
                 Please enter a six-digit passcode.
             </mat-error>
+            <mat-error *ngIf="passcodeFormControl.passcode.errors?.required">
+               required
+            </mat-error>
+            <mat-error *ngIf="passcodeFormControl.passcode.errors?.invalidPasscode">
+                Incorrect Passcode.
+            </mat-error>
         </mat-form-field>
-        <button mat-stroked-button class="reset-form mat-body" color="primary">
+        <button mat-stroked-button class="reset-form mat-body" color="primary" (click)="resetForm()" [disabled]="showLoading">
             <mat-icon style="margin-left: -4px; font-size: 20px">refresh</mat-icon>
             Reset form
         </button>

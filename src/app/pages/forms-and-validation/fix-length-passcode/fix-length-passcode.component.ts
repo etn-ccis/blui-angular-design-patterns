@@ -5,12 +5,13 @@ import { FormControl, FormGroupDirective, NgForm, FormGroup, FormBuilder, Valida
 import { CustomvalidationService } from './services/customvalidation.service';
 import { StateService } from '../../../services/state.service';
 
-// class CrossFieldErrorMatcher implements ErrorStateMatcher {
-//     isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-//         return control.dirty && form.invalid;
-//     }
-// }
+import * as Colors from '@pxblue/colors';
 
+class CrossFieldErrorMatcher implements ErrorStateMatcher {
+    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+        return control.dirty && form.invalid;
+    }
+}
 @Component({
     selector: 'app-fix-length-passcode',
     templateUrl: './fix-length-passcode.component.html',
@@ -21,8 +22,10 @@ export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
     isSmall: boolean;
     passcodeForm: FormGroup;
     disableInput = true;
-    showLoadingIcon = false;
+    showLoading = false;
     showDoneIcon = false;
+    successColor = Colors.green[500];
+    errorMatcher = new CrossFieldErrorMatcher();
     @ViewChild('passcodeInput') passcodeInput: ElementRef;
 
     constructor(
@@ -54,13 +57,22 @@ export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
 
     initForm(): void {
         this.passcodeForm = this._formBuilder.group({
-            passcode: ['', [Validators.required], this.customValidator.passcodeValidator.bind(this.customValidator)],
-        });
+            passcode: [{ value: '', disabled: false }, [Validators.required], this.customValidator.passcodeValidator.bind(this.customValidator)],
+        },{ updateOn: 'blur'});
     }
 
-    checkPasscode(value) {
-        if(value.lenth === 6) {
-            this.disableInput = true;
+    checkPasscode(value: string) {
+        if(value.length === 6) {
+            this.passcodeForm.controls.passcode.disable();
+            this.showLoading = true;
+            this.passcodeForm.controls["passcode"].clearValidators();
+            this.passcodeForm.controls["passcode"].setValidators([Validators.required,this.customValidator.validatePasscode.bind(this.customValidator)]);
+            this.passcodeForm.controls["passcode"].updateValueAndValidity();
+            setTimeout(() => {
+                this.showLoading = false;
+                this.showDoneIcon = true;
+                this._changeDetectorRef.detectChanges();
+            }, 3000);
         }
     }
 
@@ -78,5 +90,15 @@ export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
         if (!event.key.match(allowedRegex)) {
             event.preventDefault();
         }
+    }
+
+    resetForm() {
+        this.passcodeForm.controls.passcode.enable();
+        this.passcodeForm.reset();
+        this.initForm();
+        this.showLoading = false;
+        this.showDoneIcon = false;
+        this.passcodeInput.nativeElement.focus();
+        this._changeDetectorRef.detectChanges();
     }
 }

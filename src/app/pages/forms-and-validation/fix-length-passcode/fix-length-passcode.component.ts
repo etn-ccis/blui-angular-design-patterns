@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, ChangeDetectio
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { FormControl, FormGroupDirective, NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { CustomvalidationService } from './services/customvalidation.service';
 import { StateService } from '../../../services/state.service';
 
 // class CrossFieldErrorMatcher implements ErrorStateMatcher {
@@ -19,13 +20,17 @@ import { StateService } from '../../../services/state.service';
 export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
     isSmall: boolean;
     passcodeForm: FormGroup;
+    disableInput = true;
+    showLoadingIcon = false;
+    showDoneIcon = false;
     @ViewChild('passcodeInput') passcodeInput: ElementRef;
 
     constructor(
         private readonly _drawerService: StateService,
         private readonly _breakpointObserver: BreakpointObserver,
         private readonly _formBuilder: FormBuilder,
-        private _changeDetectorRef: ChangeDetectorRef
+        private _changeDetectorRef: ChangeDetectorRef,
+        private customValidator: CustomvalidationService,
     ) {
         this.initForm();
     }
@@ -49,8 +54,18 @@ export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
 
     initForm(): void {
         this.passcodeForm = this._formBuilder.group({
-            passcode: ['', [Validators.required, Validators.pattern("^[0-9]*$")]]
+            passcode: ['', [Validators.required], this.customValidator.passcodeValidator.bind(this.customValidator)],
         });
+    }
+
+    checkPasscode(value) {
+        if(value.lenth === 6) {
+            this.disableInput = true;
+        }
+    }
+
+    get passcodeFormControl() {  
+        return this.passcodeForm.controls;  
     }
 
     toggleMenu(): void {
@@ -60,7 +75,6 @@ export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
 
     matcher(event) {
         const allowedRegex = /[0-9]/g;
-
         if (!event.key.match(allowedRegex)) {
             event.preventDefault();
         }

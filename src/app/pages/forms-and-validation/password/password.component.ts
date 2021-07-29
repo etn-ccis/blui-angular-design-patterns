@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { ErrorStateMatcher } from '@angular/material/core';
-import { FormControl, FormGroupDirective, NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { StateService } from '../../../services/state.service';
 
-class CrossFieldErrorMatcher implements ErrorStateMatcher {
-    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-        return control.dirty && form.invalid;
-    }
-}
-
+type PasswordRequirement = {
+    description: string;
+    regex: RegExp;
+    success?: boolean;
+    icon?: string;
+};
 @Component({
     selector: 'app-password',
     templateUrl: './password.component.html',
@@ -19,15 +18,19 @@ export class PasswordComponent implements OnInit {
     isSmall: boolean;
     userPassword: FormGroup;
     passwordFormGroup: FormGroup;
-    errorMatcher = new CrossFieldErrorMatcher();
-    passLength = false;
-    specialFlag = false;
-    numberFlag = false;
-    upperFlag = false;
-    lowerFlag = false;
     oldPasswordVisible = false;
     newPasswordVisible = false;
     confirmPasswordVisible = false;
+
+    passesStrengthCheck = false;
+    passwordRequirements: PasswordRequirement[] = [];
+    defaultPasswordRequirements = {
+        characterLimit: true,
+        uppercaseLetter: true,
+        lowercaseLetter: true,
+        requireNumber: true,
+        specialCharacter: true,
+    };
 
     constructor(
         private readonly _drawerService: StateService,
@@ -47,6 +50,7 @@ export class PasswordComponent implements OnInit {
                     this.isSmall = false;
                 }
             });
+        this.passwordRequirements = this.getPasswordRequirements();
     }
 
     initForm(): void {
@@ -70,16 +74,43 @@ export class PasswordComponent implements OnInit {
         return pass === confirmPass ? null : { passwordsDoNotMatch: true };
     }
 
-    checkPasswordStrength(password: string): void {
-        this.passLength = password.length > 7;
-        this.specialFlag = /[!@#$^&]/.test(password);
-        this.numberFlag = /[0-9]/.test(password);
-        this.upperFlag = /[A-Z]/.test(password);
-        this.lowerFlag = /[a-z]/.test(password);
+    getPasswordRequirements(): PasswordRequirement[] {
+        const req: PasswordRequirement[] = [];
+        if (this.defaultPasswordRequirements.characterLimit) {
+            req.push({
+                description: 'At least 8 characters in length',
+                regex: /^.{8,16}$/,
+            });
+        }
+        if (this.defaultPasswordRequirements.requireNumber) {
+            req.push({
+                description: 'At least 1 digit',
+                regex: /[0-9]/,
+            });
+        }
+        if (this.defaultPasswordRequirements.uppercaseLetter) {
+            req.push({
+                description: 'At least 1 uppercase letter',
+                regex: /[A-Z]/,
+            });
+        }
+        if (this.defaultPasswordRequirements.lowercaseLetter) {
+            req.push({
+                description: 'At least 1 lowercase letter',
+                regex: /[a-z]/,
+            });
+        }
+        if (this.defaultPasswordRequirements.specialCharacter) {
+            req.push({
+                description: 'At least 1 special character (Valid: ! @ # $ ^ &)',
+                regex: /[!"#$%&'()*+,-./:;<=>?@[\]^`{|}~]+/,
+            });
+        }
+        return req;
     }
 
     hasValidPasswords(): boolean {
-        return this.userPassword.valid && this.passwordFormGroup.valid;
+        return this.userPassword.valid && this.passwordFormGroup.valid && this.passesStrengthCheck;
     }
 
     clearFields(): void {

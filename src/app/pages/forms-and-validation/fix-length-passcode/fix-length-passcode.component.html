@@ -33,27 +33,25 @@
                 (keyup)="checkPasscode($event.target.value)"
                 #passcodeInput
             />
-            <button mat-icon-button matSuffix style="justify-content: center;
-            vertical-align: middle;margin-top:-16px">
+            <button class="suffix-icons" mat-icon-button matSuffix>
                 <mat-icon *ngIf="showLoading">
                     <mat-spinner class="primary-spinner" diameter="20"></mat-spinner>
                 </mat-icon>
                 <mat-icon *ngIf="showDoneIcon" [style.color]="successColor">done</mat-icon>
             </button>
-            <mat-error *ngIf="passcodeFormControl.passcode.errors?.required || passcodeFormControl.passcode.errors?.passcodeLengthNotMatch">
+            <mat-error
+                *ngIf="
+                    passcodeFormControl.passcode.errors?.required ||
+                    passcodeFormControl.passcode.errors?.passcodeLengthNotMatch
+                "
+            >
                 Please enter a six-digit passcode.
             </mat-error>
             <mat-error *ngIf="passcodeFormControl.passcode.errors?.invalidPasscode">
                 Incorrect Passcode.
             </mat-error>
         </mat-form-field>
-        <button
-            class="reset-btn"
-            mat-stroked-button
-            color="primary"
-            (click)="resetForm()"
-            [disabled]="showLoading"
-        >
+        <button class="reset-btn" mat-stroked-button color="primary" (click)="resetForm()" [disabled]="showLoading">
             <mat-icon>refresh</mat-icon>
             Reset Form
         </button>

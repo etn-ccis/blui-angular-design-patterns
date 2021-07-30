@@ -12,6 +12,12 @@ section.mat-typography {
     .passcode-form {
         padding: 0 16px;
         margin-top: 32px;
+
+        .suffix-icons {
+            justify-content: center;
+            vertical-align: middle;
+            margin-top: -16px;
+        }
     }
 }
 
@@ -21,7 +27,7 @@ mat-form-field {
 }
 .reset-btn {
     mat-icon {
-        margin-left: -4px; 
+        margin-left: -4px;
         font-size: 20px;
     }
 }

@@ -79,9 +79,9 @@ export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
             this.passcodeForm.controls.passcode.disable();
             this.showLoading = true;
             setTimeout(() => {
-                if(Math.random() < 0.25) {
+                if (Math.random() < 0.25) {
                     this.passcodeForm.controls.passcode.enable();
-                    this.passcodeForm.controls['passcode'].setErrors({'invalidPasscode': true});
+                    this.passcodeForm.controls['passcode'].setErrors({ invalidPasscode: true });
                     this.showLoading = false;
                     this.showDoneIcon = false;
                 } else {
@@ -97,7 +97,7 @@ export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
         return this.passcodeForm.controls;
     }
 
-    clearErrors():void {
+    clearErrors(): void {
         this.passcodeForm.controls['passcode'].setErrors(null);
     }
 

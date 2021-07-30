@@ -27,6 +27,7 @@
                 formControlName="passcode"
                 [errorStateMatcher]="errorMatcher"
                 (keypress)="matcher($event)"
+                (focus)="clearErrors()"
                 type="text"
                 data-cy="passcode"
                 (keyup)="checkPasscode($event.target.value)"
@@ -47,14 +48,14 @@
             </mat-error>
         </mat-form-field>
         <button
+            class="reset-btn"
             mat-stroked-button
-            class="reset-form mat-body"
             color="primary"
             (click)="resetForm()"
             [disabled]="showLoading"
         >
-            <mat-icon style="margin-left: -4px; font-size: 20px">refresh</mat-icon>
-            Reset form
+            <mat-icon>refresh</mat-icon>
+            Reset Form
         </button>
     </form>
 </section>

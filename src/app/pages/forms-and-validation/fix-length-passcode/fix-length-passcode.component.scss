@@ -19,7 +19,19 @@ mat-form-field {
     width: 100%;
     margin-bottom: 24px;
 }
+.reset-btn {
+    mat-icon {
+        margin-left: -4px; 
+        font-size: 20px;
+    }
+}
 
 ::ng-deep .pxb-drawer-layout-nav-content {
     background-color: map-get($pxb-white, 50);
+}
+
+@media only screen and (max-width: 600px) {
+    .reset-btn {
+        width: 100%;
+    }
 }

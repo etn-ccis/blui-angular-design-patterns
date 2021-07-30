@@ -14,7 +14,6 @@ import { CustomvalidationService } from './services/customvalidation.service';
 import { StateService } from '../../../services/state.service';
 
 import * as Colors from '@pxblue/colors';
-
 class CrossFieldErrorMatcher implements ErrorStateMatcher {
     isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
         return control.dirty && form.invalid;
@@ -79,18 +78,16 @@ export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
         if (value.length === 6) {
             this.passcodeForm.controls.passcode.disable();
             this.showLoading = true;
-            this.passcodeForm.controls['passcode'].clearValidators();
-            this.passcodeForm.controls['passcode'].updateValueAndValidity();
-            this.passcodeForm.controls['passcode'].setValidators([
-                Validators.required,
-                this._customValidator.validatePasscode.bind(this._customValidator),
-            ]);
-            this.passcodeForm.controls['passcode'].updateValueAndValidity();
             setTimeout(() => {
-                this.passcodeForm.controls.passcode.enable();
-                this.passcodeForm.controls['passcode'].setErrors({'invalidPasscode': true});
-                this.showLoading = false;
-                this.showDoneIcon = false;
+                if(Math.random() < 0.25) {
+                    this.passcodeForm.controls.passcode.enable();
+                    this.passcodeForm.controls['passcode'].setErrors({'invalidPasscode': true});
+                    this.showLoading = false;
+                    this.showDoneIcon = false;
+                } else {
+                    this.showDoneIcon = true;
+                    this.showLoading = false;
+                }
                 this._changeDetectorRef.detectChanges();
             }, 3000);
         }
@@ -98,6 +95,10 @@ export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
 
     get passcodeFormControl(): any {
         return this.passcodeForm.controls;
+    }
+
+    clearErrors():void {
+        this.passcodeForm.controls['passcode'].setErrors(null);
     }
 
     toggleMenu(): void {

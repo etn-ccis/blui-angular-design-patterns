@@ -15,10 +15,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 
 import { PasswordComponent } from './password.component';
-import { PasswordStrengthCheckComponent } from './password-strength-check.component';
+import { PxbPasswordStrengthCheckerComponent } from './password-strength-checker/pxb-password-strength-checker.component';
+import { PasswordStrengthCheckComponent } from './password-strength-checker/password-strength-checker.component';
 
 @NgModule({
-    declarations: [PasswordComponent, PasswordStrengthCheckComponent],
+    declarations: [PasswordComponent, PxbPasswordStrengthCheckerComponent, PasswordStrengthCheckComponent],
     imports: [
         BrowserModule,
         FormsModule,

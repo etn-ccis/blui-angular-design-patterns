@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ValidationErrors, AbstractControl } from '@angular/forms';
-
+export const randomFailure = () => Math.random() < 0.25;
 @Injectable({
     providedIn: 'root',
 })
@@ -21,6 +21,13 @@ export class CustomvalidationService {
             } else {
                 resolve(null);
             }
+            // randomFailure
+            // console.log('passcodecontrol', passcodeControl);
+            // if (randomFailure()) {
+            //     resolve({ invalidPasscode: true });
+            // } else {
+            //     resolve(null);
+            // }
         });
     }
 

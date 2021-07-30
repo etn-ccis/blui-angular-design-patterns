@@ -29,7 +29,6 @@ class CrossFieldErrorMatcher implements ErrorStateMatcher {
 export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
     isSmall: boolean;
     passcodeForm: FormGroup;
-    disableInput = true;
     showLoading = false;
     showDoneIcon = false;
     successColor = Colors.green[500];
@@ -81,14 +80,17 @@ export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
             this.passcodeForm.controls.passcode.disable();
             this.showLoading = true;
             this.passcodeForm.controls['passcode'].clearValidators();
+            this.passcodeForm.controls['passcode'].updateValueAndValidity();
             this.passcodeForm.controls['passcode'].setValidators([
                 Validators.required,
                 this._customValidator.validatePasscode.bind(this._customValidator),
             ]);
             this.passcodeForm.controls['passcode'].updateValueAndValidity();
             setTimeout(() => {
+                this.passcodeForm.controls.passcode.enable();
+                this.passcodeForm.controls['passcode'].setErrors({'invalidPasscode': true});
                 this.showLoading = false;
-                this.showDoneIcon = true;
+                this.showDoneIcon = false;
                 this._changeDetectorRef.detectChanges();
             }, 3000);
         }

@@ -19,3 +19,7 @@ mat-form-field {
     width: 100%;
     margin-bottom: 24px;
 }
+
+::ng-deep .pxb-drawer-layout-nav-content {
+    background-color: map-get($pxb-white, 50);
+}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormControl, FormGroupDirective, NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core';
 import { StateService } from '../../../services/state.service';
 
 type PasswordRequirement = {
@@ -9,6 +10,11 @@ type PasswordRequirement = {
     success?: boolean;
     icon?: string;
 };
+class CrossFieldErrorMatcher implements ErrorStateMatcher {
+    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+        return control.dirty && form.invalid;
+    }
+}
 @Component({
     selector: 'app-password',
     templateUrl: './password.component.html',
@@ -21,7 +27,7 @@ export class PasswordComponent implements OnInit {
     oldPasswordVisible = false;
     newPasswordVisible = false;
     confirmPasswordVisible = false;
-
+    errorMatcher = new CrossFieldErrorMatcher();
     passesStrengthCheck = false;
     passwordRequirements: PasswordRequirement[] = [];
     defaultPasswordRequirements = {

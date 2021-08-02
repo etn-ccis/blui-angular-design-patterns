@@ -45,7 +45,7 @@ export class PxbPasswordStrengthCheckerComponent {
     ngOnChanges(): void {
         let passwordMeetsRequirements = true;
         for (const requirement of this.requirements) {
-            requirement.success = requirement.regex.test(this.formValue);
+            requirement.success = requirement.regex.test(this.formValue ? this.formValue : '');
             passwordMeetsRequirements = passwordMeetsRequirements && requirement.success;
         }
         setTimeout(() => {

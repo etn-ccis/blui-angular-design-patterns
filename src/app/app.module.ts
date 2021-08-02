@@ -43,6 +43,7 @@ import { SpinnerOverlaysModule } from './pages/loading-waiting-states/spinner-ov
 import { ContextualSpinnersModule } from './pages/loading-waiting-states/contextual-spinners/contextual-spinners.module';
 import { ProgressBarsModule } from './pages/loading-waiting-states/progress-bars/progress-bars.module';
 import { SkeletonLoaderModule } from './pages/loading-waiting-states/skeleton-loader/skeleton-loader.module';
+import { PasswordModule } from './pages/forms-and-validation/password/password.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -86,6 +87,7 @@ import { SkeletonLoaderModule } from './pages/loading-waiting-states/skeleton-lo
         ContextualSpinnersModule,
         ProgressBarsModule,
         SkeletonLoaderModule,
+        PasswordModule,
     ],
     bootstrap: [AppComponent],
 })

@@ -11,7 +11,8 @@
             minutes.
         </p>
         <p>
-            For the purpose of this demonstration, the passcode has a 20% chance to fail.
+            For the purpose of this demonstration, passcode <strong>123456</strong> will pass. Any other 6 digit
+            passcode will fail.
         </p>
     </div>
 
@@ -30,7 +31,7 @@
                 type="text"
                 maxlength="6"
                 data-cy="passcode"
-                (keyup)="checkPasscode($event.target.value, 'PASS')"
+                (keyup)="checkPasscode($event.target.value)"
                 (blur)="validatePasscodeLength($event.target.value)"
                 #passcodeInput
             />

@@ -71,7 +71,7 @@ export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
         }
     }
 
-    checkPasscode(value: string, status: string): void {
+    checkPasscode(value: string): void {
         if (this.passcodeForm.invalid) {
             return;
         }
@@ -80,7 +80,7 @@ export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
             this.showSuffix = true;
             this.showLoading = true;
             setTimeout(() => {
-                if (status === 'PASS') {
+                if (value === '123456') {
                     this.showDoneIcon = true;
                     this.showLoading = false;
                 } else {

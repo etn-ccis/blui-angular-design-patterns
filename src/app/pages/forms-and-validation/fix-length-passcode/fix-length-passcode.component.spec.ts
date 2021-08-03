@@ -31,7 +31,7 @@ describe('FixLengthPasscodeComponent', () => {
     });
 
     it('should allow exact 6 digits valid passcode', () => {
-        component.passcodeForm.controls.passcode.setValue('992830');
+        component.passcodeForm.controls.passcode.setValue('123456');
         void expect(component.passcodeForm.controls.passcode.valid).toBeTruthy();
     });
 

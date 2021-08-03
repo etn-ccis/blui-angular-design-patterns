@@ -20,6 +20,7 @@ import { SpinnerOverlaysComponent } from './pages/loading-waiting-states/spinner
 import { ContextualSpinnersComponent } from './pages/loading-waiting-states/contextual-spinners/contextual-spinners.component';
 import { SkeletonLoaderComponent } from './pages/loading-waiting-states/skeleton-loader/skeleton-loader.component';
 import { PasswordComponent } from './pages/forms-and-validation/password/password.component';
+import { VerifyOnSubmitComponent } from './pages/forms-and-validation/verify-on-submit/verify-on-submit.component';
 
 export type DrawerItem = {
     title: string;
@@ -59,6 +60,11 @@ export const ROUTES: DrawerItem[] = [
                 title: 'Password',
                 path: 'password',
                 component: PasswordComponent,
+            },
+            {
+                title: 'Verify on Submit',
+                path: 'verify-on-submit',
+                component: VerifyOnSubmitComponent,
             },
         ],
     },

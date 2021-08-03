@@ -37,7 +37,7 @@ export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
         private readonly _drawerService: StateService,
         private readonly _breakpointObserver: BreakpointObserver,
         private readonly _formBuilder: FormBuilder,
-        private readonly _changeDetectorRef: ChangeDetectorRef,
+        private readonly _changeDetectorRef: ChangeDetectorRef
     ) {
         this.initForm();
     }
@@ -58,32 +58,27 @@ export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
         this.passcodeInput.nativeElement.focus();
         this._changeDetectorRef.detectChanges();
     }
-    
+
     initForm(): void {
-        this.passcodeForm = this._formBuilder.group(
-            {
-                passcode: [
-                    { value: '', disabled: false },
-                    [Validators.required],
-                ],
-            },
-        );
+        this.passcodeForm = this._formBuilder.group({
+            passcode: [{ value: '', disabled: false }, [Validators.required]],
+        });
     }
-    validatePasscodeLength(value: string) {
-        if(value.length !== 6) {
+    validatePasscodeLength(value: string): void {
+        if (value.length !== 6) {
             this.passcodeForm.controls['passcode'].setErrors({ passcodeLengthNotMatch: true });
         }
     }
 
     checkPasscode(value: string, status: string): void {
-        if(this.passcodeForm.invalid) {
-           return;
+        if (this.passcodeForm.invalid) {
+            return;
         }
         if (value.length === 6) {
             this.passcodeForm.controls.passcode.disable();
             this.showLoading = true;
             setTimeout(() => {
-                if(status === 'PASS') {
+                if (status === 'PASS') {
                     this.showDoneIcon = true;
                     this.showLoading = false;
                 } else {
@@ -100,10 +95,6 @@ export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
 
     get passcodeFormControl(): any {
         return this.passcodeForm.controls;
-    }
-
-    clearErrors(): void {
-        this.passcodeForm.controls['passcode'].setErrors(null);
     }
 
     toggleMenu(): void {

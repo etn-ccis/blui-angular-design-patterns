@@ -34,11 +34,17 @@
                 (blur)="validatePasscodeLength($event.target.value)"
                 #passcodeInput
             />
-            <button class="suffix-icons" mat-icon-button matSuffix>
-                <mat-icon *ngIf="showLoading">
+            <button
+                mat-icon-button
+                matSuffix
+                *ngIf="showSuffix"
+                class="suffix-icons"
+                [ngClass]="showSuffix && showLoading ? 'show-spinner' : 'show-icon'"
+            >
+                <mat-icon class="spinner-container">
                     <mat-spinner class="primary-spinner" diameter="20"></mat-spinner>
                 </mat-icon>
-                <mat-icon *ngIf="showDoneIcon" [style.color]="successColor">done</mat-icon>
+                <mat-icon class="icon-container" [style.color]="successColor">done</mat-icon>
             </button>
             <mat-error
                 *ngIf="

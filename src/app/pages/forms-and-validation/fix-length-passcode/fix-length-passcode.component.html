@@ -27,10 +27,11 @@
                 formControlName="passcode"
                 [errorStateMatcher]="errorMatcher"
                 (keypress)="matcher($event)"
-                (focus)="clearErrors()"
                 type="text"
+                maxlength="6"
                 data-cy="passcode"
-                (keyup)="checkPasscode($event.target.value)"
+                (keyup)="checkPasscode($event.target.value, 'PASS')"
+                (blur)="validatePasscodeLength($event.target.value)"
                 #passcodeInput
             />
             <button class="suffix-icons" mat-icon-button matSuffix>

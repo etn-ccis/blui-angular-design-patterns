@@ -10,7 +10,6 @@ import {
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { FormControl, FormGroupDirective, NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { CustomvalidationService } from './services/customvalidation.service';
 import { StateService } from '../../../services/state.service';
 
 import * as Colors from '@pxblue/colors';
@@ -39,7 +38,6 @@ export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
         private readonly _breakpointObserver: BreakpointObserver,
         private readonly _formBuilder: FormBuilder,
         private readonly _changeDetectorRef: ChangeDetectorRef,
-        private readonly _customValidator: CustomvalidationService
     ) {
         this.initForm();
     }
@@ -60,33 +58,40 @@ export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
         this.passcodeInput.nativeElement.focus();
         this._changeDetectorRef.detectChanges();
     }
-
+    
     initForm(): void {
         this.passcodeForm = this._formBuilder.group(
             {
                 passcode: [
                     { value: '', disabled: false },
                     [Validators.required],
-                    this._customValidator.passcodeValidator.bind(this._customValidator),
                 ],
             },
-            { updateOn: 'blur' }
         );
     }
+    validatePasscodeLength(value: string) {
+        if(value.length !== 6) {
+            this.passcodeForm.controls['passcode'].setErrors({ passcodeLengthNotMatch: true });
+        }
+    }
 
-    checkPasscode(value: string): void {
+    checkPasscode(value: string, status: string): void {
+        if(this.passcodeForm.invalid) {
+           return;
+        }
         if (value.length === 6) {
             this.passcodeForm.controls.passcode.disable();
             this.showLoading = true;
             setTimeout(() => {
-                if (Math.random() < 0.25) {
+                if(status === 'PASS') {
+                    this.showDoneIcon = true;
+                    this.showLoading = false;
+                } else {
                     this.passcodeForm.controls.passcode.enable();
                     this.passcodeForm.controls['passcode'].setErrors({ invalidPasscode: true });
                     this.showLoading = false;
                     this.showDoneIcon = false;
-                } else {
-                    this.showDoneIcon = true;
-                    this.showLoading = false;
+                    this.passcodeInput.nativeElement.focus();
                 }
                 this._changeDetectorRef.detectChanges();
             }, 3000);

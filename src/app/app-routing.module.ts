@@ -20,6 +20,7 @@ import { SpinnerOverlaysComponent } from './pages/loading-waiting-states/spinner
 import { ContextualSpinnersComponent } from './pages/loading-waiting-states/contextual-spinners/contextual-spinners.component';
 import { SkeletonLoaderComponent } from './pages/loading-waiting-states/skeleton-loader/skeleton-loader.component';
 import { PasswordComponent } from './pages/forms-and-validation/password/password.component';
+import { PhoneNumberFormatComponent } from './pages/forms-and-validation/phone-number-format/phone-number-format.component';
 
 export type DrawerItem = {
     title: string;
@@ -59,6 +60,11 @@ export const ROUTES: DrawerItem[] = [
                 title: 'Password',
                 path: 'password',
                 component: PasswordComponent,
+            },
+            {
+                title: 'Phone Number Format',
+                path: 'phone-number-format',
+                component: PhoneNumberFormatComponent,
             },
         ],
     },

@@ -5,11 +5,9 @@
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Fixed Length Passcode</div>
 </mat-toolbar>
 <section class="mat-typography" [class.small]="isSmall">
-    <div class="mat-body-1 form-header">
-        <p>Find Device</p>
-    </div>
+    <h2>Find Device</h2>
 
-    <form [formGroup]="findDeviceForm" class="find-device">
+    <form [formGroup]="searchDeviceForm" class="find-device">
         <mat-form-field appearance="fill">
             <mat-label>Serial Number</mat-label>
             <input
@@ -20,23 +18,23 @@
                 type="text"
                 data-cy="serial-number"
                 #serialNumberInput
+                (keydown.enter)="searchDevice()"
             />
-            <mat-error *ngIf="findDeviceForm.controls.serialNumber.errors?.deviceNotFound">
+            <mat-error *ngIf="searchDeviceForm.controls.serialNumber.errors?.deviceNotFound">
                 Device not found.
             </mat-error>
         </mat-form-field>
-        <div class="button-container" style="text-align:right;">
-            <button 
+        <div class="button-container">
+            <button
                 class="search-device-btn"
-                mat-flat-button 
+                mat-flat-button
                 color="primary"
-                [disabled]="!findDeviceForm.controls.serialNumber.value"
-                [ngClass]="formSubmit ? 'button-block show-spinner' : 'show-text'"
-                style="width: 144px;"
-                (click)="findDevice()"
+                [disabled]="!searchDeviceForm.controls.serialNumber.value"
+                [ngClass]="formSubmit ? 'find-device-button show-spinner' : 'show-text'"
+                (click)="searchDevice()"
             >
                 <span data-cy="search-button" class="text-container">
-                    <mat-icon style="margin-left: -4px;">search</mat-icon>
+                    <mat-icon>search</mat-icon>
                     Search Device
                 </span>
                 <div class="spinner-container">

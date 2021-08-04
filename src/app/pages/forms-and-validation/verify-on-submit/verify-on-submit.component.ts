@@ -1,15 +1,6 @@
-import {
-    Component,
-    OnInit,
-    AfterViewInit,
-    ViewChild,
-    ElementRef,
-    ChangeDetectionStrategy,
-    ChangeDetectorRef,
-} from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { ErrorStateMatcher } from '@angular/material/core';
-import { FormControl, FormGroupDirective, NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { StateService } from '../../../services/state.service';
 
 @Component({
@@ -20,7 +11,7 @@ import { StateService } from '../../../services/state.service';
 })
 export class VerifyOnSubmitComponent implements OnInit {
     isSmall: boolean;
-    findDeviceForm: FormGroup;
+    searchDeviceForm: FormGroup;
     formSubmit = false;
 
     @ViewChild('serialNumberInput') serialNumberInput: ElementRef;
@@ -52,16 +43,17 @@ export class VerifyOnSubmitComponent implements OnInit {
     }
 
     initForm(): void {
-        this.findDeviceForm = this._formBuilder.group({
-            serialNumber: [{ value: '', disabled: false }, [Validators.required]],
+        this.searchDeviceForm = this._formBuilder.group({
+            serialNumber: [{ value: '' }, [Validators.required]],
         });
     }
 
-    findDevice(): void {
-      this.formSubmit = true;
+    searchDevice(): void {
+        this.formSubmit = true;
         setTimeout(() => {
             this.formSubmit = false;
-            this.findDeviceForm.controls['serialNumber'].setErrors({ deviceNotFound: true });
+            this._changeDetectorRef.detectChanges();
+            this.searchDeviceForm.controls['serialNumber'].setErrors({ deviceNotFound: true });
             this.serialNumberInput.nativeElement.focus();
         }, 3000);
     }

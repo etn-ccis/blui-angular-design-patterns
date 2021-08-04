@@ -6,38 +6,42 @@ section.mat-typography {
     padding-top: 40px;
     max-width: 480px;
     margin: 0 auto;
-    .form-header {
-        margin-bottom: 24px;
+    .find-device {
+        padding-top: 8px;
+        mat-form-field {
+            width: 100%;
+            margin-bottom: 24px;
+        }
     }
 }
-
-mat-form-field {
-    width: 100%;
-    margin-bottom: 24px;
+.button-container {
+    text-align: right;
+    .text-container {
+        display: flex;
+        align-items: center;
+        mat-icon {
+            margin-right: 4px;
+            margin-left: -4px;
+        }
+    }
 }
 
 ::ng-deep .pxb-drawer-layout-nav-content {
     background-color: map-get($pxb-white, 50);
 }
-.button-block {
+
+.find-device-button {
     ::ng-deep .mat-progress-spinner,
-        .mat-spinner {
-            circle {
-                stroke: map-get($pxb-white, 50);
-            }
+    .mat-spinner {
+        circle {
+            stroke: map-get($pxb-white, 50);
         }
-}
-
-
-.text-container {
-    display: flex;
-    align-items: center;
+    }
 }
 
 .button-container {
     .show-text {
         .text-container {
-            display: flex;
             animation: fadeInAnimation $duration $animationTimingFunction;
         }
         .spinner-container {
@@ -58,6 +62,11 @@ mat-form-field {
                 margin: 0 auto;
             }
         }
+    }
+}
+@media only screen and (max-width: 600px) {
+    section.mat-typography {
+        padding: 16px;
     }
 }
 

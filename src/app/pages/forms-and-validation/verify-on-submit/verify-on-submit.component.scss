@@ -30,7 +30,8 @@ section.mat-typography {
     background-color: map-get($pxb-white, 50);
 }
 
-.find-device-button {
+.search-device-btn {
+    width: 152px;
     ::ng-deep .mat-progress-spinner,
     .mat-spinner {
         circle {

@@ -30,7 +30,7 @@
                 mat-flat-button
                 color="primary"
                 [disabled]="!searchDeviceForm.controls.serialNumber.value"
-                [ngClass]="formSubmit ? 'find-device-button show-spinner' : 'show-text'"
+                [ngClass]="formSubmit ? 'show-spinner' : 'show-text'"
                 (click)="searchDevice()"
             >
                 <span data-cy="search-button" class="text-container">

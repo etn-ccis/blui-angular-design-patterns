@@ -67,13 +67,14 @@
                 [style.marginRight.px]="rtl ? 0 : -8"
                 (click)="toggleI18nMenu()"
             >
-                <mat-icon [class.rtl]="rtl" aria-label="Side nav toggle icon">menu_open</mat-icon>
+                <mat-icon data-cy="R2L-menu" [class.rtl]="rtl" aria-label="Side nav toggle icon">menu_open</mat-icon>
             </button>
         </mat-toolbar>
 
         <mat-toolbar class="select-language">
             <mat-form-field>
                 <mat-select
+                    data-cy="change-language"
                     #langeSelect
                     (ngModelChange)="translate.use(langeSelect.value)"
                     [(ngModel)]="selectedLanguage"

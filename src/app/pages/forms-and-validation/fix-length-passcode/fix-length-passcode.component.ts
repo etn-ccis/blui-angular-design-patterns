@@ -105,11 +105,12 @@ export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
         this._drawerService.setDrawerOpen(!drawerOpen);
     }
 
-    matcher(event: KeyboardEvent): void {
-        const allowedRegex = /[0-9]/g;
-        if (!event.key.match(allowedRegex)) {
-            event.preventDefault();
+    numberOnly(event: KeyboardEvent): boolean {
+        const charCode = event.which ? event.which : event.keyCode;
+        if (charCode > 31 && (charCode < 40 || charCode > 57)) {
+            return false;
         }
+        return true;
     }
 
     resetForm(): void {

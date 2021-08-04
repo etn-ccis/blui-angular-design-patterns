@@ -27,7 +27,7 @@
                 required
                 formControlName="passcode"
                 [errorStateMatcher]="errorMatcher"
-                (keypress)="matcher($event)"
+                (keypress)="numberOnly($event)"
                 type="text"
                 maxlength="6"
                 data-cy="passcode"

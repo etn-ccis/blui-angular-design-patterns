@@ -44,7 +44,7 @@ export class VerifyOnSubmitComponent implements OnInit {
 
     initForm(): void {
         this.searchDeviceForm = this._formBuilder.group({
-            serialNumber: [{ value: '' }, [Validators.required]],
+            serialNumber: ['', [Validators.required]],
         });
     }
 

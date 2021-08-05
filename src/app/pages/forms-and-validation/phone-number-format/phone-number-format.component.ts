@@ -38,7 +38,6 @@ export class PhoneNumberFormatComponent implements OnInit {
             });
     }
 
-
     initForm(): void {
         this.countryFormControl = new FormControl('US', Validators.required);
         this.phoneNumberFormControl = new FormControl('', Validators.required);
@@ -49,6 +48,15 @@ export class PhoneNumberFormatComponent implements OnInit {
             return item.value === this.countryFormControl.value;
         });
         this.countryPlaceholder = selectedCountryDetails[0].placeholder;
+    }
+
+    //this accepts only number in phone number input field
+    numberOnly(event: KeyboardEvent): boolean {
+        const charCode = event.which ? event.which : event.keyCode;
+        if (charCode > 31 && (charCode < 40 || charCode > 57)) {
+            return false;
+        }
+        return true;
     }
 
     toggleMenu(): void {

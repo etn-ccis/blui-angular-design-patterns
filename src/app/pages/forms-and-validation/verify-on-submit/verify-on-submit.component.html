@@ -18,10 +18,12 @@
                 type="text"
                 data-cy="serial-number"
                 #serialNumberInput
-                (keydown.enter)="searchDevice()"
             />
             <mat-error *ngIf="searchDeviceForm.controls.serialNumber.errors?.deviceNotFound">
                 Device not found.
+            </mat-error>
+            <mat-error *ngIf="searchDeviceForm.controls.serialNumber.errors?.required">
+                Serial number required
             </mat-error>
         </mat-form-field>
         <div class="button-container">

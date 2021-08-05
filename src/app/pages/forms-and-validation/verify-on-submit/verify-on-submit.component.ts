@@ -13,7 +13,7 @@ export class VerifyOnSubmitComponent implements OnInit {
     isSmall: boolean;
     searchDeviceForm: FormGroup;
     formSubmit = false;
-
+    serialNumberUpdate = false;
     @ViewChild('serialNumberInput') serialNumberInput: ElementRef;
 
     constructor(
@@ -46,14 +46,23 @@ export class VerifyOnSubmitComponent implements OnInit {
         this.searchDeviceForm = this._formBuilder.group({
             serialNumber: ['', [Validators.required]],
         });
+
+        this.searchDeviceForm.get('serialNumber').valueChanges.subscribe(() => {
+            this.serialNumberUpdate = true;
+        });
     }
 
     searchDevice(): void {
         this.formSubmit = true;
         setTimeout(() => {
             this.formSubmit = false;
+            if (this.searchDeviceForm.valid && this.serialNumberUpdate) {
+                this.searchDeviceForm.controls['serialNumber'].setErrors({ deviceNotFound: true });
+                this.serialNumberUpdate = false;
+            } else {
+                this.searchDeviceForm.controls['serialNumber'].setErrors(null);
+            }
             this._changeDetectorRef.detectChanges();
-            this.searchDeviceForm.controls['serialNumber'].setErrors({ deviceNotFound: true });
             this.serialNumberInput.nativeElement.focus();
         }, 3000);
     }

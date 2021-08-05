@@ -8,7 +8,7 @@ describe('Responsive table', () => {
         cy.visit('localhost:4200/lists/responsive-table')
         cy.get('[data-cy=pxb-toolbar]').should('contain', 'Responsive Table')
         cy.get('.mat-header-row').should('contain', 'Name').and('contain', 'Details')
-        cy.get('[data-cy=toolbar-menu]').should('not.be.visible')
+        cy.get('[data-cy=pxb-toolbar]').should('not.contain.value', 'data-cy=toolbar-menu')
         
     });
 

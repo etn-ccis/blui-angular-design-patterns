@@ -21,6 +21,7 @@ import { ContextualSpinnersComponent } from './pages/loading-waiting-states/cont
 import { SkeletonLoaderComponent } from './pages/loading-waiting-states/skeleton-loader/skeleton-loader.component';
 import { PasswordComponent } from './pages/forms-and-validation/password/password.component';
 import { VerifyOnSubmitComponent } from './pages/forms-and-validation/verify-on-submit/verify-on-submit.component';
+import { FixLengthPasscodeComponent } from './pages/forms-and-validation/fix-length-passcode/fix-length-passcode.component';
 
 export type DrawerItem = {
     title: string;
@@ -62,10 +63,15 @@ export const ROUTES: DrawerItem[] = [
                 component: PasswordComponent,
             },
             {
+                title: 'Fixed Length Passcode',
+                path: 'fixed-length-passcode',
+                component: FixLengthPasscodeComponent,
+            },
+            {
                 title: 'Verify on Submit',
                 path: 'verify-on-submit',
                 component: VerifyOnSubmitComponent,
-            },
+            }
         ],
     },
     {

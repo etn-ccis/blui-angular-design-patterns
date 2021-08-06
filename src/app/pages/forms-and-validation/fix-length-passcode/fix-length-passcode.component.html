@@ -1,0 +1,68 @@
+<mat-toolbar color="primary" class="app-bar mat-elevation-z2" data-cy="pxb-toolbar">
+    <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Fixed Length Passcode</div>
+</mat-toolbar>
+<section class="mat-typography" [class.small]="isSmall">
+    <div class="mat-body-1 passcode-form-message">
+        <p>
+            Please enter the <strong>six-digit passcode</strong> we just send to you. The passcode is valid for 15
+            minutes.
+        </p>
+        <p>
+            For the purpose of this demonstration, passcode <strong>123456</strong> will pass. Any other 6 digit
+            passcode will fail.
+        </p>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <form [formGroup]="passcodeForm" class="passcode-form">
+        <mat-form-field appearance="fill">
+            <mat-label>Passcode</mat-label>
+            <input
+                matInput
+                placeholder="Passcode"
+                required
+                formControlName="passcode"
+                [errorStateMatcher]="errorMatcher"
+                (keypress)="numberOnly($event)"
+                type="text"
+                maxlength="6"
+                data-cy="passcode"
+                inputmode="numeric"
+                (keyup)="checkPasscode($event.target.value)"
+                (blur)="validatePasscodeLength($event.target.value)"
+                #passcodeInput
+            />
+            <button
+                mat-icon-button
+                matSuffix
+                *ngIf="showSuffix"
+                class="suffix-icons"
+                [ngClass]="showSuffix && showLoading ? 'show-spinner' : 'show-icon'"
+            >
+                <mat-icon class="spinner-container">
+                    <mat-spinner class="primary-spinner" diameter="20"></mat-spinner>
+                </mat-icon>
+                <mat-icon class="icon-container" [style.color]="successColor">done</mat-icon>
+            </button>
+            <mat-error
+                *ngIf="
+                    passcodeFormControl.passcode.errors?.required ||
+                    passcodeFormControl.passcode.errors?.passcodeLengthNotMatch
+                "
+            >
+                Please enter a six-digit passcode.
+            </mat-error>
+            <mat-error *ngIf="passcodeFormControl.passcode.errors?.invalidPasscode">
+                Incorrect Passcode.
+            </mat-error>
+        </mat-form-field>
+        <button class="reset-btn" mat-stroked-button color="primary" (click)="resetForm()" [disabled]="showLoading">
+            <mat-icon>refresh</mat-icon>
+            Reset Form
+        </button>
+    </form>
+</section>

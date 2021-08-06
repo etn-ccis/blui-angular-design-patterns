@@ -45,6 +45,7 @@ import { ProgressBarsModule } from './pages/loading-waiting-states/progress-bars
 import { SkeletonLoaderModule } from './pages/loading-waiting-states/skeleton-loader/skeleton-loader.module';
 import { PasswordModule } from './pages/forms-and-validation/password/password.module';
 import { VerifyOnSubmitModule } from './pages/forms-and-validation/verify-on-submit/verify-on-submit.module';
+import { FixLengthPasscodeModule } from './pages/forms-and-validation/fix-length-passcode/fix-length-passcode.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -90,6 +91,7 @@ import { VerifyOnSubmitModule } from './pages/forms-and-validation/verify-on-sub
         SkeletonLoaderModule,
         PasswordModule,
         VerifyOnSubmitModule,
+        FixLengthPasscodeModule,
     ],
     bootstrap: [AppComponent],
 })

@@ -1,0 +1,95 @@
+@import '~@pxblue/colors/palette.scss';
+
+section.mat-typography {
+    max-width: 512px;
+    margin: 0 auto;
+
+    .container-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 32px;
+        mat-icon {
+            margin-right: 16px;
+            color: map-get($pxb-gray, 500);
+        }
+        h2 {
+            margin-bottom: 0;
+        }
+    }
+    .factory-details-container {
+        padding: 40px 16px 0;
+    }
+}
+
+mat-form-field {
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.factory-sub-fields {
+    display: flex;
+    mat-form-field {
+        width: 208px;
+        margin-right: 16px;
+    }
+    .pxb-protection-details {
+        width: 256px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        .mat-icon {
+            height: 20px;
+            width: 20px;
+            font-size: 20px;
+            color: map-get($pxb-black, 100);
+            cursor: pointer;
+            margin-left: 16px;
+        }
+    }
+}
+
+.factory-address-details {
+    .address-note {
+        margin-top: -8px;
+        margin-bottom: 32px;
+    }
+    .address-sub-fields {
+        display: flex;
+        .state-input {
+            width: 132px;
+            padding-right: 16px;
+        }
+        .zip-code-input {
+            width: 140px;
+            padding-right: 16px;
+        }
+    }
+}
+
+.contact-details {
+    .contact-sub-fields {
+        display: flex;
+        mat-form-field {
+            width: 50%;
+            &:first-child {
+                margin-right: 16px;
+            }
+        }
+    }
+}
+
+.form-action {
+    text-align: right;
+    .submit-button {
+        margin: 0 16px;
+        margin-bottom: 96px;
+    }
+}
+
+::ng-deep .mat-checkbox-inner-container {
+    margin-right: 16px !important;
+}
+
+::ng-deep .pxb-drawer-layout-nav-content {
+    background-color: map-get($pxb-white, 50);
+}

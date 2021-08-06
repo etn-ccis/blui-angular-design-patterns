@@ -1,18 +1,29 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
+import { FormGroup } from '@angular/forms';
 import { StateService } from '../../../services/state.service';
-import * as Colors from '@pxblue/colors';
+
 @Component({
-    selector: 'app-skeleton-loader',
-    templateUrl: './skeleton-loader.component.html',
-    styleUrls: ['./skeleton-loader.component.scss'],
+    selector: 'app-sectioned-form',
+    templateUrl: './sectioned-form.component.html',
+    styleUrls: ['./sectioned-form.component.scss'],
 })
-export class SkeletonLoaderComponent implements OnInit, OnDestroy {
+export class SectionedFormComponent implements OnInit {
     isSmall: boolean;
-    checked = false;
-    colors = Colors;
-    showPlaceHolder = true;
-    interval;
+    factoryDetailsForm: FormGroup;
+    selectedLevel = 'level-2';
+    selectedState = '';
+    levels: any[] = [
+        { value: 'level-1', viewValue: 'Level I (Regional)' },
+        { value: 'level-2', viewValue: 'Level II (Regional)' },
+        { value: 'level-3', viewValue: 'Level III (Regional)' },
+    ];
+
+    states: any[] = [
+        { value: 'state-1', viewValue: 'State 1' },
+        { value: 'state-2', viewValue: 'State 2' },
+        { value: 'state-3', viewValue: 'State 3' },
+    ];
 
     constructor(
         private readonly _drawerService: StateService,
@@ -29,18 +40,6 @@ export class SkeletonLoaderComponent implements OnInit, OnDestroy {
                     this.isSmall = false;
                 }
             });
-
-        this.loadData();
-    }
-
-    ngOnDestroy(): void {
-        clearInterval(this.interval);
-    }
-
-    loadData(): void {
-        this.interval = setInterval(() => {
-            this.showPlaceHolder = !this.showPlaceHolder;
-        }, 5000);
     }
 
     toggleMenu(): void {

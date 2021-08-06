@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { StateService } from '../../../services/state.service';
 
 @Component({
@@ -24,11 +24,16 @@ export class SectionedFormComponent implements OnInit {
         { value: 'state-2', viewValue: 'State 2' },
         { value: 'state-3', viewValue: 'State 3' },
     ];
+    @ViewChild('target') targetRef: ElementRef;
 
     constructor(
         private readonly _drawerService: StateService,
-        private readonly _breakpointObserver: BreakpointObserver
-    ) {}
+        private readonly _breakpointObserver: BreakpointObserver,
+        private readonly _formBuilder: FormBuilder,
+        private _el: ElementRef
+    ) {
+        this.initForm();
+    }
 
     ngOnInit(): void {
         this._breakpointObserver
@@ -42,8 +47,44 @@ export class SectionedFormComponent implements OnInit {
             });
     }
 
+    initForm(): void {
+        this.factoryDetailsForm = this._formBuilder.group({
+            factoryName: ['', Validators.required],
+            levelOption: ['level-2', Validators.required],
+            pxbProtectionChecked: [false],
+            addressOne: ['', Validators.required],
+            addressTwo: [''],
+            city: ['', Validators.required],
+            state: ['', Validators.required],
+            zipCode: ['', Validators.required],
+            country: [{ value: 'United States', disabled: true }, [Validators.required]],
+            contactName: ['', Validators.required],
+            contactLastName: [''],
+            email: [
+                '',
+                Validators.compose([
+                    Validators.required,
+                    Validators.email,
+                    Validators.pattern(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i),
+                ]),
+            ],
+        });
+    }
+
     toggleMenu(): void {
         const drawerOpen = this._drawerService.getDrawerOpen();
         this._drawerService.setDrawerOpen(!drawerOpen);
     }
+
+    submit(){
+        console.log(this.factoryDetailsForm.valid);
+        const a =this._el.nativeElement.querySelector(
+            "form .ng-invalid"
+          );
+      
+        if(this.factoryDetailsForm.valid){
+          console.log(this.factoryDetailsForm.value);
+        }
+        a.scrollIntoView({behavior:"smooth", block: "end", inline: "nearest"});
+      }
 }

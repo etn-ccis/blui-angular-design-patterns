@@ -93,3 +93,39 @@ mat-form-field {
 ::ng-deep .pxb-drawer-layout-nav-content {
     background-color: map-get($pxb-white, 50);
 }
+
+$grey1: #333;
+$grey3: #666;
+$white: #fff;
+
+::ng-deep .tooltip-pd {
+  /* position:relative; */ /* REMOVED */
+//   padding: 0.738rem 1.113rem;
+  color: map-get($pxb-gray,50 );
+//   margin-bottom: 5px;
+//   white-space: pre-line;
+  width: 230px;
+  height: 40px;
+//   font-size: 0.9rem;
+  background: #000000;
+//   border-radius: 7px;
+  overflow: visible !important; /* NEW */
+  margin-bottom: 4px!important;;
+//   left: -200px !important;
+//   bottom: -10px !important;
+//   border: 2px solid $grey3;
+border-radius: 3px;
+padding: 4px 8px;
+  &:after {
+    content: " ";
+    position:absolute;
+    bottom:-4px; /* previous value: bottom:-10px; */
+    left: 48%;
+    z-index:999;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 4px 4px 0 4px;
+    border-color: #000000 transparent transparent transparent;
+}
+}

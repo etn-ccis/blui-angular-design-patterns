@@ -36,25 +36,25 @@ mat-form-field {
 .suffix-icons {
     .spinner-container,
     .icon-container {
-        display: none!important;
+        display: none;
     }
 }
 .show-spinner {
     .spinner-container {
-        display: block!important;
+        display: block;
         animation: fadeInAnimation $duration $animationTimingFunction;
     }
     .icon-container {
-        display: none!important;
+        display: none;
     }
 }
 
 .show-icon {
     .spinner-container {
-        display: none!important;
+        display: none;
     }
     .icon-container {
-        display: block!important;
+        display: block;
         animation: fadeInAnimation $duration $animationTimingFunction;
     }
 }

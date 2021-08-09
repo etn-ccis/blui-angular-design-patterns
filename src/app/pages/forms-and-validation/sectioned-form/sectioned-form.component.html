@@ -23,7 +23,6 @@
                         maxlength="50"
                         #input
                     />
-                    <!-- <mat-hint></mat-hint> -->
                     <mat-hint align="end" data-cy="char-count">{{ input.value?.length || 0 }}/50</mat-hint>
                     <mat-error *ngIf="factoryDetailsForm.get('factoryName').hasError('required') && myform.submitted">
                         Name is required
@@ -32,7 +31,7 @@
                 <div class="factory-sub-fields">
                     <mat-form-field appearance="fill">
                         <mat-label>Level</mat-label>
-                        <mat-select formControlName="levelOption">
+                        <mat-select formControlName="levelOption" disableOptionCentering>
                             <mat-option *ngFor="let level of levels" [value]="level.value">
                                 {{ level.viewValue }}
                             </mat-option>
@@ -51,6 +50,7 @@
                             [matTooltipClass]="'tooltip-pd'"
                             >help_outline</mat-icon
                         >
+                        <p class="mat-body-1 pxb-protection-desc" style="margin-bottom: 32px;">PXB Protection provides a three-year power expert warranty.</p>
                     </div>
                 </div>
             </div>
@@ -136,8 +136,8 @@
             <div class="form-fields">
                 <div class="contact-sub-fields">
                     <mat-form-field appearance="fill">
-                        <mat-label>Name</mat-label>
-                        <input matInput placeholder="Name" type="text" data-cy="contact-name" formControlName="contactName" />
+                        <mat-label>First Name</mat-label>
+                        <input matInput placeholder="First Name" type="text" data-cy="contact-name" formControlName="contactName" />
                         <mat-error *ngIf="factoryDetailsForm.get('contactName').hasError('required') && myform.submitted">
                             Contact name is required
                         </mat-error>
@@ -156,7 +156,7 @@
                 </mat-form-field>
             </div>
         </div>
-
+        <mat-divider class="bottom-divider"></mat-divider>
         <div class="form-action">
             <button class="submit-button" type="submit" mat-flat-button color="primary" (click)="submit()">
                 Submit

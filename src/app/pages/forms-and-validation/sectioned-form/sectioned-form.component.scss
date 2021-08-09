@@ -20,7 +20,8 @@ section.mat-typography {
         padding: 40px 16px 0;
     }
 
-    .bottom-divider, .pxb-protection-desc {
+    .bottom-divider,
+    .pxb-protection-desc {
         display: none;
     }
 }
@@ -60,12 +61,15 @@ mat-form-field {
     .address-sub-fields {
         display: flex;
         .state-input {
-            width: 132px;
+            width: 30%;
             padding-right: 16px;
         }
         .zip-code-input {
-            width: 140px;
+            width: 30%;
             padding-right: 16px;
+        }
+        .country-input {
+            width: 40%;
         }
     }
 }
@@ -86,7 +90,6 @@ mat-form-field {
     text-align: right;
     .submit-button {
         margin: 0 16px;
-        margin-bottom: 96px;
     }
 }
 
@@ -98,32 +101,27 @@ mat-form-field {
     background-color: map-get($pxb-white, 50);
 }
 
-$grey1: #333;
-$grey3: #666;
-$white: #fff;
-
 ::ng-deep .tooltip-pd {
-  color: map-get($pxb-gray,50 );
-  width: 230px;
-  height: 40px;
-//   opacity: 0.2;
-  background: map-get($pxb-darkBlack, 900);
-  overflow: visible !important;
-  margin-bottom: 4px!important;;
+    color: map-get($pxb-gray, 50);
+    width: 230px;
+    height: 40px;
+    background: map-get($pxb-darkBlack, 900);
+    overflow: visible !important;
+    margin-bottom: 4px !important;
     border-radius: 3px;
     padding: 4px 8px;
-  &:after {
-    content: " ";
-    position:absolute;
-    bottom:-4px;
-    left: 48%;
-    z-index:999;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 4px 4px 0 4px;
-    border-color: map-get($pxb-darkBlack, 900) transparent transparent transparent;
-}
+    &:after {
+        content: ' ';
+        position: absolute;
+        bottom: -4px;
+        left: 48%;
+        z-index: 999;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 4px 4px 0 4px;
+        border-color: map-get($pxb-darkBlack, 900) transparent transparent transparent;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -174,6 +172,16 @@ $white: #fff;
                         margin-right: 0;
                     }
                 }
+            }
+        }
+        .bottom-divider {
+            display: block;
+        }
+        .form-action {
+            margin: 16px;
+            .submit-button {
+                width: 100%;
+                margin: 0;
             }
         }
     }

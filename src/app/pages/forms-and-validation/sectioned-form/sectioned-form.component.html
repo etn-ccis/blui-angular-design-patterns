@@ -1,166 +1,210 @@
-<mat-toolbar color="primary" class="app-bar mat-elevation-z2" data-cy="pxb-toolbar">
-    <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
-        <mat-icon>menu</mat-icon>
-    </button>
-    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Sectioned Form</div>
-</mat-toolbar>
-<section class="mat-typography" [class.small]="isSmall">
-    <form [formGroup]="factoryDetailsForm" #myform="ngForm" class="factory-details-form">
-        <div class="factory-details-container" #target>
-            <div class="container-header">
-                <mat-icon svgIcon="px-icons:factory"></mat-icon>
-                <h2>Factory</h2>
-            </div>
-            <div class="form-fields">
-                <mat-form-field hintLabel="For Example, Facility or Campus name" appearance="fill">
-                    <mat-label>Name</mat-label>
-                    <input 
-                        matInput 
-                        placeholder="Name" 
-                        type="text" 
-                        data-cy="name"
-                        formControlName="factoryName"
-                        maxlength="50"
-                        #input
-                    />
-                    <mat-hint align="end" data-cy="char-count">{{ input.value?.length || 0 }}/50</mat-hint>
-                    <mat-error *ngIf="factoryDetailsForm.get('factoryName').hasError('required') && myform.submitted">
-                        Name is required
-                    </mat-error>
-                </mat-form-field>
-                <div class="factory-sub-fields">
-                    <mat-form-field appearance="fill">
-                        <mat-label>Level</mat-label>
-                        <mat-select formControlName="levelOption" disableOptionCentering>
-                            <mat-option *ngFor="let level of levels" [value]="level.value">
-                                {{ level.viewValue }}
-                            </mat-option>
-                        </mat-select>
-                        <mat-error *ngIf="factoryDetailsForm.get('levelOption').hasError('required') && myform.submitted">
-                            Factory level is required
+<div class="sectioned-form" style="overflow-x: hidden" fxFlexFill cdkScrollable>
+    <mat-toolbar color="primary" class="app-bar mat-elevation-z2" data-cy="pxb-toolbar">
+        <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Sectioned Form</div>
+    </mat-toolbar>
+    <section class="mat-typography" [class.small]="isSmall">
+        <form [formGroup]="factoryDetailsForm" #myform="ngForm" class="factory-details-form" #form>
+            <div class="factory-details-container" #target>
+                <div class="container-header">
+                    <mat-icon svgIcon="px-icons:factory"></mat-icon>
+                    <h2>Factory</h2>
+                </div>
+                <div class="form-fields">
+                    <mat-form-field hintLabel="For Example, Facility or Campus name" appearance="fill">
+                        <mat-label>Name</mat-label>
+                        <input
+                            matInput
+                            placeholder="Name"
+                            type="text"
+                            data-cy="name"
+                            formControlName="factoryName"
+                            maxlength="50"
+                            #input
+                        />
+                        <mat-hint align="end" data-cy="char-count">{{ input.value?.length || 0 }}/50</mat-hint>
+                        <mat-error
+                            *ngIf="factoryDetailsForm.get('factoryName').hasError('required') && myform.submitted"
+                        >
+                            Name is required
                         </mat-error>
                     </mat-form-field>
-                    <div class="pxb-protection-details">
-                        <mat-checkbox class="pxb-protection" formControlName="pxbProtectionChecked">
-                            PXB Protection
-                        </mat-checkbox>
-                        <mat-icon
-                            matTooltip="PXB Protection provides a three-year power expert warranty."
-                            matTooltipPosition="above"
-                            [matTooltipClass]="'tooltip-pd'"
-                            >help_outline</mat-icon
-                        >
-                        <p class="mat-body-1 pxb-protection-desc" style="margin-bottom: 32px;">PXB Protection provides a three-year power expert warranty.</p>
+                    <div class="factory-sub-fields">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Level</mat-label>
+                            <mat-select formControlName="levelOption" disableOptionCentering>
+                                <mat-option *ngFor="let level of levels" [value]="level.value">
+                                    {{ level.viewValue }}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error
+                                *ngIf="factoryDetailsForm.get('levelOption').hasError('required') && myform.submitted"
+                            >
+                                Factory level is required
+                            </mat-error>
+                        </mat-form-field>
+                        <div class="pxb-protection-details">
+                            <mat-checkbox class="pxb-protection" formControlName="pxbProtectionChecked">
+                                PXB Protection
+                            </mat-checkbox>
+                            <mat-icon
+                                matTooltip="PXB Protection provides a three-year power expert warranty."
+                                matTooltipPosition="above"
+                                [matTooltipClass]="'tooltip-pd'"
+                                >help_outline</mat-icon
+                            >
+                            <p class="mat-body-1 pxb-protection-desc" style="margin-bottom: 32px;">
+                                PXB Protection provides a three-year power expert warranty.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <mat-divider></mat-divider>
+            <mat-divider></mat-divider>
 
-        <div class="factory-details-container factory-address-details">
-            <div class="container-header">
-                <mat-icon>location_on</mat-icon>
-                <h2>Address</h2>
-            </div>
-            <p class="mat-body-1 address-note">
-                Note that different country write addresses in different ways. The following fields are for United
-                States address.
-            </p>
-            <div class="form-fields">
-                <mat-form-field appearance="fill">
-                    <mat-label>Address</mat-label>
-                    <input matInput formControlName="addressOne" placeholder="Address" type="text" data-cy="address-one"/>
-                    <mat-error *ngIf="factoryDetailsForm.get('addressOne').hasError('required') && myform.submitted">
-                        Address is required
-                    </mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Address Line 2</mat-label>
-                    <input
-                        matInput
-                        placeholder="Address Line 2 (Optional)"
-                        formControlName="addressTwo"
-                        type="text"
-                        data-cy="address-two"
-                    />
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>City</mat-label>
-                    <input matInput formControlName="city" placeholder="City" type="text" data-cy="city" />
-                    <mat-error *ngIf="factoryDetailsForm.get('city').hasError('required') && myform.submitted">
-                        City is required
-                    </mat-error>
-                </mat-form-field>
-                <div class="address-sub-fields">
-                    <mat-form-field appearance="fill" class="state-input">
-                        <mat-label>State</mat-label>
-                        <mat-select formControlName="state">
-                            <mat-option *ngFor="let state of states" [value]="state.value">
-                                {{ state.viewValue }}
-                            </mat-option>
-                        </mat-select>
-                        <mat-error *ngIf="factoryDetailsForm.get('state').hasError('required') && myform.submitted">
-                            State is required
-                        </mat-error>
-                    </mat-form-field>
-                    <mat-form-field appearance="fill" class="zip-code-input">
-                        <mat-label>Zip Code</mat-label>
-                        <input matInput formControlName="zipCode" placeholder="Zip Code" type="text" data-cy="zip-code" />
-                        <mat-error *ngIf="factoryDetailsForm.get('zipCode').hasError('required') && myform.submitted">
-                            Zip code is required
-                        </mat-error>
-                    </mat-form-field>
-                    <mat-form-field appearance="fill" class="country-input">
-                        <mat-label>Country</mat-label>
+            <div class="factory-details-container factory-address-details">
+                <div class="container-header">
+                    <mat-icon>location_on</mat-icon>
+                    <h2>Address</h2>
+                </div>
+                <p class="mat-body-1 address-note">
+                    Note that different country write addresses in different ways. The following fields are for United
+                    States address.
+                </p>
+                <div class="form-fields">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Address</mat-label>
                         <input
                             matInput
-                            placeholder="Country"
+                            formControlName="addressOne"
+                            placeholder="Address"
                             type="text"
-                            data-cy="country"
-                            formControlName="country"
-                            [disabled]="true"
+                            data-cy="address-one"
                         />
-                    </mat-form-field>
-                </div>
-            </div>
-        </div>
-
-        <mat-divider></mat-divider>
-
-        <div class="factory-details-container contact-details">
-            <div class="container-header">
-                <mat-icon>contact_mail</mat-icon>
-                <h2>Key Contact</h2>
-            </div>
-            <div class="form-fields">
-                <div class="contact-sub-fields">
-                    <mat-form-field appearance="fill">
-                        <mat-label>First Name</mat-label>
-                        <input matInput placeholder="First Name" type="text" data-cy="contact-name" formControlName="contactName" />
-                        <mat-error *ngIf="factoryDetailsForm.get('contactName').hasError('required') && myform.submitted">
-                            Contact name is required
+                        <mat-error
+                            *ngIf="factoryDetailsForm.get('addressOne').hasError('required') && myform.submitted"
+                        >
+                            Address is required
                         </mat-error>
                     </mat-form-field>
                     <mat-form-field appearance="fill">
-                        <mat-label>Last Name (Optional)</mat-label>
-                        <input matInput placeholder="Last Name (Optional)" type="text" data-cy="last-name" formControlName="contactLastName" />
+                        <mat-label>Address Line 2</mat-label>
+                        <input
+                            matInput
+                            placeholder="Address Line 2 (Optional)"
+                            formControlName="addressTwo"
+                            type="text"
+                            data-cy="address-two"
+                        />
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>City</mat-label>
+                        <input matInput formControlName="city" placeholder="City" type="text" data-cy="city" />
+                        <mat-error *ngIf="factoryDetailsForm.get('city').hasError('required') && myform.submitted">
+                            City is required
+                        </mat-error>
+                    </mat-form-field>
+                    <div class="address-sub-fields">
+                        <mat-form-field appearance="fill" class="state-input">
+                            <mat-label>State</mat-label>
+                            <mat-select formControlName="state">
+                                <mat-option *ngFor="let state of states" [value]="state.value">
+                                    {{ state.viewValue }}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="factoryDetailsForm.get('state').hasError('required') && myform.submitted">
+                                State is required
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="zip-code-input">
+                            <mat-label>Zip Code</mat-label>
+                            <input
+                                matInput
+                                formControlName="zipCode"
+                                placeholder="Zip Code"
+                                type="text"
+                                data-cy="zip-code"
+                            />
+                            <mat-error
+                                *ngIf="factoryDetailsForm.get('zipCode').hasError('required') && myform.submitted"
+                            >
+                                Zip code is required
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="country-input">
+                            <mat-label>Country</mat-label>
+                            <input
+                                matInput
+                                placeholder="Country"
+                                type="text"
+                                data-cy="country"
+                                formControlName="country"
+                                [disabled]="true"
+                            />
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+
+            <mat-divider></mat-divider>
+
+            <div class="factory-details-container contact-details">
+                <div class="container-header">
+                    <mat-icon>contact_mail</mat-icon>
+                    <h2>Key Contact</h2>
+                </div>
+                <div class="form-fields">
+                    <div class="contact-sub-fields">
+                        <mat-form-field appearance="fill">
+                            <mat-label>First Name</mat-label>
+                            <input
+                                matInput
+                                placeholder="First Name"
+                                type="text"
+                                data-cy="contact-name"
+                                formControlName="contactName"
+                            />
+                            <mat-error
+                                *ngIf="factoryDetailsForm.get('contactName').hasError('required') && myform.submitted"
+                            >
+                                Contact name is required
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Last Name (Optional)</mat-label>
+                            <input
+                                matInput
+                                placeholder="Last Name (Optional)"
+                                type="text"
+                                data-cy="last-name"
+                                formControlName="contactLastName"
+                            />
+                        </mat-form-field>
+                    </div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Email Address</mat-label>
+                        <input
+                            matInput
+                            placeholder="Email Address"
+                            type="text"
+                            data-cy="email-adress"
+                            formControlName="email"
+                        />
+                        <mat-error *ngIf="factoryDetailsForm.get('email').hasError('required') && myform.submitted">
+                            Email address is required
+                        </mat-error>
                     </mat-form-field>
                 </div>
-                <mat-form-field appearance="fill">
-                    <mat-label>Email Address</mat-label>
-                    <input matInput placeholder="Email Address" type="text" data-cy="email-adress" formControlName="email" />
-                    <mat-error *ngIf="factoryDetailsForm.get('email').hasError('required') && myform.submitted">
-                        Email address is required
-                    </mat-error>
-                </mat-form-field>
             </div>
-        </div>
-        <mat-divider class="bottom-divider"></mat-divider>
-        <div class="form-action">
-            <button class="submit-button" type="submit" mat-flat-button color="primary" (click)="submit()">
-                Submit
-            </button>
-        </div>
-    </form>
-</section>
+            <mat-divider class="bottom-divider"></mat-divider>
+            <div class="form-action">
+                <button class="submit-button" type="submit" mat-flat-button color="primary" (click)="submit()">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </section>
+</div>

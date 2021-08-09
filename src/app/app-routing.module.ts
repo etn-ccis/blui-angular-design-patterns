@@ -71,7 +71,7 @@ export const ROUTES: DrawerItem[] = [
                 title: 'Verify on Submit',
                 path: 'verify-on-submit',
                 component: VerifyOnSubmitComponent,
-            }
+            },
         ],
     },
     {

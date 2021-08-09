@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild, ElementRef, ChangeDetectionStrategy, Chan
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { StateService } from '../../../services/state.service';
-
 @Component({
     selector: 'app-verify-on-submit',
     templateUrl: './verify-on-submit.component.html',
@@ -11,6 +10,7 @@ import { StateService } from '../../../services/state.service';
 })
 export class VerifyOnSubmitComponent implements OnInit {
     isSmall: boolean;
+    isLeftPaneVisible = true;
     searchDeviceForm: FormGroup;
     formSubmit = false;
     serialNumberUpdate = false;
@@ -46,25 +46,30 @@ export class VerifyOnSubmitComponent implements OnInit {
         this.searchDeviceForm = this._formBuilder.group({
             serialNumber: ['', [Validators.required]],
         });
-
-        this.searchDeviceForm.get('serialNumber').valueChanges.subscribe(() => {
-            this.serialNumberUpdate = true;
-        });
     }
 
     searchDevice(): void {
         this.formSubmit = true;
         setTimeout(() => {
             this.formSubmit = false;
-            if (this.searchDeviceForm.valid && this.serialNumberUpdate) {
-                this.searchDeviceForm.controls['serialNumber'].setErrors({ deviceNotFound: true });
-                this.serialNumberUpdate = false;
+            const serialNumber = this.searchDeviceForm.controls['serialNumber'].value;
+            if (serialNumber === '123') {
+                this.isLeftPaneVisible = false;
+                this._changeDetectorRef.detectChanges();
             } else {
-                this.searchDeviceForm.controls['serialNumber'].setErrors(null);
+                this.searchDeviceForm.controls['serialNumber'].setErrors({ deviceNotFound: true });
+                this._changeDetectorRef.detectChanges();
+                this.serialNumberInput.nativeElement.focus();
             }
-            this._changeDetectorRef.detectChanges();
-            this.serialNumberInput.nativeElement.focus();
         }, 3000);
+    }
+
+    addAnotherDevice(): void {
+        this.isLeftPaneVisible = true;
+        this.searchDeviceForm.reset();
+        this.searchDeviceForm.controls['serialNumber'].setErrors(null);
+        this.serialNumberInput.nativeElement.focus();
+        this._changeDetectorRef.detectChanges();
     }
 
     toggleMenu(): void {

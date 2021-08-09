@@ -11,9 +11,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { VerifyOnSubmitComponent } from './verify-on-submit.component';
+import { SlidePanelComponent } from './slide-panel/slide-panel.component';
+import { EmptyStateModule } from '@pxblue/angular-components';
 
 @NgModule({
-    declarations: [VerifyOnSubmitComponent],
+    declarations: [VerifyOnSubmitComponent, SlidePanelComponent],
     imports: [
         BrowserModule,
         FormsModule,
@@ -26,6 +28,7 @@ import { VerifyOnSubmitComponent } from './verify-on-submit.component';
         MatInputModule,
         MatFormFieldModule,
         MatProgressSpinnerModule,
+        EmptyStateModule,
     ],
 })
 export class VerifyOnSubmitModule {}

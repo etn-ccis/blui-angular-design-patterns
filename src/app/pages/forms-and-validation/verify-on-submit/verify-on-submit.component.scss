@@ -2,7 +2,7 @@
 $duration: 200ms;
 $animationTimingFunction: ease-out;
 
-section.mat-typography {
+section.find-device {
     padding-top: 40px;
     max-width: 480px;
     margin: 0 auto;
@@ -66,7 +66,7 @@ section.mat-typography {
     }
 }
 @media only screen and (max-width: 600px) {
-    section.mat-typography {
+    section.find-device {
         padding: 16px;
     }
 }
@@ -88,4 +88,16 @@ section.mat-typography {
     100% {
         opacity: 1;
     }
+}
+
+.mat-toolbar .mat-progress-bar {
+    position: absolute;
+    margin: 0 -16px;
+    bottom: 0;
+}
+section.added-device {
+    height: calc(100vh - 64px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

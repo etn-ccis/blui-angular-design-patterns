@@ -23,12 +23,12 @@ export class SectionedFormComponent implements OnInit {
         { value: 'michigan', viewValue: 'Michigan' },
         { value: 'georgia', viewValue: 'Georgia' },
     ];
-    
+
     constructor(
         private readonly _drawerService: StateService,
         private readonly _breakpointObserver: BreakpointObserver,
         private readonly _formBuilder: FormBuilder,
-        private readonly _el: ElementRef,
+        private readonly _el: ElementRef
     ) {
         this.initForm();
     }
@@ -74,11 +74,9 @@ export class SectionedFormComponent implements OnInit {
         this._drawerService.setDrawerOpen(!drawerOpen);
     }
 
-    submit(): void{
-        const firstInvalidControl = this._el.nativeElement.querySelector(
-            "form .ng-invalid"
-        );
+    submit(): void {
+        const firstInvalidControl = this._el.nativeElement.querySelector('form .ng-invalid');
 
-        firstInvalidControl.scrollIntoView({behavior:"smooth", block: "start", inline: "nearest"});
-      }
+        firstInvalidControl.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+    }
 }

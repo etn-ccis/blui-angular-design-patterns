@@ -39,5 +39,5 @@ describe('SectionedFormComponent', () => {
         fixture.detectChanges();
         errors = factoryName.errors || {};
         expect(errors['required']).toBeFalsy();
-      });
+    });
 });

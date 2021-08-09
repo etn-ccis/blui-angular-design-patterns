@@ -9,6 +9,9 @@
     <div leftPane>
         <section class="find-device" [class.small]="isSmall">
             <h2>Find Device</h2>
+            <div class="mat-body-1 success-code-message">
+                <p>For the purpose of this demonstration, use <strong>123</strong> for successful device search.</p>
+            </div>
             <form [formGroup]="searchDeviceForm" class="find-device">
                 <mat-form-field appearance="fill">
                     <mat-label>Serial Number</mat-label>

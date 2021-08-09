@@ -12,7 +12,7 @@ type PaneDirection = 'left' | 'right';
         trigger('slide', [
             state('left', style({ transform: 'translateX(0)' })),
             state('right', style({ transform: 'translateX(-50%)' })),
-            transition('* => *', animate(500)),
+            transition('* => *', animate(250)),
         ]),
     ],
 })

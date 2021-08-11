@@ -19,9 +19,9 @@ export class SectionedFormComponent implements OnInit {
     ];
 
     states: any[] = [
-        { value: 'california', viewValue: 'California' },
-        { value: 'michigan', viewValue: 'Michigan' },
-        { value: 'georgia', viewValue: 'Georgia' },
+        { value: 'CA', viewValue: 'California' },
+        { value: 'MI', viewValue: 'Michigan' },
+        { value: 'GA', viewValue: 'Georgia' },
     ];
 
     constructor(

@@ -1,7 +1,13 @@
 import { Component, OnInit, ViewChild, ElementRef, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormControl, FormGroupDirective, NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core';
 import { StateService } from '../../../services/state.service';
+class CrossFieldErrorMatcher implements ErrorStateMatcher {
+    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+        return control.dirty && form.invalid;
+    }
+}
 @Component({
     selector: 'app-verify-on-submit',
     templateUrl: './verify-on-submit.component.html',
@@ -13,7 +19,7 @@ export class VerifyOnSubmitComponent implements OnInit {
     isLeftPaneVisible = true;
     searchDeviceForm: FormGroup;
     formSubmit = false;
-    serialNumberUpdate = false;
+    errorMatcher = new CrossFieldErrorMatcher();
     @ViewChild('serialNumberInput') serialNumberInput: ElementRef;
 
     constructor(
@@ -67,7 +73,6 @@ export class VerifyOnSubmitComponent implements OnInit {
     addAnotherDevice(): void {
         this.isLeftPaneVisible = true;
         this.searchDeviceForm.reset();
-        this.searchDeviceForm.controls['serialNumber'].setErrors(null);
         this.serialNumberInput.nativeElement.focus();
         this._changeDetectorRef.detectChanges();
     }

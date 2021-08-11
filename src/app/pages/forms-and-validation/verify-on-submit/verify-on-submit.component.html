@@ -7,7 +7,7 @@
 
 <pxb-slide-panel [activePane]="isLeftPaneVisible ? 'left' : 'right'">
     <div leftPane>
-        <section class="find-device" [class.small]="isSmall">
+        <section class="find-device">
             <h2>Find Device</h2>
             <div class="mat-body-1 success-code-message">
                 <p>For the purpose of this demonstration, use <strong>123</strong> for successful device search.</p>
@@ -23,12 +23,10 @@
                         type="text"
                         data-cy="serial-number"
                         #serialNumberInput
+                        [errorStateMatcher]="errorMatcher"
                     />
                     <mat-error *ngIf="searchDeviceForm.controls.serialNumber.errors?.deviceNotFound">
                         Device not found.
-                    </mat-error>
-                    <mat-error *ngIf="searchDeviceForm.controls.serialNumber.errors?.required">
-                        Serial number required
                     </mat-error>
                 </mat-form-field>
                 <div class="button-container">
@@ -53,7 +51,7 @@
         </section>
     </div>
     <div rightPane>
-        <section class="added-device" [class.small]="isSmall">
+        <section class="add-new-device">
             <pxb-empty-state title="Success" description="Device “123” has been added to your repository.">
                 <mat-icon pxb-empty-icon>check_circle</mat-icon>
                 <button mat-raised-button color="primary" pxb-actions (click)="addAnotherDevice()">

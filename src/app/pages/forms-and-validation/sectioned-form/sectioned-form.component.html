@@ -28,6 +28,7 @@
                             *ngIf="factoryDetailsForm.get('factoryName').hasError('required') && myform.submitted"
                         >
                             Required
+                            <mat-hint align="end" data-cy="char-count" style="float: right;">{{ input.value?.length || 0 }}/50</mat-hint>
                         </mat-error>
                     </mat-form-field>
                     <div class="factory-sub-fields">

@@ -27,17 +27,4 @@ describe('SectionedFormComponent', () => {
     it('form invalid when empty', () => {
         expect(component.factoryDetailsForm.valid).toBeFalsy();
     });
-
-    it('submitting a form emits errors if required fields are empty', () => {
-        expect(component.factoryDetailsForm.valid).toBeFalsy();
-        let errors = {};
-        const factoryName = component.factoryDetailsForm.controls.factoryName;
-        errors = factoryName.errors || {};
-        expect(errors['required']).toBeTruthy();
-        factoryName.setValue('ACME Steel Plant');
-        component.submit();
-        fixture.detectChanges();
-        errors = factoryName.errors || {};
-        expect(errors['required']).toBeFalsy();
-    });
 });

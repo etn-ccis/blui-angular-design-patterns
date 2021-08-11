@@ -10,19 +10,18 @@ import { StateService } from '../../../services/state.service';
 export class SectionedFormComponent implements OnInit {
     isSmall: boolean;
     factoryDetailsForm: FormGroup;
-    selectedLevel = 'level-2';
-    selectedState = '';
     levels: any[] = [
         { value: 'level-1', viewValue: 'Level I (Regional)' },
         { value: 'level-2', viewValue: 'Level II (Regional)' },
         { value: 'level-3', viewValue: 'Level III (Regional)' },
     ];
-
     states: any[] = [
         { value: 'CA', viewValue: 'California' },
         { value: 'MI', viewValue: 'Michigan' },
         { value: 'GA', viewValue: 'Georgia' },
     ];
+    showHint = true;
+    sideNavContainer: Element;
 
     constructor(
         private readonly _drawerService: StateService,
@@ -43,6 +42,7 @@ export class SectionedFormComponent implements OnInit {
                     this.isSmall = false;
                 }
             });
+        this.sideNavContainer = document.getElementsByTagName('mat-sidenav-content')[0];
     }
 
     initForm(): void {
@@ -74,9 +74,21 @@ export class SectionedFormComponent implements OnInit {
         this._drawerService.setDrawerOpen(!drawerOpen);
     }
 
+    getTopOffset(controlEl: HTMLElement): number {
+        const labelOffset = this.isSmall ? 56 : 64;
+        return controlEl.getBoundingClientRect().top + this.sideNavContainer.scrollTop - labelOffset;
+    }
+
     submit(): void {
         const firstInvalidControl = this._el.nativeElement.querySelector('form .ng-invalid');
-
-        firstInvalidControl.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+        if (firstInvalidControl) {
+            this.sideNavContainer.scroll({
+                top: this.getTopOffset(firstInvalidControl),
+                left: 0,
+                behavior: 'smooth',
+            });
+        } else {
+            this.showHint = false;
+        }
     }
 }

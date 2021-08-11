@@ -44,6 +44,7 @@ import { ContextualSpinnersModule } from './pages/loading-waiting-states/context
 import { ProgressBarsModule } from './pages/loading-waiting-states/progress-bars/progress-bars.module';
 import { SkeletonLoaderModule } from './pages/loading-waiting-states/skeleton-loader/skeleton-loader.module';
 import { PasswordModule } from './pages/forms-and-validation/password/password.module';
+import { VerifyOnSubmitModule } from './pages/forms-and-validation/verify-on-submit/verify-on-submit.module';
 import { FixLengthPasscodeModule } from './pages/forms-and-validation/fix-length-passcode/fix-length-passcode.module';
 
 @NgModule({
@@ -89,6 +90,7 @@ import { FixLengthPasscodeModule } from './pages/forms-and-validation/fix-length
         ProgressBarsModule,
         SkeletonLoaderModule,
         PasswordModule,
+        VerifyOnSubmitModule,
         FixLengthPasscodeModule,
     ],
     bootstrap: [AppComponent],

@@ -6,7 +6,12 @@
         <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Sectioned Form</div>
     </mat-toolbar>
     <section class="mat-typography" [class.small]="isSmall">
-        <form [formGroup]="factoryDetailsForm" #sectionedForm="ngForm" class="factory-details-form" #form>
+        <form
+            [formGroup]="factoryDetailsForm"
+            #sectionedForm="ngForm"
+            (ngSubmit)="submit()"
+            class="factory-details-form"
+        >
             <div class="factory-details-container" #target>
                 <div class="container-header">
                     <mat-icon svgIcon="px-icons:factory"></mat-icon>
@@ -23,9 +28,7 @@
                             maxlength="50"
                             #input
                         />
-                        <mat-hint *ngIf="showHint" align="end" data-cy="char-count"
-                            >{{ input.value?.length || 0 }}/50</mat-hint
-                        >
+                        <mat-hint align="end" data-cy="char-count">{{ input.value?.length || 0 }}/50</mat-hint>
                         <mat-error
                             *ngIf="
                                 factoryDetailsForm.get('factoryName').hasError('required') && sectionedForm.submitted
@@ -131,7 +134,7 @@
                         </mat-form-field>
                         <mat-form-field appearance="fill" class="country-input">
                             <mat-label>Country</mat-label>
-                            <input matInput type="text" data-cy="country" formControlName="country" [disabled]="true" />
+                            <input matInput type="text" data-cy="country" formControlName="country" />
                         </mat-form-field>
                     </div>
                 </div>
@@ -176,7 +179,7 @@
             </div>
             <mat-divider class="bottom-divider"></mat-divider>
             <div class="form-action">
-                <button class="submit-button" type="submit" mat-flat-button color="primary" (click)="submit()">
+                <button class="submit-button" type="submit" mat-flat-button color="primary">
                     Submit
                 </button>
             </div>

@@ -1,6 +1,6 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, NgForm, FormBuilder, Validators } from '@angular/forms';
 import { StateService } from '../../../services/state.service';
 @Component({
     selector: 'app-sectioned-form',
@@ -20,9 +20,8 @@ export class SectionedFormComponent implements OnInit {
         { value: 'MI', viewValue: 'Michigan' },
         { value: 'GA', viewValue: 'Georgia' },
     ];
-    showHint = true;
     sideNavContainer: Element;
-
+    @ViewChild('sectionedForm') sectionedForm: NgForm;
     constructor(
         private readonly _drawerService: StateService,
         private readonly _breakpointObserver: BreakpointObserver,
@@ -88,7 +87,9 @@ export class SectionedFormComponent implements OnInit {
                 behavior: 'smooth',
             });
         } else {
-            this.showHint = false;
+            this.factoryDetailsForm.reset();
+            this.sectionedForm.resetForm();
+            this.initForm();
         }
     }
 }

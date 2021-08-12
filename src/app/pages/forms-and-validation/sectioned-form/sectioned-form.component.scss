@@ -34,11 +34,11 @@ mat-form-field {
 .factory-sub-fields {
     display: flex;
     mat-form-field {
-        width: 45%;
-        margin-right: 16px;
+        flex: 1;
+        margin-right: 32px;
     }
     .pxb-protection-details {
-        width: 55%;
+        flex: 1;
         height: 56px;
         display: flex;
         align-items: center;
@@ -134,12 +134,9 @@ mat-form-field {
         .factory-sub-fields {
             display: block;
             mat-form-field {
-                width: 100%;
                 margin-right: 0;
             }
             .pxb-protection-details {
-                width: 100%;
-                width: 100%;
                 display: block;
                 height: auto;
                 .mat-icon {

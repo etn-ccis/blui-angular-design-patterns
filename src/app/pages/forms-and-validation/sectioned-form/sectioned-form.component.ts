@@ -16,9 +16,9 @@ export class SectionedFormComponent implements OnInit {
         { value: 'level-3', viewValue: 'Level III (Regional)' },
     ];
     states: any[] = [
-        { value: 'CA', viewValue: 'California' },
-        { value: 'MI', viewValue: 'Michigan' },
-        { value: 'GA', viewValue: 'Georgia' },
+        { value: 'CA', viewValue: 'CA' },
+        { value: 'MI', viewValue: 'MI' },
+        { value: 'GA', viewValue: 'GA' },
     ];
     sideNavContainer: Element;
     @ViewChild('sectionedForm') sectionedForm: NgForm;
@@ -76,6 +76,13 @@ export class SectionedFormComponent implements OnInit {
     getTopOffset(controlEl: HTMLElement): number {
         const labelOffset = this.isSmall ? 56 : 64;
         return controlEl.getBoundingClientRect().top + this.sideNavContainer.scrollTop - labelOffset;
+    }
+
+    matcher(event: KeyboardEvent): void {
+        const allowedRegex = /[0-9]/g;
+        if (!event.key.match(allowedRegex)) {
+            event.preventDefault();
+        }
     }
 
     submit(): void {

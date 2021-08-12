@@ -123,7 +123,13 @@
                         </mat-form-field>
                         <mat-form-field appearance="fill" class="zip-code-input">
                             <mat-label>Zip Code</mat-label>
-                            <input matInput formControlName="zipCode" type="text" data-cy="zip-code" />
+                            <input
+                                matInput
+                                formControlName="zipCode"
+                                type="text"
+                                (keypress)="matcher($event)"
+                                data-cy="zip-code"
+                            />
                             <mat-error
                                 *ngIf="
                                     factoryDetailsForm.get('zipCode').hasError('required') && sectionedForm.submitted
@@ -168,12 +174,16 @@
                     </div>
                     <mat-form-field appearance="fill">
                         <mat-label>Email Address</mat-label>
-                        <input matInput type="text" data-cy="email-adress" formControlName="email" />
+                        <input matInput type="text" data-cy="email-address" formControlName="email" />
                         <mat-error
                             *ngIf="factoryDetailsForm.get('email').hasError('required') && sectionedForm.submitted"
                         >
                             Required
                         </mat-error>
+                        <mat-error
+                            *ngIf="factoryDetailsForm.get('email').hasError('pattern') && sectionedForm.submitted"
+                            >Please enter a valid email address</mat-error
+                        >
                     </mat-form-field>
                 </div>
             </div>

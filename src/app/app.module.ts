@@ -45,6 +45,7 @@ import { ProgressBarsModule } from './pages/loading-waiting-states/progress-bars
 import { SkeletonLoaderModule } from './pages/loading-waiting-states/skeleton-loader/skeleton-loader.module';
 import { PasswordModule } from './pages/forms-and-validation/password/password.module';
 import { PhoneNumberFormatModule } from './pages/forms-and-validation/phone-number-format/phone-number-format.module';
+import { VerifyOnSubmitModule } from './pages/forms-and-validation/verify-on-submit/verify-on-submit.module';
 import { FixLengthPasscodeModule } from './pages/forms-and-validation/fix-length-passcode/fix-length-passcode.module';
 
 @NgModule({
@@ -91,6 +92,7 @@ import { FixLengthPasscodeModule } from './pages/forms-and-validation/fix-length
         SkeletonLoaderModule,
         PasswordModule,
         PhoneNumberFormatModule,
+        VerifyOnSubmitModule,
         FixLengthPasscodeModule,
     ],
     bootstrap: [AppComponent],

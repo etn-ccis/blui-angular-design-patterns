@@ -5,7 +5,7 @@
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Phone Number Format</div>
 </mat-toolbar>
 <section class="mat-typography" [class.small]="isSmall">
-    <form class="phone-number-form">
+    <!-- <form class="phone-number-form">
         <mat-form-field appearance="fill" style="width: 112px;">
             <mat-label>Country code</mat-label>
             <mat-select [formControl]="countryFormControl" (selectionChange)="onCountryChange()">
@@ -22,5 +22,35 @@
                 [placeholder]="countryPlaceholder"
             />
         </mat-form-field>
-    </form>
+    </form> -->
+    <form [formGroup]="register">
+        <!-- <label>Phone</label> -->
+        <div>
+          <!-- <ng-container *ngIf="countries">
+            <select (change)="resetPhoneNumber($event)" [(ngModel)]="selectedCountry" [ngModelOptions]="{standalone: true}">
+              <option *ngFor="let country of countries" [ngValue]="country.code">{{country.name}}</option>
+            </select>
+          </ng-container> -->
+          <mat-form-field appearance="fill" style="width: 112px;">
+            <mat-label>Country code</mat-label>
+            <mat-select (selectionChange)="resetPhoneNumber($event)" [(ngModel)]="selectedCountry" [ngModelOptions]="{standalone: true}">
+                <mat-option [value]="option.code" *ngFor="let option of countries">{{ option.name }}</mat-option>
+            </mat-select>
+            <!-- <mat-error *ngIf="register.cont.hasError('required')">Please choose correct country code</mat-error> -->
+        </mat-form-field>
+          <!-- <input type="text" (input)="formatPhoneNumber($event)" formControlName="phone"> -->
+          <mat-form-field appearance="fill" style="margin-left:16px; width: 352px;">
+            <mat-label>Phone Number</mat-label>
+            <input
+                matInput
+                (input)="formatPhoneNumber($event)"
+                formControlName="phone"
+                [placeholder]="countryPlaceholder"
+            />
+        </mat-form-field>
+        </div>
+        <div>
+          <input type="submit" value="Submit" [disabled]="!register.valid">
+        </div>
+      </form>
 </section>

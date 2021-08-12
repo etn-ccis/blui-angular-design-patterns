@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder, AbstractControl  } from '@angular/forms';
 import { StateService } from '../../../services/state.service';
+import { parsePhoneNumberFromString } from 'libphonenumber-js';
 
 @Component({
     selector: 'app-phone-number-format',
@@ -10,18 +11,20 @@ import { StateService } from '../../../services/state.service';
 })
 export class PhoneNumberFormatComponent implements OnInit {
     isSmall: boolean;
-    countryFormControl: FormControl;
-    phoneNumberFormControl: FormControl;
+    selectedCountry: any = 'US';
+    selectedPhoneNumber: any;
+    register: FormGroup;
     countries: any[] = [
-        { value: 'US', viewValue: '+1 (US)', placeholder: '### ### ####' },
-        { value: 'CAN', viewValue: '+1 (CAN)', placeholder: '### ### ### ####' },
-        { value: 'KZ', viewValue: '+7 (KZ)', placeholder: '### ### ### ####' },
-        { value: 'FRA', viewValue: '+33 (FRA)', placeholder: '### ### ### ####' },
+        { code: 'US', name: '+1 (US)', placeholder: '### ### ####' },
+        { code: 'CA', name: '+1 (CAN)', placeholder: '### ### ### ####' },
+        { code: 'KZ', name: '+7 (KZ)', placeholder: '### ### ### ####' },
+        { code: 'FRA', name: '+33 (FRA)', placeholder: '### ### ### ####' },
     ];
     countryPlaceholder = '### ### ####';
     constructor(
         private readonly _drawerService: StateService,
-        private readonly _breakpointObserver: BreakpointObserver
+        private readonly _breakpointObserver: BreakpointObserver,
+        private readonly _formBuilder: FormBuilder
     ) {
         this.initForm();
     }
@@ -38,26 +41,46 @@ export class PhoneNumberFormatComponent implements OnInit {
             });
     }
 
-    initForm(): void {
-        this.countryFormControl = new FormControl('US', Validators.required);
-        this.phoneNumberFormControl = new FormControl('', Validators.required);
-    }
-
-    onCountryChange(): void {
-        const selectedCountryDetails = this.countries.filter((item) => {
-            return item.value === this.countryFormControl.value;
-        });
-        this.countryPlaceholder = selectedCountryDetails[0].placeholder;
-    }
-
-    //this accepts only number in phone number input field
-    numberOnly(event: KeyboardEvent): boolean {
-        const charCode = event.which ? event.which : event.keyCode;
-        if (charCode > 31 && (charCode < 40 || charCode > 57)) {
-            return false;
+    private initForm(): void{
+        this.register = this._formBuilder.group({
+                phone: ['', [Validators.required, this._validatePhoneNumberInput.bind(this)]]
+            });
+      }
+    
+      _validatePhoneNumberInput(c: AbstractControl): object {
+        let inputValue: string = c.value.toString();
+        let phoneNumber: any = parsePhoneNumberFromString(inputValue, this.selectedCountry);
+        if(phoneNumber){
+          if(phoneNumber.isValid()){
+            return null;
+          } else {
+            return {
+              phoneNumber: {
+                valid: false
+              }
+            }
+          }
+        } else {
+          return {
+            phoneNumber: {
+              valid: false
+            }
+          }
         }
-        return true;
-    }
+        }
+    
+      resetPhoneNumber(event: any): void {
+            this.register.controls['phone'].setValue('');
+        }
+    
+      formatPhoneNumber(event: any): void {
+            let inputValue: any = this.register.controls['phone'].value;
+            let phoneNumber: any = parsePhoneNumberFromString(inputValue, this.selectedCountry);
+            if(phoneNumber){
+                this.selectedPhoneNumber = phoneNumber.number;
+                this.register.controls['phone'].setValue(phoneNumber.formatNational().replace(/[^+\d]+/g, " ").trim());
+            }
+        }
 
     toggleMenu(): void {
         const drawerOpen = this._drawerService.getDrawerOpen();

@@ -20,6 +20,7 @@ import { SpinnerOverlaysComponent } from './pages/loading-waiting-states/spinner
 import { ContextualSpinnersComponent } from './pages/loading-waiting-states/contextual-spinners/contextual-spinners.component';
 import { SkeletonLoaderComponent } from './pages/loading-waiting-states/skeleton-loader/skeleton-loader.component';
 import { PasswordComponent } from './pages/forms-and-validation/password/password.component';
+import { VerifyOnSubmitComponent } from './pages/forms-and-validation/verify-on-submit/verify-on-submit.component';
 import { FixLengthPasscodeComponent } from './pages/forms-and-validation/fix-length-passcode/fix-length-passcode.component';
 import { SectionedFormComponent } from './pages/forms-and-validation/sectioned-form/sectioned-form.component';
 
@@ -66,6 +67,11 @@ export const ROUTES: DrawerItem[] = [
                 title: 'Fixed Length Passcode',
                 path: 'fixed-length-passcode',
                 component: FixLengthPasscodeComponent,
+            },
+            {
+                title: 'Verify on Submit',
+                path: 'verify-on-submit',
+                component: VerifyOnSubmitComponent,
             },
             {
                 title: 'Sectioned Form',

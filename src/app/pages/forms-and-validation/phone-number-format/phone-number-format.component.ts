@@ -51,27 +51,25 @@ export class PhoneNumberFormatComponent implements OnInit {
         });
     }
 
-    validatePhoneNumberInput(c: AbstractControl): any {
-        const inputValue: string = c.value.toString();
+    validatePhoneNumberInput(phoneNumberInput: AbstractControl): any {
+        const inputValue: string = phoneNumberInput.value.toString();
         const phoneNumber: any = parsePhoneNumberFromString(inputValue, this.selectedCountry);
         if (phoneNumber) {
             if (phoneNumber.isValid()) {
                 this.validPhoneNumber = this.validatePhoneNumberForm.controls['phone'].value.length;
                 return null;
-            } 
-                return {
-                    phoneNumber: {
-                        valid: false,
-                    },
-                };
-            
-        } 
+            }
             return {
                 phoneNumber: {
                     valid: false,
                 },
             };
-        
+        }
+        return {
+            phoneNumber: {
+                valid: false,
+            },
+        };
     }
     checkPhoneNumber(): void {
         if (this.validatePhoneNumberForm.invalid) {
@@ -103,7 +101,6 @@ export class PhoneNumberFormatComponent implements OnInit {
         if (inputValue.length > this.validPhoneNumber - 1 && event.keyCode !== 46 && event.keyCode !== 8) {
             event.preventDefault();
         }
-
         const phoneNumber: any = parsePhoneNumberFromString(inputValue, this.selectedCountry);
         if (phoneNumber) {
             this.selectedPhoneNumber = phoneNumber.number;

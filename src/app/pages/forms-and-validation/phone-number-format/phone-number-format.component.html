@@ -6,17 +6,17 @@
 </mat-toolbar>
 <section class="mat-typography" [class.small]="isSmall">
     <form [formGroup]="validatePhoneNumberForm" class="phone-number-form">
-        <mat-form-field appearance="fill" style="width: 112px;">
-            <mat-label>Country code</mat-label>
+        <mat-form-field class="country-code-select" appearance="fill">
+            <mat-label>Country Code</mat-label>
             <mat-select
                 formControlName="selectedCountry"
                 (selectionChange)="onCountryChange($event)"
-                panelClass="testClass"
+                panelClass="selectPanel"
             >
                 <mat-option [value]="option.code" *ngFor="let option of countries">{{ option.name }}</mat-option>
             </mat-select>
         </mat-form-field>
-        <mat-form-field appearance="fill" style="margin-left:16px; width: 352px;">
+        <mat-form-field class="phone-number-input" appearance="fill">
             <mat-label>Phone Number</mat-label>
             <input
                 matInput

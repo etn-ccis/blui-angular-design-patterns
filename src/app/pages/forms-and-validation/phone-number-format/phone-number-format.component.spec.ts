@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PhoneNumberFormatComponent } from './phone-number-format.component';
+import { PhoneNumberFormatModule } from './phone-number-format.module';
 
 describe('PhoneNumberFormatComponent', () => {
     let component: PhoneNumberFormatComponent;
@@ -8,6 +9,7 @@ describe('PhoneNumberFormatComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
+            imports: [PhoneNumberFormatModule],
             declarations: [PhoneNumberFormatComponent],
         }).compileComponents();
     });

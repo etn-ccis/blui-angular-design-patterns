@@ -78,6 +78,14 @@ export class SectionedFormComponent implements OnInit {
         return controlEl.getBoundingClientRect().top + this.sideNavContainer.scrollTop - labelOffset;
     }
 
+    scrollSideNavContainer(value: number): void {
+        this.sideNavContainer.scroll({
+            top: value,
+            left: 0,
+            behavior: 'smooth',
+        });
+    }
+
     matcher(event: KeyboardEvent): void {
         const allowedRegex = /[0-9]/g;
         if (!event.key.match(allowedRegex)) {
@@ -88,15 +96,14 @@ export class SectionedFormComponent implements OnInit {
     submit(): void {
         const firstInvalidControl = this._el.nativeElement.querySelector('form .ng-invalid');
         if (firstInvalidControl) {
-            this.sideNavContainer.scroll({
-                top: this.getTopOffset(firstInvalidControl),
-                left: 0,
-                behavior: 'smooth',
-            });
+            const topOffset = this.getTopOffset(firstInvalidControl);
+            this.scrollSideNavContainer(topOffset);
+            firstInvalidControl.querySelector('form .ng-invalid').focus();
         } else {
             this.factoryDetailsForm.reset();
             this.sectionedForm.resetForm();
             this.initForm();
+            this.scrollSideNavContainer(0);
         }
     }
 }

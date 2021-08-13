@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { FormGroup, Validators, FormBuilder, AbstractControl  } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder, AbstractControl } from '@angular/forms';
 import { StateService } from '../../../services/state.service';
 import { parsePhoneNumberFromString, AsYouType } from 'libphonenumber-js';
 
@@ -11,17 +11,19 @@ import { parsePhoneNumberFromString, AsYouType } from 'libphonenumber-js';
 })
 export class PhoneNumberFormatComponent implements OnInit {
     isSmall: boolean;
-    selectedCountry: any = 'US';
     selectedPhoneNumber: any;
-    register: FormGroup;
+    validatePhoneNumberForm: FormGroup;
+    validPhoneNumber: number;
     countries: any[] = [
         { code: 'US', name: '+1 (US)', placeholder: '### ### ####' },
-        { code: 'CA', name: '+1 (CAN)', placeholder: '### ### ### ####' },
-        { code: 'KZ', name: '+7 (KZ)', placeholder: '### ### ### ####' },
-        { code: 'FRA', name: '+33 (FRA)', placeholder: '### ### ### ####' },
+        { code: 'CA', name: '+1 (CA)', placeholder: '### ### ####' },
+        { code: 'RU', name: '+7 (RU)', placeholder: '### ### ## ##' },
+        { code: 'EG', name: '+20 (EG)', placeholder: '# #######' },
+        { code: 'IN', name: '+91 (IN)', placeholder: '#### ### ###' },
     ];
-    countryPlaceholder = '### ### ####';
-    asYouType = new AsYouType();
+
+    selectedCountry = this.countries[0].code;
+    countryPlaceholder = this.countries[0].placeholder;
     constructor(
         private readonly _drawerService: StateService,
         private readonly _breakpointObserver: BreakpointObserver,
@@ -42,47 +44,75 @@ export class PhoneNumberFormatComponent implements OnInit {
             });
     }
 
-    private initForm(): void{
-        this.register = this._formBuilder.group({
-                phone: ['', [Validators.required, this._validatePhoneNumberInput.bind(this)]]
-            });
-      }
-    
-      _validatePhoneNumberInput(c: AbstractControl): object {
-        let inputValue: string = c.value.toString();
-        let phoneNumber: any = parsePhoneNumberFromString(inputValue, this.selectedCountry);
-        if(phoneNumber){
-          if(phoneNumber.isValid()){
-            return null;
-          } else {
+    initForm(): void {
+        this.validatePhoneNumberForm = this._formBuilder.group({
+            phone: ['', [Validators.required, this.validatePhoneNumberInput.bind(this)]],
+            selectedCountry: ['US', Validators.required],
+        });
+    }
+
+    validatePhoneNumberInput(c: AbstractControl): any {
+        const inputValue: string = c.value.toString();
+        const phoneNumber: any = parsePhoneNumberFromString(inputValue, this.selectedCountry);
+        if (phoneNumber) {
+            if (phoneNumber.isValid()) {
+                this.validPhoneNumber = this.validatePhoneNumberForm.controls['phone'].value.length;
+                return null;
+            } 
+                return {
+                    phoneNumber: {
+                        valid: false,
+                    },
+                };
+            
+        } 
             return {
-              phoneNumber: {
-                valid: false
-              }
-            }
-          }
+                phoneNumber: {
+                    valid: false,
+                },
+            };
+        
+    }
+    checkPhoneNumber(): void {
+        if (this.validatePhoneNumberForm.invalid) {
+            this.validatePhoneNumberForm.controls['phone'].setErrors({ phoneNumberNotMatch: true });
+        }
+    }
+    matcher(event: KeyboardEvent): void {
+        const allowedRegex = /[0-9]/g;
+        if (!event.key.match(allowedRegex)) {
+            event.preventDefault();
+        }
+    }
+
+    onCountryChange(countryDetails: any): void {
+        this.selectedCountry = countryDetails.value;
+        this.countryPlaceholder = this.countries.filter((item) => item.code === this.selectedCountry)[0].placeholder;
+        const phoneNumber: any = parsePhoneNumberFromString(
+            this.validatePhoneNumberForm.controls['phone'].value,
+            this.selectedCountry
+        );
+        if (phoneNumber?.isValid()) {
+            this.validatePhoneNumberForm.controls['phone'].setErrors(null);
         } else {
-          return {
-            phoneNumber: {
-              valid: false
-            }
-          }
+            this.validatePhoneNumberForm.controls['phone'].setErrors({ phoneNumberNotMatch: true });
         }
+    }
+    formatPhoneNumber(event: KeyboardEvent): void {
+        const inputValue: any = this.validatePhoneNumberForm.controls['phone'].value;
+        if (inputValue.length > this.validPhoneNumber - 1 && event.keyCode !== 46 && event.keyCode !== 8) {
+            event.preventDefault();
         }
-    
-      resetPhoneNumber(event: any): void {
-            this.register.controls['phone'].setValue('');
+
+        const phoneNumber: any = parsePhoneNumberFromString(inputValue, this.selectedCountry);
+        if (phoneNumber) {
+            this.selectedPhoneNumber = phoneNumber.number;
+            const asYouTypePhoneNumber = new AsYouType(this.selectedCountry).input(phoneNumber.nationalNumber);
+            this.validatePhoneNumberForm.controls['phone'].setValue(
+                asYouTypePhoneNumber.replace(/[^+\d]+/g, ' ').trim()
+            );
         }
-    
-      formatPhoneNumber(event: any): void {
-            let inputValue: any = this.register.controls['phone'].value;
-            let phoneNumber: any = parsePhoneNumberFromString(inputValue, this.selectedCountry);
-            if(phoneNumber){
-                this.selectedPhoneNumber = phoneNumber.number;
-                let asYouTypePhoneNumber = new AsYouType(this.selectedCountry).input(phoneNumber.nationalNumber)
-                this.register.controls['phone'].setValue(asYouTypePhoneNumber.replace(/[^+\d]+/g, " ").trim());
-            }
-        }
+    }
 
     toggleMenu(): void {
         const drawerOpen = this._drawerService.getDrawerOpen();

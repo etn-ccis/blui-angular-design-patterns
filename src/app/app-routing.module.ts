@@ -77,7 +77,7 @@ export const ROUTES: DrawerItem[] = [
                 title: 'Phone Number Format',
                 path: 'phone-number-format',
                 component: PhoneNumberFormatComponent,
-            }
+            },
         ],
     },
     {

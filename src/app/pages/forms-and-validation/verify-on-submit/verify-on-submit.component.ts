@@ -56,6 +56,10 @@ export class VerifyOnSubmitComponent implements OnInit {
 
     searchDevice(): void {
         this.formSubmit = true;
+        if (this.searchDeviceForm.invalid) {
+            this.searchDeviceForm.controls['serialNumber'].setErrors(null);
+        }
+
         setTimeout(() => {
             this.formSubmit = false;
             const serialNumber = this.searchDeviceForm.controls['serialNumber'].value;

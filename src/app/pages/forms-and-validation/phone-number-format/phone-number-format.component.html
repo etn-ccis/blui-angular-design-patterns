@@ -36,9 +36,7 @@
             <mat-select (selectionChange)="resetPhoneNumber($event)" [(ngModel)]="selectedCountry" [ngModelOptions]="{standalone: true}">
                 <mat-option [value]="option.code" *ngFor="let option of countries">{{ option.name }}</mat-option>
             </mat-select>
-            <!-- <mat-error *ngIf="register.cont.hasError('required')">Please choose correct country code</mat-error> -->
         </mat-form-field>
-          <!-- <input type="text" (input)="formatPhoneNumber($event)" formControlName="phone"> -->
           <mat-form-field appearance="fill" style="margin-left:16px; width: 352px;">
             <mat-label>Phone Number</mat-label>
             <input
@@ -48,9 +46,6 @@
                 [placeholder]="countryPlaceholder"
             />
         </mat-form-field>
-        </div>
-        <div>
-          <input type="submit" value="Submit" [disabled]="!register.valid">
         </div>
       </form>
 </section>

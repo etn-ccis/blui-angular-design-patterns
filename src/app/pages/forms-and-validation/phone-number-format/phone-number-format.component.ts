@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, ChangeDetectionStrategy, Chan
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { FormGroup, Validators, FormBuilder, AbstractControl  } from '@angular/forms';
 import { StateService } from '../../../services/state.service';
-import { parsePhoneNumberFromString } from 'libphonenumber-js';
+import { parsePhoneNumberFromString, AsYouType } from 'libphonenumber-js';
 
 @Component({
     selector: 'app-phone-number-format',
@@ -21,6 +21,7 @@ export class PhoneNumberFormatComponent implements OnInit {
         { code: 'FRA', name: '+33 (FRA)', placeholder: '### ### ### ####' },
     ];
     countryPlaceholder = '### ### ####';
+    asYouType = new AsYouType();
     constructor(
         private readonly _drawerService: StateService,
         private readonly _breakpointObserver: BreakpointObserver,
@@ -78,7 +79,8 @@ export class PhoneNumberFormatComponent implements OnInit {
             let phoneNumber: any = parsePhoneNumberFromString(inputValue, this.selectedCountry);
             if(phoneNumber){
                 this.selectedPhoneNumber = phoneNumber.number;
-                this.register.controls['phone'].setValue(phoneNumber.formatNational().replace(/[^+\d]+/g, " ").trim());
+                let asYouTypePhoneNumber = new AsYouType(this.selectedCountry).input(phoneNumber.nationalNumber)
+                this.register.controls['phone'].setValue(asYouTypePhoneNumber.replace(/[^+\d]+/g, " ").trim());
             }
         }
 

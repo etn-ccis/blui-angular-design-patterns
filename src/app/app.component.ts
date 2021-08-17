@@ -1,6 +1,8 @@
 import { ChangeDetectorRef, Component, ViewEncapsulation } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { StateService } from './services/state.service';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 import * as PXBColors from '@pxblue/colors';
 import { DrawerItem, ROUTES } from './app-routing.module';
 import { ViewportService } from './services/viewport.service';
@@ -23,13 +25,28 @@ export class AppComponent {
         public viewportService: ViewportService,
         private readonly _ref: ChangeDetectorRef,
         private readonly _bidiService: BidirectionalService,
-        private readonly _breakpointObserver: BreakpointObserver
+        private readonly _breakpointObserver: BreakpointObserver,
+        private readonly _matIconRegistry: MatIconRegistry,
+        private readonly _domSanitizer: DomSanitizer
     ) {
         this._router.events.subscribe((event) => {
             if (event instanceof NavigationEnd) {
                 this._bidiService.changeDirectionality('EN');
             }
         });
+        this._matIconRegistry.addSvgIconSetInNamespace(
+            'px-icons',
+            /* **Note to PX Blue Users:
+                Stackblitz has difficulty reading static assets found within the node_modules folder.
+                For this example to work inside Stackblitz, we use a https request to fetch the PX Blue icon set.
+                In normal situations, we encourage you to import the iconSet directly from the node_modules folder like below:
+                    // const iconSet = require('@pxblue/icons-svg/icons.svg').default;
+                    // this._domSanitizer.bypassSecurityTrustResourceUrl('iconSet')
+             */
+            this._domSanitizer.bypassSecurityTrustResourceUrl(
+                'https://raw.githubusercontent.com/pxblue/icons/dev/svg/icons.svg'
+            )
+        );
     }
 
     ngOnInit(): void {

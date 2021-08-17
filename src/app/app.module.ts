@@ -46,6 +46,7 @@ import { SkeletonLoaderModule } from './pages/loading-waiting-states/skeleton-lo
 import { PasswordModule } from './pages/forms-and-validation/password/password.module';
 import { VerifyOnSubmitModule } from './pages/forms-and-validation/verify-on-submit/verify-on-submit.module';
 import { FixLengthPasscodeModule } from './pages/forms-and-validation/fix-length-passcode/fix-length-passcode.module';
+import { SectionedFormModule } from './pages/forms-and-validation/sectioned-form/sectioned-form.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -92,6 +93,7 @@ import { FixLengthPasscodeModule } from './pages/forms-and-validation/fix-length
         PasswordModule,
         VerifyOnSubmitModule,
         FixLengthPasscodeModule,
+        SectionedFormModule,
     ],
     bootstrap: [AppComponent],
 })

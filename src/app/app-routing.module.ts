@@ -22,6 +22,7 @@ import { SkeletonLoaderComponent } from './pages/loading-waiting-states/skeleton
 import { PasswordComponent } from './pages/forms-and-validation/password/password.component';
 import { VerifyOnSubmitComponent } from './pages/forms-and-validation/verify-on-submit/verify-on-submit.component';
 import { FixLengthPasscodeComponent } from './pages/forms-and-validation/fix-length-passcode/fix-length-passcode.component';
+import { SectionedFormComponent } from './pages/forms-and-validation/sectioned-form/sectioned-form.component';
 
 export type DrawerItem = {
     title: string;
@@ -71,6 +72,11 @@ export const ROUTES: DrawerItem[] = [
                 title: 'Verify on Submit',
                 path: 'verify-on-submit',
                 component: VerifyOnSubmitComponent,
+            },
+            {
+                title: 'Sectioned Form',
+                path: 'sectioned-form',
+                component: SectionedFormComponent,
             },
         ],
     },

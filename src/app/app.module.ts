@@ -47,6 +47,7 @@ import { PasswordModule } from './pages/forms-and-validation/password/password.m
 import { PhoneNumberFormatModule } from './pages/forms-and-validation/phone-number-format/phone-number-format.module';
 import { VerifyOnSubmitModule } from './pages/forms-and-validation/verify-on-submit/verify-on-submit.module';
 import { FixLengthPasscodeModule } from './pages/forms-and-validation/fix-length-passcode/fix-length-passcode.module';
+import { SectionedFormModule } from './pages/forms-and-validation/sectioned-form/sectioned-form.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -94,6 +95,7 @@ import { FixLengthPasscodeModule } from './pages/forms-and-validation/fix-length
         PhoneNumberFormatModule,
         VerifyOnSubmitModule,
         FixLengthPasscodeModule,
+        SectionedFormModule,
     ],
     bootstrap: [AppComponent],
 })

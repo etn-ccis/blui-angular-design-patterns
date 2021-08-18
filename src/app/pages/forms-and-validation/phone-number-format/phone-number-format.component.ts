@@ -52,24 +52,27 @@ export class PhoneNumberFormatComponent implements OnInit {
     }
 
     validatePhoneNumberInput(phoneNumberInput: AbstractControl): any {
-        const inputValue: string = phoneNumberInput.value.toString();
-        const phoneNumber: any = parsePhoneNumberFromString(inputValue, this.selectedCountry);
-        if (phoneNumber) {
-            if (phoneNumber.isValid()) {
-                this.validPhoneNumber = this.validatePhoneNumberForm.controls['phone'].value.length;
-                return null;
-            }
-            return {
-                phoneNumber: {
-                    valid: false,
-                },
-            };
-        }
-        return {
-            phoneNumber: {
-                valid: false,
-            },
-        };
+        let phoneRe = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+        const isValid = phoneRe.test(phoneNumberInput.value.toString());
+        console.log(isValid);
+        // const inputValue: string = phoneNumberInput.value.toString();
+        // const phoneNumber: any = parsePhoneNumberFromString(inputValue, this.selectedCountry);
+        // if (phoneNumber) {
+        //     if (phoneNumber.isValid()) {
+        //         this.validPhoneNumber = this.validatePhoneNumberForm.controls['phone'].value.length;
+        //         return null;
+        //     }
+        //     return {
+        //         phoneNumber: {
+        //             valid: false,
+        //         },
+        //     };
+        // }
+        // return {
+        //     phoneNumber: {
+        //         valid: false,
+        //     },
+        // };
     }
     checkPhoneNumber(): void {
         if (this.validatePhoneNumberForm.invalid) {

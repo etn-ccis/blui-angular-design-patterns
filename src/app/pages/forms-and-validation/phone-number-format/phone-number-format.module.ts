@@ -11,8 +11,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PhoneNumberFormatComponent } from './phone-number-format.component';
 import { MatSelectModule } from '@angular/material/select';
 
+import { FormatPhoneNumberPipe } from './shared/format-phone-number.pipe';
 @NgModule({
-    declarations: [PhoneNumberFormatComponent],
+    declarations: [PhoneNumberFormatComponent, FormatPhoneNumberPipe],
     imports: [
         BrowserModule,
         FormsModule,

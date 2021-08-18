@@ -20,13 +20,14 @@
             <mat-label>Phone Number</mat-label>
             <input
                 matInput
-                (keydown)="formatPhoneNumber($event)"
                 formControlName="phone"
-                (blur)="checkPhoneNumber()"
+                [value]="validatePhoneNumberForm.get('phone').value | formatPhoneNumber: selectedCountry"
                 inputmode="numeric"
+                [maxlength]="12"
                 (keypress)="matcher($event)"
                 [placeholder]="countryPlaceholder"
             />
+            
             <mat-error
                 *ngIf="
                     validatePhoneNumberForm.get('phone').hasError('phoneNumberNotMatch') ||
@@ -36,5 +37,8 @@
                 Please enter a valid {{ selectedCountry }} phone number.
             </mat-error>
         </mat-form-field>
+        <p>
+            <!-- Formatted Phone Number: <b>{{ '1234567890' | formatPhoneNumber }}</b> -->
+          </p>
     </form>
 </section>

@@ -34,26 +34,26 @@ mat-form-field {
     }
 }
 .suffix-icons {
-    .spinner-container,
-    .icon-container {
+    .spinner-container.mat-icon,
+    .icon-container.mat-icon {
         display: none;
     }
 }
 .show-spinner {
-    .spinner-container {
+    .spinner-container.mat-icon {
         display: block;
         animation: fadeInAnimation $duration $animationTimingFunction;
     }
-    .icon-container {
+    .icon-container.mat-icon {
         display: none;
     }
 }
 
 .show-icon {
-    .spinner-container {
+    .spinner-container.mat-icon {
         display: none;
     }
-    .icon-container {
+    .icon-container.mat-icon {
         display: block;
         animation: fadeInAnimation $duration $animationTimingFunction;
     }

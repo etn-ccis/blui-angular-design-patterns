@@ -50,7 +50,7 @@ export class PhoneNumberFormatComponent implements OnInit {
 
     initForm(): void {
         this.validatePhoneNumberForm = this._formBuilder.group({
-            phone: ['', [Validators.required, this.validatePhoneNumberInput.bind(this)]],
+            phone: ['', [Validators.required, this.checkPhoneNumber.bind(this)]],
             selectedCountry: ['US', Validators.required],
         });
     }
@@ -76,20 +76,22 @@ export class PhoneNumberFormatComponent implements OnInit {
         }
     }
 
-    validatePhoneNumberInput(phoneNumberInput: AbstractControl): any {
+    checkPhoneNumber(phoneNumberInput: AbstractControl): any {
         const isValid = this.checkPhoneNumberPattern(phoneNumberInput.value, this.selectedCountry.code);
         return isValid ? null : { phoneNumberNotMatch: true };
     }
 
-    checkPhoneNumber(): void {
+    validatePhoneNumber(): void {
         if (this.validatePhoneNumberForm.invalid) {
             this.validatePhoneNumberForm.controls['phone'].setErrors({ phoneNumberNotMatch: true });
         }
     }
+
     removeError(): void {
         this.validatePhoneNumberForm.controls.phone.markAsUntouched();
     }
-    matcher(event: KeyboardEvent): void {
+
+    allowNumbersOnly(event: KeyboardEvent): void {
         const allowedRegex = /[0-9]/g;
         if (!event.key.match(allowedRegex)) {
             event.preventDefault();
@@ -99,11 +101,6 @@ export class PhoneNumberFormatComponent implements OnInit {
 
     onCountryChange(countryDetails: any): void {
         this.countryChange = true;
-        const phoneNumber = this.validatePhoneNumberForm.controls['phone'].value;
-        if (phoneNumber.length === 0) {
-            this.validatePhoneNumberForm.controls['phone'].setErrors(null);
-            return;
-        }
         this.selectedCountry = this.countries.filter((item) => item.code === countryDetails.value)[0];
         const isValidPhoneNumber = this.checkPhoneNumberPattern(
             this.validatePhoneNumberForm.controls['phone'].value,

@@ -21,7 +21,7 @@
             <mat-label>Phone Number</mat-label>
             <input
                 matInput
-                (blur)="checkPhoneNumber()"
+                (blur)="validatePhoneNumber()"
                 formControlName="phone"
                 [value]="
                     validatePhoneNumberForm.get('phone').value
@@ -29,7 +29,7 @@
                 "
                 inputmode="numeric"
                 [maxlength]="selectedCountry['maxLength']"
-                (keypress)="matcher($event)"
+                (keypress)="allowNumbersOnly($event)"
                 (focus)="removeError()"
                 [placeholder]="selectedCountry['placeholder']"
             />

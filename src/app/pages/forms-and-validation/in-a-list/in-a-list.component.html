@@ -4,29 +4,33 @@
     </button>
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">In a List</div>
 </mat-toolbar>
-<section style="padding-top: 24px;max-width: 686px;
-margin: 0 auto;">
-    <mat-card style="padding: 0;">
+<section class="mat-typography">
+    <mat-card class="list-card">
         <mat-card-content>
-            <mat-list style="padding: 0;">
-                <pxb-info-list-item  divider="partial" class="test" iconAlign="left">
-                    <div pxb-title>IP Address</div>
-                    <mat-icon pxb-icon>dns</mat-icon>
-                    <!-- <mat-form-field appearance="fill" pxb-right-content>
-                        <mat-label>Address</mat-label> -->
-                        <input matInput type="text" data-cy="ip-address" class="input-ip" pxb-right-content/>
-                    <!-- </mat-form-field> -->
-                </pxb-info-list-item>
-    
-                <pxb-info-list-item  class="test" iconAlign="left">
-                    <div pxb-title>Insight Report</div>
-                    <div pxb-subtitle>Auto-report every 2 months</div>
-                    <mat-icon pxb-icon>timeline</mat-icon>
-                    <div class="toggle" pxb-right-content>
-                        <mat-slide-toggle></mat-slide-toggle>
-                    </div>
-                </pxb-info-list-item>
-            </mat-list>
+            <form [formGroup]="listForm" class="passcode-form">
+                <mat-list>
+                    <pxb-info-list-item divider="partial" iconAlign="left">
+                        <div pxb-title>IP Address</div>
+                        <mat-icon pxb-icon>dns</mat-icon>
+                        <input
+                            type="text"
+                            data-cy="ip-address"
+                            formControlName="ipAddress"
+                            class="ip-address"
+                            pxb-right-content
+                        />
+                    </pxb-info-list-item>
+
+                    <pxb-info-list-item iconAlign="left">
+                        <div pxb-title>Insight Report</div>
+                        <div pxb-subtitle>Auto-report every 2 months</div>
+                        <mat-icon pxb-icon>timeline</mat-icon>
+                        <div class="toggle" pxb-right-content>
+                            <mat-slide-toggle></mat-slide-toggle>
+                        </div>
+                    </pxb-info-list-item>
+                </mat-list>
+            </form>
         </mat-card-content>
     </mat-card>
 </section>

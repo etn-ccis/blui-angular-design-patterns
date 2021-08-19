@@ -16,28 +16,28 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InfoListItemModule } from '@pxblue/angular-components';
 
-import {InAListComponent} from './in-a-list.component'
+import { InAListComponent } from './in-a-list.component';
 
 @NgModule({
-  declarations: [InAListComponent],
-  imports: [
-    BrowserModule,
-      FormsModule,
-      ReactiveFormsModule,
-      BrowserAnimationsModule,
-      CommonModule,
-      MatToolbarModule,
-      MatIconModule,
-      MatButtonModule,
-      MatInputModule,
-      MatFormFieldModule,
-      MatDividerModule,
-      MatSelectModule,
-      MatTooltipModule,
-      MatCheckboxModule,
-      MatCardModule,
-      MatSlideToggleModule,
-      InfoListItemModule,
-  ]
+    declarations: [InAListComponent],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        CommonModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatDividerModule,
+        MatSelectModule,
+        MatTooltipModule,
+        MatCheckboxModule,
+        MatCardModule,
+        MatSlideToggleModule,
+        InfoListItemModule,
+    ],
 })
-export class InAListModule { }
+export class InAListModule {}

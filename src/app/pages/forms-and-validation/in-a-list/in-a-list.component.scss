@@ -3,3 +3,13 @@
 ::ng-deep .pxb-drawer-layout-nav-content {
     background-color: map-get($pxb-white, 50);
 }
+
+.input-ip {
+    border: 0;
+    background: #F7F8F8;
+    height: 40px;
+    outline: 0;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-bottom: 1px solid #424e541f;
+}

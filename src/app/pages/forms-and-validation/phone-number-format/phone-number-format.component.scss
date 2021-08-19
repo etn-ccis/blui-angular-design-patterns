@@ -4,41 +4,39 @@ section.mat-typography {
     padding-top: 40px;
     max-width: 480px;
     margin: 0 auto;
-
-    .country-code-select {
-        width: 112px;
-    }
-    .phone-number-input {
-        margin-left: 16px;
-        width: 352px;
+    .phone-number-form {
+        display: flex;
+        .country-code-select {
+            max-width: 112px;
+        }
+        .phone-number-input {
+            margin-left: 16px;
+            flex: 1;
+        }
     }
 }
 
 ::ng-deep .pxb-drawer-layout-nav-content {
     background-color: map-get($pxb-white, 50);
 }
-// Todo match design
+
+::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+    border-top: 0;
+    border-bottom: 5px solid;
+}
+
 ::ng-deep .cdk-overlay-container .cdk-overlay-pane .selectPanel {
     min-width: 112px !important;
-    margin-top: 46px;
-    margin: 46px 4px 0 4px;
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
     border-radius: 0;
-    height: 155px;
+    height: 152px;
+    margin: 32px 4px;
 }
 
-section.mat-typography.small {
-    max-width: 100%;
-    padding: 40px 16px 16px;
-    .phone-number-form {
-        display: flex;
-        .country-code-select {
-            width: 135px;
-        }
-        .phone-number-input {
-            margin-left: 16px;
-            width: 192px;
-        }
+@media only screen and (max-width: 600px) {
+    section.mat-typography {
+        max-width: 100%;
+        padding: 32px 16px 16px;
     }
 }

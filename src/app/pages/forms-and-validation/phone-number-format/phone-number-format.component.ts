@@ -2,8 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { FormGroup, Validators, FormBuilder, AbstractControl } from '@angular/forms';
 import { StateService } from '../../../services/state.service';
-import { parsePhoneNumberFromString, AsYouType } from 'libphonenumber-js';
 
+type CountryDetails = {
+    code: string;
+    name: string;
+    placeholder: string;
+    maxLength: string;
+    errorCode: string;
+};
 @Component({
     selector: 'app-phone-number-format',
     templateUrl: './phone-number-format.component.html',
@@ -11,19 +17,17 @@ import { parsePhoneNumberFromString, AsYouType } from 'libphonenumber-js';
 })
 export class PhoneNumberFormatComponent implements OnInit {
     isSmall: boolean;
-    selectedPhoneNumber: any;
     validatePhoneNumberForm: FormGroup;
-    validPhoneNumber: number;
-    countries: any[] = [
-        { code: 'US', name: '+1 (US)', placeholder: '### ### ####' },
-        { code: 'CA', name: '+1 (CA)', placeholder: '### ### ####' },
-        { code: 'RU', name: '+7 (RU)', placeholder: '### ### ## ##' },
-        { code: 'EG', name: '+20 (EG)', placeholder: '# #######' },
-        { code: 'IN', name: '+91 (IN)', placeholder: '#### ### ###' },
+    countries: CountryDetails[] = [
+        { code: 'US', name: '+1 (US)', placeholder: '### ### ####', maxLength: '12', errorCode: 'U.S.' },
+        { code: 'CA', name: '+1 (CA)', placeholder: '### ### ####', maxLength: '12', errorCode: 'Candian' },
+        { code: 'RU', name: '+7 (RU)', placeholder: '### ### ## ##', maxLength: '13', errorCode: 'Russian' },
+        { code: 'EG', name: '+20 (EG)', placeholder: '# #######', maxLength: '9', errorCode: 'Egyptian' },
+        { code: 'IN', name: '+91 (IN)', placeholder: '#### ### ###', maxLength: '12', errorCode: 'Indian' },
     ];
+    selectedCountry = this.countries[0];
+    countryChange = false;
 
-    selectedCountry = this.countries[0].code;
-    countryPlaceholder = this.countries[0].placeholder;
     constructor(
         private readonly _drawerService: StateService,
         private readonly _breakpointObserver: BreakpointObserver,
@@ -51,66 +55,64 @@ export class PhoneNumberFormatComponent implements OnInit {
         });
     }
 
-    validatePhoneNumberInput(phoneNumberInput: AbstractControl): any {
-        let phoneRe = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-        const isValid = phoneRe.test(phoneNumberInput.value.toString());
-        console.log(isValid);
-        // const inputValue: string = phoneNumberInput.value.toString();
-        // const phoneNumber: any = parsePhoneNumberFromString(inputValue, this.selectedCountry);
-        // if (phoneNumber) {
-        //     if (phoneNumber.isValid()) {
-        //         this.validPhoneNumber = this.validatePhoneNumberForm.controls['phone'].value.length;
-        //         return null;
-        //     }
-        //     return {
-        //         phoneNumber: {
-        //             valid: false,
-        //         },
-        //     };
-        // }
-        // return {
-        //     phoneNumber: {
-        //         valid: false,
-        //     },
-        // };
+    checkPhoneNumberPattern(phoneNumber: string, countryCode: string): boolean {
+        switch (countryCode) {
+            case 'US':
+            case 'CA': {
+                return /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(phoneNumber);
+            }
+            case 'RU': {
+                return /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{2})[-. ]?([0-9]{2})$/.test(phoneNumber);
+            }
+            case 'EG': {
+                return /^\(?([0-9]{1})\)?[-. ]?([0-9]{7})$/.test(phoneNumber);
+            }
+            case 'IN': {
+                return /^\(?([0-9]{4})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})$/.test(phoneNumber);
+            }
+            default: {
+                return /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(phoneNumber);
+            }
+        }
     }
+
+    validatePhoneNumberInput(phoneNumberInput: AbstractControl): any {
+        const isValid = this.checkPhoneNumberPattern(phoneNumberInput.value, this.selectedCountry.code);
+        return isValid ? null : { phoneNumberNotMatch: true };
+    }
+
     checkPhoneNumber(): void {
         if (this.validatePhoneNumberForm.invalid) {
             this.validatePhoneNumberForm.controls['phone'].setErrors({ phoneNumberNotMatch: true });
         }
+    }
+    removeError(): void {
+        this.validatePhoneNumberForm.controls.phone.markAsUntouched();
     }
     matcher(event: KeyboardEvent): void {
         const allowedRegex = /[0-9]/g;
         if (!event.key.match(allowedRegex)) {
             event.preventDefault();
         }
+        this.countryChange = false;
     }
 
     onCountryChange(countryDetails: any): void {
-        this.selectedCountry = countryDetails.value;
-        this.countryPlaceholder = this.countries.filter((item) => item.code === this.selectedCountry)[0].placeholder;
-        const phoneNumber: any = parsePhoneNumberFromString(
+        this.countryChange = true;
+        const phoneNumber = this.validatePhoneNumberForm.controls['phone'].value;
+        if (phoneNumber.length === 0) {
+            this.validatePhoneNumberForm.controls['phone'].setErrors(null);
+            return;
+        }
+        this.selectedCountry = this.countries.filter((item) => item.code === countryDetails.value)[0];
+        const isValidPhoneNumber = this.checkPhoneNumberPattern(
             this.validatePhoneNumberForm.controls['phone'].value,
-            this.selectedCountry
+            this.selectedCountry.code
         );
-        if (phoneNumber?.isValid()) {
+        if (isValidPhoneNumber) {
             this.validatePhoneNumberForm.controls['phone'].setErrors(null);
         } else {
             this.validatePhoneNumberForm.controls['phone'].setErrors({ phoneNumberNotMatch: true });
-        }
-    }
-    formatPhoneNumber(event: KeyboardEvent): void {
-        const inputValue: any = this.validatePhoneNumberForm.controls['phone'].value;
-        if (inputValue.length > this.validPhoneNumber - 1 && event.keyCode !== 46 && event.keyCode !== 8) {
-            event.preventDefault();
-        }
-        const phoneNumber: any = parsePhoneNumberFromString(inputValue, this.selectedCountry);
-        if (phoneNumber) {
-            this.selectedPhoneNumber = phoneNumber.number;
-            const asYouTypePhoneNumber = new AsYouType(this.selectedCountry).input(phoneNumber.nationalNumber);
-            this.validatePhoneNumberForm.controls['phone'].setValue(
-                asYouTypePhoneNumber.replace(/[^+\d]+/g, ' ').trim()
-            );
         }
     }
 

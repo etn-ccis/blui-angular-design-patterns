@@ -41,7 +41,6 @@
         "add": "^2.0.6",
         "color": "^3.1.2",
         "core-js": "^3.6.5",
-        "libphonenumber-js": "^1.9.23",
         "node-sass": "^4.13.1",
         "placeholder-loading": "^0.2.2",
         "rxjs": "~6.6.0",

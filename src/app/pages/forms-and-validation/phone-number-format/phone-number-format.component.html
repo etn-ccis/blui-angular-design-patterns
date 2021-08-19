@@ -4,7 +4,7 @@
     </button>
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Phone Number Format</div>
 </mat-toolbar>
-<section class="mat-typography" [class.small]="isSmall">
+<section class="mat-typography">
     <form [formGroup]="validatePhoneNumberForm" class="phone-number-form">
         <mat-form-field class="country-code-select" appearance="fill">
             <mat-label>Country Code</mat-label>
@@ -12,6 +12,7 @@
                 formControlName="selectedCountry"
                 (selectionChange)="onCountryChange($event)"
                 panelClass="selectPanel"
+                [disableOptionCentering]="true"
             >
                 <mat-option [value]="option.code" *ngFor="let option of countries">{{ option.name }}</mat-option>
             </mat-select>
@@ -20,25 +21,27 @@
             <mat-label>Phone Number</mat-label>
             <input
                 matInput
+                (blur)="checkPhoneNumber()"
                 formControlName="phone"
-                [value]="validatePhoneNumberForm.get('phone').value | formatPhoneNumber: selectedCountry"
+                [value]="
+                    validatePhoneNumberForm.get('phone').value
+                        | formatPhoneNumber: selectedCountry['code']:countryChange
+                "
                 inputmode="numeric"
-                [maxlength]="12"
+                [maxlength]="selectedCountry['maxLength']"
                 (keypress)="matcher($event)"
-                [placeholder]="countryPlaceholder"
+                (focus)="removeError()"
+                [placeholder]="selectedCountry['placeholder']"
             />
-            
+
             <mat-error
                 *ngIf="
                     validatePhoneNumberForm.get('phone').hasError('phoneNumberNotMatch') ||
                     validatePhoneNumberForm.get('phone').hasError('required')
                 "
             >
-                Please enter a valid {{ selectedCountry }} phone number.
+                Please enter a valid {{ selectedCountry['errorCode'] }} phone number.
             </mat-error>
         </mat-form-field>
-        <p>
-            <!-- Formatted Phone Number: <b>{{ '1234567890' | formatPhoneNumber }}</b> -->
-          </p>
     </form>
 </section>

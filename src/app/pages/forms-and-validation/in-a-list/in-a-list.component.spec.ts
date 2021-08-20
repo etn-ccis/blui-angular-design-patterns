@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { InAListComponent } from './in-a-list.component';
+import { InAListModule } from './in-a-list.module';
 
 describe('InAListComponent', () => {
     let component: InAListComponent;
@@ -9,6 +10,7 @@ describe('InAListComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [InAListComponent],
+            imports: [InAListModule],
         }).compileComponents();
     });
 

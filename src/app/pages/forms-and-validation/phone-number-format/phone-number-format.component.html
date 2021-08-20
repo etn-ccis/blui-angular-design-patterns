@@ -36,7 +36,7 @@
 
             <mat-error
                 *ngIf="
-                    validatePhoneNumberForm.get('phone').hasError('phoneNumberNotMatch') ||
+                    validatePhoneNumberForm.get('phone').hasError('invalidPhoneNumberFormat') ||
                     validatePhoneNumberForm.get('phone').hasError('required')
                 "
             >

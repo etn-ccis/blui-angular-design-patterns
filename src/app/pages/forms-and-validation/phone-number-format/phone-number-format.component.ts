@@ -57,10 +57,6 @@ export class PhoneNumberFormatComponent implements OnInit {
 
     checkPhoneNumberPattern(phoneNumber: string, countryCode: string): boolean {
         switch (countryCode) {
-            case 'US':
-            case 'CA': {
-                return /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(phoneNumber);
-            }
             case 'RU': {
                 return /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{2})[-. ]?([0-9]{2})$/.test(phoneNumber);
             }
@@ -78,12 +74,12 @@ export class PhoneNumberFormatComponent implements OnInit {
 
     checkPhoneNumber(phoneNumberInput: AbstractControl): any {
         const isValid = this.checkPhoneNumberPattern(phoneNumberInput.value, this.selectedCountry.code);
-        return isValid ? null : { phoneNumberNotMatch: true };
+        return isValid ? null : { invalidPhoneNumberFormat: true };
     }
 
     validatePhoneNumber(): void {
         if (this.validatePhoneNumberForm.invalid) {
-            this.validatePhoneNumberForm.controls['phone'].setErrors({ phoneNumberNotMatch: true });
+            this.validatePhoneNumberForm.controls['phone'].setErrors({ invalidPhoneNumberFormat: true });
         }
     }
 
@@ -109,7 +105,7 @@ export class PhoneNumberFormatComponent implements OnInit {
         if (isValidPhoneNumber) {
             this.validatePhoneNumberForm.controls['phone'].setErrors(null);
         } else {
-            this.validatePhoneNumberForm.controls['phone'].setErrors({ phoneNumberNotMatch: true });
+            this.validatePhoneNumberForm.controls['phone'].setErrors({ invalidPhoneNumberFormat: true });
         }
     }
 

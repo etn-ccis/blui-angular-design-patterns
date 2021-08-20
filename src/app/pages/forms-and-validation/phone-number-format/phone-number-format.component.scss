@@ -1,6 +1,6 @@
 @import '~@pxblue/colors/palette.scss';
 
-section.mat-typography {
+section.form-validation-section {
     padding-top: 40px;
     max-width: 504px;
     margin: 0 auto;
@@ -33,7 +33,7 @@ section.mat-typography {
 }
 
 @media only screen and (max-width: 600px) {
-    section.mat-typography {
+    section.form-validation-section {
         max-width: 100%;
         padding: 32px 16px 16px;
         .phone-number-form {

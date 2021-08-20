@@ -66,6 +66,8 @@ export class PhoneNumberFormatComponent implements OnInit {
             case 'IN': {
                 return /^\(?([0-9]{4})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})$/.test(phoneNumber);
             }
+            case 'US':
+            case 'CA':
             default: {
                 return /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(phoneNumber);
             }

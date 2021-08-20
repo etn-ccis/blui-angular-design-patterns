@@ -10,14 +10,6 @@ export class FormatPhoneNumberPipe implements PipeTransform {
         }
         let phoneNumber = value.replace(/\s/g, '');
         switch (country) {
-            case 'US':
-            case 'CA': {
-                if (phoneNumber.length > 3 && phoneNumber.length <= 6)
-                    phoneNumber = `${phoneNumber.slice(0, 3)} ${phoneNumber.slice(3)}`;
-                else if (phoneNumber.length > 6)
-                    phoneNumber = `${phoneNumber.slice(0, 3)} ${phoneNumber.slice(3, 6)} ${phoneNumber.slice(6)}`;
-                return phoneNumber;
-            }
             case 'RU': {
                 if (phoneNumber.length > 3 && phoneNumber.length <= 6)
                     phoneNumber = `${phoneNumber.slice(0, 3)} ${phoneNumber.slice(3)}`;
@@ -41,7 +33,8 @@ export class FormatPhoneNumberPipe implements PipeTransform {
                     phoneNumber = `${phoneNumber.slice(0, 4)} ${phoneNumber.slice(4, 7)} ${phoneNumber.slice(7)}`;
                 return phoneNumber;
             }
-
+            case 'US':
+            case 'CA':
             default: {
                 if (phoneNumber.length > 3 && phoneNumber.length <= 6)
                     phoneNumber = `${phoneNumber.slice(0, 3)} ${phoneNumber.slice(3)}`;

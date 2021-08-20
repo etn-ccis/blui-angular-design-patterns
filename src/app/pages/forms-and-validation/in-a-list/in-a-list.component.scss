@@ -3,7 +3,7 @@
 ::ng-deep .pxb-drawer-layout-nav-content {
     background-color: map-get($pxb-white, 50);
 }
-section.mat-typography {
+section.list-validation {
     padding-top: 24px;
     max-width: 686px;
     margin: 0 auto;
@@ -25,8 +25,7 @@ section.mat-typography {
     border-bottom: 1px solid map-get($pxb-gray, 100);
 }
 @media only screen and (max-width: 600px) {
-    section.mat-typography {
-        padding: 0;
+    section.list-validation {
         .list-card {
             border-radius: 0;
         }

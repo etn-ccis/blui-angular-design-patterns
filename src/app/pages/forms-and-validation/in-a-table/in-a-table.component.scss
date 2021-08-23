@@ -1,0 +1,39 @@
+
+@import '~@pxblue/colors/palette.scss';
+section {
+    padding: 24px 16px;
+    table {
+        width: 528px;
+        overflow: auto;
+    }
+    .note {
+        padding-top: 16px;
+    }
+}
+
+table {
+    .mat-column-id {
+        padding-left: 16px;
+      }
+      .mat-column-max {
+        padding-right: 16px;
+      }
+}
+
+mat-list {
+    background-color: map-get($pxb-white, 50);
+
+    pxb-info-list-item:nth-child(2)	 {
+        margin-bottom: 16px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    section {
+        padding: 0;
+
+        .note {
+            padding: 16px;
+        }
+    }
+}

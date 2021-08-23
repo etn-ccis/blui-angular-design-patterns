@@ -1,0 +1,143 @@
+<mat-toolbar color="primary" class="app-bar mat-elevation-z2" data-cy="pxb-toolbar">
+    <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">In A Table</div>
+</mat-toolbar>
+<section>
+    <table mat-table fxShow fxHide.lt-sm [dataSource]="data">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>ID</th>
+            <td mat-cell *matCellDef="let item">{{ item.id }}</td>
+        </ng-container>
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td mat-cell *matCellDef="let item">{{ item.name }}</td>
+        </ng-container>
+        <ng-container matColumnDef="min">
+            <th mat-header-cell *matHeaderCellDef style="text-align: right">Min</th>
+            <td mat-cell *matCellDef="let item" style="text-align: right">
+                <!-- <mat-form-field appearance="fill">
+                    <input
+                        matInput
+                        placeholder="Min"
+                        required
+                    />
+                </mat-form-field> -->
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="max">
+            <th mat-header-cell *matHeaderCellDef style="text-align: right">Max</th>
+            <td mat-cell *matCellDef="let item" style="text-align: right">
+                <!-- <mat-form-field appearance="fill">
+                    <input
+                        matInput
+                        placeholder="Max"
+                        required
+                    />
+                </mat-form-field> -->
+            </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns; let i"></tr>
+    </table>
+
+    <mat-list *ngIf="data.length > 0" fxShow.lt-sm fxHide>
+        <pxb-info-list-item hidePadding=true>
+            <span pxb-title>Power</span>
+            <span pxb-left-content style="margin-right: 32px">#1</span>
+        </pxb-info-list-item>
+        <pxb-info-list-item>
+            <span pxb-title>Min</span>
+            <span pxb-right-content>
+                <mat-form-field appearance="fill">
+                    <!-- <mat-label>Passcode</mat-label> -->
+                    <input
+                        matInput
+                        placeholder="Min"
+                        required
+                    />
+                </mat-form-field>
+            </span>
+        </pxb-info-list-item>
+        <pxb-info-list-item divider="partial">
+            <span pxb-title>Max</span>
+            <span pxb-right-content>
+                <mat-form-field appearance="fill">
+                    <!-- <mat-label>Passcode</mat-label> -->
+                    <input
+                        matInput
+                        placeholder="Max"
+                        required
+                    />
+                </mat-form-field>
+            </span>
+        </pxb-info-list-item>
+
+
+        <pxb-info-list-item hidePadding=true>
+            <span pxb-title>Xpert</span>
+            <span pxb-left-content style="margin-right: 32px">#2</span>
+        </pxb-info-list-item>
+        <pxb-info-list-item>
+            <span pxb-title>Min</span>
+            <span pxb-right-content>
+                <mat-form-field appearance="fill">
+                    <!-- <mat-label>Passcode</mat-label> -->
+                    <input
+                        matInput
+                        placeholder="Min"
+                        required
+                    />
+                </mat-form-field>
+            </span>
+        </pxb-info-list-item>
+        <pxb-info-list-item>
+            <span pxb-title>Max</span>
+            <span pxb-right-content>
+                <mat-form-field appearance="fill">
+                    <!-- <mat-label>Passcode</mat-label> -->
+                    <input
+                        matInput
+                        placeholder="Max"
+                        required
+                    />
+                </mat-form-field>
+            </span>
+        </pxb-info-list-item>
+        
+
+        <pxb-info-list-item hidePadding=true>
+            <span pxb-title>Blue</span>
+            <span pxb-left-content style="margin-right: 32px">#3</span>
+        </pxb-info-list-item>
+        <pxb-info-list-item>
+            <span pxb-title>Min</span>
+            <span pxb-right-content>
+                <mat-form-field appearance="fill">
+                    <!-- <mat-label>Passcode</mat-label> -->
+                    <input
+                        matInput
+                        placeholder="Min"
+                        required
+                    />
+                </mat-form-field>
+            </span>
+        </pxb-info-list-item>
+        <pxb-info-list-item>
+            <span pxb-title>Max</span>
+            <span pxb-right-content>
+                <mat-form-field appearance="fill">
+                    <!-- <mat-label>Passcode</mat-label> -->
+                    <input
+                        matInput
+                        placeholder="Max"
+                        required
+                    />
+                </mat-form-field>
+            </span>
+        </pxb-info-list-item>
+    </mat-list>
+    <p class="note">Remember that in a real application, you would need to implement form validations to check, for example, if “Min” is less than “Max”.</p>
+</section>

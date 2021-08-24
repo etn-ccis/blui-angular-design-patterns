@@ -3,6 +3,7 @@
 ::ng-deep .pxb-drawer-layout-nav-content {
     background-color: map-get($pxb-white, 50);
 }
+
 section.list-validation {
     padding-top: 24px;
     max-width: 686px;
@@ -24,14 +25,34 @@ section.list-validation {
     padding: 8px 16px;
     border-bottom: 1px solid map-get($pxb-gray, 100);
 }
+
+.list-validation {
+    ::ng-deep .mat-form-field-flex {
+        padding-top: 0;
+        margin-top: 20px;
+        height: 40px;
+    }
+
+    ::ng-deep .mat-form-field-appearance-fill .mat-form-field-infix {
+        padding: 0;
+    }
+
+    ::ng-deep
+        .pxb-blue
+        .mat-form-field.mat-primary:not(.mat-form-field-disabled).mat-form-field-appearance-fill
+        .mat-form-field-flex {
+        padding-top: 0;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     section.list-validation {
+        padding-top: 0;
         .list-card {
             border-radius: 0;
         }
-    }
-
-    .ip-address {
-        max-width: 138px;
+        ::ng-deep .mat-form-field-wrapper {
+            width: 138px;
+        }
     }
 }

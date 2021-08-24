@@ -12,13 +12,9 @@
                     <pxb-info-list-item divider="partial" iconAlign="left">
                         <div pxb-title>IP Address</div>
                         <mat-icon pxb-icon>dns</mat-icon>
-                        <input
-                            type="text"
-                            data-cy="ip-address"
-                            formControlName="ipAddress"
-                            class="ip-address"
-                            pxb-right-content
-                        />
+                        <mat-form-field appearance="fill" pxb-right-content>
+                            <input matInput type="text" data-cy="ip-address" required formControlName="ipAddress" />
+                        </mat-form-field>
                     </pxb-info-list-item>
 
                     <pxb-info-list-item iconAlign="left">

@@ -31,9 +31,64 @@
             </td>
         </ng-container>
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns; let i"></tr>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns1; let i"></tr>
     </table>
+
+
+    <form [formGroup]="form" fxShow fxHide.lt-sm style="margin-top: 40px;">
+          <table
+            #table
+            class="table-view-example"
+            mat-table
+            [dataSource]="dataSource">
+
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef>ID</th>
+                <td mat-cell *matCellDef="let row; let i = index">{{ i+1 }}</td>
+            </ng-container>
+            
+
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef>Name</th>
+              <td mat-cell *matCellDef="let row; let i = index"> 
+                <ng-container [formGroup]="row">
+                  {{row.get('name').value}}
+                </ng-container>
+            </td>
+            </ng-container>
+
+            <ng-container matColumnDef="min">
+              <th mat-header-cell *matHeaderCellDef>Min</th>
+              <td mat-cell *matCellDef="let row; let i = index"> 
+                <ng-container [formGroup]="row">
+                  <mat-form-field appearance="fill">
+                    <input matInput placeholder="Min"
+                      formControlName="min" required />
+                  </mat-form-field>
+                </ng-container>
+            </td>
+            </ng-container>
+
+            <ng-container matColumnDef="max">
+                <th mat-header-cell *matHeaderCellDef>Max</th>
+                <td mat-cell *matCellDef="let row; let i = index"> 
+                  <ng-container [formGroup]="row">
+                    <mat-form-field appearance="fill">
+                      <input matInput placeholder="Max"
+                        formControlName="max" required />
+                    </mat-form-field>
+                  </ng-container>
+              </td>
+              </ng-container>
+      
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns; let i"></tr>
+          </table>
+      
+        <pre>{{ form.value | json }}</pre>
+      </form>
+      
 
     <mat-list class="list-view-example" *ngIf="data.length > 0" fxShow.lt-sm fxHide>
         <pxb-info-list-item hidePadding=true>

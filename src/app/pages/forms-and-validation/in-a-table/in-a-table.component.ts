@@ -23,11 +23,7 @@ type DataItem = {
 export class InATableComponent implements OnInit {
   isSmall: boolean;
   data: DataItem[] = [];
-  displayedColumns1: string[] = ['id', 'name', 'min', 'max'];
-
   form: FormGroup;
-
-
   displayedColumns = ['id', 'name', 'min', 'max'];
   dataSource: MatTableDataSource<AbstractControl>;
 
@@ -36,14 +32,10 @@ export class InATableComponent implements OnInit {
     private readonly _breakpointObserver: BreakpointObserver,
     private readonly _fb: FormBuilder,
   ) {
-
     this.createForm();
     this.addRow();
     this.dataSource = new MatTableDataSource(this.tableControlArray.controls);
   }
-
-
-
 
   get tableControlArray() {
     return this.form.get('tableExample') as FormArray;
@@ -54,10 +46,6 @@ export class InATableComponent implements OnInit {
       tableExample: this._fb.array([]),
     });
   }
-
-  // trackRows(index: number, row: AbstractControl) {
-  //   return row.value.uid;
-  // }
 
   private addRow() {
     const rows = this.tableControlArray;
@@ -88,7 +76,6 @@ export class InATableComponent implements OnInit {
         })
       );
     });
-
   }
 
   ngOnInit(): void {
@@ -101,21 +88,6 @@ export class InATableComponent implements OnInit {
           this.isSmall = false;
         }
       });
-
-    this.data = [
-      {
-        id: 1,
-        name: 'power',
-        min: 10,
-        max: 20,
-      },
-      {
-        id: 2,
-        name: 'power-1',
-        min: 40,
-        max: 20,
-      },
-    ]
   }
   toggleMenu(): void {
     const drawerOpen = this._drawerService.getDrawerOpen();

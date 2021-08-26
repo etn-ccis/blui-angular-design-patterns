@@ -5,37 +5,6 @@
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">In A Table</div>
 </mat-toolbar>
 <section>
-    <table class="table-view-example" mat-table fxShow fxHide.lt-sm [dataSource]="data">
-        <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef>ID</th>
-            <td mat-cell *matCellDef="let item">{{ item.id }}</td>
-        </ng-container>
-        <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef>Name</th>
-            <td mat-cell *matCellDef="let item">{{ item.name }}</td>
-        </ng-container>
-        <ng-container matColumnDef="min">
-            <th mat-header-cell *matHeaderCellDef style="text-align: right">Min</th>
-            <td mat-cell *matCellDef="let item" style="text-align: right">
-                <mat-form-field appearance="fill">
-                    <input matInput placeholder="Min" required />
-                </mat-form-field>
-            </td>
-        </ng-container>
-        <ng-container matColumnDef="max">
-            <th mat-header-cell *matHeaderCellDef style="text-align: right">Max</th>
-            <td mat-cell *matCellDef="let item" style="text-align: right">
-                <mat-form-field appearance="fill">
-                    <input matInput placeholder="Max" required />
-                </mat-form-field>
-            </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns1; let i"></tr>
-    </table>
-
-
     <form [formGroup]="form" fxShow fxHide.lt-sm style="margin-top: 40px;">
           <table
             #table
@@ -47,7 +16,6 @@
                 <th mat-header-cell *matHeaderCellDef>ID</th>
                 <td mat-cell *matCellDef="let row; let i = index">{{ i+1 }}</td>
             </ng-container>
-            
 
             <ng-container matColumnDef="name">
               <th mat-header-cell *matHeaderCellDef>Name</th>
@@ -88,81 +56,37 @@
       
         <pre>{{ form.value | json }}</pre>
       </form>
-      
+    
+      <form [formGroup]="form">
+          <mat-list class="list-view-example" formArrayName="tableExample"
+          *ngFor="let item of form.get('tableExample')['controls']; let i = index;" fxShow.lt-sm fxHide>
+          <div [formGroupName]="i">
 
-    <mat-list class="list-view-example" *ngIf="data.length > 0" fxShow.lt-sm fxHide>
-        <pxb-info-list-item hidePadding=true>
-            <span pxb-title>
-                <h2 style="margin-bottom: 0;">Power</h2>
-            </span>
-            <span pxb-left-content style="margin-right: 32px">#1</span>
-        </pxb-info-list-item>
-        <pxb-info-list-item>
-            <span pxb-title>Min</span>
-            <span pxb-right-content>
-                <mat-form-field appearance="fill">
-                    <input matInput placeholder="Min" required />
-                </mat-form-field>
-            </span>
-        </pxb-info-list-item>
-        <pxb-info-list-item divider="partial">
-            <span pxb-title>Max</span>
-            <span pxb-right-content>
-                <mat-form-field appearance="fill">
-                    <!-- <mat-label>Passcode</mat-label> -->
-                    <input matInput placeholder="Max" required />
-                </mat-form-field>
-            </span>
-        </pxb-info-list-item>
-
-
-        <pxb-info-list-item hidePadding=true>
-            <span pxb-title>
-                <h2 style="margin-bottom: 0;">Xpert</h2>
-            </span>
-            <span pxb-left-content style="margin-right: 32px">#2</span>
-        </pxb-info-list-item>
-        <pxb-info-list-item>
-            <span pxb-title>Min</span>
-            <span pxb-right-content>
-                <mat-form-field appearance="fill">
-                    <input matInput placeholder="Min" required />
-                </mat-form-field>
-            </span>
-        </pxb-info-list-item>
-        <pxb-info-list-item>
-            <span pxb-title>Max</span>
-            <span pxb-right-content>
-                <mat-form-field appearance="fill">
-                    <input matInput placeholder="Max" required />
-                </mat-form-field>
-            </span>
-        </pxb-info-list-item>
-
-
-        <pxb-info-list-item hidePadding=true>
-            <span pxb-title>
-                <h2 style="margin-bottom: 0;">Blue</h2>
-            </span>
-            <span pxb-left-content style="margin-right: 32px">#3</span>
-        </pxb-info-list-item>
-        <pxb-info-list-item>
-            <span pxb-title>Min</span>
-            <span pxb-right-content>
-                <mat-form-field appearance="fill">
-                    <input matInput placeholder="Min" required />
-                </mat-form-field>
-            </span>
-        </pxb-info-list-item>
-        <pxb-info-list-item>
-            <span pxb-title>Max</span>
-            <span pxb-right-content>
-                <mat-form-field appearance="fill">
-                    <input matInput placeholder="Max" required />
-                </mat-form-field>
-            </span>
-        </pxb-info-list-item>
-    </mat-list>
+              <pxb-info-list-item hidePadding=true>
+                  <span pxb-title>
+                      <h2 style="margin-bottom: 0;">{{item.get('name').value}}</h2>
+                  </span>
+                  <span pxb-left-content style="margin-right: 32px">#{{i+1}}</span>
+              </pxb-info-list-item>
+              <pxb-info-list-item>
+                  <span pxb-title>Min</span>
+                  <span pxb-right-content>
+                      <mat-form-field appearance="fill">
+                          <input matInput  formControlName="min" placeholder="Min" required />
+                      </mat-form-field>
+                  </span>
+              </pxb-info-list-item>
+              <pxb-info-list-item [divider] ="i === 2 ? null : 'partial'">
+                  <span pxb-title>Max</span>
+                  <span pxb-right-content>
+                      <mat-form-field appearance="fill">
+                          <input matInput  formControlName="max" placeholder="Max" required />
+                      </mat-form-field>
+                  </span>
+              </pxb-info-list-item>
+          </div>
+          </mat-list>
+      </form>
     <p class="note">Remember that in a real application, you would need to implement form validations to check, for
         example, if “Min” is less than “Max”.</p>
 </section>

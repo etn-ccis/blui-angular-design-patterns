@@ -9,7 +9,6 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { InfoListItemModule } from '@pxblue/angular-components';
 
 import { InATableComponent } from './in-a-table.component';
@@ -27,7 +26,6 @@ import { InATableComponent } from './in-a-table.component';
         MatInputModule,
         MatFormFieldModule,
         MatTableModule,
-        FlexLayoutModule,
         InfoListItemModule,
     ],
 })

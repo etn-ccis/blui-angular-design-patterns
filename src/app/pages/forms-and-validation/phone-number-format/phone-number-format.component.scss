@@ -1,0 +1,45 @@
+@import '~@pxblue/colors/palette.scss';
+
+section.form-validation-section {
+    padding-top: 40px;
+    max-width: 504px;
+    margin: 0 auto;
+    .phone-number-form {
+        display: flex;
+        .country-code-select {
+            max-width: 135px;
+        }
+        .phone-number-input {
+            margin-left: 16px;
+            flex: 1;
+        }
+    }
+}
+
+::ng-deep .pxb-drawer-layout-nav-content {
+    background-color: map-get($pxb-white, 50);
+}
+
+::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+    border-top: 0;
+    border-bottom: 5px solid;
+}
+
+::ng-deep .cdk-overlay-container .cdk-overlay-pane .selectPanel {
+    min-width: 135px !important;
+    border-radius: 0;
+    height: 152px;
+    margin: 32px 4px;
+}
+
+@media only screen and (max-width: 600px) {
+    section.form-validation-section {
+        max-width: 100%;
+        padding: 32px 16px 16px;
+        .phone-number-form {
+            .phone-number-input {
+                width: 192px;
+            }
+        }
+    }
+}

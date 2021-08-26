@@ -4,10 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
     name: 'formatPhoneNumber',
 })
 export class FormatPhoneNumberPipe implements PipeTransform {
-    transform(value: string, country: string, countryChange?: boolean): string {
-        if (countryChange) {
-            return value;
-        }
+    transform(value: string, country: string): string {
         let phoneNumber = value.replace(/\s/g, '');
         switch (country) {
             case 'RU': {

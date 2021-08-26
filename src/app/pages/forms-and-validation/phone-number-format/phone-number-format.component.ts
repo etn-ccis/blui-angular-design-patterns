@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { FormGroup, Validators, FormBuilder, AbstractControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder, AbstractControl } from '@angular/forms';
 import { StateService } from '../../../services/state.service';
+
+import { FormatPhoneNumberPipe } from './shared/format-phone-number.pipe';
 
 type CountryDetails = {
     code: string;
@@ -14,6 +16,7 @@ type CountryDetails = {
     selector: 'app-phone-number-format',
     templateUrl: './phone-number-format.component.html',
     styleUrls: ['./phone-number-format.component.scss'],
+    providers: [FormatPhoneNumberPipe],
 })
 export class PhoneNumberFormatComponent implements OnInit {
     isSmall: boolean;
@@ -31,7 +34,8 @@ export class PhoneNumberFormatComponent implements OnInit {
     constructor(
         private readonly _drawerService: StateService,
         private readonly _breakpointObserver: BreakpointObserver,
-        private readonly _formBuilder: FormBuilder
+        private readonly _formBuilder: FormBuilder,
+        private readonly _formatPhoneNumber: FormatPhoneNumberPipe
     ) {
         this.initForm();
     }
@@ -46,6 +50,14 @@ export class PhoneNumberFormatComponent implements OnInit {
                     this.isSmall = false;
                 }
             });
+    }
+
+    onChange(value: string): void {
+        const ctrl = this.validatePhoneNumberForm.get('phone') as FormControl;
+        ctrl.setValue(this._formatPhoneNumber.transform(value, this.selectedCountry.code), {
+            emitEvent: false,
+            emitViewToModelChange: false,
+        });
     }
 
     initForm(): void {
@@ -100,6 +112,13 @@ export class PhoneNumberFormatComponent implements OnInit {
     onCountryChange(countryDetails: any): void {
         this.countryChange = true;
         this.selectedCountry = this.countries.filter((item) => item.code === countryDetails.value)[0];
+        this.validatePhoneNumberForm.controls['phone'].setValue(
+            this._formatPhoneNumber.transform(
+                this.validatePhoneNumberForm.controls['phone'].value,
+                this.selectedCountry.code
+            ),
+            { emitEvent: false, emitViewToModelChange: false }
+        );
         const isValidPhoneNumber = this.checkPhoneNumberPattern(
             this.validatePhoneNumberForm.controls['phone'].value,
             this.selectedCountry.code

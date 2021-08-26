@@ -24,6 +24,7 @@ import { FixLengthPasscodeComponent } from './pages/forms-and-validation/fix-len
 import { PhoneNumberFormatComponent } from './pages/forms-and-validation/phone-number-format/phone-number-format.component';
 import { VerifyOnSubmitComponent } from './pages/forms-and-validation/verify-on-submit/verify-on-submit.component';
 import { SectionedFormComponent } from './pages/forms-and-validation/sectioned-form/sectioned-form.component';
+import { InAListComponent } from './pages/forms-and-validation/in-a-list/in-a-list.component';
 
 export type DrawerItem = {
     title: string;
@@ -83,6 +84,11 @@ export const ROUTES: DrawerItem[] = [
                 title: 'Sectioned Form',
                 path: 'sectioned-form',
                 component: SectionedFormComponent,
+            },
+            {
+                title: 'In a List',
+                path: 'in-a-list',
+                component: InAListComponent,
             },
         ],
     },

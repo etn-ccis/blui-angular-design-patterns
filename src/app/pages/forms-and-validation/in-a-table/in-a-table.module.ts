@@ -12,10 +12,10 @@ import { MatTableModule } from '@angular/material/table';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { InfoListItemModule } from '@pxblue/angular-components';
 
-import { InATableComponent } from './in-a-table.component'
+import { InATableComponent } from './in-a-table.component';
 @NgModule({
-  declarations: [InATableComponent],
-  imports: [
+    declarations: [InATableComponent],
+    imports: [
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
@@ -28,7 +28,7 @@ import { InATableComponent } from './in-a-table.component'
         MatFormFieldModule,
         MatTableModule,
         FlexLayoutModule,
-        InfoListItemModule
-  ]
+        InfoListItemModule,
+    ],
 })
-export class InATableModule { }
+export class InATableModule {}

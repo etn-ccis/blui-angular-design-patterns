@@ -48,6 +48,7 @@ import { VerifyOnSubmitModule } from './pages/forms-and-validation/verify-on-sub
 import { FixLengthPasscodeModule } from './pages/forms-and-validation/fix-length-passcode/fix-length-passcode.module';
 import { SectionedFormModule } from './pages/forms-and-validation/sectioned-form/sectioned-form.module';
 import { InATableModule } from './pages/forms-and-validation/in-a-table/in-a-table.module';
+import { InAListModule } from './pages/forms-and-validation/in-a-list/in-a-list.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -96,6 +97,7 @@ import { InATableModule } from './pages/forms-and-validation/in-a-table/in-a-tab
         FixLengthPasscodeModule,
         SectionedFormModule,
         InATableModule,
+        InAListModule,
     ],
     bootstrap: [AppComponent],
 })

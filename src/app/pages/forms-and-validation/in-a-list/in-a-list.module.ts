@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
@@ -22,6 +23,7 @@ import { InAListComponent } from './in-a-list.component';
         BrowserAnimationsModule,
         CommonModule,
         MatToolbarModule,
+        MatButtonModule,
         MatIconModule,
         MatInputModule,
         MatFormFieldModule,

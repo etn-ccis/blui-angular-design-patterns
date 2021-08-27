@@ -1,28 +1,27 @@
 @import '~@pxblue/colors/palette.scss';
-section {
+section.table-validation {
+    background-color: map-get($pxb-white, 200);
+    height: calc(100vh - 64px);
     padding: 24px 16px;
     table {
         width: 528px;
         overflow: auto;
+        .mat-header-cell {
+            padding: 0 16px;
+            color: map-get($pxb-black, 500);
+            font-weight: bold;
+        }
+        .mat-cell {
+            padding: 0 16px;
+        }
+        .mat-column-min,
+        .mat-column-max {
+            text-align: right;
+        }
     }
     .note {
         padding: 16px 0;
         margin: 0;
-    }
-}
-
-table {
-    .mat-header-cell {
-        padding: 0 16px;
-        color: map-get($pxb-black, 500);
-        font-weight: bold;
-    }
-    .mat-cell {
-        padding: 0 16px;
-    }
-    .mat-column-min,
-    .mat-column-max {
-        text-align: right;
     }
 }
 
@@ -59,8 +58,9 @@ mat-list.list-view-example {
     }
 }
 
-section.small {
+section.table-validation.small {
     padding: 0;
+    height: calc(100vh - 56px);
     .mat-list-base {
         padding-top: 0;
     }

@@ -4,7 +4,7 @@
     </button>
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">In A Table</div>
 </mat-toolbar>
-<section [class.small]="isSmall">
+<section class="table-validation" [class.small]="isSmall">
     <form [formGroup]="form">
         <div *ngIf="isSmall; else tableView">
             <mat-list

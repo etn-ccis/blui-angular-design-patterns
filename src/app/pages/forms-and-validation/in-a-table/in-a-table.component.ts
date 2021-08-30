@@ -33,6 +33,18 @@ export class InATableComponent implements OnInit {
         this.dataSource = new MatTableDataSource(this.tableControlArray.controls);
     }
 
+    ngOnInit(): void {
+        this._breakpointObserver
+            .observe([Breakpoints.Small, Breakpoints.Handset])
+            .subscribe((state: BreakpointState) => {
+                if (state.matches) {
+                    this.isSmall = true;
+                } else {
+                    this.isSmall = false;
+                }
+            });
+    }
+
     get tableControlArray(): FormArray {
         return this.form.get('tableExample') as FormArray;
     }
@@ -74,17 +86,6 @@ export class InATableComponent implements OnInit {
         });
     }
 
-    ngOnInit(): void {
-        this._breakpointObserver
-            .observe([Breakpoints.Small, Breakpoints.Handset])
-            .subscribe((state: BreakpointState) => {
-                if (state.matches) {
-                    this.isSmall = true;
-                } else {
-                    this.isSmall = false;
-                }
-            });
-    }
     toggleMenu(): void {
         const drawerOpen = this._drawerService.getDrawerOpen();
         this._drawerService.setDrawerOpen(!drawerOpen);

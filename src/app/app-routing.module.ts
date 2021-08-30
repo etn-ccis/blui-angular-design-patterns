@@ -87,7 +87,7 @@ export const ROUTES: DrawerItem[] = [
                 component: SectionedFormComponent,
             },
             {
-                title: 'In A Table',
+                title: 'In a Table',
                 path: 'in-a-table',
                 component: InATableComponent,
             },

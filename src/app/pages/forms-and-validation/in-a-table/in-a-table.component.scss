@@ -2,7 +2,7 @@
 section.table-validation {
     background-color: map-get($pxb-white, 200);
     height: calc(100vh - 64px);
-    padding: 24px 16px;
+    padding: 40px 16px;
     table {
         width: 528px;
         overflow: auto;
@@ -10,6 +10,7 @@ section.table-validation {
             padding: 0 16px;
             color: map-get($pxb-black, 500);
             font-weight: bold;
+            font-size: 14px;
         }
         .mat-cell {
             padding: 0 16px;
@@ -22,6 +23,7 @@ section.table-validation {
     .note {
         padding: 16px 0;
         margin: 0;
+        max-width: 800px;
     }
 }
 

@@ -18,6 +18,7 @@ type DataItem = {
 })
 export class InATableComponent implements OnInit {
     isSmall = false;
+    isXsSmall = false;
     data: DataItem[] = [];
     form: FormGroup;
     displayedColumns = ['id', 'name', 'min', 'max'];
@@ -35,13 +36,14 @@ export class InATableComponent implements OnInit {
 
     ngOnInit(): void {
         this._breakpointObserver
-            .observe([Breakpoints.Small, Breakpoints.Handset])
+            .observe([Breakpoints.Small, Breakpoints.XSmall, Breakpoints.Handset])
             .subscribe((state: BreakpointState) => {
                 if (state.matches) {
                     this.isSmall = true;
                 } else {
                     this.isSmall = false;
                 }
+                this.isXsSmall = state.breakpoints['(max-width: 599.98px)'];
             });
     }
 

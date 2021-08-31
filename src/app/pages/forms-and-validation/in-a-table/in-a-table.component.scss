@@ -61,18 +61,22 @@ mat-list.list-view-example {
 }
 
 section.table-validation.small {
-    padding: 0;
     height: calc(100vh - 56px);
-    .mat-list-base {
-        padding-top: 0;
-    }
-    .note {
-        padding: 16px;
-    }
-    .table-view-example,
-    .list-view-example {
-        ::ng-deep .mat-form-field-flex {
-            width: 144px;
+}
+
+@media only screen and (max-width: 600px) {
+    section.table-validation {
+        padding: 0;
+        .mat-list-base {
+            padding-top: 0;
+        }
+        .note {
+            padding: 16px;
+        }
+        .list-view-example {
+            ::ng-deep .mat-form-field-flex {
+                width: 144px;
+            }
         }
     }
 }

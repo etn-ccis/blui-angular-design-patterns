@@ -14,10 +14,8 @@
             >
                 <div [formGroupName]="i">
                     <pxb-info-list-item hidePadding="true">
-                        <span pxb-title>
-                            <h2 style="margin-bottom: 0;">{{ item.get('name').value }}</h2>
-                        </span>
-                        <span pxb-left-content style="margin-right: 32px">#{{ i + 1 }}</span>
+                        <h2 pxb-title style="margin-bottom: 0;">{{ item.get('name').value }}</h2>
+                        <span pxb-icon>#{{ i + 1 }}</span>
                     </pxb-info-list-item>
                     <pxb-info-list-item>
                         <span pxb-title>Min</span>
@@ -27,13 +25,16 @@
                             </mat-form-field>
                         </span>
                     </pxb-info-list-item>
-                    <pxb-info-list-item [divider]="i === 2 ? null : 'partial'">
+                    <pxb-info-list-item>
                         <span pxb-title>Max</span>
                         <span pxb-right-content>
                             <mat-form-field appearance="fill">
                                 <input matInput formControlName="max" placeholder="Max" required />
                             </mat-form-field>
                         </span>
+                    </pxb-info-list-item>
+                    <pxb-info-list-item [divider]="i === 2 ? null : 'partial'" style="height: 16px;">
+                        <span pxb-title></span>
                     </pxb-info-list-item>
                 </div>
             </mat-list>

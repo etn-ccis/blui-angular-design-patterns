@@ -33,8 +33,9 @@ mat-list.list-view-example {
     pxb-info-list-item:nth-child(2) {
         margin-bottom: 16px;
     }
-    [pxb-left-content] {
+    [pxb-icon] {
         color: map-get($pxb-gray, 500);
+        font-size: 16px;
     }
 }
 

@@ -6,16 +6,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { MatCardModule } from '@angular/material/card';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
 import { InfoListItemModule } from '@pxblue/angular-components';
 
-import { InAListComponent } from './in-a-list.component';
-
+import { InATableComponent } from './in-a-table.component';
 @NgModule({
-    declarations: [InAListComponent],
+    declarations: [InATableComponent],
     imports: [
         BrowserModule,
         FormsModule,
@@ -23,13 +21,12 @@ import { InAListComponent } from './in-a-list.component';
         BrowserAnimationsModule,
         CommonModule,
         MatToolbarModule,
-        MatButtonModule,
         MatIconModule,
+        MatButtonModule,
         MatInputModule,
         MatFormFieldModule,
-        MatCardModule,
-        MatSlideToggleModule,
+        MatTableModule,
         InfoListItemModule,
     ],
 })
-export class InAListModule {}
+export class InATableModule {}

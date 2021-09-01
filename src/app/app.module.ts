@@ -48,6 +48,7 @@ import { PhoneNumberFormatModule } from './pages/forms-and-validation/phone-numb
 import { VerifyOnSubmitModule } from './pages/forms-and-validation/verify-on-submit/verify-on-submit.module';
 import { FixLengthPasscodeModule } from './pages/forms-and-validation/fix-length-passcode/fix-length-passcode.module';
 import { SectionedFormModule } from './pages/forms-and-validation/sectioned-form/sectioned-form.module';
+import { InATableModule } from './pages/forms-and-validation/in-a-table/in-a-table.module';
 import { InAListModule } from './pages/forms-and-validation/in-a-list/in-a-list.module';
 
 @NgModule({
@@ -97,6 +98,7 @@ import { InAListModule } from './pages/forms-and-validation/in-a-list/in-a-list.
         VerifyOnSubmitModule,
         FixLengthPasscodeModule,
         SectionedFormModule,
+        InATableModule,
         InAListModule,
     ],
     bootstrap: [AppComponent],

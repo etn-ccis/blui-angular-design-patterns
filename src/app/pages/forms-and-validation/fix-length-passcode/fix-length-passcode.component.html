@@ -48,7 +48,8 @@
                 </mat-icon>
                 <mat-icon data-cy="success" class="icon-container" [style.color]="successColor">done</mat-icon>
             </button>
-            <mat-error data-cy="six-digit-error"
+            <mat-error
+                data-cy="six-digit-error"
                 *ngIf="
                     passcodeFormControl.passcode.errors?.required ||
                     passcodeFormControl.passcode.errors?.passcodeLengthNotMatch
@@ -60,7 +61,14 @@
                 Incorrect Passcode.
             </mat-error>
         </mat-form-field>
-        <button data-cy="reset" class="reset-btn" mat-stroked-button color="primary" (click)="resetForm()" [disabled]="showLoading">
+        <button
+            data-cy="reset"
+            class="reset-btn"
+            mat-stroked-button
+            color="primary"
+            (click)="resetForm()"
+            [disabled]="showLoading"
+        >
             <mat-icon>refresh</mat-icon>
             Reset Form
         </button>

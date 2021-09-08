@@ -11,7 +11,6 @@ import { SortableListComponent } from './pages/list/sortable-list/sortable-list.
 import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.component';
 import { ResponsiveTableComponent } from './pages/list/responsive-table/responsive-table.component';
 import { DynamicStepperComponent } from './pages/dynamic-stepper/dynamic-stepper.component';
-import { FormValidationComponent } from './pages/form-validation/form-validation.component';
 import { I18nComponent } from './pages/i18n/i18n.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { ProgressBarIndeterminateComponent } from './pages/loading-waiting-states/progress-bar-indeterminate/progress-bar-indeterminate.component';
@@ -51,11 +50,6 @@ export const ROUTES: DrawerItem[] = [
                 component: SearchBarComponent,
             },
         ],
-    },
-    {
-        title: 'Form Validation',
-        path: 'form-validation',
-        component: FormValidationComponent,
     },
     {
         title: 'Forms and Validation',

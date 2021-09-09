@@ -40,4 +40,14 @@ describe('Form validation', () => {
         cy.get('[data-cy=new-password]').should('be.empty')
         cy.get('[data-cy=confirm-password]').should('be.empty')
     });
+
+    it('should display visability when enabled', () => {
+        // cy.get('[data-cy=old-password]').click().type('somepassword')
+        // .should('have.attr', 'visibility_off')
+        // .should('have.property', 'Visibility_off')
+        // .invoke('LComponentView_PasswordComponent(708)', 'visibility_off').should('equal', 'visibility_off')
+        // .invoke('LComponentView_PasswordComponent(708')
+        // .invoke('attr', '70').should('equal', 'Visibility_off')
+        // .invoke('prop', 'visibility_off').should('contain', 'visibility_off')
+    });
 });

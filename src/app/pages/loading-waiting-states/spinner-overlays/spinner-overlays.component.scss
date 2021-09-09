@@ -8,3 +8,9 @@
     width: 18px;
     height: 18px;
 }
+
+.spinner-overlay-header {
+    ::ng-deep .mat-card-header-text {
+        margin: 0;
+    }
+}

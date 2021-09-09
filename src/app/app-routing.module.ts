@@ -11,7 +11,6 @@ import { SortableListComponent } from './pages/list/sortable-list/sortable-list.
 import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.component';
 import { ResponsiveTableComponent } from './pages/list/responsive-table/responsive-table.component';
 import { DynamicStepperComponent } from './pages/dynamic-stepper/dynamic-stepper.component';
-import { FormValidationComponent } from './pages/form-validation/form-validation.component';
 import { I18nComponent } from './pages/i18n/i18n.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { ProgressBarIndeterminateComponent } from './pages/loading-waiting-states/progress-bar-indeterminate/progress-bar-indeterminate.component';
@@ -24,6 +23,7 @@ import { FixLengthPasscodeComponent } from './pages/forms-and-validation/fix-len
 import { PhoneNumberFormatComponent } from './pages/forms-and-validation/phone-number-format/phone-number-format.component';
 import { VerifyOnSubmitComponent } from './pages/forms-and-validation/verify-on-submit/verify-on-submit.component';
 import { SectionedFormComponent } from './pages/forms-and-validation/sectioned-form/sectioned-form.component';
+import { InATableComponent } from './pages/forms-and-validation/in-a-table/in-a-table.component';
 import { InAListComponent } from './pages/forms-and-validation/in-a-list/in-a-list.component';
 
 export type DrawerItem = {
@@ -50,11 +50,6 @@ export const ROUTES: DrawerItem[] = [
                 component: SearchBarComponent,
             },
         ],
-    },
-    {
-        title: 'Form Validation',
-        path: 'form-validation',
-        component: FormValidationComponent,
     },
     {
         title: 'Forms and Validation',
@@ -84,6 +79,11 @@ export const ROUTES: DrawerItem[] = [
                 title: 'Sectioned Form',
                 path: 'sectioned-form',
                 component: SectionedFormComponent,
+            },
+            {
+                title: 'In a Table',
+                path: 'in-a-table',
+                component: InATableComponent,
             },
             {
                 title: 'In a List',

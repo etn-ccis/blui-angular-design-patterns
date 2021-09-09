@@ -34,7 +34,6 @@ import { SortableListModule } from './pages/list/sortable-list/sortable-list.mod
 import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
 import { ResponsiveTableModule } from './pages/list/responsive-table/responsive-table.module';
 import { DynamicStepperModule } from './pages/dynamic-stepper/dynamic-stepper.module';
-import { FormValidationModule } from './pages/form-validation/form-validation.module';
 import { I18nModule } from './pages/i18n/i18n.module';
 import { LandingPageModule } from './pages/landing-page/landing-page.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -48,6 +47,7 @@ import { PhoneNumberFormatModule } from './pages/forms-and-validation/phone-numb
 import { VerifyOnSubmitModule } from './pages/forms-and-validation/verify-on-submit/verify-on-submit.module';
 import { FixLengthPasscodeModule } from './pages/forms-and-validation/fix-length-passcode/fix-length-passcode.module';
 import { SectionedFormModule } from './pages/forms-and-validation/sectioned-form/sectioned-form.module';
+import { InATableModule } from './pages/forms-and-validation/in-a-table/in-a-table.module';
 import { InAListModule } from './pages/forms-and-validation/in-a-list/in-a-list.module';
 
 @NgModule({
@@ -85,7 +85,6 @@ import { InAListModule } from './pages/forms-and-validation/in-a-list/in-a-list.
         SearchBarModule,
         ResponsiveTableModule,
         DynamicStepperModule,
-        FormValidationModule,
         LandingPageModule,
         ProgressBarIndeterminateModule,
         SpinnerOverlaysModule,
@@ -97,6 +96,7 @@ import { InAListModule } from './pages/forms-and-validation/in-a-list/in-a-list.
         VerifyOnSubmitModule,
         FixLengthPasscodeModule,
         SectionedFormModule,
+        InATableModule,
         InAListModule,
     ],
     bootstrap: [AppComponent],

@@ -50,7 +50,7 @@
             </form>
         </section>
     </div>
-    <div rightPane>
+    <div rightPane [hidden]="isLeftPaneVisible">
         <section class="add-new-device">
             <pxb-empty-state title="Success" description="Device “123” has been added to your repository.">
                 <mat-icon pxb-empty-icon>check_circle</mat-icon>

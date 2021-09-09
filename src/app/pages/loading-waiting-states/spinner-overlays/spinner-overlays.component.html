@@ -3,124 +3,38 @@
         <mat-icon>menu</mat-icon>
     </button>
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Spinner Overlays</div>
-    <pxb-spacer></pxb-spacer>
-    <!-- <div class="toggle-theme-container" *ngIf="!isSmall">
-        <span class="mat-subheading-2" style="margin-right: 8px; font-size: 14px;">Use Dark Theme</span>
-        <mat-slide-toggle [checked]="checked"></mat-slide-toggle>
-    </div> -->
 </mat-toolbar>
 
-<!-- <section class="mat-typography" [class.small]="isSmall">
+<div class="spinner-overlay-container">
     <mat-card class="eula-container">
         <div data-cy="loading-overlay-spinner" class="loading-overlay-container" *ngIf="!isEulaLoaded">
             <mat-spinner color="primary" diameter="96"></mat-spinner>
         </div>
-        <div class="eula-details" [ngClass]="{ 'overlay-container': !isEulaLoaded }">
-            <div class="eula-detail-section">
-                <div class="eula-heading">
-                    <div class="mat-title">{{ eulaDetails.title }}</div>
-                </div>
-                <div class="loading-container" *ngIf="!isEulaLoaded">
-                    <h3>{{ eulaDetails.loadingMessage }}</h3>
-                    <div class="loading-overlay">
-                        <mat-spinner color="primary" diameter="96"></mat-spinner>
-                    </div>
-                </div>
-                <ng-container *ngIf="isEulaLoaded">
-                    <div class="eula-content">
-                        {{ eulaDetails.eulaContent }}
-                    </div>
-                </ng-container>
-            </div>
-            <div class="eula-confirmation-check">
-                <mat-checkbox class="pxb-eula-checkbox eula-checkbox">
-                    {{ eulaDetails.eulaConfirmation }}
-                </mat-checkbox>
-            </div>
-            <mat-divider class="eula-divider"></mat-divider>
-            <div class="eula-reload-btn">
-                <button
-                    data-cy="reload"
-                    mat-flat-button
-                    color="primary"
-                    style="width: 100%; margin-top: 8px"
-                    (click)="reloadEula()"
-                >
-                    Reload
-                </button>
-            </div>
-        </div>
-    </mat-card>
-</section> -->
 
-<div class="container" style="height: calc(100vh - 64px);
-margin: 0 auto;
-padding: 16px 16px;
-max-width: 450px;">
-    <mat-card class="eula-container" style="width: 100%;
-    height: 100%;
-    display: flex;
-    padding: 0;
-    position: relative;
-    max-width: 450px;
-    max-height: 730px;
-    flex-direction: column;">
-
-        <div data-cy="loading-overlay-spinner" class="loading-overlay-container" style="top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        z-index: 4;
-        position: absolute;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-        background-color: rgba(255,255,255,0.6);" *ngIf="!isEulaLoaded">
-            <mat-spinner color="primary" diameter="96"></mat-spinner>
-        </div>
-
-        <mat-card-header class="spinner-overlay-header" style="padding: 32px 24px 0 24px; margin: 0">
-            <mat-card-title style="margin: 0;">End User License Agreement</mat-card-title>
+        <mat-card-header class="spinner-overlay-header">
+            <mat-card-title>End User License Agreement</mat-card-title>
         </mat-card-header>
 
-        <mat-card-content class="loading-container" style="flex: 1 1 0px;
-        display: flex;
-        padding: 16px 24px;
-        overflow: auto;
-        position: relative;
-        flex-direction: column;
-        margin: 0;">
-            <div  class="eula-content" style="flex: 1 1 0px;
-            overflow: auto;">
-
+        <mat-card-content class="loading-container">
+            <div class="eula-content">
                 <h3 *ngIf="!isEulaLoaded; else loadContent">Loading EULA...</h3>
                 <ng-template #loadContent>
                     <div>
-                        {{eulaDetails.eulaContent}}
+                        {{ eulaDetails.eulaContent }}
                     </div>
                 </ng-template>
             </div>
-            <div class="eula-confirmation-check" style="flex: 0 0 auto;
-            margin-top: 16px;
-            margin-right: 0;">
-                <mat-checkbox class="pxb-eula-checkbox eula-checkbox">
+            <div class="eula-confirmation-check">
+                <mat-checkbox [(ngModel)]="checked" class="pxb-eula-checkbox eula-checkbox">
                     I have read and agree to the Terms & Conditions
                 </mat-checkbox>
             </div>
         </mat-card-content>
-        <mat-divider class="eula-divider" style="position: relative;margin: 0;"></mat-divider>
-        <mat-card-actions style="padding: 24px;
-        justify-content: flex-end;">
-            <button
-                    data-cy="reload"
-                    mat-flat-button
-                    color="primary"
-                    style="width: 100%; margin-top: 8px"
-                    (click)="reloadEula()"
-                >
-                    Reload
-                </button>
+        <mat-divider class="eula-divider"></mat-divider>
+        <mat-card-actions>
+            <button data-cy="reload" mat-flat-button color="primary" class="reload-button" (click)="reloadEula()">
+                Reload
+            </button>
         </mat-card-actions>
     </mat-card>
 </div>

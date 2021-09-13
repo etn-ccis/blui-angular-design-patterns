@@ -52,6 +52,7 @@ export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
                 } else {
                     this.isSmall = false;
                 }
+                this._changeDetectorRef.detectChanges();
             });
     }
 

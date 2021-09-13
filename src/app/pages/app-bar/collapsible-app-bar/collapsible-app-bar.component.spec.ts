@@ -6,13 +6,10 @@ describe('CollapsibleAppBarComponent', () => {
     let component: CollapsibleAppBarComponent;
     let fixture: ComponentFixture<CollapsibleAppBarComponent>;
 
-    beforeEach(async(() => {
-        void TestBed.configureTestingModule({
-            imports: [CollapsibleAppBarModule],
-        }).compileComponents();
-    }));
-
     beforeEach(() => {
+        void TestBed.configureTestingModule({
+          imports: [CollapsibleAppBarModule],
+        }).compileComponents();
         fixture = TestBed.createComponent(CollapsibleAppBarComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();

@@ -5,7 +5,7 @@ import { CollapsibleAppBarModule } from './collapsible-app-bar.module';
 describe('CollapsibleAppBarComponent', () => {
     let component: CollapsibleAppBarComponent;
     let fixture: ComponentFixture<CollapsibleAppBarComponent>;
-yarn pre
+
     beforeEach(() => {
         void TestBed.configureTestingModule({
           imports: [CollapsibleAppBarModule],

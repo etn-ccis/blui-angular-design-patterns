@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CollapsibleAppBarComponent } from './collapsible-app-bar.component';
 import { CollapsibleAppBarModule } from './collapsible-app-bar.module';
 
@@ -8,7 +8,7 @@ describe('CollapsibleAppBarComponent', () => {
 
     beforeEach(() => {
         void TestBed.configureTestingModule({
-          imports: [CollapsibleAppBarModule],
+            imports: [CollapsibleAppBarModule],
         }).compileComponents();
         fixture = TestBed.createComponent(CollapsibleAppBarComponent);
         component = fixture.componentInstance;

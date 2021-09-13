@@ -49,6 +49,7 @@ import { FixLengthPasscodeModule } from './pages/forms-and-validation/fix-length
 import { SectionedFormModule } from './pages/forms-and-validation/sectioned-form/sectioned-form.module';
 import { InATableModule } from './pages/forms-and-validation/in-a-table/in-a-table.module';
 import { InAListModule } from './pages/forms-and-validation/in-a-list/in-a-list.module';
+import { DropdownToolbarModule } from './pages/app-bar/dropdown-toolbar/dropdown-toolbar.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -86,6 +87,7 @@ import { InAListModule } from './pages/forms-and-validation/in-a-list/in-a-list.
         ResponsiveTableModule,
         DynamicStepperModule,
         LandingPageModule,
+        DropdownToolbarModule,
         ProgressBarIndeterminateModule,
         SpinnerOverlaysModule,
         ContextualSpinnersModule,

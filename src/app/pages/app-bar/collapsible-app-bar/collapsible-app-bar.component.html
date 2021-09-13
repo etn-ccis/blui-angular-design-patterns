@@ -2,7 +2,7 @@
     [expandedHeight]="200"
     [collapsedHeight]="isSmall ? 56 : 64"
     [scrollThreshold]="100"
-    [scrollContainerClassName]="{ name: 'mat-drawer-content', index: 0 }"
+    [scrollContainerClassName]="scrollElement"
     variant="snap"
     (collapsedChange)="isCollapsed = $event"
 >

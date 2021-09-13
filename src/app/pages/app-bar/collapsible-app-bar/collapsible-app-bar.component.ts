@@ -11,6 +11,7 @@ import { StateService } from '../../../services/state.service';
 export class CollapsibleAppBarComponent implements OnInit {
     isCollapsed = false;
     isSmall: boolean;
+    scrollElement = { name: 'mat-drawer-content', index: 0 };
 
     constructor(
         private readonly _drawerService: StateService,

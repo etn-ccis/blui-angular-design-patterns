@@ -105,5 +105,6 @@ export class ContextualAppBarComponent implements OnInit {
         this.devices = remaining;
         this.matDataSource = new MatTableDataSource(this.devices);
         this.selectedItems.clear();
+        this.allSelected = false;
     }
 }

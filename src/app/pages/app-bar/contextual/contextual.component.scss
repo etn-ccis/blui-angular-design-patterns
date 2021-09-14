@@ -1,5 +1,12 @@
 @import '~@pxblue/colors/palette.scss';
 
+
+.toolbar-container {
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  overflow-x: hidden;
+}
 .main-header {
     transition: opacity 250ms ease-in-out;
     &.hidden {
@@ -13,6 +20,7 @@
     right: 0;
     width: 0%;
     background: map-get($pxb-black, 500);
+    color: map-get($pxb-white, 50);
     transition: width 250ms ease-in-out;
 
     &.active {
@@ -33,10 +41,26 @@
     }
 }
 
-.contextual-table {
+.contextual-table-body {
+  display: flex; justify-content: center; align-items: center;
+  .contextual-table-container {
+    max-width: 800px; width: 100%;padding: 16px;
+    &.small {
+      padding: 0;
+    }
+  }
+  .delete-items-row {
+    display: flex; justify-content: space-between; align-items: center;  margin-bottom: 16px;
+  }
+  .desktop-delete-icon {
+    margin-right: 4px; font-size: 16px; height: 16px; width: 16px;
+  }
+  .contextual-table {
     width: 100%;
     th {
-        font-weight: 600;
-        font-size: 14px;
+      font-weight: 600;
+      font-size: 14px;
     }
+  }
 }
+

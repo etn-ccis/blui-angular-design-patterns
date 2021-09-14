@@ -1,3 +1,4 @@
+<div class="toolbar-container">
 <mat-toolbar
     data-cy="pxb-toolbar"
     color="primary"
@@ -13,7 +14,7 @@
 </mat-toolbar>
 <mat-toolbar class="search-header" [class.active]="isSmall && selectedItems.size > 0">
     <mat-toolbar-row style="padding: 0 16px">
-        <button class="search-icon" mat-icon-button disabled style="margin-left: -8px">
+        <button class="search-icon" mat-icon-button disabled style="margin-left: -8px" (click)="clearSelection()">
             <mat-icon>clear</mat-icon>
         </button>
         <span class="mat-body-2">{{ selectedItems.size }} selected </span>
@@ -22,16 +23,17 @@
         </button>
     </mat-toolbar-row>
 </mat-toolbar>
+</div>
 
-<div style="display: flex; justify-content: center; align-items: center; padding: 16px;">
-    <div style="max-width: 800px; width: 100%;">
+<div class="contextual-table-body">
+    <div class="contextual-table-container" [class.small]="isSmall">
         <div
             *ngIf="!isSmall"
-            style="display: flex; justify-content: space-between; align-items: center;  margin-bottom: 16px"
+            class="delete-items-row"
         >
             <div class="mat-caption">{{ selectedItems.size }} selected item(s)</div>
             <button color="primary" mat-stroked-button [disabled]="selectedItems.size === 0" (click)="deleteSelected()">
-                <mat-icon style="margin-right: 4px; font-size: 16px; height: 16px; width: 16px">delete</mat-icon>
+                <mat-icon class="desktop-delete-icon">delete</mat-icon>
                 DELETE Selected Items
             </button>
         </div>

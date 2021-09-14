@@ -12,9 +12,7 @@ export class FilterPipe implements PipeTransform {
         }
         return items.filter(
             (it) =>
-                it.president.toLowerCase().includes(searchText.toLowerCase()) ||
-                it.party.toLowerCase().includes(searchText.toLowerCase()) ||
-                it.tookOffice.toLowerCase().includes(searchText.toLowerCase())
+                it.toLowerCase().includes(searchText.toLowerCase())
         );
     }
 }

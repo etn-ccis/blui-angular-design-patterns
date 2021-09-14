@@ -24,8 +24,8 @@
     </mat-toolbar>
     <mat-toolbar class="search-header" [class.active]="toggleSearch">
         <mat-toolbar-row style="padding: 0 16px">
-            <button class="search-icon" mat-icon-button disabled style="margin-left: -8px">
-                <mat-icon>search</mat-icon>
+            <button class="search-icon" mat-icon-button (click)="searchClose()" style="margin-left: -8px">
+                <mat-icon>arrow_back</mat-icon>
             </button>
             <input
                 class="search-control"
@@ -41,16 +41,11 @@
         </mat-toolbar-row>
     </mat-toolbar>
 </div>
-<mat-list>
-    <pxb-info-list-item *ngFor="let item of list | filter: searchText" data-cy="list-view">
-        <mat-icon pxb-icon>person</mat-icon>
-        <span pxb-title>{{ item.president }}</span>
-        <span pxb-subtitle>{{ item.party }}</span>
-        <span pxb-info>{{ item.tookOffice }}</span>
+<mat-list style="background-color: white">
+    <pxb-info-list-item *ngFor="let item of list | filter: searchText" data-cy="list-view" [hidePadding]="true" divider="full">
+        <span pxb-title [innerHTML]="item | boldSearch: searchText"></span>
     </pxb-info-list-item>
 </mat-list>
 <div *ngIf="(list | filter: searchText).length === 0" style="height: calc(100vh - 64px)">
-    <pxb-empty-state title="0 Results" description="No matching presidents" style="margin: 16px">
-        <mat-icon pxb-empty-icon>error</mat-icon>
-    </pxb-empty-state>
+  No Results
 </div>

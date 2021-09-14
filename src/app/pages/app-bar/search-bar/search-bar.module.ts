@@ -4,11 +4,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { SearchBarComponent } from './search-bar.component';
-import { FilterPipe } from './shared/filter.pipe';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { SearchBarComponent } from './search-bar.component';
+import { FilterPipe } from './shared/filter.pipe';
+import {BoldSearchPipe} from "./shared/bold-search.pipe";
 
 @NgModule({
     imports: [
@@ -23,6 +24,6 @@ import { FormsModule } from '@angular/forms';
         FormsModule,
         EmptyStateModule,
     ],
-    declarations: [SearchBarComponent, FilterPipe],
+    declarations: [SearchBarComponent, FilterPipe, BoldSearchPipe],
 })
 export class SearchBarModule {}

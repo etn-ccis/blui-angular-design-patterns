@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { StateService } from '../../../services/state.service';
-import { listData } from './shared/list';
 import * as Colors from '@pxblue/colors';
 
 @Component({
@@ -11,7 +10,7 @@ import * as Colors from '@pxblue/colors';
 })
 export class SearchBarComponent implements OnInit {
     isSmall: boolean;
-    list = listData.reverse();
+    list = ['Apple', 'Grape', 'Orange', 'Pineapple', 'Watermelon']
     @ViewChild('searchBar', {}) searchBar: ElementRef;
     searchText = '';
     toggleSearch = false;

@@ -1,10 +1,10 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { StateService } from '../../../services/state.service';
 import { DropdownToolbarComponent as PxbDropdownToolbar } from '@pxblue/angular-components';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { DropdownToolbarStateService } from './dropdown-toolbar.service';
 import { DropdownToolbarBottomSheetExample } from './dropdown-toolbar-bottomsheet.component';
+import { StateService } from '../../../services/state.service';
 
 export const menuItems: string[] = ['Item 1', 'Item 2', 'Item 3'];
 

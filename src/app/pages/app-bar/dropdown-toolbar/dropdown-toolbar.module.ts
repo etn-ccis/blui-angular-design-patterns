@@ -8,6 +8,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 import { DropdownToolbarBottomSheetExample } from './dropdown-toolbar-bottomsheet.component';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 
 @NgModule({
     imports: [
@@ -18,6 +19,7 @@ import { DropdownToolbarBottomSheetExample } from './dropdown-toolbar-bottomshee
         FlexLayoutModule,
         MatMenuModule,
         MatListModule,
+        MatBottomSheetModule,
     ],
     declarations: [DropdownToolbarComponent, DropdownToolbarBottomSheetExample],
     exports: [DropdownToolbarComponent, DropdownToolbarBottomSheetExample],

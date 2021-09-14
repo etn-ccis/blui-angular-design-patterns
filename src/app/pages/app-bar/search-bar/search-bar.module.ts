@@ -9,7 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { SearchBarComponent } from './search-bar.component';
 import { FilterPipe } from './shared/filter.pipe';
-import {BoldSearchPipe} from "./shared/bold-search.pipe";
+import { BoldSearchPipe } from './shared/bold-search.pipe';
 
 @NgModule({
     imports: [

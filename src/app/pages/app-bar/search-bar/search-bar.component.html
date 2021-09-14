@@ -42,10 +42,15 @@
     </mat-toolbar>
 </div>
 <mat-list style="background-color: white">
-    <pxb-info-list-item *ngFor="let item of list | filter: searchText" data-cy="list-view" [hidePadding]="true" divider="full">
+    <pxb-info-list-item
+        *ngFor="let item of list | filter: searchText"
+        data-cy="list-view"
+        [hidePadding]="true"
+        divider="full"
+    >
         <span pxb-title [innerHTML]="item | boldSearch: searchText"></span>
     </pxb-info-list-item>
 </mat-list>
 <div *ngIf="(list | filter: searchText).length === 0" style="height: calc(100vh - 64px)">
-  No Results
+    No Results
 </div>

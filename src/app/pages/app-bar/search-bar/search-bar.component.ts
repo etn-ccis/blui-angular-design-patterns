@@ -10,7 +10,7 @@ import * as Colors from '@pxblue/colors';
 })
 export class SearchBarComponent implements OnInit {
     isSmall: boolean;
-    list = ['Apple', 'Grape', 'Orange', 'Pineapple', 'Watermelon']
+    list = ['Apple', 'Grape', 'Orange', 'Pineapple', 'Watermelon'];
     @ViewChild('searchBar', {}) searchBar: ElementRef;
     searchText = '';
     toggleSearch = false;

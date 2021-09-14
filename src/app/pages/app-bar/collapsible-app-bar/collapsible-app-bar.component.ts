@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { StateService } from '../../../services/state.service';
 
@@ -9,11 +9,12 @@ import { StateService } from '../../../services/state.service';
     encapsulation: ViewEncapsulation.None,
 })
 export class CollapsibleAppBarComponent implements OnInit {
-    isCollapsed = false;
+    isCollapsed: boolean;
     isSmall: boolean;
     scrollElement = { name: 'mat-drawer-content', index: 0 };
 
     constructor(
+        private readonly _ref: ChangeDetectorRef,
         private readonly _drawerService: StateService,
         private readonly _breakpointObserver: BreakpointObserver
     ) {}
@@ -33,5 +34,10 @@ export class CollapsibleAppBarComponent implements OnInit {
     toggleMenu(): void {
         const drawerOpen = this._drawerService.getDrawerOpen();
         this._drawerService.setDrawerOpen(!drawerOpen);
+    }
+
+    setCollapsed(isCollapsed: boolean): void {
+        this.isCollapsed = isCollapsed;
+        this._ref.detectChanges();
     }
 }

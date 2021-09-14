@@ -4,7 +4,7 @@
     [scrollThreshold]="100"
     [scrollContainerClassName]="scrollElement"
     variant="snap"
-    (collapsedChange)="isCollapsed = $event"
+    (collapsedChange)="setCollapsed($event)"
 >
     <button
         *ngIf="isSmall"

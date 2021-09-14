@@ -11,10 +11,12 @@ import * as Colors from '@pxblue/colors';
 export class SearchBarComponent implements OnInit {
     isSmall: boolean;
     list = ['Apple', 'Grape', 'Orange', 'Pineapple', 'Watermelon'];
-    @ViewChild('searchBar', {}) searchBar: ElementRef;
     searchText = '';
     toggleSearch = false;
     Colors = Colors;
+    isEmptyFilteredList = false;
+
+    @ViewChild('searchBar', {}) searchBar: ElementRef;
 
     constructor(
         private readonly _drawerService: StateService,
@@ -42,6 +44,7 @@ export class SearchBarComponent implements OnInit {
     searchClose(): void {
         this.searchText = '';
         this.toggleSearch = false;
+        this.isEmptyFilteredList = false;
     }
 
     toggleMenu(): void {

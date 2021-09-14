@@ -5,8 +5,7 @@ import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { DropdownToolbarStateService } from './dropdown-toolbar.service';
 import { DropdownToolbarBottomSheetExample } from './dropdown-toolbar-bottomsheet.component';
 import { StateService } from '../../../services/state.service';
-
-export const menuItems: string[] = ['Item 1', 'Item 2', 'Item 3'];
+import { menuItems } from './menuItems';
 
 @Component({
     selector: 'app-dropdown-toolbar',

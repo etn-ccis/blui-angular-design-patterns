@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { DropdownToolbarStateService } from './dropdown-toolbar.service';
-import { menuItems } from './dropdown-toolbar.component';
+import { menuItems } from './menuItems';
 
 @Component({
     selector: 'app-dropdown-toolbar-bottomsheet',

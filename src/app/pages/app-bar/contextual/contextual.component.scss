@@ -6,7 +6,7 @@
     top: 0;
     overflow-x: hidden;
 }
-.search-header {
+.selected-header {
     z-index: -1;
     position: absolute;
     top: 0;
@@ -28,6 +28,7 @@
     justify-content: center;
     align-items: center;
     .contextual-table-container {
+        overflow: auto;
         max-width: 800px;
         width: 100%;
         padding: 16px;
@@ -60,6 +61,12 @@
             td:first-of-type {
                 padding-left: 20px;
             }
+        }
+        .checkbox-header {
+          padding-right:24px;
+        }
+        .name-header, .ip-header {
+          min-width: 150px;
         }
     }
 }

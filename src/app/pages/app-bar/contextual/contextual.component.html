@@ -7,7 +7,7 @@
             <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Contextual App Bar</div>
         </mat-toolbar-row>
     </mat-toolbar>
-    <mat-toolbar class="search-header" [class.active]="isSmall && selectedItems.size > 0">
+    <mat-toolbar class="selected-header" [class.active]="isSmall && selectedItems.size > 0">
         <mat-toolbar-row style="padding: 0 16px">
             <button mat-icon-button style="margin-left: -8px; margin-right: 24px" (click)="clearSelection()">
                 <mat-icon>close</mat-icon>
@@ -31,8 +31,8 @@
             </button>
         </div>
         <table mat-table [dataSource]="matDataSource" class="contextual-table">
-            <ng-container matColumnDef="checkbox">
-                <th mat-header-cell *matHeaderCellDef mat-header>
+            <ng-container matColumnDef="checkbox" sticky>
+                <th mat-header-cell *matHeaderCellDef mat-header class="checkbox-header">
                     <mat-checkbox [checked]="allSelected" (change)="toggleAllSelected()"> </mat-checkbox>
                 </th>
                 <td mat-cell *matCellDef="let element">
@@ -44,11 +44,11 @@
                 </td>
             </ng-container>
             <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef mat-header>Name</th>
+                <th mat-header-cell *matHeaderCellDef mat-header class="name-header">Name</th>
                 <td mat-cell *matCellDef="let element">{{ element.name }}</td>
             </ng-container>
             <ng-container matColumnDef="ip">
-                <th mat-header-cell *matHeaderCellDef mat-header>IP Address</th>
+                <th mat-header-cell *matHeaderCellDef mat-header class="ip-header">IP Address</th>
                 <td mat-cell *matCellDef="let element">{{ element.ip }}</td>
             </ng-container>
 

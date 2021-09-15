@@ -1,66 +1,65 @@
 @import '~@pxblue/colors/palette.scss';
 
-
 .toolbar-container {
-  position: sticky;
-  z-index: 1000;
-  top: 0;
-  overflow-x: hidden;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    overflow-x: hidden;
 }
-.main-header {
-    transition: opacity 250ms ease-in-out;
-    &.hidden {
-        opacity: 0;
-    }
-}
-
 .search-header {
+    z-index: -1;
     position: absolute;
     top: 0;
-    right: 0;
-    width: 0%;
+    opacity: 0;
     background: map-get($pxb-black, 500);
     color: map-get($pxb-white, 50);
-    transition: width 250ms ease-in-out;
-
+    transition: opacity 200ms ease-in-out;
     &.active {
-        width: 100%;
+        opacity: 1;
+        z-index: 1;
     }
-
-    .search-control {
-        flex: 1;
-        font-size: 1rem;
-        border: 0;
-        outline: none;
-        padding-left: 10px;
-
-        &::-ms-clear {
-            height: 0;
-            width: 0;
-        }
+    .mat-icon {
+        color: map-get($pxb-white, 50);
     }
 }
 
 .contextual-table-body {
-  display: flex; justify-content: center; align-items: center;
-  .contextual-table-container {
-    max-width: 800px; width: 100%;padding: 16px;
-    &.small {
-      padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .contextual-table-container {
+        max-width: 800px;
+        width: 100%;
+        padding: 16px;
+        &.small {
+            padding: 0;
+            max-width: unset;
+        }
     }
-  }
-  .delete-items-row {
-    display: flex; justify-content: space-between; align-items: center;  margin-bottom: 16px;
-  }
-  .desktop-delete-icon {
-    margin-right: 4px; font-size: 16px; height: 16px; width: 16px;
-  }
-  .contextual-table {
-    width: 100%;
-    th {
-      font-weight: 600;
-      font-size: 14px;
+    .delete-items-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
     }
-  }
+    .desktop-delete-icon {
+        margin-right: 4px;
+        font-size: 16px;
+        height: 16px;
+        width: 16px;
+    }
+    .contextual-table {
+        width: 100%;
+        th {
+            font-weight: 600;
+            font-size: 14px;
+            color: map-get($pxb-black, 500);
+        }
+        tr {
+            th.mat-header-cell:first-of-type,
+            td:first-of-type {
+                padding-left: 20px;
+            }
+        }
+    }
 }
-

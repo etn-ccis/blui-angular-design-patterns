@@ -6,9 +6,18 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ContextualAppBarComponent } from './contextual.component';
+import { SpacerModule } from '@pxblue/angular-components';
 
 @NgModule({
-    imports: [CommonModule, MatToolbarModule, MatIconModule, MatButtonModule, MatTableModule, MatCheckboxModule],
+    imports: [
+        CommonModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        MatTableModule,
+        MatCheckboxModule,
+        SpacerModule,
+    ],
     declarations: [ContextualAppBarComponent],
 })
 export class ContextualAppbarModule {}

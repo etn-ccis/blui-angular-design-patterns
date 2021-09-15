@@ -16,9 +16,14 @@ type Device = {
     styleUrls: ['./contextual.component.scss'],
 })
 export class ContextualAppBarComponent implements OnInit {
-    isSmall: boolean;
     Colors = Colors;
+
+    isSmall: boolean;
+    allSelected = false;
+
     displayedColumns = ['checkbox', 'name', 'ip'];
+    matDataSource: DataSource<Device>;
+    selectedItems: Set<string> = new Set();
 
     devices: Device[] = [
         {
@@ -38,10 +43,6 @@ export class ContextualAppBarComponent implements OnInit {
             ip: '192.168.0.1',
         },
     ];
-    matDataSource: DataSource<Device>;
-    selectedItems: Set<string> = new Set();
-
-    allSelected = false;
 
     constructor(
         private readonly _drawerService: StateService,

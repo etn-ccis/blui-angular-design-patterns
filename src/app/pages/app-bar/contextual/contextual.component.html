@@ -1,36 +1,29 @@
-<div class="toolbar-container">
-<mat-toolbar
-    data-cy="pxb-toolbar"
-    color="primary"
-    class="main-header mat-elevation-z2"
-    [class.hidden]="isSmall && selectedItems.size > 0"
->
-    <mat-toolbar-row>
-        <button data-cy="toolbar-menu" mat-icon-button *ngIf="isSmall" (click)="toggleMenu()" style="margin-left: -8px">
-            <mat-icon>menu</mat-icon>
-        </button>
-        <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Contextual App Bar</div>
-    </mat-toolbar-row>
-</mat-toolbar>
-<mat-toolbar class="search-header" [class.active]="isSmall && selectedItems.size > 0">
-    <mat-toolbar-row style="padding: 0 16px">
-        <button class="search-icon" mat-icon-button disabled style="margin-left: -8px" (click)="clearSelection()">
-            <mat-icon>clear</mat-icon>
-        </button>
-        <span class="mat-body-2">{{ selectedItems.size }} selected </span>
-        <button mat-icon-button (click)="clearSelection()" data-cy="search-close-btn" style="margin-right: -8px">
-            <mat-icon [style.color]="Colors.black[500]">trash</mat-icon>
-        </button>
-    </mat-toolbar-row>
-</mat-toolbar>
+<div class="toolbar-container mat-elevation-z2">
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <button mat-icon-button *ngIf="isSmall" (click)="toggleMenu()" style="margin-left: -8px">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Contextual App Bar</div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-toolbar class="search-header" [class.active]="isSmall && selectedItems.size > 0">
+        <mat-toolbar-row style="padding: 0 16px">
+            <button mat-icon-button style="margin-left: -8px; margin-right: 24px" (click)="clearSelection()">
+                <mat-icon>close</mat-icon>
+            </button>
+            <span style="font-size: 20px; font-weight: 400">{{ selectedItems.size }} selected </span>
+            <pxb-spacer></pxb-spacer>
+            <button mat-icon-button (click)="deleteSelected()" style="margin-right: -8px">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
 </div>
 
 <div class="contextual-table-body">
     <div class="contextual-table-container" [class.small]="isSmall">
-        <div
-            *ngIf="!isSmall"
-            class="delete-items-row"
-        >
+        <div *ngIf="!isSmall" class="delete-items-row">
             <div class="mat-caption">{{ selectedItems.size }} selected item(s)</div>
             <button color="primary" mat-stroked-button [disabled]="selectedItems.size === 0" (click)="deleteSelected()">
                 <mat-icon class="desktop-delete-icon">delete</mat-icon>

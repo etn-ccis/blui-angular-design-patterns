@@ -15,7 +15,7 @@ export class DropdownToolbarComponent implements OnInit, AfterViewInit {
     isSmall: boolean;
     items = menuItems;
 
-    @ViewChild('toolbar') deep: PxbDropdownToolbar;
+    @ViewChild('toolbar') dropdownToolbar: PxbDropdownToolbar;
 
     constructor(
         private readonly _drawerService: StateService,
@@ -37,11 +37,11 @@ export class DropdownToolbarComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        this.deep.menuTrigger.toggleMenu = (): void => {
+        this.dropdownToolbar.menuTrigger.toggleMenu = (): void => {
             if (this.isSmall) {
                 this.openBottomSheet();
             } else {
-                this.deep.menuTrigger.openMenu();
+                this.dropdownToolbar.menuTrigger.openMenu();
             }
         };
     }

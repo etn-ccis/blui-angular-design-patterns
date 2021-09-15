@@ -53,7 +53,7 @@
     .contextual-table {
         width: 100%;
         .selected {
-          background-color: rgba(map-get($pxb-blue, 500), .05);
+            background-color: rgba(map-get($pxb-blue, 500), 0.05);
         }
         th {
             font-weight: 600;
@@ -76,13 +76,13 @@
     }
 }
 .no-items-found {
-  text-align: center;
-  padding: 16px;
-  .reset-table {
-    color: map-get($pxb-blue, 500);
-    text-decoration: underline;
-    cursor: pointer;
-  }
+    text-align: center;
+    padding: 16px;
+    .reset-table {
+        color: map-get($pxb-blue, 500);
+        text-decoration: underline;
+        cursor: pointer;
+    }
 }
 
 .empty-state-container {
@@ -96,10 +96,10 @@
 }
 
 .mobile-only-message {
-  margin-top: 24px;
-  font-weight: 400;
-  color: map-get($pxb-gray, 500);
-  &.small {
-    padding: 0 16px;
-  }
+    margin-top: 24px;
+    font-weight: 400;
+    color: map-get($pxb-gray, 500);
+    &.small {
+        padding: 0 16px;
+    }
 }

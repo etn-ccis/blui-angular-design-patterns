@@ -31,34 +31,50 @@
             </button>
         </div>
         <div [style.backgroundColor]="Colors.white[50]">
-          <table mat-table [dataSource]="matDataSource" class="contextual-table">
-            <ng-container matColumnDef="checkbox" sticky>
-              <th mat-header-cell *matHeaderCellDef mat-header class="checkbox-header">
-                <mat-checkbox [checked]="allSelected" [indeterminate]="selectedItems.size > 0 && !allSelected" (change)="toggleAllSelected()"> </mat-checkbox>
-              </th>
-              <td mat-cell *matCellDef="let element">
-                <mat-checkbox
-                  [checked]="selectedItems.has(element.name)"
-                  (change)="selectedItems.has(element.name) ? removeItem(element.name) : selectItem(element.name)"
-                >
-                </mat-checkbox>
-              </td>
-            </ng-container>
-            <ng-container matColumnDef="name">
-              <th mat-header-cell *matHeaderCellDef mat-header class="name-header">Name</th>
-              <td mat-cell *matCellDef="let element">{{ element.name }}</td>
-            </ng-container>
-            <ng-container matColumnDef="ip">
-              <th mat-header-cell *matHeaderCellDef mat-header class="ip-header">IP Address</th>
-              <td mat-cell *matCellDef="let element">{{ element.ip }}</td>
-            </ng-container>
+            <table mat-table [dataSource]="matDataSource" class="contextual-table">
+                <ng-container matColumnDef="checkbox" sticky>
+                    <th mat-header-cell *matHeaderCellDef mat-header class="checkbox-header">
+                        <mat-checkbox
+                            [checked]="allSelected"
+                            [indeterminate]="selectedItems.size > 0 && !allSelected"
+                            (change)="toggleAllSelected()"
+                        >
+                        </mat-checkbox>
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                        <mat-checkbox
+                            [checked]="selectedItems.has(element.name)"
+                            (change)="
+                                selectedItems.has(element.name) ? removeItem(element.name) : selectItem(element.name)
+                            "
+                        >
+                        </mat-checkbox>
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef mat-header class="name-header">Name</th>
+                    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+                </ng-container>
+                <ng-container matColumnDef="ip">
+                    <th mat-header-cell *matHeaderCellDef mat-header class="ip-header">IP Address</th>
+                    <td mat-cell *matCellDef="let element">{{ element.ip }}</td>
+                </ng-container>
 
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row style="height: 48px" [ngClass]="{'selected': selectedItems.has(row.name)}"
-                *matRowDef="let row; columns: displayedColumns"></tr>
-          </table>
-          <div *ngIf="devices.length === 0" class="no-items-found">No items found. <span class="reset-table" (click)="resetTable()">Reset table</span></div>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr
+                    mat-row
+                    style="height: 48px"
+                    [ngClass]="{ selected: selectedItems.has(row.name) }"
+                    *matRowDef="let row; columns: displayedColumns"
+                ></tr>
+            </table>
+
+            <div *ngIf="devices.length === 0" class="no-items-found">
+                No items found. <span class="reset-table" (click)="resetTable()">Reset table</span>
+            </div>
         </div>
-        <div class="mobile-only-message mat-body-2" [class.small]="isSmall">The contextual app bar is for mobile only.</div>
+        <div class="mobile-only-message mat-body-2" [class.small]="isSmall">
+            The contextual app bar is for mobile only.
+        </div>
     </div>
 </div>

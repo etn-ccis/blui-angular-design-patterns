@@ -45,27 +45,27 @@ export class ContextualAppBarComponent implements OnInit {
             });
     }
 
-  resetTable(): void {
-      this.devices = [
-      {
-        name: 'Device 01',
-        ip: '192.168.0.1',
-      },
-      {
-        name: 'Device 02',
-        ip: '192.168.0.1',
-      },
-      {
-        name: 'Device 03',
-        ip: '192.168.0.1',
-      },
-      {
-        name: 'Device 04',
-        ip: '192.168.0.1',
-      },
-    ];
-    this.matDataSource = new MatTableDataSource(this.devices);
-  }
+    resetTable(): void {
+        this.devices = [
+            {
+                name: 'Device 01',
+                ip: '192.168.0.1',
+            },
+            {
+                name: 'Device 02',
+                ip: '192.168.0.1',
+            },
+            {
+                name: 'Device 03',
+                ip: '192.168.0.1',
+            },
+            {
+                name: 'Device 04',
+                ip: '192.168.0.1',
+            },
+        ];
+        this.matDataSource = new MatTableDataSource(this.devices);
+    }
 
     toggleMenu(): void {
         const drawerOpen = this._drawerService.getDrawerOpen();
@@ -86,7 +86,7 @@ export class ContextualAppBarComponent implements OnInit {
 
     selectItem(name: string): void {
         this.selectedItems.add(name);
-      this.allSelected = this.selectedItems.size === this.devices.length;
+        this.allSelected = this.selectedItems.size === this.devices.length;
     }
 
     removeItem(name: string): void {

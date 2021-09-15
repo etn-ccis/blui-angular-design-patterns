@@ -1,10 +1,5 @@
 <div class="mat-elevation-z4 toolbar-container" [style.backgroundColor]="Colors.white[50]">
-    <mat-toolbar
-        data-cy="pxb-toolbar"
-        color="primary"
-        class="main-header"
-        [class.hidden]="toggleSearch"
-    >
+    <mat-toolbar data-cy="pxb-toolbar" color="primary" class="main-header" [class.hidden]="toggleSearch">
         <mat-toolbar-row>
             <button
                 data-cy="toolbar-menu"
@@ -35,7 +30,13 @@
                 #searchBar
                 data-cy="searchfield"
             />
-            <button *ngIf="searchText" mat-icon-button (click)="searchText = ''" data-cy="search-close-btn" style="margin-right: -8px">
+            <button
+                *ngIf="searchText"
+                mat-icon-button
+                (click)="searchText = ''"
+                data-cy="search-close-btn"
+                style="margin-right: -8px"
+            >
                 <mat-icon [style.color]="Colors.black[500]">close</mat-icon>
             </button>
         </mat-toolbar-row>

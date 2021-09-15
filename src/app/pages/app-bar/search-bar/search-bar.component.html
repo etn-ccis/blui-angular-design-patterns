@@ -24,7 +24,7 @@
     </mat-toolbar>
     <mat-toolbar class="search-header" [class.active]="toggleSearch">
         <mat-toolbar-row style="padding: 0 16px">
-            <button class="search-icon" mat-icon-button (click)="searchClose()" style="margin-left: -8px">
+            <button mat-icon-button (click)="searchClose()" style="margin-left: -8px">
                 <mat-icon>arrow_back</mat-icon>
             </button>
             <input
@@ -35,7 +35,7 @@
                 #searchBar
                 data-cy="searchfield"
             />
-            <button *ngIf="searchText"  mat-icon-button (click)="searchText = ''" data-cy="search-close-btn" style="margin-right: -8px">
+            <button *ngIf="searchText" mat-icon-button (click)="searchText = ''" data-cy="search-close-btn" style="margin-right: -8px">
                 <mat-icon [style.color]="Colors.black[500]">close</mat-icon>
             </button>
         </mat-toolbar-row>

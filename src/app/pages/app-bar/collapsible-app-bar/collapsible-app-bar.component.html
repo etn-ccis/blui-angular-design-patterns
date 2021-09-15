@@ -5,6 +5,7 @@
     [scrollContainerClassName]="scrollElement"
     variant="snap"
     (collapsedChange)="setCollapsed($event)"
+    data-cy="pxb-toolbar"
 >
     <button
         *ngIf="isSmall"

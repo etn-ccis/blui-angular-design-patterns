@@ -21,49 +21,44 @@
     </mat-toolbar>
 </div>
 
-<div class="contextual-table-body" *ngIf="devices.length > 0">
+<div class="contextual-table-body">
     <div class="contextual-table-container" [class.small]="isSmall">
         <div *ngIf="!isSmall" class="delete-items-row">
             <div class="mat-caption">{{ selectedItems.size }} selected item(s)</div>
-            <button color="primary" mat-stroked-button [disabled]="selectedItems.size === 0" (click)="deleteSelected()">
+            <button color="warn" mat-stroked-button [disabled]="selectedItems.size === 0" (click)="deleteSelected()">
                 <mat-icon class="desktop-delete-icon">delete</mat-icon>
-                DELETE Selected Items
+                Delete Selected Items
             </button>
         </div>
-        <table mat-table [dataSource]="matDataSource" class="contextual-table">
+        <div [style.backgroundColor]="Colors.white[50]">
+          <table mat-table [dataSource]="matDataSource" class="contextual-table">
             <ng-container matColumnDef="checkbox" sticky>
-                <th mat-header-cell *matHeaderCellDef mat-header class="checkbox-header">
-                    <mat-checkbox [checked]="allSelected" (change)="toggleAllSelected()"> </mat-checkbox>
-                </th>
-                <td mat-cell *matCellDef="let element">
-                    <mat-checkbox
-                        [checked]="selectedItems.has(element.name)"
-                        (change)="selectedItems.has(element.name) ? removeItem(element.name) : selectItem(element.name)"
-                    >
-                    </mat-checkbox>
-                </td>
+              <th mat-header-cell *matHeaderCellDef mat-header class="checkbox-header">
+                <mat-checkbox [checked]="allSelected" [indeterminate]="selectedItems.size > 0 && !allSelected" (change)="toggleAllSelected()"> </mat-checkbox>
+              </th>
+              <td mat-cell *matCellDef="let element">
+                <mat-checkbox
+                  [checked]="selectedItems.has(element.name)"
+                  (change)="selectedItems.has(element.name) ? removeItem(element.name) : selectItem(element.name)"
+                >
+                </mat-checkbox>
+              </td>
             </ng-container>
             <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef mat-header class="name-header">Name</th>
-                <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+              <th mat-header-cell *matHeaderCellDef mat-header class="name-header">Name</th>
+              <td mat-cell *matCellDef="let element">{{ element.name }}</td>
             </ng-container>
             <ng-container matColumnDef="ip">
-                <th mat-header-cell *matHeaderCellDef mat-header class="ip-header">IP Address</th>
-                <td mat-cell *matCellDef="let element">{{ element.ip }}</td>
+              <th mat-header-cell *matHeaderCellDef mat-header class="ip-header">IP Address</th>
+              <td mat-cell *matCellDef="let element">{{ element.ip }}</td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row style="height: 48px" *matRowDef="let row; columns: displayedColumns"></tr>
-        </table>
+            <tr mat-row style="height: 48px" [ngClass]="{'selected': selectedItems.has(row.name)}"
+                *matRowDef="let row; columns: displayedColumns"></tr>
+          </table>
+          <div *ngIf="devices.length === 0" class="no-items-found">No items found. <span class="reset-table" (click)="resetTable()">Reset table</span></div>
+        </div>
+        <div class="mobile-only-message mat-body-2" [class.small]="isSmall">The contextual app bar is for mobile only.</div>
     </div>
-</div>
-
-<div *ngIf="devices.length === 0" class="empty-state-container" [class.small]="isSmall">
-    <pxb-empty-state title="No Items Found">
-        <mat-icon pxb-empty-icon>error</mat-icon>
-        <button data-cy="pxb-empty-state-add" pxb-actions mat-raised-button color="primary" (click)="addItem()">
-            <mat-icon>add</mat-icon>
-            Add An Item
-        </button>
-    </pxb-empty-state>
 </div>

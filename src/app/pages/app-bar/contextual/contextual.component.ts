@@ -20,30 +20,12 @@ export class ContextualAppBarComponent implements OnInit {
 
     isSmall: boolean;
     allSelected = false;
-    addItemIndex = 5;
 
     displayedColumns = ['checkbox', 'name', 'ip'];
     matDataSource: DataSource<Device>;
     selectedItems: Set<string> = new Set();
 
-    devices: Device[] = [
-        {
-            name: 'Device 01',
-            ip: '192.168.0.1',
-        },
-        {
-            name: 'Device 02',
-            ip: '192.168.0.1',
-        },
-        {
-            name: 'Device 03',
-            ip: '192.168.0.1',
-        },
-        {
-            name: 'Device 04',
-            ip: '192.168.0.1',
-        },
-    ];
+    devices: Device[];
 
     constructor(
         private readonly _drawerService: StateService,
@@ -51,7 +33,7 @@ export class ContextualAppBarComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-        this.matDataSource = new MatTableDataSource(this.devices);
+        this.resetTable();
         this._breakpointObserver
             .observe([Breakpoints.Small, Breakpoints.Handset])
             .subscribe((state: BreakpointState) => {
@@ -62,6 +44,28 @@ export class ContextualAppBarComponent implements OnInit {
                 }
             });
     }
+
+  resetTable(): void {
+      this.devices = [
+      {
+        name: 'Device 01',
+        ip: '192.168.0.1',
+      },
+      {
+        name: 'Device 02',
+        ip: '192.168.0.1',
+      },
+      {
+        name: 'Device 03',
+        ip: '192.168.0.1',
+      },
+      {
+        name: 'Device 04',
+        ip: '192.168.0.1',
+      },
+    ];
+    this.matDataSource = new MatTableDataSource(this.devices);
+  }
 
     toggleMenu(): void {
         const drawerOpen = this._drawerService.getDrawerOpen();
@@ -82,6 +86,7 @@ export class ContextualAppBarComponent implements OnInit {
 
     selectItem(name: string): void {
         this.selectedItems.add(name);
+      this.allSelected = this.selectedItems.size === this.devices.length;
     }
 
     removeItem(name: string): void {
@@ -95,13 +100,6 @@ export class ContextualAppBarComponent implements OnInit {
         } else {
             this.selectAll();
         }
-    }
-
-    addItem(): void {
-        this.devices.push({
-            name: `Device 0${this.addItemIndex++}`,
-            ip: '192.168.0.1',
-        });
     }
 
     deleteSelected(): void {

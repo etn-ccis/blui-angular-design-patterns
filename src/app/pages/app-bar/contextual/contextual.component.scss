@@ -63,10 +63,21 @@
             }
         }
         .checkbox-header {
-          padding-right:24px;
+            padding-right: 32px;
         }
-        .name-header, .ip-header {
-          min-width: 150px;
+        .name-header,
+        .ip-header {
+            min-width: 150px;
         }
+    }
+}
+
+.empty-state-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 64px);
+    &.sm {
+        height: calc(100vh - 56px);
     }
 }

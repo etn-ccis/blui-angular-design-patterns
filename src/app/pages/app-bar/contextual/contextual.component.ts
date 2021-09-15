@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import * as Colors from '@pxblue/colors';
-import { StateService } from '../../../services/state.service';
 import { DataSource } from '@angular/cdk/collections';
 import { MatTableDataSource } from '@angular/material/table';
+import * as Colors from '@pxblue/colors';
+import { StateService } from '../../../services/state.service';
 
 type Device = {
     name: string;
@@ -20,6 +20,7 @@ export class ContextualAppBarComponent implements OnInit {
 
     isSmall: boolean;
     allSelected = false;
+    addItemIndex = 5;
 
     displayedColumns = ['checkbox', 'name', 'ip'];
     matDataSource: DataSource<Device>;
@@ -94,6 +95,13 @@ export class ContextualAppBarComponent implements OnInit {
         } else {
             this.selectAll();
         }
+    }
+
+    addItem(): void {
+        this.devices.push({
+            name: `Device 0${this.addItemIndex++}`,
+            ip: '192.168.0.1',
+        });
     }
 
     deleteSelected(): void {

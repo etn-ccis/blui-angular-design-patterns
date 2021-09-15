@@ -21,7 +21,7 @@
     </mat-toolbar>
 </div>
 
-<div class="contextual-table-body">
+<div class="contextual-table-body" *ngIf="devices.length > 0">
     <div class="contextual-table-container" [class.small]="isSmall">
         <div *ngIf="!isSmall" class="delete-items-row">
             <div class="mat-caption">{{ selectedItems.size }} selected item(s)</div>
@@ -56,4 +56,14 @@
             <tr mat-row style="height: 48px" *matRowDef="let row; columns: displayedColumns"></tr>
         </table>
     </div>
+</div>
+
+<div *ngIf="devices.length === 0" class="empty-state-container" [class.small]="isSmall">
+    <pxb-empty-state title="No Items Found">
+        <mat-icon pxb-empty-icon>error</mat-icon>
+        <button data-cy="pxb-empty-state-add" pxb-actions mat-raised-button color="primary" (click)="addItem()">
+            <mat-icon>add</mat-icon>
+            Add An Item
+        </button>
+    </pxb-empty-state>
 </div>

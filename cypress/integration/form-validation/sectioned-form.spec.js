@@ -45,7 +45,7 @@ describe('Form validation', () => {
     });
 
     it('should display factory name char count 15/50', () => {
-        cy.get('[data-cy=submit]').click().type('Enter some text')
+        cy.get('[data-cy=name]').click().type('Enter some text')
         cy.get('[data-cy=char-count]').should('contain', '15/50')
     });
 

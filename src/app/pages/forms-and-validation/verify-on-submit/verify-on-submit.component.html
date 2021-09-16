@@ -58,7 +58,7 @@
         <section class="add-new-device">
             <pxb-empty-state title="Success" description="Device “123” has been added to your repository.">
                 <mat-icon pxb-empty-icon>check_circle</mat-icon>
-                <button mat-raised-button color="primary" pxb-actions (click)="addAnotherDevice()">
+                <button data-cy="add-device" mat-raised-button color="primary" pxb-actions (click)="addAnotherDevice()">
                     <mat-icon>add</mat-icon>
                     Add another device
                 </button>

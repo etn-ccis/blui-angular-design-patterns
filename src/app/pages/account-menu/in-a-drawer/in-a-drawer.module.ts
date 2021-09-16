@@ -15,10 +15,12 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MenuInADrawerComponent } from './menu-in-a-drawer.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     imports: [
         CommonModule,
+        BrowserAnimationsModule,
         InfoListItemModule,
         MatToolbarModule,
         SpacerModule,

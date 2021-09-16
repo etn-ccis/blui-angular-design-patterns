@@ -27,19 +27,20 @@
 }
 
 .avatar {
-  height: 48px;
-  width: 48px;
-  border-radius: 50%;
-  margin-top: 24px;
-  margin-bottom: 24px;
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    margin-top: 24px;
+    margin-bottom: 24px;
 }
 
 ::ng-deep .account-menu-drawer-header {
-  .pxb-drawer-header-content {
-    height: 150px;
-  }
-  .pxb-drawer-header-background {
-    background: linear-gradient(to right, rgba(0, 123, 193, .7) 22.4%, rgba(0, 123, 193, 0) 100%), url("../../../../assets/cubes_tile.png");
-    background-size: contain;
-  }
+    .pxb-drawer-header-content {
+        height: 150px;
+    }
+    .pxb-drawer-header-background {
+        background: linear-gradient(to right, rgba(0, 123, 193, 0.7) 22.4%, rgba(0, 123, 193, 0) 100%),
+            url('../../../../assets/cubes_tile.png');
+        background-size: contain;
+    }
 }

@@ -1,24 +1,18 @@
 <div class="menu-in-drawer-example">
     <mat-sidenav-container class="drawer-container" (backdropClick)="isTempDrawerOpen = false">
         <mat-sidenav mode="over" class="sidenav" [opened]="isTempDrawerOpen" position="start">
-            <pxb-drawer  [openOnHover]="false">
+            <pxb-drawer [openOnHover]="false">
                 <pxb-drawer-header class="account-menu-drawer-header">
-                  <div pxb-title-content style="width: 100%">
-                    <div style="display: flex; justify-content: space-between">
-                      <img class="avatar" src="assets/avatar_40.png">
-                      <button
-                        style="margin-top: 16px"
-                        mat-icon-button
-                        (click)="isTempDrawerOpen = false"
-                      >
-                        <mat-icon>close</mat-icon>
-                      </button>
+                    <div pxb-title-content style="width: 100%">
+                        <div style="display: flex; justify-content: space-between">
+                            <img class="avatar" src="assets/avatar_40.png" />
+                            <button style="margin-top: 16px" mat-icon-button (click)="isTempDrawerOpen = false">
+                                <mat-icon>close</mat-icon>
+                            </button>
+                        </div>
+                        <div class="mat-title" style="margin-bottom: -8px;">Chima Thabani</div>
+                        <div class="mat-body-1">CThabani@example.com</div>
                     </div>
-                    <div class="mat-title" style="margin-bottom: -8px;">Chima Thabani</div>
-                    <div class="mat-body-1">CThabani@example.com
-                    </div>
-                  </div>
-
                 </pxb-drawer-header>
                 <pxb-drawer-body>
                     <pxb-drawer-nav-group>

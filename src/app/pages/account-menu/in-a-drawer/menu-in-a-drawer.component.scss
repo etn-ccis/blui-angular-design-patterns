@@ -1,27 +1,45 @@
 @import '~@pxblue/colors/palette';
 
 .menu-in-drawer-example {
-  .button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100% - 64px);
+    .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100% - 64px);
 
-    mat-icon {
-      margin-right: 8px;
-      font-size: 16px;
-      height: 16px;
-      width: 16px;
+        mat-icon {
+            margin-right: 8px;
+            font-size: 16px;
+            height: 16px;
+            width: 16px;
+        }
     }
-  }
 }
 
 .drawer-container {
     height: 100vh;
     width: 100%;
-   .mat-sidenav {
-     max-width: 90%;
-     transition: width 200ms cubic-bezier(0.4, 0, 0.2, 1);
-     width: 350px;
-   }
+    .mat-sidenav {
+        max-width: 90%;
+        transition: width 200ms cubic-bezier(0.4, 0, 0.2, 1);
+        width: 300px;
+    }
+}
+
+.avatar {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+::ng-deep .account-menu-drawer-header {
+  .pxb-drawer-header-content {
+    height: 150px;
+  }
+  .pxb-drawer-header-background {
+    background: linear-gradient(to right, rgba(0, 123, 193, .7) 22.4%, rgba(0, 123, 193, 0) 100%), url("../../../../assets/cubes_tile.png");
+    background-size: contain;
+  }
 }

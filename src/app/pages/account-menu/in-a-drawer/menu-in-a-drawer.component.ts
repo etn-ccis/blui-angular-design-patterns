@@ -3,8 +3,8 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 import { StateService } from '../../../services/state.service';
 
 type DrawerItem = {
-  title: string;
-  icon: string;
+    title: string;
+    icon: string;
 };
 
 @Component({
@@ -15,40 +15,45 @@ type DrawerItem = {
 export class MenuInADrawerComponent implements OnInit {
     isSmall: boolean;
     isTempDrawerOpen: boolean;
-  selected: string;
+    selected: string;
 
     topItems: DrawerItem[] = [
-      {
-        title: 'Dashboard',
-        icon: 'dashboard'
-      }, {
-        title: 'Notifications',
-        icon: 'notifications'
-      }, {
-        title: 'Locations', icon: 'location_on',
-      }, {
-        title: 'Analyics', icon: 'analytics',
-      }, {
-      title: 'Assets',
-        icon: 'devices',
-    }];
+        {
+            title: 'Dashboard',
+            icon: 'dashboard',
+        },
+        {
+            title: 'Notifications',
+            icon: 'notifications',
+        },
+        {
+            title: 'Locations',
+            icon: 'location_on',
+        },
+        {
+            title: 'Analyics',
+            icon: 'analytics',
+        },
+        {
+            title: 'Assets',
+            icon: 'devices',
+        },
+    ];
 
     bottomItems: DrawerItem[] = [
-
-      {
-        title: 'Change Password',
-        icon: 'vpn_key',
-
-      },
-      {
-        title: 'Preferences',
-        icon: 'settings',
-      },
-      {
-        title: 'Logout',
-        icon: 'logout'
-      }
-    ]
+        {
+            title: 'Change Password',
+            icon: 'vpn_key',
+        },
+        {
+            title: 'Preferences',
+            icon: 'settings',
+        },
+        {
+            title: 'Logout',
+            icon: 'logout',
+        },
+    ];
 
     constructor(
         private readonly _drawerService: StateService,
@@ -72,6 +77,6 @@ export class MenuInADrawerComponent implements OnInit {
     }
 
     select(item: DrawerItem): void {
-      this.selected = item.title;
+        this.selected = item.title;
     }
 }

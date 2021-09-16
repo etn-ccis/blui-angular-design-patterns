@@ -25,6 +25,7 @@ import { VerifyOnSubmitComponent } from './pages/forms-and-validation/verify-on-
 import { SectionedFormComponent } from './pages/forms-and-validation/sectioned-form/sectioned-form.component';
 import { InATableComponent } from './pages/forms-and-validation/in-a-table/in-a-table.component';
 import { InAListComponent } from './pages/forms-and-validation/in-a-list/in-a-list.component';
+import { InAnAppBarComponent } from './pages/account-menu/in-an-app-bar/in-an-app-bar.component';
 
 export type DrawerItem = {
     title: string;
@@ -35,6 +36,17 @@ export type DrawerItem = {
 };
 
 export const ROUTES: DrawerItem[] = [
+    {
+        title: 'Account Menu',
+        path: 'account-menu',
+        children: [
+            {
+                title: 'In an App Bar',
+                path: 'in-an-app-bar',
+                component: InAnAppBarComponent,
+            }
+        ],
+    },
     {
         title: 'App Bar',
         path: 'app-bar',

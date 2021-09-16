@@ -1,0 +1,43 @@
+@import '~@pxblue/colors/palette.scss';
+
+section {
+    .app-bar-header {
+        margin: 40px auto 24px;
+        max-width: 600px;
+    }
+    .app-bar-container {
+        margin: 0 auto;
+        padding: 0 16px;
+        max-width: 960px;
+    }
+    .text-container {
+        margin-left: 24px;
+        overflow: hidden;
+        .sub-heading {
+            margin-top: -4px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+}
+
+.menu-header {
+    padding: 16px;
+}
+
+.app-bar-example {
+    margin-bottom: 24px;
+}
+
+// .user-menu-with-custom-colors {
+//     .pxb-blue .pxb-user-menu-avatar		{
+//         background-color: transparent;
+//     }
+// }
+
+// .user-menu-with-custom-colors{
+//     ::ng-deep .pxb-blue .pxb-user-menu-avatar		{
+//             background-color: transparent;
+//         }
+// }

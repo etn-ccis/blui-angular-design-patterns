@@ -49,7 +49,7 @@ describe('Form validation', () => {
     });
 
     it('should display search when add device is selected', () => {
-        cy.get('[data-cy=add]').click()
+        cy.get('[data-cy=add-device]').click()
         cy.get('[data-cy=serial-number]').should('have.focus')
     });
 });

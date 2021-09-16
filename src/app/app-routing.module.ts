@@ -8,7 +8,7 @@ import { BasicBottomSheetComponent } from './pages/overlays/basic-bottom-sheet/b
 import { CollapsibleAppBarComponent } from './pages/app-bar/collapsible-app-bar/collapsible-app-bar.component';
 import { ComplexBottomSheetComponent } from './pages/overlays/complex-bottom-sheet/complex-bottom-sheet.component';
 import { SortableListComponent } from './pages/list/sortable-list/sortable-list.component';
-import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.component';
+import { PageWideSearchComponent } from './pages/app-bar/page-wide-search/page-wide-search.component';
 import { ResponsiveTableComponent } from './pages/list/responsive-table/responsive-table.component';
 import { DynamicStepperComponent } from './pages/dynamic-stepper/dynamic-stepper.component';
 import { I18nComponent } from './pages/i18n/i18n.component';
@@ -25,6 +25,7 @@ import { VerifyOnSubmitComponent } from './pages/forms-and-validation/verify-on-
 import { SectionedFormComponent } from './pages/forms-and-validation/sectioned-form/sectioned-form.component';
 import { InATableComponent } from './pages/forms-and-validation/in-a-table/in-a-table.component';
 import { InAListComponent } from './pages/forms-and-validation/in-a-list/in-a-list.component';
+import {SearchBarComponent} from "./pages/app-bar/search-bar/search-bar.component";
 
 export type DrawerItem = {
     title: string;
@@ -45,10 +46,15 @@ export const ROUTES: DrawerItem[] = [
                 component: CollapsibleAppBarComponent,
             },
             {
-                title: 'Search',
-                path: 'search',
+                title: 'Global Search',
+                path: 'global-search',
                 component: SearchBarComponent,
             },
+          {
+            title: 'Page Wide Search',
+            path: 'page-wide-search',
+            component: PageWideSearchComponent,
+          },
         ],
     },
     {

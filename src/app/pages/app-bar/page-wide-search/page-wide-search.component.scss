@@ -1,0 +1,53 @@
+@import '~@pxblue/colors/palette';
+
+
+.appbar-actions {
+  display: flex;
+  margin: 0 -12px;
+  button {
+    margin: 0 8px;
+  }
+}
+
+.search-header {
+    background: map-get($pxb-white, 50);
+
+    .search-control {
+        flex: 1;
+        font-size: 1rem;
+        border: 0;
+        outline: none;
+        padding-left: 12px;
+        margin-left: 12px;
+
+        &::-ms-clear {
+            height: 0;
+            width: 0;
+        }
+    }
+}
+
+.content-body-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 64px);
+  &.small {
+    align-items: start;
+    height: calc(100vh - (1px + 2 * 56px));
+  }
+  mat-list {
+    padding-top: 0;
+    width: 100%;
+    margin: 16px;
+    max-width: 800px;
+    &.small {
+      margin: 0;
+      max-width: unset;
+    }
+  }
+}
+
+.no-results {
+  margin-left: 72px; margin-top: 24px;
+}

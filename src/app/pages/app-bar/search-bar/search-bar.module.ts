@@ -25,5 +25,6 @@ import { BoldSearchPipe } from './shared/bold-search.pipe';
         EmptyStateModule,
     ],
     declarations: [SearchBarComponent, FilterPipe, BoldSearchPipe],
+    exports: [SearchBarComponent, FilterPipe, BoldSearchPipe],
 })
 export class SearchBarModule {}

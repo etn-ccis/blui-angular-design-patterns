@@ -1,14 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { PageWideSearchComponent } from './page-wide-search.component';
 import { PageWideSearchModule } from './page-wide-search.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-describe('SearchBarComponent', () => {
+describe('PageWidthSearchComponent', () => {
     let component: PageWideSearchComponent;
     let fixture: ComponentFixture<PageWideSearchComponent>;
 
     beforeEach(async(() => {
         void TestBed.configureTestingModule({
-            imports: [PageWideSearchModule],
+            imports: [PageWideSearchModule, BrowserAnimationsModule],
         }).compileComponents();
     }));
 

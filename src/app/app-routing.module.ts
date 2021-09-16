@@ -25,7 +25,7 @@ import { VerifyOnSubmitComponent } from './pages/forms-and-validation/verify-on-
 import { SectionedFormComponent } from './pages/forms-and-validation/sectioned-form/sectioned-form.component';
 import { InATableComponent } from './pages/forms-and-validation/in-a-table/in-a-table.component';
 import { InAListComponent } from './pages/forms-and-validation/in-a-list/in-a-list.component';
-import {SearchBarComponent} from "./pages/app-bar/search-bar/search-bar.component";
+import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.component';
 
 export type DrawerItem = {
     title: string;
@@ -50,11 +50,11 @@ export const ROUTES: DrawerItem[] = [
                 path: 'global-search',
                 component: SearchBarComponent,
             },
-          {
-            title: 'Page Wide Search',
-            path: 'page-wide-search',
-            component: PageWideSearchComponent,
-          },
+            {
+                title: 'Page Wide Search',
+                path: 'page-wide-search',
+                component: PageWideSearchComponent,
+            },
         ],
     },
     {

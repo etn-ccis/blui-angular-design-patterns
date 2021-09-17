@@ -6,7 +6,7 @@
 </mat-toolbar>
 <section class="form-validation-section">
     <form [formGroup]="validatePhoneNumberForm" class="phone-number-form">
-        <mat-form-field class="country-code-select" appearance="fill">
+        <mat-form-field class="country-code-select" appearance="fill" data-cy="country-selector">
             <mat-label>Country Code</mat-label>
             <mat-select
                 formControlName="selectedCountry"
@@ -17,7 +17,7 @@
                 <mat-option [value]="option.code" *ngFor="let option of countries">{{ option.name }}</mat-option>
             </mat-select>
         </mat-form-field>
-        <mat-form-field class="phone-number-input" appearance="fill">
+        <mat-form-field class="phone-number-input" appearance="fill" data-cy="phone-input">
             <mat-label>Phone Number</mat-label>
             <input
                 matInput
@@ -32,6 +32,7 @@
             />
 
             <mat-error
+                data-cy="phone-helper-error"
                 *ngIf="
                     validatePhoneNumberForm.get('phone').hasError('invalidPhoneNumberFormat') ||
                     validatePhoneNumberForm.get('phone').hasError('required')

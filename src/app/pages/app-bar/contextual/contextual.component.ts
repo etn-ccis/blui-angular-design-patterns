@@ -26,6 +26,7 @@ export class ContextualAppBarComponent implements OnInit {
     selectedItems: Set<string> = new Set();
 
     devices: Device[];
+    mobileOnlyMsg = 'The contextual app bar is for mobile only.';
 
     constructor(
         private readonly _drawerService: StateService,

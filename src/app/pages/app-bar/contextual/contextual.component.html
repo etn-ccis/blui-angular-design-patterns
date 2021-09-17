@@ -73,8 +73,12 @@
                 No items found. <span class="reset-table" (click)="resetTable()">Reset table</span>
             </div>
         </div>
-        <div class="mobile-only-message mat-body-2" [class.small]="isSmall">
-            The contextual app bar is for mobile only.
+        <div *ngIf="!isSmall" class="mobile-only-message mat-body-2">
+          {{ mobileOnlyMsg }}
         </div>
     </div>
+</div>
+
+<div *ngIf="isSmall" class="mobile-only-message mat-body-2 small">
+  {{ mobileOnlyMsg }}
 </div>

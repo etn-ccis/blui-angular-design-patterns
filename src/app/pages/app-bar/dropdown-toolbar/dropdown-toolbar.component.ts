@@ -13,6 +13,7 @@ import { menuItems } from './menuItems';
 })
 export class DropdownToolbarComponent implements OnInit, AfterViewInit {
     isSmall: boolean;
+    isHandset: boolean;
     items = menuItems;
 
     @ViewChild('toolbar') dropdownToolbar: PxbDropdownToolbar;
@@ -26,19 +27,21 @@ export class DropdownToolbarComponent implements OnInit, AfterViewInit {
 
     ngOnInit(): void {
         this._breakpointObserver
-            .observe([Breakpoints.Small, Breakpoints.Handset])
+            .observe([Breakpoints.Small])
             .subscribe((state: BreakpointState) => {
-                if (state.matches) {
-                    this.isSmall = true;
-                } else {
-                    this.isSmall = false;
-                }
+                this.isSmall = state.matches;
             });
+
+      this._breakpointObserver
+        .observe([Breakpoints.Handset])
+        .subscribe((state: BreakpointState) => {
+            this.isHandset = state.matches;
+        });
     }
 
     ngAfterViewInit(): void {
         this.dropdownToolbar.menuTrigger.toggleMenu = (): void => {
-            if (this.isSmall) {
+            if (this.isHandset) {
                 this.openBottomSheet();
             } else {
                 this.dropdownToolbar.menuTrigger.openMenu();

@@ -25,13 +25,9 @@ export class SearchBarComponent implements OnInit {
 
     ngOnInit(): void {
         this._breakpointObserver
-            .observe([Breakpoints.Small, Breakpoints.Handset])
+            .observe([Breakpoints.Small])
             .subscribe((state: BreakpointState) => {
-                if (state.matches) {
-                    this.isSmall = true;
-                } else {
-                    this.isSmall = false;
-                }
+                this.isSmall = state.matches;
             });
     }
 

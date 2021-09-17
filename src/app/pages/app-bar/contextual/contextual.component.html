@@ -41,7 +41,7 @@
                         >
                         </mat-checkbox>
                     </th>
-                    <td mat-cell *matCellDef="let element">
+                    <td mat-cell *matCellDef="let element" class="checkbox-cell">
                         <mat-checkbox
                             [checked]="selectedItems.has(element.name)"
                             (change)="

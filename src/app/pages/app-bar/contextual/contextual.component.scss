@@ -52,8 +52,12 @@
     }
     .contextual-table {
         width: 100%;
+
         .selected {
-            background-color: rgba(map-get($pxb-blue, 500), 0.05), map-get($pxb-white, 50);
+            background-color: rgba(map-get($pxb-blue, 500), 0.05);
+            .checkbox-cell {
+              background-color: unset;
+            }
         }
         th {
             font-weight: 600;
@@ -61,12 +65,16 @@
             color: map-get($pxb-black, 500);
         }
         tr {
+            td {
+              font-size: 14px;
+            }
             th.mat-header-cell:first-of-type,
             td:first-of-type {
                 padding-left: 20px;
             }
         }
         .checkbox-header {
+            min-width: 72px;
             padding-right: 32px;
         }
         .name-header,

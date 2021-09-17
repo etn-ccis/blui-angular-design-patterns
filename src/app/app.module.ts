@@ -50,6 +50,7 @@ import { SectionedFormModule } from './pages/forms-and-validation/sectioned-form
 import { InATableModule } from './pages/forms-and-validation/in-a-table/in-a-table.module';
 import { InAListModule } from './pages/forms-and-validation/in-a-list/in-a-list.module';
 import { DropdownToolbarModule } from './pages/app-bar/dropdown-toolbar/dropdown-toolbar.module';
+import { ContextualAppbarModule } from './pages/app-bar/contextual/contextual.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -74,6 +75,7 @@ import { DropdownToolbarModule } from './pages/app-bar/dropdown-toolbar/dropdown
         MatMenuModule,
         MatSidenavModule,
         MatListModule,
+        ContextualAppbarModule,
         FormsModule,
         ReactiveFormsModule,
         MatInputModule,

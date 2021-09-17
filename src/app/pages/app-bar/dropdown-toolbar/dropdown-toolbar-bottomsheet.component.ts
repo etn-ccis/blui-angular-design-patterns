@@ -6,7 +6,7 @@ import { menuItems } from './menuItems';
 @Component({
     selector: 'app-dropdown-toolbar-bottomsheet',
     template: `
-        <mat-nav-list style="padding-top: 0">
+        <mat-nav-list style="padding: 0">
             <a
                 mat-list-item
                 *ngFor="let item of items"
@@ -17,6 +17,7 @@ import { menuItems } from './menuItems';
             >
         </mat-nav-list>
     `,
+    styleUrls: [ './dropdown-toolbar.component.scss' ]
 })
 export class DropdownToolbarBottomSheetExample {
     items = menuItems;

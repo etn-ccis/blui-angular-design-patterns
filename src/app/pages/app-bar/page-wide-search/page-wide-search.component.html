@@ -48,7 +48,7 @@
     <div class="content-body" [class.small]="isSmall">
         <div *ngIf="!isSmall" class="desktop-search">
             <pxb-spacer></pxb-spacer>
-            <mat-form-field appearance="fill" style="width: 160px">
+            <mat-form-field appearance="standard" style="width: 160px">
                 <mat-icon matPrefix class="desktop-search-icon">search</mat-icon>
                 <input matInput type="text" placeholder="Search Asset" [(ngModel)]="searchText" />
             </mat-form-field>

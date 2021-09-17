@@ -30,14 +30,8 @@ section {
     margin-bottom: 24px;
 }
 
-// .user-menu-with-custom-colors {
-//     .pxb-blue .pxb-user-menu-avatar		{
-//         background-color: transparent;
-//     }
-// }
-
-// .user-menu-with-custom-colors{
-//     ::ng-deep .pxb-blue .pxb-user-menu-avatar		{
-//             background-color: transparent;
-//         }
-// }
+.user-menu-with-custom-colors {
+    ::ng-deep .pxb-user-menu-avatar		{
+        background-color: transparent;
+    }
+}

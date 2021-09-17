@@ -10,29 +10,22 @@ describe('Form validation', () => {
         cy.get('[data-cy=pxb-toolbar]').should('contain', 'Sectioned Form');
     });
 
-    it('should display required for fields on submit color #ca3c3d', () => {
+    it('should display required for fields on submit', () => {
         cy.get('[data-cy=submit]').click()
         cy.get('[data-cy=name-required]')
         .should('contain', 'Required')
-        .invoke('css', 'color').should('equal', 'rgb(202, 60, 61)')
         cy.get('[data-cy=address-required]')
         .should('contain', 'Required')
-        .invoke('css', 'color').should('equal', 'rgb(202, 60, 61)')
         cy.get('[data-cy=city-required]')
         .should('contain', 'Required')
-        .invoke('css', 'color').should('equal', 'rgb(202, 60, 61)')
         cy.get('[data-cy=state-required]')
         .should('contain', 'Required')
-        .invoke('css', 'color').should('equal', 'rgb(202, 60, 61)')
         cy.get('[data-cy=zip-required]')
         .should('contain', 'Required')
-        .invoke('css', 'color').should('equal', 'rgb(202, 60, 61)')
         cy.get('[data-cy=fname-required]')
         .should('contain', 'Required')
-        .invoke('css', 'color').should('equal', 'rgb(202, 60, 61)')
         cy.get('[data-cy=email-required]')
         .should('contain', 'Required')
-        .invoke('css', 'color').should('equal', 'rgb(202, 60, 61)')
     });
 
     it('should display not required for fields after refresh', () => {

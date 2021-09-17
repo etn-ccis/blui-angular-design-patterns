@@ -58,12 +58,4 @@ describe('Form validation', () => {
         cy.get('[data-cy=phone-input]').click()
         cy.get('#mat-input-0').invoke('attr', 'placeholder').should('contain', '#### ### ###')
     });
-
-    it('should display error in correct color #ca3c3d', () => {
-        cy.get('[data-cy=country-selector]').should('contain', 'US')
-        cy.get('[data-cy=phone-input]').click()
-        cy.get('body').click(top, {force: true})
-        cy.get('[data-cy=phone-helper-error]')
-        .invoke('css', 'color').should('equal', 'rgb(202, 60, 61)')
-    });
 });

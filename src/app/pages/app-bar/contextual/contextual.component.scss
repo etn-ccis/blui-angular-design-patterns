@@ -53,7 +53,7 @@
     .contextual-table {
         width: 100%;
         .selected {
-            background-color: rgba(map-get($pxb-blue, 500), 0.05);
+            background-color: rgba(map-get($pxb-blue, 500), 0.05), map-get($pxb-white, 50);
         }
         th {
             font-weight: 600;

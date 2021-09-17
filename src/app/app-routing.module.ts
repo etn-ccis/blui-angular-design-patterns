@@ -25,6 +25,7 @@ import { VerifyOnSubmitComponent } from './pages/forms-and-validation/verify-on-
 import { SectionedFormComponent } from './pages/forms-and-validation/sectioned-form/sectioned-form.component';
 import { InATableComponent } from './pages/forms-and-validation/in-a-table/in-a-table.component';
 import { InAListComponent } from './pages/forms-and-validation/in-a-list/in-a-list.component';
+import { ContextualAppBarComponent } from './pages/app-bar/contextual/contextual.component';
 
 export type DrawerItem = {
     title: string;
@@ -43,6 +44,11 @@ export const ROUTES: DrawerItem[] = [
                 title: 'Collapsible',
                 path: 'collapsible',
                 component: CollapsibleAppBarComponent,
+            },
+            {
+                title: 'Contextual',
+                path: 'contextual',
+                component: ContextualAppBarComponent,
             },
             {
                 title: 'Search',

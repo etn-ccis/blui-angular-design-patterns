@@ -22,9 +22,7 @@
 
 <mat-toolbar class="search-header" [class.active]="toggleSearch" *ngIf="isSmall">
     <mat-toolbar-row style="padding: 0 16px">
-        <button mat-icon-button (click)="searchClose()" style="margin-left: -8px">
-            <mat-icon>search</mat-icon>
-        </button>
+        <mat-icon>search</mat-icon>
         <input
             class="search-control"
             type="text"

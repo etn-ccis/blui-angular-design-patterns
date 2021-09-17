@@ -13,6 +13,11 @@ body {
     height: 100%;
 }
 
+// TODO: Move this into the @pxblue/angular-themes.
+input {
+  font-family: "Open Sans", Arial;
+}
+
 .pxb-drawer-layout-nav-content {
     background-color: map-get($pxb-white, 200);
 }
@@ -22,6 +27,7 @@ body {
     top: 0;
     z-index: 1000;
 }
+
 
 .app-overlay-container {
     pointer-events: none;

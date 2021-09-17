@@ -51,4 +51,9 @@ export class SearchBarComponent implements OnInit {
         const drawerOpen = this._drawerService.getDrawerOpen();
         this._drawerService.setDrawerOpen(!drawerOpen);
     }
+
+    clearSearchText(): void {
+      this.searchText = ''
+      this.searchBar.nativeElement.focus();
+    }
 }

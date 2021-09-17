@@ -53,7 +53,7 @@ export class SearchBarComponent implements OnInit {
     }
 
     clearSearchText(): void {
-      this.searchText = ''
-      this.searchBar.nativeElement.focus();
+        this.searchText = '';
+        this.searchBar.nativeElement.focus();
     }
 }

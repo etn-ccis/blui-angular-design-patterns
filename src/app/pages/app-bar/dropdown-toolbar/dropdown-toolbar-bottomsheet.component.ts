@@ -17,7 +17,7 @@ import { menuItems } from './menuItems';
             >
         </mat-nav-list>
     `,
-    styleUrls: [ './dropdown-toolbar.component.scss' ]
+    styleUrls: ['./dropdown-toolbar.component.scss'],
 })
 export class DropdownToolbarBottomSheetExample {
     items = menuItems;

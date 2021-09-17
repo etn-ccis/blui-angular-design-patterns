@@ -46,7 +46,9 @@ export class DropdownToolbarComponent implements OnInit, AfterViewInit {
     }
 
     openBottomSheet(): void {
-        this._bottomSheet.open(DropdownToolbarBottomSheetExample, { panelClass: 'app-dropdown-toolbar-bottomsheet-overlay'});
+        this._bottomSheet.open(DropdownToolbarBottomSheetExample, {
+            panelClass: 'app-dropdown-toolbar-bottomsheet-overlay',
+        });
     }
 
     toggleMenu(): void {

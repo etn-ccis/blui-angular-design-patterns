@@ -13,8 +13,13 @@
 .spinner-overlay-container {
     height: calc(100vh - 64px);
     margin: 0 auto;
-    padding: 16px 16px;
     max-width: 450px;
+    display: flex;
+    overflow: auto;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 
     .eula-container {
         width: 100%;

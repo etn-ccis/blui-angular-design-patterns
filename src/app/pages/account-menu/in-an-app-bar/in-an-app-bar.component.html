@@ -24,7 +24,7 @@
                 <div class="mat-body-1 sub-heading">Shared / Anonymous Account / Unauthenticated</div>
             </div>
             <pxb-spacer></pxb-spacer>
-            <pxb-user-menu [(open)]="open1">
+            <pxb-user-menu [(open)]="open1" [positions]="positions">
                 <template pxb-avatar [ngTemplateOutlet]="avatar"></template>
                 <div pxb-menu-header>
                     <div class="menu-header">Browsing as a guest</div>
@@ -50,7 +50,7 @@
             </div>
             <pxb-spacer></pxb-spacer>
             <pxb-user-menu avatarValue="CT" menuTitle="Chima Thabani" menuSubtitle="CThabani@example.com"
-                [(open)]="open2">
+                [(open)]="open2" [positions]="positions">
                 <div pxb-menu-body>
                     <mat-nav-list [style.paddingTop.px]="0">
                         <pxb-info-list-item *ngFor="let item of items2" [dense]="true" (click)="open2=false;">
@@ -71,7 +71,7 @@
                 <div class="mat-body-1 sub-heading">Showing A Custom Profile Picture</div>
             </div>
             <pxb-spacer></pxb-spacer>
-            <pxb-user-menu menuTitle="Chima Thabani" menuSubtitle="CThabani@example.com" [(open)]="open3">
+            <pxb-user-menu menuTitle="Chima Thabani" menuSubtitle="CThabani@example.com" [(open)]="open3" [positions]="positions">
                 <div pxb-avatar>
                     <img alt="User Menu Avatar" [src]="avatarImage" style="border-radius: 50%;">
                 </div>
@@ -98,7 +98,7 @@
                 <div class="mat-body-1 sub-heading">Avatar with Status Indicator</div>
             </div>
             <pxb-spacer></pxb-spacer>
-            <pxb-user-menu menuTitle="Chima Thabani" menuSubtitle="CThabani@example.com" [(open)]="open4">
+            <pxb-user-menu menuTitle="Chima Thabani" menuSubtitle="CThabani@example.com" [(open)]="open4" [positions]="positions">
                 <div style="position: relative;" pxb-avatar>
                     <img alt="User Menu Avatar" [src]="avatarImage" style="border-radius: 50%;">
                     <span
@@ -129,7 +129,7 @@
                 <div class="mat-body-1 sub-heading">Calling Out the User Name</div>
             </div>
             <pxb-spacer></pxb-spacer>
-            <pxb-user-menu [(open)]="open5" class="user-menu-with-custom-colors">
+            <pxb-user-menu [(open)]="open5" class="user-menu-with-custom-chip" [positions]="chipPositions">
                 <mat-chip-list class="demo-chip-list" pxb-avatar>
                     <mat-chip style="background-color: #ffffff;border: 1px solid #424E541F;" (click)="open5=true;">
                         <mat-icon style="color: #727E84;" matChipAvatar>account_circle</mat-icon>

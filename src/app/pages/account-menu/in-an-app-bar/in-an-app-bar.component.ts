@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { StateService } from '../../../services/state.service';
+import { ConnectionPositionPair } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-in-an-app-bar',
@@ -42,6 +43,12 @@ export class InAnAppBarComponent implements OnInit {
         title: 'Log Out',
         icon: 'exit_to_app',
     },
+];
+positions = [
+    new ConnectionPositionPair({ originX: 'end', originY: 'bottom' }, { overlayX: 'end', overlayY: 'top' }, 0, 8),
+];
+chipPositions = [
+    new ConnectionPositionPair({ originX: 'end', originY: 'bottom' }, { overlayX: 'end', overlayY: 'top' }, 0, 16),
 ];
   constructor(
     private readonly _drawerService: StateService,

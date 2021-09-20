@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InAnAppBarComponent } from './in-an-app-bar.component';
+import { ChipComponent } from './chip.component';
 
-describe('InAnAppBarComponent', () => {
-    let component: InAnAppBarComponent;
-    let fixture: ComponentFixture<InAnAppBarComponent>;
+describe('ChipComponent', () => {
+    let component: ChipComponent;
+    let fixture: ComponentFixture<ChipComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [InAnAppBarComponent],
+            declarations: [ChipComponent],
         }).compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(InAnAppBarComponent);
+        fixture = TestBed.createComponent(ChipComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

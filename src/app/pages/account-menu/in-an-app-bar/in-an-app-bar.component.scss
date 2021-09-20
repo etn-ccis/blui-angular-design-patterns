@@ -26,19 +26,46 @@ section {
     padding: 16px;
 }
 
+.badge {
+    height: 8px;
+    width: 8px;
+    background-color: map-get($pxb-green, 500);
+    position: absolute;
+    border-radius: 50%;
+    bottom: 0;
+    right: 0;
+    color: map-get($pxb-green, 500);
+    box-shadow: 0 0 0 2px map-get($pxb-white, 50);
+    background-color: map-get($pxb-green, 500);
+}
+
 .app-bar-example {
     margin-bottom: 24px;
     padding-left: 8px;
 }
 
 .user-menu-with-custom-chip {
-    ::ng-deep .pxb-user-menu-avatar		{
+    ::ng-deep .pxb-user-menu-avatar {
         background-color: transparent;
     }
-    
+
     ::ng-deep .pxb-user-menu-avatar-content {
         height: auto;
         width: auto;
+    }
+
+    .left-icon {
+        color: #727e84;
+        font-size: 24px;
+        width: 24px;
+        height: 24px;
+        margin-left: -8px;
+    }
+
+    .right-icon {
+        vertical-align: middle;
+        margin-top: -4px;
+        margin-right: -8px;
     }
 }
 

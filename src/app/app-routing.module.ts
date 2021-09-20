@@ -44,7 +44,7 @@ export const ROUTES: DrawerItem[] = [
                 title: 'In an App Bar',
                 path: 'in-an-app-bar',
                 component: InAnAppBarComponent,
-            }
+            },
         ],
     },
     {

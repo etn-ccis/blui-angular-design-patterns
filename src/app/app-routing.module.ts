@@ -47,8 +47,6 @@ export const ROUTES: DrawerItem[] = [
                 component: CollapsibleAppBarComponent,
             },
             {
-                title: 'Global Search',
-                path: 'global-search',
                 title: 'Contextual',
                 path: 'contextual',
                 component: ContextualAppBarComponent,

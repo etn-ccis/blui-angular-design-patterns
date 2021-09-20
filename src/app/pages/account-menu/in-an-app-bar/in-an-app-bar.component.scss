@@ -28,6 +28,7 @@ section {
 
 .app-bar-example {
     margin-bottom: 24px;
+    padding-left: 8px;
 }
 
 .user-menu-with-custom-chip {
@@ -38,5 +39,11 @@ section {
     ::ng-deep .pxb-user-menu-avatar-content {
         height: auto;
         width: auto;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .app-bar-header {
+        padding: 0 16px;
     }
 }

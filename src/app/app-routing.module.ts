@@ -25,6 +25,7 @@ import { VerifyOnSubmitComponent } from './pages/forms-and-validation/verify-on-
 import { SectionedFormComponent } from './pages/forms-and-validation/sectioned-form/sectioned-form.component';
 import { InATableComponent } from './pages/forms-and-validation/in-a-table/in-a-table.component';
 import { InAListComponent } from './pages/forms-and-validation/in-a-list/in-a-list.component';
+import { MenuInADrawerComponent } from './pages/account-menu/in-a-drawer/menu-in-a-drawer.component';
 import { DropdownToolbarComponent } from './pages/app-bar/dropdown-toolbar/dropdown-toolbar.component';
 import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.component';
 import { ContextualAppBarComponent } from './pages/app-bar/contextual/contextual.component';
@@ -38,6 +39,17 @@ export type DrawerItem = {
 };
 
 export const ROUTES: DrawerItem[] = [
+    {
+        title: 'Account Menu',
+        path: 'account-menu',
+        children: [
+            {
+                title: 'In a Drawer',
+                path: 'in-a-drawer',
+                component: MenuInADrawerComponent,
+            },
+        ],
+    },
     {
         title: 'App Bar',
         path: 'app-bar',

@@ -1,5 +1,9 @@
 @import '~@pxblue/colors/palette';
 
+.main-header {
+    display: inline-flex;
+}
+
 .appbar-actions {
     display: flex;
     margin: 0 -12px;

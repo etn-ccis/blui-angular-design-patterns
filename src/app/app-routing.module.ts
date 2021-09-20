@@ -66,7 +66,7 @@ export const ROUTES: DrawerItem[] = [
             },
             {
                 title: 'Search',
-                path: 'search',
+                path: 'global-search',
                 component: SearchBarComponent,
             },
             {

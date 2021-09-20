@@ -26,6 +26,7 @@ import { SectionedFormComponent } from './pages/forms-and-validation/sectioned-f
 import { InATableComponent } from './pages/forms-and-validation/in-a-table/in-a-table.component';
 import { InAListComponent } from './pages/forms-and-validation/in-a-list/in-a-list.component';
 import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.component';
+import { ContextualAppBarComponent } from './pages/app-bar/contextual/contextual.component';
 
 export type DrawerItem = {
     title: string;
@@ -48,6 +49,13 @@ export const ROUTES: DrawerItem[] = [
             {
                 title: 'Global Search',
                 path: 'global-search',
+                title: 'Contextual',
+                path: 'contextual',
+                component: ContextualAppBarComponent,
+            },
+            {
+                title: 'Search',
+                path: 'search',
                 component: SearchBarComponent,
             },
             {

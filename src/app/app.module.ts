@@ -49,6 +49,7 @@ import { FixLengthPasscodeModule } from './pages/forms-and-validation/fix-length
 import { SectionedFormModule } from './pages/forms-and-validation/sectioned-form/sectioned-form.module';
 import { InATableModule } from './pages/forms-and-validation/in-a-table/in-a-table.module';
 import { InAListModule } from './pages/forms-and-validation/in-a-list/in-a-list.module';
+import { ContextualAppbarModule } from './pages/app-bar/contextual/contextual.module';
 import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
 
 @NgModule({
@@ -74,6 +75,7 @@ import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
         MatMenuModule,
         MatSidenavModule,
         MatListModule,
+        ContextualAppbarModule,
         FormsModule,
         ReactiveFormsModule,
         MatInputModule,

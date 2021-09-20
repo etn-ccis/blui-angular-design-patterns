@@ -43,12 +43,13 @@
                 class="suffix-icons"
                 [ngClass]="showSuffix && showLoading ? 'show-spinner' : 'show-icon'"
             >
-                <mat-icon class="spinner-container">
+                <mat-icon data-cy="loading-spinner" class="spinner-container">
                     <mat-spinner class="primary-spinner" diameter="20"></mat-spinner>
                 </mat-icon>
-                <mat-icon class="icon-container" [style.color]="successColor">done</mat-icon>
+                <mat-icon data-cy="success" class="icon-container" [style.color]="successColor">done</mat-icon>
             </button>
             <mat-error
+                data-cy="six-digit-error"
                 *ngIf="
                     passcodeFormControl.passcode.errors?.required ||
                     passcodeFormControl.passcode.errors?.passcodeLengthNotMatch
@@ -56,11 +57,18 @@
             >
                 Please enter a six-digit passcode.
             </mat-error>
-            <mat-error *ngIf="passcodeFormControl.passcode.errors?.invalidPasscode">
+            <mat-error data-cy="passcode-error" *ngIf="passcodeFormControl.passcode.errors?.invalidPasscode">
                 Incorrect Passcode.
             </mat-error>
         </mat-form-field>
-        <button class="reset-btn" mat-stroked-button color="primary" (click)="resetForm()" [disabled]="showLoading">
+        <button
+            data-cy="reset"
+            class="reset-btn"
+            mat-stroked-button
+            color="primary"
+            (click)="resetForm()"
+            [disabled]="showLoading"
+        >
             <mat-icon>refresh</mat-icon>
             Reset Form
         </button>

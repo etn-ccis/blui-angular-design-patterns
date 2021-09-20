@@ -25,6 +25,7 @@ import { VerifyOnSubmitComponent } from './pages/forms-and-validation/verify-on-
 import { SectionedFormComponent } from './pages/forms-and-validation/sectioned-form/sectioned-form.component';
 import { InATableComponent } from './pages/forms-and-validation/in-a-table/in-a-table.component';
 import { InAListComponent } from './pages/forms-and-validation/in-a-list/in-a-list.component';
+import { ContextualAppBarComponent } from './pages/app-bar/contextual/contextual.component';
 
 export type DrawerItem = {
     title: string;
@@ -45,6 +46,11 @@ export const ROUTES: DrawerItem[] = [
                 component: CollapsibleAppBarComponent,
             },
             {
+                title: 'Contextual',
+                path: 'contextual',
+                component: ContextualAppBarComponent,
+            },
+            {
                 title: 'Search',
                 path: 'search',
                 component: SearchBarComponent,
@@ -56,29 +62,14 @@ export const ROUTES: DrawerItem[] = [
         path: 'forms-and-validation',
         children: [
             {
-                title: 'Password',
-                path: 'password',
-                component: PasswordComponent,
-            },
-            {
                 title: 'Fixed Length Passcode',
                 path: 'fixed-length-passcode',
                 component: FixLengthPasscodeComponent,
             },
             {
-                title: 'Phone Number Format',
-                path: 'phone-number-format',
-                component: PhoneNumberFormatComponent,
-            },
-            {
-                title: 'Verify on Submit',
-                path: 'verify-on-submit',
-                component: VerifyOnSubmitComponent,
-            },
-            {
-                title: 'Sectioned Form',
-                path: 'sectioned-form',
-                component: SectionedFormComponent,
+                title: 'In a List',
+                path: 'in-a-list',
+                component: InAListComponent,
             },
             {
                 title: 'In a Table',
@@ -86,9 +77,24 @@ export const ROUTES: DrawerItem[] = [
                 component: InATableComponent,
             },
             {
-                title: 'In a List',
-                path: 'in-a-list',
-                component: InAListComponent,
+                title: 'Password',
+                path: 'password',
+                component: PasswordComponent,
+            },
+            {
+                title: 'Phone Number Format',
+                path: 'phone-number-format',
+                component: PhoneNumberFormatComponent,
+            },
+            {
+                title: 'Sectioned Form',
+                path: 'sectioned-form',
+                component: SectionedFormComponent,
+            },
+            {
+                title: 'Verify on Submit',
+                path: 'verify-on-submit',
+                component: VerifyOnSubmitComponent,
             },
         ],
     },

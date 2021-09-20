@@ -20,8 +20,8 @@ section.find-device {
         display: flex;
         align-items: center;
         mat-icon {
-            margin-right: 4px;
-            margin-left: -4px;
+            font-size: 20px;
+            margin: 4px 4px 0 -4px;
         }
     }
 }
@@ -68,6 +68,16 @@ section.find-device {
 @media only screen and (max-width: 600px) {
     section.find-device {
         padding: 16px;
+
+        .button-container {
+            .text-container {
+                justify-content: center;
+            }
+        }
+    }
+
+    .search-device-btn {
+        width: 100%;
     }
 }
 

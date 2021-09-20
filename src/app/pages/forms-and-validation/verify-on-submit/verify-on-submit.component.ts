@@ -40,6 +40,7 @@ export class VerifyOnSubmitComponent implements OnInit {
                 } else {
                     this.isSmall = false;
                 }
+                this._changeDetectorRef.detectChanges();
             });
     }
 

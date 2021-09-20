@@ -10,6 +10,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
 import { SpacerModule } from '@pxblue/angular-components';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [SpinnerOverlaysComponent],
@@ -24,6 +25,7 @@ import { SpacerModule } from '@pxblue/angular-components';
         MatCheckboxModule,
         MatDividerModule,
         SpacerModule,
+        FormsModule,
     ],
 })
 export class SpinnerOverlaysModule {}

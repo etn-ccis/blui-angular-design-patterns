@@ -27,11 +27,7 @@ export class PageWideSearchComponent implements OnInit {
         this._breakpointObserver
             .observe([Breakpoints.Small, Breakpoints.Handset])
             .subscribe((state: BreakpointState) => {
-                if (state.matches) {
-                    this.isSmall = true;
-                } else {
-                    this.isSmall = false;
-                }
+                this.isSmall = state.matches;
             });
     }
 

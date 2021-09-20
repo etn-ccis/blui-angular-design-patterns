@@ -25,6 +25,7 @@ import { VerifyOnSubmitComponent } from './pages/forms-and-validation/verify-on-
 import { SectionedFormComponent } from './pages/forms-and-validation/sectioned-form/sectioned-form.component';
 import { InATableComponent } from './pages/forms-and-validation/in-a-table/in-a-table.component';
 import { InAListComponent } from './pages/forms-and-validation/in-a-list/in-a-list.component';
+import { DropdownToolbarComponent } from './pages/app-bar/dropdown-toolbar/dropdown-toolbar.component';
 import { ContextualAppBarComponent } from './pages/app-bar/contextual/contextual.component';
 
 export type DrawerItem = {
@@ -54,6 +55,11 @@ export const ROUTES: DrawerItem[] = [
                 title: 'Search',
                 path: 'search',
                 component: SearchBarComponent,
+            },
+            {
+                title: 'Dropdown Toolbar',
+                path: 'dropdown-toolbar',
+                component: DropdownToolbarComponent,
             },
         ],
     },

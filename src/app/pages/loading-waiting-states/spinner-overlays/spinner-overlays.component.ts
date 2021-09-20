@@ -46,6 +46,7 @@ export class SpinnerOverlaysComponent implements OnInit {
 
     reloadEula(): void {
         this.isEulaLoaded = false;
+        this.checked = false;
         this.loadEula();
     }
 }

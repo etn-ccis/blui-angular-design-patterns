@@ -26,9 +26,11 @@ export class DropdownToolbarComponent implements OnInit, AfterViewInit {
     ) {}
 
     ngOnInit(): void {
-        this._breakpointObserver.observe([Breakpoints.Small]).subscribe((state: BreakpointState) => {
-            this.isSmall = state.matches;
-        });
+        this._breakpointObserver
+            .observe([Breakpoints.Small, Breakpoints.Handset])
+            .subscribe((state: BreakpointState) => {
+                this.isSmall = state.matches;
+            });
 
         this._breakpointObserver.observe([Breakpoints.Handset]).subscribe((state: BreakpointState) => {
             this.isHandset = state.matches;

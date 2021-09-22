@@ -31,7 +31,7 @@ import { BasicBottomSheetModule } from './pages/overlays/basic-bottom-sheet/basi
 import { CollapsibleAppBarModule } from './pages/app-bar/collapsible-app-bar/collapsible-app-bar.module';
 import { ComplexBottomSheetModule } from './pages/overlays/complex-bottom-sheet/complex-bottom-sheet.module';
 import { SortableListModule } from './pages/list/sortable-list/sortable-list.module';
-import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
+import { PageWideSearchModule } from './pages/app-bar/page-wide-search/page-wide-search.module';
 import { ResponsiveTableModule } from './pages/list/responsive-table/responsive-table.module';
 import { DynamicStepperModule } from './pages/dynamic-stepper/dynamic-stepper.module';
 import { I18nModule } from './pages/i18n/i18n.module';
@@ -50,6 +50,10 @@ import { SectionedFormModule } from './pages/forms-and-validation/sectioned-form
 import { InATableModule } from './pages/forms-and-validation/in-a-table/in-a-table.module';
 import { InAListModule } from './pages/forms-and-validation/in-a-list/in-a-list.module';
 import { InAnAppBarModule } from './pages/account-menu/in-an-app-bar/in-an-app-bar.module';
+import { MenuInDrawerModule } from './pages/account-menu/in-a-drawer/in-a-drawer.module';
+import { DropdownToolbarModule } from './pages/app-bar/dropdown-toolbar/dropdown-toolbar.module';
+import { ContextualAppbarModule } from './pages/app-bar/contextual/contextual.module';
+import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -70,10 +74,12 @@ import { InAnAppBarModule } from './pages/account-menu/in-an-app-bar/in-an-app-b
         MatIconModule,
         MatCardModule,
         MatButtonModule,
+        MenuInDrawerModule,
         MatDividerModule,
         MatMenuModule,
         MatSidenavModule,
         MatListModule,
+        ContextualAppbarModule,
         FormsModule,
         ReactiveFormsModule,
         MatInputModule,
@@ -83,10 +89,12 @@ import { InAnAppBarModule } from './pages/account-menu/in-an-app-bar/in-an-app-b
         HttpClientModule,
         ComplexBottomSheetModule,
         SortableListModule,
+        PageWideSearchModule,
         SearchBarModule,
         ResponsiveTableModule,
         DynamicStepperModule,
         LandingPageModule,
+        DropdownToolbarModule,
         ProgressBarIndeterminateModule,
         SpinnerOverlaysModule,
         ContextualSpinnersModule,

@@ -8,7 +8,7 @@ import { BasicBottomSheetComponent } from './pages/overlays/basic-bottom-sheet/b
 import { CollapsibleAppBarComponent } from './pages/app-bar/collapsible-app-bar/collapsible-app-bar.component';
 import { ComplexBottomSheetComponent } from './pages/overlays/complex-bottom-sheet/complex-bottom-sheet.component';
 import { SortableListComponent } from './pages/list/sortable-list/sortable-list.component';
-import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.component';
+import { PageWideSearchComponent } from './pages/app-bar/page-wide-search/page-wide-search.component';
 import { ResponsiveTableComponent } from './pages/list/responsive-table/responsive-table.component';
 import { DynamicStepperComponent } from './pages/dynamic-stepper/dynamic-stepper.component';
 import { I18nComponent } from './pages/i18n/i18n.component';
@@ -26,6 +26,10 @@ import { SectionedFormComponent } from './pages/forms-and-validation/sectioned-f
 import { InATableComponent } from './pages/forms-and-validation/in-a-table/in-a-table.component';
 import { InAListComponent } from './pages/forms-and-validation/in-a-list/in-a-list.component';
 import { InAnAppBarComponent } from './pages/account-menu/in-an-app-bar/in-an-app-bar.component';
+import { MenuInADrawerComponent } from './pages/account-menu/in-a-drawer/menu-in-a-drawer.component';
+import { DropdownToolbarComponent } from './pages/app-bar/dropdown-toolbar/dropdown-toolbar.component';
+import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.component';
+import { ContextualAppBarComponent } from './pages/app-bar/contextual/contextual.component';
 
 export type DrawerItem = {
     title: string;
@@ -45,6 +49,11 @@ export const ROUTES: DrawerItem[] = [
                 path: 'in-an-app-bar',
                 component: InAnAppBarComponent,
             },
+            {
+                title: 'In a Drawer',
+                path: 'in-a-drawer',
+                component: MenuInADrawerComponent,
+            },
         ],
     },
     {
@@ -57,9 +66,24 @@ export const ROUTES: DrawerItem[] = [
                 component: CollapsibleAppBarComponent,
             },
             {
+                title: 'Contextual',
+                path: 'contextual',
+                component: ContextualAppBarComponent,
+            },
+            {
                 title: 'Search',
-                path: 'search',
+                path: 'global-search',
                 component: SearchBarComponent,
+            },
+            {
+                title: 'Page Wide Search',
+                path: 'page-wide-search',
+                component: PageWideSearchComponent,
+            },
+            {
+                title: 'Dropdown Toolbar',
+                path: 'dropdown-toolbar',
+                component: DropdownToolbarComponent,
             },
         ],
     },

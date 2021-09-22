@@ -1,0 +1,83 @@
+@import '~@pxblue/colors/palette';
+
+.main-header {
+    display: inline-flex;
+}
+
+.appbar-actions {
+    display: flex;
+    margin: 0 -12px;
+    button {
+        margin: 0 8px;
+    }
+}
+
+.search-header {
+    background: map-get($pxb-white, 50);
+    color: map-get($pxb-gray, 500);
+
+    .search-control {
+        flex: 1;
+        font-size: 1rem;
+        border: 0;
+        outline: none;
+        padding-left: 12px;
+        margin-left: 12px;
+
+        &::-ms-clear {
+            height: 0;
+            width: 0;
+        }
+    }
+}
+
+.desktop-search {
+    display: flex;
+    width: 100%;
+    ::ng-deep .mat-form-field-prefix {
+        top: 2px;
+    }
+    .desktop-search-icon {
+        color: map-get($pxb-gray, 500);
+        margin-right: 8px;
+        margin-bottom: -2px;
+        $size: 18px;
+        height: $size;
+        width: $size;
+        font-size: $size;
+    }
+}
+
+.content-body-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100vh - 64px);
+    &.small {
+        justify-content: start;
+        align-items: start;
+        height: unset;
+    }
+    .content-body {
+        margin-top: 40px;
+        max-width: 800px;
+        height: 480px;
+        width: 100%;
+        padding: 16px;
+        &.small {
+            margin: 0;
+            padding: 0;
+            height: unset;
+            max-width: unset;
+        }
+    }
+    mat-list {
+        padding-top: 0;
+        width: 100%;
+    }
+}
+
+.no-results {
+    margin-left: 72px;
+    margin-top: 24px;
+}

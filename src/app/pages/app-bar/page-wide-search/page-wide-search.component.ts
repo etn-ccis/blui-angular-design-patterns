@@ -4,11 +4,11 @@ import { StateService } from '../../../services/state.service';
 import * as Colors from '@pxblue/colors';
 
 @Component({
-    selector: 'app-search-bar',
-    templateUrl: './search-bar.component.html',
-    styleUrls: ['./search-bar.component.scss'],
+    selector: 'app-page-wide-search',
+    templateUrl: './page-wide-search.component.html',
+    styleUrls: ['./page-wide-search.component.scss'],
 })
-export class SearchBarComponent implements OnInit {
+export class PageWideSearchComponent implements OnInit {
     isSmall: boolean;
     list = ['Apple', 'Grape', 'Orange', 'Pineapple', 'Watermelon'];
     searchText = '';
@@ -46,10 +46,5 @@ export class SearchBarComponent implements OnInit {
     toggleMenu(): void {
         const drawerOpen = this._drawerService.getDrawerOpen();
         this._drawerService.setDrawerOpen(!drawerOpen);
-    }
-
-    clearSearchText(): void {
-        this.searchText = '';
-        this.searchBar.nativeElement.focus();
     }
 }

@@ -1,0 +1,17 @@
+<pxb-dropdown-toolbar #toolbar title="Title" [subtitle]="getSelected() || 'subtitle'" class="mat-elevation-z4">
+    <button
+        pxb-nav-icon
+        data-cy="toolbar-menu"
+        *ngIf="isSmall"
+        style="margin-left: -8px"
+        mat-icon-button
+        (click)="toggleMenu()"
+    >
+        <mat-icon>menu</mat-icon>
+    </button>
+    <ng-container pxb-toolbar-menu>
+        <ng-container *ngFor="let item of items">
+            <button mat-menu-item (click)="setSelected(item)">{{ item }}</button></ng-container
+        >
+    </ng-container>
+</pxb-dropdown-toolbar>

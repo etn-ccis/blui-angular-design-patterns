@@ -18,7 +18,11 @@
                     <h2>Factory</h2>
                 </div>
                 <div class="form-fields">
-                    <mat-form-field hintLabel="For Example, Facility or Campus name" appearance="fill">
+                    <mat-form-field
+                        data-cy="hint-char-count"
+                        hintLabel="For Example, Facility or Campus name"
+                        appearance="fill"
+                    >
                         <mat-label>Name</mat-label>
                         <input
                             matInput
@@ -30,6 +34,7 @@
                         />
                         <mat-hint align="end" data-cy="char-count">{{ input.value?.length || 0 }}/50</mat-hint>
                         <mat-error
+                            data-cy="name-required"
                             *ngIf="
                                 factoryDetailsForm.get('factoryName').hasError('required') && sectionedForm.submitted
                             "
@@ -63,6 +68,7 @@
                                 matTooltip="PXB Protection provides a three-year power expert warranty."
                                 matTooltipPosition="above"
                                 [matTooltipClass]="'tooltip-pd'"
+                                data-cy="tool-tip"
                                 >help_outline</mat-icon
                             >
                             <p class="mat-body-1 pxb-protection-desc" style="margin-bottom: 32px;">
@@ -89,6 +95,7 @@
                         <mat-label>Address</mat-label>
                         <input matInput formControlName="addressOne" type="text" data-cy="address-one" />
                         <mat-error
+                            data-cy="address-required"
                             *ngIf="factoryDetailsForm.get('addressOne').hasError('required') && sectionedForm.submitted"
                         >
                             Required
@@ -102,13 +109,14 @@
                         <mat-label>City</mat-label>
                         <input matInput formControlName="city" type="text" data-cy="city" />
                         <mat-error
+                            data-cy="city-required"
                             *ngIf="factoryDetailsForm.get('city').hasError('required') && sectionedForm.submitted"
                         >
                             Required
                         </mat-error>
                     </mat-form-field>
                     <div class="address-sub-fields">
-                        <mat-form-field appearance="fill" class="state-input">
+                        <mat-form-field data-cy="state-picker" appearance="fill" class="state-input">
                             <mat-label>State</mat-label>
                             <mat-select formControlName="state">
                                 <mat-option *ngFor="let state of states" [value]="state.value">
@@ -116,6 +124,7 @@
                                 </mat-option>
                             </mat-select>
                             <mat-error
+                                data-cy="state-required"
                                 *ngIf="factoryDetailsForm.get('state').hasError('required') && sectionedForm.submitted"
                             >
                                 Required
@@ -131,6 +140,7 @@
                                 data-cy="zip-code"
                             />
                             <mat-error
+                                data-cy="zip-required"
                                 *ngIf="
                                     factoryDetailsForm.get('zipCode').hasError('required') && sectionedForm.submitted
                                 "
@@ -159,6 +169,7 @@
                             <mat-label>First Name</mat-label>
                             <input matInput type="text" data-cy="contact-name" formControlName="contactName" />
                             <mat-error
+                                data-cy="fname-required"
                                 *ngIf="
                                     factoryDetailsForm.get('contactName').hasError('required') &&
                                     sectionedForm.submitted
@@ -176,11 +187,13 @@
                         <mat-label>Email Address</mat-label>
                         <input matInput type="text" data-cy="email-address" formControlName="email" />
                         <mat-error
+                            data-cy="email-required"
                             *ngIf="factoryDetailsForm.get('email').hasError('required') && sectionedForm.submitted"
                         >
                             Required
                         </mat-error>
                         <mat-error
+                            data-cy="email-error"
                             *ngIf="factoryDetailsForm.get('email').hasError('pattern') && sectionedForm.submitted"
                             >Please enter a valid email address</mat-error
                         >
@@ -189,7 +202,7 @@
             </div>
             <mat-divider class="bottom-divider"></mat-divider>
             <div class="form-action">
-                <button class="submit-button" type="submit" mat-flat-button color="primary">
+                <button data-cy="submit" class="submit-button" type="submit" mat-flat-button color="primary">
                     Submit
                 </button>
             </div>

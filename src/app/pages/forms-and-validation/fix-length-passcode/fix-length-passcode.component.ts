@@ -91,6 +91,7 @@ export class FixLengthPasscodeComponent implements OnInit, AfterViewInit {
                     this.showLoading = false;
                     this.showDoneIcon = false;
                     this.passcodeInput.nativeElement.focus();
+                    this.passcodeInput.nativeElement.select();
                 }
                 this._changeDetectorRef.detectChanges();
             }, 3000);

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { FormControl, FormGroupDirective, NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
@@ -22,6 +22,7 @@ class CrossFieldErrorMatcher implements ErrorStateMatcher {
 })
 export class PasswordComponent implements OnInit {
     isSmall: boolean;
+    useCard: boolean;
     userPassword: FormGroup;
     passwordFormGroup: FormGroup;
     oldPasswordVisible = false;
@@ -41,7 +42,8 @@ export class PasswordComponent implements OnInit {
     constructor(
         private readonly _drawerService: StateService,
         private readonly _breakpointObserver: BreakpointObserver,
-        private readonly _formBuilder: FormBuilder
+        private readonly _formBuilder: FormBuilder,
+        private readonly _changeDetectorRef: ChangeDetectorRef
     ) {
         this.initForm();
     }
@@ -50,12 +52,13 @@ export class PasswordComponent implements OnInit {
         this._breakpointObserver
             .observe([Breakpoints.Small, Breakpoints.Handset])
             .subscribe((state: BreakpointState) => {
-                if (state.matches) {
-                    this.isSmall = true;
-                } else {
-                    this.isSmall = false;
-                }
+                this.isSmall = state.matches;
+                this._changeDetectorRef.detectChanges();
             });
+        this._breakpointObserver.observe([Breakpoints.XSmall]).subscribe((state: BreakpointState) => {
+            this.useCard = !state.matches;
+            this._changeDetectorRef.detectChanges();
+        });
         this.passwordRequirements = this.getPasswordRequirements();
     }
 

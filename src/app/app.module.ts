@@ -49,6 +49,7 @@ import { FixLengthPasscodeModule } from './pages/forms-and-validation/fix-length
 import { SectionedFormModule } from './pages/forms-and-validation/sectioned-form/sectioned-form.module';
 import { InATableModule } from './pages/forms-and-validation/in-a-table/in-a-table.module';
 import { InAListModule } from './pages/forms-and-validation/in-a-list/in-a-list.module';
+import { InAnAppBarModule } from './pages/account-menu/in-an-app-bar/in-an-app-bar.module';
 import { MenuInDrawerModule } from './pages/account-menu/in-a-drawer/in-a-drawer.module';
 import { DropdownToolbarModule } from './pages/app-bar/dropdown-toolbar/dropdown-toolbar.module';
 import { ContextualAppbarModule } from './pages/app-bar/contextual/contextual.module';
@@ -106,6 +107,7 @@ import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
         SectionedFormModule,
         InATableModule,
         InAListModule,
+        InAnAppBarModule,
     ],
     bootstrap: [AppComponent],
 })

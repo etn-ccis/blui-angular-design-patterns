@@ -10,7 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { SpacerModule, UserMenuModule, InfoListItemModule } from '@pxblue/angular-components';
 
 import { InAnAppBarComponent } from './in-an-app-bar.component';
-import { ChipComponent } from '../chip/chip.component';
+import { ChipComponent } from './chip/chip.component';
 
 @NgModule({
     declarations: [InAnAppBarComponent, ChipComponent],

@@ -72,17 +72,17 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <mat-divider></mat-divider>
-    
+
                 <div class="factory-details-container factory-address-details">
                     <div class="container-header">
                         <mat-icon>location_on</mat-icon>
                         <h2>Address</h2>
                     </div>
                     <p class="mat-body-1 address-note">
-                        Note that different country write addresses in different ways. The following fields are for a United
-                        States address.
+                        Note that different country write addresses in different ways. The following fields are for a
+                        United States address.
                     </p>
                     <div class="form-fields">
                         <mat-form-field appearance="fill">
@@ -102,7 +102,10 @@
                         <mat-form-field appearance="fill">
                             <mat-label>City</mat-label>
                             <input matInput formControlName="city" type="text" data-cy="city" />
-                            <mat-error data-cy="city-required" *ngIf="factoryDetailsForm.get('city').hasError('required')">
+                            <mat-error
+                                data-cy="city-required"
+                                *ngIf="factoryDetailsForm.get('city').hasError('required')"
+                            >
                                 Required
                             </mat-error>
                         </mat-form-field>
@@ -144,9 +147,9 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <mat-divider></mat-divider>
-    
+
                 <div class="factory-details-container contact-details">
                     <div class="container-header">
                         <mat-icon>contact_mail</mat-icon>

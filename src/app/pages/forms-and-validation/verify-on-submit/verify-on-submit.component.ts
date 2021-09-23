@@ -71,6 +71,7 @@ export class VerifyOnSubmitComponent implements OnInit {
                 this.searchDeviceForm.controls['serialNumber'].setErrors({ deviceNotFound: true });
                 this._changeDetectorRef.detectChanges();
                 this.serialNumberInput.nativeElement.focus();
+                this.serialNumberInput.nativeElement.select();
             }
         }, 3000);
     }

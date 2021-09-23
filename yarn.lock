@@ -1635,10 +1635,10 @@
   dependencies:
     tslib "^2.0.0"
 
-"@pxblue/angular-themes@^6.1.1":
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/@pxblue/angular-themes/-/angular-themes-6.1.1.tgz#ac2f8afc6d0bd07f57dc1c4d9da0b8db19f21cbe"
-  integrity sha512-B17/R69of4VNpPBcziDTJOCrYHdaH7TEfgBgLjZWuG0deoEUL26/CZ+dPqyVqjZgCtxG940OCmtCP9P3lYKdKQ==
+"@pxblue/angular-themes@^6.3.0-beta.1":
+  version "6.3.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@pxblue/angular-themes/-/angular-themes-6.3.0-beta.1.tgz#5aa0e8430c3f8488a311e2e6407039b720a1ddac"
+  integrity sha512-jRH/wfNW3rjXjJJq23cMTThC1qovw15Av7o/y6vgj24Cam3YluVm+V1yuTry9//JYPMPlQfjCV3R2DTA36Am3g==
   dependencies:
     "@fontsource/open-sans" "^4.1.0"
     "@pxblue/colors" "^3.0.0"

@@ -34,7 +34,7 @@
         "@netbasal/ngx-content-loader": "3.0.0",
         "@ngx-translate/core": "^12.1.2",
         "@pxblue/angular-components": "^4.3.0",
-        "@pxblue/angular-themes": "^6.1.1",
+        "@pxblue/angular-themes": "^6.3.0-beta.1",
         "@pxblue/colors": "^3.0.1",
         "@pxblue/icons-svg": "^1.2.0",
         "@pxblue/ng-progress-icons": "^1.2.1",

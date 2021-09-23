@@ -16,10 +16,6 @@ section.form-validation-section {
     }
 }
 
-::ng-deep .pxb-drawer-layout-nav-content {
-    background-color: map-get($pxb-white, 50);
-}
-
 ::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
     border-top: 0;
     border-bottom: 5px solid;

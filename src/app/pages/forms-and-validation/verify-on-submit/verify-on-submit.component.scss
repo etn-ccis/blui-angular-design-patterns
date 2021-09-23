@@ -26,10 +26,6 @@ section.find-device {
     }
 }
 
-::ng-deep .pxb-drawer-layout-nav-content {
-    background-color: map-get($pxb-white, 50);
-}
-
 .search-device-btn {
     width: 152px;
     ::ng-deep .mat-progress-spinner,

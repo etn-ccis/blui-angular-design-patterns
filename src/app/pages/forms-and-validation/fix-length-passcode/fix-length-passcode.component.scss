@@ -1,7 +1,6 @@
 @import '~@pxblue/colors/palette.scss';
 $duration: 200ms;
 $animationTimingFunction: ease-out;
-
 section.mat-typography {
     padding-top: 40px;
     max-width: 512px;
@@ -59,13 +58,11 @@ mat-form-field {
     }
 }
 
-::ng-deep .pxb-drawer-layout-nav-content {
-    background-color: map-get($pxb-white, 50);
-}
-
 @media only screen and (max-width: 600px) {
-    .reset-btn {
-        width: 100%;
+    section.mat-typography {
+        .reset-btn {
+            width: 100%;
+        }
     }
 }
 

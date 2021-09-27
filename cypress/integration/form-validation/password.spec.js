@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 
-describe('Form validation', () => {
+describe('Form validation password', () => {
     beforeEach(() => {
         cy.visit('http://localhost:4200/forms-and-validation/password');
     });

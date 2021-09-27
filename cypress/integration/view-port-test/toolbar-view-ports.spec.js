@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 const sizes = ['iphone-6', 'ipad-2'];
-const urls = ['http://localhost:4200/app-bar/collapsible', 'http://localhost:4200/app-bar/search',
+const urls = ['http://localhost:4200/app-bar/collapsible', 'http://localhost:4200/app-bar/global-search',
 'http://localhost:4200/loading-states/spinner-overlays','http://localhost:4200/loading-states/contextual-spinners','http://localhost:4200/loading-states/skeletons-loader',
 'http://localhost:4200/loading-states/progress-bars','http://localhost:4200/forms-and-validation/password', 'http://localhost:4200/forms-and-validation/phone-number-format',
 'http://localhost:4200/forms-and-validation/sectioned-form', 'http://localhost:4200/forms-and-validation/in-a-table', 'http://localhost:4200/forms-and-validation/in-a-list', 'http://localhost:4200/internationalization',

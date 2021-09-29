@@ -1,5 +1,3 @@
-@import '~@pxblue/colors/palette.scss';
-
 section.form-validation-section {
     padding-top: 40px;
     max-width: 504px;
@@ -14,10 +12,6 @@ section.form-validation-section {
             flex: 1;
         }
     }
-}
-
-::ng-deep .pxb-drawer-layout-nav-content {
-    background-color: map-get($pxb-white, 50);
 }
 
 ::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {

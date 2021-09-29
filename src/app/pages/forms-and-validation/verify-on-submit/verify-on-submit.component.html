@@ -4,72 +4,73 @@
     </button>
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Verify On Submit</div>
 </mat-toolbar>
-
-<pxb-slide-panel [activePane]="isLeftPaneVisible ? 'left' : 'right'">
-    <div leftPane>
-        <section class="find-device">
-            <h2>Find Device</h2>
-            <div class="mat-body-1 success-code-message">
-                <p>For the purpose of this demonstration, use <strong>123</strong> for successful device search.</p>
-            </div>
-            <form [formGroup]="searchDeviceForm" class="find-device">
-                <mat-form-field appearance="fill">
-                    <mat-label>Serial Number</mat-label>
-                    <input
-                        matInput
-                        placeholder="Serial Number"
-                        required
-                        formControlName="serialNumber"
-                        type="text"
-                        data-cy="serial-number"
-                        #serialNumberInput
-                        [errorStateMatcher]="errorMatcher"
-                    />
-                    <mat-error
-                        data-cy="helper-error"
-                        *ngIf="searchDeviceForm.controls.serialNumber.errors?.deviceNotFound"
-                    >
-                        Device not found.
-                    </mat-error>
-                </mat-form-field>
-                <div class="button-container">
-                    <button
-                        class="search-device-btn"
-                        mat-flat-button
-                        color="primary"
-                        [disabled]="!searchDeviceForm.controls.serialNumber.value"
-                        [ngClass]="formSubmit ? 'show-spinner' : 'show-text'"
-                        (click)="searchDevice()"
-                        data-cy="search-button"
-                    >
-                        <span class="text-container">
-                            <mat-icon>search</mat-icon>
-                            Search Device
-                        </span>
-                        <div data-cy="loading-spinner" class="spinner-container">
-                            <mat-spinner class="primary-spinner" diameter="20"></mat-spinner>
-                        </div>
-                    </button>
+<div class="drawer-layout-nav-content">
+    <pxb-slide-panel [activePane]="isLeftPaneVisible ? 'left' : 'right'">
+        <div leftPane>
+            <section class="find-device">
+                <h2>Find Device</h2>
+                <div class="mat-body-1 success-code-message">
+                    <p>For the purpose of this demonstration, use <strong>123</strong> for successful device search.</p>
                 </div>
-            </form>
-        </section>
-    </div>
-    <div rightPane>
-        <section class="add-new-device">
-            <pxb-empty-state title="Success" description="Device “123” has been added to your repository.">
-                <mat-icon pxb-empty-icon>check_circle</mat-icon>
-                <button
-                    [attr.tabindex]="isLeftPaneVisible ? -1 : null"
-                    mat-raised-button
-                    color="primary"
-                    data-cy="add-device"
-                    pxb-actions
-                    (click)="addAnotherDevice()"
-                >
-                    <mat-icon>add</mat-icon>
-                    Add another device
-                </button>
-            </pxb-empty-state>
-        </section>
-    </div>
-</pxb-slide-panel>
+                <form [formGroup]="searchDeviceForm" class="find-device">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Serial Number</mat-label>
+                        <input
+                            matInput
+                            placeholder="Serial Number"
+                            required
+                            formControlName="serialNumber"
+                            type="text"
+                            data-cy="serial-number"
+                            #serialNumberInput
+                            [errorStateMatcher]="errorMatcher"
+                        />
+                        <mat-error
+                            data-cy="helper-error"
+                            *ngIf="searchDeviceForm.controls.serialNumber.errors?.deviceNotFound"
+                        >
+                            Device not found.
+                        </mat-error>
+                    </mat-form-field>
+                    <div class="button-container">
+                        <button
+                            class="search-device-btn"
+                            mat-flat-button
+                            color="primary"
+                            [disabled]="!searchDeviceForm.controls.serialNumber.value"
+                            [ngClass]="formSubmit ? 'show-spinner' : 'show-text'"
+                            (click)="searchDevice()"
+                            data-cy="search-button"
+                        >
+                            <span class="text-container">
+                                <mat-icon>search</mat-icon>
+                                Search Device
+                            </span>
+                            <div data-cy="loading-spinner" class="spinner-container">
+                                <mat-spinner class="primary-spinner" diameter="20"></mat-spinner>
+                            </div>
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <div rightPane>
+            <section class="add-new-device">
+                <pxb-empty-state title="Success" description="Device “123” has been added to your repository.">
+                    <mat-icon pxb-empty-icon>check_circle</mat-icon>
+                    <button
+                        [attr.tabindex]="isLeftPaneVisible ? -1 : null"
+                        mat-raised-button
+                        color="primary"
+                        data-cy="add-device"
+                        pxb-actions
+                        (click)="addAnotherDevice()"
+                    >
+                        <mat-icon>add</mat-icon>
+                        Add another device
+                    </button>
+                </pxb-empty-state>
+            </section>
+        </div>
+    </pxb-slide-panel>
+</div>

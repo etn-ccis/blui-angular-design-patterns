@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 
-describe('Form validation', () => {
+describe('Form validation sectioned form', () => {
     beforeEach(() => {
         cy.visit('http://localhost:4200/forms-and-validation/sectioned-form');
     });

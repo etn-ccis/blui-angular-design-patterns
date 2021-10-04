@@ -86,5 +86,8 @@
     "typescript": "~4.0.2",
     "wait-on": "^5.1.0"
   },
-  "prettier": "@pxblue/prettier-config"
+  "prettier": "@pxblue/prettier-config",
+  "nyc": {
+    "report-dir": "cypress-coverage"
+  }
 }

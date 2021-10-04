@@ -71,7 +71,7 @@
         <!-- Image Avatar Example -->
         <mat-toolbar class="mat-elevation-z2 app-bar-example" data-cy="pxb-toolbar-three">
             <ng-template #imageAvatar>
-                <img alt="User Menu Avatar" [src]="avatarImage" style="border-radius: 50%;" />
+                <img alt="User Menu Avatar" [src]="avatarImage" style="border-radius: 50%" />
             </ng-template>
             <button data-cy="toolbar-menu" mat-icon-button>
                 <mat-icon>menu</mat-icon>
@@ -106,7 +106,7 @@
         <!-- Status Avatar Example -->
         <mat-toolbar class="mat-elevation-z2 app-bar-example" data-cy="pxb-toolbar-four">
             <ng-template #statusAvatar>
-                <img alt="User Menu Avatar" [src]="avatarImage" style="border-radius: 50%;" />
+                <img alt="User Menu Avatar" [src]="avatarImage" style="border-radius: 50%" />
                 <span class="badge"></span>
             </ng-template>
             <button data-cy="toolbar-menu" mat-icon-button>
@@ -123,10 +123,10 @@
                 [(open)]="open4"
                 [positions]="positions"
             >
-                <div style="position: relative;" pxb-avatar>
+                <div style="position: relative" pxb-avatar>
                     <template [ngTemplateOutlet]="statusAvatar"></template>
                 </div>
-                <div style="position: relative;" pxb-menu-avatar>
+                <div style="position: relative" pxb-menu-avatar>
                     <template [ngTemplateOutlet]="statusAvatar"></template>
                 </div>
                 <div pxb-menu-body>

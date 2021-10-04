@@ -68,8 +68,6 @@
                 <span pxb-title [innerHTML]="item | boldSearch: searchText"></span>
             </pxb-info-list-item>
         </mat-list>
-        <div *ngIf="(list | filter: searchText).length === 0" class="no-results mat-body-2">
-            No Results.
-        </div>
+        <div *ngIf="(list | filter: searchText).length === 0" class="no-results mat-body-2">No Results.</div>
     </div>
 </div>

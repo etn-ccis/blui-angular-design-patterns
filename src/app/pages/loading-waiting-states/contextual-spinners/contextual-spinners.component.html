@@ -12,19 +12,17 @@
 
 <section class="mat-typography" [class.small]="isSmall">
     <div class="button-examples-container">
-        <h5 class="mat-body-1" style="margin-bottom: 32px;">Click on the buttons below to see the spinners.</h5>
+        <h5 class="mat-body-1" style="margin-bottom: 32px">Click on the buttons below to see the spinners.</h5>
         <div class="example-section flat-button-example">
             <button
                 data-cy="login-btn-spinner"
                 mat-raised-button
                 color="primary"
-                style="width: 80px;"
+                style="width: 80px"
                 (click)="loadSpinner1()"
                 [ngClass]="flatButtonClicked ? 'button-container raised-button-example' : 'show-text'"
             >
-                <div data-cy="login-btn" class="text-container">
-                    Log In
-                </div>
+                <div data-cy="login-btn" class="text-container">Log In</div>
                 <div class="spinner-container">
                     <mat-spinner class="primary-spinner" diameter="20"></mat-spinner>
                 </div>

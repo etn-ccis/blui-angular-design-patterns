@@ -14,7 +14,7 @@
             >
                 <div [formGroupName]="i">
                     <pxb-info-list-item hidePadding="true">
-                        <h2 pxb-title style="margin-bottom: 0;">{{ item.get('name').value }}</h2>
+                        <h2 pxb-title style="margin-bottom: 0">{{ item.get('name').value }}</h2>
                         <span pxb-icon>#{{ i + 1 }}</span>
                     </pxb-info-list-item>
                     <pxb-info-list-item>
@@ -33,7 +33,7 @@
                             </mat-form-field>
                         </span>
                     </pxb-info-list-item>
-                    <pxb-info-list-item [divider]="i === 2 ? null : 'partial'" style="height: 16px;">
+                    <pxb-info-list-item [divider]="i === 2 ? null : 'partial'" style="height: 16px">
                         <span pxb-title></span>
                     </pxb-info-list-item>
                 </div>

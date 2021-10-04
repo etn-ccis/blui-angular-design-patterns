@@ -1,0 +1,77 @@
+@import '~@pxblue/colors/palette.scss';
+section.mat-typography {
+    padding: 16px 24px;
+    max-width: 600px;
+    margin: 0 auto;
+
+    .upload-button-container {
+        text-align: right;
+        padding-bottom: 16px;
+    }
+    .folder-lists-container {
+        padding: 0;
+    }
+    .radio-group {
+        display: flex;
+        flex-direction: column;
+        margin: 16px 0;
+    }
+
+    .folder-name {
+        display: flex;
+        align-items: center;
+
+        .mat-icon {
+            margin: 0 16px 8px 4px;
+            height: 18px;
+            width: 18px;
+            color: map-get($pxb-gray, 500);
+        }
+    }
+}
+.mat-list.upload-status-list {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+}
+.pxb-info-list-item {
+    background-color: map-get($pxb-black, 900);
+    color: #2d3838;
+    &:not(:last-child) {
+        margin-bottom: 16px;
+    }
+    .mat-icon.file-icon {
+        color: map-get($pxb-black, 200);
+    }
+    .file-title {
+        color: map-get($pxb-black, 50);
+    }
+    .file-upload-status {
+        color: map-get($pxb-black, 200);
+    }
+    .cancel-button {
+        color: map-get($pxb-black, 50);
+        border-color: map-get($pxb-black, 50);
+    }
+    .progress-bar-container {
+        mat-progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+}
+
+.folder-radio-button {
+    border-bottom: 1px solid #efe9e9;
+    padding: 16px;
+}
+
+@media (max-width: 600px) {
+    .mat-list.upload-status-list {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+    }
+}

@@ -1,0 +1,100 @@
+@import '~@pxblue/colors/palette.scss';
+@import '../common-style.scss';
+
+.score-card-section {
+    .mat-card {
+        width: 400px;
+        padding: 0;
+        .ph-item {
+            padding: 0;
+        }
+
+        .card-header {
+            padding: 16px;
+            margin-bottom: 16px;
+            background-color: map-get($pxb-black, 100);
+            .ph-row {
+                margin-bottom: 0;
+                [class^='ph-col-'],
+                [class*=' ph-col-'] {
+                    border-radius: 2px;
+                    margin-bottom: 8px;
+                }
+            }
+        }
+
+        .card-title {
+            margin-bottom: 2px;
+            .ph-col-6 {
+                height: 20px;
+            }
+            .ph-col-4,
+            .ph-col-2 {
+                height: 16px;
+            }
+        }
+
+        .icon-section {
+            max-width: 56px;
+            .ph-avatar {
+                height: 24px;
+                width: 24px;
+                min-width: 0;
+                margin-bottom: 12px;
+            }
+        }
+
+        .notification-section {
+            max-width: 64px;
+            padding: 0;
+            .ph-col-12 {
+                height: 14px;
+                border-radius: 2px;
+                margin-top: 22px;
+                margin-bottom: 0;
+
+                &:first-child {
+                    margin-top: 6px;
+                }
+            }
+        }
+        .hero-section {
+            justify-content: center;
+            max-width: 100px;
+            .ph-avatar {
+                min-width: 0;
+                height: 36px;
+                width: 36px;
+                margin: 0 auto 16px;
+            }
+            .ph-row {
+                margin-bottom: 0;
+                [class^='ph-col-'],
+                [class*=' ph-col-'] {
+                    border-radius: 2px;
+                }
+                .ph-col-8 {
+                    height: 16px;
+                }
+                .ph-col-12 {
+                    height: 12px;
+                }
+            }
+        }
+        pxb-info-list-item {
+            display: flex;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 520px) {
+    .score-card-section {
+        .mat-card {
+            width: 100%;
+            .ph-item {
+                padding-bottom: 0;
+            }
+        }
+    }
+}

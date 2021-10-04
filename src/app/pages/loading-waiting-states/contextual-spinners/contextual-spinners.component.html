@@ -1,0 +1,50 @@
+<mat-toolbar data-cy="pxb-toolbar" flexLayout="row" class="app-bar mat-elevation-z4" color="primary">
+    <button data-cy="toolbar-menu" *ngIf="isSmall" mat-icon-button (click)="toggleMenu()" style="margin-left: -8px">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Contextual Spinner</div>
+    <pxb-spacer></pxb-spacer>
+    <!-- <div class="toggle-theme-container" *ngIf="!isSmall">
+        <span class="mat-subheading-2" style="margin-right: 8px; font-size: 14px;">Use Dark Theme</span>
+        <mat-slide-toggle [checked]="checked"></mat-slide-toggle>
+    </div> -->
+</mat-toolbar>
+
+<section class="mat-typography" [class.small]="isSmall">
+    <div class="button-examples-container">
+        <h5 class="mat-body-1" style="margin-bottom: 32px">Click on the buttons below to see the spinners.</h5>
+        <div class="example-section flat-button-example">
+            <button
+                data-cy="login-btn-spinner"
+                mat-raised-button
+                color="primary"
+                style="width: 80px"
+                (click)="loadSpinner1()"
+                [ngClass]="flatButtonClicked ? 'button-container raised-button-example' : 'show-text'"
+            >
+                <div data-cy="login-btn" class="text-container">Log In</div>
+                <div class="spinner-container">
+                    <mat-spinner class="primary-spinner" diameter="20"></mat-spinner>
+                </div>
+            </button>
+        </div>
+        <div class="example-section extended-fab-button-example">
+            <button
+                data-cy="start-btn-spinner"
+                class="extended-fab-button"
+                mat-fab
+                color="primary"
+                (click)="loadSpinner()"
+                [ngClass]="buttonClicked ? 'button-container fab-button-example' : 'show-icon'"
+            >
+                <span class="icon-container">
+                    <mat-icon>play_arrow</mat-icon>
+                </span>
+                <div class="spinner-container">
+                    <mat-spinner class="primary-spinner" diameter="20"></mat-spinner>
+                </div>
+                <span data-cy="start-btn" class="extended-fab-button__text">Start Routine</span>
+            </button>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,171 @@
+<mat-toolbar color="primary" class="app-bar mat-elevation-z2" data-cy="pxb-toolbar">
+    <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">In an App Bar</div>
+</mat-toolbar>
+
+<section>
+    <div class="app-bar-header">
+        <div class="mat-body-1">
+            Click on each avatar to see the account menu. Resize the screen to view the account menu / user menu
+            rendered responsively.
+        </div>
+    </div>
+    <div class="app-bar-container">
+        <!-- Generic Icon Avatar Example -->
+        <ng-template #avatar>
+            <mat-icon>person</mat-icon>
+        </ng-template>
+        <mat-toolbar class="mat-elevation-z2 app-bar-example" data-cy="pxb-toolbar-one">
+            <button data-cy="toolbar-menu" mat-icon-button>
+                <mat-icon>menu</mat-icon>
+            </button>
+            <div class="text-container">
+                <h2>Generic Icon Avatar</h2>
+                <div class="mat-body-1 sub-heading">Shared / Anonymous Account / Unauthenticated</div>
+            </div>
+            <pxb-spacer></pxb-spacer>
+            <pxb-user-menu [(open)]="open1" [positions]="positions">
+                <template pxb-avatar [ngTemplateOutlet]="avatar"></template>
+                <div pxb-menu-header>
+                    <div class="menu-header">Browsing as a guest</div>
+                </div>
+                <div pxb-menu-body>
+                    <mat-nav-list [style.paddingTop.px]="0">
+                        <pxb-info-list-item *ngFor="let item of items1" [dense]="true" (click)="open1 = false">
+                            <mat-icon pxb-icon>{{ item.icon }}</mat-icon>
+                            <div pxb-title>{{ item.title }}</div>
+                        </pxb-info-list-item>
+                    </mat-nav-list>
+                </div>
+            </pxb-user-menu>
+        </mat-toolbar>
+        <!-- Basic Letter Avatar Example -->
+        <mat-toolbar class="mat-elevation-z2 app-bar-example" data-cy="pxb-toolbar-two">
+            <button data-cy="toolbar-menu" mat-icon-button>
+                <mat-icon>menu</mat-icon>
+            </button>
+            <div class="text-container">
+                <h2>Basic Letter Avatar</h2>
+                <div class="mat-body-1 sub-heading">Showing User’s Initials</div>
+            </div>
+            <pxb-spacer></pxb-spacer>
+            <pxb-user-menu
+                avatarValue="CT"
+                menuTitle="Chima Thabani"
+                menuSubtitle="CThabani@example.com"
+                [(open)]="open2"
+                [positions]="positions"
+            >
+                <div pxb-menu-body>
+                    <mat-nav-list [style.paddingTop.px]="0">
+                        <pxb-info-list-item *ngFor="let item of items2" [dense]="true" (click)="open2 = false">
+                            <mat-icon pxb-icon>{{ item.icon }}</mat-icon>
+                            <div pxb-title>{{ item.title }}</div>
+                        </pxb-info-list-item>
+                    </mat-nav-list>
+                </div>
+            </pxb-user-menu>
+        </mat-toolbar>
+        <!-- Image Avatar Example -->
+        <mat-toolbar class="mat-elevation-z2 app-bar-example" data-cy="pxb-toolbar-three">
+            <ng-template #imageAvatar>
+                <img alt="User Menu Avatar" [src]="avatarImage" style="border-radius: 50%" />
+            </ng-template>
+            <button data-cy="toolbar-menu" mat-icon-button>
+                <mat-icon>menu</mat-icon>
+            </button>
+            <div class="text-container">
+                <h2>Image Avatar</h2>
+                <div class="mat-body-1 sub-heading">Showing A Custom Profile Picture</div>
+            </div>
+            <pxb-spacer></pxb-spacer>
+            <pxb-user-menu
+                menuTitle="Chima Thabani"
+                menuSubtitle="CThabani@example.com"
+                [(open)]="open3"
+                [positions]="positions"
+            >
+                <div pxb-avatar>
+                    <template [ngTemplateOutlet]="imageAvatar"></template>
+                </div>
+                <div pxb-menu-avatar>
+                    <template [ngTemplateOutlet]="imageAvatar"></template>
+                </div>
+                <div pxb-menu-body>
+                    <mat-nav-list [style.paddingTop.px]="0">
+                        <pxb-info-list-item *ngFor="let item of items2" [dense]="true" (click)="open3 = false">
+                            <mat-icon pxb-icon>{{ item.icon }}</mat-icon>
+                            <div pxb-title>{{ item.title }}</div>
+                        </pxb-info-list-item>
+                    </mat-nav-list>
+                </div>
+            </pxb-user-menu>
+        </mat-toolbar>
+        <!-- Status Avatar Example -->
+        <mat-toolbar class="mat-elevation-z2 app-bar-example" data-cy="pxb-toolbar-four">
+            <ng-template #statusAvatar>
+                <img alt="User Menu Avatar" [src]="avatarImage" style="border-radius: 50%" />
+                <span class="badge"></span>
+            </ng-template>
+            <button data-cy="toolbar-menu" mat-icon-button>
+                <mat-icon>menu</mat-icon>
+            </button>
+            <div class="text-container">
+                <h2>Status Avatar</h2>
+                <div class="mat-body-1 sub-heading">Avatar with Status Indicator</div>
+            </div>
+            <pxb-spacer></pxb-spacer>
+            <pxb-user-menu
+                menuTitle="Chima Thabani"
+                menuSubtitle="CThabani@example.com"
+                [(open)]="open4"
+                [positions]="positions"
+            >
+                <div style="position: relative" pxb-avatar>
+                    <template [ngTemplateOutlet]="statusAvatar"></template>
+                </div>
+                <div style="position: relative" pxb-menu-avatar>
+                    <template [ngTemplateOutlet]="statusAvatar"></template>
+                </div>
+                <div pxb-menu-body>
+                    <mat-nav-list [style.paddingTop.px]="0">
+                        <pxb-info-list-item *ngFor="let item of items2" [dense]="true" (click)="open4 = false">
+                            <mat-icon pxb-icon>{{ item.icon }}</mat-icon>
+                            <div pxb-title>{{ item.title }}</div>
+                        </pxb-info-list-item>
+                    </mat-nav-list>
+                </div>
+            </pxb-user-menu>
+        </mat-toolbar>
+        <!-- Text Menu Example -->
+        <!-- <mat-toolbar class="mat-elevation-z2 app-bar-example" data-cy="pxb-toolbar-five">
+            <button data-cy="toolbar-menu" mat-icon-button>
+                <mat-icon>menu</mat-icon>
+            </button>
+            <div class="text-container">
+                <h2>Text Menu</h2>
+                <div class="mat-body-1 sub-heading">Calling Out the User Name</div>
+            </div>
+            <pxb-spacer></pxb-spacer>
+            <pxb-user-menu [(open)]="open5" class="user-menu-with-custom-chip" [positions]="chipPositions">
+                <pxb-chip (openUserMenu)="toggleUserMenu($event)" [selected]="open5" label="Admin" pxb-avatar>
+                    <mat-icon icon matChipAvatar class="left-icon">account_circle</mat-icon>
+                    <mat-icon *ngIf="!open5; else revertIcon" class="right-icon" right-icon>expand_more</mat-icon>
+                    <ng-template #revertIcon>
+                        <mat-icon *ngIf="open5; else revertIcon" right-icon class="right-icon">expand_less</mat-icon>
+                    </ng-template>
+                </pxb-chip>
+                <div pxb-menu-body>
+                    <mat-nav-list [style.paddingTop.px]="0">
+                        <pxb-info-list-item *ngFor="let item of items2" [dense]="true" (click)="open5 = false">
+                            <mat-icon pxb-icon>{{ item.icon }}</mat-icon>
+                            <div pxb-title>{{ item.title }}</div>
+                        </pxb-info-list-item>
+                    </mat-nav-list>
+                </div>
+            </pxb-user-menu>
+        </mat-toolbar> -->
+    </div>
+</section>

@@ -2,6 +2,10 @@
 @import '~@pxblue/colors/palette.scss';
 @import '~placeholder-loading/src/scss/placeholder-loading';
 
+$drawerNavContentBackground: map-get($pxb-white, 50);
+$drawerNavContentDesktopHeight: calc(100vh - 64px);
+$drawerNavContentMobileHeight: calc(100vh - 56px);
+
 * {
     margin: 0;
     padding: 0;
@@ -13,8 +17,22 @@ body {
     height: 100%;
 }
 
+// TODO: Move this into the @pxblue/angular-themes.
+input {
+    font-family: 'Open Sans', Arial;
+}
+
 .pxb-drawer-layout-nav-content {
-    background-color: map-get($pxb-white, 50);
+    background-color: map-get($pxb-white, 200);
+}
+
+@mixin drawerLayout($color, $height) {
+    background-color: $color;
+    height: $height;
+}
+
+.drawer-layout-nav-content {
+    @include drawerLayout($drawerNavContentBackground, $drawerNavContentDesktopHeight);
 }
 
 .app-bar {
@@ -31,6 +49,12 @@ body {
     height: 100%;
     width: 100%;
     z-index: 1000;
+}
+
+@media only screen and (max-width: 600px) {
+    .drawer-layout-nav-content {
+        @include drawerLayout($drawerNavContentBackground, $drawerNavContentMobileHeight);
+    }
 }
 
 @media only screen and (min-width: 960px) {

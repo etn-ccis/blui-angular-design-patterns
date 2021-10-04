@@ -1,0 +1,76 @@
+@import '~@pxblue/colors/palette.scss';
+
+.mat-typography {
+    padding: 24px 16px;
+
+    .example-title {
+        color: map-get($pxb-blue, 500);
+        margin: 40px 0 24px;
+    }
+
+    .mat-card {
+        padding: 0;
+    }
+}
+
+.list-items-example-section {
+    .loaded-section {
+        .list-item-example-two {
+            margin-top: 24px;
+        }
+    }
+}
+.score-card-example-section {
+    .loaded-section {
+        width: 400px;
+        padding: 0;
+        .mat-list-base {
+            padding: 8px 0px !important;
+        }
+        .sb-score-card-content mat-list-item {
+            height: 2.25rem !important;
+        }
+    }
+}
+
+.hero-banner-example-section {
+    .loaded-section .mat-card {
+        width: 350px;
+    }
+}
+
+.time-section {
+    font-size: 12px;
+    width: 60px;
+    flex-direction: column;
+    .ampm {
+        font-weight: 600;
+        margin-left: 2px;
+    }
+}
+
+.title-section {
+    .title-desc {
+        font-weight: normal;
+        margin-left: 4px;
+    }
+    .subtitle {
+        font-size: 12px;
+        font-weight: normal;
+        margin-top: 2px;
+    }
+}
+
+@media (max-width: 520px) {
+    .score-card-example-section {
+        .loaded-section {
+            width: 100%;
+        }
+    }
+
+    .hero-banner-example-section {
+        .loaded-section .mat-card {
+            width: 100%;
+        }
+    }
+}

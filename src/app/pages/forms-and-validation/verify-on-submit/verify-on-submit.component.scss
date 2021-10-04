@@ -1,0 +1,109 @@
+@import '~@pxblue/colors/palette.scss';
+$duration: 200ms;
+$animationTimingFunction: ease-out;
+
+section.find-device {
+    padding-top: 40px;
+    max-width: 480px;
+    margin: 0 auto;
+    .find-device {
+        padding-top: 8px;
+        mat-form-field {
+            width: 100%;
+            margin-bottom: 24px;
+        }
+    }
+}
+.button-container {
+    text-align: right;
+    .text-container {
+        display: flex;
+        align-items: center;
+        mat-icon {
+            font-size: 20px;
+            margin: 4px 4px 0 -4px;
+        }
+    }
+}
+
+.search-device-btn {
+    width: 152px;
+    ::ng-deep .mat-progress-spinner,
+    .mat-spinner {
+        circle {
+            stroke: map-get($pxb-white, 50);
+        }
+    }
+}
+
+.button-container {
+    .show-text {
+        .text-container {
+            animation: fadeInAnimation $duration $animationTimingFunction;
+        }
+        .spinner-container {
+            display: none;
+        }
+    }
+
+    .show-spinner {
+        height: 36px;
+        .text-container {
+            display: none;
+        }
+        .spinner-container {
+            display: block;
+            margin: 0 auto;
+            animation: fadeInAnimation $duration $animationTimingFunction;
+            .primary-spinner {
+                margin: 0 auto;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 600px) {
+    section.find-device {
+        padding: 16px;
+
+        .button-container {
+            .text-container {
+                justify-content: center;
+            }
+        }
+    }
+
+    .search-device-btn {
+        width: 100%;
+    }
+}
+
+@keyframes fadeInAnimation {
+    0%,
+    20% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.3;
+    }
+    60% {
+        opacity: 0.5;
+    }
+    80% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.mat-toolbar .mat-progress-bar {
+    position: absolute;
+    margin: 0 -16px;
+    bottom: 0;
+}
+section.add-new-device {
+    height: calc(100vh - 64px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

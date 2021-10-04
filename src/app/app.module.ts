@@ -1,3 +1,10 @@
+/**
+ Copyright (c) 2021-present, Eaton
+
+ All rights reserved.
+
+ This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
+ **/
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -24,14 +31,29 @@ import { BasicBottomSheetModule } from './pages/overlays/basic-bottom-sheet/basi
 import { CollapsibleAppBarModule } from './pages/app-bar/collapsible-app-bar/collapsible-app-bar.module';
 import { ComplexBottomSheetModule } from './pages/overlays/complex-bottom-sheet/complex-bottom-sheet.module';
 import { SortableListModule } from './pages/list/sortable-list/sortable-list.module';
-import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
+import { PageWideSearchModule } from './pages/app-bar/page-wide-search/page-wide-search.module';
 import { ResponsiveTableModule } from './pages/list/responsive-table/responsive-table.module';
 import { DynamicStepperModule } from './pages/dynamic-stepper/dynamic-stepper.module';
-import { FormValidationModule } from './pages/form-validation/form-validation.module';
 import { I18nModule } from './pages/i18n/i18n.module';
 import { LandingPageModule } from './pages/landing-page/landing-page.module';
 import { HttpClientModule } from '@angular/common/http';
-import { LoadingStatesModule } from './pages/loading-states/loading-states.module';
+import { ProgressBarIndeterminateModule } from './pages/loading-waiting-states/progress-bar-indeterminate/progress-bar-indeterminate.module';
+import { SpinnerOverlaysModule } from './pages/loading-waiting-states/spinner-overlays/spinner-overlays.module';
+import { ContextualSpinnersModule } from './pages/loading-waiting-states/contextual-spinners/contextual-spinners.module';
+import { ProgressBarsModule } from './pages/loading-waiting-states/progress-bars/progress-bars.module';
+import { SkeletonLoaderModule } from './pages/loading-waiting-states/skeleton-loader/skeleton-loader.module';
+import { PasswordModule } from './pages/forms-and-validation/password/password.module';
+import { PhoneNumberFormatModule } from './pages/forms-and-validation/phone-number-format/phone-number-format.module';
+import { VerifyOnSubmitModule } from './pages/forms-and-validation/verify-on-submit/verify-on-submit.module';
+import { FixLengthPasscodeModule } from './pages/forms-and-validation/fix-length-passcode/fix-length-passcode.module';
+import { SectionedFormModule } from './pages/forms-and-validation/sectioned-form/sectioned-form.module';
+import { InATableModule } from './pages/forms-and-validation/in-a-table/in-a-table.module';
+import { InAListModule } from './pages/forms-and-validation/in-a-list/in-a-list.module';
+import { InAnAppBarModule } from './pages/account-menu/in-an-app-bar/in-an-app-bar.module';
+import { MenuInDrawerModule } from './pages/account-menu/in-a-drawer/in-a-drawer.module';
+import { DropdownToolbarModule } from './pages/app-bar/dropdown-toolbar/dropdown-toolbar.module';
+import { ContextualAppbarModule } from './pages/app-bar/contextual/contextual.module';
+import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -52,10 +74,12 @@ import { LoadingStatesModule } from './pages/loading-states/loading-states.modul
         MatIconModule,
         MatCardModule,
         MatButtonModule,
+        MenuInDrawerModule,
         MatDividerModule,
         MatMenuModule,
         MatSidenavModule,
         MatListModule,
+        ContextualAppbarModule,
         FormsModule,
         ReactiveFormsModule,
         MatInputModule,
@@ -65,12 +89,25 @@ import { LoadingStatesModule } from './pages/loading-states/loading-states.modul
         HttpClientModule,
         ComplexBottomSheetModule,
         SortableListModule,
+        PageWideSearchModule,
         SearchBarModule,
-        LoadingStatesModule,
         ResponsiveTableModule,
         DynamicStepperModule,
-        FormValidationModule,
         LandingPageModule,
+        DropdownToolbarModule,
+        ProgressBarIndeterminateModule,
+        SpinnerOverlaysModule,
+        ContextualSpinnersModule,
+        ProgressBarsModule,
+        SkeletonLoaderModule,
+        PasswordModule,
+        PhoneNumberFormatModule,
+        VerifyOnSubmitModule,
+        FixLengthPasscodeModule,
+        SectionedFormModule,
+        InATableModule,
+        InAListModule,
+        InAnAppBarModule,
     ],
     bootstrap: [AppComponent],
 })

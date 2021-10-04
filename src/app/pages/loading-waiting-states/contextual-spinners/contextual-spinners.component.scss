@@ -1,0 +1,118 @@
+@import '~@pxblue/colors/palette.scss';
+$duration: 200ms;
+$animationTimingFunction: ease-out;
+section.mat-typography {
+    padding: 16px 24px;
+    .example-section {
+        margin-bottom: 16px;
+    }
+    .show-text {
+        .text-container {
+            display: block;
+            animation: fadeInAnimation $duration $animationTimingFunction;
+        }
+        .spinner-container {
+            display: none;
+        }
+    }
+
+    .raised-button-example {
+        height: 36px;
+        .text-container {
+            display: none;
+        }
+        .spinner-container {
+            display: block;
+            margin: 0 auto;
+            animation: fadeInAnimation $duration $animationTimingFunction;
+        }
+    }
+
+    .extended-fab-button {
+        width: 166px;
+        height: 56px;
+        border-radius: 29px;
+        transition: width 300ms;
+        overflow: hidden;
+    }
+
+    .show-icon {
+        .icon-container {
+            margin-right: 12px;
+            display: block;
+            animation: fadeInAnimation $duration $animationTimingFunction;
+        }
+        .spinner-container {
+            display: none;
+        }
+
+        .extended-fab-button__text {
+            display: block;
+            animation: fadeInAnimation $duration $animationTimingFunction;
+        }
+    }
+
+    .fab-button-example {
+        width: 56px;
+        height: 56px;
+        .icon-container {
+            display: none;
+        }
+
+        .spinner-container {
+            display: block;
+            animation: fadeInAnimation $duration $animationTimingFunction;
+        }
+
+        .extended-fab-button__text {
+            display: none;
+        }
+    }
+}
+
+.button-container {
+    ::ng-deep .mat-progress-spinner,
+    .mat-spinner {
+        circle {
+            stroke: map-get($pxb-white, 50);
+        }
+    }
+
+    &.fab-button-example {
+        ::ng-deep .mat-progress-spinner,
+        .mat-spinner {
+            margin: 2px;
+        }
+    }
+
+    &.raised-button-example {
+        ::ng-deep .mat-progress-spinner,
+        .mat-spinner {
+            margin: 0 auto;
+        }
+    }
+}
+
+::ng-deep .mat-fab .mat-button-wrapper {
+    display: flex !important;
+    padding: 16px !important;
+}
+
+@keyframes fadeInAnimation {
+    0%,
+    20% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.3;
+    }
+    60% {
+        opacity: 0.5;
+    }
+    80% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 1;
+    }
+}

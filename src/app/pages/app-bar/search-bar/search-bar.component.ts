@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { StateService } from '../../../services/state.service';
-import { listData } from './shared/list';
 import * as Colors from '@pxblue/colors';
 
 @Component({
@@ -11,11 +10,13 @@ import * as Colors from '@pxblue/colors';
 })
 export class SearchBarComponent implements OnInit {
     isSmall: boolean;
-    list = listData.reverse();
-    @ViewChild('searchBar', {}) searchBar: ElementRef;
+    list = ['Apple', 'Grape', 'Orange', 'Pineapple', 'Watermelon'];
     searchText = '';
     toggleSearch = false;
     Colors = Colors;
+    isEmptyFilteredList = false;
+
+    @ViewChild('searchBar', {}) searchBar: ElementRef;
 
     constructor(
         private readonly _drawerService: StateService,
@@ -26,11 +27,7 @@ export class SearchBarComponent implements OnInit {
         this._breakpointObserver
             .observe([Breakpoints.Small, Breakpoints.Handset])
             .subscribe((state: BreakpointState) => {
-                if (state.matches) {
-                    this.isSmall = true;
-                } else {
-                    this.isSmall = false;
-                }
+                this.isSmall = state.matches;
             });
     }
 
@@ -43,10 +40,16 @@ export class SearchBarComponent implements OnInit {
     searchClose(): void {
         this.searchText = '';
         this.toggleSearch = false;
+        this.isEmptyFilteredList = false;
     }
 
     toggleMenu(): void {
         const drawerOpen = this._drawerService.getDrawerOpen();
         this._drawerService.setDrawerOpen(!drawerOpen);
+    }
+
+    clearSearchText(): void {
+        this.searchText = '';
+        this.searchBar.nativeElement.focus();
     }
 }

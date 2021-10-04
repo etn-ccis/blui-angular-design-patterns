@@ -1,4 +1,6 @@
-version: 2
+version: 2.1
+orbs:
+    codecov: codecov/codecov@1.1.3
 jobs:
     build_project:
         working_directory: ~/angular-design-patterns
@@ -30,11 +32,17 @@ jobs:
             - run:
                 name: Unit Tests
                 command: |
-                    yarn test:ci
+                    yarn test --no-watch --code-coverage
             - run:
                 name: Build Project
                 command: |
                     yarn build
+            # Save the coverage folder for codecov report upload.
+            - persist_to_workspace:
+                root: .
+                paths:
+                    - coverage
+
     cypress_tests:
         working_directory: ~/angular-design-patterns
         docker:
@@ -60,6 +68,25 @@ jobs:
                     yarn cytest
             - store_artifacts:
                 path: cypress/screenshots
+            - persist_to_workspace:
+                root: .
+                paths:
+                    - cypress-coverage
+
+    coverage_reports:
+        working_directory: ~/angular-design-patterns
+        docker:
+            - image: circleci/node:12.9.1-browsers
+        steps:
+            - checkout
+            - attach_workspace:
+                at: .
+            - codecov/upload:
+                file: './coverage/lcov.info'
+                token: 4cb4f10a-b3f7-4e5e-b4ba-6e5d5d272eb7
+            - codecov/upload:
+                file: './cypress-coverage/lcov.info'
+                token: 4cb4f10a-b3f7-4e5e-b4ba-6e5d5d272eb7
 
 workflows:
     version: 2
@@ -74,3 +101,11 @@ workflows:
                             only:
                                 - master
                                 - dev
+            - coverage_reports:
+                requires:
+                    - build_project
+                    - cypress_tests
+                filters:
+                    branches:
+                        only:
+                            - master

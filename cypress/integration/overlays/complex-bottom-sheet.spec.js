@@ -29,4 +29,13 @@ describe('Complex bottom sheet', () => {
         cy.get('.cdk-overlay-backdrop').click({ force : true})
         cy.get('[data-cy=btm-sheet-sort]').should('not.be.visible')
     });
+    it('should display empty state', () => {
+        cy.get('[data-cy=action-menu]').click()
+        cy.get('[data-cy=active-alarms] > .pxb-hero-content').click()
+        cy.get('[data-cy=alarms]').click()
+        cy.get('[label="Settings"] > .pxb-hero-content').click()
+        cy.get('[data-cy=sessions] > .pxb-hero-content').click()
+        cy.get('[data-cy=btm-sheet-close-btn]').click()
+        cy.get('.pxb-empty-state-content').should('contain', 'No Events Available')
+    });
 });

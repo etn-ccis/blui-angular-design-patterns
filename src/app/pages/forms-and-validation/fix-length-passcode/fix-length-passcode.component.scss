@@ -1,0 +1,85 @@
+$duration: 200ms;
+$animationTimingFunction: ease-out;
+section.mat-typography {
+    padding-top: 40px;
+    max-width: 512px;
+    margin: 0 auto;
+    .passcode-form-message {
+        padding: 0 16px;
+        margin-bottom: 32px;
+    }
+
+    .passcode-form {
+        padding: 0 16px;
+        margin-top: 32px;
+
+        .suffix-icons {
+            justify-content: center;
+            vertical-align: middle;
+            margin-top: -16px;
+        }
+    }
+}
+
+mat-form-field {
+    width: 100%;
+    margin-bottom: 24px;
+}
+.reset-btn {
+    mat-icon {
+        margin-left: -4px;
+        font-size: 20px;
+    }
+}
+.suffix-icons {
+    .spinner-container.mat-icon,
+    .icon-container.mat-icon {
+        display: none;
+    }
+}
+.show-spinner {
+    .spinner-container.mat-icon {
+        display: block;
+        animation: fadeInAnimation $duration $animationTimingFunction;
+    }
+    .icon-container.mat-icon {
+        display: none;
+    }
+}
+
+.show-icon {
+    .spinner-container.mat-icon {
+        display: none;
+    }
+    .icon-container.mat-icon {
+        display: block;
+        animation: fadeInAnimation $duration $animationTimingFunction;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    section.mat-typography {
+        .reset-btn {
+            width: 100%;
+        }
+    }
+}
+
+@keyframes fadeInAnimation {
+    0%,
+    20% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.3;
+    }
+    60% {
+        opacity: 0.5;
+    }
+    80% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 1;
+    }
+}

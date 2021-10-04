@@ -25,14 +25,15 @@
     >
         <mat-icon pxb-icon *ngIf="i.type == 'alarms' && !i.active">notifications</mat-icon>
         <mat-icon
+            data-cy="active-alarms"
             pxb-icon
             *ngIf="i.type == 'alarms' && i.active"
             [style.backgroundColor]="Colors.red[500]"
             [style.color]="Colors.white[50]"
             >notifications_active</mat-icon
         >
-        <mat-icon pxb-icon *ngIf="i.type == 'session'">update</mat-icon>
-        <mat-icon pxb-icon *ngIf="i.type == 'settings'">settings</mat-icon>
+        <mat-icon data-cy="sessions" pxb-icon *ngIf="i.type == 'session'">update</mat-icon>
+        <mat-icon data-cy="settings" pxb-icon *ngIf="i.type == 'settings'">settings</mat-icon>
         <span pxb-title [style.color]="i.active ? Colors.red[500] : 'inherit'">
             <ng-container *ngIf="i.active">ACTIVE: </ng-container> {{ i.details }}
         </span>

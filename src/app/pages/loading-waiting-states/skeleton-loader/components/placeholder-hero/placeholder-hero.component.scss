@@ -1,0 +1,41 @@
+@import '~@pxblue/colors/palette.scss';
+@import '../common-style.scss';
+
+.hero-banner-section {
+    .mat-card {
+        width: 350px;
+        height: 120px;
+        padding: 0;
+        .ph-item {
+            padding-bottom: 0;
+            .ph-col-4 {
+                justify-content: center;
+                max-width: 100px;
+                .ph-avatar {
+                    min-width: 0;
+                    height: 36px;
+                    width: 36px;
+                    margin: 0 auto 8px;
+                }
+                .ph-row {
+                    &:first-child {
+                        margin-bottom: 0;
+                    }
+
+                    [class^='ph-col-'],
+                    [class*=' ph-col-'] {
+                        border-radius: 2px;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 520px) {
+    .hero-banner-section {
+        .mat-card {
+            width: 100%;
+        }
+    }
+}

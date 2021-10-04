@@ -1,0 +1,11 @@
+<mat-chip-list class="pxb-chip-list">
+    <mat-chip class="pxb-chip" [class.highlight]="selected" (click)="toggleChip()">
+        <div class="left-icon">
+            <ng-content select="[icon]"></ng-content>
+        </div>
+        {{ label }}
+        <div class="right-icon">
+            <ng-content select="[right-icon]"></ng-content>
+        </div>
+    </mat-chip>
+</mat-chip-list>

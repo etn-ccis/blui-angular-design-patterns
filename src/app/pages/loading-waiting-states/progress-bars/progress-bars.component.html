@@ -1,0 +1,42 @@
+<mat-toolbar data-cy="pxb-toolbar" flexLayout="row" class="app-bar mat-elevation-z4" color="primary">
+    <button data-cy="toolbar-menu" *ngIf="isSmall" mat-icon-button (click)="toggleMenu()" style="margin-left: -8px">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Progress Bars</div>
+    <pxb-spacer></pxb-spacer>
+    <!-- <div class="toggle-theme-container" *ngIf="!isSmall">
+        <span class="mat-subheading-2" style="margin-right: 8px; font-size: 14px;">Use Dark Theme</span>
+        <mat-slide-toggle [checked]="checked"></mat-slide-toggle>
+    </div> -->
+</mat-toolbar>
+<section class="mat-typography" [class.small]="isSmall">
+    <div data-cy="upload-btn" class="upload-button-container">
+        <button mat-raised-button class="upload-file-button mat-body" color="primary" (click)="uploadFile()">
+            <mat-icon>vertical_align_top</mat-icon>
+            UPLOAD NEW FILE
+        </button>
+    </div>
+    <mat-card class="folder-lists-container">
+        <mat-radio-group class="radio-group" data-cy="radiogroup">
+            <mat-radio-button class="folder-radio-button" *ngFor="let option of foldersList" [value]="option.value">
+                <div class="folder-name mat-subtitle-1">
+                    <mat-icon>folder</mat-icon>
+                    {{ option.label }}
+                </div>
+            </mat-radio-button>
+        </mat-radio-group>
+    </mat-card>
+</section>
+<mat-list data-cy="upload-status" class="upload-status-list">
+    <pxb-info-list-item iconAlign="left" *ngFor="let file of uploadFileList; let index = index">
+        <span class="file-title" pxb-title>{{ file.fileName }}</span>
+        <span class="file-upload-status" pxb-subtitle>{{ file.status }}</span>
+        <mat-icon class="file-icon" pxb-icon>text_snippet</mat-icon>
+        <div class="progress-bar-container" pxb-info>
+            <mat-progress-bar mode="determinate" [value]="file.progress"></mat-progress-bar>
+        </div>
+        <span pxb-right-content style="margin-right: -8px">
+            <button class="cancel-button" mat-stroked-button (click)="cancelUploading(index)">Cancel</button>
+        </span>
+    </pxb-info-list-item>
+</mat-list>

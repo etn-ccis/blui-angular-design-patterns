@@ -1,0 +1,47 @@
+<mat-toolbar color="primary" class="app-bar mat-elevation-z4" data-cy="pxb-toolbar">
+    <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Phone Number Format</div>
+</mat-toolbar>
+<div class="drawer-layout-nav-content">
+    <section class="form-validation-section">
+        <form [formGroup]="validatePhoneNumberForm" class="phone-number-form">
+            <mat-form-field class="country-code-select" appearance="fill" data-cy="country-selector">
+                <mat-label>Country Code</mat-label>
+                <mat-select
+                    formControlName="selectedCountry"
+                    (selectionChange)="onCountryChange($event)"
+                    panelClass="selectPanel"
+                    [disableOptionCentering]="true"
+                >
+                    <mat-option [value]="option.code" *ngFor="let option of countries">{{ option.name }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="phone-number-input" appearance="fill" data-cy="phone-input">
+                <mat-label>Phone Number</mat-label>
+                <input
+                    matInput
+                    (blur)="validatePhoneNumber()"
+                    formControlName="phone"
+                    (ngModelChange)="onChange($event)"
+                    inputmode="numeric"
+                    [maxlength]="selectedCountry['maxLength']"
+                    (keypress)="allowNumbersOnly($event)"
+                    (focus)="removeError()"
+                    [placeholder]="selectedCountry['placeholder']"
+                />
+
+                <mat-error
+                    data-cy="phone-helper-error"
+                    *ngIf="
+                        validatePhoneNumberForm.get('phone').hasError('invalidPhoneNumberFormat') ||
+                        validatePhoneNumberForm.get('phone').hasError('required')
+                    "
+                >
+                    Please enter a valid {{ selectedCountry['errorCode'] }} phone number.
+                </mat-error>
+            </mat-form-field>
+        </form>
+    </section>
+</div>

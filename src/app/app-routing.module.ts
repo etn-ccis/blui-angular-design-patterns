@@ -8,13 +8,28 @@ import { BasicBottomSheetComponent } from './pages/overlays/basic-bottom-sheet/b
 import { CollapsibleAppBarComponent } from './pages/app-bar/collapsible-app-bar/collapsible-app-bar.component';
 import { ComplexBottomSheetComponent } from './pages/overlays/complex-bottom-sheet/complex-bottom-sheet.component';
 import { SortableListComponent } from './pages/list/sortable-list/sortable-list.component';
-import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.component';
+import { PageWideSearchComponent } from './pages/app-bar/page-wide-search/page-wide-search.component';
 import { ResponsiveTableComponent } from './pages/list/responsive-table/responsive-table.component';
 import { DynamicStepperComponent } from './pages/dynamic-stepper/dynamic-stepper.component';
-import { FormValidationComponent } from './pages/form-validation/form-validation.component';
 import { I18nComponent } from './pages/i18n/i18n.component';
-import { LoadingStatesComponent } from './pages/loading-states/loading-states.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { ProgressBarIndeterminateComponent } from './pages/loading-waiting-states/progress-bar-indeterminate/progress-bar-indeterminate.component';
+import { ProgressBarsComponent } from './pages/loading-waiting-states/progress-bars/progress-bars.component';
+import { SpinnerOverlaysComponent } from './pages/loading-waiting-states/spinner-overlays/spinner-overlays.component';
+import { ContextualSpinnersComponent } from './pages/loading-waiting-states/contextual-spinners/contextual-spinners.component';
+import { SkeletonLoaderComponent } from './pages/loading-waiting-states/skeleton-loader/skeleton-loader.component';
+import { PasswordComponent } from './pages/forms-and-validation/password/password.component';
+import { FixLengthPasscodeComponent } from './pages/forms-and-validation/fix-length-passcode/fix-length-passcode.component';
+import { PhoneNumberFormatComponent } from './pages/forms-and-validation/phone-number-format/phone-number-format.component';
+import { VerifyOnSubmitComponent } from './pages/forms-and-validation/verify-on-submit/verify-on-submit.component';
+import { SectionedFormComponent } from './pages/forms-and-validation/sectioned-form/sectioned-form.component';
+import { InATableComponent } from './pages/forms-and-validation/in-a-table/in-a-table.component';
+import { InAListComponent } from './pages/forms-and-validation/in-a-list/in-a-list.component';
+import { InAnAppBarComponent } from './pages/account-menu/in-an-app-bar/in-an-app-bar.component';
+import { MenuInADrawerComponent } from './pages/account-menu/in-a-drawer/menu-in-a-drawer.component';
+import { DropdownToolbarComponent } from './pages/app-bar/dropdown-toolbar/dropdown-toolbar.component';
+import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.component';
+import { ContextualAppBarComponent } from './pages/app-bar/contextual/contextual.component';
 
 export type DrawerItem = {
     title: string;
@@ -26,6 +41,22 @@ export type DrawerItem = {
 
 export const ROUTES: DrawerItem[] = [
     {
+        title: 'Account Menu',
+        path: 'account-menu',
+        children: [
+            {
+                title: 'In an App Bar',
+                path: 'in-an-app-bar',
+                component: InAnAppBarComponent,
+            },
+            {
+                title: 'In a Drawer',
+                path: 'in-a-drawer',
+                component: MenuInADrawerComponent,
+            },
+        ],
+    },
+    {
         title: 'App Bar',
         path: 'app-bar',
         children: [
@@ -35,16 +66,67 @@ export const ROUTES: DrawerItem[] = [
                 component: CollapsibleAppBarComponent,
             },
             {
+                title: 'Contextual',
+                path: 'contextual',
+                component: ContextualAppBarComponent,
+            },
+            {
                 title: 'Search',
-                path: 'search',
+                path: 'global-search',
                 component: SearchBarComponent,
+            },
+            {
+                title: 'Page Wide Search',
+                path: 'page-wide-search',
+                component: PageWideSearchComponent,
+            },
+            {
+                title: 'Dropdown Toolbar',
+                path: 'dropdown-toolbar',
+                component: DropdownToolbarComponent,
             },
         ],
     },
     {
-        title: 'Form Validation',
-        path: 'form-validation',
-        component: FormValidationComponent,
+        title: 'Forms and Validation',
+        path: 'forms-and-validation',
+        children: [
+            {
+                title: 'Fixed Length Passcode',
+                path: 'fixed-length-passcode',
+                component: FixLengthPasscodeComponent,
+            },
+            {
+                title: 'In a List',
+                path: 'in-a-list',
+                component: InAListComponent,
+            },
+            {
+                title: 'In a Table',
+                path: 'in-a-table',
+                component: InATableComponent,
+            },
+            {
+                title: 'Password',
+                path: 'password',
+                component: PasswordComponent,
+            },
+            {
+                title: 'Phone Number Format',
+                path: 'phone-number-format',
+                component: PhoneNumberFormatComponent,
+            },
+            {
+                title: 'Sectioned Form',
+                path: 'sectioned-form',
+                component: SectionedFormComponent,
+            },
+            {
+                title: 'Verify on Submit',
+                path: 'verify-on-submit',
+                component: VerifyOnSubmitComponent,
+            },
+        ],
     },
     {
         title: 'Internationalization',
@@ -88,9 +170,35 @@ export const ROUTES: DrawerItem[] = [
         ],
     },
     {
-        title: 'Loading States',
-        path: 'loading',
-        component: LoadingStatesComponent,
+        title: 'Loading & Waiting',
+        path: 'loading-states',
+        children: [
+            {
+                title: 'Spinner Overlays',
+                path: 'spinner-overlays',
+                component: SpinnerOverlaysComponent,
+            },
+            {
+                title: 'Contextual Spinners',
+                path: 'contextual-spinners',
+                component: ContextualSpinnersComponent,
+            },
+            {
+                title: 'Skeletons',
+                path: 'skeletons-loader',
+                component: SkeletonLoaderComponent,
+            },
+            {
+                title: 'Progress Bars',
+                path: 'progress-bars',
+                component: ProgressBarsComponent,
+            },
+            {
+                title: 'Progress Bars (Indet.)',
+                path: 'progress-bar-indeterminate',
+                component: ProgressBarIndeterminateComponent,
+            },
+        ],
     },
     {
         title: 'Overlays',

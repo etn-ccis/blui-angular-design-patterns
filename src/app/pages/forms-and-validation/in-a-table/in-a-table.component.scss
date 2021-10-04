@@ -1,0 +1,83 @@
+@import '~@pxblue/colors/palette.scss';
+section.table-validation {
+    background-color: map-get($pxb-white, 200);
+    height: calc(100vh - 64px);
+    padding: 40px 16px;
+    table {
+        width: 528px;
+        overflow: auto;
+        .mat-header-cell {
+            padding: 0 16px;
+            color: map-get($pxb-black, 500);
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .mat-cell {
+            padding: 0 16px;
+        }
+        .mat-column-min,
+        .mat-column-max {
+            text-align: right;
+        }
+    }
+    .note {
+        padding: 16px 0;
+        margin: 0;
+        max-width: 800px;
+    }
+}
+
+mat-list.list-view-example {
+    background-color: map-get($pxb-white, 50);
+
+    pxb-info-list-item:nth-child(2) {
+        margin-bottom: 16px;
+    }
+    [pxb-icon] {
+        color: map-get($pxb-gray, 500);
+        font-size: 16px;
+    }
+}
+
+.table-view-example,
+.list-view-example {
+    ::ng-deep .mat-form-field-flex {
+        padding-top: 0;
+        margin-top: 20px;
+        height: 40px;
+        width: 128px;
+        text-align: right;
+    }
+
+    ::ng-deep .mat-form-field-appearance-fill .mat-form-field-infix {
+        padding: 0;
+    }
+
+    ::ng-deep
+        .pxb-blue
+        .mat-form-field.mat-primary:not(.mat-form-field-disabled).mat-form-field-appearance-fill
+        .mat-form-field-flex {
+        padding-top: 0;
+    }
+}
+
+section.table-validation.small {
+    height: calc(100vh - 56px);
+}
+
+@media only screen and (max-width: 600px) {
+    section.table-validation {
+        padding: 0;
+        .mat-list-base {
+            padding-top: 0;
+        }
+        .note {
+            padding: 16px;
+        }
+        .list-view-example {
+            ::ng-deep .mat-form-field-flex {
+                width: 144px;
+            }
+        }
+    }
+}

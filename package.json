@@ -32,7 +32,6 @@
         "@angular/router": "^12.2.5",
         "@netbasal/ngx-content-loader": "3.0.0",
         "@ngx-translate/core": "^12.1.2",
-        "@pxblue/angular-auth-workflow": "^2.4.0",
         "@pxblue/angular-components": "latest",
         "@pxblue/angular-themes": "latest",
         "@pxblue/colors": "^3.0.1",

@@ -1,3 +1,76 @@
-mat-list {
-    padding-top: 0px;
+section.list-section {
+    padding-top: 24px;
+    max-width: 768px;
+    margin: 0 auto;
+}
+.list-example {
+    margin-bottom: 24px;
+}
+
+.mat-accordion.accordion-panel {
+    ::ng-deep .mat-expansion-panel-body {
+        padding: 0;
+    }
+}
+
+.list-section {
+    ::ng-deep &.mat-list-base {
+        padding-top: 0;
+    }
+}
+::ng-deep .without-icons .pxb-info-list-item-icon-wrapper {
+    display: none !important;
+}
+::ng-deep .accordion-panel {
+    .mat-expansion-panel {
+        .mat-expansion-panel-header {
+            height: 48px !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            border-radius: 0;
+            padding-left: 16px;
+            .mat-expansion-indicator {
+                margin-top: -8px;
+            }
+            &.mat-expanded {
+                .mat-expansion-indicator {
+                    margin-top: 4px;
+                }
+            }
+        }
+    }
+}
+
+.time-section {
+    font-size: 12px;
+    width: 64px;
+    flex-direction: column;
+    .time-numeric {
+        font-weight: 600;
+        margin-right: 4px;
+    }
+}
+
+.title-section {
+    .title-desc {
+        font-weight: normal;
+        margin-left: 4px;
+    }
+    .subtitle {
+        font-size: 12px;
+        font-weight: normal;
+        margin-top: 2px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    section.list-section {
+        padding-top: 0;
+    }
+
+    ::ng-deep .accordion-panel {
+        .mat-expansion-panel.expansion-panel-mobile {
+            border-radius: 0;
+            box-shadow: none;
+        }
+    }
 }

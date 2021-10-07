@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { InfoListItemModule, ListItemTagModule } from '@pxblue/angular-components';
 import { MatButtonModule } from '@angular/material/button';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
     imports: [
@@ -16,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
         MatListModule,
         MatButtonModule,
         ListItemTagModule,
+        MatExpansionModule,
     ],
     declarations: [StatusListComponent],
 })

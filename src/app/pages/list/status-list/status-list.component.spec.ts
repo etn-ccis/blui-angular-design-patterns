@@ -8,6 +8,7 @@ describe('StatusListComponent', () => {
 
     beforeEach(async(() => {
         void TestBed.configureTestingModule({
+            declarations: [StatusListComponent],
             imports: [StatusListModule],
         }).compileComponents();
     }));

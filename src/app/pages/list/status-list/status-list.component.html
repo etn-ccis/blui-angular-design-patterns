@@ -10,36 +10,46 @@
         <mat-accordion class="accordion-panel">
             <mat-expansion-panel [expanded]="true" [class.expansion-panel-mobile]="isSmall">
                 <mat-expansion-panel-header>
-                    <mat-panel-title [style.color]="colors.blue[500]">
+                    <mat-panel-title>
                         With Time Stamps, with Title+Subtitle+Info
                     </mat-panel-title>
                 </mat-expansion-panel-header>
                 <mat-list class="list-section">
                     <pxb-info-list-item
-                        divider="partial"
-                        [statusColor]="colors.red[500]"
+                        *ngFor="let item of infoListItemExample"
+                        [divider]="item.id === 3 ? null : 'partial'"
+                        [statusColor]="item.statusColor"
                         chevron="true"
-                        [avatar]="true"
+                        [avatar]="item.avatar"
                         iconAlign="center"
-                        wrapTitle="no"
                     >
-                        <mat-icon pxb-icon [style.backgroundColor]="colors.red[500]" style="color: white"
-                            >notifications
-                        </mat-icon>
-                        <div class="time-section" pxb-left-content>
-                            <div><span class="time-numeric">8:21</span>AM</div>
-                            <div>11/23/</div>
+                        <mat-icon *ngIf="item.id === 1" pxb-icon class="alarm-icon">{{ item.icon }} </mat-icon>
+                        <mat-icon
+                            *ngIf="item.id === 2"
+                            pxb-icon
+                            class="maintenance-icon"
+                            svgIcon="px-icons:maintenance"
+                        ></mat-icon>
+                        <mat-icon *ngIf="item.id === 3" pxb-icon>notifications</mat-icon>
+                        <div class="time-section" pxb-left-content *ngIf="item.showTimeStamp">
+                            <div>
+                                <span class="time-numeric">{{ item.time }}</span
+                                >AM
+                            </div>
+                            <div>{{ item.date }}</div>
                         </div>
                         <div class="title-section" pxb-title>
                             <div>
-                                <span class="title-label">{{ isSmall ? 'High Humidity' : 'High Humidity:' }}</span
-                                ><span *ngIf="!isSmall" class="title-desc">PX2341 sensor level 9</span>
+                                <span class="title-label">{{
+                                    isSmall ? item.titleLabel : item.titleLabel.concat(':')
+                                }}</span
+                                ><span *ngIf="!isSmall" class="title-desc">{{ item.titleDesc }}</span>
                             </div>
                         </div>
                         <div class="title-section" pxb-subtitle>
-                            <div class="subtitle">Cherrington Station < Moon Township</div>
+                            <div class="subtitle">{{ item.subtitle }}</div>
                         </div>
-                        <span pxb-right-content *ngIf="!isSmall">
+                        <span pxb-right-content *ngIf="!isSmall && item.showTag">
                             <pxb-list-item-tag
                                 [backgroundColor]="colors.blue[500]"
                                 label="Assigned"
@@ -51,8 +61,7 @@
                                 label="Active"
                             ></pxb-list-item-tag>
                         </span>
-                        <!-- <div pxb-info>more information here</div> -->
-                        <div pxb-info *ngIf="isSmall">
+                        <div pxb-info *ngIf="isSmall && item.showTag">
                             <pxb-list-item-tag
                                 [backgroundColor]="colors.blue[500]"
                                 label="Assigned"
@@ -65,48 +74,6 @@
                             ></pxb-list-item-tag>
                         </div>
                     </pxb-info-list-item>
-
-                    <pxb-info-list-item
-                        divider="partial"
-                        chevron="true"
-                        iconAlign="center"
-                        [statusColor]="colors.orange[500]"
-                        wrapTitle="no"
-                    >
-                        <mat-icon pxb-icon svgIcon="px-icons:maintenance" style="color: '#F47721';"></mat-icon>
-                        <div class="time-section" pxb-left-content>
-                            <div><span class="time-numeric">7:48</span>AM</div>
-                            <div>11/23/</div>
-                        </div>
-                        <div class="title-section" pxb-title>
-                            <div>
-                                <span class="title-label">{{ isSmall ? 'Battery Service' : 'Battery Service:' }}</span
-                                ><span *ngIf="!isSmall" class="title-desc">EATON GH142</span>
-                            </div>
-                        </div>
-                        <div class="title-section" pxb-subtitle>
-                            <div class="subtitle">Cherrington Station < Moon Township</div>
-                        </div>
-                    </pxb-info-list-item>
-
-                    <pxb-info-list-item chevron="true" [avatar]="true" iconAlign="center">
-                        <mat-icon pxb-icon>notifications</mat-icon>
-                        <div class="time-section" pxb-left-content>
-                            <div><span class="time-numeric">2:13</span>AM</div>
-                            <div>11/23/</div>
-                        </div>
-                        <div class="title-section" pxb-title>
-                            <div>
-                                <span class="title-label">{{
-                                    isSmall ? 'Bypass Over Frequency' : 'Bypass Over Frequency:'
-                                }}</span
-                                ><span *ngIf="!isSmall" class="title-desc">A2 Max Reval</span>
-                            </div>
-                        </div>
-                        <div class="title-section" pxb-subtitle>
-                            <div class="subtitle">Cherrington Station < Moon Township</div>
-                        </div>
-                    </pxb-info-list-item>
                 </mat-list>
             </mat-expansion-panel>
         </mat-accordion>
@@ -116,29 +83,27 @@
         <mat-accordion class="accordion-panel">
             <mat-expansion-panel [expanded]="true" [class.expansion-panel-mobile]="isSmall">
                 <mat-expansion-panel-header>
-                    <mat-panel-title [style.color]="colors.blue[500]">
+                    <mat-panel-title>
                         Without Icons, with Title
                     </mat-panel-title>
                 </mat-expansion-panel-header>
                 <mat-list class="list-section">
-                    <pxb-info-list-item divider="full" [statusColor]="colors.red[500]" chevron="true">
+                    <pxb-info-list-item
+                        [divider]="item1.id === 2 ? null : 'full'"
+                        [statusColor]="item1.id === 1 ? item1.statusColor : null"
+                        chevron="true"
+                        *ngFor="let item1 of infoListItemExample2"
+                    >
                         <div class="title-section" pxb-title>
                             <div>
-                                <span class="title-label">{{ isSmall ? 'High Humidity' : 'High Humidity:' }}</span
-                                ><span *ngIf="!isSmall" class="title-desc">PX2341 sensor level 9</span>
+                                <span class="title-label">{{
+                                    isSmall ? item1.titleLabel : item1.titleLabel.concat(':')
+                                }}</span
+                                ><span *ngIf="!isSmall" class="title-desc">{{ item1.titleDesc }}</span>
                             </div>
                         </div>
                         <div *ngIf="!isSmall" class="title-section" pxb-subtitle>
-                            <div class="subtitle">Cherrington Station < Moon Township</div>
-                        </div>
-                    </pxb-info-list-item>
-
-                    <pxb-info-list-item chevron="true">
-                        <div class="title-section" pxb-title>
-                            <div>
-                                <span class="title-label">{{ isSmall ? 'Battery Service' : 'Battery Service:' }}</span
-                                ><span *ngIf="!isSmall" class="title-desc">EATON GH142</span>
-                            </div>
+                            <div class="subtitle">{{ item1.subtitle }}</div>
                         </div>
                     </pxb-info-list-item>
                 </mat-list>
@@ -150,42 +115,31 @@
         <mat-accordion class="accordion-panel">
             <mat-expansion-panel [expanded]="true" [class.expansion-panel-mobile]="isSmall">
                 <mat-expansion-panel-header>
-                    <mat-panel-title [style.color]="colors.blue[500]">
+                    <mat-panel-title>
                         With Icons, with Title
                     </mat-panel-title>
                 </mat-expansion-panel-header>
                 <mat-list class="list-section">
                     <pxb-info-list-item
-                        divider="partial"
-                        [statusColor]="colors.red[500]"
+                        *ngFor="let item2 of infoListItemExample2"
+                        [divider]="item2.id === 2 ? null : 'partial'"
+                        [statusColor]="item2.id === 1 ? item2.statusColor : null"
                         chevron="true"
-                        [avatar]="true"
+                        [avatar]="item2.avatar"
                         iconAlign="center"
                     >
-                        <mat-icon pxb-icon [style.backgroundColor]="colors.red[500]" style="color: white"
-                            >notifications
-                        </mat-icon>
+                        <mat-icon *ngIf="item2.id === 1" pxb-icon class="alarm-icon">notifications </mat-icon>
+                        <mat-icon *ngIf="item2.id === 2" pxb-icon svgIcon="px-icons:maintenance"></mat-icon>
                         <div class="title-section" pxb-title>
                             <div>
-                                <span class="title-label">{{ isSmall ? 'High Humidity' : 'High Humidity:' }}</span
-                                ><span *ngIf="!isSmall" class="title-desc">PX2341 sensor level 9</span>
+                                <span class="title-label">{{
+                                    isSmall ? item2.titleLabel : item2.titleLabel.concat(':')
+                                }}</span
+                                ><span *ngIf="!isSmall" class="title-desc">{{ item2.titleDesc }}</span>
                             </div>
                         </div>
                         <div class="title-section" pxb-subtitle *ngIf="!isSmall">
-                            <div class="subtitle">Cherrington Station < Moon Township</div>
-                        </div>
-                    </pxb-info-list-item>
-
-                    <pxb-info-list-item chevron="true" iconAlign="center">
-                        <mat-icon pxb-icon svgIcon="px-icons:maintenance"></mat-icon>
-                        <div class="title-section" pxb-title>
-                            <div>
-                                <span class="title-label">{{ isSmall ? 'Battery Service' : 'Battery Service:' }}</span
-                                ><span *ngIf="!isSmall" class="title-desc">EATON GH142</span>
-                            </div>
-                        </div>
-                        <div class="title-section" pxb-subtitle *ngIf="!isSmall">
-                            <div class="subtitle">Cherrington Station < Moon Township</div>
+                            <div class="subtitle">{{ item2.subtitle }}</div>
                         </div>
                     </pxb-info-list-item>
                 </mat-list>

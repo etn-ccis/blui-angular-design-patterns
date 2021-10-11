@@ -1,3 +1,5 @@
+@import '~@pxblue/colors/palette.scss';
+
 section.list-section {
     padding-top: 24px;
     max-width: 768px;
@@ -17,26 +19,43 @@ section.list-section {
     ::ng-deep &.mat-list-base {
         padding-top: 0;
     }
-}
-::ng-deep .without-icons .pxb-info-list-item-icon-wrapper {
-    display: none !important;
-}
-::ng-deep .accordion-panel {
-    .mat-expansion-panel {
-        .mat-expansion-panel-header {
-            height: 48px !important;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-            border-radius: 0;
-            padding-left: 16px;
-            .mat-expansion-indicator {
-                margin-top: -8px;
-            }
-            &.mat-expanded {
+    ::ng-deep mat-panel-title {
+        color: map-get($pxb-blue, 500);
+    }
+
+    ::ng-deep .without-icons .pxb-info-list-item-icon-wrapper {
+        display: none !important;
+    }
+    ::ng-deep .accordion-panel {
+        .mat-expansion-panel {
+            .mat-expansion-panel-header {
+                height: 48px !important;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+                border-radius: 0;
+                padding-left: 16px;
                 .mat-expansion-indicator {
-                    margin-top: 4px;
+                    margin-top: -8px;
+                }
+                &.mat-expanded {
+                    .mat-expansion-indicator {
+                        margin-top: 4px;
+                    }
                 }
             }
         }
+    }
+    ::ng-deep .pxb-chevron {
+        color: map-get($pxb-gray, 500);
+    }
+}
+
+.list-section {
+    .alarm-icon {
+        background-color: map-get($pxb-red, 500);
+        color: map-get($pxb-white, 50);
+    }
+    .maintenance-icon {
+        color: map-get($pxb-orange, 500);
     }
 }
 

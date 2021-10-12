@@ -4,6 +4,17 @@
     </button>
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Status Lists</div>
     <pxb-spacer></pxb-spacer>
+    <div class="toolbar-actions">
+        <button mat-icon-button>
+            <mat-icon style="margin: 0 8px">help</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon style="margin: 0 8px" [matBadge]="88" matBadgeColor="warn">notifications</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>more_vert</mat-icon>
+        </button>
+    </div>
 </mat-toolbar>
 <section class="list-section">
     <div class="list-example">

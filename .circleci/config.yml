@@ -73,6 +73,10 @@ jobs:
                 root: .
                 paths:
                     - cypress-coverage
+            - run:
+                  name: Memory Usage
+                  command: cat /sys/fs/cgroup/memory/memory.max_usage_in_bytes
+                  when: always
 
     coverage_reports:
         working_directory: ~/angular-design-patterns

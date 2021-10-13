@@ -79,6 +79,9 @@ section.list-section {
         font-weight: normal;
         margin-left: 4px;
     }
+}
+
+.subtitle-section {
     .subtitle {
         font-size: 12px;
         font-weight: normal;
@@ -89,6 +92,18 @@ section.list-section {
 @media only screen and (max-width: 600px) {
     section.list-section {
         padding-top: 0;
+    }
+
+    .title-section {
+        .title-desc {
+            display: none;
+        }
+    }
+
+    .subtitle-section {
+        .subtitle {
+            display: none;
+        }
     }
 
     ::ng-deep .accordion-panel {

@@ -28,14 +28,7 @@
 <mat-toolbar class="search-header" [class.active]="toggleSearch" *ngIf="isSmall">
     <mat-toolbar-row style="padding: 0 16px">
         <mat-icon>search</mat-icon>
-        <input
-            class="search-control"
-            type="text"
-            placeholder="Search Assets..."
-            [(ngModel)]="searchText"
-            #searchBar
-            data-cy="searchfield"
-        />
+        <input class="search-control" type="text" placeholder="Search Assets..." [(ngModel)]="searchText" #searchBar />
         <button
             *ngIf="searchText"
             mat-icon-button

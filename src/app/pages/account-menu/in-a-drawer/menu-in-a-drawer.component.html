@@ -2,11 +2,16 @@
     <mat-sidenav-container class="drawer-container" (backdropClick)="isTempDrawerOpen = false">
         <mat-sidenav mode="over" class="sidenav" [opened]="isTempDrawerOpen" position="start">
             <pxb-drawer [openOnHover]="false">
-                <pxb-drawer-header class="account-menu-drawer-header">
+                <pxb-drawer-header class="account-menu-drawer-header" data-cy="drawer-header">
                     <div pxb-title-content style="width: 100%">
                         <div style="display: flex; justify-content: space-between">
                             <img class="avatar" src="assets/avatar_40.png" />
-                            <button style="margin-top: 16px" mat-icon-button (click)="isTempDrawerOpen = false">
+                            <button
+                                style="margin-top: 16px"
+                                mat-icon-button
+                                (click)="isTempDrawerOpen = false"
+                                data-cy="close-drawer"
+                            >
                                 <mat-icon>close</mat-icon>
                             </button>
                         </div>
@@ -53,7 +58,7 @@
                 <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">In a Drawer</div>
             </mat-toolbar>
             <div class="button-container">
-                <button color="primary" mat-flat-button (click)="isTempDrawerOpen = true">
+                <button color="primary" mat-flat-button (click)="isTempDrawerOpen = true" data-cy="toggle-drawer">
                     <mat-icon>menu_open</mat-icon>
                     Open Drawer
                 </button>

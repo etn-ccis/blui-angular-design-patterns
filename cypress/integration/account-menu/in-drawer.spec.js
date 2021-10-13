@@ -15,10 +15,10 @@ describe('Search bar', () => {
         cy.get('[data-cy=drawer-header]').should('be.visible')
     });
 
-    it('should dismiss drawer on click', () => {
+    it('should dismiss drawer on close', () => {
         cy.get('[data-cy=toggle-drawer]').click()
         cy.get('[data-cy=drawer-header]').should('be.visible')
         cy.get('[data-cy=close-drawer]').click()
-        cy.get('[data-cy=drawer-header]').should('not.be.visible')
+        cy.get('[data-cy=drawer-header]').should('not.be.focused')
     });
 });

@@ -45,7 +45,6 @@ jobs:
 
     cypress_tests:
         working_directory: ~/angular-design-patterns
-        parallelism: 2
         docker:
             - image: circleci/node:12.6-browsers
         steps:

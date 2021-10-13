@@ -2,8 +2,19 @@
     <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
-    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Status List</div>
+    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Status Lists</div>
     <pxb-spacer></pxb-spacer>
+    <div class="toolbar-actions">
+        <button mat-icon-button>
+            <mat-icon style="margin: 0 8px">help</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon style="margin: 0 8px" [matBadge]="88" matBadgeColor="warn">notifications</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>more_vert</mat-icon>
+        </button>
+    </div>
 </mat-toolbar>
 <section class="list-section">
     <div class="list-example">
@@ -18,15 +29,15 @@
                     <pxb-info-list-item
                         divider="partial"
                         [statusColor]="colors.red[500]"
-                        chevron="true"
+                        [chevron]="true"
                         [avatar]="true"
                         iconAlign="center"
-                        wrapTitle="no"
+                        [wrapTitle]="false"
                     >
                         <mat-icon pxb-icon class="alarm-icon">notifications</mat-icon>
                         <div class="time-section" pxb-left-content>
                             <div><span class="time-numeric">8:21</span>AM</div>
-                            <div>11/23/</div>
+                            <div>11/23/21</div>
                         </div>
                         <div class="title-section" pxb-title>
                             <div>
@@ -35,7 +46,10 @@
                             </div>
                         </div>
                         <div class="subtitle-section" pxb-subtitle>
-                            <div class="subtitle">Cherrington Station < Moon Township</div>
+                            <div class="subtitle show">
+                                <span class="caption-1">Cherrington Station</span
+                                ><span class="caption-2"> < Moon Township</span>
+                            </div>
                         </div>
                         <span pxb-right-content *ngIf="!isSmall">
                             <pxb-list-item-tag
@@ -65,15 +79,15 @@
 
                     <pxb-info-list-item
                         divider="partial"
-                        chevron="true"
+                        [chevron]="true"
                         iconAlign="center"
                         [statusColor]="colors.orange[500]"
-                        wrapTitle="no"
+                        [wrapTitle]="false"
                     >
                         <mat-icon pxb-icon svgIcon="px-icons:maintenance" class="maintenance-icon"></mat-icon>
                         <div class="time-section" pxb-left-content>
                             <div><span class="time-numeric">7:48</span>AM</div>
-                            <div>11/23/</div>
+                            <div>11/23/21</div>
                         </div>
                         <div class="title-section" pxb-title>
                             <div>
@@ -82,15 +96,18 @@
                             </div>
                         </div>
                         <div class="subtitle-section" pxb-subtitle>
-                            <div class="subtitle">Cherrington Station < Moon Township</div>
+                            <div class="subtitle show">
+                                <span class="caption-1">Cherrington Station</span
+                                ><span class="caption-2"> < Moon Township</span>
+                            </div>
                         </div>
                     </pxb-info-list-item>
 
-                    <pxb-info-list-item chevron="true" [avatar]="true" iconAlign="center">
+                    <pxb-info-list-item [chevron]="true" [avatar]="true" iconAlign="center">
                         <mat-icon pxb-icon>notifications</mat-icon>
                         <div class="time-section" pxb-left-content>
                             <div><span class="time-numeric">2:13</span>AM</div>
-                            <div>11/23/</div>
+                            <div>11/23/21</div>
                         </div>
                         <div class="title-section" pxb-title>
                             <div>
@@ -101,7 +118,10 @@
                             </div>
                         </div>
                         <div class="subtitle-section" pxb-subtitle>
-                            <div class="subtitle">Cherrington Station < Moon Township</div>
+                            <div class="subtitle show">
+                                <span class="caption-1">Cherrington Station</span
+                                ><span class="caption-2"> < Moon Township</span>
+                            </div>
                         </div>
                     </pxb-info-list-item>
                 </mat-list>
@@ -118,7 +138,7 @@
                     </mat-panel-title>
                 </mat-expansion-panel-header>
                 <mat-list class="list-section">
-                    <pxb-info-list-item divider="full" [statusColor]="colors.red[500]" chevron="true">
+                    <pxb-info-list-item divider="full" [statusColor]="colors.red[500]" [chevron]="true">
                         <div class="title-section" pxb-title>
                             <div>
                                 <span class="title-label">{{ isSmall ? 'High Humidity' : 'High Humidity:' }}</span
@@ -126,11 +146,14 @@
                             </div>
                         </div>
                         <div class="subtitle-section" pxb-subtitle>
-                            <div class="subtitle">Cherrington Station < Moon Township</div>
+                            <div class="subtitle">
+                                <span class="caption-1">Cherrington Station</span
+                                ><span class="caption-2"> < Moon Township</span>
+                            </div>
                         </div>
                     </pxb-info-list-item>
 
-                    <pxb-info-list-item chevron="true">
+                    <pxb-info-list-item [chevron]="true">
                         <div class="title-section" pxb-title>
                             <div>
                                 <span class="title-label">{{ isSmall ? 'Battery Service' : 'Battery Service:' }}</span
@@ -155,7 +178,7 @@
                     <pxb-info-list-item
                         divider="partial"
                         [statusColor]="colors.red[500]"
-                        chevron="true"
+                        [chevron]="true"
                         [avatar]="true"
                         iconAlign="center"
                     >
@@ -167,10 +190,13 @@
                             </div>
                         </div>
                         <div class="subtitle-section" pxb-subtitle>
-                            <div class="subtitle">Cherrington Station < Moon Township</div>
+                            <div class="subtitle">
+                                <span class="caption-1">Cherrington Station</span
+                                ><span class="caption-2"> < Moon Township</span>
+                            </div>
                         </div>
                     </pxb-info-list-item>
-                    <pxb-info-list-item chevron="true" iconAlign="center">
+                    <pxb-info-list-item [chevron]="true" iconAlign="center">
                         <mat-icon pxb-icon svgIcon="px-icons:maintenance"></mat-icon>
                         <div class="title-section" pxb-title>
                             <div>

@@ -1,5 +1,5 @@
 <pxb-drawer-layout
-    [width]="270"
+    [width]="292"
     [variant]="viewportService.isSmall() ? 'temporary' : 'permanent'"
     (backdropClick)="stateService.setDrawerOpen(false)"
 >
@@ -20,10 +20,11 @@
                 >
                     <pxb-drawer-nav-item
                         *ngFor="let nestedItem of navItem.children"
-                        [hidePadding]="true"
+                        [hidePadding]="false"
                         [title]="nestedItem.title"
                         [selected]="selected === nestedItem.title"
                         (select)="select(nestedItem, navItem.path + '/')"
+                        activeItemBackgroundShape="round"
                     >
                     </pxb-drawer-nav-item>
                 </pxb-drawer-nav-item>

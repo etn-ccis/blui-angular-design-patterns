@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 
-describe('Search bar', () => {
+describe('Account menu in appbar', () => {
     beforeEach(() => {
         cy.visit('http://localhost:4200/account-menu/in-an-app-bar')
     });

@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 
-describe('Search bar', () => {
+describe('Page wide search', () => {
     beforeEach(() => {
         cy.visit('http://localhost:4200/app-bar/page-wide-search')
     });

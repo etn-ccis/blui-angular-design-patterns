@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 
-describe('Search bar', () => {
+describe('Account menu in drawer', () => {
     beforeEach(() => {
         cy.visit('http://localhost:4200/account-menu/in-a-drawer')
     });
@@ -19,6 +19,7 @@ describe('Search bar', () => {
         cy.get('[data-cy=toggle-drawer]').click()
         cy.get('[data-cy=drawer-header]').should('be.visible')
         cy.get('[data-cy=close-drawer]').click()
-        cy.get('[data-cy=drawer-header]').should('not.be.focused')
+        // cy.get('[data-cy=drawer-header]').should('not.be.focused')
+        cy.get('[data-cy=drawer-header] > .mat-toolbar').should('not.be.visible')
     });
 });

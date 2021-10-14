@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 
-describe('Contextual App Bar', () => {
+describe('Dropdown app bar', () => {
     beforeEach(() => {
         cy.visit('http://localhost:4200/app-bar/dropdown-toolbar')
     });

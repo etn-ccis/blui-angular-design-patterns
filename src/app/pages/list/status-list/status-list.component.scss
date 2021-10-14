@@ -35,13 +35,13 @@ section.list-section {
         .mat-expansion-panel {
             .mat-expansion-panel-header {
                 height: 48px !important;
-                border-bottom: 1px solid rgba(0, 0, 0, 0.12);
                 border-radius: 0;
                 padding-left: 16px;
                 .mat-expansion-indicator {
                     margin-top: -8px;
                 }
                 &.mat-expanded {
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
                     .mat-expansion-indicator {
                         margin-top: 4px;
                     }

@@ -1,13 +1,17 @@
 @import '~@pxblue/colors/palette.scss';
 
 section.list-section {
-    padding-top: 24px;
+    padding: 24px;
     max-width: 768px;
     margin: 0 auto;
 }
 
 .toolbar-actions {
-    margin-right: -16px;
+    display: flex;
+    margin: 0 -12px;
+    button {
+        margin: 0 8px;
+    }
 }
 
 .list-example {
@@ -97,7 +101,7 @@ section.list-section {
 
 @media only screen and (max-width: 960px) {
     section.list-section {
-        padding-top: 0;
+        padding: 0;
         max-width: 100%;
     }
 

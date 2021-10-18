@@ -9,6 +9,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatCardModule } from '@angular/material/card';
 import { SpacerModule, InfoListItemModule, ChannelValueModule } from '@pxblue/angular-components';
 
 @NgModule({
@@ -18,6 +19,7 @@ import { SpacerModule, InfoListItemModule, ChannelValueModule } from '@pxblue/an
         DragDropModule,
         MatButtonModule,
         MatButtonToggleModule,
+        MatCardModule,
         MatExpansionModule,
         MatIconModule,
         MatListModule,

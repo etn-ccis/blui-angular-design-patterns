@@ -3,11 +3,6 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { StateService } from '../../../services/state.service';
 
-export type ListItem = {
-    name: string;
-    details: string;
-};
-
 @Component({
     selector: 'app-sortable-list',
     templateUrl: './sortable-list.component.html',
@@ -15,26 +10,9 @@ export type ListItem = {
     encapsulation: ViewEncapsulation.None,
 })
 export class SortableListComponent implements OnInit {
-    data = [
-        {
-            name: 'George Washington',
-            details: '1789',
-        },
-        {
-            name: 'John Adams',
-            details: '1796',
-        },
-        { name: 'Thomas Jefferson', details: '1800' },
-        { name: 'James Madison', details: '1808' },
-        { name: 'James Monroe', details: '1812' },
-    ];
-
-    item: any = '';
+    data = ['Item 01', 'Item 02', 'Item 03'];
     draggable = false;
     isSmall: boolean;
-
-    displayedColumns: string[] = ['name', 'details'];
-    dataSource: any;
 
     constructor(
         private readonly _drawerService: StateService,

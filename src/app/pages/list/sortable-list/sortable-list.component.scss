@@ -1,12 +1,5 @@
 @import '~@pxblue/colors/palette.scss';
 
-.sortable-list-item {
-    display: block;
-    .mat-list-icon {
-        margin-left: -8px;
-    }
-}
-
 // the floating component when dragging
 .cdk-drag-preview {
     background-color: map-get($pxb-white, 50);

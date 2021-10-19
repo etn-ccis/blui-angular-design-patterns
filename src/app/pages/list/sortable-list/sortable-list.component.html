@@ -32,7 +32,6 @@
             <ng-container *ngIf="draggable">
                 <pxb-info-list-item
                     [divider]="i === 2 ? null : 'full'"
-                    iconAlign="center"
                     *ngFor="let item of data; let i = index"
                     cdkDrag
                     class="sortable-list-item"

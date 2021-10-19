@@ -16,14 +16,14 @@
     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
 
-.handler {
+.sortable-handler {
     cursor: grab;
     margin-top: -16px;
 }
 
 .sortable-list-item {
     &.cdk-drag-preview {
-        .handler {
+        .sortable-handler {
             pointer-events: auto;
             cursor: grabbing;
         }

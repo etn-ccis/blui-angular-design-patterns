@@ -31,14 +31,14 @@
             </ng-container>
             <ng-container *ngIf="draggable">
                 <pxb-info-list-item
-                    [divider]="i === 2 ? null : 'full'"
-                    *ngFor="let item of data; let i = index"
+                    *ngFor="let item of data; let i = index; let lastIndex = last"
+                    [divider]="lastIndex ? null : 'full'"
                     cdkDrag
                     class="sortable-list-item"
                     [attr.data-cy]="'sortable-row-' + i"
                 >
                     <button mat-icon-button pxb-icon disableRipple>
-                        <mat-icon cdkDragHandle class="handler">drag_handle</mat-icon>
+                        <mat-icon cdkDragHandle class="sortable-handler">drag_handle</mat-icon>
                     </button>
                     <span pxb-title> {{ item }}</span>
                 </pxb-info-list-item>

@@ -7,7 +7,6 @@ import { StateService } from '../../../services/state.service';
     selector: 'app-sortable-list',
     templateUrl: './sortable-list.component.html',
     styleUrls: ['./sortable-list.component.scss'],
-    encapsulation: ViewEncapsulation.None,
 })
 export class SortableListComponent implements OnInit {
     data = ['Item 01', 'Item 02', 'Item 03'];

@@ -24,14 +24,17 @@
 }
 
 .handler {
-    cursor: grabbing;
+    cursor: grab;
     margin-top: -16px;
-    color: map-get($pxb-gray, 500);
 }
 
-.sortable-list-item.cdk-drag-preview .handler {
-    pointer-events: auto;
-    cursor: grabbing;
+.sortable-list-item {
+    &.cdk-drag-preview {
+        .handler {
+            pointer-events: auto;
+            cursor: grabbing;
+        }
+    }
 }
 
 .sortable-list-container {

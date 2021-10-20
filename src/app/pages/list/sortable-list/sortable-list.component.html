@@ -25,14 +25,18 @@
     <mat-card class="sortable-list-card">
         <mat-list [disableRipple]="draggable" cdkDropList (cdkDropListDropped)="onDrop($event)">
             <ng-container *ngIf="!draggable">
-                <pxb-info-list-item divider="full" *ngFor="let item of data; let i = index" [hidePadding]="true">
+                <pxb-info-list-item
+                    [divider]="isSmall ? 'full' : lastIndex ? null : 'full'"
+                    *ngFor="let item of data; let i = index; let lastIndex = last"
+                    [hidePadding]="true"
+                >
                     <span pxb-title> {{ item }}</span>
                 </pxb-info-list-item>
             </ng-container>
             <ng-container *ngIf="draggable">
                 <pxb-info-list-item
                     *ngFor="let item of data; let i = index; let lastIndex = last"
-                    [divider]="lastIndex ? null : 'full'"
+                    [divider]="isSmall ? 'full' : lastIndex ? null : 'full'"
                     cdkDrag
                     class="sortable-list-item"
                     [attr.data-cy]="'sortable-row-' + i"

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { DataListComponent } from './pages/list/data-list/data-list.component';
 import { ActionListComponent } from './pages/list/action-list/action-list.component';
+import { InPanelHeaderComponent } from './pages/list/in-panel-header/in-panel-header.component';
 import { StatusListComponent } from './pages/list/status-list/status-list.component';
 import { MultiselectListComponent } from './pages/list/multiselect-list/multiselect-list.component';
 import { BasicBottomSheetComponent } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.component';
@@ -141,6 +142,11 @@ export const ROUTES: DrawerItem[] = [
                 title: 'Action List',
                 path: 'action-list',
                 component: ActionListComponent,
+            },
+            {
+                title: 'Global Action List',
+                path: 'in-panel-header',
+                component: InPanelHeaderComponent,
             },
             {
                 title: 'Data List',

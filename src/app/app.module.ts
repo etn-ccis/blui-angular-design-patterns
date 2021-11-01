@@ -25,6 +25,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DrawerLayoutModule, DrawerModule, EmptyStateModule } from '@pxblue/angular-components';
 import { DataListModule } from './pages/list/data-list/data-list.module';
 import { ActionListModule } from './pages/list/action-list/action-list.module';
+import { InPanelHeaderModule } from './pages/list/in-panel-header/in-panel-header.module';
 import { StatusListModule } from './pages/list/status-list/status-list.module';
 import { MultiselectListModule } from './pages/list/multiselect-list/multiselect-list.module';
 import { BasicBottomSheetModule } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.module';
@@ -59,6 +60,7 @@ import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
     declarations: [AppComponent],
     imports: [
         ActionListModule,
+        InPanelHeaderModule,
         DataListModule,
         StatusListModule,
         MultiselectListModule,

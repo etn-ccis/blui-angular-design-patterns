@@ -1,0 +1,56 @@
+<mat-toolbar data-cy="pxb-toolbar" color="primary" class="app-bar mat-elevation-z2">
+    <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div>
+        <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">
+            Global Action List
+        </div>
+        <div class="mat-subheading-2" [style.marginLeft.px]="isSmall ? 24 : 0" style="margin-top: -8px;">
+            In Panel Header
+        </div>
+    </div>
+</mat-toolbar>
+<section class="panel-header-example">
+    <mat-card style="padding: 0;">
+        <mat-card-header
+            style="padding: 16px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);"
+        >
+            <mat-card-title
+                style="
+            margin: 0;
+            font-size: 14px;
+            color: #007BC1;
+        "
+                >Category Name</mat-card-title
+            >
+            <pxb-spacer></pxb-spacer>
+            <div class="filter-days" style="width: 120px;padding: 0 16px;">
+                <mat-select
+                    (selectionChange)="onDayFilterChange($event)"
+                    panelClass="selectPanel"
+                    [disableOptionCentering]="true"
+                >
+                    <mat-option *ngFor="let option of filterDaysOption" [value]="option.value">
+                        {{ option.title }}
+                    </mat-option>
+                </mat-select>
+            </div>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-list style="padding: 0;">
+                <pxb-info-list-item
+                    [chevron]="true"
+                    [hidePadding]="true"
+                    *ngFor="let item of data; let lastIndex = last"
+                    data-cy="list-content"
+                    [divider]="isSmall ? 'full' : lastIndex ? null : 'full'"
+                >
+                    <span pxb-title>{{ item.title }}</span>
+                    <span pxb-subtitle>{{ item.subtitle }}</span>
+                </pxb-info-list-item>
+            </mat-list>
+        </mat-card-content>
+    </mat-card>
+</section>

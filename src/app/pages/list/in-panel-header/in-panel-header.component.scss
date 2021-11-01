@@ -3,3 +3,10 @@
     margin: 0 auto;
     max-width: 816px;
 }
+
+::ng-deep .cdk-overlay-container .cdk-overlay-pane .selectPanel {
+    min-width: 154px !important;
+    border-radius: 0;
+    height: 160px;
+    margin: 32px 4px;
+}

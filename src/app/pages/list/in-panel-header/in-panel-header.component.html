@@ -28,6 +28,7 @@
             <pxb-spacer></pxb-spacer>
             <div class="filter-days" style="width: 120px;padding: 0 16px;">
                 <mat-select
+                    [(value)]="selectedFilter"
                     (selectionChange)="onDayFilterChange($event)"
                     panelClass="selectPanel"
                     [disableOptionCentering]="true"
@@ -43,7 +44,7 @@
                 <pxb-info-list-item
                     [chevron]="true"
                     [hidePadding]="true"
-                    *ngFor="let item of data; let lastIndex = last"
+                    *ngFor="let lastIndex = last; let item; of: data | filter: selectedFilter"
                     data-cy="list-content"
                     [divider]="isSmall ? 'full' : lastIndex ? null : 'full'"
                 >

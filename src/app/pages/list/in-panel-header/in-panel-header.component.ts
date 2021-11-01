@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { StateService } from '../../../services/state.service';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 
-export type filterDaysOption = {
+export type FilterDaysOption = {
     title: string;
     value: number;
 };
 
-export type filterData = {
+export type FilterData = {
     title: string;
     subtitle: string;
     value: number;
@@ -20,17 +20,17 @@ export type filterData = {
 })
 export class InPanelHeaderComponent implements OnInit {
     isSmall: boolean;
-    filterDaysOption: filterDaysOption[] = [
+    filterDaysOption: FilterDaysOption[] = [
         { title: '30 days', value: 30 },
         { title: '15 days', value: 15 },
         { title: '7 days', value: 7 },
     ];
 
-    data: filterData[] = [
+    data: FilterData[] = [
         {
             title: 'Item 01',
-            subtitle: 'Registered 8 days ago',
-            value: 8,
+            subtitle: 'Registered 7 days ago',
+            value: 7,
         },
         {
             title: 'Item 02',
@@ -39,11 +39,11 @@ export class InPanelHeaderComponent implements OnInit {
         },
         {
             title: 'Item 03',
-            subtitle: 'Registered 28 days ago',
-            value: 28,
+            subtitle: 'Registered 30 days ago',
+            value: 30,
         },
     ];
-    selectedFilter = this.filterDaysOption[0];
+    selectedFilter = this.filterDaysOption[0].value;
     constructor(
         private readonly _drawerService: StateService,
         private readonly _breakpointObserver: BreakpointObserver
@@ -61,8 +61,8 @@ export class InPanelHeaderComponent implements OnInit {
             });
     }
 
-    onDayFilterChange(filterDetails: Event): void {
-        console.log('filterDetails', filterDetails);
+    onDayFilterChange(filterDetails: any): void {
+        this.selectedFilter = filterDetails.value;
     }
 
     toggleMenu(): void {

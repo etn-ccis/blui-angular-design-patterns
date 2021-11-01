@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
+import { FilterPipe } from './shared/filter.pipe';
 import { InPanelHeaderComponent } from './in-panel-header.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -9,7 +10,6 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { InfoListItemModule, SpacerModule } from '@pxblue/angular-components';
 import { MatSelectModule } from '@angular/material/select';
-
 @NgModule({
     imports: [
         CommonModule,
@@ -23,6 +23,6 @@ import { MatSelectModule } from '@angular/material/select';
         MatToolbarModule,
         SpacerModule,
     ],
-    declarations: [InPanelHeaderComponent],
+    declarations: [InPanelHeaderComponent, FilterPipe],
 })
 export class InPanelHeaderModule {}

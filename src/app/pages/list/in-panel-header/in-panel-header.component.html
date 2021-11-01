@@ -12,21 +12,11 @@
     </div>
 </mat-toolbar>
 <section class="panel-header-example">
-    <mat-card style="padding: 0;">
-        <mat-card-header
-            style="padding: 16px 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.12);"
-        >
-            <mat-card-title
-                style="
-            margin: 0;
-            font-size: 14px;
-            color: #007BC1;
-        "
-                >Category Name</mat-card-title
-            >
+    <mat-card class="filter-card" style="padding: 0;">
+        <mat-card-header class="filter-card-header">
+            <mat-card-title>Category Name</mat-card-title>
             <pxb-spacer></pxb-spacer>
-            <div class="filter-days" style="width: 120px;padding: 0 16px;">
+            <div class="filter-selector">
                 <mat-select
                     [(value)]="selectedFilter"
                     (selectionChange)="onDayFilterChange($event)"
@@ -40,7 +30,7 @@
             </div>
         </mat-card-header>
         <mat-card-content>
-            <mat-list style="padding: 0;">
+            <mat-list class="list-section">
                 <pxb-info-list-item
                     [chevron]="true"
                     [hidePadding]="true"
@@ -52,6 +42,7 @@
                     <span pxb-subtitle>{{ item.subtitle }}</span>
                 </pxb-info-list-item>
             </mat-list>
+            <div *ngIf="(data | filter: selectedFilter).length === 0" class="no-items mat-body-2">No items found.</div>
         </mat-card-content>
     </mat-card>
 </section>

@@ -30,7 +30,7 @@ export class InPanelHeaderComponent implements OnInit {
         {
             title: 'Item 01',
             subtitle: 'Registered 7 days ago',
-            value: 7,
+            value: 8,
         },
         {
             title: 'Item 02',

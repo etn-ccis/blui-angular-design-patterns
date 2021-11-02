@@ -144,7 +144,7 @@ export const ROUTES: DrawerItem[] = [
                 component: ActionListComponent,
             },
             {
-                title: 'Global Action List',
+                title: 'In Panel Header',
                 path: 'in-panel-header',
                 component: InPanelHeaderComponent,
             },

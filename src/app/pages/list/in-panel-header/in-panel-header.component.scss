@@ -1,0 +1,62 @@
+@import '~@pxblue/colors/palette.scss';
+.panel-header-example {
+    padding: 24px;
+    margin: 0 auto;
+    max-width: 816px;
+
+    .filter-card {
+        padding: 0;
+
+        .filter-card-header {
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+            .mat-card-title {
+                margin: 0;
+                font-size: 14px;
+                color: map-get($pxb-blue, 500);
+            }
+
+            .filter-selector {
+                width: 120px;
+                padding: 0 16px;
+                margin-right: 4px;
+            }
+        }
+    }
+
+    .list-section {
+        padding: 0;
+    }
+
+    .no-items {
+        text-align: center;
+        padding: 16px;
+    }
+}
+
+::ng-deep .cdk-overlay-container .cdk-overlay-pane .selectPanel {
+    min-width: 154px !important;
+    border-radius: 0;
+    height: auto;
+    margin: 32px -12px;
+    right: 0;
+    position: absolute;
+}
+
+.list-section {
+    ::ng-deep .pxb-chevron {
+        color: map-get($pxb-gray, 500);
+    }
+}
+@media only screen and (max-width: 960px) {
+    .panel-header-example {
+        padding: 0;
+        max-width: 100%;
+
+        .filter-card {
+            border-radius: 0;
+            box-shadow: none;
+        }
+    }
+}

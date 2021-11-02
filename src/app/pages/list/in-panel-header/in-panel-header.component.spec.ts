@@ -8,7 +8,8 @@ describe('InPanelHeaderComponent', () => {
 
     beforeEach(async(() => {
         void TestBed.configureTestingModule({
-            imports: [InPanelHeaderComponent, InPanelHeaderModule],
+            imports: [InPanelHeaderModule],
+            declarations: [InPanelHeaderComponent],
         }).compileComponents();
     }));
 

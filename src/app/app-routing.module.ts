@@ -30,6 +30,7 @@ import { MenuInADrawerComponent } from './pages/account-menu/in-a-drawer/menu-in
 import { DropdownToolbarComponent } from './pages/app-bar/dropdown-toolbar/dropdown-toolbar.component';
 import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.component';
 import { ContextualAppBarComponent } from './pages/app-bar/contextual/contextual.component';
+import { TreeListComponent } from './pages/list/tree/tree.component';
 
 export type DrawerItem = {
     title: string;
@@ -166,6 +167,11 @@ export const ROUTES: DrawerItem[] = [
                 title: 'Responsive Table',
                 path: 'responsive-table',
                 component: ResponsiveTableComponent,
+            },
+            {
+                title: 'Tree Structure',
+                path: 'tree-structure',
+                component: TreeListComponent,
             },
         ],
     },

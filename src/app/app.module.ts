@@ -54,6 +54,7 @@ import { MenuInDrawerModule } from './pages/account-menu/in-a-drawer/in-a-drawer
 import { DropdownToolbarModule } from './pages/app-bar/dropdown-toolbar/dropdown-toolbar.module';
 import { ContextualAppbarModule } from './pages/app-bar/contextual/contextual.module';
 import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
+import { TreeListModule } from './pages/list/tree/tree.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -107,6 +108,7 @@ import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
         SectionedFormModule,
         InATableModule,
         InAListModule,
+        TreeListModule,
         InAnAppBarModule,
     ],
     bootstrap: [AppComponent],

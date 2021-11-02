@@ -1,0 +1,32 @@
+::ng-deep .tree-structure-body {
+    .mat-expansion-panel-header,
+    .mat-expansion-panel-body {
+        padding: 0;
+    }
+    .mat-expansion-panel-header {
+        height: 56px;
+        max-height: 56px;
+        padding: 0 16px;
+    }
+    .mat-expansion-panel {
+        border-radius: 0;
+    }
+    .mat-expansion-panel-header-title {
+        align-items: center;
+    }
+    .mat-content {
+        overflow: visible;
+    }
+}
+
+.folder-icon-wrapper {
+    $iconSize: 18px;
+    margin-right: 16px;
+    height: $iconSize;
+    ::ng-deep mat-icon {
+        font-size: $iconSize;
+        height: $iconSize;
+        width: $iconSize;
+        line-height: $iconSize;
+    }
+}

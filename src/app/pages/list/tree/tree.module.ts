@@ -1,0 +1,27 @@
+import { NgModule } from '@angular/core';
+import { TreeListComponent } from './tree.component';
+import { InfoListItemModule, SpacerModule } from '@pxblue/angular-components';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatRadioModule } from '@angular/material/radio';
+import { TreeItemComponent } from './tree-item.component';
+import { FormsModule } from '@angular/forms';
+
+@NgModule({
+    imports: [
+        CommonModule,
+        InfoListItemModule,
+        MatExpansionModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        SpacerModule,
+        MatRadioModule,
+        FormsModule,
+    ],
+    declarations: [TreeListComponent, TreeItemComponent],
+})
+export class TreeListModule {}

@@ -6,66 +6,78 @@
     <pxb-spacer></pxb-spacer>
 </mat-toolbar>
 
-<div class="tree-structure-body">
-    <mat-expansion-panel
-        *ngFor="let topLevelItem of treeItems"
-        (opened)="topLevelItem.opened = true"
-        (closed)="topLevelItem.opened = false"
-        [hideToggle]="!topLevelItem.children"
-    >
-        <mat-expansion-panel-header [class.selected]="topLevelItem.selected">
-            <ng-container
-                [ngTemplateOutlet]="treeItemTemplate"
-                [ngTemplateOutletContext]="{ item: topLevelItem, depth: 0 }"
-            >
-            </ng-container>
-        </mat-expansion-panel-header>
+<div class="tree-example-container">
+    <div *ngIf="!isSmall" style="margin: 24px 0; display: flex">
+        <button mat-stroked-button color="primary">
+            <mat-icon class="create-new-folder-icon">create_new_folder</mat-icon>
+            New Folder
+        </button>
+        <pxb-spacer></pxb-spacer>
+        <button mat-flat-button color="primary">
+            Move File
+        </button>
+    </div>
+    <div class="tree-structure-body">
         <mat-expansion-panel
-            class="mat-elevation-z0"
-            *ngFor="let secondLevelItem of topLevelItem.children"
-            (opened)="secondLevelItem.opened = true"
-            (closed)="secondLevelItem.opened = false"
-            [hideToggle]="!secondLevelItem.children"
+            *ngFor="let topLevelItem of treeItems"
+            (opened)="topLevelItem.opened = true"
+            (closed)="topLevelItem.opened = false"
+            [hideToggle]="!topLevelItem.children"
         >
-            <mat-expansion-panel-header [class.selected]="secondLevelItem.selected">
+            <mat-expansion-panel-header [class.selected]="topLevelItem.selected">
                 <ng-container
                     [ngTemplateOutlet]="treeItemTemplate"
-                    [ngTemplateOutletContext]="{ item: secondLevelItem, depth: 1 }"
+                    [ngTemplateOutletContext]="{ item: topLevelItem, depth: 0 }"
                 >
                 </ng-container>
             </mat-expansion-panel-header>
-
             <mat-expansion-panel
                 class="mat-elevation-z0"
-                *ngFor="let thirdLevelItem of secondLevelItem.children"
-                (opened)="thirdLevelItem.opened = true"
-                (closed)="thirdLevelItem.opened = false"
-                [hideToggle]="!thirdLevelItem.children"
+                *ngFor="let secondLevelItem of topLevelItem.children"
+                (opened)="secondLevelItem.opened = true"
+                (closed)="secondLevelItem.opened = false"
+                [hideToggle]="!secondLevelItem.children"
             >
-                <mat-expansion-panel-header [class.selected]="thirdLevelItem.selected">
+                <mat-expansion-panel-header [class.selected]="secondLevelItem.selected">
                     <ng-container
                         [ngTemplateOutlet]="treeItemTemplate"
-                        [ngTemplateOutletContext]="{ item: thirdLevelItem, depth: 2 }"
+                        [ngTemplateOutletContext]="{ item: secondLevelItem, depth: 1 }"
                     >
                     </ng-container>
                 </mat-expansion-panel-header>
-            </mat-expansion-panel>
-        </mat-expansion-panel>
 
-        <ng-template #treeItemTemplate let-item="item" let-depth="depth">
-            <mat-panel-title>
-                <mat-radio-button
-                    [value]="item.title"
-                    (click)="stopProp($event)"
-                    (change)="selectItem(item)"
-                    [style.marginRight.px]="depth * 32 + 16"
-                ></mat-radio-button>
-                <div class="folder-icon-wrapper">
-                    <mat-icon *ngIf="!item.opened">folder</mat-icon>
-                    <mat-icon *ngIf="item.opened">folder_opened</mat-icon>
-                </div>
-                {{ item.title }}
-            </mat-panel-title>
-        </ng-template>
-    </mat-expansion-panel>
+                <mat-expansion-panel
+                    class="mat-elevation-z0"
+                    *ngFor="let thirdLevelItem of secondLevelItem.children"
+                    (opened)="thirdLevelItem.opened = true"
+                    (closed)="thirdLevelItem.opened = false"
+                    [hideToggle]="!thirdLevelItem.children"
+                >
+                    <mat-expansion-panel-header [class.selected]="thirdLevelItem.selected">
+                        <ng-container
+                            [ngTemplateOutlet]="treeItemTemplate"
+                            [ngTemplateOutletContext]="{ item: thirdLevelItem, depth: 2 }"
+                        >
+                        </ng-container>
+                    </mat-expansion-panel-header>
+                </mat-expansion-panel>
+            </mat-expansion-panel>
+
+            <ng-template #treeItemTemplate let-item="item" let-depth="depth">
+                <mat-panel-title>
+                    <mat-radio-button
+                        [value]="item.title"
+                        (click)="stopProp($event)"
+                        (change)="selectItem(item)"
+                        [style.marginRight.px]="depth * 32 + 16"
+                    ></mat-radio-button>
+                    <div class="folder-icon-wrapper">
+                        <mat-icon *ngIf="!showOpenFolder(item)">folder</mat-icon>
+                        <mat-icon *ngIf="showOpenFolder(item)">folder_opened</mat-icon>
+                    </div>
+                    {{ item.title }}
+                </mat-panel-title>
+            </ng-template>
+        </mat-expansion-panel>
+    </div>
 </div>

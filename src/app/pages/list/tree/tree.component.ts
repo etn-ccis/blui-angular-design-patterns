@@ -88,4 +88,8 @@ export class TreeListComponent implements OnInit {
         const drawerOpen = this._drawerService.getDrawerOpen();
         this._drawerService.setDrawerOpen(!drawerOpen);
     }
+
+    showOpenFolder(item: TreeItem): boolean {
+        return item.opened && Boolean(item.children);
+    }
 }

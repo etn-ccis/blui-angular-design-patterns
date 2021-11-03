@@ -1,6 +1,28 @@
 @import '~@pxblue/colors/palette.scss';
 
+.tree-example-container {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    > div {
+        width: 100%;
+        max-width: 766px;
+    }
+}
+
+.create-new-folder-icon {
+    $iconSize: 16px;
+    font-size: $iconSize;
+    line-height: $iconSize;
+    height: $iconSize;
+    margin-left: -4px;
+    margin-right: 4px;
+}
+
 ::ng-deep .tree-structure-body {
+    width: 100%;
     .mat-expansion-panel-header,
     .mat-expansion-panel-body {
         padding: 0;

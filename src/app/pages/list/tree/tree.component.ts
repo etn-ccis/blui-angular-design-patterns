@@ -64,10 +64,24 @@ export class TreeListComponent implements OnInit {
             });
     }
 
-    select(e: Event, item: TreeItem): void {
+    stopProp(e: Event): void {
         e.stopPropagation();
-        item.selected = !item.selected;
-        console.log(item.selected);
+    }
+
+    selectItem(item: TreeItem): void {
+        this.deselectAll(this.treeItems);
+        item.selected = true;
+    }
+
+    deselectAll(items?: TreeItem[]): void {
+        if (!items || items.length === 0) {
+            return;
+        }
+
+        for (const item of items) {
+            item.selected = false;
+            this.deselectAll(item.children);
+        }
     }
 
     toggleMenu(): void {

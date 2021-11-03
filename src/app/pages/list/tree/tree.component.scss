@@ -1,3 +1,5 @@
+@import '~@pxblue/colors/palette.scss';
+
 ::ng-deep .tree-structure-body {
     .mat-expansion-panel-header,
     .mat-expansion-panel-body {
@@ -16,6 +18,12 @@
     }
     .mat-content {
         overflow: visible;
+    }
+    .selected {
+        background-color: map-get($pxb-blue, 50) !important;
+        * {
+            color: map-get($pxb-blue, 500) !important;
+        }
     }
 }
 

@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { TreeComponent } from './tree.component';
-import { TreeModule } from './tree.module';
+import { TreeListComponent } from './tree.component';
+import { TreeListModule } from './tree.module';
 
-describe('DataListComponent', () => {
-    let component: TreeComponent;
-    let fixture: ComponentFixture<TreeComponent>;
+describe('TreeListComponent', () => {
+    let component: TreeListComponent;
+    let fixture: ComponentFixture<TreeListComponent>;
 
     beforeEach(async(() => {
         void TestBed.configureTestingModule({
-            imports: [TreeModule],
+            imports: [TreeListModule],
         }).compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(TreeComponent);
+        fixture = TestBed.createComponent(TreeListComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

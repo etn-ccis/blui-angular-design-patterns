@@ -13,7 +13,7 @@
         (closed)="topLevelItem.opened = false"
         [hideToggle]="!topLevelItem.children"
     >
-        <mat-expansion-panel-header>
+        <mat-expansion-panel-header [class.selected]="topLevelItem.selected">
             <ng-container
                 [ngTemplateOutlet]="treeItemTemplate"
                 [ngTemplateOutletContext]="{ item: topLevelItem, depth: 0 }"
@@ -25,8 +25,9 @@
             *ngFor="let secondLevelItem of topLevelItem.children"
             (opened)="secondLevelItem.opened = true"
             (closed)="secondLevelItem.opened = false"
+            [hideToggle]="!secondLevelItem.children"
         >
-            <mat-expansion-panel-header>
+            <mat-expansion-panel-header [class.selected]="secondLevelItem.selected">
                 <ng-container
                     [ngTemplateOutlet]="treeItemTemplate"
                     [ngTemplateOutletContext]="{ item: secondLevelItem, depth: 1 }"
@@ -41,7 +42,7 @@
                 (closed)="thirdLevelItem.opened = false"
                 [hideToggle]="!thirdLevelItem.children"
             >
-                <mat-expansion-panel-header>
+                <mat-expansion-panel-header [class.selected]="thirdLevelItem.selected">
                     <ng-container
                         [ngTemplateOutlet]="treeItemTemplate"
                         [ngTemplateOutletContext]="{ item: thirdLevelItem, depth: 2 }"
@@ -53,13 +54,12 @@
 
         <ng-template #treeItemTemplate let-item="item" let-depth="depth">
             <mat-panel-title>
-                <mat-radio-group
+                <mat-radio-button
+                    [value]="item.title"
+                    (click)="stopProp($event)"
+                    (change)="selectItem(item)"
                     [style.marginRight.px]="depth * 32 + 16"
-                    (click)="select($event, item)"
-                    [selected]="item.selected"
-                >
-                    <mat-radio-button [value]="item.title" [disableRipple]="true"></mat-radio-button>
-                </mat-radio-group>
+                ></mat-radio-button>
                 <div class="folder-icon-wrapper">
                     <mat-icon *ngIf="!item.opened">folder</mat-icon>
                     <mat-icon *ngIf="item.opened">folder_opened</mat-icon>

@@ -2,9 +2,9 @@
     <button style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
-    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">PX Blue Design Patterns</div>
+    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Brightlayer UI Design Patterns</div>
 </mat-toolbar>
-<div data-cy="pxb-page-content" style="padding: 10vh 24px 40px; max-width: 600px; margin: 0 auto">
+<div data-cy="blui-page-content" style="padding: 10vh 24px 40px; max-width: 600px; margin: 0 auto">
     <h2 class="mat-display-3" style="margin-bottom: 24px" [@headerFadeInAnimation]>
         The <span [style.color]="Colors.blue[500]">Patterns</span>.
     </h2>
@@ -12,8 +12,8 @@
         <p>
             A <strong>design pattern</strong> is a common interaction or behavior that should be consistent across
             applications. In general, we follow most of the design patterns and behavior from the Material Design
-            system. PX Blue design patterns are patterns that extend/modify those from Material or are specific to PX
-            Blue applications.
+            system. brightlayer UI design patterns are patterns that extend/modify those from Material or are specific 
+            to Brightlayer UI applications.
         </p>
         <p>
             While everyone is encouraged to interact with the design pattern demos to become familiar with the
@@ -22,7 +22,7 @@
             applications.
         </p>
         <button *ngIf="isSmall" mat-stroked-button color="primary" style="margin-top: 24px" (click)="toggleMenu()">
-            Explore PX Blue Design Patterns
+            Explore brightlayer UI Design Patterns
         </button>
     </div>
     <hr style="margin: 24px 0" [@linksFadeInAnimation] />
@@ -32,7 +32,7 @@
                 data-cy="ng-guide"
                 mat-button
                 target="_blank"
-                href="https://pxblue.github.io/development/frameworks-web/angular"
+                href="https://brightlayer-ui.github.io/development/frameworks-web/angular"
                 class="landing-page-link"
             >
                 Angular Getting Started Guide
@@ -41,7 +41,7 @@
                 data-cy="patterns"
                 mat-button
                 target="_blank"
-                href="https://pxblue.github.io/patterns"
+                href="https://brightlayer-ui.github.io/patterns"
                 class="landing-page-link"
             >
                 Design Pattern Descriptions
@@ -50,16 +50,16 @@
                 data-cy="ng-comp-lib"
                 mat-button
                 target="_blank"
-                href="https://pxblue-components.github.io/angular/"
+                href="https://brightlayer-ui-components.github.io/angular/"
                 class="landing-page-link"
             >
-                PX Blue Angular Component Library
+                brightlayer UI Angular Component Library
             </a>
             <a
-                data-cy="pxb-github"
+                data-cy="blui-github"
                 mat-button
                 target="_blank"
-                href="https://github.com/pxblue"
+                href="https://github.com/brightlayer-ui"
                 class="landing-page-link"
             >
                 Visit Us On Github
@@ -70,7 +70,7 @@
                 data-cy="ng-patterns"
                 mat-button
                 target="_blank"
-                href="https://github.com/pxblue/angular-design-patterns"
+                href="https://github.com/brightlayer-ui/angular-design-patterns"
                 class="landing-page-link"
             >
                 Design Pattern Source on Github
@@ -79,7 +79,7 @@
                 data-cy="roadmap"
                 mat-button
                 target="_blank"
-                href="https://pxblue.github.io/roadmap"
+                href="https://brightlayer-ui.github.io/roadmap"
                 class="landing-page-link"
             >
                 Release Roadmap
@@ -88,7 +88,7 @@
                 data-cy="feedback"
                 mat-button
                 target="_blank"
-                href="https://pxblue.github.io/community/contactus"
+                href="https://brightlayer-ui.github.io/community/contactus"
                 class="landing-page-link"
             >
                 Send Feedback or Suggestions

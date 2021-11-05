@@ -8,7 +8,12 @@
     align-items: center;
     > div {
         width: 100%;
-        max-width: 766px;
+        max-width: 790px;
+        padding: 0 24px;
+    }
+    &.small > div {
+        max-width: unset;
+        padding: 0px;
     }
 }
 
@@ -31,6 +36,9 @@
         height: 56px;
         max-height: 56px;
         padding: 0 16px;
+        &.no-children:not(.selected):hover {
+            background-color: unset !important;
+        }
     }
     .mat-expansion-panel {
         border-radius: 0;

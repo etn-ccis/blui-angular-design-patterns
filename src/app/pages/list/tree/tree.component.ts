@@ -69,7 +69,7 @@ export class TreeListComponent implements OnInit {
     }
 
     selectItem(item: TreeItem): void {
-        this.deselectAll(this.treeItems);
+        //   this.deselectAll(this.treeItems);
         item.selected = true;
     }
 

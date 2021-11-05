@@ -22,7 +22,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTabsModule } from '@angular/material/tabs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DrawerLayoutModule, DrawerModule, EmptyStateModule } from '@pxblue/angular-components';
+import { DrawerLayoutModule, DrawerModule, EmptyStateModule } from '@brightlayer-ui/angular-components';
 import { DataListModule } from './pages/list/data-list/data-list.module';
 import { ActionListModule } from './pages/list/action-list/action-list.module';
 import { InPanelHeaderModule } from './pages/list/in-panel-header/in-panel-header.module';

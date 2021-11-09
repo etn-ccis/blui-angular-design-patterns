@@ -11,9 +11,16 @@
         max-width: 790px;
         padding: 0 24px;
     }
-    &.small > div {
-        max-width: unset;
-        padding: 0px;
+    &.small {
+        justify-content: space-between;
+        min-height: calc(100vh - 64px);
+        @media screen and (max-width: 599px) {
+            min-height: calc(100vh - 56px);
+        }
+        > div {
+            max-width: unset;
+            padding: 0px;
+        }
     }
 }
 

@@ -10,19 +10,21 @@ import { MatRadioModule } from '@angular/material/radio';
 import { TreeItemComponent } from './tree-item.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
     imports: [
         BrowserAnimationsModule,
         CommonModule,
-        InfoListItemModule,
-        MatExpansionModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatButtonModule,
-        SpacerModule,
-        MatRadioModule,
         FormsModule,
+        InfoListItemModule,
+        MatButtonModule,
+        MatDividerModule,
+        MatExpansionModule,
+        MatIconModule,
+        MatToolbarModule,
+        MatRadioModule,
+        SpacerModule,
     ],
     declarations: [TreeListComponent, TreeItemComponent],
 })

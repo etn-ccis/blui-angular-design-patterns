@@ -15,6 +15,7 @@ export type TreeItem = {
     styleUrls: ['./tree.component.scss'],
 })
 export class TreeListComponent implements OnInit {
+    selectedItem: TreeItem;
     treeItems: TreeItem[] = [
         {
             title: 'The Best Design Team',
@@ -69,12 +70,16 @@ export class TreeListComponent implements OnInit {
     }
 
     selectItem(item: TreeItem): void {
+        this.selectedItem = undefined;
         const selected = item.selected;
         this.deselectAll(this.treeItems);
         item.selected = !selected;
+        if (item.selected) {
+            this.selectedItem = item;
+        }
     }
 
-  deselectAll(items: TreeItem[]): void {
+    deselectAll(items: TreeItem[]): void {
         if (!items || items.length === 0) {
             return;
         }

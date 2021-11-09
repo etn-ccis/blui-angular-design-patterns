@@ -2,8 +2,14 @@
     <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
-    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Tree Structure</div>
+    <div>
+        <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Tree Structure</div>
+        <div class="mat-body-1" [style.marginLeft.px]="isSmall ? 24 : 0" style="margin-top: -8px">Folder Structure</div>
+    </div>
     <pxb-spacer></pxb-spacer>
+    <button *ngIf="isSmall" style="margin-right: -12px" mat-icon-button>
+        <mat-icon *ngIf="isSmall">create_new_folder</mat-icon>
+    </button>
 </mat-toolbar>
 
 <div class="tree-example-container" [class.small]="isSmall">
@@ -23,6 +29,7 @@
             (opened)="topLevelItem.opened = true"
             (closed)="topLevelItem.opened = false"
             [hideToggle]="!topLevelItem.children"
+            [class.mat-elevation-z0]="isSmall"
         >
             <mat-expansion-panel-header
                 [class.selected]="topLevelItem.selected"
@@ -90,5 +97,11 @@
                 </mat-panel-title>
             </ng-template>
         </mat-expansion-panel>
+    </div>
+    <div>
+        <mat-divider *ngIf="isSmall"></mat-divider>
+        <div style="padding: 16px" *ngIf="isSmall">
+            <button style="width: 100%" mat-flat-button color="primary" [disabled]="!selectedItem">Move File</button>
+        </div>
     </div>
 </div>

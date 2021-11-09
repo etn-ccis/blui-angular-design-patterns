@@ -69,17 +69,18 @@ export class TreeListComponent implements OnInit {
     }
 
     selectItem(item: TreeItem): void {
-        item.selected = !item.selected;
-        this.toggleAllChildren(item.children, item.selected);
+        const selected = item.selected;
+        this.deselectAll(this.treeItems);
+        item.selected = !selected;
     }
 
-    toggleAllChildren(items: TreeItem[], selected: boolean): void {
+  deselectAll(items: TreeItem[]): void {
         if (!items || items.length === 0) {
             return;
         }
         for (const item of items) {
-            item.selected = selected;
-            this.toggleAllChildren(item.children, selected);
+            item.selected = false;
+            this.deselectAll(item.children);
         }
     }
 

@@ -23,9 +23,7 @@
             Move File
         </button>
     </div>
-    <div class="tree-structure-body"
-         [class.mat-elevation-z4]="!isSmall"
-         [class.mat-elevation-z0]="isSmall">
+    <div class="tree-structure-body" [class.mat-elevation-z4]="!isSmall" [class.mat-elevation-z0]="isSmall">
         <mat-expansion-panel
             *ngFor="let topLevelItem of treeItems; let last = last"
             (opened)="topLevelItem.opened = true"
@@ -61,7 +59,6 @@
                         [ngTemplateOutletContext]="{ item: secondLevelItem, depth: 1 }"
                     >
                     </ng-container>
-
                 </mat-expansion-panel-header>
 
                 <mat-expansion-panel

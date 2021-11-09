@@ -74,15 +74,14 @@
 
             <ng-template #treeItemTemplate let-item="item" let-depth="depth">
                 <mat-panel-title>
-                    <mat-radio-group>
                         <mat-radio-button
-                            [id]="'radio-' + item.title"
+                            [class.mat-radio-checked]="item.selected"
+                            [checked]="item.selected"
+                            [name]="item.title"
                             [value]="item.title"
-                            (click)="stopProp($event)"
-                            (change)="selectItem(item)"
+                            (click)="selectItem(item); stopProp($event)"
                             [style.marginRight.px]="depth * 32 + 16"
                         ></mat-radio-button>
-                    </mat-radio-group>
                     <div class="folder-icon-wrapper">
                         <mat-icon *ngIf="!showOpenFolder(item)">folder</mat-icon>
                         <mat-icon *ngIf="showOpenFolder(item)">folder_opened</mat-icon>

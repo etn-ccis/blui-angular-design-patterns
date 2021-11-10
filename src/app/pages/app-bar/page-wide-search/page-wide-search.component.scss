@@ -1,4 +1,4 @@
-@import '~@pxblue/colors/palette';
+@import '~@brightlayer-ui/colors/palette';
 
 .main-header {
     display: inline-flex;
@@ -13,8 +13,8 @@
 }
 
 .search-header {
-    background: map-get($pxb-white, 50);
-    color: map-get($pxb-gray, 500);
+    background: map-get($blui-white, 50);
+    color: map-get($blui-gray, 500);
 
     .search-control {
         flex: 1;
@@ -38,7 +38,7 @@
         top: 2px;
     }
     .desktop-search-icon {
-        color: map-get($pxb-gray, 500);
+        color: map-get($blui-gray, 500);
         margin-right: 8px;
         margin-bottom: -2px;
         $size: 18px;

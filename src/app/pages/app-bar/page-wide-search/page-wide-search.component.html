@@ -1,5 +1,5 @@
 <mat-toolbar
-    data-cy="pxb-toolbar"
+    data-cy="blui-toolbar"
     color="primary"
     class="app-bar main-header mat-elevation-z4"
     [class.hidden]="toggleSearch"
@@ -9,9 +9,9 @@
             <mat-icon>menu</mat-icon>
         </button>
         <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Page Search</div>
-        <pxb-spacer></pxb-spacer>
+        <blui-spacer></blui-spacer>
 
-        <div pxb-actions class="appbar-actions">
+        <div blui-actions class="appbar-actions">
             <button mat-icon-button>
                 <mat-icon style="margin: 0 4px">help</mat-icon>
             </button>
@@ -45,21 +45,21 @@
 <div class="content-body-container" [class.small]="isSmall">
     <div class="content-body" [class.small]="isSmall">
         <div *ngIf="!isSmall" class="desktop-search">
-            <pxb-spacer></pxb-spacer>
+            <blui-spacer></blui-spacer>
             <mat-form-field appearance="standard" style="width: 160px">
                 <mat-icon matPrefix class="desktop-search-icon">search</mat-icon>
                 <input matInput type="text" placeholder="Search Assets..." [(ngModel)]="searchText" />
             </mat-form-field>
         </div>
         <mat-list [style.backgroundColor]="Colors.white[50]" *ngIf="(list | filter: searchText).length > 0">
-            <pxb-info-list-item
+            <blui-info-list-item
                 *ngFor="let item of list | filter: searchText"
                 data-cy="list-view"
                 [hidePadding]="true"
                 divider="full"
             >
-                <span pxb-title [innerHTML]="item | boldSearch: searchText"></span>
-            </pxb-info-list-item>
+                <span blui-title [innerHTML]="item | boldSearch: searchText"></span>
+            </blui-info-list-item>
         </mat-list>
         <div *ngIf="(list | filter: searchText).length === 0" class="no-results mat-body-2">No Results.</div>
     </div>

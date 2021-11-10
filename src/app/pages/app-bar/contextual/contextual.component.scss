@@ -1,4 +1,4 @@
-@import '~@pxblue/colors/palette.scss';
+@import '~@brightlayer-ui/colors/palette.scss';
 
 .toolbar-container {
     position: sticky;
@@ -11,15 +11,15 @@
     position: absolute;
     top: 0;
     opacity: 0;
-    background: map-get($pxb-black, 500);
-    color: map-get($pxb-white, 50);
+    background: map-get($blui-black, 500);
+    color: map-get($blui-white, 50);
     transition: opacity 200ms ease-in-out;
     &.active {
         opacity: 1;
         z-index: 1;
     }
     .mat-icon {
-        color: map-get($pxb-white, 50);
+        color: map-get($blui-white, 50);
     }
 }
 
@@ -54,7 +54,7 @@
         width: 100%;
 
         .selected {
-            background-color: rgba(map-get($pxb-blue, 500), 0.05);
+            background-color: rgba(map-get($blui-blue, 500), 0.05);
             .checkbox-cell {
                 background-color: unset;
             }
@@ -62,7 +62,7 @@
         th {
             font-weight: 600;
             font-size: 14px;
-            color: map-get($pxb-black, 500);
+            color: map-get($blui-black, 500);
         }
         tr {
             td {
@@ -87,7 +87,7 @@
     text-align: center;
     padding: 16px;
     .reset-table {
-        color: map-get($pxb-blue, 500);
+        color: map-get($blui-blue, 500);
         text-decoration: underline;
         cursor: pointer;
     }
@@ -106,7 +106,7 @@
 .mobile-only-message {
     margin-top: 24px;
     font-weight: 400;
-    color: map-get($pxb-gray, 500);
+    color: map-get($blui-gray, 500);
     &.small {
         padding: 0 16px;
     }

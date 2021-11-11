@@ -10,7 +10,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { InfoListItemModule } from '@pxblue/angular-components';
+import { InfoListItemModule } from '@brightlayer-ui/angular-components';
 
 import { InAListComponent } from './in-a-list.component';
 

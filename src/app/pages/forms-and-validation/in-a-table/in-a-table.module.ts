@@ -9,7 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
-import { InfoListItemModule } from '@pxblue/angular-components';
+import { InfoListItemModule } from '@brightlayer-ui/angular-components';
 
 import { InATableComponent } from './in-a-table.component';
 @NgModule({

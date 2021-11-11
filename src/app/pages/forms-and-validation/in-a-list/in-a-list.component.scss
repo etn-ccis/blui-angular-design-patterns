@@ -1,4 +1,4 @@
-@import '~@pxblue/colors/palette.scss';
+@import '~@brightlayer-ui/colors/palette.scss';
 
 section.list-validation {
     padding-top: 24px;
@@ -14,12 +14,12 @@ section.list-validation {
 }
 .ip-address {
     border: 0;
-    background-color: map-get($pxb-white, 200);
+    background-color: map-get($blui-white, 200);
     height: 40px;
     outline: 0;
     font-size: 16px;
     padding: 8px 16px;
-    border-bottom: 1px solid map-get($pxb-gray, 100);
+    border-bottom: 1px solid map-get($blui-gray, 100);
 }
 
 .list-validation {
@@ -34,7 +34,7 @@ section.list-validation {
     }
 
     ::ng-deep
-        .pxb-blue
+        .blui-blue
         .mat-form-field.mat-primary:not(.mat-form-field-disabled).mat-form-field-appearance-fill
         .mat-form-field-flex {
         padding-top: 0;

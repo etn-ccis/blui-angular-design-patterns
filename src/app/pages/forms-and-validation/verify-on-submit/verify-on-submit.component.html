@@ -1,11 +1,11 @@
-<mat-toolbar color="primary" class="app-bar mat-elevation-z2" data-cy="pxb-toolbar">
+<mat-toolbar color="primary" class="app-bar mat-elevation-z2" data-cy="blui-toolbar">
     <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Verify On Submit</div>
 </mat-toolbar>
 <div class="drawer-layout-nav-content">
-    <pxb-slide-panel [activePane]="isLeftPaneVisible ? 'left' : 'right'">
+    <blui-slide-panel [activePane]="isLeftPaneVisible ? 'left' : 'right'">
         <div leftPane>
             <section class="find-device">
                 <h2>Find Device</h2>
@@ -56,21 +56,21 @@
         </div>
         <div rightPane>
             <section class="add-new-device">
-                <pxb-empty-state title="Success" description="Device “123” has been added to your repository.">
-                    <mat-icon pxb-empty-icon>check_circle</mat-icon>
+                <blui-empty-state title="Success" description="Device “123” has been added to your repository.">
+                    <mat-icon blui-empty-icon>check_circle</mat-icon>
                     <button
                         [attr.tabindex]="isLeftPaneVisible ? -1 : null"
                         mat-raised-button
                         color="primary"
                         data-cy="add-device"
-                        pxb-actions
+                        blui-actions
                         (click)="addAnotherDevice()"
                     >
                         <mat-icon>add</mat-icon>
                         Add another device
                     </button>
-                </pxb-empty-state>
+                </blui-empty-state>
             </section>
         </div>
-    </pxb-slide-panel>
+    </blui-slide-panel>
 </div>

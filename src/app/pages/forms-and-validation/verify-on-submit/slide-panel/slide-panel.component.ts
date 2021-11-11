@@ -4,7 +4,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 type PaneDirection = 'left' | 'right';
 
 @Component({
-    selector: 'pxb-slide-panel',
+    selector: 'blui-slide-panel',
     styleUrls: ['./slide-panel.component.scss'],
     templateUrl: './slide-panel.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,

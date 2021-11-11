@@ -19,7 +19,7 @@
             New Folder
         </button>
         <pxb-spacer></pxb-spacer>
-        <button mat-flat-button color="primary">
+        <button mat-flat-button color="primary" [disabled]="!selectedItem">
             Move File
         </button>
     </div>

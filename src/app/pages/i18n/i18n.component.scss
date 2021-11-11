@@ -1,8 +1,8 @@
-@import '~@pxblue/colors/palette';
+@import '~@brightlayer-ui/colors/palette';
 
 [dir='rtl'] {
     .fruit-list {
-        ::ng-deep .pxb-info-list-item-icon-wrapper {
+        ::ng-deep .blui-info-list-item-icon-wrapper {
             margin-right: -8px;
             margin-left: 16px;
         }
@@ -27,7 +27,7 @@
         overflow-x: hidden;
     }
     .toolbar-header {
-        background-color: map-get($pxb-blue, 500);
+        background-color: map-get($blui-blue, 500);
         color: white;
         min-height: 150px;
     }
@@ -67,12 +67,12 @@
 }
 
 .content {
-    background-color: map-get($pxb-white, 50);
+    background-color: map-get($blui-white, 50);
 }
 
 .icon,
 .nav-wrapper mat-icon {
-    color: map-get($pxb-gray, 700);
+    color: map-get($blui-gray, 700);
 }
 
 [matSubheader] {
@@ -81,7 +81,7 @@
 
 .fruit-list {
     margin-top: 16px;
-    ::ng-deep .pxb-info-list-item-icon-wrapper {
+    ::ng-deep .blui-info-list-item-icon-wrapper {
         margin-left: -8px;
     }
     ::ng-deep .mat-checkbox-inner-container {
@@ -106,10 +106,10 @@
 
 .select-language {
     font-size: 1rem;
-    background-color: map-get($pxb-white, 50);
+    background-color: map-get($blui-white, 50);
     mat-form-field {
         margin-left: 4px;
-        color: map-get($pxb-black, 500);
+        color: map-get($blui-black, 500);
     }
     padding-top: 32px;
 }

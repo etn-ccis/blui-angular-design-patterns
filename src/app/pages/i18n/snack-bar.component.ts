@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { FruitService } from './services/fruit.service';
 import { BidirectionalService } from './services/bidirectional.service';
-import * as Colors from '@pxblue/colors';
+import * as Colors from '@brightlayer-ui/colors';
 @Component({
     selector: 'app-i18n-snack-bar',
     template: `
         <div fxLayout="row" [style.color]="colors.white[50]" class="snackbar-content">
             <p style="margin: 0; line-height: 40px">{{ selected }} {{ 'ITEMS' | translate }}</p>
-            <pxb-spacer></pxb-spacer>
+            <blui-spacer></blui-spacer>
             <div class="icon">
                 <button mat-icon-button matTooltip="Deselect all" (click)="clearSelection()">
                     <mat-icon>cancel</mat-icon>

@@ -1,9 +1,9 @@
-<mat-toolbar data-cy="pxb-toolbar" color="primary" class="app-bar mat-elevation-z2">
+<mat-toolbar data-cy="blui-toolbar" color="primary" class="app-bar mat-elevation-z2">
     <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Status Lists</div>
-    <pxb-spacer></pxb-spacer>
+    <blui-spacer></blui-spacer>
     <div class="toolbar-actions">
         <button mat-icon-button>
             <mat-icon style="margin: 0 8px">help</mat-icon>
@@ -26,7 +26,7 @@
                     </mat-panel-title>
                 </mat-expansion-panel-header>
                 <mat-list class="list-section">
-                    <pxb-info-list-item
+                    <blui-info-list-item
                         divider="partial"
                         [statusColor]="colors.red[500]"
                         [chevron]="true"
@@ -34,82 +34,82 @@
                         iconAlign="center"
                         [wrapTitle]="false"
                     >
-                        <mat-icon pxb-icon class="alarm-icon">notifications</mat-icon>
-                        <div class="time-section" pxb-left-content>
+                        <mat-icon blui-icon class="alarm-icon">notifications</mat-icon>
+                        <div class="time-section" blui-left-content>
                             <div><span class="time-numeric">8:21</span>AM</div>
                             <div>11/23/21</div>
                         </div>
-                        <div class="title-section" pxb-title>
+                        <div class="title-section" blui-title>
                             <div>
                                 <span class="title-label">{{ isSmall ? 'High Humidity' : 'High Humidity:' }}</span
                                 ><span class="title-desc">PX2341 sensor level 9</span>
                             </div>
                         </div>
-                        <div class="subtitle-section" pxb-subtitle>
+                        <div class="subtitle-section" blui-subtitle>
                             <div class="subtitle show">
                                 <span class="caption-1">Cherrington Station</span
                                 ><span class="caption-2"> < Moon Township</span>
                             </div>
                         </div>
-                        <span pxb-right-content *ngIf="!isSmall">
-                            <pxb-list-item-tag
+                        <span blui-right-content *ngIf="!isSmall">
+                            <blui-list-item-tag
                                 [backgroundColor]="colors.blue[500]"
                                 label="Assigned"
                                 style="margin-right: 16px"
-                            ></pxb-list-item-tag>
-                            <pxb-list-item-tag
+                            ></blui-list-item-tag>
+                            <blui-list-item-tag
                                 style="margin-right: 8px"
                                 [backgroundColor]="colors.red[500]"
                                 label="Active"
-                            ></pxb-list-item-tag>
+                            ></blui-list-item-tag>
                         </span>
-                        <div pxb-info *ngIf="isSmall">
-                            <pxb-list-item-tag
+                        <div blui-info *ngIf="isSmall">
+                            <blui-list-item-tag
                                 [backgroundColor]="colors.blue[500]"
                                 label="Assigned"
                                 style="margin-right: 8px; margin-top: 4px;"
-                            ></pxb-list-item-tag>
-                            <pxb-list-item-tag
+                            ></blui-list-item-tag>
+                            <blui-list-item-tag
                                 style="margin-right: 8px"
                                 [backgroundColor]="colors.red[500]"
                                 label="Active"
-                            ></pxb-list-item-tag>
+                            ></blui-list-item-tag>
                         </div>
-                    </pxb-info-list-item>
+                    </blui-info-list-item>
 
-                    <pxb-info-list-item
+                    <blui-info-list-item
                         divider="partial"
                         [chevron]="true"
                         iconAlign="center"
                         [statusColor]="colors.orange[500]"
                         [wrapTitle]="false"
                     >
-                        <mat-icon pxb-icon svgIcon="px-icons:maintenance" class="maintenance-icon"></mat-icon>
-                        <div class="time-section" pxb-left-content>
+                        <mat-icon blui-icon svgIcon="px-icons:maintenance" class="maintenance-icon"></mat-icon>
+                        <div class="time-section" blui-left-content>
                             <div><span class="time-numeric">7:48</span>AM</div>
                             <div>11/23/21</div>
                         </div>
-                        <div class="title-section" pxb-title>
+                        <div class="title-section" blui-title>
                             <div>
                                 <span class="title-label">{{ isSmall ? 'Battery Service' : 'Battery Service:' }}</span
                                 ><span class="title-desc">EATON GH142</span>
                             </div>
                         </div>
-                        <div class="subtitle-section" pxb-subtitle>
+                        <div class="subtitle-section" blui-subtitle>
                             <div class="subtitle show">
                                 <span class="caption-1">Cherrington Station</span
                                 ><span class="caption-2"> < Moon Township</span>
                             </div>
                         </div>
-                    </pxb-info-list-item>
+                    </blui-info-list-item>
 
-                    <pxb-info-list-item [chevron]="true" [avatar]="true" iconAlign="center">
-                        <mat-icon pxb-icon>notifications</mat-icon>
-                        <div class="time-section" pxb-left-content>
+                    <blui-info-list-item [chevron]="true" [avatar]="true" iconAlign="center">
+                        <mat-icon blui-icon>notifications</mat-icon>
+                        <div class="time-section" blui-left-content>
                             <div><span class="time-numeric">2:13</span>AM</div>
                             <div>11/23/21</div>
                         </div>
-                        <div class="title-section" pxb-title>
+                        <div class="title-section" blui-title>
                             <div>
                                 <span class="title-label">{{
                                     isSmall ? 'Bypass Over Frequency' : 'Bypass Over Frequency:'
@@ -117,13 +117,13 @@
                                 ><span class="title-desc">A2 Max Reval</span>
                             </div>
                         </div>
-                        <div class="subtitle-section" pxb-subtitle>
+                        <div class="subtitle-section" blui-subtitle>
                             <div class="subtitle show">
                                 <span class="caption-1">Tuscarawas R.</span>
                                 <span class="caption-2"> < Beaver</span>
                             </div>
                         </div>
-                    </pxb-info-list-item>
+                    </blui-info-list-item>
                 </mat-list>
             </mat-expansion-panel>
         </mat-accordion>
@@ -138,29 +138,29 @@
                     </mat-panel-title>
                 </mat-expansion-panel-header>
                 <mat-list class="list-section">
-                    <pxb-info-list-item divider="full" [statusColor]="colors.red[500]" [chevron]="true">
-                        <div class="title-section" pxb-title>
+                    <blui-info-list-item divider="full" [statusColor]="colors.red[500]" [chevron]="true">
+                        <div class="title-section" blui-title>
                             <div>
                                 <span class="title-label">{{ isSmall ? 'High Humidity' : 'High Humidity:' }}</span
                                 ><span class="title-desc">PX2341 sensor level 9</span>
                             </div>
                         </div>
-                        <div class="subtitle-section" pxb-subtitle>
+                        <div class="subtitle-section" blui-subtitle>
                             <div class="subtitle">
                                 <span class="caption-1">Cherrington Station</span
                                 ><span class="caption-2"> < Moon Township</span>
                             </div>
                         </div>
-                    </pxb-info-list-item>
+                    </blui-info-list-item>
 
-                    <pxb-info-list-item [chevron]="true">
-                        <div class="title-section" pxb-title>
+                    <blui-info-list-item [chevron]="true">
+                        <div class="title-section" blui-title>
                             <div>
                                 <span class="title-label">{{ isSmall ? 'Battery Service' : 'Battery Service:' }}</span
                                 ><span class="title-desc">EATON GH142</span>
                             </div>
                         </div>
-                    </pxb-info-list-item>
+                    </blui-info-list-item>
                 </mat-list>
             </mat-expansion-panel>
         </mat-accordion>
@@ -175,36 +175,36 @@
                     </mat-panel-title>
                 </mat-expansion-panel-header>
                 <mat-list class="list-section">
-                    <pxb-info-list-item
+                    <blui-info-list-item
                         divider="partial"
                         [statusColor]="colors.red[500]"
                         [chevron]="true"
                         [avatar]="true"
                         iconAlign="center"
                     >
-                        <mat-icon pxb-icon class="alarm-icon">notifications</mat-icon>
-                        <div class="title-section" pxb-title>
+                        <mat-icon blui-icon class="alarm-icon">notifications</mat-icon>
+                        <div class="title-section" blui-title>
                             <div>
                                 <span class="title-label">{{ isSmall ? 'High Humidity' : 'High Humidity:' }}</span
                                 ><span class="title-desc">PX2341 sensor level 9</span>
                             </div>
                         </div>
-                        <div class="subtitle-section" pxb-subtitle>
+                        <div class="subtitle-section" blui-subtitle>
                             <div class="subtitle">
                                 <span class="caption-1">Cherrington Station</span
                                 ><span class="caption-2"> < Moon Township</span>
                             </div>
                         </div>
-                    </pxb-info-list-item>
-                    <pxb-info-list-item [chevron]="true" iconAlign="center">
-                        <mat-icon pxb-icon svgIcon="px-icons:maintenance"></mat-icon>
-                        <div class="title-section" pxb-title>
+                    </blui-info-list-item>
+                    <blui-info-list-item [chevron]="true" iconAlign="center">
+                        <mat-icon blui-icon svgIcon="px-icons:maintenance"></mat-icon>
+                        <div class="title-section" blui-title>
                             <div>
                                 <span class="title-label">{{ isSmall ? 'Battery Service' : 'Battery Service:' }}</span
                                 ><span class="title-desc">EATON GH142</span>
                             </div>
                         </div>
-                    </pxb-info-list-item>
+                    </blui-info-list-item>
                 </mat-list>
             </mat-expansion-panel>
         </mat-accordion>

@@ -1,8 +1,8 @@
-@import '~@pxblue/colors/palette.scss';
+@import '~@brightlayer-ui/colors/palette.scss';
 
 // the floating component when dragging
 .cdk-drag-preview {
-    background-color: map-get($pxb-white, 50);
+    background-color: map-get($blui-white, 50);
     box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
         0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
@@ -12,7 +12,7 @@
 }
 
 // to add an animation to the other non-dragged elements
-.cdk-drop-list.cdk-drop-list-dragging pxb-info-list-item:not(.cdk-drag-placeholder) {
+.cdk-drop-list.cdk-drop-list-dragging blui-info-list-item:not(.cdk-drag-placeholder) {
     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
 

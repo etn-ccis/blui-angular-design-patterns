@@ -10,7 +10,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCardModule } from '@angular/material/card';
-import { SpacerModule, InfoListItemModule, ChannelValueModule } from '@pxblue/angular-components';
+import { SpacerModule, InfoListItemModule, ChannelValueModule } from '@brightlayer-ui/angular-components';
 
 @NgModule({
     imports: [

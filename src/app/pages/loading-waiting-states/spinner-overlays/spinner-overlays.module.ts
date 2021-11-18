@@ -9,7 +9,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
-import { SpacerModule } from '@pxblue/angular-components';
+import { SpacerModule } from '@brightlayer-ui/angular-components';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({

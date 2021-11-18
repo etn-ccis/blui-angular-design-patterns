@@ -6,7 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { SpacerModule } from '@pxblue/angular-components';
+import { SpacerModule } from '@brightlayer-ui/angular-components';
 
 @NgModule({
     declarations: [ContextualSpinnersComponent],

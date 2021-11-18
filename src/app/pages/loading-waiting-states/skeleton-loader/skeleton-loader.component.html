@@ -1,9 +1,9 @@
-<mat-toolbar data-cy="pxb-toolbar" flexLayout="row" class="app-bar mat-elevation-z4" color="primary">
+<mat-toolbar data-cy="blui-toolbar" flexLayout="row" class="app-bar mat-elevation-z4" color="primary">
     <button data-cy="toolbar-menu" *ngIf="isSmall" mat-icon-button (click)="toggleMenu()" style="margin-left: -8px">
         <mat-icon>menu</mat-icon>
     </button>
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Skeletons</div>
-    <pxb-spacer></pxb-spacer>
+    <blui-spacer></blui-spacer>
     <!-- <div class="toggle-theme-container" *ngIf="!isSmall">
         <span class="mat-subheading-2" style="margin-right: 8px; font-size: 14px;">Use Dark Theme</span>
         <mat-slide-toggle [checked]="checked"></mat-slide-toggle>
@@ -16,16 +16,16 @@
             <app-placeholder-score-card></app-placeholder-score-card>
         </div>
         <div class="loaded-section" [hidden]="showPlaceHolder">
-            <pxb-score-card
+            <blui-score-card
                 [headerTitle]="'Substation 42'"
                 [headerSubtitle]="'Normal'"
                 [headerInfo]="'42 Devices'"
                 [badgeOffset]="'0'"
             >
-                <div pxb-action-items>
+                <div blui-action-items>
                     <mat-icon> favorite </mat-icon>
                 </div>
-                <mat-list pxb-body class="sb-score-card-content">
+                <mat-list blui-body class="sb-score-card-content">
                     <mat-list-item>
                         <p mat-line [style.color]="colors.red[500]" style="font-weight: 600">1 Alarm</p>
                         <mat-icon [style.color]="colors.red[500]" mat-list-icon>notifications</mat-icon>
@@ -39,19 +39,19 @@
                         <mat-icon mat-list-icon>cloud_done</mat-icon>
                     </mat-list-item>
                 </mat-list>
-                <pxb-hero-banner pxb-badge>
-                    <pxb-hero [label]="'Humidity'" [value]="'54'" [units]="'%'" [iconSize]="36">
-                        <mat-icon pxb-primary [style.color]="colors.blue[300]" svgIcon="px-icons:moisture"> </mat-icon>
-                        <mat-icon pxb-secondary [style.color]="colors.red[500]"> trending_up </mat-icon>
-                    </pxb-hero>
-                    <pxb-hero [label]="'Temperature'" [value]="'98'" [units]="'°F'" [iconSize]="36">
-                        <mat-icon pxb-primary svgIcon="px-icons:temp" [style.color]="colors.red[500]"></mat-icon>
-                    </pxb-hero>
-                </pxb-hero-banner>
-                <pxb-info-list-item pxb-action-row chevron="true" hidePadding="true" dense="true">
-                    <div pxb-title>View Location</div>
-                </pxb-info-list-item>
-            </pxb-score-card>
+                <blui-hero-banner blui-badge>
+                    <blui-hero [label]="'Humidity'" [value]="'54'" [units]="'%'" [iconSize]="36">
+                        <mat-icon blui-primary [style.color]="colors.blue[300]" svgIcon="px-icons:moisture"> </mat-icon>
+                        <mat-icon blui-secondary [style.color]="colors.red[500]"> trending_up </mat-icon>
+                    </blui-hero>
+                    <blui-hero [label]="'Temperature'" [value]="'98'" [units]="'°F'" [iconSize]="36">
+                        <mat-icon blui-primary svgIcon="px-icons:temp" [style.color]="colors.red[500]"></mat-icon>
+                    </blui-hero>
+                </blui-hero-banner>
+                <blui-info-list-item blui-action-row chevron="true" hidePadding="true" dense="true">
+                    <div blui-title>View Location</div>
+                </blui-info-list-item>
+            </blui-score-card>
         </div>
     </div>
 
@@ -63,114 +63,114 @@
         <div class="loaded-section" [hidden]="showPlaceHolder">
             <mat-card class="list-item-example-one">
                 <mat-nav-list [style.paddingTop.px]="0">
-                    <pxb-info-list-item divider="full" chevron="true" iconAlign="center">
-                        <mat-icon pxb-icon class="invert-rtl">feedback</mat-icon>
-                        <div pxb-title>Basement Sensor</div>
-                        <div pxb-subtitle>Dwyer RJ382</div>
-                    </pxb-info-list-item>
-                    <pxb-info-list-item
+                    <blui-info-list-item divider="full" chevron="true" iconAlign="center">
+                        <mat-icon blui-icon class="invert-rtl">feedback</mat-icon>
+                        <div blui-title>Basement Sensor</div>
+                        <div blui-subtitle>Dwyer RJ382</div>
+                    </blui-info-list-item>
+                    <blui-info-list-item
                         divider="full"
                         chevron="true"
                         [statusColor]="colors.red[500]"
                         avatar="true"
                         iconAlign="center"
                     >
-                        <mat-icon pxb-icon [style.color]="colors.white[50]" [style.backgroundColor]="colors.red[500]">
+                        <mat-icon blui-icon [style.color]="colors.white[50]" [style.backgroundColor]="colors.red[500]">
                             alarms</mat-icon
                         >
-                        <div pxb-title>Cabinet 5 Wire</div>
-                        <div pxb-subtitle>Exampo Device Model</div>
-                    </pxb-info-list-item>
-                    <pxb-info-list-item divider="full" chevron="true" iconAlign="center">
-                        <mat-icon pxb-icon>battery_full</mat-icon>
-                        <div pxb-title>Battery</div>
-                        <div pxb-subtitle>Battery Charger</div>
-                    </pxb-info-list-item>
-                    <pxb-info-list-item chevron="true" iconAlign="center">
-                        <mat-icon pxb-icon>wifi</mat-icon>
-                        <div pxb-title>WIRC Gateway</div>
-                        <div pxb-subtitle>WIRC Gateway</div>
-                    </pxb-info-list-item>
+                        <div blui-title>Cabinet 5 Wire</div>
+                        <div blui-subtitle>Exampo Device Model</div>
+                    </blui-info-list-item>
+                    <blui-info-list-item divider="full" chevron="true" iconAlign="center">
+                        <mat-icon blui-icon>battery_full</mat-icon>
+                        <div blui-title>Battery</div>
+                        <div blui-subtitle>Battery Charger</div>
+                    </blui-info-list-item>
+                    <blui-info-list-item chevron="true" iconAlign="center">
+                        <mat-icon blui-icon>wifi</mat-icon>
+                        <div blui-title>WIRC Gateway</div>
+                        <div blui-subtitle>WIRC Gateway</div>
+                    </blui-info-list-item>
                 </mat-nav-list>
             </mat-card>
 
             <mat-card class="list-item-example-two">
                 <mat-nav-list [style.paddingTop.px]="0">
-                    <pxb-info-list-item
+                    <blui-info-list-item
                         divider="full"
                         [statusColor]="colors.red[500]"
                         chevron="true"
                         [avatar]="true"
                         iconAlign="center"
                     >
-                        <mat-icon pxb-icon [style.backgroundColor]="colors.red[500]" style="color: white"
+                        <mat-icon blui-icon [style.backgroundColor]="colors.red[500]" style="color: white"
                             >check_circle
                         </mat-icon>
-                        <div class="time-section" pxb-left-content>
+                        <div class="time-section" blui-left-content>
                             <div>8:05<span class="ampm">AM</span></div>
                             <div>09/23/19</div>
                         </div>
-                        <div class="title-section" pxb-title>
+                        <div class="title-section" blui-title>
                             <div>
                                 <span class="title-label">High Humidity:</span
                                 ><span class="title-desc">PX2341 sensor level 9</span>
                             </div>
                         </div>
-                        <div class="title-section" pxb-subtitle>
+                        <div class="title-section" blui-subtitle>
                             <div class="subtitle">Cherrington Station < Moon Township</div>
                         </div>
-                        <span pxb-right-content>
-                            <pxb-list-item-tag
+                        <span blui-right-content>
+                            <blui-list-item-tag
                                 [backgroundColor]="colors.blue[500]"
                                 label="Assigned"
                                 style="margin-right: 16px"
-                            ></pxb-list-item-tag>
-                            <pxb-list-item-tag
+                            ></blui-list-item-tag>
+                            <blui-list-item-tag
                                 style="margin-right: 8px"
                                 [backgroundColor]="colors.red[500]"
                                 label="Active"
-                            ></pxb-list-item-tag>
+                            ></blui-list-item-tag>
                         </span>
-                    </pxb-info-list-item>
+                    </blui-info-list-item>
 
-                    <pxb-info-list-item divider="full" chevron="true" iconAlign="center">
-                        <mat-icon pxb-icon svgIcon="px-icons:maintenance"></mat-icon>
-                        <div class="time-section" pxb-left-content>
+                    <blui-info-list-item divider="full" chevron="true" iconAlign="center">
+                        <mat-icon blui-icon svgIcon="px-icons:maintenance"></mat-icon> <!-- Should px-icons change to bl-icons, blui-icons, or stay the same? -->
+                        <div class="time-section" blui-left-content>
                             <div>6:30<span class="ampm">AM</span></div>
                             <div>11/23/22</div>
                         </div>
-                        <div class="title-section" pxb-title>
+                        <div class="title-section" blui-title>
                             <div>
                                 <span class="title-label">Battery Service: </span
                                 ><span class="title-desc">EATON GH142</span>
                             </div>
                         </div>
-                        <div class="title-section" pxb-subtitle>
+                        <div class="title-section" blui-subtitle>
                             <div class="subtitle">Cherrington Station < Moon Township</div>
                         </div>
-                    </pxb-info-list-item>
+                    </blui-info-list-item>
 
-                    <pxb-info-list-item
+                    <blui-info-list-item
                         [statusColor]="colors.red[500]"
                         chevron="true"
                         [avatar]="true"
                         iconAlign="center"
                     >
-                        <mat-icon pxb-icon>notifications</mat-icon>
-                        <div class="time-section" pxb-left-content>
+                        <mat-icon blui-icon>notifications</mat-icon>
+                        <div class="time-section" blui-left-content>
                             <div>2:41<span class="ampm">AM</span></div>
                             <div>11/23/22</div>
                         </div>
-                        <div class="title-section" pxb-title>
+                        <div class="title-section" blui-title>
                             <div>
                                 <span class="title-label">Bypass Over Frequency:</span
                                 ><span class="title-desc">A2 Max Reval</span>
                             </div>
                         </div>
-                        <div class="title-section" pxb-subtitle>
+                        <div class="title-section" blui-subtitle>
                             <div class="subtitle">Cherrington Station < Moon Township</div>
                         </div>
-                    </pxb-info-list-item>
+                    </blui-info-list-item>
                 </mat-nav-list>
             </mat-card>
         </div>
@@ -183,18 +183,18 @@
         </div>
         <div class="loaded-section" [hidden]="showPlaceHolder">
             <mat-card>
-                <pxb-hero-banner [style.borderColor]="colors.gray[200]" [style.width.px]="350">
-                    <pxb-hero [label]="'Health'" [value]="96" [units]="'/100'">
-                        <mat-icon pxb-primary [style.color]="colors.green[500]" svgIcon="px-icons:grade_a"></mat-icon>
-                    </pxb-hero>
-                    <pxb-hero [label]="'Load'" [value]="90" [units]="'%'">
-                        <mat-icon pxb-primary [style.color]="colors.yellow[500]" svgIcon="px-icons:current_circled">
+                <blui-hero-banner [style.borderColor]="colors.gray[200]" [style.width.px]="350">
+                    <blui-hero [label]="'Health'" [value]="96" [units]="'/100'">
+                        <mat-icon blui-primary [style.color]="colors.green[500]" svgIcon="px-icons:grade_a"></mat-icon>
+                    </blui-hero>
+                    <blui-hero [label]="'Load'" [value]="90" [units]="'%'">
+                        <mat-icon blui-primary [style.color]="colors.yellow[500]" svgIcon="px-icons:current_circled">
                         </mat-icon>
-                    </pxb-hero>
-                    <pxb-hero [label]="'Temp'" [value]="96" [units]="'°C'">
-                        <mat-icon pxb-primary [style.color]="colors.red[500]" svgIcon="px-icons:temp"></mat-icon>
-                    </pxb-hero>
-                </pxb-hero-banner>
+                    </blui-hero>
+                    <blui-hero [label]="'Temp'" [value]="96" [units]="'°C'">
+                        <mat-icon blui-primary [style.color]="colors.red[500]" svgIcon="px-icons:temp"></mat-icon>
+                    </blui-hero>
+                </blui-hero-banner>
             </mat-card>
         </div>
     </div>

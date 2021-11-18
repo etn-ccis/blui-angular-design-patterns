@@ -1,4 +1,4 @@
-@import '~@pxblue/colors/palette.scss';
+@import '~@brightlayer-ui/colors/palette.scss';
 @import '../common-style.scss';
 
 .score-card-section {
@@ -12,7 +12,7 @@
         .card-header {
             padding: 16px;
             margin-bottom: 16px;
-            background-color: map-get($pxb-black, 100);
+            background-color: map-get($blui-black, 100);
             .ph-row {
                 margin-bottom: 0;
                 [class^='ph-col-'],
@@ -81,7 +81,7 @@
                 }
             }
         }
-        pxb-info-list-item {
+        blui-info-list-item {
             display: flex;
             cursor: pointer;
         }

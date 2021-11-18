@@ -12,7 +12,7 @@ import {
     InfoListItemModule,
     ListItemTagModule,
     ChannelValueModule,
-} from '@pxblue/angular-components';
+} from '@brightlayer-ui/angular-components';
 import { MatCardModule } from '@angular/material/card';
 import { ContentLoaderModule } from '@netbasal/ngx-content-loader';
 import { MatDividerModule } from '@angular/material/divider';
@@ -20,6 +20,7 @@ import { MatListModule } from '@angular/material/list';
 import { PlaceholderHeroComponent } from './components/placeholder-hero/placeholder-hero.component';
 import { PlaceholderScoreCardComponent } from './components/placeholder-score-card/placeholder-score-card.component';
 import { PlaceholderListComponent } from './components/placeholder-list/placeholder-list.component';
+
 @NgModule({
     declarations: [
         SkeletonLoaderComponent,

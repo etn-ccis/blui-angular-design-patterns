@@ -1,10 +1,10 @@
-@import '~@pxblue/colors/palette.scss';
+@import '~@brightlayer-ui/colors/palette.scss';
 
 .mat-typography {
     padding: 24px 16px;
 
     .example-title {
-        color: map-get($pxb-blue, 500);
+        color: map-get($blui-blue, 500);
         margin: 40px 0 24px;
     }
 

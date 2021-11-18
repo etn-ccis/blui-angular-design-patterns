@@ -1,44 +1,44 @@
-<mat-toolbar data-cy="pxb-toolbar" color="primary" class="app-bar mat-elevation-z2">
+<mat-toolbar data-cy="blui-toolbar" color="primary" class="app-bar mat-elevation-z2">
     <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Complex Bottom Sheet</div>
-    <pxb-spacer></pxb-spacer>
+    <blui-spacer></blui-spacer>
     <button data-cy="action-menu" mat-icon-button (click)="showBottomSheet()" style="margin-right: -8px">
         <mat-icon>more_vert</mat-icon>
     </button>
 </mat-toolbar>
-<pxb-empty-state
+<blui-empty-state
     *ngIf="data?.length === 0"
     title="No Events Available"
     style="height: calc(100vh - 64px); display: flex"
 >
-    <mat-icon pxb-empty-icon>error</mat-icon>
-</pxb-empty-state>
+    <mat-icon blui-empty-icon>error</mat-icon>
+</blui-empty-state>
 <mat-list *ngIf="data?.length > 0">
-    <pxb-info-list-item
+    <blui-info-list-item
         *ngFor="let i of data; let index = index"
         [class.active]="i.active"
         [avatar]="i.active"
         [statusColor]="i.active ? Colors.red[500] : ''"
         [iconAlign]="'center'"
     >
-        <mat-icon pxb-icon *ngIf="i.type == 'alarms' && !i.active">notifications</mat-icon>
+        <mat-icon blui-icon *ngIf="i.type == 'alarms' && !i.active">notifications</mat-icon>
         <mat-icon
             data-cy="active-alarms"
-            pxb-icon
+            blui-icon
             *ngIf="i.type == 'alarms' && i.active"
             [style.backgroundColor]="Colors.red[500]"
             [style.color]="Colors.white[50]"
             >notifications_active</mat-icon
         >
-        <mat-icon data-cy="sessions" pxb-icon *ngIf="i.type == 'session'">update</mat-icon>
-        <mat-icon data-cy="settings" pxb-icon *ngIf="i.type == 'settings'">settings</mat-icon>
-        <span pxb-title [style.color]="i.active ? Colors.red[500] : 'inherit'">
+        <mat-icon data-cy="sessions" blui-icon *ngIf="i.type == 'session'">update</mat-icon>
+        <mat-icon data-cy="settings" blui-icon *ngIf="i.type == 'settings'">settings</mat-icon>
+        <span blui-title [style.color]="i.active ? Colors.red[500] : 'inherit'">
             <ng-container *ngIf="i.active">ACTIVE: </ng-container> {{ i.details }}
         </span>
-        <span pxb-subtitle>
+        <span blui-subtitle>
             {{ i.date | date: 'MM/dd/yyyy' }}
         </span>
-    </pxb-info-list-item>
+    </blui-info-list-item>
 </mat-list>

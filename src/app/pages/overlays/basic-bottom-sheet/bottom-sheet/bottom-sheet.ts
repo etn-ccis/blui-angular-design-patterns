@@ -3,7 +3,7 @@ import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
-import { InfoListItemModule } from '@pxblue/angular-components';
+import { InfoListItemModule } from '@brightlayer-ui/angular-components';
 
 @Component({
     selector: 'bottom-sheet',

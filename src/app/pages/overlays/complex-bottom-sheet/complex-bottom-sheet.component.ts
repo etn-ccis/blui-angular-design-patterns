@@ -3,7 +3,7 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { DataService, DataItem } from './data.service';
 import { BottomSheet } from './bottom-sheet/bottom-sheet';
-import * as Colors from '@pxblue/colors';
+import * as Colors from '@brightlayer-ui/colors';
 import { StateService } from '../../../services/state.service';
 
 @Component({

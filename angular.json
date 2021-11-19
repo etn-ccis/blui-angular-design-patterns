@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "angular-design-patterns"
+  "defaultProject": "angular-design-patterns",
+  "cli": {
+    "analytics": false
+  }
 }

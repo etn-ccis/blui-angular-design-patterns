@@ -1,4 +1,4 @@
-@import '~@pxblue/colors/palette.scss';
+@import '~@brightlayer-ui/colors/palette.scss';
 
 .tree-example-container {
     width: 100%;
@@ -66,9 +66,9 @@
         overflow: visible;
     }
     .selected {
-        background-color: map-get($pxb-blue, 50) !important;
+        background-color: map-get($blui-blue, 50) !important;
         * {
-            color: map-get($pxb-blue, 500) !important;
+            color: map-get($blui-blue, 500) !important;
         }
     }
 }

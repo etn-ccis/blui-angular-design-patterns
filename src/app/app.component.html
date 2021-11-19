@@ -1,24 +1,24 @@
-<pxb-drawer-layout
+<blui-drawer-layout
     [width]="292"
     [variant]="viewportService.isSmall() ? 'temporary' : 'permanent'"
     (backdropClick)="stateService.setDrawerOpen(false)"
 >
-    <pxb-drawer pxb-drawer [open]="stateService.getDrawerOpen()">
-        <pxb-drawer-header
-            title="PX Blue"
+    <blui-drawer blui-drawer [open]="stateService.getDrawerOpen()">
+        <blui-drawer-header
+            title="Brightlayer UI"
             subtitle="Angular Design Patterns"
             (click)="navigateHome()"
             style="cursor: pointer"
-        ></pxb-drawer-header>
-        <pxb-drawer-body>
-            <pxb-drawer-nav-group>
-                <pxb-drawer-nav-item
+        ></blui-drawer-header>
+        <blui-drawer-body>
+            <blui-drawer-nav-group>
+                <blui-drawer-nav-item
                     *ngFor="let navItem of routes"
                     [title]="navItem.title"
                     [selected]="selected === navItem.title"
                     (select)="select(navItem)"
                 >
-                    <pxb-drawer-nav-item
+                    <blui-drawer-nav-item
                         *ngFor="let nestedItem of navItem.children"
                         [hidePadding]="false"
                         [title]="nestedItem.title"
@@ -26,12 +26,12 @@
                         (select)="select(nestedItem, navItem.path + '/')"
                         activeItemBackgroundShape="round"
                     >
-                    </pxb-drawer-nav-item>
-                </pxb-drawer-nav-item>
-            </pxb-drawer-nav-group>
-        </pxb-drawer-body>
-    </pxb-drawer>
-    <div pxb-content class="app-content">
+                    </blui-drawer-nav-item>
+                </blui-drawer-nav-item>
+            </blui-drawer-nav-group>
+        </blui-drawer-body>
+    </blui-drawer>
+    <div blui-content class="app-content">
         <router-outlet></router-outlet>
     </div>
-</pxb-drawer-layout>
+</blui-drawer-layout>

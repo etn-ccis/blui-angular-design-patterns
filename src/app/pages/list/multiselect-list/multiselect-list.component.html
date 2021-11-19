@@ -16,7 +16,11 @@
 </mat-toolbar>
 <mat-list class="multi-select-list">
     <blui-info-list-item data-cy="list-content" *ngFor="let item of selectionService.getItems()" [iconAlign]="'center'">
-        <mat-checkbox blui-icon [checked]="selectionService.isSelected(item)" (change)="selectItem(item)"></mat-checkbox>
+        <mat-checkbox
+            blui-icon
+            [checked]="selectionService.isSelected(item)"
+            (change)="selectItem(item)"
+        ></mat-checkbox>
         <span blui-title>
             {{ item.name }}
         </span>

@@ -1,4 +1,4 @@
-@import '~@pxblue/colors/palette.scss';
+@import '~@brightlayer-ui/colors/palette.scss';
 section.mat-typography {
     padding: 16px 24px;
     max-width: 600px;
@@ -25,7 +25,7 @@ section.mat-typography {
             margin: 0 16px 8px 4px;
             height: 18px;
             width: 18px;
-            color: map-get($pxb-gray, 500);
+            color: map-get($blui-gray, 500);
         }
     }
 }
@@ -34,24 +34,24 @@ section.mat-typography {
     bottom: 24px;
     right: 24px;
 }
-.pxb-info-list-item {
-    background-color: map-get($pxb-black, 900);
+.blui-info-list-item {
+    background-color: map-get($blui-black, 900);
     color: #2d3838;
     &:not(:last-child) {
         margin-bottom: 16px;
     }
     .mat-icon.file-icon {
-        color: map-get($pxb-black, 200);
+        color: map-get($blui-black, 200);
     }
     .file-title {
-        color: map-get($pxb-black, 50);
+        color: map-get($blui-black, 50);
     }
     .file-upload-status {
-        color: map-get($pxb-black, 200);
+        color: map-get($blui-black, 200);
     }
     .cancel-button {
-        color: map-get($pxb-black, 50);
-        border-color: map-get($pxb-black, 50);
+        color: map-get($blui-black, 50);
+        border-color: map-get($blui-black, 50);
     }
     .progress-bar-container {
         mat-progress-bar {

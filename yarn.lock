@@ -1341,6 +1341,66 @@
     "@schematics/angular" "^10.1.0"
     rxjs "6.6.2"
 
+"@brightlayer-ui/angular-components@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/angular-components/-/angular-components-5.0.1.tgz#424b7a14494d7ea11062dda3b41b280feea2e314"
+  integrity sha512-PB0+YrY4WPovt2yR2ZRB4qSEu999iZzMw4wrc6RNSZOFDFsGr0CDdlA+GWOHM7WyBGWYI0QjKn0QgRENCjewvA==
+  dependencies:
+    tslib "^2.0.0"
+
+"@brightlayer-ui/angular-themes@^6.0.1":
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/angular-themes/-/angular-themes-6.3.0.tgz#b15eba57e05fd39beff09435c99ae7892d1d0e72"
+  integrity sha512-lrCyQTBtaPvqb66kq1Bzwg3777zsVeyIQxPpn9MnzO9uzhlM/xLlkoZU2GCjhZYTxAUfGwxi22Ukxt7kNL8tGQ==
+  dependencies:
+    "@brightlayer-ui/colors" "^3.0.0"
+    "@fontsource/open-sans" "^4.1.0"
+
+"@brightlayer-ui/colors@^3.0.0":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/colors/-/colors-3.0.1.tgz#f085acf6b6b4266a01798c78bc25841d15e44b3e"
+  integrity sha512-AE9F6FN1EQWMoqFTak6q8MN3wg9et2u2SUs6HjYhcS3GVSHjMWVSsuJZ2aD5Lu9409Gfi6pBHDWsJZ5PyeLsdQ==
+  dependencies:
+    "@brightlayer-ui/types" "^2.0.0"
+
+"@brightlayer-ui/eslint-config@^2.0.1":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/eslint-config/-/eslint-config-2.0.5.tgz#b7ee0c47f4669d2ecefc45d5fc37d7a9e209ccc9"
+  integrity sha512-qUxNX/1z+cmBWzbOeFftxGD7SPT+xkT1rUj++xsZjIQajEkwF1Ka+0mRlSY5qqAsQpRLGDCHDszx8uztmSm1lA==
+  dependencies:
+    "@typescript-eslint/parser" "^4.8.0"
+    eslint-config-prettier ">= 6.3.0"
+  optionalDependencies:
+    eslint-plugin-react "^7.16.0"
+
+"@brightlayer-ui/icons-svg@^1.2.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/icons-svg/-/icons-svg-1.7.0.tgz#8e80ce276eaa1b9d6aa1f736f3857856d3e1179a"
+  integrity sha512-z6LZgr0XFJ+HSDR7PxEHXavClsfR8I7FQww53vmFU0jv4fW5e3m5z2iYQjTi5MddgZJDX1CHvsvX+Mls8Z9iow==
+
+"@brightlayer-ui/icons@^1.2.0":
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/icons/-/icons-1.7.1.tgz#9ac6c648f5e5c33d588dcb2fafa96abca6a515dc"
+  integrity sha512-Oh8iTXSXmchnU/FFDSgVUFW2H3w1sJbUoidMBE/aLKdKwUIX8+z4pxEhJoqxb9QG99PUT3A/Jz3B9NumiYoDjQ==
+
+"@brightlayer-ui/ng-progress-icons@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/ng-progress-icons/-/ng-progress-icons-1.2.1.tgz#1a10cac9f19b47a2019fc5c81bfb267474bed7dc"
+  integrity sha512-2YWkQaNfSjQmwr5BXF+xpW/ARzokbTVPDkTcV3+ynh7TkKeXQICk1NxkF8ykhWpvS66lLOOYzYyS99/7EHx1eQ==
+  dependencies:
+    color "^3.1.2"
+    tslib "^1.9.0"
+
+"@brightlayer-ui/prettier-config@^1.0.2":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/prettier-config/-/prettier-config-1.0.3.tgz#e40a7ae7435c6fd5118acbf249080e0aa81e93af"
+  integrity sha512-EYm3+V7Qd+oYEF+8FadsXAZqXryEHHbGnrV1BMp9selhABjceqUqXPVE4Sn3SKWQdBNJ3En2A3EzgrzRbvRTaw==
+
+"@brightlayer-ui/types@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/types/-/types-2.0.0.tgz#d8adc0cdb96c164943adbad6e74043128a8b4112"
+  integrity sha512-DTCVwND6YC9qrkQl7pkFlN6QxDReJHtjuAiFU9HkXJN368vlw+fzHQ5/j4sB1sZl2eNwOgccv5ecl2XrlolOCw==
+
 "@cypress/browserify-preprocessor@3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@cypress/browserify-preprocessor/-/browserify-preprocessor-3.0.1.tgz#ab86335b0c061d11f5ad7df03f06b1877b836f71"
@@ -1548,66 +1608,6 @@
   dependencies:
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
-
-"@pxblue/angular-components@^5.0.1":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@pxblue/angular-components/-/angular-components-5.0.1.tgz#5b6c1d9393911499b1687734dbfabd409b4abfac"
-  integrity sha512-ss0fuO7/z6wiVyi17C7ukx91kPKkgAtnyiUONyDBWMShuAssS1p0IhHpOo1JZmstVShBbsXCe96Elzeemp8TsQ==
-  dependencies:
-    tslib "^2.0.0"
-
-"@pxblue/angular-themes@^6.0.1":
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/@pxblue/angular-themes/-/angular-themes-6.3.0.tgz#0714c8051bf4d54ae6040a04566f66e9a1f8639f"
-  integrity sha512-2WbQFfibGST6n/ELe43xzdKnQyqjO30wqgKYw7JTS5YiVqEMopZqT9LI3Zb/FM8yfiL0gbZDoOkQZXCB3/5FzA==
-  dependencies:
-    "@fontsource/open-sans" "^4.1.0"
-    "@pxblue/colors" "^3.0.0"
-
-"@pxblue/colors@^3.0.0":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@pxblue/colors/-/colors-3.0.1.tgz#4f89fc9ed10d754eac1ea699b722f5ac8c723173"
-  integrity sha512-3iROA/tvf7BiXRA4R9DobWeEE4Tg7bFgFWNuLzqqwHBEz/uI/J83XTW913g/wba9V5IAVt2DYAQFb/qbqYyjKQ==
-  dependencies:
-    "@pxblue/types" "^2.0.0"
-
-"@pxblue/eslint-config@^2.0.1":
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/@pxblue/eslint-config/-/eslint-config-2.0.5.tgz#2c9f9156175cd99aef2d579e834716f3c0877c93"
-  integrity sha512-nkFi1CSD37OutixMlapg5zPJ3HE+RyokgYmR4J7Uput5Jp6MIzvUw+YeRCT0KWOoWq5snTxyUvIA0ANuX/sXig==
-  dependencies:
-    "@typescript-eslint/parser" "^4.8.0"
-    eslint-config-prettier ">= 6.3.0"
-  optionalDependencies:
-    eslint-plugin-react "^7.16.0"
-
-"@pxblue/icons-svg@^1.2.0":
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/@pxblue/icons-svg/-/icons-svg-1.7.0.tgz#08dbc5effaeda99f28cddceec716bc18f77764c2"
-  integrity sha512-WetrY2mmQptD92cFA/vjnuIQ4/wjR7j/rTGxd1cBobGY9Qz8OlwGrGwjY1KWfsaaHd9UXv4jIzYu/s6pyUM1IA==
-
-"@pxblue/icons@^1.2.0":
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/@pxblue/icons/-/icons-1.7.0.tgz#556bca23aeaed9b46d9acd7c410781a52fce720a"
-  integrity sha512-Ib+F78K3NuA/gcEAHYVER/8J2BiSaf1SdsDO89rsj6Ff2nVtULe/t/ADkA+weY7RN0kKnk32tCDJeDBlShha1A==
-
-"@pxblue/ng-progress-icons@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@pxblue/ng-progress-icons/-/ng-progress-icons-1.2.1.tgz#2a512107d774e7bc22cdaecf2718cd42094ccd78"
-  integrity sha512-qBowwudAnmHG8wAtvCcSgY4Y3AGGStgsbhrzOH6+nHh5FI6XZoeygTB30kadF/ppuiR/VRD0Q2HhbRDNLkt9Tg==
-  dependencies:
-    color "^3.1.2"
-    tslib "^1.9.0"
-
-"@pxblue/prettier-config@^1.0.2":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@pxblue/prettier-config/-/prettier-config-1.0.3.tgz#285b9ba346f714d397ef4a59579443b95a77e63e"
-  integrity sha512-x9SDup4pf5H54r/stZBXz7/XlMcIqnwHkEJ+9pyXVtGyQljI28lDGQCWQj6heipWAett50yx0RB3P2+MWZDhJA==
-
-"@pxblue/types@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@pxblue/types/-/types-2.0.0.tgz#3df970352aca5256974a10a97d75a2264bad1eba"
-  integrity sha512-rHABCqYALGjrDxdCfw/v4mFsHhE9y9+vdSD3VHfIzA3HY1g1Bp/VWwEuEXWbtj2H5n75D+jkMQZ0rTqSKY3vLw==
 
 "@schematics/angular@10.1.7":
   version "10.1.7"

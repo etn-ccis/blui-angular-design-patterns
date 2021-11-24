@@ -1,15 +1,15 @@
-<pxb-app-bar
+<blui-app-bar
     [expandedHeight]="200"
     [collapsedHeight]="isSmall ? 56 : 64"
     [scrollThreshold]="100"
     [scrollContainerClassName]="scrollElement"
     variant="snap"
     (collapsedChange)="setCollapsed($event)"
-    data-cy="pxb-toolbar"
+    data-cy="blui-toolbar"
 >
     <button
         *ngIf="isSmall"
-        pxb-icon
+        blui-icon
         mat-icon-button
         data-cy="toolbar-menu"
         (click)="toggleMenu()"
@@ -17,15 +17,15 @@
     >
         <mat-icon>menu</mat-icon>
     </button>
-    <pxb-three-liner
+    <blui-three-liner
         title="Timeline"
         subtitle="Online"
         info="Gary Steel Works"
         [style.marginLeft.px]="isSmall ? 16 : 0"
         [style.top.px]="isCollapsed ? 0 : 80"
     >
-    </pxb-three-liner>
-    <div pxb-actions class="collapsible-appbar-actions">
+    </blui-three-liner>
+    <div blui-actions class="collapsible-appbar-actions">
         <button mat-icon-button>
             <mat-icon style="margin: 0 8px">help</mat-icon>
         </button>
@@ -36,7 +36,7 @@
             <mat-icon>more_vert</mat-icon>
         </button>
     </div>
-</pxb-app-bar>
+</blui-app-bar>
 
 <div style="display: flex; justify-content: center; width: 100%">
     <div style="max-width: 900px; padding: 16px">

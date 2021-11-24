@@ -4,7 +4,7 @@ import { StateService } from '../../../services/state.service';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { DataService } from './data.service';
 import { BottomSheet } from './bottom-sheet/bottom-sheet';
-import * as Colors from '@pxblue/colors';
+import * as Colors from '@brightlayer-ui/colors';
 
 @Component({
     selector: 'app-basic-bottom-sheet',

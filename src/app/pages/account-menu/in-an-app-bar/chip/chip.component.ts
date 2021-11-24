@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, SimpleChanges, Output } from '@angular/core';
 
 @Component({
-    selector: 'pxb-chip',
+    selector: 'blui-chip',
     templateUrl: './chip.component.html',
     styleUrls: ['./chip.component.scss'],
 })

@@ -9,7 +9,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDividerModule } from '@angular/material/divider';
-import { SpacerModule, InfoListItemModule } from '@pxblue/angular-components';
+import { SpacerModule, InfoListItemModule } from '@brightlayer-ui/angular-components';
 
 @NgModule({
     declarations: [ProgressBarsComponent],

@@ -48,7 +48,7 @@ export class SectionedFormComponent implements OnInit {
         this.factoryDetailsForm = this._formBuilder.group({
             factoryName: ['', Validators.required],
             levelOption: ['level-2', Validators.required],
-            pxbProtectionChecked: [false],
+            bluiProtectionChecked: [false],
             addressOne: ['', Validators.required],
             addressTwo: [''],
             city: ['', Validators.required],

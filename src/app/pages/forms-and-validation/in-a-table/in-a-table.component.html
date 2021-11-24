@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" class="app-bar mat-elevation-z4" data-cy="pxb-toolbar">
+<mat-toolbar color="primary" class="app-bar mat-elevation-z4" data-cy="blui-toolbar">
     <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
@@ -13,29 +13,29 @@
                 *ngFor="let item of form.get('tableExample')['controls']; let i = index"
             >
                 <div [formGroupName]="i">
-                    <pxb-info-list-item hidePadding="true">
-                        <h2 pxb-title style="margin-bottom: 0">{{ item.get('name').value }}</h2>
-                        <span pxb-icon>#{{ i + 1 }}</span>
-                    </pxb-info-list-item>
-                    <pxb-info-list-item>
-                        <span pxb-title>Min</span>
-                        <span pxb-right-content>
+                    <blui-info-list-item hidePadding="true">
+                        <h2 blui-title style="margin-bottom: 0">{{ item.get('name').value }}</h2>
+                        <span blui-icon>#{{ i + 1 }}</span>
+                    </blui-info-list-item>
+                    <blui-info-list-item>
+                        <span blui-title>Min</span>
+                        <span blui-right-content>
                             <mat-form-field appearance="fill">
                                 <input matInput formControlName="min" placeholder="Min" required />
                             </mat-form-field>
                         </span>
-                    </pxb-info-list-item>
-                    <pxb-info-list-item>
-                        <span pxb-title>Max</span>
-                        <span pxb-right-content>
+                    </blui-info-list-item>
+                    <blui-info-list-item>
+                        <span blui-title>Max</span>
+                        <span blui-right-content>
                             <mat-form-field appearance="fill">
                                 <input matInput formControlName="max" placeholder="Max" required />
                             </mat-form-field>
                         </span>
-                    </pxb-info-list-item>
-                    <pxb-info-list-item [divider]="i === 2 ? null : 'partial'" style="height: 16px">
-                        <span pxb-title></span>
-                    </pxb-info-list-item>
+                    </blui-info-list-item>
+                    <blui-info-list-item [divider]="i === 2 ? null : 'partial'" style="height: 16px">
+                        <span blui-title></span>
+                    </blui-info-list-item>
                 </div>
             </mat-list>
         </div>

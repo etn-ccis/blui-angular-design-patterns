@@ -1,9 +1,9 @@
-<mat-toolbar data-cy="pxb-toolbar" color="primary" class="app-bar mat-elevation-z2">
+<mat-toolbar data-cy="blui-toolbar" color="primary" class="app-bar mat-elevation-z2">
     <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Sortable List</div>
-    <pxb-spacer></pxb-spacer>
+    <blui-spacer></blui-spacer>
     <button *ngIf="isSmall" data-cy="action-btn" mat-icon-button (click)="edit()" style="margin-right: -8px">
         <template [ngTemplateOutlet]="actionBtn"></template>
     </button>
@@ -25,27 +25,27 @@
     <mat-card class="sortable-list-card">
         <mat-list [disableRipple]="draggable" cdkDropList (cdkDropListDropped)="onDrop($event)">
             <ng-container *ngIf="!draggable">
-                <pxb-info-list-item
+                <blui-info-list-item
                     [divider]="isSmall ? 'full' : lastIndex ? null : 'full'"
                     *ngFor="let item of data; let i = index; let lastIndex = last"
                     [hidePadding]="true"
                 >
-                    <span pxb-title> {{ item }}</span>
-                </pxb-info-list-item>
+                    <span blui-title> {{ item }}</span>
+                </blui-info-list-item>
             </ng-container>
             <ng-container *ngIf="draggable">
-                <pxb-info-list-item
+                <blui-info-list-item
                     *ngFor="let item of data; let i = index; let lastIndex = last"
                     [divider]="isSmall ? 'full' : lastIndex ? null : 'full'"
                     cdkDrag
                     class="sortable-list-item"
                     [attr.data-cy]="'sortable-row-' + i"
                 >
-                    <button mat-icon-button pxb-icon disableRipple>
+                    <button mat-icon-button blui-icon disableRipple>
                         <mat-icon cdkDragHandle class="sortable-handler">drag_handle</mat-icon>
                     </button>
-                    <span pxb-title> {{ item }}</span>
-                </pxb-info-list-item>
+                    <span blui-title> {{ item }}</span>
+                </blui-info-list-item>
             </ng-container>
         </mat-list>
     </mat-card>

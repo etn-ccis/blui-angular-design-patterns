@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@pxblue/colors/palette.scss';
+@import '~@brightlayer-ui/colors/palette.scss';
 @import '~placeholder-loading/src/scss/placeholder-loading';
 
-$drawerNavContentBackground: map-get($pxb-white, 50);
+$drawerNavContentBackground: map-get($blui-white, 50);
 $drawerNavContentDesktopHeight: calc(100vh - 64px);
 $drawerNavContentMobileHeight: calc(100vh - 56px);
 
@@ -17,13 +17,13 @@ body {
     height: 100%;
 }
 
-// TODO: Move this into the @pxblue/angular-themes.
+// TODO: Move this into the @brightlayer-ui/angular-themes.
 input {
     font-family: 'Open Sans', Arial;
 }
 
-.pxb-drawer-layout-nav-content {
-    background-color: map-get($pxb-white, 200);
+.blui-drawer-layout-nav-content {
+    background-color: map-get($blui-white, 200);
 }
 
 @mixin drawerLayout($color, $height) {

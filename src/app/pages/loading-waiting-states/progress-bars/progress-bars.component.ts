@@ -44,7 +44,7 @@ export class ProgressBarsComponent implements OnInit {
     }
 
     uploadFile(): void {
-        this.uploadFileList.push({ fileName: 'PX Blue is Awesome.pdf', progress: 0 });
+        this.uploadFileList.push({ fileName: 'Brightlayer UI is Awesome.pdf', progress: 0 });
         for (let i = 0; i <= this.uploadFileList.length; i++) {
             this.interval = setInterval(() => {
                 if (this.uploadFileList[i]) {

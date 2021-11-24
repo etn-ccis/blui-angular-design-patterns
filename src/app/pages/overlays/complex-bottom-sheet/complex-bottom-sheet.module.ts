@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { EmptyStateModule, HeroModule, InfoListItemModule, SpacerModule } from '@pxblue/angular-components';
+import { EmptyStateModule, HeroModule, InfoListItemModule, SpacerModule } from '@brightlayer-ui/angular-components';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';

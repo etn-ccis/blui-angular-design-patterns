@@ -1,9 +1,9 @@
-<mat-toolbar color="primary" class="app-bar mat-elevation-z2" data-cy="pxb-toolbar">
+<mat-toolbar color="primary" class="app-bar mat-elevation-z2" data-cy="blui-toolbar">
     <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Dynamic Stepper</div>
-    <pxb-spacer></pxb-spacer>
+    <blui-spacer></blui-spacer>
     <button
         *ngIf="!procedureFinished"
         mat-icon-button
@@ -67,8 +67,8 @@
     </div>
 </div>
 <div *ngIf="procedureFinished" data-cy="reset-page" class="stepper-with-empty-state">
-    <pxb-empty-state title="Procedure created successfully" style="padding: 16px">
-        <mat-icon pxb-empty-icon>check_circle</mat-icon>
-        <button pxb-actions mat-raised-button color="primary" (click)="handleReset()" data-cy="reset">RESET</button>
-    </pxb-empty-state>
+    <blui-empty-state title="Procedure created successfully" style="padding: 16px">
+        <mat-icon blui-empty-icon>check_circle</mat-icon>
+        <button blui-actions mat-raised-button color="primary" (click)="handleReset()" data-cy="reset">RESET</button>
+    </blui-empty-state>
 </div>

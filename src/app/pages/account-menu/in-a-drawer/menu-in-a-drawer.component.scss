@@ -1,4 +1,4 @@
-@import '~@pxblue/colors/palette';
+@import '~@brightlayer-ui/colors/palette';
 
 .menu-in-drawer-example {
     .button-container {
@@ -35,10 +35,10 @@
 }
 
 ::ng-deep .account-menu-drawer-header {
-    .pxb-drawer-header-content {
+    .blui-drawer-header-content {
         height: 150px;
     }
-    .pxb-drawer-header-background {
+    .blui-drawer-header-background {
         background: linear-gradient(to right, rgba(0, 123, 193, 0.7) 22.4%, rgba(0, 123, 193, 0) 100%),
             url('../../../../assets/cubes_tile.png');
         background-size: contain;

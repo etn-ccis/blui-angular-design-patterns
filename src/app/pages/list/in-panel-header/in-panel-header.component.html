@@ -1,4 +1,4 @@
-<mat-toolbar data-cy="pxb-toolbar" color="primary" class="app-bar mat-elevation-z2">
+<mat-toolbar data-cy="blui-toolbar" color="primary" class="app-bar mat-elevation-z2">
     <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
@@ -15,7 +15,7 @@
     <mat-card class="filter-card">
         <mat-card-header class="filter-card-header">
             <mat-card-title>Category Name</mat-card-title>
-            <pxb-spacer></pxb-spacer>
+            <blui-spacer></blui-spacer>
             <div class="filter-selector">
                 <mat-select
                     [(value)]="selectedFilter"
@@ -31,16 +31,16 @@
         </mat-card-header>
         <mat-card-content>
             <mat-list class="list-section">
-                <pxb-info-list-item
+                <blui-info-list-item
                     [chevron]="true"
                     [hidePadding]="true"
                     *ngFor="let lastIndex = last; let item; of: data | filter: selectedFilter"
                     data-cy="list-content"
                     [divider]="isSmall ? 'full' : lastIndex ? null : 'full'"
                 >
-                    <span pxb-title>{{ item.title }}</span>
-                    <span pxb-subtitle>{{ item.subtitle }}</span>
-                </pxb-info-list-item>
+                    <span blui-title>{{ item.title }}</span>
+                    <span blui-subtitle>{{ item.subtitle }}</span>
+                </blui-info-list-item>
             </mat-list>
             <div *ngIf="(data | filter: selectedFilter).length === 0" class="no-items mat-body-2">No items found.</div>
         </mat-card-content>

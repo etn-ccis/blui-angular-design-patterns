@@ -6,7 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ContextualAppBarComponent } from './contextual.component';
-import { EmptyStateModule, SpacerModule } from '@pxblue/angular-components';
+import { EmptyStateModule, SpacerModule } from '@brightlayer-ui/angular-components';
 
 @NgModule({
     imports: [

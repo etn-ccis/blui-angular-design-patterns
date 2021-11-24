@@ -1,4 +1,4 @@
-@import '~@pxblue/colors/palette.scss';
+@import '~@brightlayer-ui/colors/palette.scss';
 
 .drawer-layout-nav-content {
     height: calc(100% - 64px);
@@ -16,7 +16,7 @@ section.mat-typography {
             margin-bottom: 16px;
             mat-icon {
                 margin-right: 16px;
-                color: map-get($pxb-gray, 500);
+                color: map-get($blui-gray, 500);
             }
             h2 {
                 margin-bottom: 0;
@@ -34,7 +34,7 @@ section.mat-typography {
             flex: 1;
             margin-right: 32px;
         }
-        .pxb-protection-details {
+        .blui-protection-details {
             flex: 1;
             height: 56px;
             display: flex;
@@ -43,7 +43,7 @@ section.mat-typography {
                 height: 20px;
                 width: 20px;
                 font-size: 20px;
-                color: map-get($pxb-black, 100);
+                color: map-get($blui-black, 100);
                 cursor: pointer;
                 margin-left: 16px;
             }
@@ -51,7 +51,7 @@ section.mat-typography {
     }
 
     .bottom-divider,
-    .pxb-protection-desc {
+    .blui-protection-desc {
         display: none;
     }
 
@@ -96,10 +96,10 @@ section.mat-typography {
 }
 
 ::ng-deep .tooltip-pd {
-    color: map-get($pxb-gray, 50);
+    color: map-get($blui-gray, 50);
     width: 230px;
     height: 40px;
-    background: map-get($pxb-darkBlack, 900);
+    background: map-get($blui-darkBlack, 900);
     overflow: visible !important;
     margin-bottom: 4px !important;
     border-radius: 3px;
@@ -111,7 +111,7 @@ section.mat-typography {
         left: 48%;
         border-style: solid;
         border-width: 4px 4px 0 4px;
-        border-color: map-get($pxb-darkBlack, 900) transparent transparent transparent;
+        border-color: map-get($blui-darkBlack, 900) transparent transparent transparent;
     }
 }
 
@@ -130,16 +130,16 @@ section.mat-typography {
             mat-form-field {
                 margin-right: 0;
             }
-            .pxb-protection-details {
+            .blui-protection-details {
                 display: block;
                 height: auto;
                 .mat-icon {
                     display: none;
                 }
-                .pxb-protection-desc {
+                .blui-protection-desc {
                     display: block;
                     padding-left: 32px;
-                    color: map-get($pxb-gray, 500);
+                    color: map-get($blui-gray, 500);
                 }
             }
         }

@@ -1,4 +1,4 @@
-@import '~@pxblue/colors/palette.scss';
+@import '~@brightlayer-ui/colors/palette.scss';
 .panel-header-example {
     padding: 24px;
     margin: 0 auto;
@@ -14,7 +14,7 @@
             .mat-card-title {
                 margin: 0;
                 font-size: 14px;
-                color: map-get($pxb-blue, 500);
+                color: map-get($blui-blue, 500);
             }
 
             .filter-selector {
@@ -44,8 +44,8 @@
 }
 
 .list-section {
-    ::ng-deep .pxb-chevron {
-        color: map-get($pxb-gray, 500);
+    ::ng-deep .blui-chevron {
+        color: map-get($blui-gray, 500);
     }
 }
 @media only screen and (max-width: 960px) {

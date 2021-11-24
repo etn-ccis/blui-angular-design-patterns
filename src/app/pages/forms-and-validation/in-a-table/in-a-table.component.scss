@@ -1,6 +1,6 @@
-@import '~@pxblue/colors/palette.scss';
+@import '~@brightlayer-ui/colors/palette.scss';
 section.table-validation {
-    background-color: map-get($pxb-white, 200);
+    background-color: map-get($blui-white, 200);
     height: calc(100vh - 64px);
     padding: 40px 16px;
     table {
@@ -8,7 +8,7 @@ section.table-validation {
         overflow: auto;
         .mat-header-cell {
             padding: 0 16px;
-            color: map-get($pxb-black, 500);
+            color: map-get($blui-black, 500);
             font-weight: bold;
             font-size: 14px;
         }
@@ -28,13 +28,13 @@ section.table-validation {
 }
 
 mat-list.list-view-example {
-    background-color: map-get($pxb-white, 50);
+    background-color: map-get($blui-white, 50);
 
-    pxb-info-list-item:nth-child(2) {
+    blui-info-list-item:nth-child(2) {
         margin-bottom: 16px;
     }
-    [pxb-icon] {
-        color: map-get($pxb-gray, 500);
+    [blui-icon] {
+        color: map-get($blui-gray, 500);
         font-size: 16px;
     }
 }
@@ -54,7 +54,7 @@ mat-list.list-view-example {
     }
 
     ::ng-deep
-        .pxb-blue
+        .blui-blue
         .mat-form-field.mat-primary:not(.mat-form-field-disabled).mat-form-field-appearance-fill
         .mat-form-field-flex {
         padding-top: 0;

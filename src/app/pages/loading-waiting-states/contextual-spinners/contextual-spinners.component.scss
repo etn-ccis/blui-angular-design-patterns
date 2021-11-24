@@ -1,4 +1,4 @@
-@import '~@pxblue/colors/palette.scss';
+@import '~@brightlayer-ui/colors/palette.scss';
 $duration: 200ms;
 $animationTimingFunction: ease-out;
 section.mat-typography {
@@ -74,7 +74,7 @@ section.mat-typography {
     ::ng-deep .mat-progress-spinner,
     .mat-spinner {
         circle {
-            stroke: map-get($pxb-white, 50);
+            stroke: map-get($blui-white, 50);
         }
     }
 

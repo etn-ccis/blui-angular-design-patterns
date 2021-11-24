@@ -7,7 +7,7 @@ import { MultiselectListService } from './multiselect-list.service';
     template: `
         <div style="display: flex; line-height: 40px" data-cy="snackbar">
             {{ getMessage() }}
-            <pxb-spacer></pxb-spacer>
+            <blui-spacer></blui-spacer>
             <button
                 data-cy="snackbar-delete"
                 matTooltip="Delete selected"

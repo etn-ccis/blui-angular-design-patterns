@@ -43,7 +43,7 @@ export class InATableComponent implements OnInit {
                 } else {
                     this.isSmall = false;
                 }
-                this.isXsSmall = state.breakpoints['(max-width: 599.98px)'];
+                this.isXsSmall = state.breakpoints['(max-width: 599.99px)'];
             });
     }
 

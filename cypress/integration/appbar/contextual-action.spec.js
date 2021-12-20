@@ -7,7 +7,7 @@ describe('Contextual App Bar', () => {
     });
 
     it('should display page title', () => {
-        cy.get('[data-cy=pxb-toolbar]').should('contain', 'Contextual App Bar');
+        cy.get('[data-cy=blui-toolbar]').should('contain', 'Contextual App Bar');
     });
 
     it('should display delete button enabled & disabled', () => {

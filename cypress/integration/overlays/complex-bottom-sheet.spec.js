@@ -7,7 +7,7 @@ describe('Complex bottom sheet', () => {
     });
 
     it('should display page title', () => {
-        cy.get('[data-cy=pxb-toolbar]').should('contain', 'Complex Bottom Sheet');
+        cy.get('[data-cy=blui-toolbar]').should('contain', 'Complex Bottom Sheet');
     });
 
     it('should open and action items display', () => {
@@ -31,11 +31,11 @@ describe('Complex bottom sheet', () => {
     });
     it('should display empty state', () => {
         cy.get('[data-cy=action-menu]').click()
-        cy.get('[data-cy=active-alarms] > .pxb-hero-content').click()
+        cy.get('[data-cy=active-alarms] > .blui-hero-content').click()
         cy.get('[data-cy=alarms]').click()
-        cy.get('[label="Settings"] > .pxb-hero-content').click()
-        cy.get('[data-cy=sessions] > .pxb-hero-content').click()
+        cy.get('[label="Settings"] > .blui-hero-content').click()
+        cy.get('[data-cy=sessions] > .blui-hero-content').click()
         cy.get('[data-cy=btm-sheet-close-btn]').click()
-        cy.get('.pxb-empty-state-content').should('contain', 'No Events Available')
+        cy.get('.blui-empty-state-content').should('contain', 'No Events Available')
     });
 });

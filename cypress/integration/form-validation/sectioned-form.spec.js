@@ -7,7 +7,7 @@ describe('Form validation sectioned form', () => {
     });
 
     it('should display page title', () => {
-        cy.get('[data-cy=pxb-toolbar]').should('contain', 'Sectioned Form');
+        cy.get('[data-cy=blui-toolbar]').should('contain', 'Sectioned Form');
     });
 
     it('should display required for fields on submit', () => {
@@ -45,7 +45,7 @@ describe('Form validation sectioned form', () => {
     it('should display tooltip info on hover', () => {
         cy.get('[data-cy=tool-tip]').invoke('show').click()
         .should('be.visible')
-        cy.contains('PXB Protection provides a three-year power expert warranty')
+        cy.contains('BLUI Protection provides a three-year power expert warranty')
     });
 
     it('should display error invalid email', () => {

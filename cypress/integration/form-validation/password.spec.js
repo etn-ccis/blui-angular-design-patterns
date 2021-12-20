@@ -7,7 +7,7 @@ describe('Form validation password', () => {
     });
 
     it('should display page title', () => {
-        cy.get('[data-cy=pxb-toolbar]').should('contain', 'Password Validation');
+        cy.get('[data-cy=blui-toolbar]').should('contain', 'Password Validation');
     });
 
     it('should display password does not match', () => {

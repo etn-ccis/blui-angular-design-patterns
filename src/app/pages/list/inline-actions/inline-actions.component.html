@@ -1,0 +1,69 @@
+<mat-toolbar data-cy="blui-toolbar" color="primary" class="app-bar mat-elevation-z2">
+    <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div>
+        <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">
+            Local Item Actions
+        </div>
+        <div class="mat-subheading-2" [style.marginLeft.px]="isSmall ? 24 : 0" style="margin-top: -8px;">
+            Inline Actions
+        </div>
+    </div>
+</mat-toolbar>
+<section class="inline-actions-example">
+    <mat-card class="inline-actions-card">
+        <mat-card-header></mat-card-header>
+        <mat-card-content>
+            <mat-list class="list-section">
+                <blui-info-list-item
+                    [hidePadding]="true"
+                    *ngFor="let item of data; let lastIndex = last;let firstIndex = first;"
+                    data-cy="list-content"
+                    [divider]="isSmall ? 'full' : lastIndex ? null : 'full'"                
+                >
+                    <span blui-title>{{ item.title }}</span>
+                    <span blui-subtitle>{{ item.subtitle }}</span>
+                    <div blui-right-content (mouseover)="showAction(true)" (mouseout)="showAction(false)">
+                        <div style="display: flex;"  *ngIf="showActionButtons">
+                            <button
+                                data-cy="list-item-delete"
+                                matTooltip="Delete"
+                                mat-icon-button
+                                data-cy="list-delete"
+                            >
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                            <button
+                                data-cy="list-item-cancel"
+                                matTooltip="Save"
+                                mat-icon-button
+                            >
+                                <mat-icon>bookmark</mat-icon>
+                            </button>
+                            <button
+                                data-cy="list-item-archive"
+                                matTooltip="Archive"
+                                mat-icon-button
+                            >
+                                <mat-icon>archive</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- <span blui-right-content *ngIf="!showActionButtons">
+                        <blui-list-item-tag
+                            style="margin-right: 8px"
+                            *ngIf="firstIndex"
+                            [backgroundColor]="colors.red[500]"
+                            label="Active"
+                        ></blui-list-item-tag>
+                    </span> -->
+                </blui-info-list-item>
+            </mat-list>
+            <div *ngIf="data.length === 0" class="no-items mat-body-2">No items found.</div>
+        </mat-card-content>
+    </mat-card>
+    <div class="note">
+        This behaviour is exclusive to desktop version.
+    </div>
+</section>

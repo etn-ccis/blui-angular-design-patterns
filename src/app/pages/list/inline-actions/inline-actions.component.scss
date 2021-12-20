@@ -1,0 +1,37 @@
+.inline-actions-example {
+    padding: 24px;
+    margin: 0 auto;
+    max-width: 816px;
+
+    .inline-actions-card {
+        padding: 0;
+        .mat-card-title {
+            margin: 0;
+        }
+
+        .list-section {
+            padding: 0;
+        }
+    }
+
+    .note {
+        padding-top: 120px;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .inline-actions-example {
+        padding: 0;
+        max-width: 100%;
+
+        .inline-actions-card {
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        .note {
+            display: none;
+        }
+    }
+}

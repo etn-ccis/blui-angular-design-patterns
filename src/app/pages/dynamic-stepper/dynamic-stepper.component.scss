@@ -1,4 +1,4 @@
-@import '~@pxblue/colors/palette.scss';
+@import '~@brightlayer-ui/colors/palette.scss';
 
 .radio-group {
     display: flex;
@@ -7,7 +7,7 @@
 
 .delete-icon {
     vertical-align: middle;
-    color: map-get($pxb-black, 500);
+    color: map-get($blui-black, 500);
     font-size: 24px;
     line-height: 24px;
 }
@@ -40,7 +40,7 @@
 
 .stepper-with-data,
 .stepper-with-empty-state {
-    background-color: map-get($pxb-white, 50);
+    background-color: map-get($blui-white, 50);
     min-height: calc(100vh - 64px);
 }
 

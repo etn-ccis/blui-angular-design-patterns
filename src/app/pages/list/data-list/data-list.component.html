@@ -1,13 +1,13 @@
-<mat-toolbar data-cy="pxb-toolbar" color="primary" class="app-bar mat-elevation-z2">
+<mat-toolbar data-cy="blui-toolbar" color="primary" class="app-bar mat-elevation-z2">
     <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Data List</div>
-    <pxb-spacer></pxb-spacer>
+    <blui-spacer></blui-spacer>
 </mat-toolbar>
 <mat-list>
-    <pxb-info-list-item *ngFor="let item of list" [hidePadding]="true">
-        <span pxb-title>{{ item.name }}</span>
-        <span pxb-right-content>{{ item.year }}</span>
-    </pxb-info-list-item>
+    <blui-info-list-item *ngFor="let item of list" [hidePadding]="true">
+        <span blui-title>{{ item.name }}</span>
+        <span blui-right-content>{{ item.year }}</span>
+    </blui-info-list-item>
 </mat-list>

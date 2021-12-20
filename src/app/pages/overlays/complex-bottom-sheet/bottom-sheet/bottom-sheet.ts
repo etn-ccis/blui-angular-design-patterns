@@ -4,7 +4,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { CommonModule } from '@angular/common';
-import { InfoListItemModule } from '@pxblue/angular-components';
+import { InfoListItemModule } from '@brightlayer-ui/angular-components';
 import { DataService } from '../data.service';
 import { FiltersList } from '../filter';
 import { MatButtonModule } from '@angular/material/button';

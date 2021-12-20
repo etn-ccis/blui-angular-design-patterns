@@ -22,9 +22,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTabsModule } from '@angular/material/tabs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DrawerLayoutModule, DrawerModule, EmptyStateModule } from '@pxblue/angular-components';
+import { DrawerLayoutModule, DrawerModule, EmptyStateModule } from '@brightlayer-ui/angular-components';
 import { DataListModule } from './pages/list/data-list/data-list.module';
 import { ActionListModule } from './pages/list/action-list/action-list.module';
+import { InPanelHeaderModule } from './pages/list/in-panel-header/in-panel-header.module';
 import { StatusListModule } from './pages/list/status-list/status-list.module';
 import { MultiselectListModule } from './pages/list/multiselect-list/multiselect-list.module';
 import { BasicBottomSheetModule } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.module';
@@ -54,11 +55,13 @@ import { MenuInDrawerModule } from './pages/account-menu/in-a-drawer/in-a-drawer
 import { DropdownToolbarModule } from './pages/app-bar/dropdown-toolbar/dropdown-toolbar.module';
 import { ContextualAppbarModule } from './pages/app-bar/contextual/contextual.module';
 import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
+import { TreeListModule } from './pages/list/tree/tree.module';
 
 @NgModule({
     declarations: [AppComponent],
     imports: [
         ActionListModule,
+        InPanelHeaderModule,
         DataListModule,
         StatusListModule,
         MultiselectListModule,
@@ -107,6 +110,7 @@ import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
         SectionedFormModule,
         InATableModule,
         InAListModule,
+        TreeListModule,
         InAnAppBarModule,
     ],
     bootstrap: [AppComponent],

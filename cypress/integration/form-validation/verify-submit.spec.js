@@ -7,7 +7,7 @@ describe('Form validation verify on submit', () => {
     });
 
     it('should display page title', () => {
-        cy.get('[data-cy=pxb-toolbar]').should('contain', 'Verify On Submit');
+        cy.get('[data-cy=blui-toolbar]').should('contain', 'Verify On Submit');
     });
 
     it('should display input field as focused by default', () => {
@@ -38,7 +38,7 @@ describe('Form validation verify on submit', () => {
     it('should display success on valid search', () => {
         cy.get('[data-cy=serial-number]').type('123')
         cy.get('[data-cy=search-button]').click()
-        cy.get('.pxb-empty-state-content').should('contain', 'Success')
+        cy.get('.blui-empty-state-content').should('contain', 'Success')
     });
 
     it('should display search when add device is selected', () => {

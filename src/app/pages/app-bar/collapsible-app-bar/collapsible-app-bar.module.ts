@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { AppBarModule, SpacerModule, ThreeLinerModule } from '@pxblue/angular-components';
+import { AppBarModule, SpacerModule, ThreeLinerModule } from '@brightlayer-ui/angular-components';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';

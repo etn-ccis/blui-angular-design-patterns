@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { DropdownToolbarModule as PxbDropdownToolbarModule } from '@pxblue/angular-components';
+import { DropdownToolbarModule as BluiDropdownToolbarModule } from '@brightlayer-ui/angular-components';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -13,7 +13,7 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 @NgModule({
     imports: [
         CommonModule,
-        PxbDropdownToolbarModule,
+        BluiDropdownToolbarModule,
         MatIconModule,
         MatButtonModule,
         FlexLayoutModule,

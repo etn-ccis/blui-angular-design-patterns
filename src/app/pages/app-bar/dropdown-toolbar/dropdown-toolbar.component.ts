@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { DropdownToolbarComponent as PxbDropdownToolbar } from '@pxblue/angular-components';
+import { DropdownToolbarComponent as BluiDropdownToolbar } from '@brightlayer-ui/angular-components';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { DropdownToolbarStateService } from './dropdown-toolbar.service';
 import { DropdownToolbarBottomSheetExample } from './dropdown-toolbar-bottomsheet.component';
@@ -16,7 +16,7 @@ export class DropdownToolbarComponent implements OnInit, AfterViewInit {
     isHandset: boolean;
     items = menuItems;
 
-    @ViewChild('toolbar') dropdownToolbar: PxbDropdownToolbar;
+    @ViewChild('toolbar') dropdownToolbar: BluiDropdownToolbar;
 
     constructor(
         private readonly _drawerService: StateService,

@@ -1,4 +1,4 @@
-@import '~@pxblue/colors/palette.scss';
+@import '~@brightlayer-ui/colors/palette.scss';
 @import '../common-style.scss';
 
 .list-items-section {
@@ -31,7 +31,7 @@
                 }
             }
             .icon-section {
-                color: map-get($pxb-gray, 200);
+                color: map-get($blui-gray, 200);
                 max-width: 56px;
                 justify-content: center;
                 padding: 0 16px;

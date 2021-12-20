@@ -1,4 +1,4 @@
-@import '~@pxblue/colors/palette.scss';
+@import '~@brightlayer-ui/colors/palette.scss';
 
 section {
     .app-bar-header {
@@ -29,14 +29,14 @@ section {
 .badge {
     height: 8px;
     width: 8px;
-    background-color: map-get($pxb-green, 500);
+    background-color: map-get($blui-green, 500);
     position: absolute;
     border-radius: 50%;
     bottom: 0;
     right: 0;
-    color: map-get($pxb-green, 500);
-    box-shadow: 0 0 0 2px map-get($pxb-white, 50);
-    background-color: map-get($pxb-green, 500);
+    color: map-get($blui-green, 500);
+    box-shadow: 0 0 0 2px map-get($blui-white, 50);
+    background-color: map-get($blui-green, 500);
 }
 
 .app-bar-example {
@@ -45,11 +45,11 @@ section {
 }
 
 .user-menu-with-custom-chip {
-    ::ng-deep .pxb-user-menu-avatar {
+    ::ng-deep .blui-user-menu-avatar {
         background-color: transparent;
     }
 
-    ::ng-deep .pxb-user-menu-avatar-content {
+    ::ng-deep .blui-user-menu-avatar-content {
         height: auto;
         width: auto;
     }

@@ -12,7 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { VerifyOnSubmitComponent } from './verify-on-submit.component';
 import { SlidePanelComponent } from './slide-panel/slide-panel.component';
-import { EmptyStateModule } from '@pxblue/angular-components';
+import { EmptyStateModule } from '@brightlayer-ui/angular-components';
 
 @NgModule({
     declarations: [VerifyOnSubmitComponent, SlidePanelComponent],

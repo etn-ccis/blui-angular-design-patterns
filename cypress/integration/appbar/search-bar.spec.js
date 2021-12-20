@@ -7,7 +7,7 @@ describe('Search bar', () => {
     });
 
     it('should display page title', () => {
-        cy.get('[data-cy=pxb-toolbar]').should('contain', 'Search');
+        cy.get('[data-cy=blui-toolbar]').should('contain', 'Search');
     });
 
     it('should filter data when searching', () => {

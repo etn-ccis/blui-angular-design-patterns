@@ -1,26 +1,212 @@
-<mat-toolbar data-cy="pxb-toolbar" color="primary" class="app-bar mat-elevation-z2">
+<mat-toolbar data-cy="blui-toolbar" color="primary" class="app-bar mat-elevation-z2">
     <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
-    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Status List</div>
-    <pxb-spacer></pxb-spacer>
+    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Status Lists</div>
+    <blui-spacer></blui-spacer>
+    <div class="toolbar-actions">
+        <button mat-icon-button>
+            <mat-icon style="margin: 0 8px">help</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon style="margin: 0 8px" [matBadge]="88" matBadgeColor="warn">notifications</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>more_vert</mat-icon>
+        </button>
+    </div>
 </mat-toolbar>
-<mat-list class="alert" *ngIf="data.length > 0">
-    <pxb-info-list-item
-        *ngFor="let item of data; let index = index"
-        [statusColor]="setAlarm(item.status) ? colors.red[500] : ''"
-        [avatar]="true"
-    >
-        <mat-icon
-            pxb-icon
-            [style.color]="getIconColor(item.status)"
-            [style.backgroundColor]="item.status === 'alarm' ? colors.red[500] : ''"
-            >{{ item.icon }}</mat-icon
-        >
-        <span pxb-title>{{ item.name }}</span>
-        <span pxb-subtitle>{{ item.details }}</span>
-        <span pxb-right-content *ngIf="setAlarm(item.status)">
-            <pxb-list-item-tag [backgroundColor]="colors.red[500]" label="new"></pxb-list-item-tag>
-        </span>
-    </pxb-info-list-item>
-</mat-list>
+<section class="list-section">
+    <div class="list-example">
+        <mat-accordion class="accordion-panel">
+            <mat-expansion-panel class="mat-elevation-z1" [expanded]="true" [class.expansion-panel-mobile]="isSmall">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        With Time Stamps, with Title+Subtitle+Info
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-list class="list-section">
+                    <blui-info-list-item
+                        divider="partial"
+                        [statusColor]="colors.red[500]"
+                        [chevron]="true"
+                        [avatar]="true"
+                        iconAlign="center"
+                        [wrapTitle]="false"
+                    >
+                        <mat-icon blui-icon class="alarm-icon">notifications</mat-icon>
+                        <div class="time-section" blui-left-content>
+                            <div><span class="time-numeric">8:21</span>AM</div>
+                            <div>11/23/21</div>
+                        </div>
+                        <div class="title-section" blui-title>
+                            <div>
+                                <span class="title-label">{{ isSmall ? 'High Humidity' : 'High Humidity:' }}</span
+                                ><span class="title-desc">PX2341 sensor level 9</span>
+                            </div>
+                        </div>
+                        <div class="subtitle-section" blui-subtitle>
+                            <div class="subtitle show">
+                                <span class="caption-1">Cherrington Station</span
+                                ><span class="caption-2"> < Moon Township</span>
+                            </div>
+                        </div>
+                        <span blui-right-content *ngIf="!isSmall">
+                            <blui-list-item-tag
+                                [backgroundColor]="colors.blue[500]"
+                                label="Assigned"
+                                style="margin-right: 16px"
+                            ></blui-list-item-tag>
+                            <blui-list-item-tag
+                                style="margin-right: 8px"
+                                [backgroundColor]="colors.red[500]"
+                                label="Active"
+                            ></blui-list-item-tag>
+                        </span>
+                        <div blui-info *ngIf="isSmall">
+                            <blui-list-item-tag
+                                [backgroundColor]="colors.blue[500]"
+                                label="Assigned"
+                                style="margin-right: 8px; margin-top: 4px;"
+                            ></blui-list-item-tag>
+                            <blui-list-item-tag
+                                style="margin-right: 8px"
+                                [backgroundColor]="colors.red[500]"
+                                label="Active"
+                            ></blui-list-item-tag>
+                        </div>
+                    </blui-info-list-item>
+
+                    <blui-info-list-item
+                        divider="partial"
+                        [chevron]="true"
+                        iconAlign="center"
+                        [statusColor]="colors.orange[500]"
+                        [wrapTitle]="false"
+                    >
+                        <mat-icon blui-icon svgIcon="blui-icons:maintenance" class="maintenance-icon"></mat-icon>
+                        <div class="time-section" blui-left-content>
+                            <div><span class="time-numeric">7:48</span>AM</div>
+                            <div>11/23/21</div>
+                        </div>
+                        <div class="title-section" blui-title>
+                            <div>
+                                <span class="title-label">{{ isSmall ? 'Battery Service' : 'Battery Service:' }}</span
+                                ><span class="title-desc">EATON GH142</span>
+                            </div>
+                        </div>
+                        <div class="subtitle-section" blui-subtitle>
+                            <div class="subtitle show">
+                                <span class="caption-1">Cherrington Station</span
+                                ><span class="caption-2"> < Moon Township</span>
+                            </div>
+                        </div>
+                    </blui-info-list-item>
+
+                    <blui-info-list-item [chevron]="true" [avatar]="true" iconAlign="center">
+                        <mat-icon blui-icon>notifications</mat-icon>
+                        <div class="time-section" blui-left-content>
+                            <div><span class="time-numeric">2:13</span>AM</div>
+                            <div>11/23/21</div>
+                        </div>
+                        <div class="title-section" blui-title>
+                            <div>
+                                <span class="title-label">{{
+                                    isSmall ? 'Bypass Over Frequency' : 'Bypass Over Frequency:'
+                                }}</span
+                                ><span class="title-desc">A2 Max Reval</span>
+                            </div>
+                        </div>
+                        <div class="subtitle-section" blui-subtitle>
+                            <div class="subtitle show">
+                                <span class="caption-1">Tuscarawas R.</span>
+                                <span class="caption-2"> < Beaver</span>
+                            </div>
+                        </div>
+                    </blui-info-list-item>
+                </mat-list>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+
+    <div class="list-example without-icons">
+        <mat-accordion class="accordion-panel">
+            <mat-expansion-panel class="mat-elevation-z1" [expanded]="true" [class.expansion-panel-mobile]="isSmall">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Without Icons, with Title
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-list class="list-section">
+                    <blui-info-list-item divider="full" [statusColor]="colors.red[500]" [chevron]="true">
+                        <div class="title-section" blui-title>
+                            <div>
+                                <span class="title-label">{{ isSmall ? 'High Humidity' : 'High Humidity:' }}</span
+                                ><span class="title-desc">PX2341 sensor level 9</span>
+                            </div>
+                        </div>
+                        <div class="subtitle-section" blui-subtitle>
+                            <div class="subtitle">
+                                <span class="caption-1">Cherrington Station</span
+                                ><span class="caption-2"> < Moon Township</span>
+                            </div>
+                        </div>
+                    </blui-info-list-item>
+
+                    <blui-info-list-item [chevron]="true">
+                        <div class="title-section" blui-title>
+                            <div>
+                                <span class="title-label">{{ isSmall ? 'Battery Service' : 'Battery Service:' }}</span
+                                ><span class="title-desc">EATON GH142</span>
+                            </div>
+                        </div>
+                    </blui-info-list-item>
+                </mat-list>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+
+    <div class="list-example with-icons">
+        <mat-accordion class="accordion-panel">
+            <mat-expansion-panel class="mat-elevation-z1" [expanded]="true" [class.expansion-panel-mobile]="isSmall">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        With Icons, with Title
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-list class="list-section">
+                    <blui-info-list-item
+                        divider="partial"
+                        [statusColor]="colors.red[500]"
+                        [chevron]="true"
+                        [avatar]="true"
+                        iconAlign="center"
+                    >
+                        <mat-icon blui-icon class="alarm-icon">notifications</mat-icon>
+                        <div class="title-section" blui-title>
+                            <div>
+                                <span class="title-label">{{ isSmall ? 'High Humidity' : 'High Humidity:' }}</span
+                                ><span class="title-desc">PX2341 sensor level 9</span>
+                            </div>
+                        </div>
+                        <div class="subtitle-section" blui-subtitle>
+                            <div class="subtitle">
+                                <span class="caption-1">Cherrington Station</span
+                                ><span class="caption-2"> < Moon Township</span>
+                            </div>
+                        </div>
+                    </blui-info-list-item>
+                    <blui-info-list-item [chevron]="true" iconAlign="center">
+                        <mat-icon blui-icon svgIcon="blui-icons:maintenance"></mat-icon>
+                        <div class="title-section" blui-title>
+                            <div>
+                                <span class="title-label">{{ isSmall ? 'Battery Service' : 'Battery Service:' }}</span
+                                ><span class="title-desc">EATON GH142</span>
+                            </div>
+                        </div>
+                    </blui-info-list-item>
+                </mat-list>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+</section>

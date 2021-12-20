@@ -1,13 +1,13 @@
-@import '~@pxblue/colors/palette.scss';
+@import '~@brightlayer-ui/colors/palette.scss';
 
 .mat-h3 {
     margin-bottom: 0;
 }
 
 .active {
-    .pxb-hero-label,
-    &.pxb-hero .pxb-hero-primary-wrapper {
-        color: map-get($pxb-blue, 500);
+    .blui-hero-label,
+    &.blui-hero .blui-hero-primary-wrapper {
+        color: map-get($blui-blue, 500);
     }
 }
 
@@ -47,12 +47,12 @@
 }
 
 .bottomPanel {
-    pxb-hero {
+    blui-hero {
         flex: unset !important;
         cursor: pointer;
         min-width: 100px;
     }
-    pxb-hero-banner {
+    blui-hero-banner {
         height: 100px;
     }
 }

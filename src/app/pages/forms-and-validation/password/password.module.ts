@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { InfoListItemModule } from '@pxblue/angular-components';
+import { InfoListItemModule } from '@brightlayer-ui/angular-components';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
@@ -14,11 +14,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 
 import { PasswordComponent } from './password.component';
-import { PxbPasswordStrengthCheckerComponent } from './password-strength-checker/pxb-password-strength-checker.component';
+import { BluiPasswordStrengthCheckerComponent } from './password-strength-checker/blui-password-strength-checker.component';
 import { PasswordStrengthCheckComponent } from './password-strength-checker/password-strength-checker.component';
 
 @NgModule({
-    declarations: [PasswordComponent, PxbPasswordStrengthCheckerComponent, PasswordStrengthCheckComponent],
+    declarations: [PasswordComponent, BluiPasswordStrengthCheckerComponent, PasswordStrengthCheckComponent],
     imports: [
         BrowserModule,
         FormsModule,

@@ -1,17 +1,17 @@
-<mat-toolbar data-cy="pxb-toolbar" flexLayout="row" class="app-bar mat-elevation-z4" color="primary">
+<mat-toolbar data-cy="blui-toolbar" flexLayout="row" class="app-bar mat-elevation-z4" color="primary">
     <button data-cy="toolbar-menu" *ngIf="isSmall" mat-icon-button (click)="toggleMenu()" style="margin-left: -8px">
         <mat-icon>menu</mat-icon>
     </button>
     <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Progress Bars (Indeterminate)</div>
     <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-    <pxb-spacer></pxb-spacer>
+    <blui-spacer></blui-spacer>
     <!-- <div class="toggle-theme-container" *ngIf="!isSmall">
         <span class="mat-subheading-2" style="margin-right: 8px; font-size: 14px;">Use Dark Theme</span>
         <mat-slide-toggle [checked]="checked"></mat-slide-toggle>
     </div> -->
 </mat-toolbar>
 <section class="mat-typography" [class.small]="isSmall">
-    <pxb-empty-state title="Searching for Devices" description="Put your indeterminate progress bar in the app bar">
-        <mat-icon pxb-empty-icon>bluetooth_searching</mat-icon>
-    </pxb-empty-state>
+    <blui-empty-state title="Searching for Devices" description="Put your indeterminate progress bar in the app bar">
+        <mat-icon blui-empty-icon>bluetooth_searching</mat-icon>
+    </blui-empty-state>
 </section>

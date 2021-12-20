@@ -19,7 +19,7 @@
           "options": {
             "allowedCommonJsDependencies": [
               "color",
-              "@pxblue/colors"
+              "@brightlayer-ui/colors"
             ],
             "outputPath": "dist/angular-design-patterns",
             "index": "src/index.html",
@@ -33,8 +33,8 @@
             ],
             "styles": [
               "src/styles.scss",
-              "./node_modules/@pxblue/angular-themes/open-sans.scss",
-              "./node_modules/@pxblue/angular-themes/theme.scss",
+              "./node_modules/@brightlayer-ui/angular-themes/open-sans.scss",
+              "./node_modules/@brightlayer-ui/angular-themes/theme.scss",
               "./node_modules/placeholder-loading/src/scss/placeholder-loading.scss"
             ],
             "scripts": []
@@ -106,8 +106,8 @@
             ],
             "styles": [
               "src/styles.scss",
-              "./node_modules/@pxblue/angular-themes/open-sans.scss",
-              "./node_modules/@pxblue/angular-themes/theme.scss"
+              "./node_modules/@brightlayer-ui/angular-themes/open-sans.scss",
+              "./node_modules/@brightlayer-ui/angular-themes/theme.scss"
             ],
             "scripts": []
           }
@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "angular-design-patterns"
+  "defaultProject": "angular-design-patterns",
+  "cli": {
+    "analytics": false
+  }
 }

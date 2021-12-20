@@ -12,7 +12,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { FormControl, FormGroupDirective, NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { StateService } from '../../../services/state.service';
 
-import * as Colors from '@pxblue/colors';
+import * as Colors from '@brightlayer-ui/colors';
 class CrossFieldErrorMatcher implements ErrorStateMatcher {
     isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
         return control.dirty && form.invalid;

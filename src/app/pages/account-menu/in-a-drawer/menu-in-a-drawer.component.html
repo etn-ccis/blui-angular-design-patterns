@@ -1,46 +1,51 @@
 <div class="menu-in-drawer-example">
     <mat-sidenav-container class="drawer-container" (backdropClick)="isTempDrawerOpen = false">
         <mat-sidenav mode="over" class="sidenav" [opened]="isTempDrawerOpen" position="start">
-            <pxb-drawer [openOnHover]="false">
-                <pxb-drawer-header class="account-menu-drawer-header">
-                    <div pxb-title-content style="width: 100%">
+            <blui-drawer [openOnHover]="false">
+                <blui-drawer-header class="account-menu-drawer-header" data-cy="drawer-header">
+                    <div blui-title-content style="width: 100%">
                         <div style="display: flex; justify-content: space-between">
                             <img class="avatar" src="assets/avatar_40.png" />
-                            <button style="margin-top: 16px" mat-icon-button (click)="isTempDrawerOpen = false">
+                            <button
+                                style="margin-top: 16px"
+                                mat-icon-button
+                                (click)="isTempDrawerOpen = false"
+                                data-cy="close-drawer"
+                            >
                                 <mat-icon>close</mat-icon>
                             </button>
                         </div>
                         <div class="mat-title" style="margin-bottom: -8px">Chima Thabani</div>
                         <div class="mat-body-1">CThabani@example.com</div>
                     </div>
-                </pxb-drawer-header>
-                <pxb-drawer-body>
-                    <pxb-drawer-nav-group>
-                        <pxb-drawer-nav-item
+                </blui-drawer-header>
+                <blui-drawer-body>
+                    <blui-drawer-nav-group>
+                        <blui-drawer-nav-item
                             *ngFor="let navItem of topItems"
                             [title]="navItem.title"
                             [selected]="selected === navItem.title"
                             (select)="select(navItem)"
                         >
-                            <mat-icon pxb-icon>{{ navItem.icon }}</mat-icon>
-                        </pxb-drawer-nav-item>
-                    </pxb-drawer-nav-group>
-                    <pxb-spacer></pxb-spacer>
-                    <pxb-drawer-nav-group>
-                        <pxb-drawer-nav-item
+                            <mat-icon blui-icon>{{ navItem.icon }}</mat-icon>
+                        </blui-drawer-nav-item>
+                    </blui-drawer-nav-group>
+                    <blui-spacer></blui-spacer>
+                    <blui-drawer-nav-group>
+                        <blui-drawer-nav-item
                             *ngFor="let navItem of bottomItems"
                             [title]="navItem.title"
                             [selected]="selected === navItem.title"
                             (select)="select(navItem)"
                         >
-                            <mat-icon pxb-icon>{{ navItem.icon }}</mat-icon>
-                        </pxb-drawer-nav-item>
-                    </pxb-drawer-nav-group>
-                </pxb-drawer-body>
-            </pxb-drawer>
+                            <mat-icon blui-icon>{{ navItem.icon }}</mat-icon>
+                        </blui-drawer-nav-item>
+                    </blui-drawer-nav-group>
+                </blui-drawer-body>
+            </blui-drawer>
         </mat-sidenav>
         <mat-sidenav-content class="content">
-            <mat-toolbar data-cy="pxb-toolbar" color="primary" class="app-bar mat-elevation-z4">
+            <mat-toolbar data-cy="blui-toolbar" color="primary" class="app-bar mat-elevation-z4">
                 <button
                     data-cy="toolbar-menu"
                     *ngIf="isSmall"
@@ -53,7 +58,7 @@
                 <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">In a Drawer</div>
             </mat-toolbar>
             <div class="button-container">
-                <button color="primary" mat-flat-button (click)="isTempDrawerOpen = true">
+                <button color="primary" mat-flat-button (click)="isTempDrawerOpen = true" data-cy="toggle-drawer">
                     <mat-icon>menu_open</mat-icon>
                     Open Drawer
                 </button>

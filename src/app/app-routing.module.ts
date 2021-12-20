@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { DataListComponent } from './pages/list/data-list/data-list.component';
 import { ActionListComponent } from './pages/list/action-list/action-list.component';
+import { InPanelHeaderComponent } from './pages/list/in-panel-header/in-panel-header.component';
 import { StatusListComponent } from './pages/list/status-list/status-list.component';
 import { MultiselectListComponent } from './pages/list/multiselect-list/multiselect-list.component';
 import { BasicBottomSheetComponent } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.component';
@@ -30,6 +31,7 @@ import { MenuInADrawerComponent } from './pages/account-menu/in-a-drawer/menu-in
 import { DropdownToolbarComponent } from './pages/app-bar/dropdown-toolbar/dropdown-toolbar.component';
 import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.component';
 import { ContextualAppBarComponent } from './pages/app-bar/contextual/contextual.component';
+import { TreeListComponent } from './pages/list/tree/tree.component';
 
 export type DrawerItem = {
     title: string;
@@ -143,6 +145,11 @@ export const ROUTES: DrawerItem[] = [
                 component: ActionListComponent,
             },
             {
+                title: 'In Panel Header',
+                path: 'in-panel-header',
+                component: InPanelHeaderComponent,
+            },
+            {
                 title: 'Data List',
                 path: 'data-list',
                 component: DataListComponent,
@@ -166,6 +173,11 @@ export const ROUTES: DrawerItem[] = [
                 title: 'Responsive Table',
                 path: 'responsive-table',
                 component: ResponsiveTableComponent,
+            },
+            {
+                title: 'Tree Structure',
+                path: 'tree-structure',
+                component: TreeListComponent,
             },
         ],
     },

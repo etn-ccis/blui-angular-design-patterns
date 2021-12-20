@@ -3,7 +3,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { StateService } from './services/state.service';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
-import * as PXBColors from '@pxblue/colors';
+import * as BLUIColors from '@brightlayer-ui/colors';
 import { DrawerItem, ROUTES } from './app-routing.module';
 import { ViewportService } from './services/viewport.service';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
@@ -15,7 +15,7 @@ import { BidirectionalService } from './pages/i18n/services/bidirectional.servic
     encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
-    colors: Record<string, any> = PXBColors;
+    colors: Record<string, any> = BLUIColors;
     routes = ROUTES;
     selected: string;
 
@@ -35,16 +35,16 @@ export class AppComponent {
             }
         });
         this._matIconRegistry.addSvgIconSetInNamespace(
-            'px-icons',
-            /* **Note to PX Blue Users:
+            'blui-icons',
+            /* **Note to Brightlayer UI Users:
                 Stackblitz has difficulty reading static assets found within the node_modules folder.
-                For this example to work inside Stackblitz, we use a https request to fetch the PX Blue icon set.
+                For this example to work inside Stackblitz, we use a https request to fetch the Brightlayer UI icon set.
                 In normal situations, we encourage you to import the iconSet directly from the node_modules folder like below:
-                    // const iconSet = require('@pxblue/icons-svg/icons.svg').default;
+                    // const iconSet = require('@brightlayer-ui/icons-svg/icons.svg').default;
                     // this._domSanitizer.bypassSecurityTrustResourceUrl('iconSet')
              */
             this._domSanitizer.bypassSecurityTrustResourceUrl(
-                'https://raw.githubusercontent.com/pxblue/icons/dev/svg/icons.svg'
+                'https://raw.githubusercontent.com/brightlayer-ui/icons/dev/svg/icons.svg'
             )
         );
     }

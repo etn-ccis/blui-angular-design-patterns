@@ -1,0 +1,48 @@
+<mat-toolbar data-cy="blui-toolbar" color="primary" class="app-bar mat-elevation-z2">
+    <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div>
+        <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">
+            Global Action List
+        </div>
+        <div class="mat-subheading-2" [style.marginLeft.px]="isSmall ? 24 : 0" style="margin-top: -8px;">
+            In Panel Header
+        </div>
+    </div>
+</mat-toolbar>
+<section class="panel-header-example">
+    <mat-card class="filter-card">
+        <mat-card-header class="filter-card-header">
+            <mat-card-title>Category Name</mat-card-title>
+            <blui-spacer></blui-spacer>
+            <div class="filter-selector">
+                <mat-select
+                    [(value)]="selectedFilter"
+                    (selectionChange)="onDayFilterChange($event)"
+                    panelClass="selectPanel"
+                    [disableOptionCentering]="true"
+                >
+                    <mat-option *ngFor="let option of filterDaysOption" [value]="option.value">
+                        {{ option.title }}
+                    </mat-option>
+                </mat-select>
+            </div>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-list class="list-section">
+                <blui-info-list-item
+                    [chevron]="true"
+                    [hidePadding]="true"
+                    *ngFor="let lastIndex = last; let item; of: data | filter: selectedFilter"
+                    data-cy="list-content"
+                    [divider]="isSmall ? 'full' : lastIndex ? null : 'full'"
+                >
+                    <span blui-title>{{ item.title }}</span>
+                    <span blui-subtitle>{{ item.subtitle }}</span>
+                </blui-info-list-item>
+            </mat-list>
+            <div *ngIf="(data | filter: selectedFilter).length === 0" class="no-items mat-body-2">No items found.</div>
+        </mat-card-content>
+    </mat-card>
+</section>

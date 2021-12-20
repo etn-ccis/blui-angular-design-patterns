@@ -1,5 +1,5 @@
 <div class="sectioned-form">
-    <mat-toolbar color="primary" class="app-bar mat-elevation-z4" data-cy="pxb-toolbar">
+    <mat-toolbar color="primary" class="app-bar mat-elevation-z4" data-cy="blui-toolbar">
         <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
             <mat-icon>menu</mat-icon>
         </button>
@@ -54,19 +54,19 @@
                                     Required
                                 </mat-error>
                             </mat-form-field>
-                            <div class="pxb-protection-details">
-                                <mat-checkbox class="pxb-protection" formControlName="pxbProtectionChecked">
-                                    PXB Protection
+                            <div class="blui-protection-details">
+                                <mat-checkbox class="blui-protection" formControlName="bluiProtectionChecked">
+                                    BLUI Protection
                                 </mat-checkbox>
                                 <mat-icon
-                                    matTooltip="PXB Protection provides a three-year power expert warranty."
+                                    matTooltip="BLUI Protection provides a three-year power expert warranty."
                                     matTooltipPosition="above"
                                     [matTooltipClass]="'tooltip-pd'"
                                     data-cy="tool-tip"
                                     >help_outline</mat-icon
                                 >
-                                <p class="mat-body-1 pxb-protection-desc" style="margin-bottom: 32px">
-                                    PXB Protection provides a three-year power expert warranty.
+                                <p class="mat-body-1 blui-protection-desc" style="margin-bottom: 32px">
+                                    BLUI Protection provides a three-year power expert warranty.
                                 </p>
                             </div>
                         </div>

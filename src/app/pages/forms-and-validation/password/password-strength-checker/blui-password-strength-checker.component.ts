@@ -8,10 +8,10 @@ export type PasswordRequirement = {
 };
 
 @Component({
-    selector: 'pxb-password-strength-checker',
+    selector: 'blui-password-strength-checker',
     encapsulation: ViewEncapsulation.None,
     template: `
-        <mat-list class="pxb-password-strength-checker-content">
+        <mat-list class="blui-password-strength-checker-content">
             <ng-container *ngFor="let requirement of requirements">
                 <app-password-strength-check
                     [success]="requirement.success"
@@ -24,19 +24,19 @@ export type PasswordRequirement = {
     `,
     styles: [
         `
-            pxb-password-strength-checker {
+            blui-password-strength-checker {
                 display: flex;
             }
-            mat-list-item.pxb-password-strength-checker-content {
+            mat-list-item.blui-password-strength-checker-content {
                 height: auto;
             }
         `,
     ],
     host: {
-        class: 'pxb-password-strength-checker',
+        class: 'blui-password-strength-checker',
     },
 })
-export class PxbPasswordStrengthCheckerComponent {
+export class BluiPasswordStrengthCheckerComponent {
     @Input() requirements: PasswordRequirement[] = [];
     @Input() formValue: string;
     @Input() meetsRequirements: boolean;

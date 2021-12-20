@@ -1,20 +1,10 @@
-mat-list {
-    padding-top: 0px;
-}
-
-.sortable-list-item {
-    display: block;
-
-    .mat-list-icon {
-        margin-left: -8px;
-    }
-}
+@import '~@brightlayer-ui/colors/palette.scss';
 
 // the floating component when dragging
 .cdk-drag-preview {
-    background-color: white;
-    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14),
-        0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    background-color: map-get($blui-white, 50);
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+        0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
 
 .cdk-drag-placeholder {
@@ -22,6 +12,55 @@ mat-list {
 }
 
 // to add an animation to the other non-dragged elements
-.cdk-drop-list.cdk-drop-list-dragging pxb-info-list-item:not(.cdk-drag-placeholder) {
+.cdk-drop-list.cdk-drop-list-dragging blui-info-list-item:not(.cdk-drag-placeholder) {
     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.sortable-handler {
+    cursor: grab;
+    margin-top: -16px;
+}
+
+.sortable-list-item {
+    &.cdk-drag-preview {
+        .sortable-handler {
+            pointer-events: auto;
+            cursor: grabbing;
+        }
+    }
+}
+
+.sortable-list-container {
+    padding: 24px;
+    margin: 0 auto;
+    max-width: 816px;
+    .action-button-container {
+        text-align: right;
+        .action-button mat-icon {
+            margin-right: 4px;
+            margin-bottom: 2px;
+            font-size: 16px;
+            height: 16px;
+            width: 16px;
+        }
+    }
+    .sortable-list-card {
+        margin: 24px 0 0;
+        padding: 0;
+        .mat-list-base {
+            padding-top: 0;
+        }
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .sortable-list-container {
+        padding: 0;
+        max-width: 100%;
+        .sortable-list-card {
+            margin: 0;
+            border-radius: 0;
+            box-shadow: none !important;
+        }
+    }
 }

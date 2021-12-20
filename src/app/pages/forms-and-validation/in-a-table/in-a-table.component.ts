@@ -43,7 +43,7 @@ export class InATableComponent implements OnInit {
                 } else {
                     this.isSmall = false;
                 }
-                this.isXsSmall = state.breakpoints['(max-width: 599.98px)'];
+                this.isXsSmall = state.breakpoints['(max-width: 599.99px)'];
             });
     }
 
@@ -61,17 +61,17 @@ export class InATableComponent implements OnInit {
         const rows = this.tableControlArray;
         this.data = [
             {
-                name: 'Power',
+                name: 'Brightlayer',
                 min: 123,
                 max: 456,
             },
             {
-                name: 'Xpert',
+                name: 'User',
                 min: 123,
                 max: 456,
             },
             {
-                name: 'Blue',
+                name: 'Interface',
                 min: 123,
                 max: 456,
             },

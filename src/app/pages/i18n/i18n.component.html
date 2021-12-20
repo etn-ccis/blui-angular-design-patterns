@@ -6,7 +6,7 @@
                     <mat-icon class="logo" [class.rtl]="rtl">offline_bolt</mat-icon>
                 </mat-toolbar-row>
                 <mat-toolbar-row style="height: 4px">
-                    <small>PX {{ 'BLUE' | translate }}</small>
+                    <small> {{ 'Brightlayer' | translate }} UI</small>
                 </mat-toolbar-row>
                 <mat-toolbar-row>
                     <small style="margin-top: -24px" id="i18n">{{ 'I18N' | translate }}</small>
@@ -55,7 +55,7 @@
             <div [style.marginLeft.px]="isSmall && !rtl ? 24 : 0" [style.marginRight.px]="isSmall && rtl ? 24 : 0">
                 {{ 'I18N' | translate }}
             </div>
-            <pxb-spacer></pxb-spacer>
+            <blui-spacer></blui-spacer>
             <button
                 [matTooltip]="'I18N_MENU_TOOLTIP' | translate"
                 matTooltipPosition="below"
@@ -91,18 +91,18 @@
         </mat-toolbar>
 
         <mat-nav-list data-cy="list-items" class="fruit-list">
-            <pxb-info-list-item
+            <blui-info-list-item
                 *ngFor="let fruit of fruits"
                 (click)="toggleFruit(fruit.name)"
                 [hidePadding]="true"
                 [iconAlign]="'center'"
             >
-                <mat-checkbox pxb-icon [checked]="selectedFruits.has(fruit.name)" color="primary"></mat-checkbox>
-                <div pxb-title>{{ 'FRUITS.' + fruit.name | translate }}</div>
-                <div pxb-subtitle class="fruit-subtitle subheading-1">
+                <mat-checkbox blui-icon [checked]="selectedFruits.has(fruit.name)" color="primary"></mat-checkbox>
+                <div blui-title>{{ 'FRUITS.' + fruit.name | translate }}</div>
+                <div blui-subtitle class="fruit-subtitle subheading-1">
                     {{ fruit.price | currency: ('CURRENCY_CODE' | translate):'symbol':undefined:selectedLanguage }}
                 </div>
-            </pxb-info-list-item>
+            </blui-info-list-item>
         </mat-nav-list>
     </mat-sidenav-content>
 </mat-sidenav-container>

@@ -7,7 +7,7 @@ describe('Dynamic stepper', () => {
     });
 
     it('should display page title', () => {
-        cy.get('[data-cy=pxb-toolbar]').should('contain', 'Dynamic Stepper');
+        cy.get('[data-cy=blui-toolbar]').should('contain', 'Dynamic Stepper');
     });
 
     it('should add steps to stepper when add is clicked', () => {
@@ -15,7 +15,7 @@ describe('Dynamic stepper', () => {
         cy.get('[data-cy=add-step]').click()
         cy.contains('Go To Work').click({ force: true })
         cy.get('[data-cy=done]').click()
-        cy.get('.pxb-empty-state').should('contain', 'Procedure created successfully')
+        cy.get('.blui-empty-state').should('contain', 'Procedure created successfully')
     });
 
     it('should remove steps from stepper when step remove clicked', () => {
@@ -42,7 +42,7 @@ describe('Dynamic stepper', () => {
         cy.get('[data-cy=add-step]').click()
         cy.contains('Go To Work').click({ force: true })
         cy.get('[data-cy=done]').click()
-        cy.get('.pxb-empty-state').should('contain', 'Procedure created successfully')
+        cy.get('.blui-empty-state').should('contain', 'Procedure created successfully')
         cy.get('[data-cy=reset]').click()
         cy.get('.mat-drawer-content').should('contain', 'Add a Step')
 

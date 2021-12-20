@@ -7,7 +7,7 @@ describe('Account menu in appbar', () => {
     });
 
     it('should display page title', () => {
-        cy.get('[data-cy=pxb-toolbar]').should('contain', 'In an App Bar');
+        cy.get('[data-cy=blui-toolbar]').should('contain', 'In an App Bar');
     });
 
     it('should display menu from generic avatar', () => {

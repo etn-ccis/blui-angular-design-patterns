@@ -7,7 +7,7 @@ describe('Multi-select list', () => {
     });
 
     it('should display page title', () => {
-        cy.get('[data-cy=pxb-toolbar]').should('contain', 'Multiselect List');
+        cy.get('[data-cy=blui-toolbar]').should('contain', 'Multiselect List');
     });
 
     it('should add list items when add is clicked', () => {
@@ -39,8 +39,8 @@ describe('Multi-select list', () => {
         cy.get('[type="checkbox"]').check({ force: true })
         cy.get('[data-cy=snackbar]').should('contain', '10 selected items')
         cy.get('[data-cy=snackbar-delete]').click()
-        cy.get('.pxb-empty-state').should('contain', 'No Items Found')
-        cy.get('[data-cy=pxb-empty-state-add]').click()
+        cy.get('.blui-empty-state').should('contain', 'No Items Found')
+        cy.get('[data-cy=blui-empty-state-add]').click()
         cy.get('[data-cy=list-content]').children().should('have.length', '1')
 
     });

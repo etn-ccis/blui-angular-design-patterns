@@ -7,7 +7,7 @@ describe('Form validation fixed length', () => {
     });
 
     it('should display page title', () => {
-        cy.get('[data-cy=pxb-toolbar]').should('contain', 'Fixed Length Passcode');
+        cy.get('[data-cy=blui-toolbar]').should('contain', 'Fixed Length Passcode');
     });
 
     it('should display incorrect passcode error', () => {

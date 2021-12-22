@@ -1,47 +1,61 @@
 <mat-toolbar data-cy="blui-toolbar" color="primary" class="app-bar mat-elevation-z2">
-    <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
-        <mat-icon>menu</mat-icon>
-    </button>
-    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Multiselect List</div>
-    <blui-spacer></blui-spacer>
-    <button
-        data-cy="toolbar-add"
-        matTooltip="Add an item"
-        mat-icon-button
-        (click)="selectionService.addNewItem()"
-        style="margin-right: -8px"
-    >
-        <mat-icon>add</mat-icon>
-    </button>
+  <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Multi Select List</div>
+  <blui-spacer></blui-spacer>
+  <button *ngIf="isSmall" data-cy="action-btn" mat-icon-button (click)="deleteSelected()" style="margin-right: -8px">
+    <mat-icon>delete</mat-icon>
+  </button>
 </mat-toolbar>
-<mat-list class="multi-select-list">
-    <blui-info-list-item data-cy="list-content" *ngFor="let item of selectionService.getItems()" [iconAlign]="'center'">
-        <mat-checkbox
-            blui-icon
-            [checked]="selectionService.isSelected(item)"
-            (change)="selectItem(item)"
-        ></mat-checkbox>
-        <span blui-title>
-            {{ item.name }}
-        </span>
-        <span blui-subtitle>
-            {{ item.details }}
-        </span>
-        <mat-icon blui-right-content>navigate_next</mat-icon>
+
+<section class="multiselect-list-container">
+  <div data-cy="action-btn" class="action-button-container" *ngIf="!isSmall">
+    <button mat-raised-button class="action-button" color="warn" (click)="deleteSelected()">
+      <mat-icon>delete</mat-icon>
+      <span style="margin-left: 8px">DELETE</span>
+    </button>
+  </div>
+  <mat-card class="multiselect-list-card">
+    <blui-info-list-item [divider]="'full'" [dense]="true">
+      <mat-checkbox class="multi-select-checkbox" blui-icon
+                    [indeterminate]="showIndeterminant(selectedToday, todayData)"
+                    [checked]="selectedToday.size === todayData.length"
+                    (change)="toggleAll($event, todayData, selectedToday)"></mat-checkbox>
+      <div blui-title>Today ({{selectedToday.size}})</div>
     </blui-info-list-item>
-</mat-list>
-<div *ngIf="selectionService.getItems().length === 0" style="height: calc(100vh - 64px)">
-    <blui-empty-state title="No Items Found" style="margin: 16px">
-        <mat-icon blui-empty-icon>error</mat-icon>
-        <button
-            data-cy="blui-empty-state-add"
-            blui-actions
-            mat-raised-button
-            color="primary"
-            (click)="selectionService.addNewItem()"
+    <mat-list>
+        <blui-info-list-item
+          *ngFor="let item of todayData; let lastIndex = last"
+          [divider]="isSmall ? 'full' : lastIndex ? null : 'full'"
         >
-            <mat-icon>add</mat-icon>
-            Add An Item
-        </button>
-    </blui-empty-state>
-</div>
+          <mat-checkbox blui-icon class="multi-select-checkbox" [checked]="selectedToday.has(item)"
+              (change)="toggle($event, item, selectedToday)">
+          </mat-checkbox>
+          <div blui-title> {{ item }}</div>
+        </blui-info-list-item>
+    </mat-list>
+  </mat-card>
+
+  <mat-card class="multiselect-list-card">
+    <blui-info-list-item [divider]="'full'" [dense]="true">
+      <mat-checkbox class="multi-select-checkbox" blui-icon
+                    [indeterminate]="showIndeterminant(selectedYesterday, yesterdayData)"
+                    [checked]="selectedYesterday.size === yesterdayData.length"
+                    (change)="toggleAll($event, yesterdayData, selectedYesterday)"></mat-checkbox>
+      <div blui-title>Yesterday ({{selectedYesterday.size}})</div>
+    </blui-info-list-item>
+    <mat-list>
+      <blui-info-list-item
+        *ngFor="let item of yesterdayData; let lastIndex = last"
+        [divider]="isSmall ? 'full' : lastIndex ? null : 'full'"
+      >
+        <mat-checkbox blui-icon class="multi-select-checkbox" [checked]="selectedYesterday.has(item)"
+                      (change)="toggle($event, item, selectedYesterday)">
+        </mat-checkbox>
+        <div blui-title> {{ item }}</div>
+      </blui-info-list-item>
+    </mat-list>
+  </mat-card>
+
+</section>

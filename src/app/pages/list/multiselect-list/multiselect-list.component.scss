@@ -1,11 +1,39 @@
-.multi-select-list {
-    padding-top: 0;
-    ::ng-deep .multi-select-list .mat-checkbox-inner-container {
-        width: 18px;
-        height: 18px;
+.multiselect-list-container {
+  padding: 24px;
+  margin: 0 auto;
+  max-width: 816px;
+  .action-button-container {
+    text-align: right;
+    .action-button mat-icon {
+      margin-right: 4px;
+      margin-bottom: 2px;
+      font-size: 16px;
+      height: 16px;
+      width: 16px;
     }
+  }
+  .multiselect-list-card {
+    margin: 24px 0 0;
+    padding: 0;
+    .mat-list-base {
+      padding-top: 0;
+    }
+  }
+  .multi-select-checkbox {
+    display: flex;
+    align-items: center;
+  }
+}
 
-    ::ng-deep .blui-info-list-item-icon-wrapper {
-        margin-left: -8px !important;
+
+@media only screen and (max-width: 960px) {
+  .multiselect-list-container {
+    padding: 0;
+    max-width: 100%;
+    .multiselect-list-card {
+      margin: 0;
+      border-radius: 0;
+      box-shadow: none !important;
     }
+  }
 }

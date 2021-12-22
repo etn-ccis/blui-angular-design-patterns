@@ -71,7 +71,7 @@ export class MultiselectListComponent implements OnInit {
         }
     }
 
-    toggle(e: MatCheckboxChange, key: string, set: Set<string>): void {
+    toggleSingle(e: MatCheckboxChange, key: string, set: Set<string>): void {
         if (e.checked) {
             set.add(key);
         } else {

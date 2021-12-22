@@ -59,7 +59,7 @@
                     blui-icon
                     class="multi-select-checkbox"
                     [checked]="selectedToday.has(item)"
-                    (change)="toggle($event, item, selectedToday)"
+                    (change)="toggleSingle($event, item, selectedToday)"
                 >
                 </mat-checkbox>
                 <div blui-title>{{ item }}</div>
@@ -98,7 +98,7 @@
                     blui-icon
                     class="multi-select-checkbox"
                     [checked]="selectedYesterday.has(item)"
-                    (change)="toggle($event, item, selectedYesterday)"
+                    (change)="toggleSingle($event, item, selectedYesterday)"
                 >
                 </mat-checkbox>
                 <div blui-title>{{ item }}</div>

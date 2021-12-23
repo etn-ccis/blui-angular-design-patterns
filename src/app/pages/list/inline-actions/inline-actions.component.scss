@@ -1,3 +1,4 @@
+@import '~@brightlayer-ui/colors/palette.scss';
 .inline-actions-example {
     padding: 24px;
     margin: 0 auto;
@@ -13,10 +14,30 @@
             padding: 0;
         }
     }
-
+    .no-items {
+        padding: 16px;
+        text-align: center;
+        .reset-table {
+            color: map-get($blui-blue, 500);
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
     .note {
         padding-top: 120px;
         text-align: center;
+    }
+
+    .inline-actions-buttons {
+        display: flex;
+        button:hover {
+            color: map-get($blui-blue, 500);
+            background-color: rgba(0, 123, 193, 0.05);
+        }
+    }
+
+    .blui-info-list-item:hover {
+        background-color: map-get($blui-gray, 50);
     }
 }
 

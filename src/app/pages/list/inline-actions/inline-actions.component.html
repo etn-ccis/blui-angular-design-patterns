@@ -16,53 +16,43 @@
         <mat-card-header></mat-card-header>
         <mat-card-content>
             <mat-list class="list-section">
-                <blui-info-list-item
-                    [hidePadding]="true"
-                    *ngFor="let item of data; let lastIndex = last;let firstIndex = first;"
-                    data-cy="list-content"
-                    [divider]="isSmall ? 'full' : lastIndex ? null : 'full'"                
-                >
+                <blui-info-list-item [hidePadding]="true" class="in"
+                    *ngFor="let item of data; let index = index; let lastIndex = last"
+                    data-cy="list-content" [divider]="isSmall ? 'full' : lastIndex ? null : 'full'"
+                    (mouseover)="showAction(index, true)" (mouseleave)="showAction(index, false)">
                     <span blui-title>{{ item.title }}</span>
                     <span blui-subtitle>{{ item.subtitle }}</span>
-                    <div blui-right-content (mouseover)="showAction(true)" (mouseout)="showAction(false)">
-                        <div style="display: flex;"  *ngIf="showActionButtons">
-                            <button
-                                data-cy="list-item-delete"
-                                matTooltip="Delete"
-                                mat-icon-button
-                                data-cy="list-delete"
-                            >
+                    <div blui-right-content>
+                        <div class="inline-actions-buttons" *ngIf="data[index].showActionItems">
+                            <button data-cy="list-item-delete" matTooltip="Delete" mat-icon-button data-cy="list-delete"
+                                (click)="deleteActions(index)" style="cursor: pointer;">
                                 <mat-icon>delete</mat-icon>
                             </button>
-                            <button
-                                data-cy="list-item-cancel"
-                                matTooltip="Save"
-                                mat-icon-button
-                            >
+                            <button data-cy="list-item-cancel" matTooltip="Save" mat-icon-button>
                                 <mat-icon>bookmark</mat-icon>
                             </button>
-                            <button
-                                data-cy="list-item-archive"
-                                matTooltip="Archive"
-                                mat-icon-button
-                            >
+                            <button data-cy="list-item-archive" matTooltip="Archive" mat-icon-button>
                                 <mat-icon>archive</mat-icon>
                             </button>
                         </div>
+                        <!-- <div *ngIf="!isSmall data[index].showTag; else showInfo">
+                            <blui-list-item-tag style="margin-right: 8px" *ngIf="data[index].showTag && !data[index].showActionItems"
+                            [backgroundColor]="colors.red[500]" label="Active"></blui-list-item-tag>
+                        </div> -->
                     </div>
-                    <!-- <span blui-right-content *ngIf="!showActionButtons">
-                        <blui-list-item-tag
-                            style="margin-right: 8px"
-                            *ngIf="firstIndex"
-                            [backgroundColor]="colors.red[500]"
-                            label="Active"
-                        ></blui-list-item-tag>
-                    </span> -->
                 </blui-info-list-item>
             </mat-list>
-            <div *ngIf="data.length === 0" class="no-items mat-body-2">No items found.</div>
+            <div *ngIf="data.length === 0" class="no-items mat-body-2" data-cy="empty-table">
+                No items found. <span class="reset-table" (click)="loadTable()">Reset table</span>
+            </div>
         </mat-card-content>
     </mat-card>
+    <!-- <ng-template #showInfo>
+        <span blui-info>
+            <blui-list-item-tag
+            [backgroundColor]="colors.red[500]" label="Active"></blui-list-item-tag>
+        </span>
+    </ng-template> -->
     <div class="note">
         This behaviour is exclusive to desktop version.
     </div>

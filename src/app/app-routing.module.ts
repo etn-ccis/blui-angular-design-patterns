@@ -32,6 +32,7 @@ import { DropdownToolbarComponent } from './pages/app-bar/dropdown-toolbar/dropd
 import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.component';
 import { ContextualAppBarComponent } from './pages/app-bar/contextual/contextual.component';
 import { TreeListComponent } from './pages/list/tree/tree.component';
+import { InlineButtonPanelComponent } from './pages/list/inline-button-panel/inline-button-panel.component';
 
 export type DrawerItem = {
     title: string;
@@ -143,6 +144,11 @@ export const ROUTES: DrawerItem[] = [
                 title: 'Action List',
                 path: 'action-list',
                 component: ActionListComponent,
+            },
+            {
+                title: 'In Button Panel',
+                path: 'in-button-panel',
+                component: InlineButtonPanelComponent,
             },
             {
                 title: 'In Panel Header',

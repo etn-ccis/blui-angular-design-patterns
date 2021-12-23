@@ -66,6 +66,7 @@ export class AppComponent {
     select(route: DrawerItem, parentRoute = '/'): void {
         if (!route.children) {
             void this._router.navigate([parentRoute + route.path]);
+
             this.stateService.setDrawerOpen(false);
             this.selected = route.title;
         }

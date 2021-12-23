@@ -1,0 +1,57 @@
+@import '~@brightlayer-ui/colors/palette.scss';
+
+.inline-button-example {
+    padding: 24px;
+    margin: 0 auto;
+    max-width: 800px;
+
+    .action-button-container {
+        display: flex;
+        margin-bottom: 24px;
+
+        .action-button {
+            min-width: 64px;
+            padding-left: 8px;
+            .action-button-icon {
+                font-size: 20px;
+            }
+        }
+
+        .action-button-delete {
+            min-width: 64px;
+            padding-left: 8px;
+            .action-button-icon {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .list-card {
+        padding: 0;
+    }
+    .list-section {
+        padding: 0;
+    }
+}
+
+.list-section {
+    ::ng-deep .blui-chevron {
+        color: map-get($blui-gray, 500);
+    }
+}
+@media only screen and (max-width: 960px) {
+    .inline-button-example {
+        padding: 0;
+        max-width: 100%;
+
+        .list-card {
+            border-radius: 0;
+            box-shadow: none;
+        }
+    }
+}
+
+.empty-state-container {
+    align-items: center;
+    height: calc(100vh - 64px);
+}

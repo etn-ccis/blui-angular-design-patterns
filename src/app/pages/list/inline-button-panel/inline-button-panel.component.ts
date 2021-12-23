@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { StateService } from '../../../services/state.service';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-// import { MatDialog } from '@angular/material/dialog';
-// import { DialogContentExampleDialog } from './dialog-content-example.component';
+import { DialogOverviewExampleDialog } from './dialog-overview-example';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
 
 export type ListItem = {
     id: number;
@@ -22,7 +23,9 @@ export class InlineButtonPanelComponent implements OnInit {
 
     constructor(
         private readonly _drawerService: StateService,
-        private readonly _breakpointObserver: BreakpointObserver // public dialog: MatDialog
+        private readonly _breakpointObserver: BreakpointObserver,
+        public snackbar: MatSnackBar,
+        public dialog: MatDialog
     ) {}
 
     ngOnInit(): void {
@@ -65,9 +68,7 @@ export class InlineButtonPanelComponent implements OnInit {
     }
 
     onRemoveAll(): void {
-        this.isDialogVisible = true;
-        // this._snackBar.(DialogOverviewExampleDialog);
-        // this.data = [];
+        this.data = [];
     }
 
     // openDialog(): void {
@@ -82,5 +83,17 @@ export class InlineButtonPanelComponent implements OnInit {
     toggleMenu(): void {
         const drawerOpen = this._drawerService.getDrawerOpen();
         this._drawerService.setDrawerOpen(!drawerOpen);
+    }
+
+    openDialog(): void {
+        // eslint-disable-next-line @typescript-eslint/no-use-before-define
+        this.dialog.open(DialogOverviewExampleDialog, {
+            width: '250px',
+        });
+
+        // dialogRef.afterClosed().subscribe((result) => {
+        //     // eslint-disable-next-line no-console
+        //     console.log('The dialog was closed');
+        // });
     }
 }

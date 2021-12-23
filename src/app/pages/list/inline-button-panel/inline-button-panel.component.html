@@ -9,7 +9,7 @@
         </div>
     </div>
     <blui-spacer></blui-spacer>
-    <button data-cy="toolbar-delete" matTooltip="Remove all items" mat-icon-button (click)="onRemoveAll()"
+    <button data-cy="toolbar-delete" matTooltip="Remove all items" mat-icon-button (click)="openDialog()"
         style="margin-right: 8px" *ngIf="isSmall">
         <mat-icon>delete</mat-icon>
     </button>
@@ -27,7 +27,7 @@
             Add an Item
         </button>
         <blui-spacer></blui-spacer>
-        <button mat-stroked-button class="action-button-delete" color="warn" (click)="onRemoveAll()">
+        <button mat-stroked-button class="action-button-delete" color="warn" (click)="openDialog()">
             <mat-icon class="action-button-icon">
                 delete
             </mat-icon>

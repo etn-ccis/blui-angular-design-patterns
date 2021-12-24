@@ -57,14 +57,11 @@ import { ContextualAppbarModule } from './pages/app-bar/contextual/contextual.mo
 import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
 import { TreeListModule } from './pages/list/tree/tree.module';
 import { InlineButtonPanelModule } from './pages/list/inline-button-panel/inline-button-panel.module';
-import {
-    DialogOverviewExample,
-    DialogOverviewExampleDialog,
-} from './pages/list/inline-button-panel/dialog-overview-example';
+import { DialogOverviewExampleDialog } from './pages/list/inline-button-panel/dialog-overview-example';
 import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-    declarations: [AppComponent, DialogOverviewExample, DialogOverviewExampleDialog],
+    declarations: [AppComponent, DialogOverviewExampleDialog],
     imports: [
         ActionListModule,
         InPanelHeaderModule,

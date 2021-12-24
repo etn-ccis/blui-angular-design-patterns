@@ -71,29 +71,14 @@ export class InlineButtonPanelComponent implements OnInit {
         this.data = [];
     }
 
-    // openDialog(): void {
-    //     const dialogRef = this.dialog.open(DialogContentExampleDialog);
-
-    //     dialogRef.afterClosed().subscribe((result) => {
-    //         // eslint-disable-next-line no-console
-    //         console.log(`Dialog result: ${result}`);
-    //     });
-    // }
-
     toggleMenu(): void {
         const drawerOpen = this._drawerService.getDrawerOpen();
         this._drawerService.setDrawerOpen(!drawerOpen);
     }
 
     openDialog(): void {
-        // eslint-disable-next-line @typescript-eslint/no-use-before-define
         this.dialog.open(DialogOverviewExampleDialog, {
-            width: '250px',
+            width: '224px',
         });
-
-        // dialogRef.afterClosed().subscribe((result) => {
-        //     // eslint-disable-next-line no-console
-        //     console.log('The dialog was closed');
-        // });
     }
 }

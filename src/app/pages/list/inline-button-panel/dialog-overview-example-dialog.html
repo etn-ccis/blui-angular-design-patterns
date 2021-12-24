@@ -1,14 +1,12 @@
-<h1 mat-dialog-title>Hi {{data.name}}</h1>
-<div mat-dialog-content>
-    <p>Delete all items?</p>
-    <p>This cannot be undone.</p>
+<div class="custom-dialog-container">
+    <h2 mat-dialog-title>
+        <p>Delete all items?</p>
+    </h2>
+    <div mat-dialog-content>
+        <p class="mat-body-1 sub-heading">This cannot be undone.</p>
+    </div>
+    <div mat-dialog-actions style="flex-direction: column; align-items: flex-end;">
+        <button mat-button color="warn">Delete & Erase All Data</button>
+        <button mat-button (click)="onCancelClick()" color="primary">Cancel</button>
+    </div>
 </div>
-<div mat-dialog-actions>
-    <button mat-button cdkFocusInitial color="warn" (click)="onRemoveAll()">Delete & Erase All Data</button>
-    <button mat-button (click)="onCancelClick()" color="primary">Cancel</button>
-</div>
-
-
-<!-- Copyright 2021 Google LLC. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at https://angular.io/license -->

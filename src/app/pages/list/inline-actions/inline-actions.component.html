@@ -28,11 +28,8 @@
                     <span blui-title>{{ item.title }}</span>
                     <span blui-subtitle>{{ item.subtitle }}</span>
                     <span blui-info *ngIf="isSmall && data[index].showTag">
-                        <blui-list-item-tag
-                            style="margin-top: 4px"
-                            [backgroundColor]="colors.red[500]"
-                            label="Active"
-                        ></blui-list-item-tag>
+                        <blui-list-item-tag style="margin-top: 4px" [backgroundColor]="colors.red[500]" label="Active">
+                        </blui-list-item-tag>
                     </span>
                     <div blui-right-content *ngIf="!isSmall; else showMenu">
                         <div class="inline-actions-buttons" *ngIf="data[index].showActionItems">
@@ -64,8 +61,8 @@
                     </div>
                 </blui-info-list-item>
             </mat-list>
-            <div *ngIf="data.length === 0" class="no-items mat-body-2" data-cy="empty-table">
-                No items found. <span class="reset-table" (click)="loadTable()">Reset table</span>
+            <div *ngIf="data.length === 0" class="no-items mat-body-2" data-cy="empty-list">
+                No items found. <span class="reset-data" (click)="loadData()">Reset data.</span>
             </div>
         </mat-card-content>
     </mat-card>

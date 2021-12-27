@@ -24,7 +24,7 @@ export class InlineActionsComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-        this.loadTable();
+        this.loadData();
         this._breakpointObserver
             .observe([Breakpoints.Small, Breakpoints.Handset])
             .subscribe((state: BreakpointState) => {
@@ -52,7 +52,7 @@ export class InlineActionsComponent implements OnInit {
     deleteActions(index: number): void {
         this.data.splice(index, 1);
     }
-    loadTable(): void {
+    loadData(): void {
         this.data = [
             {
                 title: 'High Humidity',

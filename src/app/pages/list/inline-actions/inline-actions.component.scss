@@ -1,0 +1,62 @@
+@import '~@brightlayer-ui/colors/palette.scss';
+.inline-actions-example {
+    padding: 24px;
+    margin: 0 auto;
+    max-width: 816px;
+
+    .inline-actions-card {
+        padding: 0;
+        .mat-card-title {
+            margin: 0;
+        }
+
+        .list-section {
+            padding: 0;
+        }
+    }
+    .no-items {
+        padding: 16px;
+        text-align: center;
+        .reset-data {
+            color: map-get($blui-blue, 500);
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+    .note {
+        padding-top: 120px;
+        text-align: center;
+    }
+
+    .inline-actions-buttons {
+        display: flex;
+        button:hover {
+            color: map-get($blui-blue, 500);
+            background-color: rgba(0, 123, 193, 0.05);
+        }
+    }
+
+    .blui-info-list-item:hover {
+        background-color: map-get($blui-gray, 50);
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .inline-actions-example {
+        padding: 0;
+        max-width: 100%;
+
+        .inline-actions-card {
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        .note {
+            display: none;
+        }
+
+        .blui-info-list-item:hover {
+            background-color: transparent;
+        }
+    }
+}

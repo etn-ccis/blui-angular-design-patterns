@@ -7,7 +7,7 @@ describe('Form validation phone number format', () => {
     });
 
     it('should display page title', () => {
-        cy.get('[data-cy=pxb-toolbar]').should('contain', 'Phone Number Format');
+        cy.get('[data-cy=blui-toolbar]').should('contain', 'Phone Number Format');
     });
 
     it('should display error for each country', () => {

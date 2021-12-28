@@ -6,6 +6,7 @@ jobs:
         working_directory: ~/angular-design-patterns
         docker:
             - image: circleci/node:12.6-browsers
+        resource_class: large
         steps:
             - checkout
             - restore_cache:
@@ -47,6 +48,7 @@ jobs:
         working_directory: ~/angular-design-patterns
         docker:
             - image: circleci/node:12.6-browsers
+        resource_class: large
         steps:
             - checkout
             - restore_cache:
@@ -98,13 +100,13 @@ workflows:
         jobs:
             - build_project
             - cypress_tests:
-                    requires:
-                        - build_project
-                    filters:
-                        branches:
-                            only:
-                                - master
-                                - dev
+                   requires:
+                       - build_project
+                   filters:
+                       branches:
+                           only:
+                               - master
+                               - dev
             - coverage_reports:
                 requires:
                     - build_project

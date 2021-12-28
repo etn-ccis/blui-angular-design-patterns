@@ -33,6 +33,7 @@ import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.compon
 import { ContextualAppBarComponent } from './pages/app-bar/contextual/contextual.component';
 import { TreeListComponent } from './pages/list/tree/tree.component';
 import { InlineButtonPanelComponent } from './pages/list/inline-button-panel/inline-button-panel.component';
+import { InlineActionsComponent } from './pages/list/inline-actions/inline-actions.component';
 
 export type DrawerItem = {
     title: string;
@@ -154,6 +155,11 @@ export const ROUTES: DrawerItem[] = [
                 title: 'In Panel Header',
                 path: 'in-panel-header',
                 component: InPanelHeaderComponent,
+            },
+            {
+                title: 'Inline Actions',
+                path: 'inline-actions',
+                component: InlineActionsComponent,
             },
             {
                 title: 'Data List',

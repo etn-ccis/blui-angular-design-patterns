@@ -26,6 +26,7 @@ import { DrawerLayoutModule, DrawerModule, EmptyStateModule } from '@brightlayer
 import { DataListModule } from './pages/list/data-list/data-list.module';
 import { ActionListModule } from './pages/list/action-list/action-list.module';
 import { InPanelHeaderModule } from './pages/list/in-panel-header/in-panel-header.module';
+import { InlineActionsModule } from './pages/list/inline-actions/inline-actions.module';
 import { StatusListModule } from './pages/list/status-list/status-list.module';
 import { MultiselectListModule } from './pages/list/multiselect-list/multiselect-list.module';
 import { BasicBottomSheetModule } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.module';
@@ -65,6 +66,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     imports: [
         ActionListModule,
         InPanelHeaderModule,
+        InlineActionsModule,
         DataListModule,
         StatusListModule,
         MultiselectListModule,

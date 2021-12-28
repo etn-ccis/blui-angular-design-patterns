@@ -1,0 +1,90 @@
+<mat-toolbar data-cy="blui-toolbar" color="primary" class="app-bar mat-elevation-z2">
+    <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div>
+        <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">
+            Local Item Actions
+        </div>
+        <div class="mat-subheading-2" [style.marginLeft.px]="isSmall ? 24 : 0" style="margin-top: -8px;">
+            Inline Actions
+        </div>
+    </div>
+</mat-toolbar>
+<section class="inline-actions-example">
+    <mat-card class="inline-actions-card">
+        <mat-card-header></mat-card-header>
+        <mat-card-content>
+            <mat-list class="list-section">
+                <blui-info-list-item
+                    [hidePadding]="true"
+                    class="in"
+                    *ngFor="let item of data; let index = index; let lastIndex = last"
+                    data-cy="list-content"
+                    [divider]="isSmall ? 'full' : lastIndex ? null : 'full'"
+                    (mouseover)="showAction(index, true)"
+                    (mouseleave)="showAction(index, false)"
+                >
+                    <span blui-title>{{ item.title }}</span>
+                    <span blui-subtitle>{{ item.subtitle }}</span>
+                    <span blui-info *ngIf="isSmall && data[index].showTag">
+                        <blui-list-item-tag style="margin-top: 4px" [backgroundColor]="colors.red[500]" label="Active">
+                        </blui-list-item-tag>
+                    </span>
+                    <div blui-right-content *ngIf="!isSmall; else showMenu">
+                        <div class="inline-actions-buttons" *ngIf="data[index].showActionItems">
+                            <button
+                                data-cy="list-item-delete"
+                                matTooltip="Delete"
+                                mat-icon-button
+                                data-cy="list-delete"
+                                (click)="deleteActions(index)"
+                                style="cursor: pointer;"
+                            >
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                            <button data-cy="list-item-save" matTooltip="Save" mat-icon-button>
+                                <mat-icon>bookmark</mat-icon>
+                            </button>
+                            <button data-cy="list-item-archive" matTooltip="Archive" mat-icon-button>
+                                <mat-icon>archive</mat-icon>
+                            </button>
+                        </div>
+                        <div *ngIf="!isSmall && data[index].showTag; else showInfo">
+                            <blui-list-item-tag
+                                style="margin-right: 8px"
+                                *ngIf="data[index].showTag && !data[index].showActionItems"
+                                [backgroundColor]="colors.red[500]"
+                                label="Active"
+                            ></blui-list-item-tag>
+                        </div>
+                    </div>
+                </blui-info-list-item>
+            </mat-list>
+            <div *ngIf="data.length === 0" class="no-items mat-body-2" data-cy="empty-list">
+                No items found. <span class="reset-data" (click)="loadData()">Reset data.</span>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <ng-template #showMenu>
+        <span blui-right-content style="margin-right: -8px">
+            <button
+                data-cy="action-menu"
+                mat-icon-button
+                #menuTrigger="matMenuTrigger"
+                [matMenuTriggerFor]="menu"
+                (click)="menuTrigger.openMenu()"
+            >
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button data-cy="list-item-delete" mat-menu-item (click)="deleteActions(index)">Delete</button>
+                <button data-cy="list-item-save" mat-menu-item>Save</button>
+                <button data-cy="list-item-archive" mat-menu-item>Archive</button>
+            </mat-menu>
+        </span>
+    </ng-template>
+    <div class="note">
+        This behaviour is exclusive to desktop version.
+    </div>
+</section>

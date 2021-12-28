@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { StateService } from '../../../services/state.service';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { DialogOverviewExampleDialog } from './dialog-overview-example';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogService } from './services/dialog-service';
 export type ListItem = {
@@ -24,7 +23,6 @@ export class InlineButtonPanelComponent implements OnInit {
     constructor(
         private readonly _drawerService: StateService,
         private readonly _breakpointObserver: BreakpointObserver,
-        public snackbar: MatSnackBar,
         public dialog: MatDialog,
         private readonly _dialogService: DialogService
     ) {}

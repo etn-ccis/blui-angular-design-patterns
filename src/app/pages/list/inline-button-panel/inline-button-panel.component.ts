@@ -4,7 +4,7 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 import { DialogOverviewExampleDialog } from './dialog-overview-example';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
-
+import { DialogService } from './services/dialog-service';
 export type ListItem = {
     id: number;
     name: string;
@@ -25,7 +25,8 @@ export class InlineButtonPanelComponent implements OnInit {
         private readonly _drawerService: StateService,
         private readonly _breakpointObserver: BreakpointObserver,
         public snackbar: MatSnackBar,
-        public dialog: MatDialog
+        public dialog: MatDialog,
+        private readonly _dialogService: DialogService
     ) {}
 
     ngOnInit(): void {
@@ -53,6 +54,12 @@ export class InlineButtonPanelComponent implements OnInit {
                     this.isSmall = false;
                 }
             });
+
+        this._dialogService.deleteData.subscribe((deleteAll: boolean) => {
+            if (deleteAll) {
+                this.onRemoveAll();
+            }
+        });
     }
 
     createItem(index: number): ListItem {

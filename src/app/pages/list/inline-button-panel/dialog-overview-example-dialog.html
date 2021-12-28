@@ -6,7 +6,7 @@
         <p class="mat-body-1 sub-heading">This cannot be undone.</p>
     </div>
     <div mat-dialog-actions style="flex-direction: column; align-items: flex-end;">
-        <button mat-button color="warn">Delete & Erase All Data</button>
+        <button mat-button (click)="deleteAll()" color="warn">Delete & Erase All Data</button>
         <button mat-button (click)="onCancelClick()" color="primary">Cancel</button>
     </div>
 </div>

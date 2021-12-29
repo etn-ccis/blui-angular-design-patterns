@@ -58,11 +58,10 @@ import { ContextualAppbarModule } from './pages/app-bar/contextual/contextual.mo
 import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
 import { TreeListModule } from './pages/list/tree/tree.module';
 import { InlineButtonPanelModule } from './pages/list/inline-button-panel/inline-button-panel.module';
-import { DialogOverviewExampleDialog } from './pages/list/inline-button-panel/dialog-overview-example';
-import { MatDialogModule } from '@angular/material/dialog';
+import { PromptDialogModule } from './pages/list/inline-button-panel/dialog/prompt-dialog.module';
 
 @NgModule({
-    declarations: [AppComponent, DialogOverviewExampleDialog],
+    declarations: [AppComponent],
     imports: [
         ActionListModule,
         InPanelHeaderModule,
@@ -118,7 +117,7 @@ import { MatDialogModule } from '@angular/material/dialog';
         TreeListModule,
         InAnAppBarModule,
         InlineButtonPanelModule,
-        MatDialogModule,
+        PromptDialogModule,
     ],
     bootstrap: [AppComponent],
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StateService } from '../../../services/state.service';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { DialogOverviewExampleDialog } from './dialog-overview-example';
+import { PromptDialog } from './dialog/prompt-dialog';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogService } from './services/dialog-service';
 export type ListItem = {
@@ -82,8 +82,8 @@ export class InlineButtonPanelComponent implements OnInit {
     }
 
     openDialog(): void {
-        this.dialog.open(DialogOverviewExampleDialog, {
-            width: '224px',
+        this.dialog.open(PromptDialog, {
+            width: '280px',
         });
     }
 }

@@ -84,6 +84,7 @@ export class InlineButtonPanelComponent implements OnInit {
     openDialog(): void {
         this.dialog.open(PromptDialog, {
             width: '280px',
+            hasBackdrop: true,
         });
     }
 }

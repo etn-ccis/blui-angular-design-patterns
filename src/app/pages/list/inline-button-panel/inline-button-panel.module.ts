@@ -8,9 +8,10 @@ import { InfoListItemModule, EmptyStateModule, SpacerModule } from '@brightlayer
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { InlineButtonPanelComponent } from './inline-button-panel.component';
 import { MatCardModule } from '@angular/material/card';
+import { PromptDialog } from './dialog/prompt-dialog';
 
 @NgModule({
-    declarations: [InlineButtonPanelComponent],
+    declarations: [InlineButtonPanelComponent, PromptDialog],
     imports: [
         CommonModule,
         MatToolbarModule,

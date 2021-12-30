@@ -1,0 +1,137 @@
+@import '~@brightlayer-ui/colors/palette.scss';
+section.local-inline-actions-example {
+    padding: 24px;
+    margin: 0 auto;
+    max-width: 816px;
+}
+
+::ng-deep .show-detail-list-item .blui-info-list-item-content:hover {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.04);
+}
+
+// @import '~@brightlayer-ui/colors/palette.scss';
+
+// section.list-section {
+//     padding: 24px;
+//     max-width: 768px;
+//     margin: 0 auto;
+// }
+
+// .toolbar-actions {
+//     display: flex;
+//     margin: 0 -12px;
+//     button {
+//         margin: 0 8px;
+//     }
+// }
+
+.list-example {
+    margin-bottom: 24px;
+}
+
+.mat-accordion.accordion-panel {
+    ::ng-deep .mat-expansion-panel-body {
+        padding: 0;
+    }
+}
+::ng-deep .mat-expansion-panel-header .mat-expansion-panel-header-title {
+    color: map-get($blui-blue, 500) !important;
+}
+// .list-section {
+::ng-deep .mat-list-base {
+    padding-top: 0;
+}
+
+::ng-deep .accordion-panel {
+    .mat-expansion-panel {
+        .mat-expansion-panel-header {
+            height: 48px !important;
+            border-radius: 0;
+            padding-left: 16px;
+            .mat-expansion-indicator {
+                margin-top: -8px;
+            }
+            &.mat-expanded {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+                .mat-expansion-indicator {
+                    margin-top: 4px;
+                }
+            }
+        }
+    }
+}
+::ng-deep .blui-chevron {
+    color: map-get($blui-gray, 500);
+}
+// }
+
+// .list-section {
+//     .alarm-icon {
+//         background-color: map-get($blui-red, 500);
+//         color: map-get($blui-white, 50);
+//     }
+//     .maintenance-icon {
+//         color: map-get($blui-orange, 500);
+//     }
+// }
+
+// .time-section {
+//     font-size: 12px;
+//     width: 64px;
+//     flex-direction: column;
+//     .time-numeric {
+//         font-weight: 600;
+//         margin-right: 4px;
+//     }
+// }
+
+.title-section {
+    .title-desc {
+        font-weight: normal;
+        margin-left: 4px;
+    }
+}
+
+// .subtitle-section {
+//     .subtitle {
+//         font-size: 12px;
+//         font-weight: normal;
+//         margin-top: 2px;
+//         .caption-1 {
+//             font-size: 14px;
+//         }
+//         .caption-2 {
+//             font-size: 12px;
+//         }
+//     }
+// }
+
+@media only screen and (max-width: 960px) {
+    section.list-section {
+        padding: 0;
+        max-width: 100%;
+    }
+
+    // .title-section {
+    //     .title-desc {
+    //         display: none;
+    //     }
+    // }
+
+    // .subtitle-section {
+    //     .subtitle {
+    //         display: none;
+    //         &.show {
+    //             display: block;
+    //         }
+    //     }
+    // }
+
+    ::ng-deep .accordion-panel {
+        .mat-expansion-panel.expansion-panel-mobile {
+            border-radius: 0;
+            box-shadow: none;
+        }
+    }
+}

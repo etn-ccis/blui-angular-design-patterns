@@ -57,6 +57,7 @@ import { DropdownToolbarModule } from './pages/app-bar/dropdown-toolbar/dropdown
 import { ContextualAppbarModule } from './pages/app-bar/contextual/contextual.module';
 import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
 import { TreeListModule } from './pages/list/tree/tree.module';
+import { InlineLocalActionsModule } from './pages/list/inline-local-actions/inline-local-actions.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -114,6 +115,7 @@ import { TreeListModule } from './pages/list/tree/tree.module';
         InAListModule,
         TreeListModule,
         InAnAppBarModule,
+        InlineLocalActionsModule,
     ],
     bootstrap: [AppComponent],
 })

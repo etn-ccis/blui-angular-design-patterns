@@ -1,0 +1,184 @@
+<mat-toolbar data-cy="blui-toolbar" color="primary" class="app-bar mat-elevation-z2">
+    <button
+        data-cy="toolbar-menu"
+        style="margin-left: -8px"
+        mat-icon-button
+        (click)="toggleMenu()"
+        *ngIf="isLeftPaneVisible && isSmall"
+    >
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="mat-title" *ngIf="isLeftPaneVisible; else showRightPanelTitle">
+        Local Item Actions
+    </div>
+
+    <ng-template #showRightPanelTitle>
+        <button
+            data-cy="toolbar-menu"
+            style="margin-left: -8px;margin-right: 24px"
+            mat-icon-button
+            (click)="isLeftPaneVisible = true"
+        >
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+        <div class="mat-title">
+            Battery Service
+        </div>
+    </ng-template>
+</mat-toolbar>
+<blui-slide-panel-inline-actions [activePane]="isLeftPaneVisible ? 'left' : 'right'">
+    <div leftPane>
+        <section class="local-inline-actions-example">
+            <div class="list-example">
+                <mat-accordion class="accordion-panel">
+                    <mat-expansion-panel class="mat-elevation-z1" [expanded]="true">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Today
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <mat-list class="list-section">
+                            <blui-info-list-item
+                                divider="full"
+                                [chevron]="true"
+                                [hidePadding]="true"
+                                class="show-detail-list-item"
+                                (click)="showItemDetails()"
+                            >
+                                <div class="title-section" blui-title>
+                                    <span class="title-label">Battery Service: </span>
+                                    <span class="title-desc">Eaton GH142</span>
+                                </div>
+                            </blui-info-list-item>
+
+                            <blui-info-list-item divider="full" [hidePadding]="true">
+                                <div class="title-section" blui-title>
+                                    <span class="title-label">Bypass Over Frequency: </span>
+                                    <span class="title-desc">A2 Max Reveal </span>
+                                </div>
+                                <span blui-right-content style="margin-right: -8px">
+                                    <button
+                                        data-cy="action-menu"
+                                        mat-icon-button
+                                        #menuTrigger="matMenuTrigger"
+                                        [matMenuTriggerFor]="menu"
+                                        (click)="menuTrigger.openMenu()"
+                                    >
+                                        <mat-icon>more_vert</mat-icon>
+                                    </button>
+                                    <mat-menu #menu="matMenu">
+                                        <button data-cy="edit" mat-menu-item>Edit</button>
+                                        <button data-cy="delete" mat-menu-item>View Details</button>
+                                        <button data-cy="export" mat-menu-item>Export</button>
+                                    </mat-menu>
+                                </span>
+                            </blui-info-list-item>
+
+                            <blui-info-list-item divider="full" [hidePadding]="true">
+                                <div class="title-section" blui-title>
+                                    <span class="title-label">Device: </span>
+                                    <span class="title-desc">A2 Max Reveal </span>
+                                </div>
+                                <span blui-right-content>
+                                    <mat-icon
+                                        style="
+                                    height: 18px;
+                                    width: 18px;
+                                    margin: 8px;
+                                    color: #727E84;"
+                                        >edit</mat-icon
+                                    >
+                                </span>
+                            </blui-info-list-item>
+                        </mat-list>
+                    </mat-expansion-panel>
+                </mat-accordion>
+
+                <mat-accordion class="accordion-panel">
+                    <mat-expansion-panel
+                        class="mat-elevation-z1"
+                        style="margin-top: 24px;"
+                        [expanded]="true"
+                        hideToggle
+                    >
+                        <mat-expansion-panel-header #panelHeaderOne (click)="panelHeaderOne._toggle()">
+                            <mat-panel-title>
+                                Notifications
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <mat-list class="list-section">
+                            <blui-info-list-item divider="partial" [hidePadding]="true">
+                                <mat-icon blui-icon>email</mat-icon>
+                                <div class="title-section" blui-title>
+                                    <span class="title-label">Email Notifications</span>
+                                </div>
+                                <div class="subtitle-section" blui-subtitle>
+                                    <span>{{ emailNotifications ? 'Enabled' : 'Disabled' }}</span>
+                                </div>
+                                <mat-slide-toggle
+                                    [(ngModel)]="emailNotifications"
+                                    blui-right-content
+                                ></mat-slide-toggle>
+                            </blui-info-list-item>
+
+                            <blui-info-list-item divider="partial" [hidePadding]="true">
+                                <mat-icon blui-icon>textsms</mat-icon>
+                                <div class="title-section" blui-title>
+                                    <span class="title-label">SMS Notifications</span>
+                                </div>
+                                <div class="subtitle-section" blui-subtitle>
+                                    <span>{{ smsNotifications ? 'Enabled' : 'Disabled' }}</span>
+                                </div>
+                                <mat-slide-toggle [(ngModel)]="smsNotifications" blui-right-content></mat-slide-toggle>
+                            </blui-info-list-item>
+                        </mat-list>
+                    </mat-expansion-panel>
+                </mat-accordion>
+
+                <mat-accordion class="accordion-panel">
+                    <mat-expansion-panel
+                        class="mat-elevation-z1"
+                        style="margin-top: 24px;"
+                        [expanded]="true"
+                        hideToggle
+                    >
+                        <mat-expansion-panel-header #panelHeaderTwo (click)="panelHeaderTwo._toggle()">
+                            <mat-panel-title>
+                                Locale
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <mat-list class="list-section">
+                            <blui-info-list-item divider="partial" [hidePadding]="true">
+                                <mat-icon blui-icon>language</mat-icon>
+                                <div class="title-section" blui-title>
+                                    <span class="title-label">Language</span>
+                                </div>
+                                <div class="subtitle-section" blui-subtitle>
+                                    <span>{{ selected }}</span>
+                                </div>
+                                <div blui-right-content>
+                                    <mat-form-field appearance="outline">
+                                        <mat-select
+                                            panelClass="selectPanel"
+                                            [disableOptionCentering]="true"
+                                            [(value)]="selected"
+                                        >
+                                            <mat-option value="Deutsch">Deutsch</mat-option>
+                                            <mat-option value="English (U.S.)">English (U.S.)</mat-option>
+                                            <mat-option value="Español (ES)">Español (ES)</mat-option>
+                                            <mat-option value="Français (FR)">Français (FR)</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </blui-info-list-item>
+                        </mat-list>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+        </section>
+    </div>
+
+    <div rightPane>
+        <blui-scorecard></blui-scorecard>
+    </div>
+</blui-slide-panel-inline-actions>

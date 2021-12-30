@@ -9,12 +9,24 @@
         </div>
     </div>
     <blui-spacer></blui-spacer>
-    <button data-cy="toolbar-delete" matTooltip="Remove all items" mat-icon-button (click)="openDialog()"
-        style="margin-right: 8px" *ngIf="isSmall && data.length !== 0">
+    <button
+        data-cy="toolbar-delete"
+        matTooltip="Remove all items"
+        mat-icon-button
+        (click)="openDialog()"
+        style="margin-right: 8px"
+        *ngIf="isSmall && data.length !== 0"
+    >
         <mat-icon>delete</mat-icon>
     </button>
-    <button data-cy="toolbar-add" matTooltip="Add a new item" mat-icon-button (click)="onAddItem()"
-        style="margin-right: -8px" *ngIf="isSmall">
+    <button
+        data-cy="toolbar-add"
+        matTooltip="Add a new item"
+        mat-icon-button
+        (click)="onAddItem()"
+        style="margin-right: -8px"
+        *ngIf="isSmall"
+    >
         <mat-icon>add</mat-icon>
     </button>
 </mat-toolbar>
@@ -37,8 +49,13 @@
     <mat-card class="list-card">
         <mat-card-content>
             <mat-list class="list-section" *ngIf="data.length > 0">
-                <blui-info-list-item [hidePadding]="true" *ngFor="let i of data" data-cy="list-content"
-                    [divider]="isSmall ? 'full' : lastIndex ? null : 'full'" [chevron]="true">
+                <blui-info-list-item
+                    [hidePadding]="true"
+                    *ngFor="let i of data"
+                    data-cy="list-content"
+                    [divider]="isSmall ? 'full' : lastIndex ? null : 'full'"
+                    [chevron]="true"
+                >
                     <span blui-title>{{ i.name }}</span>
                     <span blui-subtitle>{{ i.details }}</span>
                 </blui-info-list-item>
@@ -47,11 +64,20 @@
     </mat-card>
 
     <div class="empty-state-container" *ngIf="data.length === 0" style="display: flex; flex-direction: column">
-        <blui-empty-state title="No Items Found" style="margin: 0px 16px; max-width: 365px; min-height: 100%;"
-            description="No items added to a list. You can add an item and create a list of items.">
+        <blui-empty-state
+            title="No Items Found"
+            style="margin: 0px 16px; max-width: 365px; min-height: 100%;"
+            description="No items added to a list. You can add an item and create a list of items."
+        >
             <mat-icon blui-empty-icon>warning_amber</mat-icon>
-            <button data-cy="blui-empty-state-add" style="margin: 8px;" blui-actions mat-raised-button color="primary"
-                (click)="onAddItem()">
+            <button
+                data-cy="blui-empty-state-add"
+                style="margin: 8px;"
+                blui-actions
+                mat-raised-button
+                color="primary"
+                (click)="onAddItem()"
+            >
                 <mat-icon>add</mat-icon>
                 Add an Item
             </button>

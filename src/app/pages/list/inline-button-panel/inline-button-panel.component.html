@@ -30,7 +30,7 @@
         <mat-icon>add</mat-icon>
     </button>
 </mat-toolbar>
-<section class="inline-button-example">
+<section class="inline-button-example" #inlineButtonExample id="inline-button-example">
     <div data-cy="action-btn" class="action-button-container" *ngIf="!isSmall && data.length > 0">
         <button mat-raised-button class="action-button" color="primary" (click)="onAddItem()">
             <mat-icon class="action-button-icon">

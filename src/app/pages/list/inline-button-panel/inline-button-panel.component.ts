@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { StateService } from '../../../services/state.service';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { PromptDialog } from './dialog/prompt-dialog';
@@ -19,6 +19,7 @@ export class InlineButtonPanelComponent implements OnInit {
     item: ListItem;
     isSmall: boolean;
     isDialogVisible: boolean;
+    @ViewChild('inlineButtonExample') inlineButton: ElementRef;
 
     constructor(
         private readonly _drawerService: StateService,
@@ -82,9 +83,14 @@ export class InlineButtonPanelComponent implements OnInit {
     }
 
     openDialog(): void {
+        const data = {
+            top: Number(this.inlineButton.nativeElement.getBoundingClientRect().top),
+            left: Number(this.inlineButton.nativeElement.getBoundingClientRect().left),
+        };
         this.dialog.open(PromptDialog, {
             width: '280px',
             hasBackdrop: true,
+            data,
         });
     }
 }

@@ -1,0 +1,12 @@
+<div class="custom-dialog-container" id="custom-dialog-container">
+    <h2 mat-dialog-title>
+        <p>Delete all items?</p>
+    </h2>
+    <div mat-dialog-content>
+        <p class="mat-body-1 sub-heading">This cannot be undone.</p>
+    </div>
+    <div mat-dialog-actions style="display: flex; flex-direction: column; align-items: flex-end; margin-top: 24px;">
+        <button mat-button (click)="deleteAll()" color="warn">Delete & Erase All Data</button>
+        <button mat-button (click)="onCancelClick()" color="primary">Cancel</button>
+    </div>
+</div>

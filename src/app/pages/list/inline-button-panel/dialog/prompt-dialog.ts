@@ -26,7 +26,7 @@ export class PromptDialog {
                     this.isSmall = false;
                 }
             });
-            
+
         const leftPosition = window.innerWidth / 2 - 140 + 146;
         const topPosition = window.innerHeight / 2 - 64;
         if (!this.isSmall) this.dialogRef.updatePosition({ top: `${topPosition}px`, left: `${leftPosition}px` });

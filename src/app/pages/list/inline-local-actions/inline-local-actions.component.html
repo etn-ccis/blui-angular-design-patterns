@@ -1,6 +1,11 @@
 <mat-toolbar data-cy="blui-toolbar" color="primary" class="app-bar mat-elevation-z2">
-    <button data-cy="toolbar-menu" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()"
-        *ngIf="isLeftPaneVisible && isSmall">
+    <button
+        data-cy="toolbar-menu"
+        style="margin-left: -8px"
+        mat-icon-button
+        (click)="toggleMenu()"
+        *ngIf="isLeftPaneVisible && isSmall"
+    >
         <mat-icon>menu</mat-icon>
     </button>
     <div class="mat-title" *ngIf="isLeftPaneVisible; else showRightPanelTitle">
@@ -8,8 +13,12 @@
     </div>
 
     <ng-template #showRightPanelTitle>
-        <button data-cy="toolbar-menu" style="margin-left: -8px;margin-right: 24px" mat-icon-button
-            (click)="isLeftPaneVisible = true">
+        <button
+            data-cy="toolbar-menu"
+            style="margin-left: -8px;margin-right: 24px"
+            mat-icon-button
+            (click)="isLeftPaneVisible = true"
+        >
             <mat-icon>arrow_back</mat-icon>
         </button>
         <div class="mat-title">
@@ -29,8 +38,13 @@
                             </mat-panel-title>
                         </mat-expansion-panel-header>
                         <mat-list class="list-section">
-                            <blui-info-list-item divider="full" [chevron]="true" [hidePadding]="true"
-                                class="show-detail-list-item" (click)="showItemDetails()">
+                            <blui-info-list-item
+                                divider="full"
+                                [chevron]="true"
+                                [hidePadding]="true"
+                                class="show-detail-list-item"
+                                (click)="showItemDetails()"
+                            >
                                 <div class="title-section" blui-title>
                                     <span class="title-label">Battery Service: </span>
                                     <span class="title-desc">Eaton GH142</span>
@@ -43,8 +57,13 @@
                                     <span class="title-desc">A2 Max Reveal </span>
                                 </div>
                                 <span blui-right-content style="margin-right: -8px">
-                                    <button data-cy="action-menu" mat-icon-button #menuTrigger="matMenuTrigger"
-                                        [matMenuTriggerFor]="menu" (click)="menuTrigger.openMenu()">
+                                    <button
+                                        data-cy="action-menu"
+                                        mat-icon-button
+                                        #menuTrigger="matMenuTrigger"
+                                        [matMenuTriggerFor]="menu"
+                                        (click)="menuTrigger.openMenu()"
+                                    >
                                         <mat-icon>more_vert</mat-icon>
                                     </button>
                                     <mat-menu #menu="matMenu" xPosition="before">
@@ -58,14 +77,18 @@
                             <blui-info-list-item divider="full" [hidePadding]="true">
                                 <div class="title-section" blui-title>
                                     <span class="title-label">Device: </span>
-                                    <span class="title-desc">A2 Max Reveal </span>
+                                    <span class="title-desc">{{ deviceName }}</span>
                                 </div>
-                                <span blui-right-content>
-                                    <mat-icon style="
+                                <span blui-right-content (click)="openDialog()">
+                                    <mat-icon
+                                        style="
                                     height: 18px;
                                     width: 18px;
                                     margin: 8px;
-                                    color: #727E84;">edit</mat-icon>
+                                    color: #727E84;
+                                    cursor: pointer;"
+                                        >edit</mat-icon
+                                    >
                                 </span>
                             </blui-info-list-item>
                         </mat-list>
@@ -73,8 +96,12 @@
                 </mat-accordion>
 
                 <mat-accordion class="accordion-panel">
-                    <mat-expansion-panel class="mat-elevation-z1" style="margin-top: 24px;" [expanded]="true"
-                        hideToggle>
+                    <mat-expansion-panel
+                        class="mat-elevation-z1"
+                        style="margin-top: 24px;"
+                        [expanded]="true"
+                        hideToggle
+                    >
                         <mat-expansion-panel-header #panelHeaderOne (click)="panelHeaderOne._toggle()">
                             <mat-panel-title>
                                 Notifications
@@ -108,8 +135,12 @@
                 </mat-accordion>
 
                 <mat-accordion class="accordion-panel">
-                    <mat-expansion-panel class="mat-elevation-z1" style="margin-top: 24px;" [expanded]="true"
-                        hideToggle>
+                    <mat-expansion-panel
+                        class="mat-elevation-z1"
+                        style="margin-top: 24px;"
+                        [expanded]="true"
+                        hideToggle
+                    >
                         <mat-expansion-panel-header #panelHeaderTwo (click)="panelHeaderTwo._toggle()">
                             <mat-panel-title>
                                 Locale
@@ -126,8 +157,11 @@
                                 </div>
                                 <div blui-right-content>
                                     <mat-form-field appearance="outline">
-                                        <mat-select panelClass="selectPanel" [disableOptionCentering]="true"
-                                            [(value)]="selected">
+                                        <mat-select
+                                            panelClass="selectPanel"
+                                            [disableOptionCentering]="true"
+                                            [(value)]="selected"
+                                        >
                                             <mat-option value="Deutsch">Deutsch</mat-option>
                                             <mat-option value="English (U.S.)">English (U.S.)</mat-option>
                                             <mat-option value="Español (ES)">Español (ES)</mat-option>

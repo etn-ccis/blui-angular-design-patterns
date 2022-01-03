@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Device</h1>
+<div mat-dialog-content>
+    <mat-form-field appearance="fill">
+        <mat-label>Type</mat-label>
+        <input matInput [(ngModel)]="data.deviceName" />
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="closeDialog()">Finish</button>
+</div>

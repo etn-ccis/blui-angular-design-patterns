@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { StateService } from '../../../services/state.service';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
+import { MatDialog } from '@angular/material/dialog';
+import { LocalActionsDialogComponent } from './local-actions-dialog/local-actions-dialog.component';
+
+export type DialogData = {
+    deviceName: string;
+}
+
 @Component({
     selector: 'app-inline-local-actions',
     templateUrl: './inline-local-actions.component.html',
@@ -12,9 +19,11 @@ export class InlineLocalActionsComponent implements OnInit {
     smsNotifications = true;
     selected = 'English (U.S.)';
     isLeftPaneVisible = true;
+    deviceName = 'A2 Max Reveal';
     constructor(
         private readonly _drawerService: StateService,
-        private readonly _breakpointObserver: BreakpointObserver
+        private readonly _breakpointObserver: BreakpointObserver,
+        public dialog: MatDialog
     ) {}
 
     ngOnInit(): void {
@@ -27,6 +36,17 @@ export class InlineLocalActionsComponent implements OnInit {
                     this.isSmall = false;
                 }
             });
+    }
+
+    openDialog(): void {
+        const dialogRef = this.dialog.open(LocalActionsDialogComponent, {
+            width: '450px',
+            data: { deviceName: this.deviceName },
+        });
+
+        dialogRef.afterClosed().subscribe((result) => {
+            this.deviceName = result;
+        });
     }
 
     toggleMenu(): void {

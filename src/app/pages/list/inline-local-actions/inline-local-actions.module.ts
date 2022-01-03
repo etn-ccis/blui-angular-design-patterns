@@ -15,8 +15,10 @@ import { MatInputModule } from '@angular/material/input';
 import { InlineLocalActionsComponent } from './inline-local-actions.component';
 import { SlidePanelComponent } from './slide-panel/slide-panel.component';
 import { ScorecardComponent } from './scorecard/scorecard.component';
+import { LocalActionsDialogComponent } from './local-actions-dialog/local-actions-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
-    declarations: [InlineLocalActionsComponent, SlidePanelComponent, ScorecardComponent],
+    declarations: [InlineLocalActionsComponent, SlidePanelComponent, ScorecardComponent, LocalActionsDialogComponent],
     imports: [
         CommonModule,
         FormsModule,
@@ -33,6 +35,7 @@ import { ScorecardComponent } from './scorecard/scorecard.component';
         MatInputModule,
         ScoreCardModule,
         HeroModule,
+        MatDialogModule,
     ],
 })
 export class InlineLocalActionsModule {}

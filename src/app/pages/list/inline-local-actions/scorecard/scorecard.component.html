@@ -1,7 +1,10 @@
-<div class="score-card-container" style="width: 350px;
+<div
+    class="score-card-container"
+    style="width: 350px;
 height: 250px;
 margin-top: 16px;
-margin-left: 16px;">
+margin-left: 16px;"
+>
     <blui-score-card [headerTitle]="'Overview'" class="action-details-score-card">
         <blui-hero-banner blui-badge>
             <blui-hero [label]="'Humidity'" [value]="'54'" [units]="'%'" [iconSize]="36">
@@ -16,16 +19,11 @@ margin-left: 16px;">
         </blui-hero-banner>
         <blui-info-list-item blui-action-row hidePadding="true" dense="true">
             <!-- <div> -->
-                <div blui-title class="button-container">
-                    <button
-                        class="search-device-btn"
-                        mat-flat-button
-                        color="primary"
-                        style="width: 100%;"
-                    >
+            <div blui-title class="button-container">
+                <button class="search-device-btn" mat-flat-button color="primary" style="width: 100%;">
                     Run Diagnostics
-                    </button>
-                </div>
+                </button>
+            </div>
             <!-- </div> -->
         </blui-info-list-item>
     </blui-score-card>

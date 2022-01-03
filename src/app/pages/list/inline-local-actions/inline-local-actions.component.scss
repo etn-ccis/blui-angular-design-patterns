@@ -107,6 +107,25 @@ section.local-inline-actions-example {
 //     }
 // }
 
+// .mat-form-field-appearance-outline {
+//     .mat-form-field-wrapper {
+//         padding: 0;
+//     }
+// }
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
+    padding: 0;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 8px 0px;
+    border-top: 8px solid transparent;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-select-arrow-wrapper {
+    padding-top: 8px;
+}
+
 @media only screen and (max-width: 960px) {
     section.local-inline-actions-example {
         padding: 0;

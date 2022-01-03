@@ -10,7 +10,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { InfoListItemModule, ScoreCardModule } from '@brightlayer-ui/angular-components';
+import { InfoListItemModule, ScoreCardModule, HeroModule } from '@brightlayer-ui/angular-components';
 import { MatInputModule } from '@angular/material/input';
 import { InlineLocalActionsComponent } from './inline-local-actions.component';
 import { SlidePanelComponent } from './slide-panel/slide-panel.component';
@@ -32,6 +32,7 @@ import { ScorecardComponent } from './scorecard/scorecard.component';
         InfoListItemModule,
         MatInputModule,
         ScoreCardModule,
+        HeroModule,
     ],
 })
 export class InlineLocalActionsModule {}

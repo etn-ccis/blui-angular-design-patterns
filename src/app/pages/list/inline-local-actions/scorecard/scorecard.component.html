@@ -1,10 +1,32 @@
-<!-- <div style="width: 350px;
+<div class="score-card-container" style="width: 350px;
 height: 250px;
 margin-top: 16px;
 margin-left: 16px;">
-    <blui-score-card
-    [headerTitle]="'Overview'"
-   
->
-</blui-score-card>
-</div> -->
+    <blui-score-card [headerTitle]="'Overview'" class="action-details-score-card">
+        <blui-hero-banner blui-badge>
+            <blui-hero [label]="'Humidity'" [value]="'54'" [units]="'%'" [iconSize]="36">
+                <mat-icon svgIcon="blui-icons:moisture" blui-primary [style.color]="colors.blue[300]"> </mat-icon>
+            </blui-hero>
+            <blui-hero [label]="'Temperature'" [value]="'97'" [units]="'°F'" [iconSize]="36">
+                <mat-icon blui-primary svgIcon="blui-icons:temp" [style.color]="colors.red[500]"></mat-icon>
+            </blui-hero>
+            <blui-hero label="Overall" value="96" units="/100" style="cursor: pointer" [iconSize]="36">
+                <mat-icon svgIcon="blui-icons:grade_a" blui-primary [style.color]="colors.green[500]"> </mat-icon>
+            </blui-hero>
+        </blui-hero-banner>
+        <blui-info-list-item blui-action-row hidePadding="true" dense="true">
+            <!-- <div> -->
+                <div blui-title class="button-container">
+                    <button
+                        class="search-device-btn"
+                        mat-flat-button
+                        color="primary"
+                        style="width: 100%;"
+                    >
+                    Run Diagnostics
+                    </button>
+                </div>
+            <!-- </div> -->
+        </blui-info-list-item>
+    </blui-score-card>
+</div>

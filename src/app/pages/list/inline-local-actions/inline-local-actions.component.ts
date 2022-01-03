@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StateService } from '../../../services/state.service';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-
 @Component({
     selector: 'app-inline-local-actions',
     templateUrl: './inline-local-actions.component.html',

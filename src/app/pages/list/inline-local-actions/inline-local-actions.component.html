@@ -47,7 +47,7 @@
                                         [matMenuTriggerFor]="menu" (click)="menuTrigger.openMenu()">
                                         <mat-icon>more_vert</mat-icon>
                                     </button>
-                                    <mat-menu #menu="matMenu">
+                                    <mat-menu #menu="matMenu" xPosition="before">
                                         <button data-cy="edit" mat-menu-item>Edit</button>
                                         <button data-cy="delete" mat-menu-item>View Details</button>
                                         <button data-cy="export" mat-menu-item>Export</button>

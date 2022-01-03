@@ -1,7 +1,33 @@
-::ng-deep .blui-score-card-header {
+@import '~@brightlayer-ui/colors/palette.scss';
+::ng-deep .blui-blue .blui-score-card .blui-score-card-header {
+    background-color: map-get($blui-white, 50);
     height: 48px;
-    display: flex;
+    color: map-get($blui-blue, 500);
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 123, 193);
+    .blui-score-card-title {
+        font-size: 14px;
+    }
+}
+
+::ng-deep .blui-blue .blui-score-card-body {
+    justify-content: center;
+    align-items: center;
+}
+
+::ng-deep .blui-blue .action-details-score-card.blui-score-card {
+    .mat-list-text {
+        width: 100%;
+    }
+
+    .blui-info-list-item-spacer {
+        flex: 0 0 0;
+    }
+
+    .blui-info-list-item-right-content {
+        display: none;
+    }
+
+    .blui-score-card-action-row-wrapper .mat-list-item-content {
+        margin: 8px 0;
+    }
 }

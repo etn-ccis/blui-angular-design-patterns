@@ -2,7 +2,7 @@
     <button data-cy="toolbar-menu" *ngIf="isSmall" style="margin-left: -8px" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
-    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Multi Select List</div>
+    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Multiselect List</div>
     <blui-spacer></blui-spacer>
     <button
         *ngIf="isSmall && hasSelectedItems()"

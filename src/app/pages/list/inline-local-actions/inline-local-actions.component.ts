@@ -6,7 +6,7 @@ import { LocalActionsDialogComponent } from './local-actions-dialog/local-action
 
 export type DialogData = {
     deviceName: string;
-}
+};
 
 @Component({
     selector: 'app-inline-local-actions',
@@ -17,7 +17,7 @@ export class InlineLocalActionsComponent implements OnInit {
     isSmall: boolean;
     emailNotifications = false;
     smsNotifications = true;
-    selected = 'English (U.S.)';
+    selected = 'English (United States)';
     isLeftPaneVisible = true;
     deviceName = 'A2 Max Reveal';
     constructor(
@@ -41,6 +41,7 @@ export class InlineLocalActionsComponent implements OnInit {
     openDialog(): void {
         const dialogRef = this.dialog.open(LocalActionsDialogComponent, {
             width: '450px',
+            height: '624px',
             data: { deviceName: this.deviceName },
         });
 

@@ -37,7 +37,7 @@
                                 Today
                             </mat-panel-title>
                         </mat-expansion-panel-header>
-                        <mat-list class="list-section">
+                        <mat-list class="device-detail-section">
                             <blui-info-list-item
                                 divider="full"
                                 [chevron]="true"
@@ -74,21 +74,17 @@
                                 </span>
                             </blui-info-list-item>
 
-                            <blui-info-list-item divider="full" [hidePadding]="true">
+                            <blui-info-list-item [hidePadding]="true">
                                 <div class="title-section" blui-title>
                                     <span class="title-label">Device: </span>
                                     <span class="title-desc">{{ deviceName }}</span>
                                 </div>
                                 <span blui-right-content (click)="openDialog()">
                                     <mat-icon
-                                        style="
-                                    height: 18px;
-                                    width: 18px;
-                                    margin: 8px;
-                                    color: #727E84;
-                                    cursor: pointer;"
-                                        >edit</mat-icon
+                                        style="height: 18px;width: 18px;margin: 0px 8px 8px 0px;color: #727E84;cursor: pointer;"
                                     >
+                                        edit
+                                    </mat-icon>
                                 </span>
                             </blui-info-list-item>
                         </mat-list>
@@ -107,7 +103,7 @@
                                 Notifications
                             </mat-panel-title>
                         </mat-expansion-panel-header>
-                        <mat-list class="list-section">
+                        <mat-list class="notification-section">
                             <blui-info-list-item divider="partial" [hidePadding]="true">
                                 <mat-icon blui-icon>email</mat-icon>
                                 <div class="title-section" blui-title>
@@ -120,7 +116,7 @@
                                 </mat-slide-toggle>
                             </blui-info-list-item>
 
-                            <blui-info-list-item divider="partial" [hidePadding]="true">
+                            <blui-info-list-item [hidePadding]="true">
                                 <mat-icon blui-icon>textsms</mat-icon>
                                 <div class="title-section" blui-title>
                                     <span class="title-label">SMS Notifications</span>
@@ -146,8 +142,8 @@
                                 Locale
                             </mat-panel-title>
                         </mat-expansion-panel-header>
-                        <mat-list class="list-section">
-                            <blui-info-list-item divider="partial" [hidePadding]="true">
+                        <mat-list class="language-setting-section">
+                            <blui-info-list-item [hidePadding]="true" [chevron]="true">
                                 <mat-icon blui-icon>language</mat-icon>
                                 <div class="title-section" blui-title>
                                     <span class="title-label">Language</span>
@@ -155,17 +151,17 @@
                                 <div class="subtitle-section" blui-subtitle>
                                     <span>{{ selected }}</span>
                                 </div>
-                                <div blui-right-content>
+                                <div blui-right-content *ngIf="!isSmall">
                                     <mat-form-field appearance="outline">
                                         <mat-select
                                             panelClass="selectPanel"
                                             [disableOptionCentering]="true"
                                             [(value)]="selected"
                                         >
-                                            <mat-option value="Deutsch">Deutsch</mat-option>
-                                            <mat-option value="English (U.S.)">English (U.S.)</mat-option>
-                                            <mat-option value="Español (ES)">Español (ES)</mat-option>
-                                            <mat-option value="Français (FR)">Français (FR)</mat-option>
+                                            <mat-option value="Deutsch (Germany)">Deutsch</mat-option>
+                                            <mat-option value="English (United States)">English (U.S.)</mat-option>
+                                            <mat-option value="Español (Spain)">Español (ES)</mat-option>
+                                            <mat-option value="Français (France)">Français (FR)</mat-option>
                                         </mat-select>
                                     </mat-form-field>
                                 </div>

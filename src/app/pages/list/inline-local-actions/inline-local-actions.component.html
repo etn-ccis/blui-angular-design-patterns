@@ -21,8 +21,14 @@
         >
             <mat-icon>arrow_back</mat-icon>
         </button>
-        <div class="mat-title">
+        <div class="mat-title" *ngIf="showScoreCard">
             Battery Service
+        </div>
+        <div class="mat-title" *ngIf="showDeviceEditView">
+            Device
+        </div>
+        <div class="mat-title" *ngIf="showLanguageListView">
+            Language
         </div>
     </ng-template>
 </mat-toolbar>
@@ -79,7 +85,14 @@
                                     <span class="title-label">Device: </span>
                                     <span class="title-desc">{{ deviceName }}</span>
                                 </div>
-                                <span blui-right-content (click)="openDialog()">
+                                <span blui-right-content *ngIf="!isSmall" (click)="openDialog()">
+                                    <mat-icon
+                                        style="height: 18px;width: 18px;margin: 0px 8px 8px 0px;color: #727E84;cursor: pointer;"
+                                    >
+                                        edit
+                                    </mat-icon>
+                                </span>
+                                <span blui-right-content *ngIf="isSmall" (click)="showDeviceEdit()">
                                     <mat-icon
                                         style="height: 18px;width: 18px;margin: 0px 8px 8px 0px;color: #727E84;cursor: pointer;"
                                     >
@@ -143,7 +156,11 @@
                             </mat-panel-title>
                         </mat-expansion-panel-header>
                         <mat-list class="language-setting-section">
-                            <blui-info-list-item [hidePadding]="true" [chevron]="true">
+                            <blui-info-list-item
+                                [hidePadding]="true"
+                                [chevron]="true"
+                                (click)="showLanguageList($event)"
+                            >
                                 <mat-icon blui-icon>language</mat-icon>
                                 <div class="title-section" blui-title>
                                     <span class="title-label">Language</span>
@@ -174,6 +191,8 @@
     </div>
 
     <div rightPane>
-        <blui-scorecard></blui-scorecard>
+        <blui-scorecard *ngIf="showScoreCard"></blui-scorecard>
+        <blui-device-edit-mobile *ngIf="showDeviceEditView"></blui-device-edit-mobile>
+        <blui-language-list *ngIf="showLanguageListView"></blui-language-list>
     </div>
 </blui-slide-panel-inline-actions>

@@ -19,6 +19,9 @@ export class InlineLocalActionsComponent implements OnInit {
     smsNotifications = true;
     selected = 'English (United States)';
     isLeftPaneVisible = true;
+    showScoreCard = false;
+    showDeviceEditView = false;
+    showLanguageListView = false;
     deviceName = 'A2 Max Reveal';
     constructor(
         private readonly _drawerService: StateService,
@@ -57,5 +60,20 @@ export class InlineLocalActionsComponent implements OnInit {
 
     showItemDetails(): void {
         this.isLeftPaneVisible = false;
+        this.showScoreCard = true;
+    }
+
+    showDeviceEdit(): void {
+        this.isLeftPaneVisible = false;
+        this.showDeviceEditView = true;
+    }
+
+    showLanguageList(event: MouseEvent): void {
+        if (this.isSmall) {
+            this.isLeftPaneVisible = false;
+            this.showLanguageListView = true;
+        } else {
+            event.preventDefault();
+        }
     }
 }

@@ -7,23 +7,15 @@
         <div class="mat-body-1" [style.marginLeft.px]="isSmall ? 24 : 0" style="margin-top: -8px">Folder Structure</div>
     </div>
     <blui-spacer></blui-spacer>
-    <button *ngIf="isSmall" style="margin-right: -12px" mat-icon-button>
-        <mat-icon *ngIf="isSmall">create_new_folder</mat-icon>
-    </button>
 </mat-toolbar>
 
 <div class="tree-example-container" [class.small]="isSmall">
-    <div *ngIf="!isSmall" style="margin: 24px 0; display: flex">
-        <button mat-stroked-button color="primary">
-            <mat-icon class="create-new-folder-icon">create_new_folder</mat-icon>
-            New Folder
-        </button>
-        <blui-spacer></blui-spacer>
-        <button mat-flat-button color="primary" [disabled]="!selectedItem">
-            Move File
-        </button>
-    </div>
-    <div class="tree-structure-body" [class.mat-elevation-z4]="!isSmall" [class.mat-elevation-z0]="isSmall">
+    <div
+        class="tree-structure-body"
+        [class.mat-elevation-z4]="!isSmall"
+        [class.mat-elevation-z0]="isSmall"
+        [style.marginTop.px]="isSmall ? 0 : 24"
+    >
         <mat-expansion-panel
             *ngFor="let topLevelItem of treeItems; let last = last"
             (opened)="topLevelItem.opened = true"
@@ -98,11 +90,5 @@
                 </mat-panel-title>
             </ng-template>
         </mat-expansion-panel>
-    </div>
-    <div style="background: white">
-        <mat-divider *ngIf="isSmall"></mat-divider>
-        <div style="padding: 16px" *ngIf="isSmall">
-            <button style="width: 100%" mat-flat-button color="primary" [disabled]="!selectedItem">Move File</button>
-        </div>
     </div>
 </div>

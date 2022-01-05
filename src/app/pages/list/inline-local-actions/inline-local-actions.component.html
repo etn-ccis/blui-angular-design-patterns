@@ -13,12 +13,7 @@
     </div>
 
     <ng-template #showRightPanelTitle>
-        <button
-            data-cy="arrow-back"
-            mat-icon-button
-            (click)="isLeftPaneVisible = true"
-            class="arrow-back"
-        >
+        <button data-cy="arrow-back" mat-icon-button (click)="isLeftPaneVisible = true" class="arrow-back">
             <mat-icon>arrow_back</mat-icon>
         </button>
         <div class="mat-title" *ngIf="showScoreCard">
@@ -90,17 +85,12 @@
                                     <span class="title-desc">{{ deviceName }}</span>
                                 </div>
                                 <span blui-right-content *ngIf="!isSmall" (click)="openDialog()">
-                                    <mat-icon
-                                    class="edit-icon"
-                                        
-                                    >
+                                    <mat-icon class="edit-icon">
                                         edit
                                     </mat-icon>
                                 </span>
                                 <span blui-right-content *ngIf="isSmall" (click)="showDeviceEdit()">
-                                    <mat-icon
-                                        class="edit-icon"
-                                    >
+                                    <mat-icon class="edit-icon">
                                         edit
                                     </mat-icon>
                                 </span>

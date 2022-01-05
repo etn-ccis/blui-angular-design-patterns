@@ -14,15 +14,15 @@ export type DialogData = {
     styleUrls: ['./inline-local-actions.component.scss'],
 })
 export class InlineLocalActionsComponent implements OnInit {
-    isSmall: boolean;
+    deviceName = 'A2 Max Reveal';
     emailNotifications = false;
-    smsNotifications = true;
-    languageSelected = 'English (United States)';
     isLeftPaneVisible = true;
-    showScoreCard = false;
+    isSmall: boolean;
+    languageSelected = 'English (United States)';
     showDeviceEditView = false;
     showLanguageListView = false;
-    deviceName = 'A2 Max Reveal';
+    showScoreCard = false;
+    smsNotifications = true;
 
     constructor(
         private readonly _drawerService: StateService,
@@ -54,43 +54,43 @@ export class InlineLocalActionsComponent implements OnInit {
         });
     }
 
-    toggleMenu(): void {
-        const drawerOpen = this._drawerService.getDrawerOpen();
-        this._drawerService.setDrawerOpen(!drawerOpen);
-    }
-
     showItemDetails(): void {
         this.isLeftPaneVisible = false;
-        this.showScoreCard = true;
         this.showDeviceEditView = false;
         this.showLanguageListView = false;
+        this.showScoreCard = true;
     }
 
     showDeviceEdit(): void {
         this.isLeftPaneVisible = false;
         this.showDeviceEditView = true;
-        this.showScoreCard = false;
         this.showLanguageListView = false;
+        this.showScoreCard = false;
     }
 
     showLanguageList(event: MouseEvent): void {
         if (this.isSmall) {
             this.isLeftPaneVisible = false;
-            this.showLanguageListView = true;
             this.showDeviceEditView = false;
+            this.showLanguageListView = true;
             this.showScoreCard = false;
         } else {
             event.preventDefault();
         }
     }
 
-    updateMobileDeviceName(newMobileDeviceName: string): void {
-        this.deviceName = newMobileDeviceName;
-        this.isLeftPaneVisible = true;
+    toggleMenu(): void {
+        const drawerOpen = this._drawerService.getDrawerOpen();
+        this._drawerService.setDrawerOpen(!drawerOpen);
     }
 
     updateLanguage(language: string): void {
-        this.languageSelected = language;
         this.isLeftPaneVisible = true;
+        this.languageSelected = language;
+    }
+
+    updateMobileDeviceName(newMobileDeviceName: string): void {
+        this.isLeftPaneVisible = true;
+        this.deviceName = newMobileDeviceName;
     }
 }

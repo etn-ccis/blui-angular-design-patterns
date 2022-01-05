@@ -13,15 +13,7 @@ section.local-inline-actions-example {
     }
 
     ::ng-deep .accordion-panel {
-        // :not(:first-child) {
-        //     margin-top: 24px;
-        // }
         .mat-expansion-panel {
-
-            
-            // &:not(:first) {
-               
-            // }
             .mat-expansion-panel-header {
                 height: 48px !important;
                 border-radius: 0;
@@ -93,7 +85,7 @@ section.local-inline-actions-example {
 
 .arrow-back {
     margin-left: -8px;
-    margin-right: 24px
+    margin-right: 24px;
 }
 
 @media only screen and (max-width: 960px) {
@@ -118,7 +110,6 @@ section.local-inline-actions-example {
             .mat-expansion-panel {
                 border-radius: 0;
                 box-shadow: none;
-                // margin-top: 24px;
             }
         }
     }

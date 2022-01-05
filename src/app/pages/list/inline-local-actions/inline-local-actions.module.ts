@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
@@ -13,11 +14,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { InfoListItemModule, ScoreCardModule, HeroModule } from '@brightlayer-ui/angular-components';
 import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
 import { InlineLocalActionsComponent } from './inline-local-actions.component';
 import { SlidePanelComponent } from './slide-panel/slide-panel.component';
 import { ScorecardComponent } from './scorecard/scorecard.component';
 import { LocalActionsDialogComponent } from './local-actions-dialog/local-actions-dialog.component';
-import { MatDialogModule } from '@angular/material/dialog';
 import { DeviceEditMobileComponent } from './device-edit-mobile/device-edit-mobile.component';
 import { LanguageListComponent } from './language-list/language-list.component';
 @NgModule({
@@ -30,6 +31,7 @@ import { LanguageListComponent } from './language-list/language-list.component';
         LanguageListComponent,
     ],
     imports: [
+        BrowserAnimationsModule,
         CommonModule,
         FormsModule,
         MatButtonModule,

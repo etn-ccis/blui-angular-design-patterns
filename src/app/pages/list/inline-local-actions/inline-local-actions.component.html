@@ -8,16 +8,16 @@
     >
         <mat-icon>menu</mat-icon>
     </button>
-    <div class="mat-title" *ngIf="isLeftPaneVisible; else showRightPanelTitle">
+    <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0" *ngIf="isLeftPaneVisible; else showRightPanelTitle">
         Local Item Actions
     </div>
 
     <ng-template #showRightPanelTitle>
         <button
-            data-cy="toolbar-menu"
-            style="margin-left: -8px;margin-right: 24px"
+            data-cy="arrow-back"
             mat-icon-button
             (click)="isLeftPaneVisible = true"
+            class="arrow-back"
         >
             <mat-icon>arrow_back</mat-icon>
         </button>
@@ -91,14 +91,15 @@
                                 </div>
                                 <span blui-right-content *ngIf="!isSmall" (click)="openDialog()">
                                     <mat-icon
-                                        style="height: 18px;width: 18px;margin: 0px 8px 8px 0px;color: #727E84;cursor: pointer;"
+                                    class="edit-icon"
+                                        
                                     >
                                         edit
                                     </mat-icon>
                                 </span>
                                 <span blui-right-content *ngIf="isSmall" (click)="showDeviceEdit()">
                                     <mat-icon
-                                        style="height: 18px;width: 18px;margin: 0px 8px 8px 0px;color: #727E84;cursor: pointer;"
+                                        class="edit-icon"
                                     >
                                         edit
                                     </mat-icon>
@@ -201,6 +202,10 @@
             (newMobileDeviceName)="updateMobileDeviceName($event)"
             *ngIf="showDeviceEditView"
         ></blui-device-edit-mobile>
-        <blui-language-list *ngIf="showLanguageListView"></blui-language-list>
+        <blui-language-list
+            [selectedLanguage]="languageSelected"
+            (newSelectedLanguage)="updateLanguage($event)"
+            *ngIf="showLanguageListView"
+        ></blui-language-list>
     </div>
 </blui-slide-panel-inline-actions>

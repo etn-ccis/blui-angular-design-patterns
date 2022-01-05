@@ -88,4 +88,9 @@ export class InlineLocalActionsComponent implements OnInit {
         this.deviceName = newMobileDeviceName;
         this.isLeftPaneVisible = true;
     }
+
+    updateLanguage(language: string): void {
+        this.languageSelected = language;
+        this.isLeftPaneVisible = true;
+    }
 }

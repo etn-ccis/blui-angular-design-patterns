@@ -49,6 +49,9 @@
         max-height: 56px;
         padding: 0 16px;
         border-bottom: solid 1px rgba(66, 78, 84, 0.12);
+        .mat-expansion-indicator::after {
+            transform: rotate(225deg) !important;
+        }
 
         &:not(.selected) {
             &:hover {

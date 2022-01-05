@@ -58,6 +58,7 @@ import { ContextualAppbarModule } from './pages/app-bar/contextual/contextual.mo
 import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
 import { TreeListModule } from './pages/list/tree/tree.module';
 import { InlineLocalActionsModule } from './pages/list/inline-local-actions/inline-local-actions.module';
+import { InlineButtonPanelModule } from './pages/list/inline-button-panel/inline-button-panel.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -116,6 +117,7 @@ import { InlineLocalActionsModule } from './pages/list/inline-local-actions/inli
         TreeListModule,
         InAnAppBarModule,
         InlineLocalActionsModule,
+        InlineButtonPanelModule,
     ],
     bootstrap: [AppComponent],
 })

@@ -81,6 +81,12 @@ section.local-inline-actions-example {
         max-width: 100%;
         margin: 0;
 
+        .title-section {
+            .title-desc {
+                display: none;
+            }
+        }
+
         .language-setting-section {
             ::ng-deep .blui-chevron {
                 display: block;
@@ -88,7 +94,7 @@ section.local-inline-actions-example {
         }
 
         ::ng-deep .accordion-panel {
-            .mat-expansion-panel.expansion-panel-mobile {
+            .mat-expansion-panel {
                 border-radius: 0;
                 box-shadow: none;
             }

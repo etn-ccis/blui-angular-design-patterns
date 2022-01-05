@@ -17,12 +17,13 @@ export class InlineLocalActionsComponent implements OnInit {
     isSmall: boolean;
     emailNotifications = false;
     smsNotifications = true;
-    selected = 'English (United States)';
+    languageSelected = 'English (United States)';
     isLeftPaneVisible = true;
     showScoreCard = false;
     showDeviceEditView = false;
     showLanguageListView = false;
     deviceName = 'A2 Max Reveal';
+
     constructor(
         private readonly _drawerService: StateService,
         private readonly _breakpointObserver: BreakpointObserver,
@@ -61,19 +62,30 @@ export class InlineLocalActionsComponent implements OnInit {
     showItemDetails(): void {
         this.isLeftPaneVisible = false;
         this.showScoreCard = true;
+        this.showDeviceEditView = false;
+        this.showLanguageListView = false;
     }
 
     showDeviceEdit(): void {
         this.isLeftPaneVisible = false;
         this.showDeviceEditView = true;
+        this.showScoreCard = false;
+        this.showLanguageListView = false;
     }
 
     showLanguageList(event: MouseEvent): void {
         if (this.isSmall) {
             this.isLeftPaneVisible = false;
             this.showLanguageListView = true;
+            this.showDeviceEditView = false;
+            this.showScoreCard = false;
         } else {
             event.preventDefault();
         }
+    }
+
+    updateMobileDeviceName(newMobileDeviceName: string): void {
+        this.deviceName = newMobileDeviceName;
+        this.isLeftPaneVisible = true;
     }
 }

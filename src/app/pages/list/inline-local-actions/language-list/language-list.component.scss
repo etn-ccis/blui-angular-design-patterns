@@ -1,0 +1,8 @@
+@import '~@brightlayer-ui/colors/palette.scss';
+
+.language-list {
+    background-color: map-get($blui-white, 50);
+    .language-setting-section {
+        padding-top: 0;
+    }
+}

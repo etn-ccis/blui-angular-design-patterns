@@ -52,14 +52,18 @@
                                 (click)="showItemDetails()"
                             >
                                 <div class="title-section" blui-title>
-                                    <span class="title-label">Battery Service: </span>
+                                    <span class="title-label">{{
+                                        isSmall ? 'Battery Service' : 'Battery Service:'
+                                    }}</span>
                                     <span class="title-desc">Eaton GH142</span>
                                 </div>
                             </blui-info-list-item>
 
                             <blui-info-list-item divider="full" [hidePadding]="true">
                                 <div class="title-section" blui-title>
-                                    <span class="title-label">Bypass Over Frequency: </span>
+                                    <span class="title-label">{{
+                                        isSmall ? 'Bypass Over Frequency' : 'Bypass Over Frequency: '
+                                    }}</span>
                                     <span class="title-desc">A2 Max Reveal </span>
                                 </div>
                                 <span blui-right-content style="margin-right: -8px">
@@ -82,7 +86,7 @@
 
                             <blui-info-list-item [hidePadding]="true">
                                 <div class="title-section" blui-title>
-                                    <span class="title-label">Device: </span>
+                                    <span class="title-label">{{ isSmall ? 'Device' : 'Device: ' }}</span>
                                     <span class="title-desc">{{ deviceName }}</span>
                                 </div>
                                 <span blui-right-content *ngIf="!isSmall" (click)="openDialog()">
@@ -166,14 +170,14 @@
                                     <span class="title-label">Language</span>
                                 </div>
                                 <div class="subtitle-section" blui-subtitle>
-                                    <span>{{ selected }}</span>
+                                    <span>{{ languageSelected }}</span>
                                 </div>
                                 <div blui-right-content *ngIf="!isSmall">
                                     <mat-form-field appearance="outline">
                                         <mat-select
                                             panelClass="selectPanel"
                                             [disableOptionCentering]="true"
-                                            [(value)]="selected"
+                                            [(value)]="languageSelected"
                                         >
                                             <mat-option value="Deutsch (Germany)">Deutsch</mat-option>
                                             <mat-option value="English (United States)">English (U.S.)</mat-option>
@@ -192,7 +196,11 @@
 
     <div rightPane>
         <blui-scorecard *ngIf="showScoreCard"></blui-scorecard>
-        <blui-device-edit-mobile *ngIf="showDeviceEditView"></blui-device-edit-mobile>
+        <blui-device-edit-mobile
+            [mobileDeviceName]="deviceName"
+            (newMobileDeviceName)="updateMobileDeviceName($event)"
+            *ngIf="showDeviceEditView"
+        ></blui-device-edit-mobile>
         <blui-language-list *ngIf="showLanguageListView"></blui-language-list>
     </div>
 </blui-slide-panel-inline-actions>

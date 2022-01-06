@@ -1,13 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import * as Colors from '@brightlayer-ui/colors';
 @Component({
-    selector: 'blui-scorecard',
+    selector: 'app-scorecard',
     templateUrl: './scorecard.component.html',
     styleUrls: ['./scorecard.component.scss'],
 })
-export class ScorecardComponent implements OnInit {
+export class ScorecardComponent {
     colors = Colors;
-    constructor() {}
-
-    ngOnInit(): void {}
 }

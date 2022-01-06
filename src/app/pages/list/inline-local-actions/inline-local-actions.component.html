@@ -186,16 +186,16 @@
     </div>
 
     <div rightPane>
-        <blui-scorecard *ngIf="showScoreCard"></blui-scorecard>
-        <blui-device-edit-mobile
+        <app-scorecard *ngIf="showScoreCard"></app-scorecard>
+        <app-device-edit-mobile
             [mobileDeviceName]="deviceName"
             (newMobileDeviceName)="updateMobileDeviceName($event)"
             *ngIf="showDeviceEditView"
-        ></blui-device-edit-mobile>
-        <blui-language-list
+        ></app-device-edit-mobile>
+        <app-language-list
             [selectedLanguage]="languageSelected"
             (newSelectedLanguage)="updateLanguage($event)"
             *ngIf="showLanguageListView"
-        ></blui-language-list>
+        ></app-language-list>
     </div>
 </blui-slide-panel-inline-actions>

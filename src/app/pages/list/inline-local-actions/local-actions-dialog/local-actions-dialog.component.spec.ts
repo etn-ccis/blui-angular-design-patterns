@@ -1,15 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-// import { MatDialogModule } from '@angular/material/dialog';
 import { LocalActionsDialogComponent } from './local-actions-dialog.component';
+import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
-fdescribe('LocalActionsDialogComponent', () => {
+describe('LocalActionsDialogComponent', () => {
     let component: LocalActionsDialogComponent;
     let fixture: ComponentFixture<LocalActionsDialogComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [LocalActionsDialogComponent],
-            // imports: [MatDialogModule],
+            imports: [MatDialogModule],
+            providers: [
+                { provide: MAT_DIALOG_DATA, useValue: {} },
+                { provide: MatDialogRef, useValue: {} },
+            ],
         }).compileComponents();
     });
 

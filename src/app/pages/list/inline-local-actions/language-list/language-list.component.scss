@@ -4,5 +4,11 @@
     background-color: map-get($blui-white, 50);
     .language-setting-section {
         padding-top: 0;
+        ::ng-deep .blui-info-list-item {
+            cursor: pointer;
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.04);
+            }
+        }
     }
 }

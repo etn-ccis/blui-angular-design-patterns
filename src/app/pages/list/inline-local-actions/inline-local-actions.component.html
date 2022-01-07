@@ -169,9 +169,9 @@
                                             [(value)]="languageSelected"
                                         >
                                             <mat-option value="Deutsch (Germany)">Deutsch</mat-option>
-                                            <mat-option value="English (United States)">English (U.S.)</mat-option>
-                                            <mat-option value="Español (Spain)">Español (ES)</mat-option>
-                                            <mat-option value="Français (France)">Français (FR)</mat-option>
+                                            <mat-option value="English (United States)">English</mat-option>
+                                            <mat-option value="Español (Spain)">Español</mat-option>
+                                            <mat-option value="Français (France)">Français</mat-option>
                                         </mat-select>
                                     </mat-form-field>
                                 </div>
@@ -201,7 +201,7 @@
     </div>
 
     <div rightPane>
-        <app-scorecard *ngIf="showScoreCard"></app-scorecard>
+        <app-scorecard [hidden]="!showScoreCard"></app-scorecard>
         <app-device-edit-mobile
             [mobileDeviceName]="deviceName"
             (newMobileDeviceName)="updateMobileDeviceName($event)"

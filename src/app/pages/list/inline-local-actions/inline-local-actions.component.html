@@ -13,7 +13,7 @@
     </div>
 
     <ng-template #showRightPanelTitle>
-        <button data-cy="arrow-back" mat-icon-button (click)="isLeftPaneVisible = true" class="arrow-back">
+        <button data-cy="arrow-back" mat-icon-button (click)="backToLeftPanel()" class="arrow-back">
             <mat-icon>arrow_back</mat-icon>
         </button>
         <div class="mat-title" *ngIf="showScoreCard">
@@ -81,7 +81,9 @@
 
                             <blui-info-list-item [hidePadding]="true">
                                 <div class="title-section" blui-title>
-                                    <span class="title-label">{{ isSmall ? 'Device' : 'Device: ' }}</span>
+                                    <span class="title-label">{{
+                                        isSmall || deviceName === '' ? 'Device' : 'Device: '
+                                    }}</span>
                                     <span class="title-desc">{{ deviceName }}</span>
                                 </div>
                                 <span blui-right-content *ngIf="!isSmall" (click)="openDialog()">

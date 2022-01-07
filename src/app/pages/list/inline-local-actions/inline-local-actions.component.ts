@@ -42,6 +42,13 @@ export class InlineLocalActionsComponent implements OnInit {
             });
     }
 
+    backToLeftPanel(): void {
+        this.isLeftPaneVisible = true;
+        this.showScoreCard = false;
+        this.showDeviceEditView = false;
+        this.showLanguageListView = false;
+    }
+
     openDialog(): void {
         const dialogRef = this.dialog.open(LocalActionsDialogComponent, {
             width: '450px',
@@ -50,7 +57,9 @@ export class InlineLocalActionsComponent implements OnInit {
         });
 
         dialogRef.afterClosed().subscribe((result) => {
-            this.deviceName = result;
+            if (result !== undefined) {
+                this.deviceName = result;
+            }
         });
     }
 

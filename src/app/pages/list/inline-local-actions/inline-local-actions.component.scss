@@ -35,12 +35,6 @@ section.local-inline-actions-example {
         color: map-get($blui-gray, 500);
     }
 
-    .language-setting-section {
-        ::ng-deep .blui-chevron {
-            display: none;
-        }
-    }
-
     ::ng-deep .show-detail-list-item .blui-info-list-item-content:hover {
         cursor: pointer;
         background: rgba(0, 0, 0, 0.04);
@@ -102,7 +96,7 @@ section.local-inline-actions-example {
 
         .language-setting-section {
             ::ng-deep .blui-chevron {
-                display: block;
+                cursor: pointer;
             }
         }
 

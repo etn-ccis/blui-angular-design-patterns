@@ -31,7 +31,15 @@
     }
 
     .blui-score-card-body {
+        display: block;
         justify-content: center;
         align-items: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .score-card-container {
+        max-width: 100%;
+        margin: 16px;
     }
 }

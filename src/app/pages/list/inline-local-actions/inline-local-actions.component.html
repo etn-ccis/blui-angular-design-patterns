@@ -152,12 +152,8 @@
                                 Locale
                             </mat-panel-title>
                         </mat-expansion-panel-header>
-                        <mat-list class="language-setting-section">
-                            <blui-info-list-item
-                                [hidePadding]="true"
-                                [chevron]="true"
-                                (click)="showLanguageList($event)"
-                            >
+                        <mat-list class="language-setting-section" *ngIf="!isSmall; else mobileViewLanguageList">
+                            <blui-info-list-item [hidePadding]="true">
                                 <mat-icon blui-icon>language</mat-icon>
                                 <div class="title-section" blui-title>
                                     <span class="title-label">Language</span>
@@ -181,6 +177,23 @@
                                 </div>
                             </blui-info-list-item>
                         </mat-list>
+                        <ng-template #mobileViewLanguageList>
+                            <mat-list class="language-setting-section">
+                                <blui-info-list-item
+                                    [hidePadding]="true"
+                                    [chevron]="true"
+                                    (click)="showLanguageList($event)"
+                                >
+                                    <mat-icon blui-icon>language</mat-icon>
+                                    <div class="title-section" blui-title>
+                                        <span class="title-label">Language</span>
+                                    </div>
+                                    <div class="subtitle-section" blui-subtitle>
+                                        <span>{{ languageSelected }}</span>
+                                    </div>
+                                </blui-info-list-item>
+                            </mat-list>
+                        </ng-template>
                     </mat-expansion-panel>
                 </mat-accordion>
             </div>

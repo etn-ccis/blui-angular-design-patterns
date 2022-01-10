@@ -104,11 +104,16 @@
                 <mat-accordion class="accordion-panel">
                     <mat-expansion-panel
                         class="mat-elevation-z1"
-                        style="margin-top: 24px;"
+                        [disabled]="true"
                         [expanded]="true"
+                        style="margin-top: 24px;"
                         hideToggle
                     >
-                        <mat-expansion-panel-header #panelHeaderOne (click)="panelHeaderOne._toggle()">
+                        <mat-expansion-panel-header
+                            class="expanded-header"
+                            #panelHeaderOne
+                            (click)="panelHeaderOne._toggle()"
+                        >
                             <mat-panel-title>
                                 Notifications
                             </mat-panel-title>
@@ -143,11 +148,17 @@
                 <mat-accordion class="accordion-panel">
                     <mat-expansion-panel
                         class="mat-elevation-z1"
-                        style="margin-top: 24px;"
+                        [disabled]="true"
                         [expanded]="true"
+                        style="margin-top: 24px;"
                         hideToggle
                     >
-                        <mat-expansion-panel-header #panelHeaderTwo (click)="panelHeaderTwo._toggle()">
+                        <mat-expansion-panel-header
+                            [disabled]="true"
+                            class="expanded-header"
+                            #panelHeaderTwo
+                            (click)="panelHeaderTwo._toggle()"
+                        >
                             <mat-panel-title>
                                 Locale
                             </mat-panel-title>

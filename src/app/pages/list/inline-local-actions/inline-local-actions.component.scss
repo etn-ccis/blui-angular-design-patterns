@@ -4,6 +4,11 @@ section.local-inline-actions-example {
     margin: 0 auto;
     max-width: 816px;
 
+    .expanded-header {
+        pointer-events: none;
+        user-select: none;
+    }
+
     ::ng-deep .mat-expansion-panel-header .mat-expansion-panel-header-title {
         color: map-get($blui-blue, 500) !important;
     }

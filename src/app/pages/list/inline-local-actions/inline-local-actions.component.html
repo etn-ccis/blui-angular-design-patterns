@@ -104,8 +104,8 @@
                 <mat-accordion class="accordion-panel">
                     <mat-expansion-panel
                         class="mat-elevation-z1"
-                        [disabled]="true"
                         [expanded]="true"
+                        disabled
                         style="margin-top: 24px;"
                         hideToggle
                     >
@@ -148,13 +148,12 @@
                 <mat-accordion class="accordion-panel">
                     <mat-expansion-panel
                         class="mat-elevation-z1"
-                        [disabled]="true"
                         [expanded]="true"
+                        disabled
                         style="margin-top: 24px;"
                         hideToggle
                     >
                         <mat-expansion-panel-header
-                            [disabled]="true"
                             class="expanded-header"
                             #panelHeaderTwo
                             (click)="panelHeaderTwo._toggle()"

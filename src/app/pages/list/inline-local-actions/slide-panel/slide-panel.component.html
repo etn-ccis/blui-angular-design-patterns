@@ -1,0 +1,4 @@
+<div [ngClass]="activePane === 'right' ? 'panes right-pane' : 'panes'" [@slide]="activePane">
+    <div><ng-content select="[leftPane]"></ng-content></div>
+    <div><ng-content select="[rightPane]"></ng-content></div>
+</div>

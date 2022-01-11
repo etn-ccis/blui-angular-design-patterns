@@ -34,6 +34,7 @@ import { ContextualAppBarComponent } from './pages/app-bar/contextual/contextual
 import { TreeListComponent } from './pages/list/tree/tree.component';
 import { InlineButtonPanelComponent } from './pages/list/inline-button-panel/inline-button-panel.component';
 import { InlineActionsComponent } from './pages/list/inline-actions/inline-actions.component';
+import { InlineLocalActionsComponent } from './pages/list/inline-local-actions/inline-local-actions.component';
 
 export type DrawerItem = {
     title: string;
@@ -160,6 +161,11 @@ export const ROUTES: DrawerItem[] = [
                 title: 'Inline Actions',
                 path: 'inline-actions',
                 component: InlineActionsComponent,
+            },
+            {
+                title: 'Local Item Actions',
+                path: 'inline-local-actions',
+                component: InlineLocalActionsComponent,
             },
             {
                 title: 'Data List',

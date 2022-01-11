@@ -57,8 +57,8 @@ import { DropdownToolbarModule } from './pages/app-bar/dropdown-toolbar/dropdown
 import { ContextualAppbarModule } from './pages/app-bar/contextual/contextual.module';
 import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
 import { TreeListModule } from './pages/list/tree/tree.module';
+import { InlineLocalActionsModule } from './pages/list/inline-local-actions/inline-local-actions.module';
 import { InlineButtonPanelModule } from './pages/list/inline-button-panel/inline-button-panel.module';
-import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
     declarations: [AppComponent],
@@ -116,8 +116,8 @@ import { MatDialogModule } from '@angular/material/dialog';
         InAListModule,
         TreeListModule,
         InAnAppBarModule,
+        InlineLocalActionsModule,
         InlineButtonPanelModule,
-        MatDialogModule,
     ],
     bootstrap: [AppComponent],
 })

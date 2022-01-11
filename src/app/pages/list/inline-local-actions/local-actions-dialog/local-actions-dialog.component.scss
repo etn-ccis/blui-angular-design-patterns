@@ -1,0 +1,19 @@
+.mat-dialog-title.local-action-dialog-title {
+    margin-bottom: 56px;
+}
+
+.mat-dialog-content.local-action-dialog-content {
+    height: calc(100% - 152px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+    mat-form-field {
+        width: 100%;
+    }
+}
+
+.mat-dialog-actions.local-action-dialog-actions {
+    padding-top: 24px;
+    button {
+        width: 100%;
+    }
+}

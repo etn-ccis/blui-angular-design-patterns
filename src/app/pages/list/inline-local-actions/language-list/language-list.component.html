@@ -1,0 +1,15 @@
+<section class="language-list">
+    <mat-list class="language-setting-section">
+        <blui-info-list-item
+            *ngFor="let lastIndex = last; let item; of: languageList"
+            [hidePadding]="true"
+            divider="full"
+            (click)="updateLanguage(item.id)"
+        >
+            <mat-icon blui-icon>{{ item.id === selectedLanguage ? 'check' : undefined }}</mat-icon>
+            <div class="title-section" blui-title>
+                <span class="title-label">{{ item.language }}</span>
+            </div>
+        </blui-info-list-item>
+    </mat-list>
+</section>

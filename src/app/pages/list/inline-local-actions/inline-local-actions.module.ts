@@ -50,5 +50,6 @@ import { LanguageListComponent } from './language-list/language-list.component';
         HeroModule,
         MatDialogModule,
     ],
+    entryComponents: [LocalActionsDialogComponent],
 })
 export class InlineLocalActionsModule {}

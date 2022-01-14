@@ -23,5 +23,6 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
     ],
     declarations: [DropdownToolbarComponent, DropdownToolbarBottomSheetExample],
     exports: [DropdownToolbarComponent, DropdownToolbarBottomSheetExample],
+    entryComponents: [DropdownToolbarBottomSheetExample],
 })
 export class DropdownToolbarModule {}

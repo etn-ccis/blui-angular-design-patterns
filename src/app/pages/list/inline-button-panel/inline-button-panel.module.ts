@@ -24,5 +24,6 @@ import { PromptDialog } from './dialog/prompt-dialog';
         MatTooltipModule,
         MatCardModule,
     ],
+    entryComponents: [PromptDialog],
 })
 export class InlineButtonPanelModule {}

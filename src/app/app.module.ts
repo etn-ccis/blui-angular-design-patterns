@@ -26,6 +26,7 @@ import { DrawerLayoutModule, DrawerModule, EmptyStateModule } from '@brightlayer
 import { DataListModule } from './pages/list/data-list/data-list.module';
 import { ActionListModule } from './pages/list/action-list/action-list.module';
 import { InPanelHeaderModule } from './pages/list/in-panel-header/in-panel-header.module';
+import { InlineActionsModule } from './pages/list/inline-actions/inline-actions.module';
 import { StatusListModule } from './pages/list/status-list/status-list.module';
 import { MultiselectListModule } from './pages/list/multiselect-list/multiselect-list.module';
 import { BasicBottomSheetModule } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.module';
@@ -56,12 +57,15 @@ import { DropdownToolbarModule } from './pages/app-bar/dropdown-toolbar/dropdown
 import { ContextualAppbarModule } from './pages/app-bar/contextual/contextual.module';
 import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
 import { TreeListModule } from './pages/list/tree/tree.module';
+import { InlineLocalActionsModule } from './pages/list/inline-local-actions/inline-local-actions.module';
+import { InlineButtonPanelModule } from './pages/list/inline-button-panel/inline-button-panel.module';
 
 @NgModule({
     declarations: [AppComponent],
     imports: [
         ActionListModule,
         InPanelHeaderModule,
+        InlineActionsModule,
         DataListModule,
         StatusListModule,
         MultiselectListModule,
@@ -112,6 +116,8 @@ import { TreeListModule } from './pages/list/tree/tree.module';
         InAListModule,
         TreeListModule,
         InAnAppBarModule,
+        InlineLocalActionsModule,
+        InlineButtonPanelModule,
     ],
     bootstrap: [AppComponent],
 })

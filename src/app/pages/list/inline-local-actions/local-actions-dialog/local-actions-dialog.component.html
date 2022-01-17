@@ -1,0 +1,10 @@
+<h2 mat-dialog-title class="local-action-dialog-title">Device</h2>
+<div mat-dialog-content class="local-action-dialog-content">
+    <mat-form-field appearance="fill">
+        <mat-label>Type</mat-label>
+        <input matInput [(ngModel)]="data.deviceName" />
+    </mat-form-field>
+</div>
+<mat-dialog-actions class="local-action-dialog-actions">
+    <button mat-raised-button color="primary" data-cy="done" blui-actions (click)="closeDialog()">Done</button>
+</mat-dialog-actions>

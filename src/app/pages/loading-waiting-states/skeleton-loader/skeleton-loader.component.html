@@ -41,11 +41,12 @@
                 </mat-list>
                 <blui-hero-banner blui-badge>
                     <blui-hero [label]="'Humidity'" [value]="'54'" [units]="'%'" [iconSize]="36">
-                        <mat-icon blui-primary [style.color]="colors.blue[300]" svgIcon="px-icons:moisture"> </mat-icon>
+                        <mat-icon blui-primary [style.color]="colors.blue[300]" svgIcon="blui-icons:moisture">
+                        </mat-icon>
                         <mat-icon blui-secondary [style.color]="colors.red[500]"> trending_up </mat-icon>
                     </blui-hero>
                     <blui-hero [label]="'Temperature'" [value]="'98'" [units]="'°F'" [iconSize]="36">
-                        <mat-icon blui-primary svgIcon="px-icons:temp" [style.color]="colors.red[500]"></mat-icon>
+                        <mat-icon blui-primary svgIcon="blui-icons:temp" [style.color]="colors.red[500]"></mat-icon>
                     </blui-hero>
                 </blui-hero-banner>
                 <blui-info-list-item blui-action-row chevron="true" hidePadding="true" dense="true">
@@ -134,8 +135,8 @@
                     </blui-info-list-item>
 
                     <blui-info-list-item divider="full" chevron="true" iconAlign="center">
-                        <mat-icon blui-icon svgIcon="px-icons:maintenance"></mat-icon>
-                        <!-- Should px-icons change to bl-icons, blui-icons, or stay the same? -->
+                        <mat-icon blui-icon svgIcon="blui-icons:maintenance"></mat-icon>
+                        <!-- Should blui-icons change to bl-icons, blui-icons, or stay the same? -->
                         <div class="time-section" blui-left-content>
                             <div>6:30<span class="ampm">AM</span></div>
                             <div>11/23/22</div>
@@ -186,14 +187,18 @@
             <mat-card>
                 <blui-hero-banner [style.borderColor]="colors.gray[200]" [style.width.px]="350">
                     <blui-hero [label]="'Health'" [value]="96" [units]="'/100'">
-                        <mat-icon blui-primary [style.color]="colors.green[500]" svgIcon="px-icons:grade_a"></mat-icon>
+                        <mat-icon
+                            blui-primary
+                            [style.color]="colors.green[500]"
+                            svgIcon="blui-icons:grade_a"
+                        ></mat-icon>
                     </blui-hero>
                     <blui-hero [label]="'Load'" [value]="90" [units]="'%'">
-                        <mat-icon blui-primary [style.color]="colors.yellow[500]" svgIcon="px-icons:current_circled">
+                        <mat-icon blui-primary [style.color]="colors.yellow[500]" svgIcon="blui-icons:current_circled">
                         </mat-icon>
                     </blui-hero>
                     <blui-hero [label]="'Temp'" [value]="96" [units]="'°C'">
-                        <mat-icon blui-primary [style.color]="colors.red[500]" svgIcon="px-icons:temp"></mat-icon>
+                        <mat-icon blui-primary [style.color]="colors.red[500]" svgIcon="blui-icons:temp"></mat-icon>
                     </blui-hero>
                 </blui-hero-banner>
             </mat-card>

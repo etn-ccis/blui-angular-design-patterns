@@ -32,6 +32,9 @@ import { DropdownToolbarComponent } from './pages/app-bar/dropdown-toolbar/dropd
 import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.component';
 import { ContextualAppBarComponent } from './pages/app-bar/contextual/contextual.component';
 import { TreeListComponent } from './pages/list/tree/tree.component';
+import { InlineButtonPanelComponent } from './pages/list/inline-button-panel/inline-button-panel.component';
+import { InlineActionsComponent } from './pages/list/inline-actions/inline-actions.component';
+import { InlineLocalActionsComponent } from './pages/list/inline-local-actions/inline-local-actions.component';
 
 export type DrawerItem = {
     title: string;
@@ -145,9 +148,24 @@ export const ROUTES: DrawerItem[] = [
                 component: ActionListComponent,
             },
             {
+                title: 'In Button Panel',
+                path: 'in-button-panel',
+                component: InlineButtonPanelComponent,
+            },
+            {
                 title: 'In Panel Header',
                 path: 'in-panel-header',
                 component: InPanelHeaderComponent,
+            },
+            {
+                title: 'Inline Actions',
+                path: 'inline-actions',
+                component: InlineActionsComponent,
+            },
+            {
+                title: 'Local Item Actions',
+                path: 'inline-local-actions',
+                component: InlineLocalActionsComponent,
             },
             {
                 title: 'Data List',

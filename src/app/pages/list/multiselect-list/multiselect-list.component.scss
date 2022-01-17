@@ -1,11 +1,60 @@
-.multi-select-list {
-    padding-top: 0;
-    ::ng-deep .multi-select-list .mat-checkbox-inner-container {
-        width: 18px;
-        height: 18px;
+@import '~@brightlayer-ui/colors/palette.scss';
+
+.multiselect-list-container {
+    padding: 24px;
+    margin: 0 auto;
+    max-width: 816px;
+    .action-button-container {
+        text-align: right;
+        .action-button mat-icon {
+            margin-right: 4px;
+            margin-bottom: 2px;
+            font-size: 16px;
+            height: 16px;
+            width: 16px;
+        }
+    }
+    .multiselect-list-card {
+        margin: 24px 0 0;
+        padding: 0;
+        .mat-list-base {
+            padding-top: 0;
+        }
+    }
+    .multi-select-checkbox {
+        display: flex;
+        align-items: center;
+        margin-left: 4px;
     }
 
-    ::ng-deep .blui-info-list-item-icon-wrapper {
-        margin-left: -8px !important;
+    .list-title {
+        color: map-get($blui-blue, 500);
+    }
+
+    .no-results {
+        font-weight: 400;
+        color: map-get($blui-gray, 500);
+    }
+
+    .reset-data {
+        text-decoration: underline;
+        color: map-get($blui-blue, 500);
+        cursor: pointer;
+    }
+
+    ::ng-deep .selected .mat-list-item.blui-info-list-item-content .mat-list-item-content {
+        background-color: rgba(0, 123, 193, 0.05) !important;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .multiselect-list-container {
+        padding: 0;
+        max-width: 100%;
+        .multiselect-list-card {
+            margin: 0;
+            border-radius: 0;
+            box-shadow: none !important;
+        }
     }
 }

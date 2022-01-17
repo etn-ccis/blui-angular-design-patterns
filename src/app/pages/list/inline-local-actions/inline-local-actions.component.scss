@@ -1,0 +1,115 @@
+@import '~@brightlayer-ui/colors/palette.scss';
+section.local-inline-actions-example {
+    padding: 24px;
+    margin: 0 auto;
+    max-width: 816px;
+
+    .expanded-header {
+        pointer-events: none;
+        user-select: none;
+    }
+
+    ::ng-deep .mat-expansion-panel-header .mat-expansion-panel-header-title {
+        color: map-get($blui-blue, 500) !important;
+    }
+
+    ::ng-deep .mat-list-base {
+        padding-top: 0;
+    }
+
+    ::ng-deep .accordion-panel {
+        .mat-expansion-panel {
+            .mat-expansion-panel-header {
+                height: 48px !important;
+                border-radius: 0;
+                padding-left: 16px;
+                .mat-expansion-indicator {
+                    margin-top: -8px;
+                }
+                &.mat-expanded {
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+                    .mat-expansion-indicator {
+                        margin-top: 4px;
+                    }
+                }
+            }
+        }
+    }
+
+    ::ng-deep .blui-chevron {
+        color: map-get($blui-gray, 500);
+    }
+
+    ::ng-deep .show-detail-list-item .blui-info-list-item-content:hover {
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.04);
+    }
+
+    ::ng-deep {
+        .mat-form-field-appearance-outline {
+            .mat-form-field-wrapper {
+                padding: 0;
+            }
+            .mat-form-field-infix {
+                padding: 8px 0px;
+                border-top: 8px solid transparent;
+            }
+            .mat-select-arrow-wrapper {
+                padding-top: 8px;
+            }
+        }
+    }
+
+    ::ng-deep .blui-info-list-item-right-content .edit-icon {
+        height: 18px;
+        width: 18px;
+        margin: 0px 8px 8px 0px;
+        color: map-get($blui-gray, 500);
+        cursor: pointer;
+    }
+}
+
+.mat-accordion.accordion-panel {
+    ::ng-deep .mat-expansion-panel-body {
+        padding: 0;
+    }
+}
+
+.title-section {
+    .title-desc {
+        font-weight: normal;
+        margin-left: 4px;
+    }
+}
+
+.arrow-back {
+    margin-left: -8px;
+    margin-right: 24px;
+}
+
+@media only screen and (max-width: 960px) {
+    section.local-inline-actions-example {
+        padding: 0 0 24px;
+        max-width: 100%;
+        margin: 0;
+
+        .title-section {
+            .title-desc {
+                display: none;
+            }
+        }
+
+        .language-setting-section {
+            ::ng-deep .blui-chevron {
+                cursor: pointer;
+            }
+        }
+
+        ::ng-deep .accordion-panel {
+            .mat-expansion-panel {
+                border-radius: 0;
+                box-shadow: none;
+            }
+        }
+    }
+}

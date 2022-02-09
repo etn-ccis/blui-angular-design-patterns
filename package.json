@@ -41,7 +41,7 @@
     "add": "^2.0.6",
     "color": "^4.2.0",
     "core-js": "^3.6.5",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.1",
     "placeholder-loading": "^0.2.2",
     "rxjs": "~6.6.0",
     "sass": "1.41.0",

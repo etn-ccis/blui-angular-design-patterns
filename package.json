@@ -32,7 +32,7 @@
     "@angular/router": "~10.1.2",
     "@netbasal/ngx-content-loader": "3.0.0",
     "@ngx-translate/core": "^12.1.2",
-    "@brightlayer-ui/angular-components": "^5.0.1",
+    "@brightlayer-ui/angular-components": "^6.0.1",
     "@brightlayer-ui/angular-themes": "^6.0.1",
     "@brightlayer-ui/colors": "^3.0.0",
     "@brightlayer-ui/icons": "^1.2.0",

@@ -1341,10 +1341,10 @@
     "@schematics/angular" "^10.1.0"
     rxjs "6.6.2"
 
-"@brightlayer-ui/angular-components@^5.0.1":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/angular-components/-/angular-components-5.0.1.tgz#424b7a14494d7ea11062dda3b41b280feea2e314"
-  integrity sha512-PB0+YrY4WPovt2yR2ZRB4qSEu999iZzMw4wrc6RNSZOFDFsGr0CDdlA+GWOHM7WyBGWYI0QjKn0QgRENCjewvA==
+"@brightlayer-ui/angular-components@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/angular-components/-/angular-components-6.0.1.tgz#b8b144708326a1bf3e584cbc3b051b82addb94c9"
+  integrity sha512-JQPkv1vKhVA8NCBkAP7CkNGosRS40QPjacf95PVdyTevSGdJfpSWb1W1R65QgfbXBIDi3EFxnDNkA5ymzbv4hA==
   dependencies:
     tslib "^2.0.0"
 

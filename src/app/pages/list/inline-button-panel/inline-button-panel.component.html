@@ -4,7 +4,7 @@
     </button>
     <div>
         <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Global Action List</div>
-        <div class="mat-subheading-2" [style.marginLeft.px]="isSmall ? 24 : 0" style="margin-top: -8px;">
+        <div class="mat-subheading-2" [style.marginLeft.px]="isSmall ? 24 : 0" style="margin-top: -8px">
             In Button Panel
         </div>
     </div>
@@ -33,16 +33,12 @@
 <section class="inline-button-example" #inlineButtonExample id="inline-button-example">
     <div data-cy="action-btn" class="action-button-container" *ngIf="!isSmall && data.length > 0">
         <button mat-raised-button class="action-button" color="primary" (click)="onAddItem()">
-            <mat-icon class="action-button-icon">
-                add
-            </mat-icon>
+            <mat-icon class="action-button-icon"> add </mat-icon>
             Add an Item
         </button>
         <blui-spacer></blui-spacer>
         <button mat-stroked-button class="action-button-delete" color="warn" (click)="openDialog()">
-            <mat-icon class="action-button-icon">
-                delete
-            </mat-icon>
+            <mat-icon class="action-button-icon"> delete </mat-icon>
             Delete
         </button>
     </div>
@@ -66,13 +62,13 @@
     <div class="empty-state-container" *ngIf="data.length === 0" style="display: flex; flex-direction: column">
         <blui-empty-state
             title="No Items Found"
-            style="margin: 0px 16px; max-width: 365px; min-height: 100%;"
+            style="margin: 0px 16px; max-width: 365px; min-height: 100%"
             description="No items added to a list. You can add an item and create a list of items."
         >
             <mat-icon blui-empty-icon>warning_amber</mat-icon>
             <button
                 data-cy="blui-empty-state-add"
-                style="margin: 8px;"
+                style="margin: 8px"
                 blui-actions
                 mat-raised-button
                 color="primary"

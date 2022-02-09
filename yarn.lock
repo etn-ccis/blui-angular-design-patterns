@@ -2089,10 +2089,10 @@
   optionalDependencies:
     eslint-plugin-react "^7.16.0"
 
-"@brightlayer-ui/icons-svg@^1.2.0":
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/icons-svg/-/icons-svg-1.7.0.tgz#8e80ce276eaa1b9d6aa1f736f3857856d3e1179a"
-  integrity sha512-z6LZgr0XFJ+HSDR7PxEHXavClsfR8I7FQww53vmFU0jv4fW5e3m5z2iYQjTi5MddgZJDX1CHvsvX+Mls8Z9iow==
+"@brightlayer-ui/icons-svg@^1.8.1":
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/icons-svg/-/icons-svg-1.8.1.tgz#bf5b74dff2b44b05beace9b2131e35b64c521965"
+  integrity sha512-6YTHn17GZcDI7CuM3pVFmKrGz+F2k0+GXTQirAI5Otvzc1K/wPQc8Nl1KrQnAEKrYmyWxotAkzw9HenlxuJ9Uw==
 
 "@brightlayer-ui/icons@^1.2.0":
   version "1.7.1"

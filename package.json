@@ -35,7 +35,7 @@
     "@brightlayer-ui/angular-components": "^6.0.1",
     "@brightlayer-ui/angular-themes": "^6.0.1",
     "@brightlayer-ui/colors": "^3.0.0",
-    "@brightlayer-ui/icons": "^1.2.0",
+    "@brightlayer-ui/icons": "^1.8.1",
     "@brightlayer-ui/icons-svg": "^1.8.1",
     "@brightlayer-ui/ng-progress-icons": "^1.2.1",
     "add": "^2.0.6",

@@ -33,7 +33,7 @@
     "@netbasal/ngx-content-loader": "3.0.0",
     "@ngx-translate/core": "^13.0.0",
     "@brightlayer-ui/angular-components": "^6.0.1",
-    "@brightlayer-ui/angular-themes": "^6.0.1",
+    "@brightlayer-ui/angular-themes": "^6.4.0",
     "@brightlayer-ui/colors": "^3.0.0",
     "@brightlayer-ui/icons": "^1.8.1",
     "@brightlayer-ui/icons-svg": "^1.8.1",

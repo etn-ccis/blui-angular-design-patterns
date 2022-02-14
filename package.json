@@ -39,7 +39,7 @@
     "@brightlayer-ui/icons-svg": "^1.8.1",
     "@brightlayer-ui/ng-progress-icons": "^1.2.1",
     "add": "^2.0.6",
-    "color": "^4.2.0",
+    "color": "^4.2.1",
     "core-js": "^3.21.0",
     "node-sass": "^4.13.1",
     "placeholder-loading": "^0.2.2",

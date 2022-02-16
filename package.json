@@ -65,7 +65,7 @@
     "@typescript-eslint/parser": "^4.4.0",
     "codecov": "^3.8.2",
     "codelyzer": "^6.0.0",
-    "cypress": "^8.6.0",
+    "cypress": "^9.5.0",
     "eslint": "^7.10.0",
     "eslint-config-prettier": "^8.3.0",
     "istanbul-instrumenter-loader": "^3.0.1",

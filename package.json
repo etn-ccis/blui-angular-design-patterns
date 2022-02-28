@@ -44,7 +44,7 @@
     "node-sass": "^4.13.1",
     "placeholder-loading": "^0.2.2",
     "rxjs": "~6.6.0",
-    "sass": "1.49.8",
+    "sass": "1.49.9",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },

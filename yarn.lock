@@ -2064,10 +2064,10 @@
   dependencies:
     tslib "^2.0.0"
 
-"@brightlayer-ui/angular-themes@^6.4.0":
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/angular-themes/-/angular-themes-6.4.0.tgz#87927d65499a03da3043294d829c6446e8858567"
-  integrity sha512-XCBchzD9OeZNHkyvXKX8VaTKBc8TWc/DbrVDEsg8PMzyxIra2QkWu2I7mWznIVAh+n42rCy+JH3+WiU1wlSixQ==
+"@brightlayer-ui/angular-themes@^6.4.1":
+  version "6.4.1"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/angular-themes/-/angular-themes-6.4.1.tgz#223ba90ef0cd915707ac8212aaf07ee29d43fc0a"
+  integrity sha512-u0puJT1taDdc7lEdAoUa8uvD0Lige+TvoH3SmZMsRV1hhZPqRWh1tYt7G7mjzr4zYTAxTK3CYAtucqs27iZW0w==
   dependencies:
     "@brightlayer-ui/colors" "^3.0.0"
     "@fontsource/open-sans" "^4.1.0"

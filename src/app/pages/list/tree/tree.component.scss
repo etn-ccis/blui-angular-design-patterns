@@ -71,12 +71,20 @@
             color: map-get($blui-blue, 500) !important;
         }
     }
+
+    .mat-radio-button.mat-accent.mat-radio-checked {
+        .mat-radio-outer-circle,
+        .mat-radio-inner-circle {
+            border-color: map-get($blui-blue, 500);
+        }
+    }
 }
 
 .folder-icon-wrapper {
     $iconSize: 18px;
     margin-right: 16px;
     height: $iconSize;
+    color: map-get($blui-gray, 500);
     ::ng-deep mat-icon {
         font-size: $iconSize;
         height: $iconSize;

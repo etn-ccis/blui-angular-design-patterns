@@ -81,6 +81,7 @@
                         [value]="item.title"
                         (click)="selectItem(item); stopProp($event)"
                         [style.marginRight.px]="depth * 32 + 16"
+                        color="primary"
                     ></mat-radio-button>
                     <div class="folder-icon-wrapper">
                         <mat-icon *ngIf="!showOpenFolder(item)">folder</mat-icon>

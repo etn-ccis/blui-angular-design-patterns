@@ -45,7 +45,7 @@ section.list-section {
                     margin-top: -8px;
                 }
                 &.mat-expanded {
-                    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+                    border-bottom: 1px solid rgba(map-get($blui-black, 500), 0.12);
                     .mat-expansion-indicator {
                         margin-top: 4px;
                     }

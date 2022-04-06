@@ -71,16 +71,6 @@
             color: map-get($blui-blue, 500) !important;
         }
     }
-
-    .mat-radio-button.mat-accent.mat-radio-checked {
-        .mat-radio-outer-circle {
-            border-color: map-get($blui-blue, 500);
-        }
-        .mat-radio-inner-circle {
-            border-color: map-get($blui-blue, 500);
-            background-color: map-get($blui-blue, 500);
-        }
-    }
 }
 
 .folder-icon-wrapper {

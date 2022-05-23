@@ -1,11 +1,11 @@
 name: Codecov
-on: [pull-request]
+on: pull_request
 jobs:
   run:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: ubuntu-latest
     steps:
     - name: Upload coverage to Codecov
     - uses: codecov/codecov-action@v3.1.0

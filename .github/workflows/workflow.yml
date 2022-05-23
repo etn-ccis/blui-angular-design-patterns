@@ -1,0 +1,17 @@
+name: Codecov uploader
+'on': pull_request
+  # push:
+  #   branches:
+  #     - master
+  jobs:
+    runs-on: ubuntu-latest
+steps:
+- uses: actions/checkout@master
+- uses: codecov/codecov-action@v2
+  with:
+    token: ${{ secrets.CODECOV_TOKEN }}
+    files: ./coverage/lcov.info,./cypress-coverage/lcov.info
+    flags: unittests
+    name: codecov-umbrella
+    fail_ci_if_error: true
+    verbose: true

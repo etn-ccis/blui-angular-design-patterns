@@ -1,12 +1,14 @@
-jobs: 
-  run: 
-    runs-on: ubuntu-latest
 name: Codecov
-steps: 
-  - 
-    uses: actions/checkout@master
-  - 
-    uses: codecov/codecov-action@v2
+on: [pull-request]
+jobs:
+  run:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    steps:
+    - name: Upload coverage to Codecov
+    - uses: codecov/codecov-action@v3.1.0
     with: 
       fail_ci_if_error: true
       files: "./coverage/lcov.info,./cypress-coverage/lcov.info"
@@ -14,4 +16,3 @@ steps:
       name: codecov-umbrella
       token: "${{ secrets.CODECOV_TOKEN }}"
       verbose: true
-uses: codecov/codecov-action@v3.1.0

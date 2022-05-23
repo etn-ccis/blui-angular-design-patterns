@@ -1,4 +1,5 @@
 name: Codecov uploader
+uses: codecov/codecov-action@v3.1.0
 'on': pull_request
   # push:
   #   branches:

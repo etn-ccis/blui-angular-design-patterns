@@ -109,10 +109,10 @@ workflows:
                            only:
                                - master
                                - dev
-            - coverage_reports:
-                requires:
-                    - build_project
-                    - cypress_tests
+            # - coverage_reports:
+            #     requires:
+            #         - build_project
+            #         - cypress_tests
                 filters:
                     branches:
                         only:

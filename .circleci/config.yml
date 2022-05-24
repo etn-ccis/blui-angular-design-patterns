@@ -91,6 +91,8 @@ jobs:
                 at: .
             - codecov/upload:
                 file: '/coverage/angular-design-patterns/lcov.info'
+                token:
+                default: CODECOV_TOKEN
             # - codecov/upload:
             #     file: './cypress-coverage/lcov.info'
 

@@ -113,8 +113,8 @@ workflows:
                 requires:
                     - build_project
                     - cypress_tests
-                # filters:
-                #     branches:
-                #         only:
-                #             # - master
-                #             - dev
+                filters:
+                    branches:
+                        only:
+                             - master
+                             - dev

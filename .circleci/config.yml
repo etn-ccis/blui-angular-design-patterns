@@ -91,10 +91,8 @@ jobs:
                 at: .
             - codecov/upload:
                 file: './coverage/lcov.info'
-                token: 4cb4f10a-b3f7-4e5e-b4ba-6e5d5d272eb7
             - codecov/upload:
                 file: './cypress-coverage/lcov.info'
-                token: 4cb4f10a-b3f7-4e5e-b4ba-6e5d5d272eb7
 
 workflows:
     version: 2

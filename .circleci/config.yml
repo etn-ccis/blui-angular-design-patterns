@@ -90,7 +90,6 @@ jobs:
             - attach_workspace:
                 at: .
             - codecov/upload:
-                file: './coverage/angular-design-patterns/index.html'
                 token: CODECOV_TOKEN
             # - codecov/upload:
             #     file: './cypress-coverage/lcov.info'

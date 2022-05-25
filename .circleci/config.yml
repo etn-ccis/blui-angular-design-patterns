@@ -92,8 +92,9 @@ jobs:
             - codecov/upload:
                 file: './coverage/angular-design-patterns/clover.xml'
                 token: CODECOV_TOKEN
-            # - codecov/upload:
-            #     file: './cypress-coverage/lcov.info'
+            - codecov/upload:
+                file: './cypress-coverage/clover.xml'
+                token: CODECOV_TOKEN
 
 workflows:
     version: 2

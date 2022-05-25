@@ -91,9 +91,11 @@ jobs:
                 at: .
             - codecov/upload:
                 file: './coverage/angular-design-patterns/clover.xml'
+                flags: unit tests
                 token: CODECOV_TOKEN
             - codecov/upload:
                 file: './cypress-coverage/clover.xml'
+                flags: cypress-ui
                 token: CODECOV_TOKEN
 
 workflows:

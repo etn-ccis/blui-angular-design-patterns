@@ -18,10 +18,10 @@ module.exports = function (config) {
         },
         coverageIstanbulReporter: {
             dir: require('path').join(__dirname, './coverage/angular-design-patterns'),
-            reports: ['html', 'lcovonly', 'text-summary'],
+            reports: ['html', 'clover', 'text-summary'],
             fixWebpackSourcePaths: true,
         },
-        reporters: ['progress', 'kjhtml'],
+        reporters: ['progress', 'kjhtml', 'coverage-istanbul'],
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,

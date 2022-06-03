@@ -3,10 +3,8 @@
         <mat-icon>menu</mat-icon>
     </button>
     <div>
-        <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">
-            Local Item Actions
-        </div>
-        <div class="mat-subheading-2" [style.marginLeft.px]="isSmall ? 24 : 0" style="margin-top: -8px;">
+        <div class="mat-title" [style.marginLeft.px]="isSmall ? 24 : 0">Local Item Actions</div>
+        <div class="mat-subheading-2" [style.marginLeft.px]="isSmall ? 24 : 0" style="margin-top: -8px">
             Inline Actions
         </div>
     </div>
@@ -39,7 +37,7 @@
                                 mat-icon-button
                                 data-cy="list-delete"
                                 (click)="deleteActions(index)"
-                                style="cursor: pointer;"
+                                style="cursor: pointer"
                             >
                                 <mat-icon>delete</mat-icon>
                             </button>
@@ -84,7 +82,5 @@
             </mat-menu>
         </span>
     </ng-template>
-    <div class="note">
-        This behaviour is exclusive to desktop version.
-    </div>
+    <div class="note">This behaviour is exclusive to desktop version.</div>
 </section>

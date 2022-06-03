@@ -16,15 +16,9 @@
         <button data-cy="arrow-back" mat-icon-button (click)="backToLeftPanel()" class="arrow-back">
             <mat-icon>arrow_back</mat-icon>
         </button>
-        <div class="mat-title" *ngIf="showScoreCard">
-            Battery Service
-        </div>
-        <div class="mat-title" *ngIf="showDeviceEditView">
-            Device
-        </div>
-        <div class="mat-title" *ngIf="showLanguageListView">
-            Language
-        </div>
+        <div class="mat-title" *ngIf="showScoreCard">Battery Service</div>
+        <div class="mat-title" *ngIf="showDeviceEditView">Device</div>
+        <div class="mat-title" *ngIf="showLanguageListView">Language</div>
     </ng-template>
 </mat-toolbar>
 <blui-slide-panel-inline-actions [activePane]="isLeftPaneVisible ? 'left' : 'right'">
@@ -34,9 +28,7 @@
                 <mat-accordion class="accordion-panel">
                     <mat-expansion-panel class="mat-elevation-z1" [expanded]="true">
                         <mat-expansion-panel-header>
-                            <mat-panel-title>
-                                Today
-                            </mat-panel-title>
+                            <mat-panel-title> Today </mat-panel-title>
                         </mat-expansion-panel-header>
                         <mat-list class="device-detail-section">
                             <blui-info-list-item
@@ -87,14 +79,10 @@
                                     <span class="title-desc">{{ deviceName }}</span>
                                 </div>
                                 <span blui-right-content *ngIf="!isSmall" (click)="openDialog()">
-                                    <mat-icon class="edit-icon">
-                                        edit
-                                    </mat-icon>
+                                    <mat-icon class="edit-icon"> edit </mat-icon>
                                 </span>
                                 <span blui-right-content *ngIf="isSmall" (click)="showDeviceEdit()">
-                                    <mat-icon class="edit-icon">
-                                        edit
-                                    </mat-icon>
+                                    <mat-icon class="edit-icon"> edit </mat-icon>
                                 </span>
                             </blui-info-list-item>
                         </mat-list>
@@ -106,7 +94,7 @@
                         class="mat-elevation-z1"
                         [expanded]="true"
                         disabled
-                        style="margin-top: 24px;"
+                        style="margin-top: 24px"
                         hideToggle
                     >
                         <mat-expansion-panel-header
@@ -114,9 +102,7 @@
                             #panelHeaderOne
                             (click)="panelHeaderOne._toggle()"
                         >
-                            <mat-panel-title>
-                                Notifications
-                            </mat-panel-title>
+                            <mat-panel-title> Notifications </mat-panel-title>
                         </mat-expansion-panel-header>
                         <mat-list class="notification-section">
                             <blui-info-list-item divider="partial" [hidePadding]="true">
@@ -150,7 +136,7 @@
                         class="mat-elevation-z1"
                         [expanded]="true"
                         disabled
-                        style="margin-top: 24px;"
+                        style="margin-top: 24px"
                         hideToggle
                     >
                         <mat-expansion-panel-header
@@ -158,9 +144,7 @@
                             #panelHeaderTwo
                             (click)="panelHeaderTwo._toggle()"
                         >
-                            <mat-panel-title>
-                                Locale
-                            </mat-panel-title>
+                            <mat-panel-title> Locale </mat-panel-title>
                         </mat-expansion-panel-header>
                         <mat-list class="language-setting-section" *ngIf="!isSmall; else mobileViewLanguageList">
                             <blui-info-list-item [hidePadding]="true">

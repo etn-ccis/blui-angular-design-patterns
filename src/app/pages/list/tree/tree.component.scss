@@ -77,6 +77,7 @@
     $iconSize: 18px;
     margin-right: 16px;
     height: $iconSize;
+    color: map-get($blui-gray, 500);
     ::ng-deep mat-icon {
         font-size: $iconSize;
         height: $iconSize;

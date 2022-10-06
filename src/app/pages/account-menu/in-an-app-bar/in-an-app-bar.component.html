@@ -51,8 +51,13 @@
                 <div class="mat-body-1 sub-heading">Showing User’s Initials</div>
             </div>
             <blui-spacer></blui-spacer>
-            <blui-user-menu avatarValue="CT" menuTitle="Chima Thabani" menuSubtitle="CThabani@example.com"
-                [(open)]="open2" [positions]="positions">
+            <blui-user-menu
+                avatarValue="CT"
+                menuTitle="Chima Thabani"
+                menuSubtitle="CThabani@example.com"
+                [(open)]="open2"
+                [positions]="positions"
+            >
                 <div blui-menu-body>
                     <mat-nav-list [style.paddingTop.px]="0">
                         <blui-info-list-item *ngFor="let item of items2" [dense]="true" (click)="open2 = false">
@@ -76,8 +81,12 @@
                 <div class="mat-body-1 sub-heading">Showing A Custom Profile Picture</div>
             </div>
             <blui-spacer></blui-spacer>
-            <blui-user-menu menuTitle="Chima Thabani" menuSubtitle="CThabani@example.com" [(open)]="open3"
-                [positions]="positions">
+            <blui-user-menu
+                menuTitle="Chima Thabani"
+                menuSubtitle="CThabani@example.com"
+                [(open)]="open3"
+                [positions]="positions"
+            >
                 <div blui-avatar>
                     <template [ngTemplateOutlet]="imageAvatar"></template>
                 </div>
@@ -108,8 +117,12 @@
                 <div class="mat-body-1 sub-heading">Avatar with Status Indicator</div>
             </div>
             <blui-spacer></blui-spacer>
-            <blui-user-menu menuTitle="Chima Thabani" menuSubtitle="CThabani@example.com" [(open)]="open4"
-                [positions]="positions">
+            <blui-user-menu
+                menuTitle="Chima Thabani"
+                menuSubtitle="CThabani@example.com"
+                [(open)]="open4"
+                [positions]="positions"
+            >
                 <div style="position: relative" blui-avatar>
                     <template [ngTemplateOutlet]="statusAvatar"></template>
                 </div>

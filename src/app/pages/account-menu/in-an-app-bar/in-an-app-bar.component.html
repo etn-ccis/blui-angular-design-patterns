@@ -51,13 +51,8 @@
                 <div class="mat-body-1 sub-heading">Showing User’s Initials</div>
             </div>
             <blui-spacer></blui-spacer>
-            <blui-user-menu
-                avatarValue="CT"
-                menuTitle="Chima Thabani"
-                menuSubtitle="CThabani@example.com"
-                [(open)]="open2"
-                [positions]="positions"
-            >
+            <blui-user-menu avatarValue="CT" menuTitle="Chima Thabani" menuSubtitle="CThabani@example.com"
+                [(open)]="open2" [positions]="positions">
                 <div blui-menu-body>
                     <mat-nav-list [style.paddingTop.px]="0">
                         <blui-info-list-item *ngFor="let item of items2" [dense]="true" (click)="open2 = false">
@@ -81,12 +76,8 @@
                 <div class="mat-body-1 sub-heading">Showing A Custom Profile Picture</div>
             </div>
             <blui-spacer></blui-spacer>
-            <blui-user-menu
-                menuTitle="Chima Thabani"
-                menuSubtitle="CThabani@example.com"
-                [(open)]="open3"
-                [positions]="positions"
-            >
+            <blui-user-menu menuTitle="Chima Thabani" menuSubtitle="CThabani@example.com" [(open)]="open3"
+                [positions]="positions">
                 <div blui-avatar>
                     <template [ngTemplateOutlet]="imageAvatar"></template>
                 </div>
@@ -117,12 +108,8 @@
                 <div class="mat-body-1 sub-heading">Avatar with Status Indicator</div>
             </div>
             <blui-spacer></blui-spacer>
-            <blui-user-menu
-                menuTitle="Chima Thabani"
-                menuSubtitle="CThabani@example.com"
-                [(open)]="open4"
-                [positions]="positions"
-            >
+            <blui-user-menu menuTitle="Chima Thabani" menuSubtitle="CThabani@example.com" [(open)]="open4"
+                [positions]="positions">
                 <div style="position: relative" blui-avatar>
                     <template [ngTemplateOutlet]="statusAvatar"></template>
                 </div>
@@ -140,7 +127,7 @@
             </blui-user-menu>
         </mat-toolbar>
         <!-- Text Menu Example -->
-        <!-- <mat-toolbar class="mat-elevation-z2 app-bar-example" data-cy="blui-toolbar-five">
+        <mat-toolbar class="mat-elevation-z2 app-bar-example" data-cy="blui-toolbar-five">
             <button data-cy="toolbar-menu" mat-icon-button>
                 <mat-icon>menu</mat-icon>
             </button>
@@ -166,6 +153,6 @@
                     </mat-nav-list>
                 </div>
             </blui-user-menu>
-        </mat-toolbar> -->
+        </mat-toolbar>
     </div>
 </section>

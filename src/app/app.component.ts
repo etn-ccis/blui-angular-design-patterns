@@ -44,7 +44,7 @@ export class AppComponent {
                     // this._domSanitizer.bypassSecurityTrustResourceUrl('iconSet')
              */
             this._domSanitizer.bypassSecurityTrustResourceUrl(
-                'https://raw.githubusercontent.com/brightlayer-ui/icons/dev/svg/icons.svg'
+                'https://raw.githubusercontent.com/etn-ccis/blui-icons/master/packages/svg/icons.svg'
             )
         );
     }

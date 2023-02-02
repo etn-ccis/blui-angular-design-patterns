@@ -31,7 +31,7 @@ describe('Landing page', () => {
     it('verify blui GH link', () => {
         cy.get('[data-cy=blui-github]')
         .should('have.attr', 'href')
-        .and('include', 'https://github.com/brightlayer-ui');
+        .and('include', 'https://github.com/etn-ccis');
     });
 
     it('verify ng patterns link', () => {

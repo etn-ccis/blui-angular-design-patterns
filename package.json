@@ -45,7 +45,7 @@
     "rxjs": "~6.6.0",
     "sass": "1.49.9",
     "tslib": "^2.0.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.8"
   },
   "devDependencies": {
     "@4tw/cypress-drag-drop": "^2.1.0",

@@ -1,12 +1,12 @@
 version: 2.1
 orbs:
     codecov: codecov/codecov@3.2.2
-    browser-tools: circleci/browser-tools@1.2.4
+    browser-tools: circleci/browser-tools@1.4.3
 jobs:
     build_project:
         working_directory: ~/angular-design-patterns
         docker:
-            - image: cimg/node:14.19.0-browsers
+            - image: cimg/node:16.19.1-browsers
         resource_class: large
         steps:
             - checkout

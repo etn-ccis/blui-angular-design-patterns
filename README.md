@@ -1,4 +1,4 @@
-# Angular Design Patterns
+## Angular Design Patterns
 
 [![](https://img.shields.io/circleci/project/github/etn-ccis/blui-angular-design-patterns/master.svg?style=flat)](https://circleci.com/gh/etn-ccis/blui-angular-design-patterns/tree/master) [![codecov](https://codecov.io/gh/etn-ccis/blui-angular-design-patterns/branch/master/graph/badge.svg?token=7Y4TGH31B6)](https://codecov.io/gh/etn-ccis/blui-angular-design-patterns)
 

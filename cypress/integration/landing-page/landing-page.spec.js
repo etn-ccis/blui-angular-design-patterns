@@ -31,13 +31,13 @@ describe('Landing page', () => {
     it('verify blui GH link', () => {
         cy.get('[data-cy=blui-github]')
         .should('have.attr', 'href')
-        .and('include', 'https://github.com/brightlayer-ui');
+        .and('include', 'https://github.com/etn-ccis');
     });
 
     it('verify ng patterns link', () => {
         cy.get('[data-cy=ng-patterns]')
         .should('have.attr', 'href')
-        .and('include', 'https://github.com/brightlayer-ui/angular-design-patterns');
+        .and('include', 'https://github.com/etn-ccis/blui-angular-design-patterns');
     });
 
     it('verify roadmap link', () => {

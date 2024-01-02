@@ -1358,12 +1358,12 @@
     "@schematics/angular" "^10.1.0"
     rxjs "6.6.2"
 
-"@brightlayer-ui/angular-components@^7.0.0":
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/angular-components/-/angular-components-7.0.2.tgz#5695c39205208ead4626f17fb5cd86eec23393b5"
-  integrity sha512-WuzA1lrzJvU6tCTK5vMqzPTiHzFlB4BDulqpN9d2ulf2CWBknqJgXLKK6fE2eZ3LCyOX90T56NXAHUEdMv9Gag==
+"@brightlayer-ui/angular-components@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/angular-components/-/angular-components-7.0.3.tgz#7ba9030c449fd5d7bbc43f571ae13d60a43442dd"
+  integrity sha512-9k+aPgXdj46XE4gfJb6bdG90mdDrtmX0rfEw7M3vurNrHPyDSjgSA1j9v+eYY5aG0wSkcgSknWKYuITOdrN+dA==
   dependencies:
-    tslib "^2.0.0"
+    tslib "^2.3.0"
 
 "@brightlayer-ui/angular-themes@^7.0.0":
   version "7.0.0"

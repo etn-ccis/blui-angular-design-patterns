@@ -43,7 +43,7 @@
     "core-js": "^3.30.1",
     "placeholder-loading": "^0.6.0",
     "rxjs": "~6.6.0",
-    "sass": "1.49.9",
+    "sass": "1.71.1",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.8"
   },

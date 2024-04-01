@@ -44,7 +44,7 @@
     "placeholder-loading": "^0.6.0",
     "rxjs": "~6.6.0",
     "sass": "1.71.1",
-    "tslib": "^2.0.0",
+    "tslib": "^2.6.2",
     "zone.js": "~0.11.8"
   },
   "devDependencies": {

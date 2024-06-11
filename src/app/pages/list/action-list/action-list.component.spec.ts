@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActionListComponent } from './action-list.component';
 import { ActionListModule } from './action-list.module';
 
@@ -6,7 +6,7 @@ describe('ActionListComponent', () => {
     let component: ActionListComponent;
     let fixture: ComponentFixture<ActionListComponent>;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         void TestBed.configureTestingModule({
             imports: [ActionListModule],
         }).compileComponents();
@@ -22,16 +22,16 @@ describe('ActionListComponent', () => {
         void expect(component).toBeTruthy();
     });
 
-    it('should create an item when createItem is called', async(() => {
+    it('should create an item when createItem is called', waitForAsync(() => {
         void expect(component.createItem(1)).toEqual({ id: 1, name: 'Item 1', details: 'item 1 details' });
     }));
 
-    it('should remove all items onRemoveAll', async(() => {
+    it('should remove all items onRemoveAll', waitForAsync(() => {
         component.onRemoveAll();
         void expect(component.data).toEqual([]);
     }));
 
-    it('should add item onAddItem', async(() => {
+    it('should add item onAddItem', waitForAsync(() => {
         fixture.detectChanges();
         spyOn(component, 'createRandomItem').and.returnValue({ id: 2, name: 'Item 2', details: 'item 2 details' });
         component.data = [{ id: 1, name: 'Item 1', details: 'item 1 details' }];
@@ -43,7 +43,7 @@ describe('ActionListComponent', () => {
         ]);
     }));
 
-    it('should remove item onRemoveItem', async(() => {
+    it('should remove item onRemoveItem', waitForAsync(() => {
         fixture.detectChanges();
         const item1 = { id: 1, name: 'Item 1', details: 'item 1 details' };
         const item2 = { id: 2, name: 'Item 2', details: 'item 2 details' };

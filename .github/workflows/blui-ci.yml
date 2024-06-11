@@ -43,11 +43,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - uses: browser-actions/setup-chrome@v1
-      with:
-        chrome-version: latest
-        install-dependencies: true
-        install-chromedriver: true
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:

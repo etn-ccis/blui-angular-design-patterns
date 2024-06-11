@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed, inject } from '@angular/core/testing';
 import { ComplexBottomSheetComponent } from './complex-bottom-sheet.component';
 import { ComplexBottomSheetModule } from './complex-bottom-sheet.module';
 import { DataService } from './data.service';
@@ -9,7 +9,7 @@ describe('ComplexBottomSheetComponent', () => {
     let fixture: ComponentFixture<ComplexBottomSheetComponent>;
     let service;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         void TestBed.configureTestingModule({
             imports: [ComplexBottomSheetModule],
             providers: [DataService],
@@ -30,7 +30,7 @@ describe('ComplexBottomSheetComponent', () => {
         void expect(component).toBeTruthy();
     });
 
-    it('should create the service', async(() => {
+    it('should create the service', waitForAsync(() => {
         void expect(service).toBeTruthy();
     }));
 

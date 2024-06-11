@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { InPanelHeaderComponent } from './in-panel-header.component';
 import { InPanelHeaderModule } from './in-panel-header.module';
 
@@ -6,7 +6,7 @@ describe('InPanelHeaderComponent', () => {
     let component: InPanelHeaderComponent;
     let fixture: ComponentFixture<InPanelHeaderComponent>;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         void TestBed.configureTestingModule({
             imports: [InPanelHeaderModule],
             declarations: [InPanelHeaderComponent],

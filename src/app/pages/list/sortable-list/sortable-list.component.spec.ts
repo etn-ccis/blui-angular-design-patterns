@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { SortableListComponent } from './sortable-list.component';
 import { SortableListModule } from './sortable-list.module';
 
@@ -6,7 +6,7 @@ describe('SortableListComponent', () => {
     let component: SortableListComponent;
     let fixture: ComponentFixture<SortableListComponent>;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         void TestBed.configureTestingModule({
             imports: [SortableListModule],
         }).compileComponents();

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DropdownToolbarComponent } from './dropdown-toolbar.component';
 import { DropdownToolbarModule } from './dropdown-toolbar.module';
 
@@ -6,7 +6,7 @@ describe('DropdownToolbarComponent', () => {
     let component: DropdownToolbarComponent;
     let fixture: ComponentFixture<DropdownToolbarComponent>;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         void TestBed.configureTestingModule({
             imports: [DropdownToolbarModule],
         }).compileComponents();

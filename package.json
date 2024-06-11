@@ -15,7 +15,7 @@
     "cy:run": "cypress run",
     "cypress:open": "cypress open",
     "cytest": "start-server-and-test start:cytest http://localhost:4200 cy:run",
-    "coverage": "ng test --no-watch --code-coverage"
+    "coverage": "ng test --browsers=ChromeHeadless --no-watch --code-coverage"
   },
   "private": true,
   "dependencies": {

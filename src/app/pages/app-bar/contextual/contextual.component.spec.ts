@@ -1,4 +1,4 @@
-import {waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ContextualAppBarComponent } from './contextual.component';
 import { ContextualAppbarModule } from './contextual.module';
 

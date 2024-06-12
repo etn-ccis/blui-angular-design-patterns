@@ -17,7 +17,7 @@ describe('Hidden toolbar menu displays on small devices', () => {
     it(`should display menu icon ${url}`, () => {
     cy.visit(url);
     cy.viewport(size);
-    cy.get('[data-cy=toolbar-menu], { timeout: 10000 }')
+    cy.get('[data-cy=toolbar-menu]')
     .should('be.visible')
     });
     });

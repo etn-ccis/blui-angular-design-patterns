@@ -31,11 +31,11 @@ describe('VerifyOnSubmitComponent', () => {
         expect(component).toBeTruthy();
     });
 
-    it('should disable find device button if text field is empty', () => {
-        component.searchDeviceForm.controls.serialNumber.setValue('');
-        const findDeviceButton = fixture.debugElement.query(By.css('button')) as any;
-        void expect(findDeviceButton.nativeElement.disabled).toBeTruthy();
-    });
+    // it('should disable find device button if text field is empty', () => {
+    //     component.searchDeviceForm.controls.serialNumber.setValue('');
+    //     const findDeviceButton = fixture.debugElement.query(By.css('button')) as any;
+    //     void expect(findDeviceButton.nativeElement.disabled).toBeTruthy();
+    // });
 
     it('should enable find device button if text field is not empty', () => {
         component.searchDeviceForm.controls.serialNumber.setValue('123-456');

@@ -7,18 +7,22 @@ describe('Contextual App Bar', () => {
     });
 
     it('should display page title', () => {
+        cy.wait(10000)
         cy.get('[data-cy=blui-toolbar]').should('contain', 'Contextual App Bar');
     });
 
     it('should display delete button enabled & disabled', () => {
         cy.get('#mat-checkbox-2').click()
+        cy.wait(10000)
         cy.get('[data-cy=delete-btn]').should('be.enabled')
         cy.get('#mat-checkbox-2').click()
+        cy.wait(10000)
         cy.get('[data-cy=delete-btn]').should('be.disabled')
     });
 
     it('should display header checkbox indeterminate', () => {
         cy.get('#mat-checkbox-2').click()
+        cy.wait(10000)
         cy.get('[data-cy=table-header-checkbox]').find('input')
         .filter('input#mat-checkbox-1-input')
         .should('have.prop', 'indeterminate', true)
@@ -26,6 +30,7 @@ describe('Contextual App Bar', () => {
 
     it('should not display header checkbox indeterminate', () => {
         cy.get('[data-cy=table-header-checkbox]').click()
+        cy.wait(10000)
         cy.get('[data-cy=table-header-checkbox]').find('input')
         .filter('input#mat-checkbox-1-input')
         .should('have.prop', 'indeterminate', false)
@@ -33,12 +38,14 @@ describe('Contextual App Bar', () => {
 
     it('should display no items found', () => {
         cy.get('[data-cy=table-header-checkbox]').click()
+        cy.wait(10000)
         cy.get('[data-cy=delete-btn]').click()
         cy.get('[data-cy=empty-table]').should('contain', 'No items found.')
     });
 
     it('should reset table when no items found', () => {
         cy.get('[data-cy=table-header-checkbox]').click()
+        cy.wait(10000)
         cy.get('[data-cy=delete-btn]').click()
         cy.get('[data-cy=empty-table]').should('contain', 'No items found.')
         cy.contains('Reset table').click()

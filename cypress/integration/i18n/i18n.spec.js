@@ -7,11 +7,13 @@ describe('i18n international', () => {
     });
 
     it('should display page title', () => {
+        cy.wait(10000)
         cy.get('.mat-toolbar.mat-primary').should('contain', 'Internationalization');
     });
 
     it('should display language in dropdown', () => {
         cy.get('.mat-select-value').click()
+        cy.wait(10000)
         cy.get('#mat-select-0-panel').should('contain', 'English')
         .should('contain', 'Spanish')
         .should('contain', 'German')

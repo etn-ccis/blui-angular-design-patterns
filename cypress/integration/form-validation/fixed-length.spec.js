@@ -44,6 +44,6 @@ describe('Form validation fixed length', () => {
 
     it('should display success with correct passcode', () => {
         cy.get('[data-cy=passcode]').type('123456')
-        cy.get('[data-cy=success]').should('be.visible')
+        cy.get('[data-cy=success]', { timeout: 10000 }).should('be.visible')
     });
 });

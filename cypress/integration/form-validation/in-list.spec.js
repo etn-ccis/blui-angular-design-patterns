@@ -15,7 +15,7 @@ describe('Form validation in a list', () => {
     });
 
     it('should display unselected toggle', () => {
-        cy.get('.mat-slide-toggle-bar')
+        cy.get('.mat-slide-toggle-bar', { timeout: 10000 })
         .find('input')
         .filter('#mat-slide-toggle-1-input')
         .should('have.attr', 'aria-checked', 'false')

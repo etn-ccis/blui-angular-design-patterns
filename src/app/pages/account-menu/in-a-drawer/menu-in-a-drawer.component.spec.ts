@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MenuInADrawerComponent } from './menu-in-a-drawer.component';
 import { MenuInDrawerModule } from './in-a-drawer.module';
 
@@ -6,7 +6,7 @@ describe('MenuInADrawerComponent', () => {
     let component: MenuInADrawerComponent;
     let fixture: ComponentFixture<MenuInADrawerComponent>;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         void TestBed.configureTestingModule({
             imports: [MenuInDrawerModule],
         }).compileComponents();

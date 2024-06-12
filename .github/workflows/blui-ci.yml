@@ -1,0 +1,84 @@
+name: Build
+
+on:
+  push:
+    branches: [ "dev", "master" ]
+  pull_request:
+    branches: [ "dev", "master" ]
+  pull_request_target:
+    types:
+      - opened
+    branches:
+      - '*/*'
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  prettier_lint:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'yarn'
+    - run: yarn --immutable
+    - run: yarn prettier:check
+    - run: yarn lint
+
+  unit_test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'yarn'
+    - run: yarn --immutable
+    - run: yarn coverage
+    - name: Upload to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        directory: ./coverage/
+        files: clover.xml
+        flags: unittests
+        name: codecov-report
+        verbose: true
+
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'yarn'
+    - run: yarn --immutable
+    - run: yarn build
+    - name: Save dist
+      uses: actions/upload-artifact@v3
+      with:
+        name: dist
+        if-no-files-found: error
+        path: dist

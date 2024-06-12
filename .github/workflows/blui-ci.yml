@@ -100,7 +100,7 @@ jobs:
       - run: yarn --immutable
 
       - name: Cypress install
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v5
         with:
           runTests: false
 
@@ -111,7 +111,7 @@ jobs:
           path: dist
 
       - name: Cypress run
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v5
         with:
           start: yarn cytest
           wait-on: ${{ matrix.node-version == 20 && 'http://[::1]:4200' || 'http://localhost:4200' }}

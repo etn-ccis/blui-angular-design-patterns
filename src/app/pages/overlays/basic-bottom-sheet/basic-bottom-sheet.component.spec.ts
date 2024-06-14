@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BasicBottomSheetComponent } from './basic-bottom-sheet.component';
 import { BasicBottomSheetModule } from './basic-bottom-sheet.module';
 
@@ -6,7 +6,7 @@ describe('BasicBottomSheetComponent', () => {
     let component: BasicBottomSheetComponent;
     let fixture: ComponentFixture<BasicBottomSheetComponent>;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         void TestBed.configureTestingModule({
             imports: [BasicBottomSheetModule],
         }).compileComponents();

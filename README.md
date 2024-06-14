@@ -1,6 +1,6 @@
 # Angular Design Patterns
 
-[![](https://img.shields.io/circleci/project/github/etn-ccis/blui-angular-design-patterns/master.svg?style=flat)](https://circleci.com/gh/etn-ccis/blui-angular-design-patterns/tree/master) [![codecov](https://codecov.io/gh/etn-ccis/blui-angular-design-patterns/branch/master/graph/badge.svg?token=7Y4TGH31B6)](https://codecov.io/gh/etn-ccis/blui-angular-design-patterns)
+[![Build](https://github.com/etn-ccis/blui-angular-design-patterns/actions/workflows/blui-ci.yml/badge.svg?branch=master)](https://github.com/etn-ccis/blui-angular-design-patterns/actions/workflows/blui-ci.yml) [![codecov](https://codecov.io/gh/etn-ccis/blui-angular-design-patterns/branch/master/graph/badge.svg?token=7Y4TGH31B6)](https://codecov.io/gh/etn-ccis/blui-angular-design-patterns)
 
 This repository holds the source code examples for [Brightlayer UI design patterns](https://brightlayer-ui.github.io/patterns), written in Angular. The code is organized to make it easy to copy and paste the examples into your own projects.
 

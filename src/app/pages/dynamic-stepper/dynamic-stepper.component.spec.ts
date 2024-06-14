@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DynamicStepperComponent } from './dynamic-stepper.component';
 import { DynamicStepperModule } from './dynamic-stepper.module';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -8,7 +8,7 @@ describe('DynamicStepperComponent', () => {
     let component: DynamicStepperComponent;
     let fixture: ComponentFixture<DynamicStepperComponent>;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         void TestBed.configureTestingModule({
             imports: [DynamicStepperModule],
             schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -25,14 +25,14 @@ describe('DynamicStepperComponent', () => {
         void expect(component).toBeTruthy();
     });
 
-    it('should add item', async(() => {
+    it('should add item', waitForAsync(() => {
         fixture.detectChanges();
         component.steps = [{ title: 'item1', value: null, completed: false }];
         component.addItem();
         void expect(component.steps.length).toEqual(2);
     }));
 
-    it('should check completed', async(() => {
+    it('should check completed', waitForAsync(() => {
         fixture.detectChanges();
         component.steps = [
             { title: null, value: null, completed: true },
@@ -42,13 +42,13 @@ describe('DynamicStepperComponent', () => {
         void expect(component.allCompleted).toBeTruthy();
     }));
 
-    it('should handle done', async(() => {
+    it('should handle done', waitForAsync(() => {
         fixture.detectChanges();
         component.handleDone();
         void expect(component.procedureFinished).toBeTruthy();
     }));
 
-    it('should handle reset', async(() => {
+    it('should handle reset', waitForAsync(() => {
         fixture.detectChanges();
         component.handleReset();
         void expect(component.procedureFinished).toBeFalsy();
@@ -56,7 +56,7 @@ describe('DynamicStepperComponent', () => {
         void expect(component.steps.length).toEqual(1);
     }));
 
-    it('should handle delete all', async(() => {
+    it('should handle delete all', waitForAsync(() => {
         fixture.detectChanges();
         const deleteAllButton = fixture.debugElement.query(By.css('[data-cy="delete-all"]'));
         const removeAllSpy = spyOn(component, 'onRemoveAll').and.stub();
@@ -65,7 +65,7 @@ describe('DynamicStepperComponent', () => {
         void expect(removeAllSpy).toHaveBeenCalledTimes(1);
     }));
 
-    it('should handle delete step', async(() => {
+    it('should handle delete step', waitForAsync(() => {
         fixture.detectChanges();
         void expect(component.steps.length).toEqual(1);
         const deleteStepButton = fixture.debugElement.query(By.css('[data-cy="delete-step"]'));

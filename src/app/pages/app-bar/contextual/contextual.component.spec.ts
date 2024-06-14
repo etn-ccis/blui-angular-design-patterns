@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ContextualAppBarComponent } from './contextual.component';
 import { ContextualAppbarModule } from './contextual.module';
 
@@ -6,7 +6,7 @@ describe('ContextualAppBarComponent', () => {
     let component: ContextualAppBarComponent;
     let fixture: ComponentFixture<ContextualAppBarComponent>;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         void TestBed.configureTestingModule({
             imports: [ContextualAppbarModule],
         }).compileComponents();

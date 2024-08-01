@@ -33,7 +33,7 @@
     "@brightlayer-ui/angular-components": "^7.0.3",
     "@brightlayer-ui/angular-themes": "^7.0.0",
     "@brightlayer-ui/colors": "^3.0.1",
-    "@brightlayer-ui/icons": "^1.8.1",
+    "@brightlayer-ui/icons": "^2.3.0",
     "@brightlayer-ui/icons-svg": "^1.8.1",
     "@brightlayer-ui/ng-progress-icons": "^1.2.1",
     "@netbasal/ngx-content-loader": "3.0.0",

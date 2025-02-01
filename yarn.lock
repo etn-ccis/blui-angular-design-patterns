@@ -1373,12 +1373,17 @@
     "@brightlayer-ui/colors" "^3.0.0"
     "@fontsource/open-sans" "^4.1.0"
 
-"@brightlayer-ui/colors@^3.0.0", "@brightlayer-ui/colors@^3.0.1":
+"@brightlayer-ui/colors@^3.0.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@brightlayer-ui/colors/-/colors-3.1.0.tgz#eb1a0fe769328934e98d02f0f9232da72a0d714e"
   integrity sha512-BZkrRovZQv4YrpGDagUH7tIera5v+EPjrV/gwUDgnRVT+yKOjz+KB/F3g5DzTxQiA/QDiuxHU/0CumSlxwljmQ==
   dependencies:
     "@brightlayer-ui/types" "^2.0.0"
+
+"@brightlayer-ui/colors@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/colors/-/colors-4.0.0.tgz#5bb3706eca98e849d1e80ca4c9f9ca731380d227"
+  integrity sha512-fF7Ne7cz4yFCzR96HrP1RVBw55s+cWbqYkPallnpmmtYnPwNS/DyAbbHFEnl2bxziq3CvAR2S+D6AnjIeluOZA==
 
 "@brightlayer-ui/eslint-config@^3.0.0":
   version "3.0.1"

@@ -1,4 +1,4 @@
-## Angular Design Patterns
+# Angular Design Patterns
 
 [![Build](https://github.com/etn-ccis/blui-angular-design-patterns/actions/workflows/blui-ci.yml/badge.svg?branch=master)](https://github.com/etn-ccis/blui-angular-design-patterns/actions/workflows/blui-ci.yml) [![codecov](https://codecov.io/gh/etn-ccis/blui-angular-design-patterns/branch/master/graph/badge.svg?token=7Y4TGH31B6)](https://codecov.io/gh/etn-ccis/blui-angular-design-patterns)
 

@@ -9105,10 +9105,10 @@ pkg-dir@^4.1.0:
   dependencies:
     find-up "^4.0.0"
 
-placeholder-loading@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/placeholder-loading/-/placeholder-loading-0.6.0.tgz#32310c02b8aa1a24cf87958dc50aa1f695135cb1"
-  integrity sha512-KdUnwa3AEuXlem7QeSi4qtny+QfiACUh0P0iYskJBwfg3LtAUMQFyd9L21ysdBQ65KbK6tZ4VsKPkcF3mULwMQ==
+placeholder-loading@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/placeholder-loading/-/placeholder-loading-0.7.0.tgz#420d4ab1e65068af16836f9d3e7ee2187a1efe5b"
+  integrity sha512-C9M9dra5nZF/qfFF0trA3dZTQ2j6qxxoAnqWcyF+bKWhoTQIiCYIptj9BTTuihdQjm9M/vIbbYtTEvvT+8etEg==
 
 portfinder@^1.0.28, portfinder@^1.0.32:
   version "1.0.32"

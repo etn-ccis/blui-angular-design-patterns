@@ -48,7 +48,7 @@
     "zone.js": "~0.11.8"
   },
   "devDependencies": {
-    "@4tw/cypress-drag-drop": "^2.1.0",
+    "@4tw/cypress-drag-drop": "^2.3.0",
     "@angular-devkit/build-angular": "^13.0.0",
     "@angular/cli": "^13.0.0",
     "@angular/compiler-cli": "^13.0.0",
